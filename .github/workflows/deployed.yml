@@ -1,0 +1,34 @@
+# Scrape deployed site into Algolia index
+# https://glebbahmutov.com/blog/scrape-static-site-with-algolia/
+name: deployed
+on:
+  status:
+    branches:
+      - master
+jobs:
+  test-deployed-page:
+    if: github.event.context == 'github/pages' && github.event.state == 'success'
+    runs-on: ubuntu-latest
+    env:
+      CYPRESS_baseUrl: https://glebbahmutov.com/triple-tested/
+    steps:
+      - run: echo "gh-pages 📑 built successfully ✅"
+
+      # we need our scraping config, thus check out code
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      # when scraping the site, inject secrets as environment variables
+      # then pass their values into the Docker container using "-e" syntax
+      # and inject config.json contents as another variable
+      - name: scrape the site 🧽
+        env:
+          APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
+          API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+        run: |
+          docker run \
+          -e APPLICATION_ID -e API_KEY \
+          -e CONFIG="$(cat algolia-config.json)" \
+          algolia/docsearch-scraper:v1.6.0

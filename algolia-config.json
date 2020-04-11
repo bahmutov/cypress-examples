@@ -1,0 +1,26 @@
+{
+  "index_name": "cypress-examples",
+  "start_urls": ["https://glebbahmutov.com/cypress-examples/"],
+  "selectors": {
+    "lvl0": {
+      "selector": ".site-name",
+      "global": true
+    },
+    "lvl1": ".content__default h1",
+    "lvl2": ".content__default h2",
+    "lvl3": ".content__default h3",
+    "lvl4": ".content__default h4",
+    "lvl5": ".content__default h5",
+    "text": ".content__default p, .content__default li",
+    "lang": {
+      "selector": "/html/@lang",
+      "type": "xpath",
+      "global": true
+    }
+  },
+  "custom_settings": {
+    "attributesForFaceting": [
+      "lang"
+    ]
+  }
+}
