@@ -38,5 +38,64 @@ cy.get('.query-form').within(() => {
   cy.get('input:last').should('have.attr', 'placeholder', 'Password')
 })
 ```
+<!-- fiddle-end -->
+
+## [cy.root()](https://on.cypress.io/root)
+
+We can find the root DOM element `cy.root()`
+
+<!-- fiddle root example -->
+```html
+<ul class="query-ul">
+  <li>One</li>
+  <li>Two</li>
+  <li>Buckle my shoe</li>
+</ul>
+```
+
+```js
+// By default, root is the document
+cy.root().should('match', 'div#live')
+
+cy.get('.query-ul').within(() => {
+  // In this within, the root is now the ul DOM element
+  cy.root().should('have.class', 'query-ul')
+})
+```
+<!-- fiddle-end -->
+
+## [Best Practices: Selecting elements](https://on.cypress.io/best-practices#Selecting-Elements)
+
+Prefer dedicated `data-cy` or `data-test` attributes to CSS class names and element IDs. See detailed discussion at [Best Practices: Selecting elements](https://on.cypress.io/best-practices#Selecting-Elements)
+
+<!-- fiddle Selecting Elements -->
+```html
+<button id="main" class="btn btn-large"
+  name="submission" role="button" data-cy="submit">Submit</button>
+```
+
+```js
+// Worst - too generic, no context
+cy.get('button').click()
+
+// Bad. Coupled to styling. Highly subject to change.
+cy.get('.btn.btn-large').click()
+
+// Average. Coupled to the `name` attribute which has HTML semantics.
+cy.get('[name=submission]').click()
+
+// Better. But still coupled to styling or JS event listeners.
+cy.get('#main').click()
+
+// Slightly better. Uses an ID but also ensures the element
+// has an ARIA role attribute
+cy.get('#main[role=button]').click()
+
+// Much better. But still coupled to text content that may change.
+cy.contains('Submit').click()
+
+// Best. Insulated from all changes.
+cy.get('[data-cy=submit]').click()
+```
 
 <!-- fiddle-end -->
