@@ -2,7 +2,107 @@
 
 Examples of querying for DOM elements in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io/api) and read [Selecting Elements: Best Practices Guide](https://on.cypress.io/best-practices#Selecting-Elements)
 
-## .within
+## [cy.get()](https://on.cypress.io/get)
+
+To query for the button, use the `cy.get()` command.
+
+<!-- fiddle get button -->
+```html
+<div id="querying">
+  <div class="well">
+    <button id="query-btn" class="query-btn btn btn-primary">Button</button>
+  </div>
+</div>
+```
+
+```js
+cy.get('#query-btn').should('contain', 'Button')
+
+cy.get('.query-btn').should('contain', 'Button')
+
+cy.get('#querying .well>button:first').should('contain', 'Button')
+//              ↲
+// Use CSS selectors just like jQuery
+```
+<!-- fiddle-end -->
+
+To find elements by data attribute, query using the attribute selector.
+
+<!--fiddle get by data attribute -->
+```html
+<div data-test-id="test-example" class="example">
+  Div with <code>data-test-id</code>
+</div>
+```
+```js
+cy.get('[data-test-id="test-example"]').should('have.class', 'example')
+```
+
+`cy.get()` yields a jQuery object, you can get its attribute by invoking the `.attr()` method.
+
+```js
+cy.get('[data-test-id="test-example"]')
+  .invoke('attr', 'data-test-id')
+  .should('equal', 'test-example')
+
+// or you can get an element's CSS property
+cy.get('[data-test-id="test-example"]')
+  .invoke('css', 'position')
+  .should('equal', 'static')
+```
+
+Alternatively, chain assertions directly to the `cy.get()` call. See [assertions documentation](https://on.cypress.io/assertions).
+
+```js
+cy.get('[data-test-id="test-example"]')
+  .should('have.attr', 'data-test-id', 'test-example')
+  .and('have.css', 'position', 'static')
+```
+<!-- fiddle-end -->
+
+## [cy.contains()](https://on.cypress.io/contains)
+
+We can find elements by their content using `cy.contains()`
+
+<!-- fiddle contains -->
+```html
+<div id="querying">
+  <ul class="query-list">
+    <li class="first">apples</li>
+    <li class="second">oranges</li>
+    <li class="third">bananas</li>
+    <li class="fourth">more apples</li>
+  </ul>
+  <div class="query-button">
+    <button class="btn btn-default"><span>Save Form</span></button>
+  </div>
+</div>
+```
+
+```js
+cy.get('.query-list')
+  .contains('bananas').should('have.class', 'third')
+
+// we can pass a regexp to `.contains()`
+cy.get('.query-list')
+  .contains(/^b\w+/).should('have.class', 'third')
+
+cy.get('.query-list')
+  .contains('apples').should('have.class', 'first')
+
+// passing a selector to contains will
+// yield the selector containing the text
+cy.get('#querying')
+  .contains('ul', 'oranges')
+  .should('have.class', 'query-list')
+
+cy.get('.query-button')
+  .contains('Save Form')
+  .should('have.class', 'btn')
+```
+<!-- fiddle-end -->
+
+## [.within](https://on.cypress.io/within)
 
 We can find elements within a specific DOM element `.within()`
 
