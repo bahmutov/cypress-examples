@@ -8,7 +8,8 @@
     "cy:open": "cypress open",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "check:links": "find . -type f -name '*.md' ! -path './node_modules/*' | xargs -L1 npx markdown-link-check --quiet"
+    "check:links": "find . -type f -name '*.md' ! -path './node_modules/*' | xargs -L1 npx markdown-link-check --quiet",
+    "format": "prettier --write 'docs/**/*.md'"
   },
   "repository": {
     "type": "git",

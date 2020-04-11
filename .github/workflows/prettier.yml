@@ -1,0 +1,23 @@
+# when pushing to master branch, format Markdown using Prettier
+# and if there are any changes, push back to repo
+# https://glebbahmutov.com/blog/trying-github-actions/
+name: prettier
+on:
+  push
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1
+      - name: Format source files 👔
+        run: npm run format
+      # commit any changed files
+      # https://github.com/mikeal/publish-to-github-action
+      - uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
