@@ -7,6 +7,7 @@ Examples of querying for DOM elements in Cypress, for a full reference of comman
 To query for the button, use the `cy.get()` command.
 
 <!-- fiddle get button -->
+
 ```html
 <div id="querying">
   <div class="well">
@@ -24,16 +25,19 @@ cy.get('#querying .well>button:first').should('contain', 'Button')
 //              ↲
 // Use CSS selectors just like jQuery
 ```
+
 <!-- fiddle-end -->
 
 To find elements by data attribute, query using the attribute selector.
 
 <!--fiddle get by data attribute -->
+
 ```html
 <div data-test-id="test-example" class="example">
   Div with <code>data-test-id</code>
 </div>
 ```
+
 ```js
 cy.get('[data-test-id="test-example"]').should('have.class', 'example')
 ```
@@ -58,6 +62,7 @@ cy.get('[data-test-id="test-example"]')
   .should('have.attr', 'data-test-id', 'test-example')
   .and('have.css', 'position', 'static')
 ```
+
 <!-- fiddle-end -->
 
 ## [cy.contains()](https://on.cypress.io/contains)
@@ -65,6 +70,7 @@ cy.get('[data-test-id="test-example"]')
 We can find elements by their content using `cy.contains()`
 
 <!-- fiddle contains -->
+
 ```html
 <div id="querying">
   <ul class="query-list">
@@ -80,26 +86,20 @@ We can find elements by their content using `cy.contains()`
 ```
 
 ```js
-cy.get('.query-list')
-  .contains('bananas').should('have.class', 'third')
+cy.get('.query-list').contains('bananas').should('have.class', 'third')
 
 // we can pass a regexp to `.contains()`
-cy.get('.query-list')
-  .contains(/^b\w+/).should('have.class', 'third')
+cy.get('.query-list').contains(/^b\w+/).should('have.class', 'third')
 
-cy.get('.query-list')
-  .contains('apples').should('have.class', 'first')
+cy.get('.query-list').contains('apples').should('have.class', 'first')
 
 // passing a selector to contains will
 // yield the selector containing the text
-cy.get('#querying')
-  .contains('ul', 'oranges')
-  .should('have.class', 'query-list')
+cy.get('#querying').contains('ul', 'oranges').should('have.class', 'query-list')
 
-cy.get('.query-button')
-  .contains('Save Form')
-  .should('have.class', 'btn')
+cy.get('.query-button').contains('Save Form').should('have.class', 'btn')
 ```
+
 <!-- fiddle-end -->
 
 ## [.within](https://on.cypress.io/within)
@@ -109,20 +109,10 @@ We can find elements within a specific DOM element `.within()`
 <!-- fiddle form example -->
 
 ```html
-<input
-  type="text"
-  id="inputName"
-  class="form-control"
-  placeholder="Name"
-/>
+<input type="text" id="inputName" class="form-control" placeholder="Name" />
 <h6>Form</h6>
 <form class="query-form">
-  <input
-    type="text"
-    id="inputEmail"
-    class="form-control"
-    placeholder="Email"
-  />
+  <input type="text" id="inputEmail" class="form-control" placeholder="Email" />
   <input
     type="text"
     id="inputPassword"
@@ -138,6 +128,7 @@ cy.get('.query-form').within(() => {
   cy.get('input:last').should('have.attr', 'placeholder', 'Password')
 })
 ```
+
 <!-- fiddle-end -->
 
 ## [cy.root()](https://on.cypress.io/root)
@@ -145,6 +136,7 @@ cy.get('.query-form').within(() => {
 We can find the root DOM element `cy.root()`
 
 <!-- fiddle root example -->
+
 ```html
 <ul class="query-ul">
   <li>One</li>
@@ -162,6 +154,7 @@ cy.get('.query-ul').within(() => {
   cy.root().should('have.class', 'query-ul')
 })
 ```
+
 <!-- fiddle-end -->
 
 ## [Best Practices: Selecting elements](https://on.cypress.io/best-practices#Selecting-Elements)
@@ -169,9 +162,17 @@ cy.get('.query-ul').within(() => {
 Prefer dedicated `data-cy` or `data-test` attributes to CSS class names and element IDs. See detailed discussion at [Best Practices: Selecting elements](https://on.cypress.io/best-practices#Selecting-Elements)
 
 <!-- fiddle Selecting Elements -->
+
 ```html
-<button id="main" class="btn btn-large"
-  name="submission" role="button" data-cy="submit">Submit</button>
+<button
+  id="main"
+  class="btn btn-large"
+  name="submission"
+  role="button"
+  data-cy="submit"
+>
+  Submit
+</button>
 ```
 
 ```js

@@ -25,6 +25,7 @@
     "@cypress/fiddle": "1.4.3",
     "cypress": "4.3.0",
     "markdown-link-check": "3.8.1",
+    "prettier": "2.0.4",
     "start-server-and-test": "1.10.11",
     "vuepress": "1.4.0",
     "vuepress-plugin-clean-urls": "1.1.1"
