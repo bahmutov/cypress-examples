@@ -30,7 +30,7 @@ cy.get('#querying .well>button:first').should('contain', 'Button')
 
 To find elements by data attribute, query using the attribute selector.
 
-<!--fiddle get by data attribute -->
+<!-- fiddle get by data attribute -->
 
 ```html
 <div data-test-id="test-example" class="example">
@@ -45,6 +45,7 @@ cy.get('[data-test-id="test-example"]').should('have.class', 'example')
 `cy.get()` yields a jQuery object, you can get its attribute by invoking the `.attr()` method.
 
 ```js
+// find the element, confirm its attribute
 cy.get('[data-test-id="test-example"]')
   .invoke('attr', 'data-test-id')
   .should('equal', 'test-example')
