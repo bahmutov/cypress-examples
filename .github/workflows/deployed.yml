@@ -6,7 +6,7 @@ on:
     branches:
       - master
 jobs:
-  test-deployed-page:
+  scraped-site:
     if: github.event.context == 'github/pages' && github.event.state == 'success'
     runs-on: ubuntu-latest
     env:
