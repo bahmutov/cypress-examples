@@ -19,6 +19,9 @@ jobs:
         with:
           config: video=false
 
+      - name: Check links ⚓️
+        run: npm run check:links
+
       - name: Build site 🏗
         run: npm run docs:build
 

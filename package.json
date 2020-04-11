@@ -7,7 +7,8 @@
     "test": "cypress run",
     "cy:open": "cypress open",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "check:links": "find . -type f -name '*.md' ! -path './node_modules/*' | xargs -L1 npx markdown-link-check --quiet"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@cypress/fiddle": "1.4.3",
     "cypress": "4.3.0",
+    "markdown-link-check": "3.8.1",
     "start-server-and-test": "1.10.11",
     "vuepress": "1.4.0",
     "vuepress-plugin-clean-urls": "1.1.1"
