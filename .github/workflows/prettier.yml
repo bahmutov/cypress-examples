@@ -3,7 +3,7 @@
 # https://glebbahmutov.com/blog/trying-github-actions/
 name: prettier
 on:
-  push
+  push:
     branches:
       - master
 
