@@ -1,0 +1,6 @@
+{
+  "pluginsFile": "plugins.js",
+  "supportFile": false,
+  "integrationFolder": "docs",
+  "testFiles": "**/*.md"
+}

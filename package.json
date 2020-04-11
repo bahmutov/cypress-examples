@@ -1,0 +1,26 @@
+{
+  "name": "cypress-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/cypress-examples.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bahmutov/cypress-examples/issues"
+  },
+  "homepage": "https://github.com/bahmutov/cypress-examples#readme",
+  "devDependencies": {
+    "@cypress/fiddle": "1.4.3",
+    "cypress": "4.3.0",
+    "start-server-and-test": "1.10.11",
+    "vuepress": "1.4.0"
+  }
+}
