@@ -1,0 +1,21 @@
+name: ci
+# test Cypress examples on every pull request
+# and make sure the site builds, but no deploy
+on: pull_request
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # https://github.com/actions/checkout
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Cypress tests 🧪
+        uses: cypress-io/github-action@v1
+        with:
+          config: video=false
+
+      - name: Build site 🏗
+        run: npm run docs:build
