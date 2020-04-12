@@ -14,6 +14,16 @@ module.exports = {
     // ],
   ],
   themeConfig: {
+    nav: [
+      {
+        text: 'Commands',
+        items: [
+          { text: 'Querying', link: '/commands/querying/' },
+          { text: 'Traversal', link: '/commands/traversal/' },
+        ],
+      },
+      { text: 'Utilities', link: '/utilities/' },
+    ],
     algolia: {
       // DANGER 🧨💀: ONLY USE ALGOLIA PUBLIC SEARCH-ONLY API KEY
       apiKey: 'd2cc2084df39806bdefb04f60f16e856',

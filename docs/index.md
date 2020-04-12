@@ -2,6 +2,10 @@
 
 > Static site with Cypress examples tested right from the Markdown sources
 
+## Commands
+
+Commands drive your tests in the browser like a real user would. They let you perform actions like typing, clicking, xhr requests, and can also assert things like "my button should be disabled".
+
 - [Querying](./commands/querying.md)
   - [get](./commands/querying.md#cy-get)
   - [contains](./commands/querying.md#cy-contains)
@@ -16,3 +20,12 @@
   - [find](./commands/traversal.md#find)
   - [first](./commands/traversal.md#first)
   - [last](./commands/traversal.md#last)
+
+## Utilities
+
+Utilities give you access to methods from other commonly used libraries.
+
+- [\_](./utilities/index.md#cypress)
+- [\$](./utilities/index.md#cypress-2)
+- [Blob](./utilities/index.md#cypress-blob)
+- [minimatch](./utilities/index.md#cypress-minimatch)
