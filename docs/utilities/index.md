@@ -39,22 +39,14 @@ To call a jQuery method, use the `Cypress.$` command.
     Scarves
   </li>
 </ul>
+<script>
+  document
+    .querySelector('li.list-group-item')
+    .addEventListener('click', (e) => {
+      e.target.classList.add('active')
+    })
+</script>
 ```
-
-<ul class="list-group utility-jquery">
-  <li class="list-group-item">
-    <span class="badge">5</span>
-    Watches
-  </li>
-  <li class="list-group-item">
-    <span class="badge">14</span>
-    Sweaters
-  </li>
-  <li class="list-group-item">
-    <span class="badge">22</span>
-    Scarves
-  </li>
-</ul>
 
 ```js
 let $li = Cypress.$('.utility-jquery li:first')
@@ -86,8 +78,9 @@ cy.get('.utility-blob').then(($div) =>
     undefined,
     'anonymous',
   ).then((dataUrl) => {
-    // create an  element and set its src to the dataUrl
-    let img = Cypress.$('', { src: dataUrl })
+    debugger
+    // create an '<img />' element and set its src to the dataUrl
+    let img = Cypress.$('<img />', { src: dataUrl })
     // need to explicitly return cy here since we are initially returning
     // the Cypress.Blob.imgSrcToDataURL promise to our test
     // append the image
