@@ -110,6 +110,7 @@ We can find elements within a specific DOM element `.within()`
 <!-- fiddle form example -->
 
 ```html
+<h6>Name input</h6>
 <input type="text" id="inputName" class="form-control" placeholder="Name" />
 <h6>Form</h6>
 <form class="query-form">
@@ -122,18 +123,6 @@ We can find elements within a specific DOM element `.within()`
   />
 </form>
 ```
-
-<input type="text" id="inputName" class="form-control" placeholder="Name" />
-<h6>Form</h6>
-<form class="query-form">
-  <input type="text" id="inputEmail" class="form-control" placeholder="Email" />
-  <input
-    type="text"
-    id="inputPassword"
-    class="form-control"
-    placeholder="Password"
-  />
-</form>
 
 ```js
 cy.get('.query-form').within(() => {

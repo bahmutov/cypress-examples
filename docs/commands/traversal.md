@@ -16,12 +16,6 @@ To get children of DOM elements, use the `.children()` command.
 </ol>
 ```
 
-<ol class="traversal-breadcrumb breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Library</a></li>
-  <li class="active">Data</li>
-</ol>
-
 ```js
 cy.get('.traversal-breadcrumb').children('.active').should('contain', 'Data')
 ```
@@ -47,17 +41,6 @@ To get the closest ancestor DOM element, use the `.closest()` command.
 </ul>
 ```
 
-<ul class="list-group">
-  <li class="list-group-item">
-    <span class="badge">14</span>
-    Events
-  </li>
-  <li class="list-group-item">
-    <span class="badge traversal-badge">54</span>
-    Friends
-  </li>
-</ul>
-
 ```js
 cy.get('.traversal-badge').closest('ul').should('have.class', 'list-group')
 ```
@@ -80,14 +63,6 @@ To get a DOM element at a specific index, use the `.eq()` command.
 </ul>
 ```
 
-<ul class="traversal-list">
-  <li>tabby</li>
-  <li>siamese</li>
-  <li>persian</li>
-  <li>sphynx</li>
-  <li>burmese</li>
-</ul>
-
 ```js
 cy.get('.traversal-list>li').eq(1).should('contain', 'siamese')
 ```
@@ -107,12 +82,6 @@ To get DOM elements that match a specific selector, use the `.filter()` command.
   <li><a href="#">Services</a></li>
 </ul>
 ```
-
-<ul class="traversal-nav nav nav-tabs">
-  <li><a href="#">Home</a></li>
-  <li class="active"><a href="#">About</a></li>
-  <li><a href="#">Services</a></li>
-</ul>
 
 ```js
 cy.get('.traversal-nav>li').filter('.active').should('contain', 'About')
@@ -145,24 +114,6 @@ To get descendant DOM elements of the selector, use the `.find()` command.
   </li>
 </ul>
 ```
-
-<ul class="pagination traversal-pagination">
-  <li>
-    <a href="#">
-      <span>&laquo;</span>
-    </a>
-  </li>
-  <li><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li>
-    <a href="#">
-      <span>&raquo;</span>
-    </a>
-  </li>
-</ul>
 
 ```js
 // 5 individual links plus "prev" and "next" links
@@ -201,28 +152,6 @@ To get the first DOM element within elements, use the `.first()` command.
 </table>
 ```
 
-<table class="table traversal-table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Jane</td>
-      <td>Lane</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>John</td>
-      <td>Doe</td>
-    </tr>
-  </tbody>
-</table>
-
 ```js
 cy.get('.traversal-table td').first().should('contain', '1')
 ```
@@ -243,13 +172,6 @@ To get the last DOM element within elements, use the `.last()` command.
   <input class="btn btn-default" type="submit" value="Submit" />
 </div>
 ```
-
-<div class="traversal-buttons">
-  <a class="btn btn-default" href="#" role="button">Link</a>
-  <button class="btn btn-default" type="submit">Button</button>
-  <input class="btn btn-default" type="button" value="Input" />
-  <input class="btn btn-default" type="submit" value="Submit" />
-</div>
 
 ```js
 cy.get('.traversal-buttons .btn').last().should('contain', 'Submit')

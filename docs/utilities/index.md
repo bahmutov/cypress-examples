@@ -144,10 +144,6 @@ To parse or format a date using a moment method, use the `Cypress.moment()` comm
 </div>
 ```
 
-<div class="utility-moment"> Posted at
-  <span class="badge badge-primary">3:38 PM</span>
-</div>
-
 ```js
 const time = Cypress.moment('2014-04-25T19:38:53.196Z').utc().format('h:mm A')
 

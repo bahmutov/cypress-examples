@@ -14,12 +14,6 @@ Examples of connecting commands in Cypress, for a full reference of commands, go
 </ul>
 ```
 
-<ul class="connectors-list">
-  <li>Walk the dog</li>
-  <li>Feed the cat</li>
-  <li>Write JavaScript</li>
-</ul>
-
 To invoke a callback function with the current subject, use the `.then()` command.
 
 ```js
