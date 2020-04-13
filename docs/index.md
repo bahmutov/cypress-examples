@@ -1,3 +1,7 @@
+---
+sidebar: false
+---
+
 # Cypress Examples
 
 > Static site with Cypress examples tested right from the Markdown sources
@@ -20,6 +24,8 @@ Commands drive your tests in the browser like a real user would. They let you pe
   - [find](./commands/traversal.md#find)
   - [first](./commands/traversal.md#first)
   - [last](./commands/traversal.md#last)
+- [Connectors](./commands/connectors.md)
+  - [then](./commands/connectors.md#then)
 
 ## Utilities
 

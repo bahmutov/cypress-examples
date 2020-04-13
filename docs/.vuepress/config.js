@@ -20,6 +20,7 @@ module.exports = {
         items: [
           { text: 'Querying', link: '/commands/querying/' },
           { text: 'Traversal', link: '/commands/traversal/' },
+          { text: 'Connectors', link: '/commands/connectors/' },
         ],
       },
       { text: 'Utilities', link: '/utilities/' },
