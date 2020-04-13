@@ -24,6 +24,9 @@ Commands drive your tests in the browser like a real user would. They let you pe
   - [find](./commands/traversal.md#find)
   - [first](./commands/traversal.md#first)
   - [last](./commands/traversal.md#last)
+- [Actions](./commands/actions.md)
+  - [type](./commands/actions.md#type)
+  - [focus](./commands/actions.md#focus)
 - [Connectors](./commands/connectors.md)
   - [then](./commands/connectors.md#then)
 
