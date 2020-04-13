@@ -29,3 +29,11 @@ Utilities give you access to methods from other commonly used libraries.
 - [\$](./utilities/index.md#cypress-2)
 - [Blob](./utilities/index.md#cypress-blob)
 - [minimatch](./utilities/index.md#cypress-minimatch)
+- [moment](./utilities/index.md#cypress-moment)
+- [Promise](./utilities/index.md#cypress-promise)
+
+## Cypress API
+
+The Cypress API enables you to configure the behavior of how Cypress works internally. You can do things like access Environment Variables, change configuration, create custom commands, and more.
+
+- [Commands](./cypress-api/index.md#cypress-commands-add)

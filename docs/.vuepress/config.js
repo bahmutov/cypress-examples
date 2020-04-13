@@ -23,6 +23,7 @@ module.exports = {
         ],
       },
       { text: 'Utilities', link: '/utilities/' },
+      { text: 'Cypress API', link: '/cypress-api/' },
     ],
     algolia: {
       // DANGER 🧨💀: ONLY USE ALGOLIA PUBLIC SEARCH-ONLY API KEY
