@@ -1,3 +1,7 @@
+---
+sidebar: auto
+---
+
 # Querying
 
 Examples of querying for DOM elements in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io/api) and read [Selecting Elements: Best Practices Guide](https://on.cypress.io/best-practices#Selecting-Elements)

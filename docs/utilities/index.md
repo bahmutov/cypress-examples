@@ -2,7 +2,9 @@
 
 Examples of the use of methods from other commonly used libraries in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io)
 
-## [Cypress.\_](https://on.cypress.io/_)
+<!-- prettier-ignore-start -->
+## [Cypress._](https://on.cypress.io/_)
+<!-- prettier-ignore-end -->
 
 To call a lodash method, use the `Cypress._.method()` command.
 
@@ -18,7 +20,9 @@ cy.request('https://jsonplaceholder.cypress.io/users').then((response) => {
 
 <!-- fiddle-end -->
 
-## [Cypress.\$](https://on.cypress.io/$)
+<!-- prettier-ignore-start -->
+## [Cypress.$](https://on.cypress.io/$)
+<!-- prettier-ignore-end -->
 
 To call a jQuery method, use the `Cypress.$` command.
 
