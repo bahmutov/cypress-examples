@@ -77,9 +77,9 @@ To get DOM elements that match a specific selector, use the `.filter()` command.
 
 ```html
 <ul class="traversal-nav nav nav-tabs">
-  <li><a href="#">Home</a></li>
-  <li class="active"><a href="#">About</a></li>
-  <li><a href="#">Services</a></li>
+  <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+  <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
+  <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
 </ul>
 ```
 
@@ -97,18 +97,18 @@ To get descendant DOM elements of the selector, use the `.find()` command.
 
 ```html
 <ul class="pagination traversal-pagination">
-  <li>
-    <a href="#">
+  <li class="page-item">
+    <a class="page-link" href="#">
       <span>&laquo;</span>
     </a>
   </li>
-  <li><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li>
-    <a href="#">
+  <li class="page-item"><a class="page-link" href="#">1</a></li>
+  <li class="page-item"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">4</a></li>
+  <li class="page-item"><a class="page-link" href="#">5</a></li>
+  <li class="page-item">
+    <a class="page-link" href="#">
       <span>&raquo;</span>
     </a>
   </li>
@@ -117,7 +117,10 @@ To get descendant DOM elements of the selector, use the `.find()` command.
 
 ```js
 // 5 individual links plus "prev" and "next" links
-cy.get('.traversal-pagination').find('li').find('a').should('have.length', 7)
+cy.get('.traversal-pagination')
+  .find('li.page-item')
+  .find('a')
+  .should('have.length', 7)
 ```
 
 <!-- fiddle-end -->

@@ -7,6 +7,25 @@ module.exports = {
   description:
     'Static site with Cypress examples tested right from the Markdown sources',
   base: '/cypress-examples/',
+  head: [
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href:
+          'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css',
+      },
+    ],
+    ['style', {}, '.action-focus.focus { border: 5px solid orange; }'],
+    [
+      'script',
+      {
+        src: 'https://code.jquery.com/jquery-3.4.1.slim.min.js',
+        integrity: 'sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=',
+        crossorigin: 'anonymous',
+      },
+    ],
+  ],
   plugins: [],
   themeConfig: {
     // point pages back at the GitHub documents

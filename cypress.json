@@ -9,7 +9,7 @@
       "stylesheets": [
         "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       ],
-      "style": "body { padding: 2rem; }"
+      "style": "body { padding: 2rem; } .action-focus.focus { border: 5px solid orange; }"
     }
   }
 }
