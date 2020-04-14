@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/bahmutov/cypress-examples#readme",
   "devDependencies": {
-    "@cypress/fiddle": "1.7.0",
-    "cypress": "4.3.0",
+    "@cypress/fiddle": "1.11.0",
+    "cypress": "4.4.0",
     "husky": "4.2.5",
     "lint-staged": "10.1.3",
     "markdown-link-check": "3.8.1",

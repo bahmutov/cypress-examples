@@ -6,13 +6,13 @@ Examples of traversing DOM elements in Cypress, for a full reference of commands
 
 To get children of DOM elements, use the `.children()` command.
 
-<!-- fiddle children -->
+<!-- fiddle.only children -->
 
 ```html
 <ol class="traversal-breadcrumb breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Library</a></li>
-  <li class="active">Data</li>
+  <li class="breadcrumb-item"><a href="#">Home</a></li>
+  <li class="breadcrumb-item"><a href="#">Library</a></li>
+  <li class="breadcrumb-item active">Data</li>
 </ol>
 ```
 

@@ -61,6 +61,7 @@ cy.get('.action-disabled')
 
 To focus on a DOM element, use the `.focus()` command.
 
+<!-- skip until we can load custom style -->
 <!-- fiddle.skip focus -->
 
 ```html

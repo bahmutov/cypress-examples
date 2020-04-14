@@ -3,5 +3,13 @@
   "supportFile": false,
   "fixturesFolder": false,
   "integrationFolder": "docs",
-  "testFiles": "**/*.md"
+  "testFiles": "**/*.md",
+  "env": {
+    "cypress-fiddle": {
+      "stylesheets": [
+        "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      ],
+      "style": "body { padding: 2rem; }"
+    }
+  }
 }
