@@ -9,7 +9,7 @@ To query for the button, use the `cy.get()` command.
 <!-- fiddle get button -->
 
 ```html
-<div id="querying">
+<div id="querying-example">
   <div class="well">
     <button id="query-btn" class="query-btn btn btn-primary">Button</button>
   </div>
@@ -21,7 +21,7 @@ cy.get('#query-btn').should('contain', 'Button')
 
 cy.get('.query-btn').should('contain', 'Button')
 
-cy.get('#querying .well>button:first').should('contain', 'Button')
+cy.get('#querying-example .well>button:first').should('contain', 'Button')
 //              ↲
 // Use CSS selectors just like jQuery
 ```
@@ -73,7 +73,7 @@ We can find elements by their content using `cy.contains()`
 <!-- fiddle contains -->
 
 ```html
-<div id="querying">
+<div id="querying-app">
   <ul class="query-list">
     <li class="first">apples</li>
     <li class="second">oranges</li>
@@ -96,7 +96,9 @@ cy.get('.query-list').contains('apples').should('have.class', 'first')
 
 // passing a selector to contains will
 // yield the selector containing the text
-cy.get('#querying').contains('ul', 'oranges').should('have.class', 'query-list')
+cy.get('#querying-app')
+  .contains('ul', 'oranges')
+  .should('have.class', 'query-list')
 
 cy.get('.query-button').contains('Save Form').should('have.class', 'btn')
 ```
