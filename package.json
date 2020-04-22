@@ -1,5 +1,5 @@
 {
-  "name": "cypress-examples",
+  "name": "@bahmutov/cypress-examples",
   "version": "1.0.0",
   "description": "Cypress.io command examples",
   "private": false,
@@ -24,6 +24,9 @@
     "docs/**/*.js",
     "!docs/.vuepress"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": ["cypress-example"],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "ISC",

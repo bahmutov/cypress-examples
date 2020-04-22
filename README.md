@@ -1,4 +1,4 @@
-# cypress-examples [![ci status][ci image]][ci url] [![prettier status][prettier image]][prettier url] [![deployed status][deployed image]][deployed url]
+# @bahmutov/cypress-examples [![ci status][ci image]][ci url] [![prettier status][prettier image]][prettier url] [![deployed status][deployed image]][deployed url]
 
 > Static site with Cypress examples tested right from the Markdown sources
 
