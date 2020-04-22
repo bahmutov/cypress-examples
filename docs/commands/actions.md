@@ -140,7 +140,11 @@ To clear on a DOM element, use the `.clear()` command.
 <form>
   <div class="form-group">
     <label for="description">Describe:</label>
-    <input type="text" class="form-control action-clear" id="description" />
+    <input
+      type="text"
+      class="form-control action-clear"
+      id="description"
+    />
   </div>
 </form>
 ```
@@ -160,10 +164,18 @@ To submit a form, use the `cy.submit()` command.
 ```html
 <form class="action-form">
   <div class="form-group">
-    <label for="couponCode1" val="HALFOFF">Coupon Code</label>
-    <input type="text" class="form-control" id="couponCode1" />
+    <label for="couponCode1" val="HALFOFF"
+      >Coupon Code</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="couponCode1"
+    />
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">
+    Submit
+  </button>
 </form>
 ```
 
