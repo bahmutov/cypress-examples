@@ -77,7 +77,7 @@ To focus on a DOM element, use the `.focus()` command.
 </form>
 <script>
   // listen to focus to demonstrate logic on focus command
-  $('.action-focus').on('focus', (e) => {
+  $('.action-focus').on('focus', function (e) {
     $(e.currentTarget).addClass('focus')
     $(e.currentTarget).prev().css('color', 'orange')
   })
@@ -114,7 +114,7 @@ To blur on a DOM element, use the `.blur()` command.
 </form>
 <script>
   // listen to blur to demonstrate logic on blur command
-  $('.action-blur').on('blur', (e) => {
+  $('.action-blur').on('blur', function (e) {
     $(e.currentTarget).addClass('error')
     $(e.currentTarget).prev().css('color', 'red')
   })

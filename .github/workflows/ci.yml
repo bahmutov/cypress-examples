@@ -25,6 +25,22 @@ jobs:
       - name: Build site 🏗
         run: npm run docs:build
 
+      - name: Copy built site 🚛
+        run: npm run cp:dist
+
+      - name: Export Markdown specs 🖨
+        run: |
+          npx export-fiddle docs/commands/actions.md --before http://localhost:5000/cypress-examples/commands/actions
+          npx export-fiddle docs/commands/connectors.md --before http://localhost:5000/cypress-examples/commands/connectors
+          # npx export-fiddle docs/commands/querying.md --before http://localhost:5000/cypress-examples/commands/querying
+          npx export-fiddle docs/commands/traversal.md --before http://localhost:5000/cypress-examples/commands/traversal
+
+      - name: Test built site 🧪
+        uses: cypress-io/github-action@v1
+        start: npm run serve:public
+        with:
+          config: video=false,baseUrl=http://localhost:5000/cypress-examples,testFiles='**/*.js'
+
       # https://github.com/marketplace/actions/github-pages-action
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
