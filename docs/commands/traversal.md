@@ -17,7 +17,9 @@ To get children of DOM elements, use the `.children()` command.
 ```
 
 ```js
-cy.get('.traversal-breadcrumb').children('.active').should('contain', 'Data')
+cy.get('.traversal-breadcrumb')
+  .children('.active')
+  .should('contain', 'Data')
 ```
 
 <!-- fiddle-end -->
@@ -42,7 +44,9 @@ To get the closest ancestor DOM element, use the `.closest()` command.
 ```
 
 ```js
-cy.get('.traversal-badge').closest('ul').should('have.class', 'list-group')
+cy.get('.traversal-badge')
+  .closest('ul')
+  .should('have.class', 'list-group')
 ```
 
 <!-- fiddle-end -->
@@ -64,7 +68,9 @@ To get a DOM element at a specific index, use the `.eq()` command.
 ```
 
 ```js
-cy.get('.traversal-list>li').eq(1).should('contain', 'siamese')
+cy.get('.traversal-list>li')
+  .eq(1)
+  .should('contain', 'siamese')
 ```
 
 <!-- fiddle-end -->
@@ -77,14 +83,22 @@ To get DOM elements that match a specific selector, use the `.filter()` command.
 
 ```html
 <ul class="traversal-nav nav nav-tabs">
-  <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-  <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
-  <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="#">About</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Services</a>
+  </li>
 </ul>
 ```
 
 ```js
-cy.get('.traversal-nav>li').filter('.active').should('contain', 'About')
+cy.get('.traversal-nav>li')
+  .filter('.active')
+  .should('contain', 'About')
 ```
 
 <!-- fiddle-end -->
@@ -102,11 +116,21 @@ To get descendant DOM elements of the selector, use the `.find()` command.
       <span>&laquo;</span>
     </a>
   </li>
-  <li class="page-item"><a class="page-link" href="#">1</a></li>
-  <li class="page-item"><a class="page-link" href="#">2</a></li>
-  <li class="page-item"><a class="page-link" href="#">3</a></li>
-  <li class="page-item"><a class="page-link" href="#">4</a></li>
-  <li class="page-item"><a class="page-link" href="#">5</a></li>
+  <li class="page-item">
+    <a class="page-link" href="#">1</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="#">2</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="#">3</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="#">4</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="#">5</a>
+  </li>
   <li class="page-item">
     <a class="page-link" href="#">
       <span>&raquo;</span>
@@ -170,14 +194,26 @@ To get the last DOM element within elements, use the `.last()` command.
 ```html
 <div class="traversal-buttons">
   <a class="btn btn-default" href="#" role="button">Link</a>
-  <button class="btn btn-default" type="submit">Button</button>
-  <input class="btn btn-default" type="button" value="Input" />
-  <input class="btn btn-default" type="submit" value="Submit" />
+  <button class="btn btn-default" type="submit">
+    Button
+  </button>
+  <input
+    class="btn btn-default"
+    type="button"
+    value="Input"
+  />
+  <input
+    class="btn btn-default"
+    type="submit"
+    value="Submit"
+  />
 </div>
 ```
 
 ```js
-cy.get('.traversal-buttons .btn').last().should('contain', 'Submit')
+cy.get('.traversal-buttons .btn')
+  .last()
+  .should('contain', 'Submit')
 ```
 
 <!-- fiddle-end -->

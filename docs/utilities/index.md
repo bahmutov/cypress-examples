@@ -11,11 +11,16 @@ To call a lodash method, use the `Cypress._.method()` command.
 <!-- fiddle lodash -->
 
 ```js
-cy.request('https://jsonplaceholder.cypress.io/users').then((response) => {
-  let ids = Cypress._.chain(response.body).map('id').take(3).value()
+cy.request('https://jsonplaceholder.cypress.io/users').then(
+  (response) => {
+    let ids = Cypress._.chain(response.body)
+      .map('id')
+      .take(3)
+      .value()
 
-  expect(ids).to.deep.eq([1, 2, 3])
-})
+    expect(ids).to.deep.eq([1, 2, 3])
+  },
+)
 ```
 
 <!-- fiddle-end -->
@@ -90,7 +95,9 @@ cy.get('.utility-blob').then(($div) =>
     // append the image
     $div.append(img)
 
-    cy.get('.utility-blob img').click().should('have.attr', 'src', dataUrl)
+    cy.get('.utility-blob img')
+      .click()
+      .should('have.attr', 'src', dataUrl)
   }),
 )
 ```
@@ -104,28 +111,44 @@ To test out glob patterns against strings, use the `Cypress.minimatch` library.
 <!-- fiddle minimatch -->
 
 ```js
-let matching = Cypress.minimatch('/users/1/comments', '/users/*/comments', {
-  matchBase: true,
-})
+let matching = Cypress.minimatch(
+  '/users/1/comments',
+  '/users/*/comments',
+  {
+    matchBase: true,
+  },
+)
 
 expect(matching, 'matching wildcard').to.be.true
 
-matching = Cypress.minimatch('/users/1/comments/2', '/users/*/comments', {
-  matchBase: true,
-})
+matching = Cypress.minimatch(
+  '/users/1/comments/2',
+  '/users/*/comments',
+  {
+    matchBase: true,
+  },
+)
 expect(matching, 'comments').to.be.false
 
 // ** matches against all downstream path segments
-matching = Cypress.minimatch('/foo/bar/baz/123/quux?a=b&c=2', '/foo/**', {
-  matchBase: true,
-})
+matching = Cypress.minimatch(
+  '/foo/bar/baz/123/quux?a=b&c=2',
+  '/foo/**',
+  {
+    matchBase: true,
+  },
+)
 expect(matching, 'comments').to.be.true
 
 // whereas * matches only the next path segment
 
-matching = Cypress.minimatch('/foo/bar/baz/123/quux?a=b&c=2', '/foo/*', {
-  matchBase: false,
-})
+matching = Cypress.minimatch(
+  '/foo/bar/baz/123/quux?a=b&c=2',
+  '/foo/*',
+  {
+    matchBase: false,
+  },
+)
 expect(matching, 'comments').to.be.false
 ```
 
@@ -145,11 +168,15 @@ To parse or format a date using a moment method, use the `Cypress.moment()` comm
 ```
 
 ```js
-const time = Cypress.moment('2014-04-25T19:38:53.196Z').utc().format('h:mm A')
+const time = Cypress.moment('2014-04-25T19:38:53.196Z')
+  .utc()
+  .format('h:mm A')
 
 expect(time).to.be.a('string')
 
-cy.get('.utility-moment').contains('3:38 PM').should('have.class', 'badge')
+cy.get('.utility-moment')
+  .contains('3:38 PM')
+  .should('have.class', 'badge')
 
 // the time in the element should be between 3pm and 5pm
 const start = Cypress.moment('3:00 PM', 'LT')
@@ -164,7 +191,9 @@ cy.get('.utility-moment .badge').should(($el) => {
 
   expect(
     m.isBetween(start, end),
-    `${m.format(f)} should be between ${start.format(f)} and ${end.format(f)}`,
+    `${m.format(f)} should be between ${start.format(
+      f,
+    )} and ${end.format(f)}`,
   ).to.be.true
 })
 ```
