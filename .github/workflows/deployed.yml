@@ -27,12 +27,7 @@ jobs:
           runTests: false
 
       - name: Export Markdown specs 🖨
-        run: |
-          npx export-fiddle docs/commands/actions.md --before $CYPRESS_baseUrl/commands/actions
-          npx export-fiddle docs/commands/connectors.md --before $CYPRESS_baseUrl/commands/connectors
-          npx export-fiddle docs/commands/querying.md --before $CYPRESS_baseUrl/commands/querying
-          npx export-fiddle docs/commands/traversal.md --before $CYPRESS_baseUrl/commands/traversal
-          ls -laR docs/**/*.js
+        run: ./md-to-js.sh $CYPRESS_baseUrl
 
       - name: Test deployed site 🧪
         uses: cypress-io/github-action@v1
