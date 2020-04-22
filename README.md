@@ -9,6 +9,7 @@ Live site [glebbahmutov.com/cypress-examples/](https://glebbahmutov.com/cypress-
 - single source of truth for tests and HTML pages. No more copy / pasting
   - Cypress runs tests using Markdown source files via [cypress-fiddle](https://github.com/cypress-io/cypress-fiddle)
 - great development experience with live reload and optimized static build thanks to [Vuepress][vuepress] and Prettier formatting
+- JavaScript specs are extracted and published as NPM package `@bahmutov/cypress-examples` after testing against the deployed site
 - excellent text and code comment search thanks to Algolia
   - [Scrape Static Site with Algolia](https://glebbahmutov.com/blog/scrape-static-site-with-algolia/) blog post
   - scrape happens after deploying the docs to GitHub Pages in [.github/workflows/deployed.yml](.github/workflows/deployed.yml) workflow
