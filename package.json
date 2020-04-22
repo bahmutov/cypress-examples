@@ -1,8 +1,8 @@
 {
   "name": "cypress-examples",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Cypress.io command examples",
+  "private": false,
   "scripts": {
     "test": "cypress run",
     "cy:open": "cypress open",
@@ -20,8 +20,12 @@
     "type": "git",
     "url": "git+https://github.com/bahmutov/cypress-examples.git"
   },
-  "keywords": [],
-  "author": "",
+  "files": [
+    "docs/**/*.js",
+    "!docs/.vuepress"
+  ],
+  "keywords": ["cypress-example"],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bahmutov/cypress-examples/issues"
