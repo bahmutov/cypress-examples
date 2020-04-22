@@ -61,16 +61,6 @@ cy.get('.action-disabled')
 
 To focus on a DOM element, use the `.focus()` command.
 
-<script>
-  // scripts copied from
-  // https://github.com/cypress-io/cypress-example-kitchensink/blob/master/app/assets/js/scripts.js
-  // listen to focus to demonstrate logic on focus command
-  $('.action-focus').on('focus', (e) => {
-    $(e.currentTarget).addClass('focus')
-    $(e.currentTarget).prev().css('color', 'orange')
-  })
-</script>
-
 <!-- fiddle focus -->
 
 ```html
@@ -107,14 +97,6 @@ cy.get('.action-focus')
 ## [.blur()](https://on.cypress.io/blur)
 
 To blur on a DOM element, use the `.blur()` command.
-
-<script>
-  // listen to blur to demonstrate logic on blur command
-  $('.action-blur').on('blur', (e) => {
-    $(e.currentTarget).addClass('error')
-    $(e.currentTarget).prev().css('color', 'red')
-  })
-</script>
 
 <!-- fiddle blur -->
 
