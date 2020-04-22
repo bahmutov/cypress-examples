@@ -137,7 +137,7 @@ cy.get('.query-form').within(() => {
 
 We can find the root DOM element `cy.root()`
 
-<!-- fiddle root example -->
+<!-- fiddle.skip root example -->
 
 ```html
 <ul class="query-ul">
@@ -166,39 +166,43 @@ Prefer dedicated `data-cy` or `data-test` attributes to CSS class names and elem
 <!-- fiddle Selecting Elements -->
 
 ```html
-<button
-  id="main"
-  class="btn btn-large"
-  name="submission"
-  role="button"
-  data-cy="submit"
->
-  Submit
-</button>
+<div id="best-practices">
+  <button
+    id="main"
+    class="btn btn-large"
+    name="submission"
+    role="button"
+    data-cy="submit"
+  >
+    Submit
+  </button>
+</div>
 ```
 
 ```js
-// Worst - too generic, no context
-cy.get('button').click()
+cy.get('#best-practices').within(() => {
+  // Worst - too generic, no context
+  cy.get('button').click()
 
-// Bad. Coupled to styling. Highly subject to change.
-cy.get('.btn.btn-large').click()
+  // Bad. Coupled to styling. Highly subject to change.
+  cy.get('.btn.btn-large').click()
 
-// Average. Coupled to the `name` attribute which has HTML semantics.
-cy.get('[name=submission]').click()
+  // Average. Coupled to the `name` attribute which has HTML semantics.
+  cy.get('[name=submission]').click()
 
-// Better. But still coupled to styling or JS event listeners.
-cy.get('#main').click()
+  // Better. But still coupled to styling or JS event listeners.
+  cy.get('#main').click()
 
-// Slightly better. Uses an ID but also ensures the element
-// has an ARIA role attribute
-cy.get('#main[role=button]').click()
+  // Slightly better. Uses an ID but also ensures the element
+  // has an ARIA role attribute
+  cy.get('#main[role=button]').click()
 
-// Much better. But still coupled to text content that may change.
-cy.contains('Submit').click()
+  // Much better. But still coupled to text content that may change.
+  cy.contains('Submit').click()
 
-// Best. Insulated from all changes.
-cy.get('[data-cy=submit]').click()
+  // Best. Insulated from all changes.
+  cy.get('[data-cy=submit]').click()
+})
 ```
 
 <!-- fiddle-end -->
