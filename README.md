@@ -19,8 +19,9 @@ Live site [glebbahmutov.com/cypress-examples/](https://glebbahmutov.com/cypress-
 
 ## Still to do
 
-- generate output spec files to be published to NPM as [cypress-example-kitchensink](https://github.com/cypress-io/cypress-example-kitchensink#readme) [#3](https://github.com/bahmutov/cypress-examples/issues/3) is blocked by [#89](https://github.com/cypress-io/cypress-fiddle/issues/89)
+- ✅ generate output spec files to be published to NPM as [cypress-example-kitchensink](https://github.com/cypress-io/cypress-example-kitchensink#readme) [#3](https://github.com/bahmutov/cypress-examples/issues/3) is blocked by [#89](https://github.com/cypress-io/cypress-fiddle/issues/89)
 - ✅ need to figure out better styles for live HTML [#4](https://github.com/bahmutov/cypress-examples/issues/4)
+- Navigation spec only makes sense as exported JS test, not as a fiddle [#97](https://github.com/cypress-io/cypress-fiddle/issues/97)
 - deploy to GitHub pages under a version
   - need to avoid breaking existing published versions
 
