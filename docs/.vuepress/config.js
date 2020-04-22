@@ -48,6 +48,10 @@ module.exports = {
           },
           { text: 'Actions', link: '/commands/actions/' },
           {
+            text: 'Navigation',
+            link: '/commands/navigation/',
+          },
+          {
             text: 'Connectors',
             link: '/commands/connectors/',
           },
