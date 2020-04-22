@@ -37,8 +37,8 @@ jobs:
 
       - name: Test built site 🧪
         uses: cypress-io/github-action@v1
-        start: npm run serve:public
         with:
+          start: npm run serve:public
           config: video=false,baseUrl=http://localhost:5000/cypress-examples,testFiles='**/*.js'
 
       # https://github.com/marketplace/actions/github-pages-action
