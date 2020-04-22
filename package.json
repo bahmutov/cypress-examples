@@ -1,6 +1,6 @@
 {
   "name": "@bahmutov/cypress-examples",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Cypress.io command examples",
   "private": false,
   "scripts": {
@@ -14,11 +14,12 @@
     "mk:public": "mkdir -p public",
     "precp:dist": "npm run rm:public && npm run mk:public",
     "cp:dist": "cp -r docs/.vuepress/dist public/cypress-examples",
-    "serve:public": "serve public"
+    "serve:public": "serve public",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bahmutov/cypress-examples.git"
+    "url": "https://github.com/bahmutov/cypress-examples.git"
   },
   "files": [
     "docs/**/*.js",
@@ -27,7 +28,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": ["cypress-example"],
+  "keywords": [
+    "cypress-example"
+  ],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "ISC",
   "bugs": {
@@ -44,7 +47,8 @@
     "serve": "11.3.0",
     "start-server-and-test": "1.10.11",
     "vuepress": "1.4.0",
-    "vuepress-plugin-clean-urls": "1.1.1"
+    "vuepress-plugin-clean-urls": "1.1.1",
+    "semantic-release": "^17.0.7"
   },
   "husky": {
     "hooks": {
