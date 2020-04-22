@@ -34,12 +34,12 @@ jobs:
           npx export-fiddle docs/commands/traversal.md --before $CYPRESS_baseUrl/commands/traversal
           ls -laR docs/**/*.js
 
-        - name: Test deployed site 🧪
-          uses: cypress-io/github-action@v1
-          with:
-            # we have already installed all dependencies above
-            install: false
-            config-file: cypress-dist.json
+      - name: Test deployed site 🧪
+        uses: cypress-io/github-action@v1
+        with:
+          # we have already installed all dependencies above
+          install: false
+          config-file: cypress-dist.json
 
       # when scraping the site, inject secrets as environment variables
       # then pass their values into the Docker container using "-e" syntax
