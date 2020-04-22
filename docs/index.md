@@ -29,6 +29,11 @@ Commands drive your tests in the browser like a real user would. They let you pe
   - [focus](./commands/actions.md#focus)
 - [Connectors](./commands/connectors.md)
   - [then](./commands/connectors.md#then)
+- [Spies, Stubs & Clocks](./commands/spies_stubs_clocks.md)
+  - [spy](./commands/spies_stubs_clocks.md#cy-spy)
+  - [stub](./commands/spies_stubs_clocks.md#cy-stub)
+  - [clock](./commands/spies_stubs_clocks.md#cy-clock)
+  - [tick](./commands/spies_stubs_clocks.md#cy-tick)
 
 ## Utilities
 
