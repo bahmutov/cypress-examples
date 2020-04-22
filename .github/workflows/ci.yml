@@ -34,13 +34,14 @@ jobs:
           npx export-fiddle docs/commands/connectors.md --before http://localhost:5000/cypress-examples/commands/connectors
           npx export-fiddle docs/commands/querying.md --before http://localhost:5000/cypress-examples/commands/querying
           npx export-fiddle docs/commands/traversal.md --before http://localhost:5000/cypress-examples/commands/traversal
-          ls -laR docs
+          ls -laR docs/**/*.js
 
       - name: Test built site 🧪
         uses: cypress-io/github-action@v1
         with:
           start: npm run serve:public
-          config: video=false,baseUrl=http://localhost:5000/cypress-examples,testFiles='**/*.js'
+          config-file: cypress-dist.json
+          config: baseUrl=http://localhost:5000/cypress-examples
 
       # https://github.com/marketplace/actions/github-pages-action
       - name: Deploy 🚀

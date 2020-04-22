@@ -73,7 +73,7 @@ We can find elements by their content using `cy.contains()`
 <!-- fiddle contains -->
 
 ```html
-<div id="querying-app">
+<div id="querying">
   <ul class="query-list">
     <li class="first">apples</li>
     <li class="second">oranges</li>
@@ -96,7 +96,7 @@ cy.get('.query-list').contains('apples').should('have.class', 'first')
 
 // passing a selector to contains will
 // yield the selector containing the text
-cy.get('#querying-app')
+cy.get('div#querying')
   .contains('ul', 'oranges')
   .should('have.class', 'query-list')
 
