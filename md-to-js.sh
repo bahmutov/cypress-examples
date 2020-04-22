@@ -16,7 +16,7 @@ npx export-fiddle docs/commands/traversal.md --before $BASE_URL/commands/travers
 npx export-fiddle docs/commands/actions.md --before $BASE_URL/commands/actions
 npx export-fiddle docs/commands/navigation.md --before $BASE_URL
 npx export-fiddle docs/commands/connectors.md --before $BASE_URL/commands/connectors
-npx export-fiddle docs/commands/spies_stubs_clocks.md --before $BASE_URL/commands/traversal
+npx export-fiddle docs/commands/spies_stubs_clocks.md --before $BASE_URL/commands/spies_stubs_clocks
 npx export-fiddle docs/cypress-api/index.md --before $BASE_URL/cypress-api
 npx export-fiddle docs/utilities/index.md --before $BASE_URL/utilities
 
