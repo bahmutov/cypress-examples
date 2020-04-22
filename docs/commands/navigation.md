@@ -14,8 +14,8 @@ https://github.com/cypress-io/cypress-fiddle/issues/97
 <!-- fiddle.export cy.go -->
 
 ```js
-cy.get('.navbar-nav').contains('Commands').click()
-cy.get('.dropdown-menu').contains('Navigation').click()
+cy.get('.nav-item').contains('Commands').click()
+cy.get('.dropdown-item').contains('Navigation').click()
 
 cy.location('pathname').should('include', 'navigation')
 
@@ -43,8 +43,8 @@ To reload the page, use the `cy.reload()` command.
 <!-- fiddle.export cy.reload -->
 
 ```js
-cy.get('.navbar-nav').contains('Commands').click()
-cy.get('.dropdown-menu').contains('Navigation').click()
+cy.get('.nav-item').contains('Commands').click()
+cy.get('.dropdown-item').contains('Navigation').click()
 
 cy.reload()
 
@@ -58,9 +58,11 @@ cy.reload(true)
 
 To visit a remote page, use the `cy.visit()` command.
 
+<!-- fiddle.export cy.visit -->
+
 ```js
-cy.get('.navbar-nav').contains('Commands').click()
-cy.get('.dropdown-menu').contains('Navigation').click()
+cy.get('.nav-item').contains('Commands').click()
+cy.get('.dropdown-item').contains('Navigation').click()
 
 // Visit any sub-domain of your current domain
 // Pass options to the visit
@@ -76,3 +78,5 @@ cy.visit('/commands/navigation', {
   },
 })
 ```
+
+<!-- fiddle-end -->
