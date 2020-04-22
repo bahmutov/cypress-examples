@@ -13,10 +13,14 @@ Live site [glebbahmutov.com/cypress-examples/](https://glebbahmutov.com/cypress-
   - [Scrape Static Site with Algolia](https://glebbahmutov.com/blog/scrape-static-site-with-algolia/) blog post
   - scrape happens after deploying the docs to GitHub Pages in [.github/workflows/deployed.yml](.github/workflows/deployed.yml) workflow
 
+## Notes
+
+- use "function" syntax in `<script>` tags that need to be live, otherwise Markdown escapes `=>` arrows?!
+
 ## Still to do
 
 - generate output spec files to be published to NPM as [cypress-example-kitchensink](https://github.com/cypress-io/cypress-example-kitchensink#readme) [#3](https://github.com/bahmutov/cypress-examples/issues/3) is blocked by [#89](https://github.com/cypress-io/cypress-fiddle/issues/89)
-- need to figure out better styles for live HTML [#4](https://github.com/bahmutov/cypress-examples/issues/4)
+- ✅ need to figure out better styles for live HTML [#4](https://github.com/bahmutov/cypress-examples/issues/4)
 - deploy to GitHub pages under a version
   - need to avoid breaking existing published versions
 

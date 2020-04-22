@@ -46,7 +46,7 @@ To call a jQuery method, use the `Cypress.$` command.
 <script>
   document
     .querySelector('li.list-group-item')
-    .addEventListener('click', (e) => {
+    .addEventListener('click', function (e) {
       e.target.classList.add('active')
     })
 </script>
