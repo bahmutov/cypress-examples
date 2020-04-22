@@ -1,5 +1,3 @@
-const { removePlugin } = require('@vuepress/markdown')
-
 let _highlight
 
 module.exports = {
@@ -55,7 +53,7 @@ module.exports = {
     },
   },
   markdown: {
-    extendMarkdown: (md) => {
+    extendMarkdown(md) {
       if (!_highlight) {
         _highlight = md.options.highlight
       }
@@ -70,6 +68,7 @@ module.exports = {
         }
 
         const highlightedHtml = _highlight(str, 'html')
+
         return (
           highlightedHtml +
           `
