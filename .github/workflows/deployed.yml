@@ -29,7 +29,10 @@ jobs:
       - name: Export Markdown specs 🖨
         run: ./md-to-js.sh $CYPRESS_baseUrl
 
-      - name: Test deployed site 🧪
+      - name: Format extracted specs 💅
+        run: npm run format:extracted
+
+      - name: Test deployed site 🧪💨
         uses: cypress-io/github-action@v1
         with:
           # we have already installed all dependencies above
