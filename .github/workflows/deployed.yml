@@ -33,12 +33,22 @@ jobs:
       - name: Format extracted specs 💅
         run: npm run format:extracted
 
+      # we "simulate" Run All Specs button in Test Runner GUI
+      # by concatenating all extracted specs into a single one
+      # to be included in the test run.
+      # Note: delete this file before publishing to NPM
+      - name: Create Run All Spec 🏗
+        run: cat docs/**/*.js > docs/run-all-specs.js
+
       - name: Test deployed site 🧪💨
         uses: cypress-io/github-action@v1
         with:
           # we have already installed all dependencies above
           install: false
           config-file: cypress-dist.json
+
+      - name: Delete run all specs file 🗑
+        run: rm docs/run-all-specs.js
 
       - name: Semantic Release 🚀
         uses: cycjimmy/semantic-release-action@v2
