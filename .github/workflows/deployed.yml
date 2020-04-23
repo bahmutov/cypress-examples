@@ -28,7 +28,7 @@ jobs:
         run: ./md-to-js.sh https://glebbahmutov.com/cypress-examples
 
       - name: Catch stray .only tests 🚦
-        run: npx stop-only --folder docs --skip docs/.vuepress
+        run: npm run stop-only
 
       - name: Format extracted specs 💅
         run: npm run format:extracted
