@@ -17,7 +17,10 @@ const spy = cy.spy(obj, 'foo').as('anyArgs')
 
 obj.foo()
 
+// assert against the spy directly
 expect(spy).to.be.called
+// or get the spy via its reference
+cy.get('@anyArgs').should('have.been.called')
 ```
 
 <!-- fiddle-end -->
@@ -159,7 +162,10 @@ const stub = cy.stub(obj, 'foo').as('foo')
 
 obj.foo('foo', 'bar')
 
+// access the stub directly
 expect(stub).to.be.called
+// access the stub using alias
+cy.get('@foo').should('have.been.called')
 ```
 
 <!-- fiddle-end -->
@@ -218,6 +224,45 @@ expect(greeter.greet).to.have.been.calledTwice
 // non-matched calls goes the actual method
 // @ts-ignore
 expect(greeter.greet()).to.equal('Hello, undefined!')
+```
+
+<!-- fiddle-end -->
+
+If you want to stub a method deep inside the application's code, access it using [App Actions]() by passing the object reference via `window` object.
+
+<!-- fiddle.export cy.stub() for method inside application -->
+
+```html
+<button id="alerter">Alert me</button>
+<script>
+  const actions = {
+    alertTheUser() {
+      alert('📣 you clicked the button')
+    },
+  }
+  document
+    .getElementById('alerter')
+    .addEventListener('click', actions.alertTheUser)
+
+  // if we are running inside Cypress test
+  // expose the object with methods to be stubbed
+  if (window.Cypress) {
+    console.log('running inside Cypress')
+    window.actions = actions
+  } else {
+    console.log('not running inside Cypress')
+  }
+</script>
+```
+
+```js
+cy.window()
+  .its('actions')
+  .then((actions) => {
+    cy.stub(actions, 'alertTheUser').as('alerted')
+  })
+cy.get('#alerter').click()
+cy.get('@alerted').should('have.been.called')
 ```
 
 <!-- fiddle-end -->
