@@ -1,0 +1,78 @@
+# Waiting
+
+Examples of waiting for an amount of time or resource to resolve in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io/api)
+
+## [cy.wait()](https://on.cypress.io/wait)
+
+To wait for a specific amount of time or resource to resolve, use the `cy.wait()` command.
+
+<!-- fiddle cy.wait() / wait for a specific amount of time-->
+
+```html
+<form>
+  <div class="form-group">
+    <input type="text" class="form-control wait-input1" />
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control wait-input2" />
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control wait-input3" />
+  </div>
+</form>
+```
+
+```js
+cy.get('.wait-input1').type('Wait 1000ms after typing')
+cy.wait(1000)
+cy.get('.wait-input2').type('Wait 1000ms after typing')
+cy.wait(1000)
+cy.get('.wait-input3').type('Wait 1000ms after typing')
+cy.wait(1000)
+```
+
+<!-- fiddle-end -->
+
+You can wait for a specific route
+
+<!-- fiddle cy.wait() / waiting for specific route -->
+
+```html
+<button class="network-btn btn btn-primary">Get Comment</button>
+<div class="network-comment"></div>
+<script>
+  // we fetch all data from this REST json backend
+  const root = 'https://jsonplaceholder.cypress.io'
+
+  function getComment() {
+    $.ajax({
+      url: `${root}/comments/1`,
+      method: 'GET',
+    }).then(function (data) {
+      $('.network-comment').text(data.body)
+    })
+  }
+  $('.network-btn').on('click', function (e) {
+    e.preventDefault()
+    getComment(e)
+  })
+</script>
+```
+
+```js
+cy.server()
+
+// Listen to GET to comments/1
+cy.route('GET', 'comments/*').as('getComment')
+
+// we have code that gets a comment when
+// the button is clicked in scripts.js
+cy.get('.network-btn').click()
+
+// wait for GET comments/1
+cy.wait('@getComment').its('status').should('eq', 200)
+```
+
+<!-- fiddle-end -->
+
+**Tip:** be careful of adding unnecessary wait times, see our [Best Practices: Unnecessary Waiting](https://on.cypress.io/best-practices#Unnecessary-Waiting) guide.

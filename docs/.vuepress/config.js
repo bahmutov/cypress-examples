@@ -56,6 +56,10 @@ module.exports = {
             link: '/commands/connectors/',
           },
           {
+            text: 'Waiting',
+            link: '/commands/waiting/',
+          },
+          {
             text: 'Spies, Stubs & Clocks',
             link: '/commands/spies_stubs_clocks/',
           },
