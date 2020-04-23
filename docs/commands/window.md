@@ -1,3 +1,7 @@
+---
+title: Window APIs
+---
+
 # Window
 
 Examples of referencing window and other properties on window in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io/api)
@@ -34,12 +38,12 @@ To get the title, use the `cy.title()` command.
 
 ```html
 <script>
-  document.title = 'Kitchen Sink'
+  document.title = 'Window APIs'
 </script>
 ```
 
 ```js
-cy.title().should('include', 'Kitchen Sink')
+cy.title().should('include', 'Window APIs')
 ```
 
 <!-- fiddle-end -->
