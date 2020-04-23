@@ -18,6 +18,31 @@ Live site [glebbahmutov.com/cypress-examples/](https://glebbahmutov.com/cypress-
 
 - use "function" syntax in `<script>` tags that need to be live, otherwise Markdown escapes `=>` arrows?!
 
+## Try published specs
+
+You can run the exported spec files.
+
+- Start a new project or use an existing project, and add this module as a dev dependency
+
+```shell
+$ npm i -D @bahmutov/cypress-examples
+```
+
+- Point integration tests at this package from `cypress.json` file, for example
+
+```json
+{
+  "fixturesFolder": false,
+  "supportFile": false,
+  "pluginsFile": false,
+  "integrationFolder": "node_modules/@bahmutov/cypress-examples/docs"
+}
+```
+
+- open Cypress with `npx cypress open`
+
+![Spec running](images/specs.png)
+
 ## Still to do
 
 - deploy to GitHub pages under a version
