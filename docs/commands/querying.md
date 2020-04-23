@@ -178,7 +178,7 @@ cy.get('.query-form').within(() => {
 
 We can find the root DOM element `cy.root()`
 
-<!-- fiddle.skip root example -->
+<!-- fiddle.export root example -->
 
 ```html
 <ul class="query-ul">
@@ -190,7 +190,7 @@ We can find the root DOM element `cy.root()`
 
 ```js
 // By default, root is the document
-cy.root().should('match', 'div#live')
+cy.root().should('match', 'html')
 
 cy.get('.query-ul').within(() => {
   // In this within, the root is now the ul DOM element

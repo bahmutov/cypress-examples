@@ -96,7 +96,7 @@ To get DOM elements that match a specific selector, use the `.filter()` command.
 ```
 
 ```js
-cy.get('.traversal-nav>li')
+cy.get('.traversal-nav > li a')
   .filter('.active')
   .should('contain', 'About')
 ```
