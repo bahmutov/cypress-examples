@@ -61,20 +61,31 @@ To visit a remote page, use the `cy.visit()` command.
 <!-- fiddle.export cy.visit -->
 
 ```js
-cy.get('.nav-item').contains('Commands').click()
-cy.get('.dropdown-item').contains('Navigation').click()
+// trick: dynamically set base url in this test only
+Cypress.config(
+  'baseUrl',
+  window.location.origin + '/cypress-examples',
+)
 
-// Visit any sub-domain of your current domain
+// Visit any sub-domain of your current domain,
+// if you set baseUrl option
+// https://on.cypress.io/best-practices#Setting-a-global-baseUrl
+
 // Pass options to the visit
 cy.visit('/commands/navigation', {
   timeout: 50000, // increase total time for the visit to resolve
   onBeforeLoad: function (contentWindow) {
     // contentWindow is the remote page's window object
-    expect(typeof contentWindow === 'object').to.be.true
+    expect(
+      typeof contentWindow,
+      'onBeforeLoad window reference',
+    ).to.equal('object')
   },
   onLoad: function (contentWindow) {
     // contentWindow is the remote page's window object
-    expect(typeof contentWindow === 'object').to.be.true
+    expect(typeof contentWindow, 'onLoad window reference').to.equal(
+      'object',
+    )
   },
 })
 ```

@@ -6,13 +6,13 @@ on:
     branches:
       - master
 jobs:
-  scraped-site:
+  test-publish-scrape:
     if: github.event.context == 'github/pages' && github.event.state == 'success'
     runs-on: ubuntu-latest
     env:
       CYPRESS_baseUrl: https://glebbahmutov.com/cypress-examples
     steps:
-      - run: echo "gh-pages 📑 built successfully ✅"
+      - run: echo "gh-pages 📑 deployed successfully ✅"
 
       # we need our scraping config, thus check out code
       - name: Checkout 🛎️
