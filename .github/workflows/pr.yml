@@ -22,3 +22,24 @@ jobs:
 
       - name: Build site 🏗
         run: npm run docs:build
+
+      - name: Copy built site 🚛
+        run: npm run cp:dist
+
+      - name: Export Markdown specs 🖨
+        run: ./md-to-js.sh http://localhost:5000/cypress-examples
+
+      - name: Catch stray .only tests 🚦
+        run: npm run stop-only
+
+      # we "simulate" Run All Specs button in Test Runner GUI
+      # by concatenating all extracted specs into a single one
+      # to be included in the test run
+      - name: Create Run All Spec 🏗
+        run: cat docs/**/*.js > docs/run-all-specs.js
+
+      - name: Test built site 🧪
+        uses: cypress-io/github-action@v1
+        with:
+          start: npm run serve:public
+          config-file: cypress-dist.json
