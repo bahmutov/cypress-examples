@@ -29,6 +29,9 @@ jobs:
       - name: Export Markdown specs 🖨
         run: ./md-to-js.sh $CYPRESS_baseUrl
 
+      - name: Catch stray .only tests 🚦
+        run: npx stop-only --folder docs --skip docs/.vuepress
+
       - name: Format extracted specs 💅
         run: npm run format:extracted
 
