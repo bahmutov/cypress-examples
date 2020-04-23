@@ -242,7 +242,14 @@ If you want to stub a method deep inside the application's code, access it using
   }
   document
     .getElementById('alerter')
-    .addEventListener('click', actions.alertTheUser)
+    // 🛑 it is important to NOT pass the method but call the method on click
+    // THIS WILL NOT WORK
+    // .addEventListener('click', actions.alertTheUser)
+    //
+    // ✅ This will work.
+    // If the "alertsTheUser" method is replaced in the "actions" object
+    // then the stub is called during test
+    .addEventListener('click', () => actions.alertTheUser())
 
   // if we are running inside Cypress test
   // expose the object with methods to be stubbed from tests
