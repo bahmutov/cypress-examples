@@ -50,6 +50,14 @@ jobs:
       - name: Delete run all specs file 🗑
         run: rm docs/run-all-specs.js
 
+      # by including "cypress.json" with bare settings
+      # users who install this package from NPM can run the specs
+      # using
+      #   npm i -D @bahmutov/cypress-examples
+      #   npx cypress open --project node_modules/\@bahmutov/cypress-examples
+      - name: Include cypress-npm.json 🏗
+        run: cp cypress-npm.json cypress.json
+
       - name: Semantic Release 🚀
         uses: cycjimmy/semantic-release-action@v2
         env:

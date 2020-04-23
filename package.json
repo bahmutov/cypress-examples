@@ -25,7 +25,8 @@
   },
   "files": [
     "docs/**/*.js",
-    "!docs/.vuepress"
+    "!docs/.vuepress",
+    "cypress.json"
   ],
   "publishConfig": {
     "access": "public"

@@ -28,18 +28,11 @@ You can run the exported spec files.
 $ npm i -D @bahmutov/cypress-examples
 ```
 
-- Point integration tests at this package from `cypress.json` file, for example
+- Open or run Cypress and point at the folder inside `node_modules`
 
-```json
-{
-  "fixturesFolder": false,
-  "supportFile": false,
-  "pluginsFile": false,
-  "integrationFolder": "node_modules/@bahmutov/cypress-examples/docs"
-}
+```shell
+$ npx cypress open --project node_modules/\@bahmutov/cypress-examples/
 ```
-
-- open Cypress with `npx cypress open`
 
 ![Spec running](images/specs.png)
 
