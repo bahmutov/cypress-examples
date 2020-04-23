@@ -13,10 +13,7 @@ To call a lodash method, use the `Cypress._.method()` command.
 ```js
 cy.request('https://jsonplaceholder.cypress.io/users').then(
   (response) => {
-    let ids = Cypress._.chain(response.body)
-      .map('id')
-      .take(3)
-      .value()
+    let ids = Cypress._.chain(response.body).map('id').take(3).value()
 
     expect(ids).to.deep.eq([1, 2, 3])
   },

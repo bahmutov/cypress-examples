@@ -68,9 +68,7 @@ To get a DOM element at a specific index, use the `.eq()` command.
 ```
 
 ```js
-cy.get('.traversal-list>li')
-  .eq(1)
-  .should('contain', 'siamese')
+cy.get('.traversal-list>li').eq(1).should('contain', 'siamese')
 ```
 
 <!-- fiddle-end -->
@@ -197,23 +195,13 @@ To get the last DOM element within elements, use the `.last()` command.
   <button class="btn btn-default" type="submit">
     Button
   </button>
-  <input
-    class="btn btn-default"
-    type="button"
-    value="Input"
-  />
-  <input
-    class="btn btn-default"
-    type="submit"
-    value="Submit"
-  />
+  <input class="btn btn-default" type="button" value="Input" />
+  <input class="btn btn-default" type="submit" value="Submit" />
 </div>
 ```
 
 ```js
-cy.get('.traversal-buttons .btn')
-  .last()
-  .should('contain', 'Submit')
+cy.get('.traversal-buttons .btn').last().should('contain', 'Submit')
 ```
 
 <!-- fiddle-end -->

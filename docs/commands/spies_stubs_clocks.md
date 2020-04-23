@@ -87,10 +87,7 @@ expect(spy).to.be.calledWith(
 expect(spy).to.be.calledWith(Cypress.sinon.match.any, 3)
 
 // match any value from a list
-expect(spy).to.be.calledWith(
-  Cypress.sinon.match.in([1, 2, 3]),
-  3,
-)
+expect(spy).to.be.calledWith(Cypress.sinon.match.in([1, 2, 3]), 3)
 
 /**
  * Returns true if the given number is event
@@ -101,10 +98,7 @@ const isEven = (x) => x % 2 === 0
 // expect the value to pass a custom predicate function
 // the second argument to "sinon.match(predicate, message)" is
 // shown if the predicate does not pass and assertion fails
-expect(spy).to.be.calledWith(
-  Cypress.sinon.match(isEven, 'isEven'),
-  3,
-)
+expect(spy).to.be.calledWith(Cypress.sinon.match(isEven, 'isEven'), 3)
 
 /**
  * Returns a function that checks if a given number is larger than the limit
@@ -145,11 +139,7 @@ cy.get('@add').should(
 // you can alias matchers for shorter test code
 const { match: M } = Cypress.sinon
 
-cy.get('@add').should(
-  'have.been.calledWith',
-  M.number,
-  M(3),
-)
+cy.get('@add').should('have.been.calledWith', M.number, M(3))
 ```
 
 <!-- fiddle-end -->
@@ -257,9 +247,7 @@ To control time in the browser, use the `cy.clock()` command.
 const now = new Date(Date.UTC(2017, 2, 14)).getTime()
 
 cy.clock(now)
-cy.get('#clock-div')
-  .click()
-  .should('have.text', '1489449600')
+cy.get('#clock-div').click().should('have.text', '1489449600')
 ```
 
 <!-- fiddle-end -->
@@ -289,13 +277,9 @@ To move time in the browser, use the `cy.tick()` command.
 const now = new Date(Date.UTC(2017, 2, 14)).getTime()
 
 cy.clock(now)
-cy.get('#tick-div')
-  .click()
-  .should('have.text', '1489449600')
+cy.get('#tick-div').click().should('have.text', '1489449600')
 cy.tick(10000) // 10 seconds passed
-cy.get('#tick-div')
-  .click()
-  .should('have.text', '1489449610')
+cy.get('#tick-div').click().should('have.text', '1489449610')
 ```
 
 <!-- fiddle-end -->

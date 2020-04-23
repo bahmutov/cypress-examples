@@ -11,10 +11,7 @@ To query for the button, use the `cy.get()` command.
 ```html
 <div id="querying-example">
   <div class="well">
-    <button
-      id="query-btn"
-      class="query-btn btn btn-primary"
-    >
+    <button id="query-btn" class="query-btn btn btn-primary">
       Button
     </button>
   </div>
@@ -105,13 +102,9 @@ cy.get('.query-list')
   .should('have.class', 'third')
 
 // we can pass a regexp to `.contains()`
-cy.get('.query-list')
-  .contains(/^b\w+/)
-  .should('have.class', 'third')
+cy.get('.query-list').contains(/^b\w+/).should('have.class', 'third')
 
-cy.get('.query-list')
-  .contains('apples')
-  .should('have.class', 'first')
+cy.get('.query-list').contains('apples').should('have.class', 'first')
 
 // passing a selector to contains will
 // yield the selector containing the text
@@ -159,16 +152,8 @@ We can find elements within a specific DOM element `.within()`
 
 ```js
 cy.get('.query-form').within(() => {
-  cy.get('input:first').should(
-    'have.attr',
-    'placeholder',
-    'Email',
-  )
-  cy.get('input:last').should(
-    'have.attr',
-    'placeholder',
-    'Password',
-  )
+  cy.get('input:first').should('have.attr', 'placeholder', 'Email')
+  cy.get('input:last').should('have.attr', 'placeholder', 'Password')
 })
 ```
 
