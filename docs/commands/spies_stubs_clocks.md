@@ -6,7 +6,7 @@ Examples of using stubs, spies, and controlling clock time - for a full referenc
 
 To wrap a method in a spy, use the `cy.spy()` command.
 
-<!-- fiddle cy.spy() - wrap a method in a spy -->
+<!-- fiddle cy.spy() / wrap a method in a spy -->
 
 ```js
 const obj = {
@@ -25,7 +25,7 @@ cy.get('@anyArgs').should('have.been.called')
 
 <!-- fiddle-end -->
 
-<!-- fiddle cy.spy() retries until assertions pass -->
+<!-- fiddle cy.spy() / retries until assertions pass -->
 
 `cy.spy()` retries until the assertions that follow it pass.
 
@@ -51,7 +51,7 @@ cy.get('@foo').should('have.been.calledTwice')
 
 `cy.spy` and `cy.stub` match call arguments using [Sinon matchers](https://sinonjs.org/releases/latest/matchers/).
 
-<!-- fiddle cy.spy and cy.stub match call arguments using Sinon matchers -->
+<!-- fiddle cy.spy and cy.stub / match call arguments using Sinon matchers -->
 
 ```js
 // see all possible matchers at
@@ -151,7 +151,7 @@ cy.get('@add').should('have.been.calledWith', M.number, M(3))
 
 To create a stub and/or replace a function with a stub, use the `cy.stub()` command.
 
-<!-- fiddle cy.stub -->
+<!-- fiddle cy.stub() / replace method -->
 
 ```js
 let obj = {
@@ -170,7 +170,7 @@ cy.get('@foo').should('have.been.called')
 
 <!-- fiddle-end -->
 
-<!-- fiddle cy.stub() - create a stub and/or replace a function with stub -->
+<!-- fiddle cy.stub() / replace a method with a stub -->
 
 ```js
 const obj = {
@@ -194,7 +194,7 @@ expect(stub).to.be.called
 
 <!-- fiddle-end -->
 
-<!-- fiddle cy.stub() matches depending on arguments -->
+<!-- fiddle cy.stub() / matches depending on arguments -->
 
 ```js
 // see all possible matchers at
@@ -230,7 +230,7 @@ expect(greeter.greet()).to.equal('Hello, undefined!')
 
 If you want to stub a method deep inside the application's code, access it using App Actions by passing the object reference via `window` object.
 
-<!-- fiddle.export cy.stub() for method inside application -->
+<!-- fiddle cy.stub() / method is inside application -->
 
 ```html
 <button id="alerter">Alert me</button>
