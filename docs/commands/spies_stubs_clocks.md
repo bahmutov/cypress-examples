@@ -228,7 +228,7 @@ expect(greeter.greet()).to.equal('Hello, undefined!')
 
 <!-- fiddle-end -->
 
-If you want to stub a method deep inside the application's code, access it using [App Actions]() by passing the object reference via `window` object.
+If you want to stub a method deep inside the application's code, access it using App Actions by passing the object reference via `window` object.
 
 <!-- fiddle.export cy.stub() for method inside application -->
 
@@ -245,7 +245,7 @@ If you want to stub a method deep inside the application's code, access it using
     .addEventListener('click', actions.alertTheUser)
 
   // if we are running inside Cypress test
-  // expose the object with methods to be stubbed
+  // expose the object with methods to be stubbed from tests
   if (window.Cypress) {
     console.log('running inside Cypress')
     window.actions = actions
