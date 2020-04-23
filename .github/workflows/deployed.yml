@@ -9,8 +9,6 @@ jobs:
   test-publish-scrape:
     if: github.event.context == 'github/pages' && github.event.state == 'success'
     runs-on: ubuntu-latest
-    env:
-      CYPRESS_baseUrl: https://glebbahmutov.com/cypress-examples
     steps:
       - run: echo "gh-pages 📑 deployed successfully ✅"
 
@@ -27,7 +25,7 @@ jobs:
           runTests: false
 
       - name: Export Markdown specs 🖨
-        run: ./md-to-js.sh $CYPRESS_baseUrl
+        run: ./md-to-js.sh https://glebbahmutov.com/cypress-examples
 
       - name: Catch stray .only tests 🚦
         run: npx stop-only --folder docs --skip docs/.vuepress

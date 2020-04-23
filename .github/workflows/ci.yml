@@ -37,7 +37,6 @@ jobs:
         with:
           start: npm run serve:public
           config-file: cypress-dist.json
-          config: baseUrl=http://localhost:5000/cypress-examples
 
       # https://github.com/marketplace/actions/github-pages-action
       - name: Deploy 🚀

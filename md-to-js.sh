@@ -23,4 +23,4 @@ npx export-fiddle docs/utilities/index.md --before $BASE_URL/utilities
 ls -laR docs/**/*.js
 
 echo "You can run these specs against $BASE_URL with command"
-echo "npx cypress open --config-file cypress-dist.json --config baseUrl=$BASE_URL"
+echo "npx cypress open --config-file cypress-dist.json"
