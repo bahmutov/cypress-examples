@@ -249,7 +249,9 @@ If you want to stub a method deep inside the application's code, access it using
     // ✅ This will work.
     // If the "alertsTheUser" method is replaced in the "actions" object
     // then the stub is called during test
-    .addEventListener('click', () => actions.alertTheUser())
+    .addEventListener('click', function () {
+      actions.alertTheUser()
+    })
 
   // if we are running inside Cypress test
   // expose the object with methods to be stubbed from tests
