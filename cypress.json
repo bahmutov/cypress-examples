@@ -1,7 +1,7 @@
 {
   "pluginsFile": "plugins.js",
   "supportFile": false,
-  "fixturesFolder": false,
+  "fixturesFolder": "cypress/fixtures",
   "integrationFolder": "docs",
   "testFiles": "**/*.md",
   "env": {

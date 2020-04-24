@@ -26,7 +26,8 @@
   "files": [
     "docs/**/*.js",
     "!docs/.vuepress",
-    "cypress.json"
+    "cypress.json",
+    "cypress/fixtures"
   ],
   "publishConfig": {
     "access": "public"

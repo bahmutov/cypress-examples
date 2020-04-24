@@ -68,6 +68,10 @@ module.exports = {
             link: '/commands/waiting/',
           },
           {
+            text: 'Files',
+            link: '/commands/files/',
+          },
+          {
             text: 'Cookies',
             link: '/commands/cookies/',
           },

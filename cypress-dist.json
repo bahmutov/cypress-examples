@@ -1,7 +1,7 @@
 {
   "pluginsFile": false,
   "supportFile": false,
-  "fixturesFolder": false,
+  "fixturesFolder": "cypress/fixtures",
   "integrationFolder": "docs",
   "testFiles": "**/*.js",
   "video": false

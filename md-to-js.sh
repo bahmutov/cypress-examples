@@ -15,6 +15,7 @@ npx export-fiddle docs/commands/actions.md --before $BASE_URL/commands/actions
 npx export-fiddle docs/commands/aliasing.md --before $BASE_URL/commands/aliasing
 npx export-fiddle docs/commands/cookies.md --before $BASE_URL/commands/cookies
 npx export-fiddle docs/commands/connectors.md --before $BASE_URL/commands/connectors
+npx export-fiddle docs/commands/files.md --before $BASE_URL/commands/files
 npx export-fiddle docs/commands/misc.md --before $BASE_URL/commands/misc
 npx export-fiddle docs/commands/navigation.md --before $BASE_URL
 npx export-fiddle docs/commands/querying.md --before $BASE_URL/commands/querying
