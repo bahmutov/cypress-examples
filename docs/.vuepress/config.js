@@ -68,6 +68,10 @@ module.exports = {
             link: '/commands/waiting/',
           },
           {
+            text: 'Cookies',
+            link: '/commands/cookies/',
+          },
+          {
             text: 'Spies, Stubs & Clocks',
             link: '/commands/spies_stubs_clocks/',
           },
