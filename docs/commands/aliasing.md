@@ -7,8 +7,6 @@ Examples of referencing DOM elements or resources for later use in Cypress, for 
 <!-- fiddle .as() - alias a DOM element for later use -->
 
 ```html
-<button class="network-btn btn btn-primary">Get Comment</button>
-<div class="network-comment"></div>
 <table class="as-table table table-bordered">
   <thead>
     <tr>
@@ -19,22 +17,32 @@ Examples of referencing DOM elements or resources for later use in Cypress, for 
   <tbody>
     <tr>
       <td>
-        Row 1: Cell 1 <button class="btn btn-primary">Change</button>
+        Row 1: Cell 1
+        <button class="btn btn-primary">Change</button>
       </td>
       <td>
-        Row 1: Cell 2 <button class="btn btn-primary">Change</button>
+        Row 1: Cell 2
+        <button class="btn btn-primary">Change</button>
       </td>
     </tr>
     <tr>
       <td>
-        Row 2: Cell 1 <button class="btn btn-primary">Change</button>
+        Row 2: Cell 1
+        <button class="btn btn-primary">Change</button>
       </td>
       <td>
-        Row 2: Cell 2 <button class="btn btn-primary">Change</button>
+        Row 2: Cell 2
+        <button class="btn btn-primary">Change</button>
       </td>
     </tr>
   </tbody>
 </table>
+<script>
+  $('.as-table .btn').on('click', function (e) {
+    e.preventDefault()
+    $(e.currentTarget).addClass('btn-success').text('Changed')
+  })
+</script>
 ```
 
 ```js

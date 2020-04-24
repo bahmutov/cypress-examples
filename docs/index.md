@@ -35,6 +35,8 @@ Commands drive your tests in the browser like a real user would. They let you pe
   - [go](./commands/navigation.md#cy-go)
   - [reload](./commands/navigation.md#cy-reload)
   - [visit](./commands/navigation.md#cy-visit)
+- [Aliasing](./commands/aliasing.md)
+  - [as](./commands/aliasing.md#as)
 - [Waiting](./commands/waiting.md)
   - [wait](./commands/waiting.md#cy-wait)
 - [Misc](./commands/misc.md)
