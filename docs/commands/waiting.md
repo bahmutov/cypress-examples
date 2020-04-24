@@ -76,3 +76,23 @@ cy.wait('@getComment').its('status').should('eq', 200)
 <!-- fiddle-end -->
 
 **Tip:** be careful of adding unnecessary wait times, see our [Best Practices: Unnecessary Waiting](https://on.cypress.io/best-practices#Unnecessary-Waiting) guide.
+
+## Waiting on promises
+
+If you want to wait on a promise, use [cy.wrap()](https://on.cypress.io/wrap).
+
+<!-- fiddle cy.wrap / a promise -->
+
+```js
+const asyncAdd = (a, b) => Promise.resolve(a + b)
+const asyncSub = (a, b) => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(a - b), 1000)
+  })
+}
+
+cy.wrap(asyncAdd(2, 3)).should('equal', 5)
+cy.wrap(asyncSub(2, 3)).should('equal', -1)
+```
+
+<!-- fiddle-end -->

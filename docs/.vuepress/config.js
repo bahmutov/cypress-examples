@@ -52,6 +52,10 @@ module.exports = {
             link: '/commands/navigation/',
           },
           {
+            text: 'Misc',
+            link: '/commands/misc/',
+          },
+          {
             text: 'Connectors',
             link: '/commands/connectors/',
           },
