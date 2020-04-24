@@ -60,6 +60,10 @@ module.exports = {
             link: '/commands/connectors/',
           },
           {
+            text: 'Aliasing',
+            link: '/commands/aliasing/',
+          },
+          {
             text: 'Waiting',
             link: '/commands/waiting/',
           },
