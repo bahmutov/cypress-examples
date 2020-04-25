@@ -3,3 +3,6 @@ cypress/videos
 cypress/screenshots
 docs/.vuepress/dist
 docs/**/*.js
+# a couple of JSON files created during spec runs
+cypress/fixtures/profile.json
+cypress/fixtures/users.json
