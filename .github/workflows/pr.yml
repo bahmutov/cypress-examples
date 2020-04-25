@@ -38,5 +38,5 @@ jobs:
       - name: Test built site 🧪
         uses: cypress-io/github-action@v1
         with:
-          start: npm run serve:public
+          start: npm run serve
           config-file: cypress-dist.json
