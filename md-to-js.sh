@@ -4,10 +4,8 @@
 BASE_URL=$1
 if [ -z $BASE_URL ]
 then
-  echo "Provide base url, please"
-  script=`basename "$0"`
-  echo "For example: $script http://localhost:5000/cypress-examples"
-  exit 1
+  echo "Setting empty BASE_URL to http://localhost:5000/cypress-examples"
+  BASE_URL=http://localhost:5000/cypress-examples
 fi
 
 echo "Each spec file will visit $BASE_URL before tests in each spec"
