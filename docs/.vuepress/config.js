@@ -5,6 +5,7 @@ module.exports = {
   description:
     'Static site with Cypress examples tested right from the Markdown sources',
   base: '/cypress-examples/',
+  dest: 'public/cypress-examples',
   head: [
     [
       'link',

@@ -26,9 +26,6 @@ jobs:
       - name: Build site 🏗
         run: npm run docs:build
 
-      - name: Copy built site 🚛
-        run: npm run cp:dist
-
       - name: Export Markdown specs 🖨
         run: ./md-to-js.sh http://localhost:5000/cypress-examples
 

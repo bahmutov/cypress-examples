@@ -12,10 +12,6 @@
     "format": "prettier --write 'docs/**/*.md'",
     "format:extracted": "prettier --write 'docs/**/*.js' '!docs/.vuepress/**/*.js'",
     "stop-only": "stop-only --folder docs --skip docs/.vuepress",
-    "rm:public": "rm -rf public || true",
-    "mk:public": "mkdir -p public",
-    "precp:dist": "npm run rm:public && npm run mk:public",
-    "cp:dist": "cp -r docs/.vuepress/dist public/cypress-examples",
     "serve:public": "serve public",
     "semantic-release": "semantic-release"
   },
