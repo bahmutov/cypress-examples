@@ -80,7 +80,7 @@ cy.wait('@getComment')
 You can use `require` to load JSON fixtures.
 
 <!-- could not make this test work yet -->
-<!-- fiddle.skip cy.fixture() or require - load a fixture' -->
+<!-- fiddle.skip cy.fixture() or require - load a fixture -->
 
 ```js
 // we are inside the "function () { ... }"
@@ -104,7 +104,7 @@ cy.wrap(this.example, 'fixture vs require').should(
 
 To read a file's content, use the `cy.readFile()` command.
 
-<!-- fiddle cy.readFile() - read file contents' -->
+<!-- fiddle cy.readFile() - read file contents -->
 
 ```js
 // You can read a file and yield its contents
