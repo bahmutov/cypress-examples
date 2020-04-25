@@ -12,9 +12,8 @@ To load a fixture, use the `cy.fixture()` command.
 <button class="fixture-btn btn btn-primary">Get Comment</button>
 <div class="fixture-comment"></div>
 <script>
-  const root = 'https://jsonplaceholder.cypress.io'
-
   function getComment() {
+    const root = 'https://jsonplaceholder.cypress.io'
     $.ajax({
       url: `${root}/comments/1`,
       method: 'GET',

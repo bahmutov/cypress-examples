@@ -41,10 +41,9 @@ You can wait for a specific route
 <button class="network-btn btn btn-primary">Get Comment</button>
 <div class="network-comment"></div>
 <script>
-  // we fetch all data from this REST json backend
-  const root = 'https://jsonplaceholder.cypress.io'
-
   function getComment() {
+    // we fetch all data from this REST json backend
+    const root = 'https://jsonplaceholder.cypress.io'
     $.ajax({
       url: `${root}/comments/1`,
       method: 'GET',
