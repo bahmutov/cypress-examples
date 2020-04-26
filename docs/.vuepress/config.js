@@ -53,6 +53,10 @@ module.exports = {
             link: '/commands/navigation/',
           },
           {
+            text: 'Assertions',
+            link: '/commands/assertions/',
+          },
+          {
             text: 'Misc',
             link: '/commands/misc/',
           },
