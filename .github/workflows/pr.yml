@@ -24,7 +24,7 @@ jobs:
         run: npm run docs:build
 
       - name: Export Markdown specs 🖨
-        run: ./md-to-js.sh http://localhost:5000/cypress-examples
+        run: node ./md-to-js http://localhost:5000/cypress-examples
 
       - name: Catch stray .only tests 🚦
         run: npm run stop-only

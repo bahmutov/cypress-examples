@@ -25,7 +25,7 @@ jobs:
           runTests: false
 
       - name: Export Markdown specs 🖨
-        run: ./md-to-js.sh https://glebbahmutov.com/cypress-examples
+        run: node ./md-to-js https://glebbahmutov.com/cypress-examples
 
       - name: Catch stray .only tests 🚦
         run: npm run stop-only
