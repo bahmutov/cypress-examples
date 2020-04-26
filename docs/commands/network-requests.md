@@ -191,65 +191,68 @@ To route responses to matching requests, use the `cy.route()` command.
 <button class="network-put btn btn-warning">Update Comment</button>
 <div class="network-put-comment"></div>
 <script>
-  // we fetch all data from this REST json backend
-  const api = 'https://jsonplaceholder.cypress.io'
+  // place the example code into a closure to isolate its variables
+  ;(function () {
+    // we fetch all data from this REST json backend
+    const root = 'https://jsonplaceholder.cypress.io'
 
-  function getComment() {
-    $.ajax({
-      url: `${api}/comments/1`,
-      method: 'GET',
-    }).then(function (data) {
-      $('.network-comment').text(data.body)
-    })
-  }
+    function getComment() {
+      $.ajax({
+        url: `${root}/comments/1`,
+        method: 'GET',
+      }).then(function (data) {
+        $('.network-comment').text(data.body)
+      })
+    }
 
-  function postComment() {
-    $.ajax({
-      url: `${api}/comments`,
-      method: 'POST',
-      data: {
-        name: 'Using POST in cy.route()',
-        email: 'hello@cypress.io',
-        body:
-          'You can change the method used for cy.route() to be GET, POST, PUT, PATCH, or DELETE',
-      },
-    }).then(function () {
-      $('.network-post-comment').text('POST successful!')
-    })
-  }
-
-  function putComment() {
-    $.ajax({
-      url: `${api}/comments/1`,
-      method: 'PUT',
-      data: {
-        name: 'Using PUT in cy.route()',
-        email: 'hello@cypress.io',
-        body:
-          'You can change the method used for cy.route() to be GET, POST, PUT, PATCH, or DELETE',
-      },
-      statusCode: {
-        404(data) {
-          $('.network-put-comment').text(data.responseJSON.error)
+    function postComment() {
+      $.ajax({
+        url: `${root}/comments`,
+        method: 'POST',
+        data: {
+          name: 'Using POST in cy.route()',
+          email: 'hello@cypress.io',
+          body:
+            'You can change the method used for cy.route() to be GET, POST, PUT, PATCH, or DELETE',
         },
-      },
+      }).then(function () {
+        $('.network-post-comment').text('POST successful!')
+      })
+    }
+
+    function putComment() {
+      $.ajax({
+        url: `${root}/comments/1`,
+        method: 'PUT',
+        data: {
+          name: 'Using PUT in cy.route()',
+          email: 'hello@cypress.io',
+          body:
+            'You can change the method used for cy.route() to be GET, POST, PUT, PATCH, or DELETE',
+        },
+        statusCode: {
+          404(data) {
+            $('.network-put-comment').text(data.responseJSON.error)
+          },
+        },
+      })
+    }
+
+    $('.network-btn').on('click', function (e) {
+      e.preventDefault()
+      getComment(e)
     })
-  }
 
-  $('.network-btn').on('click', function (e) {
-    e.preventDefault()
-    getComment(e)
-  })
+    $('.network-post').on('click', function (e) {
+      e.preventDefault()
+      postComment(e)
+    })
 
-  $('.network-post').on('click', function (e) {
-    e.preventDefault()
-    postComment(e)
-  })
-
-  $('.network-put').on('click', function (e) {
-    e.preventDefault()
-    putComment(e)
-  })
+    $('.network-put').on('click', function (e) {
+      e.preventDefault()
+      putComment(e)
+    })
+  })()
 </script>
 ```
 
