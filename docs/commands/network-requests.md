@@ -192,11 +192,11 @@ To route responses to matching requests, use the `cy.route()` command.
 <div class="network-put-comment"></div>
 <script>
   // we fetch all data from this REST json backend
-  const root = 'https://jsonplaceholder.cypress.io'
+  const api = 'https://jsonplaceholder.cypress.io'
 
   function getComment() {
     $.ajax({
-      url: `${root}/comments/1`,
+      url: `${api}/comments/1`,
       method: 'GET',
     }).then(function (data) {
       $('.network-comment').text(data.body)
@@ -205,7 +205,7 @@ To route responses to matching requests, use the `cy.route()` command.
 
   function postComment() {
     $.ajax({
-      url: `${root}/comments`,
+      url: `${api}/comments`,
       method: 'POST',
       data: {
         name: 'Using POST in cy.route()',
@@ -220,7 +220,7 @@ To route responses to matching requests, use the `cy.route()` command.
 
   function putComment() {
     $.ajax({
-      url: `${root}/comments/1`,
+      url: `${api}/comments/1`,
       method: 'PUT',
       data: {
         name: 'Using PUT in cy.route()',
