@@ -1,3 +1,4 @@
+// @ts-check
 const shell = require('shelljs')
 const path = require('path')
 
@@ -24,7 +25,7 @@ markdownFiles.forEach((filename) => {
   // navigation spec is a little different - it will navigate to its page itself
   const beforeVisitUrl = filename.endsWith('navigation.md')
     ? baseUrl
-    : `${baseUrl}/pagePath`
+    : `${baseUrl}/${pagePath}`
   shell.exec(
     `npx export-fiddle ${filename} --before ${beforeVisitUrl}`,
   )
