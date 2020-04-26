@@ -16,6 +16,7 @@ npx export-fiddle docs/commands/connectors.md --before $BASE_URL/commands/connec
 npx export-fiddle docs/commands/files.md --before $BASE_URL/commands/files
 npx export-fiddle docs/commands/misc.md --before $BASE_URL/commands/misc
 npx export-fiddle docs/commands/navigation.md --before $BASE_URL
+npx export-fiddle docs/commands/network-requests.md --before $BASE_URL/commands/network-requests
 npx export-fiddle docs/commands/querying.md --before $BASE_URL/commands/querying
 npx export-fiddle docs/commands/spies_stubs_clocks.md --before $BASE_URL/commands/spies_stubs_clocks
 npx export-fiddle docs/commands/traversal.md --before $BASE_URL/commands/traversal

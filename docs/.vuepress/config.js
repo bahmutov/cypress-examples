@@ -69,6 +69,10 @@ module.exports = {
             link: '/commands/waiting/',
           },
           {
+            text: 'Network Requests',
+            link: '/commands/network-requests/',
+          },
+          {
             text: 'Files',
             link: '/commands/files/',
           },
