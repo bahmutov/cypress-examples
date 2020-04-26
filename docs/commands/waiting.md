@@ -95,3 +95,9 @@ cy.wrap(asyncSub(2, 3)).should('equal', -1)
 ```
 
 <!-- fiddle-end -->
+
+More information:
+
+- [Asserting Network Calls from Cypress Tests](https://www.cypress.io/blog/2019/12/23/asserting-network-calls-from-cypress-tests/) blog post
+- [Unit testing application code](https://github.com/cypress-io/cypress-example-recipes#unit-testing) recipe
+- Avoid hard-coded waits using built-in [retry-ability](https://on.cypress.io/retry-ability)
