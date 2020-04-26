@@ -41,7 +41,7 @@ cy.wrap(1)
   })
 ```
 
-But unlike a Promise, if undefined is returned, then the original value passed into the .then(cb) is yielded to the next callback.
+But unlike a Promise, if `undefined` is returned, then the original value passed into the `.then(cb)` is yielded to the next callback.
 
 ```js
 cy.log('**Returning undefined**')
@@ -56,7 +56,7 @@ cy.wrap(1)
   })
 ```
 
-If there are Cypress commands in the .then(cb) callback, then the value yielded by the last command will be passed to the next callback.
+If there are Cypress commands in the `.then(cb)` callback, then the value yielded by the last command will be passed to the next callback.
 
 ```js
 cy.log('**Returning wrapped value**')

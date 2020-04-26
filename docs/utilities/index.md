@@ -199,7 +199,7 @@ cy.get('.utility-moment .badge').should(($el) => {
 
 ## [Cypress.Promise](https://on.cypress.io/promise)
 
-To instantiate a new bluebird promise, use Cypress.Promise.
+To instantiate a new [Bluebird](https://github.com/petkaantonov/bluebird) promise, use `Cypress.Promise`.
 
 <!-- fiddle promise -->
 
