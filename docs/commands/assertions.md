@@ -298,7 +298,7 @@ Remember that Cypress only [retries the very last command](https://on.cypress.io
 </div>
 <script>
   const el = document.getElementById('random-number')
-  setTimeout(() => {
+  setTimeout(function () {
     el.innerText = Math.floor(Math.random() * 10 + 1)
   }, 1500)
 </script>
