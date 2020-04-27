@@ -23,12 +23,11 @@ cy.get('#query-btn').should('contain', 'Button')
 
 cy.get('.query-btn').should('contain', 'Button')
 
+// Use CSS selectors just like jQuery
 cy.get('#querying-example .well>button:first').should(
   'contain',
   'Button',
 )
-//              ↲
-// Use CSS selectors just like jQuery
 ```
 
 <!-- fiddle-end -->

@@ -68,11 +68,11 @@ Commands drive your tests in the browser like a real user would. They let you pe
   - [setCookie](./commands/cookies.md#cy-setcookie)
   - [clearCookie](./commands/cookies.md#cy-clearcookie)
   - [clearCookies](./commands/cookies.md#cy-clearcookies)
-- [Spies, Stubs & Clocks](./commands/spies_stubs_clocks.md)
-  - [spy](./commands/spies_stubs_clocks.md#cy-spy)
-  - [stub](./commands/spies_stubs_clocks.md#cy-stub)
-  - [clock](./commands/spies_stubs_clocks.md#cy-clock)
-  - [tick](./commands/spies_stubs_clocks.md#cy-tick)
+- [Spies, Stubs & Clocks](./commands/spies-stubs-clocks.md)
+  - [spy](./commands/spies-stubs-clocks.md#cy-spy)
+  - [stub](./commands/spies-stubs-clocks.md#cy-stub)
+  - [clock](./commands/spies-stubs-clocks.md#cy-clock)
+  - [tick](./commands/spies-stubs-clocks.md#cy-tick)
 
 ## Utilities
 

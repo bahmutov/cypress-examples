@@ -86,7 +86,7 @@ module.exports = {
           },
           {
             text: 'Spies, Stubs & Clocks',
-            link: '/commands/spies_stubs_clocks/',
+            link: '/commands/spies-stubs-clocks/',
           },
         ],
       },
