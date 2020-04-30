@@ -9,13 +9,13 @@ To set the viewport size and dimension, use the `cy.viewport()` command.
 <!-- fiddle.export cy.viewport() - set the viewport size and dimension -->
 
 ```js
-cy.get('#viewport-example #navbar').should('be.visible')
+cy.get('.navbar').should('be.visible')
 cy.viewport(320, 480)
 
 // the navbar should have collapse since our screen is smaller
 cy.get('#navbar').should('not.be.visible')
-cy.get('.navbar-toggle').should('be.visible').click()
-cy.get('.nav').find('a').should('be.visible')
+cy.get('.sidebar-button').should('be.visible').click()
+cy.get('.nav-item').find('a').should('be.visible')
 
 // lets see what our app looks like on a super large screen
 cy.viewport(2999, 2999)
