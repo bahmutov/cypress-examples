@@ -206,7 +206,7 @@ cy.get('.traversal-buttons .btn').last().should('contain', 'Submit')
 
 <!-- fiddle-end -->
 
-## [next()](https://on.cypress.io/next)
+## [.next()](https://on.cypress.io/next)
 
 To get the next sibling DOM element within elements, use the `.next()` command.
 
@@ -229,7 +229,7 @@ cy.get('.traversal-ul')
 
 <!-- fiddle-end -->
 
-## [next()](https://on.cypress.io/nextAll)
+## [.nextAll()](https://on.cypress.io/nextAll)
 
 To get all of the next sibling DOM elements within elements, use the `.nextAll()` command.
 
@@ -250,6 +250,35 @@ cy.get('.traversal-next-all')
   .contains('oranges')
   .nextAll()
   .should('have.length', 3)
+```
+
+<!-- fiddle-end -->
+
+## [.nextUntil()](https://on.cypress.io/nextUntil)
+
+To get all of the next sibling DOM elements within elements until another element, use the `.nextUntil()` command.
+
+<!-- fiddle .nextUntil() - get next sibling DOM elements until next el -->
+
+```html
+<ul class="healthy-foods">
+  <li id="fruits" class="header">Fruits</li>
+  <li>apples</li>
+  <li>oranges</li>
+  <li>bananas</li>
+  <li id="veggies" class="header">Vegetables</li>
+  <li>cucumbers</li>
+  <li>carrots</li>
+  <li>corn</li>
+  <li id="nuts" class="header">Nuts</li>
+  <li>walnuts</li>
+  <li>cashews</li>
+  <li>almonds</li>
+</ul>
+```
+
+```js
+cy.get('#veggies').nextUntil('#nuts').should('have.length', 3)
 ```
 
 <!-- fiddle-end -->
