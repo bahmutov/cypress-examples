@@ -282,3 +282,199 @@ cy.get('#veggies').nextUntil('#nuts').should('have.length', 3)
 ```
 
 <!-- fiddle-end -->
+
+## [.not()](https://on.cypress.io/not)
+
+To remove DOM element(s) from the set of elements, use the `.not()` command.
+
+<!-- fiddle .not() - remove DOM elements from set of DOM elements -->
+
+```html
+<div class="traversal-disabled">
+  <button type="button" class="btn btn-default" disabled="disabled">
+    Disabled
+  </button>
+  <button type="button" class="btn btn-default">Button</button>
+</div>
+```
+
+```js
+cy.get('.traversal-disabled .btn')
+  .not('[disabled]')
+  .should('not.contain', 'Disabled')
+```
+
+<!-- fiddle-end -->
+
+## [.parent()](https://on.cypress.io/parent)
+
+To get parent DOM element of elements, use the `.parent()` command.
+
+<!-- fiddle .parent() - get parent DOM element from DOM elements -->
+
+```html
+<p>
+  Morbi leo risus, porta ac consectetur ac,
+  <mark class="traversal-mark">highlight</mark> vestibulum at eros.
+</p>
+```
+
+```js
+cy.get('.traversal-mark')
+  .parent()
+  .should('contain', 'Morbi leo risus')
+```
+
+<!-- fiddle-end -->
+
+## [.parents()](https://on.cypress.io/parents)
+
+To get parent DOM elements of elements, use the `.parents()` command.
+
+<!-- fiddle .parents() - get parent DOM elements from DOM elements -->
+
+```html
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <footer>
+    Someone famous in
+    <cite class="traversal-cite">Source Title</cite>
+  </footer>
+</blockquote>
+```
+
+```js
+cy.get('.traversal-cite').parents().should('match', 'blockquote')
+```
+
+<!-- fiddle-end -->
+
+## [.parentsUntil()](https://on.cypress.io/parentsUntil)
+
+To get parents DOM element of elements until other element, use the `.parentsUntil()` command.
+
+<!-- fiddle .parentsUntil() - get parent DOM elements from DOM elements until el -->
+
+```html
+<ul class="nav clothes-nav">
+  <li>
+    <a href="#">Clothes</a>
+    <ul class="menu">
+      <li>
+        <a href="/shirts">Shirts</a>
+      </li>
+      <li class="active">
+        <a href="/pants">Pants</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+```
+
+```js
+cy.get('.clothes-nav')
+  .find('.active')
+  .parentsUntil('.clothes-nav')
+  .should('have.length', 2)
+```
+
+<!-- fiddle-end -->
+
+## [.prev()](https://on.cypress.io/prev)
+
+To get the previous sibling DOM element within elements, use the `.prev()` command.
+
+<!-- fiddle .prev() - get previous sibling DOM element -->
+
+```html
+<ul class="birds list-group">
+  <li class="list-group-item">Cockatiels</li>
+  <li class="list-group-item">Lorikeets</li>
+  <li class="list-group-item active">Cockatoos</li>
+  <li class="list-group-item">Conures</li>
+  <li class="list-group-item">Eclectus</li>
+</ul>
+```
+
+```js
+cy.get('.birds').find('.active').prev().should('contain', 'Lorikeets')
+```
+
+<!-- fiddle-end -->
+
+## [.prevAll()](https://on.cypress.io/prevAll)
+
+To get all previous sibling DOM elements within elements, use the `.prevAll()` command.
+
+<!-- fiddle .prevAll() - get all previous sibling DOM elements -->
+
+```html
+<ul class="fruits-list">
+  <li>apples</li>
+  <li>oranges</li>
+  <li class="third">bananas</li>
+  <li>pineapples</li>
+  <li>grapes</li>
+</ul>
+```
+
+```js
+cy.get('.fruits-list')
+  .find('.third')
+  .prevAll()
+  .should('have.length', 2)
+```
+
+<!-- fiddle-end -->
+
+## [.prevUntil()](https://on.cypress.io/prevUntil)
+
+To get all previous sibling DOM elements within elements until other element, use the `.prevUntil()` command.
+
+<!-- fiddle .prevUntil() - get all previous sibling DOM elements until el -->
+
+```html
+<ul class="foods-list">
+  <li id="fruits" class="header">Fruits</li>
+  <li>apples</li>
+  <li>oranges</li>
+  <li>bananas</li>
+  <li id="veggies" class="header">Vegetables</li>
+  <li>cucumbers</li>
+  <li>carrots</li>
+  <li>corn</li>
+  <li id="nuts" class="header">Nuts</li>
+  <li>walnuts</li>
+  <li>cashews</li>
+  <li>almonds</li>
+</ul>
+```
+
+```js
+cy.get('.foods-list')
+  .find('#nuts')
+  .prevUntil('#veggies')
+  .should('have.length', 3)
+```
+
+<!-- fiddle-end -->
+
+## [.siblings()](https://on.cypress.io/siblings)
+
+To get all sibling DOM elements of elements, use the `.siblings()` command.
+
+<!-- fiddle .siblings() - get all sibling DOM elements -->
+
+```html
+<ul class="nav nav-pills traversal-pills">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">Profile</a></li>
+  <li><a href="#">Messages</a></li>
+</ul>
+```
+
+```js
+cy.get('.traversal-pills .active').siblings().should('have.length', 2)
+```
+
+<!-- fiddle-end -->
