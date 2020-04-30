@@ -205,3 +205,26 @@ cy.get('.traversal-buttons .btn').last().should('contain', 'Submit')
 ```
 
 <!-- fiddle-end -->
+
+## [.next()](https://on.cypress.io/next)
+
+To get the next sibling DOM element within elements, use the `.next()` command.
+
+<!-- fiddle .next() - get next sibling DOM element -->
+
+```html
+<ul class="traversal-ul">
+  <li>apples</li>
+  <li class="second">oranges</li>
+  <li>bananas</li>
+</ul>
+```
+
+```js
+cy.get('.traversal-ul')
+  .contains('apples')
+  .next()
+  .should('contain', 'oranges')
+```
+
+<!-- fiddle-end -->
