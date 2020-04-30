@@ -38,6 +38,8 @@ Commands drive your tests in the browser like a real user would. They let you pe
 - [Actions](./commands/actions.md)
   - [type](./commands/actions.md#type)
   - [focus](./commands/actions.md#focus)
+- [Viewport](./commands/viewport.md)
+  - [viewport](./commands/viewport.md#cy-viewport)
 - [Window](./commands/window.md)
   - [window](./commands/window.md#cy-window)
   - [document](./commands/window.md#cy-document)

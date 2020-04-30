@@ -12,6 +12,7 @@
     "format": "prettier --write 'docs/**/*.md'",
     "format:extracted": "prettier --write 'docs/**/*.js' '!docs/.vuepress/**/*.js'",
     "stop-only": "stop-only --folder docs --skip docs/.vuepress",
+    "to-js": "node ./md-to-js http://localhost:5000/cypress-examples",
     "serve": "serve public",
     "semantic-release": "semantic-release"
   },
