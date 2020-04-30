@@ -49,6 +49,7 @@ module.exports = {
           { text: 'Actions', link: '/commands/actions/' },
           { text: 'Window', link: '/commands/window/' },
           { text: 'Viewport', link: '/commands/viewport/' },
+          { text: 'Location', link: '/commands/location/' },
           {
             text: 'Navigation',
             link: '/commands/navigation/',
