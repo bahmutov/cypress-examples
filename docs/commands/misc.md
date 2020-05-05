@@ -47,7 +47,7 @@ cy.get('.misc-table').within(() => {
 
 To execute a system command, use the `cy.exec()` command.
 
-<!-- fiddle.skip cy.exec() - execute a system command -->
+<!-- fiddle cy.exec() - execute a system command -->
 
 ```js
 // execute a system command.
