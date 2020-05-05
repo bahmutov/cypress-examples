@@ -229,7 +229,7 @@ cy.get('.traversal-ul')
 
 <!-- fiddle-end -->
 
-## [.nextAll()](https://on.cypress.io/nextAll)
+## [.nextAll()](https://on.cypress.io/nextall)
 
 To get all of the next sibling DOM elements within elements, use the `.nextAll()` command.
 
@@ -254,7 +254,7 @@ cy.get('.traversal-next-all')
 
 <!-- fiddle-end -->
 
-## [.nextUntil()](https://on.cypress.io/nextUntil)
+## [.nextUntil()](https://on.cypress.io/nextuntil)
 
 To get all of the next sibling DOM elements within elements until another element, use the `.nextUntil()` command.
 
@@ -349,7 +349,7 @@ cy.get('.traversal-cite').parents().should('match', 'blockquote')
 
 <!-- fiddle-end -->
 
-## [.parentsUntil()](https://on.cypress.io/parentsUntil)
+## [.parentsUntil()](https://on.cypress.io/parentsuntil)
 
 To get parents DOM element of elements until other element, use the `.parentsUntil()` command.
 
@@ -402,7 +402,7 @@ cy.get('.birds').find('.active').prev().should('contain', 'Lorikeets')
 
 <!-- fiddle-end -->
 
-## [.prevAll()](https://on.cypress.io/prevAll)
+## [.prevAll()](https://on.cypress.io/prevall)
 
 To get all previous sibling DOM elements within elements, use the `.prevAll()` command.
 
@@ -427,7 +427,7 @@ cy.get('.fruits-list')
 
 <!-- fiddle-end -->
 
-## [.prevUntil()](https://on.cypress.io/prevUntil)
+## [.prevUntil()](https://on.cypress.io/prevuntil)
 
 To get all previous sibling DOM elements within elements until other element, use the `.prevUntil()` command.
 
