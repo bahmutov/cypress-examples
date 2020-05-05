@@ -83,6 +83,10 @@ module.exports = {
             link: '/commands/files/',
           },
           {
+            text: 'Local Storage',
+            link: '/commands/local-storage/',
+          },
+          {
             text: 'Cookies',
             link: '/commands/cookies/',
           },
