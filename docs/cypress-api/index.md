@@ -97,6 +97,55 @@ Cypress.Server.defaults({
 
 To get CPU architecture name of underlying OS, use `Cypress.arch`.
 
+<!-- fiddle Cypress.arch / Get the architecture name -->
+
 ```js
+// https://on.cypress.io/arch
 expect(Cypress.arch).to.exist
 ```
+
+<!-- fiddle-end -->
+
+## [Cypress.platform](https://on.cypress.io/platform)
+
+To get name of underlying OS, use `Cypress.platform`.
+
+<!-- fiddle Cypress.platform / Get underlying OS name -->
+
+```js
+// https://on.cypress.io/platform
+expect(Cypress.platform).to.be.exist
+```
+
+<!-- fiddle-end -->
+
+## [Cypress.version](https://on.cypress.io/version)
+
+To get version of Cypress being run, use `Cypress.version`.
+
+<!-- fiddle Cypress.version / Get current version of Cypress being run -->
+
+```js
+// https://on.cypress.io/version
+expect(Cypress.version).to.be.exist
+```
+
+<!-- fiddle-end -->
+
+## [Cypress.spec](https://on.cypress.io/spec)
+
+`Cypress.spec` returns you the properties of the spec under test.
+
+<!-- fiddle Cypress.spec / Get current spec information -->
+
+```js
+// https://on.cypress.io/spec
+// wrap the object so we can inspect it easily by clicking in the command log
+cy.wrap(Cypress.spec).should('include.keys', [
+  'name',
+  'relative',
+  'absolute',
+])
+```
+
+<!-- fiddle-end -->
