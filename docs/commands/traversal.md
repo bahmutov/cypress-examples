@@ -6,7 +6,7 @@ Examples of traversing DOM elements in Cypress, for a full reference of commands
 
 To get children of DOM elements, use the `.children()` command.
 
-<!-- fiddle children -->
+<!-- fiddle .children() - get child DOM elements -->
 
 ```html
 <ol class="traversal-breadcrumb breadcrumb">
@@ -28,7 +28,7 @@ cy.get('.traversal-breadcrumb')
 
 To get the closest ancestor DOM element, use the `.closest()` command.
 
-<!-- fiddle closest -->
+<!-- fiddle .closest() - get closest ancestor DOM element -->
 
 ```html
 <ul class="list-group">
@@ -55,7 +55,7 @@ cy.get('.traversal-badge')
 
 To get a DOM element at a specific index, use the `.eq()` command.
 
-<!-- fiddle eq -->
+<!-- fiddle .eq() - get a DOM element at a specific index -->
 
 ```html
 <ul class="traversal-list">
@@ -77,7 +77,7 @@ cy.get('.traversal-list>li').eq(1).should('contain', 'siamese')
 
 To get DOM elements that match a specific selector, use the `.filter()` command.
 
-<!-- fiddle filter -->
+<!-- fiddle .filter() - get DOM elements that match the selector -->
 
 ```html
 <ul class="traversal-nav nav nav-tabs">
@@ -105,7 +105,7 @@ cy.get('.traversal-nav > li a')
 
 To get descendant DOM elements of the selector, use the `.find()` command.
 
-<!-- fiddle find -->
+<!-- fiddle .find() - get descendant DOM elements of the selector -->
 
 ```html
 <ul class="pagination traversal-pagination">
@@ -151,7 +151,7 @@ cy.get('.traversal-pagination')
 
 To get the first DOM element within elements, use the `.first()` command.
 
-<!-- fiddle first -->
+<!-- fiddle .first() - get first DOM element -->
 
 ```html
 <table class="table traversal-table">
@@ -187,7 +187,7 @@ cy.get('.traversal-table td').first().should('contain', '1')
 
 To get the last DOM element within elements, use the `.last()` command.
 
-<!-- fiddle last -->
+<!-- fiddle .last() - get last DOM element -->
 
 ```html
 <div class="traversal-buttons">
