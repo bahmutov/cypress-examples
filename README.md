@@ -1,4 +1,4 @@
-# @bahmutov/cypress-examples [![ci status][ci image]][ci url] [![prettier status][prettier image]][prettier url] [![deployed status][deployed image]][deployed url]
+# @bahmutov/cypress-examples [![ci status][ci image]][ci url] [![prettier status][prettier image]][prettier url] [![deployed status][deployed image]][deployed url] [![renovate-app badge][renovate-badge]][renovate-app]
 
 > Static site with Cypress examples tested right from the Markdown sources
 
@@ -48,3 +48,5 @@ $ npx cypress open --project node_modules/\@bahmutov/cypress-examples/
 [deployed image]: https://github.com/bahmutov/cypress-examples/workflows/deployed/badge.svg?branch=master
 [deployed url]: https://github.com/bahmutov/cypress-examples/actions?query=workflow%3Adeployed
 [vuepress]: https://vuepress.vuejs.org/
+[renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
+[renovate-app]: https://renovateapp.com/
