@@ -16,7 +16,7 @@ jobs:
 
       # run all tests straight from Markdown files
       - name: Cypress tests 🧪
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           config: video=false
 
@@ -39,7 +39,7 @@ jobs:
         run: cat docs/**/*.js > docs/run-all-specs.js
 
       - name: Test built site 🧪
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           start: npm run serve
           config-file: cypress-dist.json
