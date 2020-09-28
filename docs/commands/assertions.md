@@ -71,6 +71,97 @@ Note: find even more examples of matching element's text content in this [FAQ an
 
 <!-- fiddle-end -->
 
+### Subject
+
+The implicit assertions keep the original subject and pass it to the next command.
+
+<!-- fiddle Implicit Assertions / .should() - keeps the original subject -->
+
+```js
+const employee = {
+  person: {
+    name: {
+      first: 'Joe',
+      last: 'Smith',
+    },
+  },
+}
+cy.wrap(employee)
+  .should('have.key', 'person')
+  .then((x) => {
+    // we are still working with the entire object
+    expect(x).to.equal(employee)
+  })
+```
+
+<!-- fiddle-end -->
+
+Except for several assertions that DO change the subject:
+
+- `have.property`
+- `have.attr`
+
+as the next tests demonstrate
+
+<!-- fiddle Implicit Assertions / .should() - have.prop changes the subject -->
+
+```js
+const employee = {
+  person: {
+    name: {
+      first: 'Joe',
+      last: 'Smith',
+    },
+  },
+}
+cy.wrap(employee)
+  .should('have.property', 'person')
+  .then((x) => {
+    // the current subject has been changed to employee.person
+    expect(x).to.equal(employee.person)
+  })
+```
+
+<!-- fiddle-end -->
+
+<!-- fiddle Implicit Assertions / .should() - have.attr changes the subject -->
+
+```html
+<div class="example" style="color: orange; background-color:green">
+  Test div
+</div>
+```
+
+```js
+cy.get('.example')
+  .should('have.attr', 'style')
+  .then((x) => {
+    // x is the complete style attribute
+    expect(x).to.equal('color: orange; background-color:green')
+  })
+```
+
+<!-- fiddle-end -->
+
+<!-- fiddle Implicit Assertions / .should() - have.prop changes the subject -->
+
+```html
+<div class="first second">
+  Test div
+</div>
+```
+
+```js
+cy.get('.first')
+  .should('have.prop', 'class')
+  .then((x) => {
+    // x is the class prop
+    expect(x).to.equal('first second')
+  })
+```
+
+<!-- fiddle-end -->
+
 ### [.and()](https://on.cypress.io/and)
 
 To chain multiple assertions together, use the `.and()` command.
