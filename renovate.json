@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "automerge": true,
+  "schedule": [
+    "before 2am"
+  ],
+  "updateNotScheduled": false,
+  "timezone": "America/New_York",
+  "masterIssue": true,
+  "packageRules": [
+    {
+      "packagePatterns": [
+        "*"
+      ],
+      "excludePackagePatterns": [
+        "cypress",
+        "@cypress/fiddle",
+        "start-server-and-test",
+        "vuepress"
+      ],
+      "enabled": false
+    }
+  ]
+}
