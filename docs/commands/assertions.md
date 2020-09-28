@@ -98,8 +98,9 @@ cy.wrap(employee)
 
 Except for several assertions that DO change the subject:
 
-- `have.property`
-- `have.attr`
+- `have.property` for objects
+- `have.attr` for DOM elements
+- `have.prop` for DOM elements
 
 as the next tests demonstrate
 
