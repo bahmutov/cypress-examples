@@ -71,6 +71,31 @@ Note: find even more examples of matching element's text content in this [FAQ an
 
 <!-- fiddle-end -->
 
+### [.and()](https://on.cypress.io/and)
+
+To chain multiple assertions together, use the `.and()` command.
+
+<!-- fiddle Implicit Assertions / .and() - chain multiple assertions together -->
+
+```html
+<a
+  class="assertions-link active"
+  href="https://on.cypress.io"
+  target="_blank"
+  >Cypress Docs</a
+>
+```
+
+```js
+// https://on.cypress.io/and
+cy.get('.assertions-link')
+  .should('have.class', 'active')
+  .and('have.attr', 'href')
+  .and('include', 'cypress.io')
+```
+
+<!-- fiddle-end -->
+
 ### Subject
 
 The implicit assertions keep the original subject and pass it to the next command.
@@ -159,31 +184,6 @@ cy.get('.first')
     // x is the class prop
     expect(x).to.equal('first second')
   })
-```
-
-<!-- fiddle-end -->
-
-### [.and()](https://on.cypress.io/and)
-
-To chain multiple assertions together, use the `.and()` command.
-
-<!-- fiddle Implicit Assertions / .and() - chain multiple assertions together -->
-
-```html
-<a
-  class="assertions-link active"
-  href="https://on.cypress.io"
-  target="_blank"
-  >Cypress Docs</a
->
-```
-
-```js
-// https://on.cypress.io/and
-cy.get('.assertions-link')
-  .should('have.class', 'active')
-  .and('have.attr', 'href')
-  .and('include', 'cypress.io')
 ```
 
 <!-- fiddle-end -->
