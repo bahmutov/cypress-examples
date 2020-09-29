@@ -166,8 +166,17 @@ cy.get('[data-cy=subject-example]')
   .should('have.attr', 'style')
   .then((x) => {
     // x is the complete style attribute
-    expect(x).to.equal('color: orange; background-color:green')
+    const withoutWhiteSpace = x.replace(/\s/g, '')
+    expect(withoutWhiteSpace).to.equal(
+      'color:orange;background-color:green',
+    )
   })
+// we can remove the whitespace by invoking the method
+// on the yielded subject
+cy.get('[data-cy=subject-example]') // jQuery element
+  .should('have.attr', 'style') // string attribute
+  .invoke('replace', /\s/g, '') // string without whitespace
+  .should('equal', 'color:orange;background-color:green')
 ```
 
 <!-- fiddle-end -->
