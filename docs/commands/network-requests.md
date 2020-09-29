@@ -14,6 +14,7 @@ To control the behavior of network requests and responses, use the `cy.server()`
 cy.server().should((server) => {
   // the default options on server
   // you can override any of these options
+  expect(server).to.be.an('object')
   expect(server.delay).to.eq(0)
   expect(server.method).to.eq('GET')
   expect(server.status).to.eq(200)
@@ -30,8 +31,8 @@ cy.server().should((server) => {
   expect(server.enable).to.be.true
   // forces requests that don't match your routes to 404
   expect(server.force404).to.be.false
-  // whitelists requests from ever being logged or stubbed
-  expect(server.whitelist).to.be.a('function')
+  // preserve requests from ever being logged or stubbed
+  expect(server.ignore).to.be.a('function')
 })
 
 cy.server({

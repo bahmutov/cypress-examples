@@ -73,7 +73,7 @@ To set defaults for all cookies, use `Cypress.Cookies.default()`.
 
 ```js
 Cypress.Cookies.defaults({
-  whitelist: 'session_id',
+  preserve: 'session_id',
 })
 ```
 
@@ -87,8 +87,8 @@ To change the default configuration for cy.server, use `Cypress.Server.defaults(
 Cypress.Server.defaults({
   delay: 0,
   force404: true,
-  whitelist: function (xhr) {
-    // handle custom logic for whitelisting
+  ignore: function (xhr) {
+    // handle custom logic for ignoring certain requests
   },
 })
 ```
