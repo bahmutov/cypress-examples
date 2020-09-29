@@ -155,7 +155,7 @@ cy.wrap(employee)
 ```html
 <div
   data-cy="subject-example"
-  style="color: orange; background-color:green"
+  style="color: orange; background-color:green;"
 >
   Test div
 </div>
@@ -168,7 +168,7 @@ cy.get('[data-cy=subject-example]')
     // x is the complete style attribute
     const withoutWhiteSpace = x.replace(/\s/g, '')
     expect(withoutWhiteSpace).to.equal(
-      'color:orange;background-color:green',
+      'color:orange;background-color:green;',
     )
   })
 // we can remove the whitespace by invoking the method
@@ -176,7 +176,7 @@ cy.get('[data-cy=subject-example]')
 cy.get('[data-cy=subject-example]') // jQuery element
   .should('have.attr', 'style') // string attribute
   .invoke('replace', /\s/g, '') // string without whitespace
-  .should('equal', 'color:orange;background-color:green')
+  .should('equal', 'color:orange;background-color:green;')
 ```
 
 <!-- fiddle-end -->
