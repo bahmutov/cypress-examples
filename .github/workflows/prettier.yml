@@ -14,8 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: bahmutov/npm-install@v1
+
       - name: Format source files 👔
         run: npm run format
+
+      - name: Update version badges 🏷
+        run: npm run badges
+
       # commit any changed files
       # https://github.com/mikeal/publish-to-github-action
       - uses: mikeal/publish-to-github-action@master
