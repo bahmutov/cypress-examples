@@ -153,13 +153,16 @@ cy.wrap(employee)
 <!-- fiddle Implicit Assertions / .should() - have.attr changes the subject -->
 
 ```html
-<div class="example" style="color: orange; background-color:green">
+<div
+  data-cy="subject-example"
+  style="color: orange; background-color:green"
+>
   Test div
 </div>
 ```
 
 ```js
-cy.get('.example')
+cy.get('[data-cy=subject-example]')
   .should('have.attr', 'style')
   .then((x) => {
     // x is the complete style attribute
