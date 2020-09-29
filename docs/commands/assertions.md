@@ -145,7 +145,15 @@ cy.wrap(employee)
   .then((x) => {
     // the current subject has been changed to employee.person
     expect(x).to.equal(employee.person)
+    expect(x).to.have.key('name')
   })
+// Tip: you can use another implicit assertion to check the yielded property
+cy.wrap(employee) // full object
+  .should('have.property', 'person') // employee.person
+  .should('equal', employee.person) // still employee.person
+  .and('have.key', 'name') // still employee.person
+  // still employee.person because have.key does not change the subject
+  .should('equal', employee.person)
 ```
 
 <!-- fiddle-end -->
