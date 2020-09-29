@@ -20,6 +20,13 @@ jobs:
         with:
           config: video=false
 
+      # if something has failed, let's store screenshots
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
       - name: Check links ⚓️
         run: npm run check:links
 
@@ -41,8 +48,17 @@ jobs:
       - name: Test built site 🧪
         uses: cypress-io/github-action@v2
         with:
+          # we have already installed all dependencies above
+          install: false
           start: npm run serve
           config-file: cypress-dist.json
+
+      # if something has failed, let's store screenshots
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-dist-screenshots
+          path: cypress/screenshots
 
       # https://github.com/marketplace/actions/github-pages-action
       - name: Deploy 🚀
