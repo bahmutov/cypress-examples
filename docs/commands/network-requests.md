@@ -72,7 +72,7 @@ cy.request('https://jsonplaceholder.cypress.io/comments').should(
 
 <!-- fiddle-end -->
 
-<!-- fiddle cy.request() with query parameters -->
+<!-- fiddle cy.request() - with query parameters -->
 
 ```js
 // will execute request

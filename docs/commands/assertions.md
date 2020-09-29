@@ -129,7 +129,7 @@ Except for several assertions that DO change the subject:
 
 as the next tests demonstrate
 
-<!-- fiddle Implicit Assertions / .should() - have.prop changes the subject -->
+<!-- fiddle Implicit Assertions / .should() - have.property changes the subject -->
 
 ```js
 const employee = {
