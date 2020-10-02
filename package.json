@@ -50,7 +50,7 @@
     "semantic-release": "^17.0.7",
     "serve": "11.3.0",
     "shelljs": "0.8.4",
-    "start-server-and-test": "1.11.4",
+    "start-server-and-test": "1.11.5",
     "stop-only": "3.1.0",
     "vuepress": "1.4.0",
     "vuepress-plugin-clean-urls": "1.1.2"
