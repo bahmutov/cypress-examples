@@ -32,6 +32,36 @@ cy.get('#querying-example .well>button:first').should(
 
 <!-- fiddle-end -->
 
+<!-- fiddle get with jQuery text selector -->
+
+`cy.get` uses [jQuery selectors](https://api.jquery.com/category/selectors/)
+
+```html
+<table>
+  <tbody>
+    <tr>
+      <td>Same</td>
+      <td>Same</td>
+      <td>Different</td>
+      <td>Same</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+```js
+// selects all table cells with text "Same"
+cy.get('td:contains("Same")').should('have.length', 3)
+// if the text does not have white spaces, no need to quote it
+cy.get('td:contains(Same)').should('have.length', 3)
+// you can find elements NOT having the given text
+cy.get('td:not(:contains(Same))')
+  .should('have.length', 1)
+  .and('have.text', 'Different')
+```
+
+<!-- fiddle-end -->
+
 To find elements by data attribute, query using the attribute selector.
 
 <!-- fiddle get by data attribute -->
