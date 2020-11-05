@@ -32,9 +32,11 @@ cy.get('#querying-example .well>button:first').should(
 
 <!-- fiddle-end -->
 
+### jQuery selectors
+
 <!-- fiddle get with jQuery text selector -->
 
-`cy.get` uses [jQuery selectors](https://api.jquery.com/category/selectors/)
+`cy.get` uses [jQuery selectors](https://api.jquery.com/category/selectors/), thus you can immediately use them to find elements by text (or without given text).
 
 ```html
 <table>
@@ -61,6 +63,8 @@ cy.get('td:not(:contains(Same))')
 ```
 
 <!-- fiddle-end -->
+
+### Using attribute selector
 
 To find elements by data attribute, query using the attribute selector.
 
