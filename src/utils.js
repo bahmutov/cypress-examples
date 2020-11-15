@@ -8,7 +8,7 @@ const assertCypressVersion = (version) => {
 }
 
 const findCypressVersion = () => {
-  const pkg = require('../../package.json')
+  const pkg = require('../package.json')
   const deps = pkg.devDependencies
   const cypressVersion = deps.cypress
   if (!cypressVersion) {
