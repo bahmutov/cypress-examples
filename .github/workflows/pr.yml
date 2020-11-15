@@ -12,11 +12,12 @@ jobs:
         with:
           persist-credentials: false
 
-      # how to read the version from package.json
-      # or from the STDOUT from a Node script?
       - name: Set Cypress version 🎁
         id: cypress
         run: echo "::set-output name=version::$(node ./src/print-cypress-version)"
+
+      - name: Print Cypress version 🖨
+        run: echo "Cypress version is ${{ steps.cypress.outputs.version }}"
 
       - name: Cypress tests 🧪
         uses: cypress-io/github-action@v2
