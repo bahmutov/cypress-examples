@@ -64,7 +64,7 @@ To visit a remote page, use the `cy.visit()` command.
 // trick: dynamically set base url in this test only
 Cypress.config(
   'baseUrl',
-  window.location.origin + '/cypress-examples',
+  `${window.location.origin}/cypress-examples/${Cypress.version}`,
 )
 
 // Visit any sub-domain of your current domain,
