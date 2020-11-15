@@ -14,9 +14,9 @@ jobs:
 
       # how to read the version from package.json
       # or from the STDOUT from a Node script?
-      - name: Set Cypress version
+      - name: Set Cypress version 🎁
         id: cypress
-        run: echo "::set-output name=version::5.6.0"
+        run: echo "::set-output name=version::$(node ./src/print-cypress-version)"
 
       - name: Cypress tests 🧪
         uses: cypress-io/github-action@v2
