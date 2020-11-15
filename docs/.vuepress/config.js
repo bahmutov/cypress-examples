@@ -1,11 +1,20 @@
 let _highlight
 
+const { findCypressVersion } = require('../../src/utils')
+const path = require('path')
+
+const cypressVersion = findCypressVersion()
+const base = `/cypress-examples/${cypressVersion}/`
+const dest = path.join('public', 'cypress-examples', cypressVersion)
+console.log('output folder: %s', dest)
+const title = `Cypress examples (v${cypressVersion})`
+
 module.exports = {
-  title: 'Cypress examples',
+  title,
   description:
     'Static site with Cypress examples tested right from the Markdown sources',
-  base: '/cypress-examples/',
-  dest: 'public/cypress-examples',
+  base,
+  dest,
   head: [
     [
       'link',

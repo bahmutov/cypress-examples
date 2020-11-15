@@ -1,4 +1,4 @@
-name: ci
+name: pr
 # test Cypress examples on every pull request
 # and make sure the site builds, but no deploy
 on: pull_request
@@ -12,6 +12,13 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Set Cypress version 🎁
+        id: cypress
+        run: echo "::set-output name=version::$(node ./src/print-cypress-version)"
+
+      - name: Print Cypress version 🖨
+        run: echo "Cypress version is ${{ steps.cypress.outputs.version }}"
+
       - name: Cypress tests 🧪
         uses: cypress-io/github-action@v2
         with:
@@ -24,7 +31,7 @@ jobs:
         run: npm run docs:build
 
       - name: Export Markdown specs 🖨
-        run: node ./md-to-js http://localhost:5000/cypress-examples
+        run: node ./md-to-js http://localhost:5000/cypress-examples/${{ steps.cypress.outputs.version }}
 
       - name: Catch stray .only tests 🚦
         run: npm run stop-only

@@ -1,11 +1,13 @@
 // @ts-check
 const shell = require('shelljs')
 const path = require('path')
+const { findCypressVersion } = require('./src/utils')
 
 // converts Markdown fiddle specs into JavaScript specs
 let baseUrl = process.argv[2]
 if (!baseUrl) {
-  const DEFAULT_BASE_URL = 'http://localhost:5000/cypress-examples'
+  const cypressVersion = findCypressVersion()
+  const DEFAULT_BASE_URL = `http://localhost:5000/cypress-examples/${cypressVersion}`
   console.log('Setting empty baseUrl to %s', DEFAULT_BASE_URL)
   baseUrl = DEFAULT_BASE_URL
 }

@@ -30,11 +30,18 @@ jobs:
       - name: Check links ⚓️
         run: npm run check:links
 
+      - name: Set Cypress version 🎁
+        id: cypress
+        run: echo "::set-output name=version::$(node ./src/print-cypress-version)"
+
+      - name: Print Cypress version 🖨
+        run: echo "Cypress version is ${{ steps.cypress.outputs.version }}"
+
       - name: Build site 🏗
         run: npm run docs:build
 
       - name: Export Markdown specs 🖨
-        run: node ./md-to-js http://localhost:5000/cypress-examples
+        run: node ./md-to-js http://localhost:5000/cypress-examples/${{ steps.cypress.outputs.version }}
 
       - name: Catch stray .only tests 🚦
         run: npm run stop-only
@@ -65,4 +72,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public/cypress-examples
+          publish_dir: ./public/cypress-examples/${{ steps.cypress.outputs.version }}"
+          destination_dir: ${{ steps.cypress.outputs.version }}"
