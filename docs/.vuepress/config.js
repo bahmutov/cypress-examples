@@ -1,18 +1,9 @@
 let _highlight
 
+const { findCypressVersion } = require('../../src/utils')
 const path = require('path')
-const pkg = require('../../package.json')
-const deps = pkg.devDependencies
-const cypressVersion = deps.cypress
-if (!cypressVersion) {
-  throw new Error('Cannot find Cypress dev dependency')
-}
-const exactVersionRe = /^\d+\.\d+\.\d+$/
-if (!exactVersionRe.test(cypressVersion)) {
-  throw new Error(
-    `Cypress version "${cypressVersion}" does not match exact version x.y.z`,
-  )
-}
+
+const cypressVersion = findCypressVersion()
 const base = `/cypress-examples/${cypressVersion}/`
 const dest = path.join('public', 'cypress-examples', cypressVersion)
 console.log('output folder: %s', dest)
