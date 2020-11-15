@@ -1,11 +1,29 @@
 let _highlight
 
+const path = require('path')
+const pkg = require('../../package.json')
+const deps = pkg.devDependencies
+const cypressVersion = deps.cypress
+if (!cypressVersion) {
+  throw new Error('Cannot find Cypress dev dependency')
+}
+const exactVersionRe = /^\d+\.\d+\.\d+$/
+if (!exactVersionRe.test(cypressVersion)) {
+  throw new Error(
+    `Cypress version "${cypressVersion}" does not match exact version x.y.z`,
+  )
+}
+const base = `/cypress-examples/${cypressVersion}/`
+const dest = path.join('public', 'cypress-examples', cypressVersion)
+console.log('output folder: %s', dest)
+const title = `Cypress examples (v${cypressVersion})`
+
 module.exports = {
-  title: 'Cypress examples',
+  title,
   description:
     'Static site with Cypress examples tested right from the Markdown sources',
-  base: '/cypress-examples/',
-  dest: 'public/cypress-examples',
+  base,
+  dest,
   head: [
     [
       'link',
