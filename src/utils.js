@@ -1,8 +1,13 @@
+// @ts-check
 const assertCypressVersion = (version) => {
+  if (!version) {
+    throw new Error('Expected version string argument')
+  }
+
   const exactVersionRe = /^\d+\.\d+\.\d+$/
-  if (!exactVersionRe.test(cypressVersion)) {
+  if (!exactVersionRe.test(version)) {
     throw new Error(
-      `Cypress version "${cypressVersion}" does not match exact version x.y.z`,
+      `Cypress version "${version}" does not match exact version x.y.z`,
     )
   }
 }
