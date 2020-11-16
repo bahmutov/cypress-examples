@@ -217,7 +217,8 @@ To click a DOM element, use the `.click()` command.
 </button>
 <script>
   // initialize Bootstrap popovers
-  $('[data-toggle="popover"]').popover()
+  // https://github.com/cypress-io/cypress-fiddle/issues/142
+  // $('[data-toggle="popover"]').popover()
 </script>
 ```
 
