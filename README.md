@@ -1,4 +1,4 @@
-# @bahmutov/cypress-examples [![ci status][ci image]][ci url] [![prettier status][prettier image]][prettier url] [![deployed status][deployed image]][deployed url] [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-5.2.0-brightgreen)
+# @bahmutov/cypress-examples [![ci status][ci image]][ci url] [![prettier status][prettier image]][prettier url] [![deployed status][deployed image]][deployed url] [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-5.6.0-brightgreen)
 
 > Static site with Cypress examples tested right from the Markdown sources
 
