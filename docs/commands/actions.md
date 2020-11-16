@@ -181,9 +181,9 @@ To submit a form, use the `cy.submit()` command.
   $('.action-form').on('submit', function (e) {
     e.preventDefault()
 
-    $('<p>Your form has been submitted!</p>')
-      .insertAfter(e.currentTarget)
-      .css('color', '#20B520')
+    const text = document.createElement('p')
+    text.innerText = 'Your form has been submitted!'
+    $(text).insertAfter(e.currentTarget).css('color', '#20B520')
   })
 </script>
 ```
@@ -194,6 +194,7 @@ cy.get('.action-form')
   .submit()
   .next()
   .should('contain', 'Your form has been submitted!')
+  .and('be.visible')
 ```
 
 <!-- fiddle-end -->
