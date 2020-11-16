@@ -24,8 +24,15 @@ jobs:
           # just perform install
           runTests: false
 
+      - name: Set Cypress version 🎁
+        id: cypress
+        run: echo "::set-output name=version::$(node ./src/print-cypress-version)"
+
+      - name: Print Cypress version 🖨
+        run: echo "Cypress version is ${{ steps.cypress.outputs.version }}"
+
       - name: Export Markdown specs 🖨
-        run: node ./md-to-js https://glebbahmutov.com/cypress-examples
+        run: node ./md-to-js https://glebbahmutov.com/cypress-examples/${{ steps.cypress.outputs.version }}
 
       - name: Catch stray .only tests 🚦
         run: npm run stop-only
@@ -63,6 +70,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Update Algolia config 📝
+        run: node ./update-algolia-config https://glebbahmutov.com/cypress-examples/${{ steps.cypress.outputs.version }}
 
       # when scraping the site, inject secrets as environment variables
       # then pass their values into the Docker container using "-e" syntax
