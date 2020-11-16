@@ -204,6 +204,9 @@ cy.get('.action-form')
 To click a DOM element, use the `.click()` command.
 
 <!-- fiddle click -->
+<!-- fiddle-markup
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+-->
 
 ```html
 <button
@@ -216,18 +219,20 @@ To click a DOM element, use the `.click()` command.
 >
   Click to toggle popover
 </button>
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-  crossorigin="anonymous"
-></script>
 <script>
   $('[data-toggle=popover]').popover()
 </script>
 ```
 
 ```js
-cy.get('.action-btn').click()
+cy.get('.action-btn')
+  .click()
+  // when popover appears it adds an attribute
+  .should('have.attr', 'aria-describedby')
+// close it
+cy.get('.action-btn')
+  .click()
+  .should('not.have.attr', 'aria-describedby')
 ```
 
 <!-- fiddle-end -->
@@ -302,6 +307,9 @@ cy.get('#action-canvas')
 You can click on multiple elements by passing an option `multiple: true`
 
 <!-- fiddle click on multiple elements -->
+<!-- fiddle-markup
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+-->
 
 ```html
 <div class="action-labels">
@@ -348,11 +356,6 @@ You can click on multiple elements by passing an option `multiple: true`
     >and me</span
   >
 </div>
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-  crossorigin="anonymous"
-></script>
 <script>
   $('[data-toggle=popover]').popover()
 </script>
@@ -368,6 +371,9 @@ cy.get('.action-labels>.badge').click({ multiple: true })
 You can override Cypress' built-in checks and click on the disable element.
 
 <!-- fiddle click on disabled element -->
+<!-- fiddle-markup
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+-->
 
 ```html
 <style>
@@ -404,11 +410,6 @@ You can override Cypress' built-in checks and click on the disable element.
   </button>
   <div class="opacity-cover"></div>
 </div>
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-  crossorigin="anonymous"
-></script>
 <script>
   $('[data-toggle=popover]').popover()
 </script>
