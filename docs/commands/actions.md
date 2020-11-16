@@ -297,23 +297,17 @@ cy.get('.action-btn').click()
 </div>
 <script>
   // begin: draw dots on canvas on mouse click ---
-  let canvas = document.getElementById('action-canvas')
-
-  let context
-
-  context =
-    typeof canvas !== 'undefined' && canvas !== null
-      ? canvas.getContext('2d')
-      : 0
+  const canvas = document.getElementById('action-canvas')
+  const context = canvas.getContext('2d')
 
   $('#action-canvas').on('click', function (e) {
     draw(e)
   })
 
   function draw(e) {
-    let pos = getMousePos(canvas, e)
-    let posx = pos.x
-    let posy = pos.y
+    const pos = getMousePos(canvas, e)
+    const posx = pos.x
+    const posy = pos.y
 
     context.fillStyle = 'red'
     context.beginPath()
@@ -322,7 +316,7 @@ cy.get('.action-btn').click()
   }
 
   function getMousePos(canvas, evt) {
-    let rect = canvas.getBoundingClientRect()
+    const rect = canvas.getBoundingClientRect()
 
     return {
       x: evt.clientX - rect.left,
