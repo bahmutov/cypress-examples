@@ -297,33 +297,37 @@ cy.get('.action-btn').click()
   <div class="opacity-cover"></div>
 </div>
 <script>
-  // begin: draw dots on canvas on mouse click ---
-  const canvas = document.getElementById('action-canvas')
-  const context = canvas.getContext('2d')
+  // place variable declarations into a closure
+  // to avoid accidental name clashes
+  ;(function () {
+    // begin: draw dots on canvas on mouse click ---
+    const canvas = document.getElementById('action-canvas')
+    const context = canvas.getContext('2d')
 
-  $('#action-canvas').on('click', function (e) {
-    draw(e)
-  })
+    $('#action-canvas').on('click', function (e) {
+      draw(e)
+    })
 
-  function draw(e) {
-    const pos = getMousePos(canvas, e)
-    const posx = pos.x
-    const posy = pos.y
+    function draw(e) {
+      const pos = getMousePos(canvas, e)
+      const posx = pos.x
+      const posy = pos.y
 
-    context.fillStyle = 'red'
-    context.beginPath()
-    context.arc(posx, posy, 5, 0, 2 * Math.PI)
-    context.fill()
-  }
-
-  function getMousePos(canvas, evt) {
-    const rect = canvas.getBoundingClientRect()
-
-    return {
-      x: evt.clientX - rect.left,
-      y: evt.clientY - rect.top,
+      context.fillStyle = 'red'
+      context.beginPath()
+      context.arc(posx, posy, 5, 0, 2 * Math.PI)
+      context.fill()
     }
-  }
+
+    function getMousePos(canvas, evt) {
+      const rect = canvas.getBoundingClientRect()
+
+      return {
+        x: evt.clientX - rect.left,
+        y: evt.clientY - rect.top,
+      }
+    }
+  })()
 </script>
 ```
 
