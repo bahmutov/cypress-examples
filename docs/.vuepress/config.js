@@ -15,19 +15,20 @@ module.exports = {
     'Static site with Cypress examples tested right from the Markdown sources',
   base,
   dest,
+  // TODO read these links from cypress.json file
   head: [
     [
       'link',
       {
         rel: 'stylesheet',
         href:
-          'https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
+          'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css',
       },
     ],
     [
       'style',
       {},
-      '.action-focus.focus { border: 5px solid orange; }',
+      '.action-focus.focus { border: 5px solid orange; } .hidden { display: none !important; }',
     ],
     [
       'script',
