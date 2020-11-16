@@ -197,3 +197,195 @@ cy.get('.action-form')
 ```
 
 <!-- fiddle-end -->
+
+## [.click()](https://on.cypress.io/click)
+
+To click a DOM element, use the `.click()` command.
+
+<!-- fiddle click -->
+
+```html
+<button
+  type="button"
+  class="btn btn-lg btn-danger action-btn"
+  data-toggle="popover"
+  title="Popover"
+  data-placement="top"
+  data-content="This popover shows up on click"
+>
+  Click to toggle popover
+</button>
+
+<hr />
+
+<h6>Canvas to Illustrate Click Positions</h6>
+<canvas width="250" height="250" id="action-canvas"></canvas>
+
+<hr />
+
+<div class="action-labels">
+  <span
+    class="label label-primary"
+    data-toggle="popover"
+    data-placement="bottom"
+    data-content="clicked"
+    >click me</span
+  >
+  <span
+    class="label label-primary"
+    data-toggle="popover"
+    data-placement="bottom"
+    data-content="clicked"
+    >and me</span
+  >
+  <span
+    class="label label-primary"
+    data-toggle="popover"
+    data-placement="bottom"
+    data-content="clicked"
+    >and me</span
+  >
+  <span
+    class="label label-primary"
+    data-toggle="popover"
+    data-placement="bottom"
+    data-content="clicked"
+    >and me</span
+  >
+  <span
+    class="label label-primary"
+    data-toggle="popover"
+    data-placement="bottom"
+    data-content="clicked"
+    >and me</span
+  >
+  <span
+    class="label label-primary"
+    data-toggle="popover"
+    data-placement="bottom"
+    data-content="clicked"
+    >and me</span
+  >
+</div>
+
+<hr />
+
+<div class="action-opacity">
+  <button
+    type="button"
+    class="btn btn-lg btn-primary"
+    data-toggle="popover"
+    data-placement="left"
+    data-content="This popover shows up because we forced the click on the button"
+  >
+    I'm being covered
+  </button>
+  <div class="opacity-cover"></div>
+</div>
+<script>
+  // initialize Bootstrap popovers
+  $('[data-toggle="popover"]').popover()
+
+  // begin: draw dots on canvas on mouse click ---
+  let canvas = document.getElementById('action-canvas')
+
+  let context
+
+  context =
+    typeof canvas !== 'undefined' && canvas !== null
+      ? canvas.getContext('2d')
+      : 0
+
+  $('#action-canvas').on('click', function (e) {
+    draw(e)
+  })
+
+  function draw(e) {
+    let pos = getMousePos(canvas, e)
+    let posx = pos.x
+    let posy = pos.y
+
+    context.fillStyle = 'red'
+    context.beginPath()
+    context.arc(posx, posy, 5, 0, 2 * Math.PI)
+    context.fill()
+  }
+
+  function getMousePos(canvas, evt) {
+    let rect = canvas.getBoundingClientRect()
+
+    return {
+      x: evt.clientX - rect.left,
+      y: evt.clientY - rect.top,
+    }
+  }
+</script>
+```
+
+```js
+cy.get('.action-btn').click()
+
+// clicking in the center of the element is the default
+cy.get('#action-canvas').click()
+
+cy.get('#action-canvas').click('topLeft')
+cy.get('#action-canvas').click('top')
+cy.get('#action-canvas').click('topRight')
+cy.get('#action-canvas').click('left')
+cy.get('#action-canvas').click('right')
+cy.get('#action-canvas').click('bottomLeft')
+cy.get('#action-canvas').click('bottom')
+cy.get('#action-canvas').click('bottomRight')
+
+// .click() accepts a an x and y coordinate
+// that controls where the click occurs :)
+cy.get('#action-canvas')
+  .click(80, 75)
+  .click(170, 75)
+  .click(80, 165)
+  .click(100, 185)
+  .click(125, 190)
+  .click(150, 185)
+  .click(170, 165)
+
+// click multiple elements by passing multiple: true
+cy.get('.action-labels>.label').click({ multiple: true })
+
+// Ignore error checking prior to clicking
+cy.get('.action-opacity>.btn').click({ force: true })
+```
+
+<!-- fiddle-end -->
+
+## [.dblclick()](https://on.cypress.io/dblclick)
+
+To double click a DOM element, use the `.dblclick()` command.
+
+<!-- fiddle dblclick -->
+
+```html
+<form>
+  <div class="form-group">
+    <div class="action-div">Double click to edit</div>
+    <input
+      type="text"
+      class="action-input-hidden hidden form-control"
+      value="Double click to edit"
+    />
+  </div>
+</form>
+<script>
+  // listen to dblclick to demonstrate logic on double click command
+  $('.action-div').on('dblclick', function (e) {
+    $('.action-input-hidden').removeClass('hidden').focus()
+    $(e.currentTarget).addClass('hidden')
+  })
+</script>
+```
+
+```js
+cy.get('.action-div').dblclick().should('not.be.visible')
+cy.get('.action-input-hidden').should('be.visible')
+```
+
+<!-- fiddle-end -->
