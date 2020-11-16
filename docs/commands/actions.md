@@ -136,6 +136,8 @@ cy.get('.action-blur')
 
 To clear on a DOM element, use the `.clear()` command.
 
+<!-- fiddle clear -->
+
 ```html
 <form>
   <div class="form-group">
@@ -157,9 +159,13 @@ cy.get('.action-clear')
   .should('have.value', '')
 ```
 
+<!-- fiddle-end -->
+
 ## [.submit()](https://on.cypress.io/submit)
 
 To submit a form, use the `cy.submit()` command.
+
+<!-- fiddle submit -->
 
 ```html
 <form class="action-form">
@@ -171,6 +177,15 @@ To submit a form, use the `cy.submit()` command.
     Submit
   </button>
 </form>
+<script>
+  $('.action-form').on('submit', function (e) {
+    e.preventDefault()
+
+    $('<p>Your form has been submitted!</p>')
+      .insertAfter(e.currentTarget)
+      .css('color', '#20B520')
+  })
+</script>
 ```
 
 ```js
@@ -180,3 +195,5 @@ cy.get('.action-form')
   .next()
   .should('contain', 'Your form has been submitted!')
 ```
+
+<!-- fiddle-end -->
