@@ -202,7 +202,7 @@ cy.get('.action-form')
 
 To click a DOM element, use the `.click()` command.
 
-<!-- fiddle click -->
+<!-- fiddle.skip click -->
 
 ```html
 <button
@@ -215,9 +215,21 @@ To click a DOM element, use the `.click()` command.
 >
   Click to toggle popover
 </button>
+<script>
+  // initialize Bootstrap popovers
+  $('[data-toggle="popover"]').popover()
+</script>
+```
 
-<hr />
+```js
+cy.get('.action-btn').click()
+```
 
+<!-- fiddle-end -->
+
+<!-- fiddle click on canvas -->
+
+```html
 <h6>Canvas to Illustrate Click Positions</h6>
 <canvas width="250" height="250" id="action-canvas"></canvas>
 
@@ -283,9 +295,6 @@ To click a DOM element, use the `.click()` command.
   <div class="opacity-cover"></div>
 </div>
 <script>
-  // initialize Bootstrap popovers
-  $('[data-toggle="popover"]').popover()
-
   // begin: draw dots on canvas on mouse click ---
   let canvas = document.getElementById('action-canvas')
 
@@ -323,8 +332,6 @@ To click a DOM element, use the `.click()` command.
 ```
 
 ```js
-cy.get('.action-btn').click()
-
 // clicking in the center of the element is the default
 cy.get('#action-canvas').click()
 
