@@ -72,5 +72,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public/cypress-examples/${{ steps.cypress.outputs.version }}"
+          publish_dir: ./public/cypress-examples/${{ steps.cypress.outputs.version }}
           destination_dir: ${{ steps.cypress.outputs.version }}"
