@@ -396,3 +396,36 @@ cy.get('.action-input-hidden').should('be.visible')
 ```
 
 <!-- fiddle-end -->
+
+## [.rightclick()](https://on.cypress.io/rightclick)
+
+To right click a DOM element, use the `.rightclick()` command.
+
+<!-- fiddle rightclick -->
+
+```html
+<form>
+  <div class="form-group">
+    <div class="rightclick-action-div">Right click to edit</div>
+    <input
+      type="text"
+      class="rightclick-action-input-hidden hidden form-control"
+      value="Right click to edit"
+    />
+  </div>
+</form>
+<script>
+  // listen to contextmenu to demonstrate logic on right click command
+  $('.rightclick-action-div').on('contextmenu', function (e) {
+    $('.rightclick-action-input-hidden').removeClass('hidden').focus()
+    $(e.currentTarget).addClass('hidden')
+  })
+</script>
+```
+
+```js
+cy.get('.rightclick-action-div').rightclick().should('not.be.visible')
+cy.get('.rightclick-action-input-hidden').should('be.visible')
+```
+
+<!-- fiddle-end -->
