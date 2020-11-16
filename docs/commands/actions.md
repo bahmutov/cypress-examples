@@ -203,7 +203,7 @@ cy.get('.action-form')
 
 To click a DOM element, use the `.click()` command.
 
-<!-- fiddle.skip click -->
+<!-- fiddle click -->
 
 ```html
 <button
@@ -216,10 +216,13 @@ To click a DOM element, use the `.click()` command.
 >
   Click to toggle popover
 </button>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+  crossorigin="anonymous"
+></script>
 <script>
-  // initialize Bootstrap popovers
-  // https://github.com/cypress-io/cypress-fiddle/issues/142
-  // $('[data-toggle="popover"]').popover()
+  $('[data-toggle="popover"]').popover()
 </script>
 ```
 
