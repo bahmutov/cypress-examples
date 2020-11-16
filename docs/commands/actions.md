@@ -234,68 +234,6 @@ cy.get('.action-btn').click()
 ```html
 <h6>Canvas to Illustrate Click Positions</h6>
 <canvas width="250" height="250" id="action-canvas"></canvas>
-
-<hr />
-
-<div class="action-labels">
-  <span
-    class="label label-primary"
-    data-toggle="popover"
-    data-placement="bottom"
-    data-content="clicked"
-    >click me</span
-  >
-  <span
-    class="label label-primary"
-    data-toggle="popover"
-    data-placement="bottom"
-    data-content="clicked"
-    >and me</span
-  >
-  <span
-    class="label label-primary"
-    data-toggle="popover"
-    data-placement="bottom"
-    data-content="clicked"
-    >and me</span
-  >
-  <span
-    class="label label-primary"
-    data-toggle="popover"
-    data-placement="bottom"
-    data-content="clicked"
-    >and me</span
-  >
-  <span
-    class="label label-primary"
-    data-toggle="popover"
-    data-placement="bottom"
-    data-content="clicked"
-    >and me</span
-  >
-  <span
-    class="label label-primary"
-    data-toggle="popover"
-    data-placement="bottom"
-    data-content="clicked"
-    >and me</span
-  >
-</div>
-
-<hr />
-
-<div class="action-opacity">
-  <button
-    type="button"
-    class="btn btn-lg btn-primary"
-    data-toggle="popover"
-    data-placement="left"
-    data-content="This popover shows up because we forced the click on the button"
-  >
-    I'm being covered
-  </button>
-  <div class="opacity-cover"></div>
-</div>
 <script>
   // place variable declarations into a closure
   // to avoid accidental name clashes
@@ -354,10 +292,110 @@ cy.get('#action-canvas')
   .click(125, 190)
   .click(150, 185)
   .click(170, 165)
+```
 
+<!-- fiddle-end -->
+
+You can click on multiple elements by passing an option `multiple: true`
+
+<!-- fiddle click on multiple elements -->
+
+```html
+<div class="action-labels">
+  <span
+    class="badge badge-pill badge-primary"
+    data-toggle="popover"
+    data-placement="bottom"
+    data-content="clicked"
+    >click me</span
+  >
+  <span
+    class="badge badge-pill badge-primary"
+    data-toggle="popover"
+    data-placement="bottom"
+    data-content="clicked"
+    >and me</span
+  >
+  <span
+    class="badge badge-pill badge-primary"
+    data-toggle="popover"
+    data-placement="bottom"
+    data-content="clicked"
+    >and me</span
+  >
+  <span
+    class="badge badge-pill badge-primary"
+    data-toggle="popover"
+    data-placement="bottom"
+    data-content="clicked"
+    >and me</span
+  >
+  <span
+    class="badge badge-pill badge-primary"
+    data-toggle="popover"
+    data-placement="bottom"
+    data-content="clicked"
+    >and me</span
+  >
+  <span
+    class="badge badge-pill badge-primary"
+    data-toggle="popover"
+    data-placement="bottom"
+    data-content="clicked"
+    >and me</span
+  >
+</div>
+```
+
+```js
 // click multiple elements by passing multiple: true
-cy.get('.action-labels>.label').click({ multiple: true })
+cy.get('.action-labels>.badge').click({ multiple: true })
+```
 
+<!-- fiddle-end -->
+
+You can override Cypress' built-in checks and click on the disable element.
+
+<!-- fiddle click on disabled element -->
+
+```html
+<style>
+  .action-opacity {
+    position: relative;
+    margin-top: 50px;
+  }
+
+  .action-opacity .opacity-cover {
+    text-align: center;
+    line-height: 50px;
+    color: #333;
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 235px;
+    height: 60px;
+    background-color: red;
+    opacity: 0.7;
+    box-shadow: 0 2px 7px #000;
+  }
+</style>
+<div class="action-opacity">
+  <button
+    type="button"
+    class="btn btn-lg btn-primary"
+    data-toggle="popover"
+    data-placement="left"
+    data-content="This popover shows up because we forced the click on the button"
+  >
+    I'm being covered
+  </button>
+  <div class="opacity-cover"></div>
+</div>
+```
+
+```js
 // Ignore error checking prior to clicking
 cy.get('.action-opacity>.btn').click({ force: true })
 ```
