@@ -222,7 +222,7 @@ To click a DOM element, use the `.click()` command.
   crossorigin="anonymous"
 ></script>
 <script>
-  $('[data-toggle="popover"]').popover()
+  $('[data-toggle=popover]').popover()
 </script>
 ```
 
@@ -354,7 +354,7 @@ You can click on multiple elements by passing an option `multiple: true`
   crossorigin="anonymous"
 ></script>
 <script>
-  $('[data-toggle="popover"]').popover()
+  $('[data-toggle=popover]').popover()
 </script>
 ```
 
@@ -410,7 +410,7 @@ You can override Cypress' built-in checks and click on the disable element.
   crossorigin="anonymous"
 ></script>
 <script>
-  $('[data-toggle="popover"]').popover()
+  $('[data-toggle=popover]').popover()
 </script>
 ```
 
