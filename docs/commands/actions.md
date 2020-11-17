@@ -734,6 +734,315 @@ cy.get('.action-select-multiple')
 
 <!-- fiddle-end -->
 
+## [.scrollIntoView()](https://on.cypress.io/scrollintoview)
+
+To scroll an element into view, use the `.scrollintoview()` command.
+
+<!-- fiddle scrollIntoView -->
+<!-- fiddle-markup
+<style>
+#scroll-horizontal,
+#scroll-vertical,
+#scroll-both,
+#scrollable-horizontal,
+#scrollable-vertical,
+#scrollable-both {
+  background-color: #ddd;
+  border: 1px solid #777;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+#scrollable-horizontal ul,
+#scrollable-vertical ul,
+#scrollable-both ul {
+  padding: 0;
+  overflow: auto;
+}
+
+#scrollable-horizontal ul > li,
+#scrollable-vertical ul > li,
+#scrollable-both ul > li {
+  list-style: none;
+  margin: 20px;
+  float: left;
+}
+
+#scrollable-horizontal ul > li {
+  display: inline-block;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+</style>
+-->
+
+```html
+<div
+  id="scroll-horizontal"
+  style="height: 300px; width: 300px; overflow: auto;"
+>
+  <div style="width: 1000px; position: relative;">
+    Horizontal Scroll
+    <button
+      class="btn btn-danger"
+      style="position: absolute; top: 0; left: 500px;"
+    >
+      I'm Here
+    </button>
+  </div>
+</div>
+
+<div
+  id="scroll-vertical"
+  style="height: 300px; width: 300px; overflow: auto;"
+>
+  <div style="height: 1000px; position: relative;">
+    Vertical Scroll
+    <button
+      class="btn btn-danger"
+      style="position: absolute; top: 500px; left: 0"
+    >
+      I'm Here
+    </button>
+  </div>
+</div>
+
+<div
+  id="scroll-both"
+  style="height: 300px; width: 300px; overflow: auto;"
+>
+  <div style="width: 1000px; height: 1000px; position: relative;">
+    Both Scroll
+    <button
+      class="btn btn-danger"
+      style="position: absolute; top: 500px; left: 500px"
+    >
+      I'm Here
+    </button>
+  </div>
+</div>
+```
+
+```js
+// https://on.cypress.io/scrollintoview
+
+// normally all of these buttons are hidden,
+// because they're not within
+// the viewable area of their parent
+// (we need to scroll to see them)
+cy.get('#scroll-horizontal button').should('not.be.visible')
+
+// scroll the button into view, as if the user had scrolled
+cy.get('#scroll-horizontal button')
+  .scrollIntoView()
+  .should('be.visible')
+
+cy.get('#scroll-vertical button').should('not.be.visible')
+
+// Cypress handles the scroll direction needed
+cy.get('#scroll-vertical button')
+  .scrollIntoView()
+  .should('be.visible')
+
+cy.get('#scroll-both button').should('not.be.visible')
+
+// Cypress knows to scroll to the right and down
+cy.get('#scroll-both button').scrollIntoView().should('be.visible')
+```
+
+<!-- fiddle-end -->
+
+## [.scrollTo()](https://on.cypress.io/scrollTo)
+
+To scroll the window or a scrollable element to a specific position, use the `cy.scrollTo()` command.
+
+<!-- fiddle scrollTo -->
+<!-- fiddle-markup
+<style>
+#scroll-horizontal,
+#scroll-vertical,
+#scroll-both,
+#scrollable-horizontal,
+#scrollable-vertical,
+#scrollable-both {
+  background-color: #ddd;
+  border: 1px solid #777;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+#scrollable-horizontal ul,
+#scrollable-vertical ul,
+#scrollable-both ul {
+  padding: 0;
+  overflow: auto;
+}
+
+#scrollable-horizontal ul > li,
+#scrollable-vertical ul > li,
+#scrollable-both ul > li {
+  list-style: none;
+  margin: 20px;
+  float: left;
+}
+
+#scrollable-horizontal ul > li {
+  display: inline-block;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+</style>
+-->
+
+```html
+<div id="scrollable-horizontal" style="height: 150px; width: 300px; overflow: auto;">
+    <div style="width: 3000px">
+      Horizontal Scroll
+      <ul>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="scrollable-vertical" style="height: 150px; width: 300px; overflow: auto;">
+    <div style='height: 1000px'>
+      Vertical Scroll
+      <ul>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+        <li>
+          <img src="https://placehold.it/100x100">
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="scrollable-both" style="height: 150px; width: 300px; overflow: auto;">
+    <div style="width: 1000px; height: 1000px; position: relative;">
+      Both Scroll
+      <button class="btn btn-danger" style="position: absolute; top: 500px; left: 500px">I'm Here</button>
+    </div>
+  </div>
+</div>
+```
+
+```js
+// if you chain .scrollTo() off of cy, we will
+// scroll the entire window
+cy.scrollTo('bottom')
+
+cy.get('#scrollable-horizontal').scrollTo('right')
+
+// or you can scroll to a specific coordinate:
+// (x axis, y axis) in pixels
+cy.get('#scrollable-vertical').scrollTo(250, 250)
+
+// or you can scroll to a specific percentage
+// of the (width, height) of the element
+cy.get('#scrollable-both').scrollTo('75%', '25%')
+
+// control the easing of the scroll (default is 'swing')
+cy.get('#scrollable-vertical').scrollTo('center', {
+  easing: 'linear',
+})
+
+// control the duration of the scroll (in ms)
+cy.get('#scrollable-both').scrollTo('center', { duration: 2000 })
+```
+
+<!-- fiddle-end -->
+
 ## [.trigger()](https://on.cypress.io/trigger)
 
 To trigger an event on a DOM element, use the `.trigger()` command.

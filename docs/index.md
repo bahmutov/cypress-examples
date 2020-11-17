@@ -47,6 +47,8 @@ Commands drive your tests in the browser like a real user would. They let you pe
   - [check](./commands/actions.md#check)
   - [uncheck](./commands/actions.md#uncheck)
   - [select](./commands/actions.md#select)
+  - [scrollIntoView](./commands/actions.md#scrollintoview)
+  - [scrollTo](./commands/actions.md#scrollto)
   - [trigger](./commands/actions.md#trigger)
 - [Viewport](./commands/viewport.md)
   - [viewport](./commands/viewport.md#cy-viewport)

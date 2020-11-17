@@ -183,6 +183,15 @@ cy.request('https://jsonplaceholder.cypress.io/users?_limit=1')
 To route responses to matching requests, use the `cy.route()` command.
 
 <!-- fiddle cy.route() - route responses to matching requests -->
+<!-- fiddle-markup
+<style>
+.network-btn,
+.network-post,
+.network-put {
+  margin-bottom: 20px;
+}
+</style>
+-->
 
 ```html
 <button class="network-btn btn btn-primary">Get Comment</button>
