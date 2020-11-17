@@ -364,6 +364,11 @@ You can click on multiple elements by passing an option `multiple: true`
 ```js
 // click multiple elements by passing multiple: true
 cy.get('.action-labels>.badge').click({ multiple: true })
+// confirm the badges got popovers
+cy.get('[data-toggle=popover][aria-describedby]').should(
+  'have.length',
+  6,
+)
 ```
 
 <!-- fiddle-end -->
