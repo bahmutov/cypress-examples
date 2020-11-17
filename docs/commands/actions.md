@@ -866,7 +866,7 @@ cy.get('#scroll-both button').scrollIntoView().should('be.visible')
 
 <!-- fiddle-end -->
 
-## [.scrollTo()](https://on.cypress.io/scrollTo)
+## [.scrollTo()](https://on.cypress.io/scrollto)
 
 To scroll the window or a scrollable element to a specific position, use the `cy.scrollTo()` command.
 
