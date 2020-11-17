@@ -15,7 +15,6 @@ module.exports = {
     'Static site with Cypress examples tested right from the Markdown sources',
   base,
   dest,
-  // TODO read these links from cypress.json file
   head: [
     [
       'link',
@@ -30,12 +29,23 @@ module.exports = {
       {},
       '.action-focus.focus { border: 5px solid orange; } .hidden { display: none !important; }',
     ],
+    // include jQuery and Bootstrap on every page
     [
       'script',
       {
         src: 'https://code.jquery.com/jquery-3.5.0.min.js',
         integrity:
           'sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=',
+        crossorigin: 'anonymous',
+      },
+    ],
+    [
+      'script',
+      {
+        src:
+          'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js',
+        integrity:
+          'sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx',
         crossorigin: 'anonymous',
       },
     ],
