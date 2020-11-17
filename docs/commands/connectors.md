@@ -2,9 +2,96 @@
 
 Examples of connecting commands in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io/api)
 
-<!-- fiddle then -->
+## [.each()](https://on.cypress.io/each)
+
+<!-- fiddle each -->
+
+To iterate over the elements of a current subject, use the `.each()` command.
+
+```html
+<ul class="connectors-each-ul">
+  <li>Lara Williams</li>
+  <li>William Grey</li>
+  <li>Monica Pharrel</li>
+</ul>
+```
+
+```js
+cy.get('.connectors-each-ul>li').each(function ($el, index, $list) {
+  console.log($el, index, $list)
+})
+```
+
+<!-- fiddle-end -->
+
+## [.its()](https://on.cypress.io/its)
+
+To get the properties on the current subject, use the `.its()` command.
+
+<!-- fiddle its -->
+
+```html
+<ul class="connectors-its-ul">
+  <li>Chai</li>
+  <li>Chai-jQuery</li>
+  <li>Chai-Sinon</li>
+</ul>
+```
+
+```js
+cy.get('.connectors-its-ul>li')
+  // calls the 'length' property returning that value
+  .its('length')
+  .should('be.gt', 2)
+```
+
+<!-- fiddle-end -->
+
+## [.invoke()](https://on.cypress.io/invoke)
+
+To invoke a function on a current subject, use the `.invoke()` command.
+
+<!-- fiddle invoke -->
+
+```html
+<div class="connectors-div">This is a div</div>
+<script>
+  // hide this div so we can invoke show later
+  $('.connectors-div').hide()
+</script>
+```
+
+```js
+cy.get('.connectors-div')
+  .should('be.hidden')
+  // call the jquery method 'show' on the 'div.container'
+  .invoke('show')
+  .should('be.visible')
+```
+
+<!-- fiddle-end -->
+
+## [.spread()](https://on.cypress.io/spread)
+
+To spread an array as individual arguments to a callback function, use the `.spread()` command.
+
+<!-- fiddle spread -->
+
+```js
+const arr = ['foo', 'bar', 'baz']
+
+cy.wrap(arr).spread(function (foo, bar, baz) {
+  expect(foo).to.eq('foo')
+  expect(bar).to.eq('bar')
+  expect(baz).to.eq('baz')
+})
+```
+
+<!-- fiddle-end -->
 
 ## [.then()](https://on.cypress.io/then)
+
+<!-- fiddle then -->
 
 ```html
 <ul class="connectors-list">
