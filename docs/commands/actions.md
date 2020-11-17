@@ -492,3 +492,42 @@ cy.get('.rightclick-action-input-hidden').should('be.visible')
 ```
 
 <!-- fiddle-end -->
+
+## [.trigger()](https://on.cypress.io/trigger)
+
+To trigger an event on a DOM element, use the `.trigger()` command.
+
+<!-- fiddle trigger -->
+
+```html
+<form>
+  <fieldset>
+    <label for="range-input">Range Input</label>
+    <input
+      class="trigger-input-range"
+      name="range-input"
+      type="range"
+      value="0"
+    />
+    <p>0</p>
+  </fieldset>
+</form>
+<script>
+  // listen to input range for trigger command
+  $('.trigger-input-range').on('change', function (e) {
+    const $range = $(e.target)
+    $range.next('p').text($range.val())
+  })
+</script>
+```
+
+```js
+cy.get('.trigger-input-range')
+  .invoke('val', 25)
+  .trigger('change')
+  .get('input[type=range]')
+  .siblings('p')
+  .should('have.text', '25')
+```
+
+<!-- fiddle-end -->
