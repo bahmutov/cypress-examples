@@ -3,7 +3,24 @@ name: pr
 # and make sure the site builds, but no deploy
 on: pull_request
 jobs:
-  test:
+  test-md-specs:
+    runs-on: ubuntu-latest
+    steps:
+      # https://github.com/actions/checkout
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Cypress tests 🧪
+        uses: cypress-io/github-action@v2
+        with:
+          config: video=false
+
+      - name: Check links ⚓️
+        run: npm run check:links
+
+  test-exported-js:
     runs-on: ubuntu-latest
     steps:
       # https://github.com/actions/checkout
@@ -19,13 +36,11 @@ jobs:
       - name: Print Cypress version 🖨
         run: echo "Cypress version is ${{ steps.cypress.outputs.version }}"
 
-      - name: Cypress tests 🧪
+      # only install NPM dependencies and Cypress binary
+      - name: Install dependencies 📦
         uses: cypress-io/github-action@v2
         with:
-          config: video=false
-
-      - name: Check links ⚓️
-        run: npm run check:links
+          runTests: false
 
       - name: Build site 🏗
         run: npm run docs:build
