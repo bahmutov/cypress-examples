@@ -36,11 +36,6 @@ $ npx cypress open --project node_modules/\@bahmutov/cypress-examples/
 
 ![Spec running](images/specs.png)
 
-## Still to do
-
-- deploy to GitHub pages under a version
-  - need to avoid breaking existing published versions
-
 [ci image]: https://github.com/bahmutov/cypress-examples/workflows/ci/badge.svg?branch=master
 [ci url]: https://github.com/bahmutov/cypress-examples/actions?query=workflow%3Aci
 [prettier image]: https://github.com/bahmutov/cypress-examples/workflows/prettier/badge.svg?branch=master
