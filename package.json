@@ -6,16 +6,19 @@
   "scripts": {
     "test": "cypress run",
     "cy:open": "cypress open",
+    "cy:open:exported": "cypress open --config-file cypress-dist.json",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "check:links": "find . -type f -name '*.md' ! -path './node_modules/*' | xargs -L1 npx markdown-link-check --quiet",
     "format": "prettier --write 'docs/**/*.md'",
     "format:extracted": "prettier --write 'docs/**/*.js' '!docs/.vuepress/**/*.js'",
     "stop-only": "stop-only --folder docs --skip docs/.vuepress",
-    "to-js": "node ./md-to-js http://localhost:5000/cypress-examples",
+    "to-js": "node ./md-to-js",
     "serve": "http-server -c-1 --port=5000 --silent public",
     "semantic-release": "semantic-release",
-    "badges": "update-badge cypress"
+    "badges": "update-badge cypress",
+    "predev:export": "npm run docs:build && npm run to-js",
+    "dev:export": "start-test serve 5000 cy:open:exported"
   },
   "repository": {
     "type": "git",

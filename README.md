@@ -36,6 +36,16 @@ $ npx cypress open --project node_modules/\@bahmutov/cypress-examples/
 
 ![Spec running](images/specs.png)
 
+## Development
+
+There is a difference between running Markdown files and testing fully exported specs against the built site. To do this all in a single command locally run
+
+```
+npm run dev:export
+```
+
+This command builds the static site, exports the Markdown specs into JavaScript specs, starts local server, and when it responds, starts Cypress.
+
 [ci image]: https://github.com/bahmutov/cypress-examples/workflows/ci/badge.svg?branch=master
 [ci url]: https://github.com/bahmutov/cypress-examples/actions?query=workflow%3Aci
 [prettier image]: https://github.com/bahmutov/cypress-examples/workflows/prettier/badge.svg?branch=master
