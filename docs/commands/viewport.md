@@ -13,7 +13,7 @@ cy.get('.navbar').should('be.visible')
 cy.viewport(320, 480)
 
 // the navbar should have collapse since our screen is smaller
-cy.get('#navbar').should('not.be.visible')
+cy.get('#navbar').should('not.exit')
 cy.get('.sidebar-button').should('be.visible').click()
 cy.get('.nav-item').find('a').should('be.visible')
 
