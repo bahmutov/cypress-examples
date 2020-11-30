@@ -36,6 +36,12 @@ jobs:
       - name: Print Cypress version 🖨
         run: echo "Cypress version is ${{ steps.cypress.outputs.version }}"
 
+      # only install NPM dependencies and Cypress binary
+      - name: Install dependencies 📦
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+
       - name: Build site 🏗
         run: npm run docs:build
 
