@@ -90,6 +90,7 @@ Commands drive your tests in the browser like a real user would. They let you pe
   - [server](./commands/network-requests.md#cy-server)
   - [request](./commands/network-requests.md#cy-request)
   - [route](./commands/network-requests.md#cy-route)
+  - [intercept](./commands/network-requests.md#cy-intercept)
 - [Local Storage](./commands/local-storage.md)
   - [clearLocalStorage](./commands/local-storage.md#cy-clearlocalstorage)
 - [Files](./commands/files.md)

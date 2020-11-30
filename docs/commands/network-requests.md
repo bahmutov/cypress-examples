@@ -4,6 +4,8 @@ Examples of handling AJAX or XHR requests in Cypress, for a full reference of co
 
 ## [cy.server()](https://on.cypress.io/server)
 
+_Deprecated_ in Cypress v6
+
 To control the behavior of network requests and responses, use the `cy.server()` command.
 
 <!-- fiddle cy.server() - control behavior of network requests and responses -->
@@ -180,9 +182,158 @@ cy.request('https://jsonplaceholder.cypress.io/users?_limit=1')
 
 ## [cy.route()](https://on.cypress.io/route)
 
+_Deprecated_ in Cypress v6
+
 To route responses to matching requests, use the `cy.route()` command.
 
 <!-- fiddle cy.route() - route responses to matching requests -->
+<!-- fiddle-markup
+<style>
+.network-route-btn,
+.network-route-post,
+.network-route-put {
+  margin-bottom: 20px;
+}
+</style>
+-->
+
+```html
+<button class="network-route-btn btn btn-primary">Get Comment</button>
+<div class="network-route-comment"></div>
+<button class="network-route-post btn btn-success">
+  Post Comment
+</button>
+<div class="network-route-post-comment"></div>
+<button class="network-route-put btn btn-warning">
+  Update Comment
+</button>
+<div class="network-route-put-comment"></div>
+<script>
+  // place the example code into a closure to isolate its variables
+  ;(function () {
+    // we fetch all data from this REST json backend
+    const root = 'https://jsonplaceholder.cypress.io'
+
+    function getComment() {
+      $.ajax({
+        url: `${root}/comments/1`,
+        method: 'GET',
+      }).then(function (data) {
+        $('.network-route-comment').text(data.body)
+      })
+    }
+
+    function postComment() {
+      $.ajax({
+        url: `${root}/comments`,
+        method: 'POST',
+        data: {
+          name: 'Using POST in cy.route()',
+          email: 'hello@cypress.io',
+          body:
+            'You can change the method used for cy.route() to be GET, POST, PUT, PATCH, or DELETE',
+        },
+      }).then(function () {
+        $('.network-route-post-comment').text('POST successful!')
+      })
+    }
+
+    function putComment() {
+      $.ajax({
+        url: `${root}/comments/1`,
+        method: 'PUT',
+        data: {
+          name: 'Using PUT in cy.route()',
+          email: 'hello@cypress.io',
+          body:
+            'You can change the method used for cy.route() to be GET, POST, PUT, PATCH, or DELETE',
+        },
+        statusCode: {
+          404(data) {
+            $('.network-route-put-comment').text(
+              data.responseJSON.error,
+            )
+          },
+        },
+      })
+    }
+
+    $('.network-route-btn').on('click', function (e) {
+      e.preventDefault()
+      getComment(e)
+    })
+
+    $('.network-route-post').on('click', function (e) {
+      e.preventDefault()
+      postComment(e)
+    })
+
+    $('.network-route-put').on('click', function (e) {
+      e.preventDefault()
+      putComment(e)
+    })
+  })()
+</script>
+```
+
+```js
+// https://on.cypress.io/route
+
+let message = 'whoa, this comment does not exist'
+
+cy.server()
+
+// Listen to GET to comments/1
+cy.route('GET', 'comments/*').as('getComment')
+
+// we have code that gets a comment when
+// the button is clicked in scripts.js
+cy.get('.network-route-btn').click()
+
+// https://on.cypress.io/wait
+cy.wait('@getComment').its('status').should('eq', 200)
+
+// Listen to POST to comments
+cy.route('POST', '/comments').as('postComment')
+
+// we have code that posts a comment when
+// the button is clicked in scripts.js
+cy.get('.network-route-post').click()
+cy.wait('@postComment').should((xhr) => {
+  expect(xhr.requestBody).to.include('email')
+  expect(xhr.requestHeaders).to.have.property('Content-Type')
+  expect(xhr.responseBody).to.have.property(
+    'name',
+    'Using POST in cy.route()',
+  )
+})
+
+// Stub a response to PUT "comments/*"
+cy.route({
+  method: 'PUT',
+  url: 'comments/*',
+  status: 404,
+  response: { error: message },
+  delay: 500,
+}).as('putComment')
+
+// we have code that puts a comment when
+// the button is clicked in scripts.js
+cy.get('.network-route-put').click()
+
+cy.wait('@putComment')
+
+// our 404 statusCode logic in scripts.js executed
+cy.get('.network-route-put-comment').should('contain', message)
+```
+
+<!-- fiddle-end -->
+
+## [cy.intercept()](https://on.cypress.io/intercept)
+
+To route responses to matching requests, use the `cy.intercept()` command.
+
+<!-- fiddle cy.intercept() -->
 <!-- fiddle-markup
 <style>
 .network-btn,
@@ -220,10 +371,10 @@ To route responses to matching requests, use the `cy.route()` command.
         url: `${root}/comments`,
         method: 'POST',
         data: {
-          name: 'Using POST in cy.route()',
+          name: 'Using POST in cy.intercept()',
           email: 'hello@cypress.io',
           body:
-            'You can change the method used for cy.route() to be GET, POST, PUT, PATCH, or DELETE',
+            'You can change the method used for cy.intercept() to be GET, POST, PUT, PATCH, or DELETE',
         },
       }).then(function () {
         $('.network-post-comment').text('POST successful!')
@@ -267,45 +418,50 @@ To route responses to matching requests, use the `cy.route()` command.
 ```
 
 ```js
-// https://on.cypress.io/route
+// https://on.cypress.io/intercept
 
 let message = 'whoa, this comment does not exist'
 
-cy.server()
-
 // Listen to GET to comments/1
-cy.route('GET', 'comments/*').as('getComment')
+cy.intercept('GET', '**/comments/*').as('getComment')
 
 // we have code that gets a comment when
 // the button is clicked in scripts.js
 cy.get('.network-btn').click()
 
 // https://on.cypress.io/wait
-cy.wait('@getComment').its('status').should('eq', 200)
+cy.wait('@getComment')
+  .its('response.statusCode')
+  .should('be.oneOf', [200, 304])
 
 // Listen to POST to comments
-cy.route('POST', '/comments').as('postComment')
+cy.intercept('POST', '**/comments').as('postComment')
 
 // we have code that posts a comment when
 // the button is clicked in scripts.js
 cy.get('.network-post').click()
-cy.wait('@postComment').should((xhr) => {
-  expect(xhr.requestBody).to.include('email')
-  expect(xhr.requestHeaders).to.have.property('Content-Type')
-  expect(xhr.responseBody).to.have.property(
+cy.wait('@postComment').should(({ request, response }) => {
+  expect(request.body).to.include('email')
+  expect(request.headers).to.have.property('content-type')
+  expect(response && response.body).to.have.property(
     'name',
-    'Using POST in cy.route()',
+    'Using POST in cy.intercept()',
   )
 })
 
-// Stub a response to PUT "comments/*"
-cy.route({
-  method: 'PUT',
-  url: 'comments/*',
-  status: 404,
-  response: { error: message },
-  delay: 500,
-}).as('putComment')
+// Stub a response to PUT comments/ ****
+cy.intercept(
+  {
+    method: 'PUT',
+    url: '**/comments/*',
+  },
+  {
+    statusCode: 404,
+    body: { error: message },
+    headers: { 'access-control-allow-origin': '*' },
+    delayMs: 500,
+  },
+).as('putComment')
 
 // we have code that puts a comment when
 // the button is clicked in scripts.js
