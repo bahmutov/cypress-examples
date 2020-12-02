@@ -338,7 +338,8 @@ To route responses to matching requests, use the `cy.intercept()` command.
 <style>
 .network-btn,
 .network-post,
-.network-put {
+.network-put,
+.network-delete {
   margin-bottom: 20px;
 }
 </style>
@@ -351,6 +352,8 @@ To route responses to matching requests, use the `cy.intercept()` command.
 <div class="network-post-comment"></div>
 <button class="network-put btn btn-warning">Update Comment</button>
 <div class="network-put-comment"></div>
+<button class="network-delete btn btn-warning">Delete Comment</button>
+<div class="network-delete-comment"></div>
 <script>
   // place the example code into a closure to isolate its variables
   ;(function () {
@@ -399,6 +402,15 @@ To route responses to matching requests, use the `cy.intercept()` command.
       })
     }
 
+    function deleteComment() {
+      $.ajax({
+        url: `${root}/comments/1`,
+        method: 'DELETE',
+      }).then(function () {
+        $('.network-delete-comment').text('Comment deleted!')
+      })
+    }
+
     $('.network-btn').on('click', function (e) {
       e.preventDefault()
       getComment(e)
@@ -412,6 +424,11 @@ To route responses to matching requests, use the `cy.intercept()` command.
     $('.network-put').on('click', function (e) {
       e.preventDefault()
       putComment(e)
+    })
+
+    $('.network-delete').on('click', function (e) {
+      e.preventDefault()
+      deleteComment(e)
     })
   })()
 </script>
@@ -471,6 +488,12 @@ cy.wait('@putComment')
 
 // our 404 statusCode logic in scripts.js executed
 cy.get('.network-put-comment').should('contain', message)
+
+// we can spy on requests that do not have a response body
+cy.intercept('DELETE', '/comments/1').as('delete')
+cy.get('.network-delete').click()
+cy.wait('@delete')
+cy.contains('.network-delete-comment', 'Comment deleted!')
 ```
 
 <!-- fiddle-end -->
