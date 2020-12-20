@@ -135,3 +135,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [platform](./cypress-api/index.md#cypress-platform)
 - [version](./cypress-api/index.md#cypress-version)
 - [spec](./cypress-api/index.md#cypress-spec)
+
+## Recipes
+
+- [Checking the length of the list after adding an item](./recipes/add-list-item.md)
