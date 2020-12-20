@@ -7,7 +7,7 @@ Live site [glebbahmutov.com/cypress-examples/](https://glebbahmutov.com/cypress-
 ## Benefits
 
 - single source of truth for tests and HTML pages. No more copy / pasting
-  - Cypress runs tests using Markdown source files via [cypress-fiddle](https://github.com/cypress-io/cypress-fiddle)
+  - Cypress runs tests using Markdown source files via [cypress-markdown-preprocessor](https://github.com/bahmutov/cypress-markdown-preprocessor) and [cypress-fiddle](https://github.com/cypress-io/cypress-fiddle)
 - great development experience with live reload and optimized static build thanks to [Vuepress][vuepress] and Prettier formatting
 - JavaScript specs are extracted and published as NPM package `@bahmutov/cypress-examples` after testing against the deployed site and then published to NPM under `@bahmutov/cypress-examples`
 - excellent text and code comment search thanks to Algolia
