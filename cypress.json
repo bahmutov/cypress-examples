@@ -4,6 +4,7 @@
   "fixturesFolder": "cypress/fixtures",
   "integrationFolder": "docs",
   "testFiles": "**/*.md",
+  "viewportHeight": 1000,
   "env": {
     "cypress-fiddle": {
       "stylesheets": [
