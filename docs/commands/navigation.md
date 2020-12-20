@@ -6,11 +6,6 @@ Examples of navigating to pages within your application in Cypress, for a full r
 
 To go back or forward in the browser's history, use the `cy.go()` command.
 
-<!--
-TODO will work once we implement export fiddles
-https://github.com/cypress-io/cypress-fiddle/issues/97
--->
-
 <!-- fiddle.export cy.go -->
 
 ```js
