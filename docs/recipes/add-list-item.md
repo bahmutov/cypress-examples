@@ -12,11 +12,13 @@ In this example, we do not know how many items are in the list initially. After 
 <button id="add">Add an item</button>
 <script>
   let list = document.getElementById('list')
-  document.getElementById('add').addEventListener('click', () => {
-    const li = document.createElement('li')
-    li.textContent = 'added'
-    list.appendChild(li)
-  })
+  document
+    .getElementById('add')
+    .addEventListener('click', function () {
+      const li = document.createElement('li')
+      li.textContent = 'added'
+      list.appendChild(li)
+    })
 </script>
 ```
 
