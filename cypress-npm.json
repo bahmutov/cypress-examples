@@ -2,5 +2,6 @@
   "fixturesFolder": false,
   "supportFile": false,
   "pluginsFile": false,
-  "integrationFolder": "docs"
+  "integrationFolder": "docs",
+  "viewportHeight": 1000
 }
