@@ -4,5 +4,6 @@
   "fixturesFolder": "cypress/fixtures",
   "integrationFolder": "docs",
   "testFiles": "**/*.js",
-  "video": false
+  "video": false,
+  "viewportHeight": 1000
 }
