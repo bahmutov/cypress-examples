@@ -16,7 +16,7 @@
       ],
       "excludePackagePatterns": [
         "cypress",
-        "@cypress/fiddle",
+        "cypress-markdown-preprocessor",
         "start-server-and-test",
         "vuepress"
       ],
