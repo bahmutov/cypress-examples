@@ -25,6 +25,8 @@ const markdownFiles = globby.sync([
   // we skip the recipes Markdown files,
   // let's not make JavaScript spec out of it
   `!${rootFolder}/recipes/**/*.md`,
+  // also skip the root index file
+  `!${rootFolder}/index.md`,
 ])
 console.log(
   '%d Markdown %s',
