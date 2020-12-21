@@ -11,8 +11,6 @@ jobs:
       # https://github.com/actions/checkout
       - name: Checkout 🛎️
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
       # run all tests straight from Markdown files
       - name: Cypress tests 🧪
