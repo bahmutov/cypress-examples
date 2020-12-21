@@ -19,7 +19,7 @@ Getting the full CSS class list for [issue 8592](https://github.com/cypress-io/c
 
 ```js
 cy.get('#accordion')
-  // check individual class names
+  // check individual class names using "have.class"
   .should('have.class', 'c-accordion')
   .and('have.class', 'collapsed')
   .and('not.have.class', 'c-disabled')
