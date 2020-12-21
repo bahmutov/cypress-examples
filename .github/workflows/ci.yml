@@ -20,6 +20,14 @@ jobs:
         with:
           config: video=false
 
+      # if there are any updated PNG images, commit and push them
+      - name: Commit any changed images 💾
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updated screenshots
+          branch: main
+          file_pattern: '*.png'
+
       # if something has failed, let's store screenshots
       - uses: actions/upload-artifact@v1
         if: failure()

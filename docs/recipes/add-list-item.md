@@ -46,3 +46,5 @@ cy.takeRunnerPic('add-list-item')
 ```
 
 <!-- fiddle.end -->
+
+![Add list item test](./pics/add-list-item.png)
