@@ -19,14 +19,20 @@ Getting the full CSS class list for [issue 8592](https://github.com/cypress-io/c
 
 ```js
 cy.get('#accordion')
+  // check individual class names
   .should('have.class', 'c-accordion')
   .and('have.class', 'collapsed')
   .and('not.have.class', 'c-disabled')
   .then(($el) => {
+    // you can grab the full class name using jQuery property
     expect($el[0].className).to.equal(
       'c-accordion c-accordion-active collapsed',
     )
   })
+// we can get the HTML class list
+cy.get('#accordion')
+  .then(($el) => $el[0].classList.value)
+  .should('equal', 'c-accordion c-accordion-active collapsed')
 ```
 
 <!-- fiddle-end -->
