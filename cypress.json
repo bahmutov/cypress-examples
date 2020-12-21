@@ -1,6 +1,6 @@
 {
   "pluginsFile": "plugins.js",
-  "supportFile": false,
+  "supportFile": "cypress/support/index.js",
   "fixturesFolder": "cypress/fixtures",
   "integrationFolder": "docs",
   "testFiles": "**/*.md",
