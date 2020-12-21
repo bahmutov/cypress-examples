@@ -137,3 +137,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Checking the length of the list after adding an item](./recipes/add-list-item.md)
 - [CSS examples](./recipes/css-examples.md)
 - [Iterate over elements using `.each` command](./recipes/each-example.md)
+- [Non-breaking space](recipes/non-breaking-space.md)
