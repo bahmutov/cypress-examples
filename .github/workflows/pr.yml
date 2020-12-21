@@ -9,13 +9,21 @@ jobs:
       # https://github.com/actions/checkout
       - name: Checkout 🛎️
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
       - name: Cypress tests 🧪
         uses: cypress-io/github-action@v2
         with:
           config: video=false
+
+      - name: See any changed files 👀
+        run: git status
+
+      # if there are any updated PNG images, commit and push them
+      - name: Commit any changed images 💾
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updated screenshots
+          file_pattern: '*.png'
 
       - name: Check links ⚓️
         run: npm run check:links
