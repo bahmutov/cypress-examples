@@ -13,7 +13,8 @@
       "style": "body { padding: 2rem; } .action-focus.focus { border: 5px solid orange; } .hidden { display: none !important; }"
     },
     "cypress-book": {
-      "imageFolder": "./pics"
+      "imageFolder": "./pics",
+      "tolerance": 0.002
     }
   }
 }
