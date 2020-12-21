@@ -1,7 +1,3 @@
----
-sidebar: false
----
-
 # Cypress Examples
 
 > Static site with Cypress examples tested right from the Markdown sources
