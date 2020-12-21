@@ -44,6 +44,7 @@
   "homepage": "https://github.com/bahmutov/cypress-examples#readme",
   "devDependencies": {
     "cypress": "6.1.0",
+    "cypress-book": "1.2.0",
     "cypress-markdown-preprocessor": "1.0.0",
     "dependency-version-badge": "1.2.0",
     "globby": "11.0.1",

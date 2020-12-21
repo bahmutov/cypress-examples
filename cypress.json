@@ -1,6 +1,6 @@
 {
   "pluginsFile": "plugins.js",
-  "supportFile": false,
+  "supportFile": "cypress/support/index.js",
   "fixturesFolder": "cypress/fixtures",
   "integrationFolder": "docs",
   "testFiles": "**/*.md",
@@ -11,6 +11,9 @@
         "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       ],
       "style": "body { padding: 2rem; } .action-focus.focus { border: 5px solid orange; } .hidden { display: none !important; }"
+    },
+    "cypress-book": {
+      "imageFolder": "./pics"
     }
   }
 }

@@ -41,6 +41,10 @@ cy.get('#add')
     // and we can use it directly in the assertion
     cy.get('#list li').should('have.length', N + 1)
   })
+// take the screenshot at the end
+cy.takeRunnerPic('add-list-item')
 ```
 
 <!-- fiddle.end -->
+
+![Add list item test](./pics/add-list-item.png)
