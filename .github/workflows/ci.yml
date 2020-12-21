@@ -20,6 +20,9 @@ jobs:
         with:
           config: video=false
 
+      - name: See any changed files 👀
+        run: git status
+
       # if there are any updated PNG images, commit and push them
       - name: Commit any changed images 💾
         uses: stefanzweifel/git-auto-commit-action@v4
