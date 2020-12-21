@@ -25,7 +25,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Updated screenshots
-          branch: main
+          branch: master
           file_pattern: '*.png'
 
       # if something has failed, let's store screenshots
