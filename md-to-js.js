@@ -1,6 +1,8 @@
 // @ts-check
 const shell = require('shelljs')
 const path = require('path')
+const globby = require('globby')
+const pluralize = require('pluralize')
 const { findCypressVersion } = require('./src/utils')
 
 // converts Markdown fiddle specs into JavaScript specs
@@ -18,8 +20,18 @@ console.log(
 )
 
 const rootFolder = 'docs'
-const markdownFiles = shell.ls(`${rootFolder}/**/*.md`)
-console.log('Markdown files\n' + markdownFiles.join('\n'))
+const markdownFiles = globby.sync([
+  `${rootFolder}/**/*.md`,
+  // we skip the recipes Markdown files,
+  // let's not make JavaScript spec out of it
+  `!${rootFolder}/recipes/**/*.md`,
+])
+console.log(
+  '%d Markdown %s',
+  markdownFiles.length,
+  pluralize('file', markdownFiles.length, false),
+)
+console.log(markdownFiles.join('\n'))
 
 markdownFiles.forEach((filename) => {
   const inRoot = path.relative(rootFolder, filename)
