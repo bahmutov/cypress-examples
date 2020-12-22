@@ -14,7 +14,7 @@
     },
     "cypress-book": {
       "imageFolder": "./pics",
-      "tolerance": 0.002
+      "tolerance": 0.005
     }
   }
 }
