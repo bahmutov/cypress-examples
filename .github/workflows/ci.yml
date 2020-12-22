@@ -84,6 +84,9 @@ jobs:
           publish_dir: ./public/cypress-examples/${{ steps.cypress.outputs.version }}
           destination_dir: ${{ steps.cypress.outputs.version }}
 
+      - name: Export page redirects ↗️
+        run: node ./md-to-redirects https://glebbahmutov.com/cypress-examples/${{ steps.cypress.outputs.version }}
+
       # deploy the redirect pages that point every top level
       # HTML page the Cypress Test Runner might load to the corresponding
       # page under the latest version

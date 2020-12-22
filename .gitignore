@@ -6,5 +6,8 @@ docs/**/*.js
 # a couple of JSON files created during spec runs
 cypress/fixtures/profile.json
 cypress/fixtures/users.json
+# generated documentation site
 public
 .publish
+# redirects to versioned pages
+redirects
