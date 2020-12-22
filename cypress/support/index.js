@@ -8,7 +8,16 @@ Cypress.Commands.add('takeRunnerPic', (name) => {
     throw new Error('Expected a snapshot name')
   }
 
-  cy.document({ log: false }).within({ log: false }, () => {
+  // let the DOM stabilize
+  cy.wait(500, {
+    log: false,
+  })
+
+  // escape the cy.within normally done within a fiddle
+  // https://github.com/cypress-io/cypress/issues/14253
+  cy.document({
+    log: false,
+  }).within({ log: false }, () => {
     cy.screenshot(name, {
       capture: 'runner',
       log: false,

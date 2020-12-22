@@ -112,11 +112,15 @@ If the form is initially empty or does not even exist, our custom command has to
   setTimeout(addInput('lname'), 1500)
   function addForm() {
     const form = document.createElement('form')
+    form.setAttribute('id', 'form-id')
     document.getElementById('result').appendChild(form)
+  }
+  function getForm() {
+    return document.getElementById('form-id')
   }
   function addLabel(forId, text) {
     return function () {
-      const form = document.querySelector('form')
+      const form = getForm()
       const label = document.createElement('label')
       label.setAttribute('for', forId)
       label.textContent = text
@@ -125,7 +129,7 @@ If the form is initially empty or does not even exist, our custom command has to
   }
   function addInput(id) {
     return function () {
-      const form = document.querySelector('form')
+      const form = getForm()
       const input = document.createElement('input')
       input.setAttribute('id', id)
       input.setAttribute('type', 'text')
