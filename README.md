@@ -15,6 +15,8 @@ Live site [glebbahmutov.com/cypress-examples/](https://glebbahmutov.com/cypress-
 - excellent text and code comment search thanks to Algolia
   - [Scrape Static Site with Algolia](https://glebbahmutov.com/blog/scrape-static-site-with-algolia/) blog post
   - scrape happens after deploying the docs to GitHub Pages in [.github/workflows/deployed.yml](.github/workflows/deployed.yml) workflow
+- recipes that are not included in the NPM package but deployed to the static pages
+- top level pages redirect to the deployed version pages. For example if the user visits `/cypress-examples/` they are redirected to `/cypress-examples/x.y.z/` page.
 
 ## Notes
 
