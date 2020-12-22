@@ -1,6 +1,8 @@
-# `cy.each` example
+# `cy.each` examples
 
-Stop `cy.each` iteration https://github.com/cypress-io/cypress/issues/8652
+## Stop `cy.each` iteration
+
+The original [issue #8652](https://github.com/cypress-io/cypress/issues/8652)
 
 <!-- fiddle .each example -->
 
@@ -82,8 +84,9 @@ cy.get('li')
 </ul>
 ```
 
+**alternative:** using a custom command
+
 ```js
-// alternative: using custom command
 // let's make a custom command to read the values from the list
 Cypress.Commands.add('grabList', (selector) => {
   const grabbedList = []
