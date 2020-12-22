@@ -83,3 +83,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public/cypress-examples/${{ steps.cypress.outputs.version }}
           destination_dir: ${{ steps.cypress.outputs.version }}
+
+      # deploy the redirect pages that point every top level
+      # HTML page the Cypress Test Runner might load to the corresponding
+      # page under the latest version
+      - name: Deploy redirects 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # publish + destination dir imply "keep existing other files and folders"
+          publish_dir: ./redirects
+          destination_dir: .
