@@ -200,6 +200,10 @@ cy.getByLabel2('First name:').type('Joe')
 // now interact with the second input
 cy.getByLabel2('Last name:').should('have.value', '').type('Smith')
 cy.getByLabel2('Last name:').should('have.value', 'Smith')
+
+cy.takeRunnerPic('form-input')
 ```
 
 <!-- fiddle-end -->
+
+![Find form input by label using custom command](./pics/form-input.png)
