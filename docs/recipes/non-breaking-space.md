@@ -2,6 +2,8 @@
 
 Dealing with `&nbsp;` character aka [Non-breaking space](https://en.wikipedia.org/wiki/Non-breaking_space).
 
+## Via cy.contains
+
 When using [cy.contains](https://on.cypress.io/contains) command Cypress automatically converts the `&nbsp;` entity into space character. Thus `cy.contains` finds element that include `&nbsp;`.
 
 <!-- fiddle Without whitespace -->
@@ -21,6 +23,8 @@ cy.get('[data-testid=testattr]')
 ```
 
 <!-- fiddle-end -->
+
+## Asserting text
 
 But if the HTML contains the whitespace special character `&nbsp;` then checking elements by text is tricky. See [#9530](https://github.com/cypress-io/cypress/issues/9530) for example. This is because [.filter](https://on.cypress.io/filter) uses jQuery [:contains selector](https://api.jquery.com/contains-selector/) which uses literal text match.
 
@@ -80,7 +84,7 @@ cy.get('[data-testid=testattr]')
 
 <!-- fiddle-end -->
 
-## Filter
+## Filtering using `cy.filter`
 
 Just checking how `.filter(:contains)` works
 

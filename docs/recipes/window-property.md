@@ -1,5 +1,7 @@
 # Window property
 
+## Checking if property was set
+
 For question [#5419](https://github.com/cypress-io/cypress/issues/5419)
 
 <!-- fiddle Property is set after delay -->
