@@ -2,6 +2,8 @@
 
 Imagine we have a form with an input element and a label. We want to find the input element by label and yield it to further assertions and commands. Let's write a custom command.
 
+## Reusable function
+
 <!-- fiddle Get by label / using a function -->
 
 Form with several input text fields and their labels
@@ -55,6 +57,8 @@ getInputByLabel('Last name:').should('have.value', 'Smith')
 
 <!-- fiddle-end -->
 
+## Simple custom command
+
 While making a small reusable function is my preferred way of writing reusable test code, you can also create a custom command.
 
 <!-- fiddle Get by label / using a simple custom command -->
@@ -88,9 +92,11 @@ cy.getByLabel('First name:').should('have.value', 'Joe')
 
 <!-- fiddle-end -->
 
+## Complex custom command with retries
+
 Let's make more complex command
 
-<!-- fiddle.skip Get by label / using a complex custom command -->
+<!-- fiddle Get by label / using a complex custom command -->
 
 If the form is initially empty or does not even exist, our custom command has to handle it.
 
@@ -99,11 +105,11 @@ If the form is initially empty or does not even exist, our custom command has to
 <script>
   // let's add the form and its fields one by one dynamically
   // notice that the test commands will need to handle async addition and retry
-  setTimeout(addForm, 100)
-  setTimeout(addLabel('fname', 'First name:'), 200)
-  setTimeout(addInput('fname'), 300)
-  setTimeout(addLabel('lname', 'Last name:'), 400)
-  setTimeout(addInput('lname'), 500)
+  setTimeout(addForm, 500)
+  setTimeout(addLabel('fname', 'First name:'), 700)
+  setTimeout(addInput('fname'), 1000)
+  setTimeout(addLabel('lname', 'Last name:'), 1200)
+  setTimeout(addInput('lname'), 1500)
   function addForm() {
     const form = document.createElement('form')
     document.getElementById('result').appendChild(form)
@@ -132,11 +138,11 @@ If the form is initially empty or does not even exist, our custom command has to
 
 ```js
 Cypress.Commands.add('getByLabel2', (label, options = {}) => {
-  // options to log later
   const log = {
     name: 'getByLabel2',
     message: label,
   }
+  Cypress.log(log)
 
   // returns the document object of the application under test
   const document = cy.state('document')
@@ -161,6 +167,10 @@ Cypress.Commands.add('getByLabel2', (label, options = {}) => {
 
   const resolveValue = () => {
     return Cypress.Promise.try(getValue).then(($el) => {
+      // important: pass a jQuery object to cy.verifyUpcomingAssertions
+      if (!Cypress.dom.isJquery($el)) {
+        $el = Cypress.$($el)
+      }
       return cy.verifyUpcomingAssertions($el, options, {
         onRetry: resolveValue,
       })
@@ -168,31 +178,24 @@ Cypress.Commands.add('getByLabel2', (label, options = {}) => {
   }
 
   return resolveValue().then((el) => {
+    // add console props method, which is invoked
+    // when the user clicks on the command
     log.consoleProps = () => {
       return {
         result: el,
       }
     }
 
-    console.log('returning from getByLabel2', el)
-    console.log('is DOM element?', Cypress.dom.isElement(el))
-    console.log('is jQuery element?', Cypress.dom.isJquery(el))
-
-    // return the jQuery element from the custom command?
-    return Cypress.$(el)
+    return el
   })
 })
+
 // let's use the custom command to act on the first name
 cy.getByLabel2('First name:').should('exist')
-// TODO fix the failure inside Cypress focus code
-//  options.$el.is is not a function
-// inside const handleFocused = ...
-//  const isBody = options.$el.is('body')
-cy.getByLabel2('First name:').should('have.value', '').type('Joe')
-// cy.getByLabel2('First name:').should('have.value', 'Joe')
-// cy.getByLabel2('Last name:')
-//   .type('Smith')
-//   .should('have.value', 'Smith')
+cy.getByLabel2('First name:').type('Joe')
+// now interact with the second input
+cy.getByLabel2('Last name:').should('have.value', '').type('Smith')
+cy.getByLabel2('Last name:').should('have.value', 'Smith')
 ```
 
 <!-- fiddle-end -->
