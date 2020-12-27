@@ -92,6 +92,56 @@ cy.getByLabel('First name:').should('have.value', 'Joe')
 
 <!-- fiddle-end -->
 
+## Simple command failure
+
+The simple custom command only retries the last command `cy.get`. What if the entire part of the document is refreshed, and the `id` value changes? Let's try writing an example for it.
+
+<!-- fiddle.skip Get by label / using a simple custom command FAILS -->
+
+At first, the form has the labels and the input fields, but then the app "hydrates" them, replacing the initial ids with randomly generated ones.
+
+```html
+<form>
+  <label for="fname">First name:</label><br />
+  <input type="text" id="fname" name="fname" value="initial" /><br />
+  <label for="lname">Last name:</label><br />
+  <input type="text" id="lname" name="lname" />
+</form>
+<script>
+  function hydrate() {
+    const form = document.querySelector('form')
+    form.innerHTML = `
+      <div>Hydrated!</div>
+      <label for="fname111">First name:</label><br />
+      <input type="text" id="fname111" name="fname111" /><br />
+      <label for="lname222">Last name:</label><br />
+      <input type="text" id="lname222" name="lname222" />
+    `
+  }
+  setTimeout(hydrate, 1000)
+</script>
+```
+
+The test below _fails_ to account for this, and keeps trying finding an input element with ID "fname", which never becomes available.
+
+```js
+Cypress.Commands.add('getByLabel', (label) => {
+  // you can disable individual command logging
+  // by passing {log: false} option
+  cy.log('**getByLabel**')
+  cy.contains('label', label)
+    .invoke('attr', 'for')
+    .then((id) => {
+      cy.get('#' + id)
+    })
+})
+// let's use the custom command to act on the first name
+cy.getByLabel('First name:').should('have.value', '').type('Joe')
+cy.getByLabel('First name:').should('have.value', 'Joe')
+```
+
+<!-- fiddle-end -->
+
 ## Complex custom command with retries
 
 Let's make more complex command
@@ -207,3 +257,89 @@ cy.takeRunnerPic('form-input')
 <!-- fiddle-end -->
 
 ![Find form input by label using custom command](./pics/form-input.png)
+
+Let's try the custom command with hydration example
+
+<!-- fiddle Get by label / using a complex custom command with hydration -->
+
+```html
+<form>
+  <label for="fname">First name:</label><br />
+  <input type="text" id="fname" name="fname" value="initial" /><br />
+  <label for="lname">Last name:</label><br />
+  <input type="text" id="lname" name="lname" />
+</form>
+<script>
+  function hydrate() {
+    const form = document.querySelector('form')
+    form.innerHTML = `
+      <div>Hydrated!</div>
+      <label for="fname111">First name:</label><br />
+      <input type="text" id="fname111" name="fname111" /><br />
+      <label for="lname222">Last name:</label><br />
+      <input type="text" id="lname222" name="lname222" />
+    `
+  }
+  setTimeout(hydrate, 1000)
+</script>
+```
+
+```js
+Cypress.Commands.add('getByLabel2', (label, options = {}) => {
+  const log = {
+    name: 'getByLabel2',
+    message: label,
+  }
+  Cypress.log(log)
+
+  // returns the document object of the application under test
+  const document = cy.state('document')
+
+  // this function just tries to find the element
+  // we cannot use Cypress commands - aside from static ones,
+  // but we can use normal DOM JavaScript and jQuery methods
+  const getValue = () => {
+    const $label = Cypress.$(document).find(
+      'label:contains("' + label + '")',
+    )
+    if (!$label.length) {
+      return
+    }
+    const forId = $label.attr('for')
+    if (!forId) {
+      return
+    }
+    const input = document.getElementById(forId)
+    return input
+  }
+
+  const resolveValue = () => {
+    return Cypress.Promise.try(getValue).then(($el) => {
+      // important: pass a jQuery object to cy.verifyUpcomingAssertions
+      if (!Cypress.dom.isJquery($el)) {
+        $el = Cypress.$($el)
+      }
+      return cy.verifyUpcomingAssertions($el, options, {
+        onRetry: resolveValue,
+      })
+    })
+  }
+
+  return resolveValue().then((el) => {
+    // add console props method, which is invoked
+    // when the user clicks on the command
+    log.consoleProps = () => {
+      return {
+        result: el,
+      }
+    }
+
+    return el
+  })
+})
+
+cy.getByLabel2('First name:').should('have.value', '').type('Joe')
+cy.getByLabel2('First name:').should('have.value', 'Joe')
+```
+
+<!-- fiddle-end -->
