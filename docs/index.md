@@ -140,3 +140,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Non-breaking space](recipes/non-breaking-space.md)
 - [Checking a dynamic property added to the `window` object](./recipes/window-property.md)
 - [Get input element by its label](recipes/form-input-by-label.md) by writing a custom command
+- [Set nested property inside the environment object](recipes/set-env-prop.md) when using [Cypress.env](https://on.cypress.io/env)
