@@ -51,3 +51,30 @@ cy.contains('[class="day old"]', 'third B')
 ```
 
 <!-- fiddle-end -->
+
+If you want to select using the exact text, use a regular expression
+
+<!-- fiddle Exact class and text -->
+
+We want to select ".day" with the exact text "8" from the HTML below.
+
+```html
+<ul>
+  <li class="day">28</li>
+  <li class="day old">28 B</li>
+  <li class="day disabled">28 C</li>
+
+  <li class="day">8</li>
+  <li class="day old">8 B</li>
+  <li class="day disabled">8 C</li>
+</ul>
+```
+
+```js
+// using a string "8" finds the first element containing it
+cy.contains('[class=day]', '8').should('have.text', '28')
+// using regular expression finds the exact text match
+cy.contains('[class=day]', /^8$/).should('have.text', '8')
+```
+
+<!-- fiddle-end -->
