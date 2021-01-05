@@ -141,3 +141,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Checking a dynamic property added to the `window` object](./recipes/window-property.md)
 - [Get input element by its label](recipes/form-input-by-label.md) by writing a custom command
 - [Set nested property inside the environment object](recipes/set-env-prop.md) when using [Cypress.env](https://on.cypress.io/env)
+- [Find element by exact class and text](recipes/find-by-class.md)
