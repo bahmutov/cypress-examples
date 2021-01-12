@@ -142,3 +142,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Get input element by its label](recipes/form-input-by-label.md) by writing a custom command
 - [Set nested property inside the environment object](recipes/set-env-prop.md) when using [Cypress.env](https://on.cypress.io/env)
 - [Find element by exact class and text](recipes/find-by-class.md)
+- [Assert the selected value or multiple values](recipes/selected-value.md) in a `<select>` element
