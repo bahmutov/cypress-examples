@@ -167,7 +167,7 @@ Cypress.Screenshot.defaults({
 
 ## [cy.wrap()](https://on.cypress.io/wrap)
 
-To wrap an object, use the `cy.wrap()` command.
+To wrap an object or a value, use the `cy.wrap()` command.
 
 <!-- fiddle cy.wrap() - wrap an object -->
 
@@ -176,9 +176,12 @@ To wrap an object, use the `cy.wrap()` command.
 cy.wrap({ foo: 'bar' })
   .should('have.property', 'foo')
   .and('include', 'bar')
+cy.wrap(42).should('equal', 42)
 ```
 
 <!-- fiddle-end -->
+
+Once you have an object wrapped, you can access its properties, invoke its methods, and even pass it via an alias.
 
 <!-- fiddle cy.wrap() - invoke a method -->
 
@@ -208,9 +211,23 @@ cy.wrap({
   },
   getNumber: getMagicNumber,
 }).as('wrappedObject')
+// some time later get the alias and use it
 cy.get('@wrappedObject').its('name').should('equal', 'Joe')
 cy.get('@wrappedObject').invoke('getName').should('equal', 'Joe')
 cy.get('@wrappedObject').invoke('getNumber').should('equal', 42)
+```
+
+<!-- fiddle-end -->
+
+If `cy.wrap` receives a Promise as an argument, Cypress automatically waits for the promise to complete.
+
+<!-- fiddle cy.wrap() - waits on a promise automatically -->
+
+```js
+const p = new Promise((resolve) => {
+  resolve('Hello')
+}, 100)
+cy.wrap(p).should('equal', 'Hello')
 ```
 
 <!-- fiddle-end -->
