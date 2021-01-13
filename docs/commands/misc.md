@@ -179,3 +179,38 @@ cy.wrap({ foo: 'bar' })
 ```
 
 <!-- fiddle-end -->
+
+<!-- fiddle cy.wrap() - invoke a method -->
+
+```js
+cy.wrap({
+  name: 'Joe',
+  getName() {
+    return this.name
+  },
+})
+  .invoke('getName')
+  .should('equal', 'Joe')
+
+// the method could be a function
+const getMagicNumber = () => 42
+cy.wrap({
+  getNumber: getMagicNumber,
+})
+  .invoke('getNumber')
+  .should('equal', 42)
+
+// you can wrap the object as alias
+cy.wrap({
+  name: 'Joe',
+  getName() {
+    return this.name
+  },
+  getNumber: getMagicNumber,
+}).as('wrappedObject')
+cy.get('@wrappedObject').its('name').should('equal', 'Joe')
+cy.get('@wrappedObject').invoke('getName').should('equal', 'Joe')
+cy.get('@wrappedObject').invoke('getNumber').should('equal', 42)
+```
+
+<!-- fiddle-end -->
