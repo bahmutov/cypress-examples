@@ -145,3 +145,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Set nested property inside the environment object](recipes/set-env-prop.md) when using [Cypress.env](https://on.cypress.io/env)
 - [Find element by exact class and text](recipes/find-by-class.md)
 - [Assert the selected value or multiple values](recipes/selected-value.md) in a `<select>` element
+- [Get the inner text of a list of elements](recipes/get-text-list.md)
