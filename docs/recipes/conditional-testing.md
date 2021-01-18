@@ -35,6 +35,8 @@ cy.get('input').then(($checkbox) => {
 
 <!-- fiddle-end -->
 
+Alternative solution
+
 <!-- fiddle Toggle second solution -->
 
 ```html
