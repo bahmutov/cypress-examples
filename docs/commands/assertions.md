@@ -229,6 +229,44 @@ expect('FooBar').to.match(/bar$/i)
 
 <!-- fiddle-end -->
 
+Let's compare the text content of two lists. We would like to assert that the second list is a subset of the first one. First, we need to get the text from each list, then compare them.
+
+**Tip:** see recipe "Getting Text from List of Elements" to see how to iterate over the list of elements and get their text content.
+
+<!-- fiddle Explicit Assertions / expect - compare two lists -->
+
+```html
+<ol id="first">
+  <li>Apples</li>
+  <li>Oranges</li>
+  <li>Melons</li>
+  <li>Grapes</li>
+</ol>
+<ol id="second">
+  <li>Grapes</li>
+  <li>Oranges</li>
+</ol>
+```
+
+```js
+const firstList = []
+const secondList = []
+// let's get the first list of strings
+cy.get('#first li').each(($li) => {
+  firstList.push($li.text())
+})
+cy.get('#second li')
+  .each(($li) => {
+    secondList.push($li.text())
+  })
+  .then(() => {
+    // when this callback runs, both lists will be populated
+    expect(firstList).to.include.members(secondList)
+  })
+```
+
+<!-- fiddle-end -->
+
 ### assert
 
 To make a TDD assertion about a specified subject, use `assert`.
