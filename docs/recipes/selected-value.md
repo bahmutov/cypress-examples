@@ -1,5 +1,7 @@
 # Selected value
 
+## Option's value
+
 <!-- fiddle Selected value -->
 
 ```html
@@ -56,6 +58,42 @@ cy.get('select')
   .select(['apples', 'bananas']) // yields <select> element
   .invoke('val') // calls $(<select>).val() which returns list of selected values
   .should('deep.equal', ['456', '458'])
+```
+
+<!-- fiddle-end -->
+
+## Selecting option by index
+
+<!-- fiddle Select by index -->
+
+Imagine we have a `<select>` element and want to select an option _by index_. Let's say we want to select the option at index 1 and confirm it has text "oranges" and value "457".
+
+```html
+<select>
+  <option value="456">apples</option>
+  <option value="457">oranges</option>
+  <option value="458">bananas</option>
+</select>
+```
+
+```js
+// every child of <select> is an <option> element
+cy.get('select')
+  .children()
+  .eq(1)
+  .then(($option) => {
+    expect($option.prop('label'), 'cannot compare 🍎 to 🍊').to.equal(
+      'oranges',
+    )
+
+    const value = $option.attr('value')
+    expect(value).to.equal('457')
+    // if we want to select the oranges,
+    // let's use the value we got
+    cy.get('select').select(value)
+  })
+// let's confirm the selected option
+cy.get('select').invoke('val').should('equal', '457')
 ```
 
 <!-- fiddle-end -->
