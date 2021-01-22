@@ -477,11 +477,11 @@ If you attach multiple assertions to the same command, all assertions must pass 
   // first show the loading element
   setTimeout(function showLoading() {
     loadingElement.style.display = 'block'
-  }, 500)
+  }, 1500)
   // then hide the loading element
   setTimeout(function hideLoading() {
     loadingElement.style.display = 'none'
-  }, 1500)
+  }, 2500)
 </script>
 ```
 
