@@ -463,3 +463,47 @@ cy.get('#random-number').should(($div) => {
 ```
 
 <!-- fiddle-end -->
+
+## All assertions must pass at once
+
+If you attach multiple assertions to the same command, all assertions must pass at once. For example, here is a test that shows how to correctly check the disappearing element.
+
+<!-- fiddle Multiple assertions / split the command -->
+
+```html
+<div style="display: none" id="loading">Loading ...</div>
+<script>
+  const loadingElement = document.getElementById('loading')
+  // first show the loading element
+  setTimeout(function showLoading() {
+    loadingElement.style.display = 'block'
+  }, 500)
+  // then hide the loading element
+  setTimeout(function hideLoading() {
+    loadingElement.style.display = 'none'
+  }, 1500)
+</script>
+```
+
+The command below fails because the element cannot be visible AND invisible at the same time:
+
+```js
+// ⛔️ DOES NOT WORK
+// cy.get('#loading').should('be.visible').and('not.be.visible')
+```
+
+Instead split the assertions to have separate command to re-query the element and pass one by one The first command asserts the loading element is visible, the second command gets the element again and asserts the element is invisible:
+
+```js
+// ✅ THE CORRECT WAY
+cy.get('#loading').should('be.visible')
+cy.get('#loading').should('not.be.visible')
+```
+
+It is ok to add multiple assertions that can be true at the same time:
+
+```js
+cy.get('#loading').should('exist').and('have.text', 'Loading ...')
+```
+
+<!-- fiddle-end -->
