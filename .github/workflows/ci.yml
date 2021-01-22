@@ -16,7 +16,10 @@ jobs:
       - name: Cypress tests 🧪
         uses: cypress-io/github-action@v2
         with:
-          config: video=false
+          record: true
+          group: Markdown
+        env:
+          CYPRESS_RECORD_KEY: ${{ recordKey }}
 
       - name: See any changed files 👀
         run: git status
