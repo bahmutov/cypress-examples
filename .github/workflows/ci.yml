@@ -13,13 +13,17 @@ jobs:
         uses: actions/checkout@v2
 
       # run all tests straight from Markdown files
+      # using Cypress GH action
+      # https://github.com/cypress-io/github-action
       - name: Cypress tests 🧪
         uses: cypress-io/github-action@v2
         with:
           record: true
           group: Markdown
         env:
-          CYPRESS_RECORD_KEY: ${{ recordKey }}
+          CYPRESS_RECORD_KEY: ${{ secrets.recordKey }}
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: See any changed files 👀
         run: git status
@@ -31,13 +35,6 @@ jobs:
           commit_message: Updated screenshots
           branch: master
           file_pattern: '*.png'
-
-      # if something has failed, let's store screenshots
-      - uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
 
       - name: Check links ⚓️
         run: npm run check:links
