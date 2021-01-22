@@ -96,6 +96,8 @@ cy.get('.assertions-link')
 
 <!-- fiddle-end -->
 
+Note that all assertions attached to the same command must pass at the same time for the command to succeed.
+
 ### Subject
 
 The implicit assertions keep the original subject and pass it to the next command.
@@ -464,7 +466,7 @@ cy.get('#random-number').should(($div) => {
 
 <!-- fiddle-end -->
 
-## All assertions must pass at once
+## Multiple assertions
 
 If you attach multiple assertions to the same command, all assertions must pass at once. For example, here is a test that shows how to correctly check the disappearing element.
 
