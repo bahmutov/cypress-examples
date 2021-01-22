@@ -101,7 +101,7 @@ The simple custom command only retries the last command `cy.get`. What if the en
 At first, the form has the labels and the input fields, but then the app "hydrates" them, replacing the initial ids with randomly generated ones.
 
 ```html
-<form>
+<form id="hydrate-fails">
   <label for="fname">First name:</label><br />
   <input type="text" id="fname" name="fname" value="initial" /><br />
   <label for="lname">Last name:</label><br />
@@ -109,7 +109,7 @@ At first, the form has the labels and the input fields, but then the app "hydrat
 </form>
 <script>
   function hydrate() {
-    const form = document.querySelector('form')
+    const form = document.querySelector('form#hydrate-fails')
     form.innerHTML = `
       <div>Hydrated!</div>
       <label for="fname111">First name:</label><br />
@@ -125,6 +125,7 @@ At first, the form has the labels and the input fields, but then the app "hydrat
 The test below _fails_ to account for this, and keeps trying finding an input element with ID "fname", which never becomes available.
 
 ```js
+// ⛔️ THIS TEST WILL FAIL
 Cypress.Commands.add('getByLabel', (label) => {
   // you can disable individual command logging
   // by passing {log: false} option
@@ -263,7 +264,7 @@ Let's try the custom command with hydration example
 <!-- fiddle Get by label / using a complex custom command with hydration -->
 
 ```html
-<form>
+<form id="hydration">
   <label for="fname">First name:</label><br />
   <input type="text" id="fname" name="fname" value="initial" /><br />
   <label for="lname">Last name:</label><br />
@@ -271,7 +272,7 @@ Let's try the custom command with hydration example
 </form>
 <script>
   function hydrate() {
-    const form = document.querySelector('form')
+    const form = document.querySelector('form#hydration')
     form.innerHTML = `
       <div>Hydrated!</div>
       <label for="fname111">First name:</label><br />

@@ -21,7 +21,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           record: true
-          group: Markdown
+          group: 1. Markdown
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.recordKey }}
           # pass GitHub token to allow accurately detecting a build vs a re-run build
@@ -71,7 +71,7 @@ jobs:
           start: npm run serve
           config-file: cypress-dist.json
           record: true
-          group: JavaScript specs
+          group: 2. JavaScript specs
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.recordKey }}
           # pass GitHub token to allow accurately detecting a build vs a re-run build
