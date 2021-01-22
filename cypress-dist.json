@@ -4,6 +4,6 @@
   "fixturesFolder": "cypress/fixtures",
   "integrationFolder": "docs",
   "testFiles": "**/*.js",
-  "video": false,
-  "viewportHeight": 1000
+  "viewportHeight": 1000,
+  "projectId": "dis6wg"
 }

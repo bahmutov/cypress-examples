@@ -68,6 +68,12 @@ jobs:
           install: false
           start: npm run serve
           config-file: cypress-dist.json
+          record: true
+          group: JavaScript specs
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.recordKey }}
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # if something has failed, let's store screenshots
       - uses: actions/upload-artifact@v1
