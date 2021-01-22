@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+
+# TODO split into several jobs for speed
 jobs:
   test:
     runs-on: ubuntu-latest
