@@ -71,6 +71,25 @@ Note: find even more examples of matching element's text content in this [FAQ an
 
 <!-- fiddle-end -->
 
+Let's validate the input element's placeholder attribute.
+
+<!-- fiddle Implicit Assertions / .should() - placeholder attribute -->
+
+```html
+<input
+  type="text"
+  id="inputEmail"
+  class="form-control"
+  placeholder="Email"
+/>
+```
+
+```js
+cy.get('#inputEmail').should('have.attr', 'placeholder', 'Email')
+```
+
+<!-- fiddle-end -->
+
 ### [.and()](https://on.cypress.io/and)
 
 To chain multiple assertions together, use the `.and()` command.
