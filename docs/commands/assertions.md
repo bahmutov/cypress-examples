@@ -71,6 +71,8 @@ Note: find even more examples of matching element's text content in this [FAQ an
 
 <!-- fiddle-end -->
 
+#### Placeholder attribute
+
 Let's validate the input element's placeholder attribute.
 
 <!-- fiddle Implicit Assertions / .should() - placeholder attribute -->
@@ -86,6 +88,31 @@ Let's validate the input element's placeholder attribute.
 
 ```js
 cy.get('#inputEmail').should('have.attr', 'placeholder', 'Email')
+```
+
+<!-- fiddle-end -->
+
+#### Visible element with text
+
+Let's confirm that the page contains a visible element with some text.
+
+<!-- fiddle Implicit Assertions / .should() - visible non-empty text -->
+
+```html
+<div id="greeting">Hello, there!</div>
+```
+
+```js
+// if we know the precise text we are looking for
+cy.get('#greeting')
+  .should('be.visible')
+  .and('have.text', 'Hello, there!')
+// if we do not know the text
+cy.get('#greeting')
+  .should('be.visible')
+  .invoke('text')
+  .should('be.a', 'string')
+  .and('be.not.empty')
 ```
 
 <!-- fiddle-end -->
