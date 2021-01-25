@@ -43,17 +43,14 @@ jobs:
       - name: Create Run All Spec 🏗
         run: cat docs/**/*.js > docs/run-all-specs.js
 
-      # save built folders
-      - uses: actions/cache@v2
-        id: install-and-build
+      - name: Save built folders
+        uses: actions/upload-artifact@v2
         with:
+          name: install-and-build
           path: |
             ~/.cache/Cypress
             node_modules
             public
-          key: ${{ runner.os }}-install-and-build-${{ hashFiles('package-lock.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-install-and-build-${{ hashFiles('package-lock.lock') }}
 
   test-markdown:
     runs-on: ubuntu-20.04
@@ -62,6 +59,10 @@ jobs:
       # https://github.com/actions/checkout
       - name: Checkout 🛎️
         uses: actions/checkout@v2
+
+      - name: Download built folders
+        with:
+          name: install-and-build
 
       # run all tests straight from Markdown files
       # using Cypress GH action
