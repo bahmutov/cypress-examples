@@ -61,6 +61,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Download built folders
+        uses: actions/download-artifact@v2
         with:
           name: install-and-build
 
