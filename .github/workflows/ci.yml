@@ -13,7 +13,7 @@ jobs:
 
       # only install dependencies
       # https://github.com/cypress-io/github-action
-      - name: Cypress tests 🧪
+      - name: Install 📦
         uses: cypress-io/github-action@v2
         with:
           runTests: false
@@ -43,13 +43,12 @@ jobs:
       - name: Create Run All Spec 🏗
         run: cat docs/**/*.js > docs/run-all-specs.js
 
-      - name: Save built folders
+      - name: Save built folders 🆙
         uses: actions/upload-artifact@v2
         with:
           name: install-and-build
           path: |
-            ~/.cache/Cypress
-            node_modules
+            docs
             public
 
   test-markdown:
@@ -60,7 +59,7 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
 
-      - name: Download built folders
+      - name: Download built folders ⏬
         uses: actions/download-artifact@v2
         with:
           name: install-and-build
@@ -71,7 +70,6 @@ jobs:
       - name: Cypress tests 🧪
         uses: cypress-io/github-action@v2
         with:
-          install: false
           record: true
           group: 1. Markdown
         env:
