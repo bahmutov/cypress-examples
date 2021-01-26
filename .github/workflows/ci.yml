@@ -97,7 +97,7 @@ jobs:
           branch: master
           file_pattern: '*.png'
 
-  test:
+  test-js:
     runs-on: ubuntu-20.04
     needs: install
     steps:
