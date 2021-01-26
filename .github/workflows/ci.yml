@@ -11,8 +11,11 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
 
-      # only install dependencies
+      # only install dependencies using
       # https://github.com/cypress-io/github-action
+      # will restore / create folders
+      #   ~/.npm
+      #   ~/.cache/Cypress
       - name: Install 📦
         uses: cypress-io/github-action@v2
         with:
@@ -28,9 +31,11 @@ jobs:
       - name: Print Cypress version 🖨
         run: echo "Cypress version is ${{ steps.cypress.outputs.version }}"
 
+      # will create folder ./public
       - name: Build site 🏗
         run: npm run docs:build
 
+      # will create new JS files inside ./docs
       - name: Export Markdown specs 🖨
         run: node ./md-to-js http://localhost:5000/cypress-examples/${{ steps.cypress.outputs.version }}
 
@@ -43,10 +48,12 @@ jobs:
       - name: Create Run All Spec 🏗
         run: cat docs/**/*.js > docs/run-all-specs.js
 
+      # only pass the local folders we built / updated
+      #   ./docs and ./public
       - name: Save built folders 🆙
         uses: actions/upload-artifact@v2
         with:
-          name: install-and-build
+          name: built
           path: |
             docs
             public
@@ -62,13 +69,15 @@ jobs:
       - name: Download built folders ⏬
         uses: actions/download-artifact@v2
         with:
-          name: install-and-build
+          name: built
 
-      # run all tests straight from Markdown files
-      # using Cypress GH action
-      # https://github.com/cypress-io/github-action
+      # download cached ~/.npm and ~/.cache/Cypress
+      # and install node_modules
       - name: Cypress tests 🧪
         uses: cypress-io/github-action@v2
+        # run all tests straight from Markdown files
+        # using Cypress GH action
+        # https://github.com/cypress-io/github-action
         with:
           record: true
           group: 1. Markdown
@@ -87,48 +96,48 @@ jobs:
           commit_message: Updated screenshots
           branch: master
           file_pattern: '*.png'
-  # test:
-  #   runs-on: ubuntu-20.04
-  #   steps:
-  #     # https://github.com/actions/checkout
-  #     - name: Checkout 🛎️
-  #       uses: actions/checkout@v2
-  #     - name: Test built site 🧪
-  #       uses: cypress-io/github-action@v2
-  #       with:
-  #         # we have already installed all dependencies above
-  #         install: false
-  #         start: npm run serve
-  #         config-file: cypress-dist.json
-  #         record: true
-  #         group: 2. JavaScript specs
-  #       env:
-  #         CYPRESS_RECORD_KEY: ${{ secrets.recordKey }}
-  #         # pass GitHub token to allow accurately detecting a build vs a re-run build
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #     # if something has failed, let's store screenshots
-  #     - uses: actions/upload-artifact@v1
-  #       if: failure()
-  #       with:
-  #         name: cypress-dist-screenshots
-  #         path: cypress/screenshots
-  #     # https://github.com/marketplace/actions/github-pages-action
-  #     - name: Deploy 🚀
-  #       uses: peaceiris/actions-gh-pages@v3
-  #       with:
-  #         github_token: ${{ secrets.GITHUB_TOKEN }}
-  #         publish_dir: ./public/cypress-examples/${{ steps.cypress.outputs.version }}
-  #         destination_dir: ${{ steps.cypress.outputs.version }}
-  #     - name: Export page redirects ↗️
-  #       run: node ./md-to-redirects https://glebbahmutov.com/cypress-examples/${{ steps.cypress.outputs.version }}
-  #     # deploy the redirect pages that point every top level
-  #     # HTML page the Cypress Test Runner might load to the corresponding
-  #     # page under the latest version
-  #     - name: Deploy redirects 🚀
-  #       uses: peaceiris/actions-gh-pages@v3
-  #       with:
-  #         github_token: ${{ secrets.GITHUB_TOKEN }}
-  #         # make sure to preserve the existing files
-  #         keep_files: true
-  #         publish_dir: ./redirects
-  #         destination_dir: .
+
+  test:
+    runs-on: ubuntu-20.04
+    needs: install
+    steps:
+      # https://github.com/actions/checkout
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Download built folders ⏬
+        uses: actions/download-artifact@v2
+        with:
+          name: built
+
+      - name: Test built site 🧪
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run serve
+          config-file: cypress-dist.json
+          record: true
+          group: 2. JavaScript specs
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.recordKey }}
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # # https://github.com/marketplace/actions/github-pages-action
+      # - name: Deploy 🚀
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./public/cypress-examples/${{ steps.cypress.outputs.version }}
+      #     destination_dir: ${{ steps.cypress.outputs.version }}
+      # - name: Export page redirects ↗️
+      #   run: node ./md-to-redirects https://glebbahmutov.com/cypress-examples/${{ steps.cypress.outputs.version }}
+      # # deploy the redirect pages that point every top level
+      # # HTML page the Cypress Test Runner might load to the corresponding
+      # # page under the latest version
+      # - name: Deploy redirects 🚀
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     # make sure to preserve the existing files
+      #     keep_files: true
+      #     publish_dir: ./redirects
+      #     destination_dir: .
