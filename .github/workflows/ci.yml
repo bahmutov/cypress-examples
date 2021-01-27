@@ -1,8 +1,6 @@
 name: ci
-# only deploy site from master branch
 on: push
 
-# TODO split into several jobs for speed
 jobs:
   install:
     runs-on: ubuntu-20.04
@@ -20,9 +18,6 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           runTests: false
-
-      - name: Check links ⚓️
-        run: npm run check:links
 
       - name: Set Cypress version 🎁
         id: cypress
@@ -57,6 +52,26 @@ jobs:
           path: |
             docs
             public
+
+  test-link:
+    runs-on: ubuntu-20.04
+    needs: install
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Download built folders ⏬
+        uses: actions/download-artifact@v2
+        with:
+          name: built
+
+      - name: Install 📦
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+
+      - name: Check links ⚓️
+        run: npm run check:links
 
   test-markdown:
     runs-on: ubuntu-20.04
@@ -141,23 +156,45 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.recordKey }}
           # pass GitHub token to allow accurately detecting a build vs a re-run build
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # # https://github.com/marketplace/actions/github-pages-action
-      # - name: Deploy 🚀
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./public/cypress-examples/${{ steps.cypress.outputs.version }}
-      #     destination_dir: ${{ steps.cypress.outputs.version }}
-      # - name: Export page redirects ↗️
-      #   run: node ./md-to-redirects https://glebbahmutov.com/cypress-examples/${{ steps.cypress.outputs.version }}
-      # # deploy the redirect pages that point every top level
-      # # HTML page the Cypress Test Runner might load to the corresponding
-      # # page under the latest version
-      # - name: Deploy redirects 🚀
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     # make sure to preserve the existing files
-      #     keep_files: true
-      #     publish_dir: ./redirects
-      #     destination_dir: .
+
+  deploy:
+    runs-on: ubuntu-20.04
+    needs: [install, test-md, test-js]
+    # only deploy from the master branch
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Download built folders ⏬
+        uses: actions/download-artifact@v2
+        with:
+          name: built
+
+      - name: Install 📦
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+
+      # https://github.com/marketplace/actions/github-pages-action
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public/cypress-examples/${{ steps.cypress.outputs.version }}
+          destination_dir: ${{ steps.cypress.outputs.version }}
+
+      - name: Export page redirects ↗️
+        run: node ./md-to-redirects https://glebbahmutov.com/cypress-examples/${{ steps.cypress.outputs.version }}
+
+      # deploy the redirect pages that point every top level
+      # HTML page the Cypress Test Runner might load to the corresponding
+      # page under the latest version
+      - name: Deploy redirects 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # make sure to preserve the existing files
+          keep_files: true
+          publish_dir: ./redirects
+          destination_dir: .
