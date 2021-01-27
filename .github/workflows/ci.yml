@@ -176,6 +176,10 @@ jobs:
         with:
           runTests: false
 
+      - name: Set Cypress version 🎁
+        id: cypress
+        run: echo "::set-output name=version::$(node ./src/print-cypress-version)"
+
       # https://github.com/marketplace/actions/github-pages-action
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
