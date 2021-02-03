@@ -60,7 +60,7 @@ cy.get('.assertion-table')
 // a better way to check element's text content against a regular expression
 // is to use "cy.contains"
 // https://on.cypress.io/contains
-cy.get('.assertion-table')
+cy.get('.assertion-table')k
   .find('tbody tr:last')
   // finds first  element with text content matching regular expression
   .contains('td', /column content/i)
@@ -68,6 +68,40 @@ cy.get('.assertion-table')
 ```
 
 Note: find even more examples of matching element's text content in this [FAQ answer](https://on.cypress.io/using-cypress-faq#How-do-I-get-an-element%E2%80%99s-text-contents).
+
+<!-- fiddle-end -->
+
+<!-- fiddle Implicit Assertions / .should() - input elements have value -->
+
+When using HTML input elements, use `have.value` assertion.
+
+```html
+<input
+  id="rent"
+  type="text"
+  pattern="[0-9]+\.*[0-9]*"
+  placeholder="e.g 000.00"
+  required
+/>
+```
+
+```js
+cy.get('#rent').type('630.00').should('have.value', '630.00')
+```
+
+<!-- fiddle-end -->
+
+<!-- fiddle Implicit Assertions / .should() - non-input elements contain text -->
+
+With non-input HTML elements, you can use the `contain` assertion.
+
+```html
+<p id="text-example">A brown fox ...</p>
+```
+
+```js
+cy.get('#text-example').should('contain', 'brown fox')
+```
 
 <!-- fiddle-end -->
 
