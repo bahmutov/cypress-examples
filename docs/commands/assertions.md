@@ -60,7 +60,7 @@ cy.get('.assertion-table')
 // a better way to check element's text content against a regular expression
 // is to use "cy.contains"
 // https://on.cypress.io/contains
-cy.get('.assertion-table')k
+cy.get('.assertion-table')
   .find('tbody tr:last')
   // finds first  element with text content matching regular expression
   .contains('td', /column content/i)
