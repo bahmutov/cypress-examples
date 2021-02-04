@@ -148,3 +148,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Assert the selected value or multiple values](recipes/selected-value.md) in a `<select>` element
 - [Get the inner text of a list of elements](recipes/get-text-list.md)
 - [Conditional testing](recipes/conditional-testing.md)
+- [Form input validation](recipes/form-validation.md)
