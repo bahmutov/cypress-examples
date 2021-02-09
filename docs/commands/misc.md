@@ -126,7 +126,11 @@ cy.get('.misc-form').find('#name').click()
 cy.focused().should('have.id', 'name')
 
 cy.get('.misc-form').find('#description').click()
-cy.focused().should('have.id', 'description')
+cy.focused()
+  // we can check if the focused element has a specific ID
+  .should('have.id', 'description')
+  // or if it matches the entire given CSS selector
+  .and('match', '.misc-form textarea#description')
 ```
 
 <!-- fiddle-end -->
