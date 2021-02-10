@@ -68,3 +68,43 @@ cy.get('input')
 ```
 
 <!-- fiddle-end -->
+
+## Element does not exist or is invisible
+
+Imagine we want to pass the test if the element does not exist or is invisible. We will use [Cypress.dom](../cypress-api/index.md) utility methods and retry the assertion using [.should(cb)](../commands/assertions.md) method.
+
+<!-- fiddle Does not exist or is invisible -->
+
+```html
+<div id="either">
+  <div id="disappears">Should go away</div>
+  <div id="hides">Should not see me</div>
+</div>
+<script>
+  setTimeout(() => {
+    const disappears = document.getElementById('disappears')
+    disappears.parentNode.removeChild(disappears)
+  }, 500)
+
+  setTimeout(() => {
+    const hides = document.getElementById('hides')
+    hides.style.display = 'none'
+  }, 1000)
+</script>
+```
+
+```js
+const isNonExistentOrHidden = ($el) =>
+  !Cypress.dom.isElement($el) || !Cypress.dom.isVisible($el)
+
+// let's assert an element does not exist
+cy.get('#either #disappears').should(($el) => {
+  expect(isNonExistentOrHidden($el)).to.be.true
+})
+// let's assert an element becomes invisible
+cy.get('#either #hides').should(($el) => {
+  expect(isNonExistentOrHidden($el)).to.be.true
+})
+```
+
+<!-- fiddle-end -->
