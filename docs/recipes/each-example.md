@@ -16,6 +16,23 @@ Let's say we have a list of items
 </ul>
 ```
 
+Let's put all list items into a list and check it.
+
+```js
+const list = []
+cy.get('li')
+  .each(($li) => {
+    list.push($li.text())
+  })
+  .then(() => {
+    // by the time ".each" is finished
+    // the list is populated
+    expect(list).to.deep.equal(['Apples', 'Bananas', 'Grapes'])
+  })
+```
+
+Let's print each item and then check that we have called `console.log` three times.
+
 ```js
 // iterate through all fruits
 cy.spy(console, 'log').as('console')
