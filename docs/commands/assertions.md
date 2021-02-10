@@ -271,6 +271,27 @@ cy.get('[data-cy=subject-example]') // jQuery element
 
 <!-- fiddle-end -->
 
+<!-- fiddle Implicit Assertions / .should() - have.attr matching part of the string -->
+
+If we only know a part of the expected attribute, we can first assert the attribute is present, then use an assertion to match its value.
+
+```html
+<a id="my-link" href="/some/complex/link-123">My link</a>
+```
+
+```js
+cy.get('#my-link')
+  .should('have.attr', 'href')
+  // check if the href attribute includes given string
+  .and('include', 'link-')
+// we can use a regular expression
+cy.get('#my-link')
+  .should('have.attr', 'href')
+  .and('match', /\/link\-\d+/)
+```
+
+<!-- fiddle-end -->
+
 <!-- fiddle Implicit Assertions / .should() - have.prop changes the subject -->
 
 ```html
