@@ -64,6 +64,12 @@ cy.get('li')
   })
 ```
 
+We can also use the built-in jQuery `:contains(text)` selector
+
+```js
+cy.get('li:contains("Apples")').should('have.length', 3)
+```
+
 <!-- fiddle-end -->
 
 ## Stop `cy.each` iteration
