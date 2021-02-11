@@ -1,10 +1,8 @@
 # `cy.each` examples
 
-## Stop `cy.each` iteration
+## Collect items text
 
-The original [issue #8652](https://github.com/cypress-io/cypress/issues/8652)
-
-<!-- fiddle .each example -->
+<!-- fiddle .each collect items text -->
 
 Let's say we have a list of items
 
@@ -29,6 +27,59 @@ cy.get('li')
     // the list is populated
     expect(list).to.deep.equal(['Apples', 'Bananas', 'Grapes'])
   })
+```
+
+<!-- fiddle-end -->
+
+## Count items with matching text
+
+<!-- fiddle .each count items by text -->
+
+If we have a list of items and want to count how many times the word "Apples" is in it
+
+```html
+<ul>
+  <li>Apples</li>
+  <li>Bananas</li>
+  <li>Grapes</li>
+  <li>Apples</li>
+  <li>Apples</li>
+  <li>Kiwi</li>
+</ul>
+```
+
+We should keep the count variable outside the `.each` callback and use `.then` to compare it to the expected value.
+
+```js
+let count = 0
+cy.get('li')
+  .each(($li) => {
+    if ($li.text() === 'Apples') {
+      count += 1
+    }
+  })
+  .then(() => {
+    // by the time ".each" is finished, the count has been updated
+    expect(count, 'Apples count').to.equal(3)
+  })
+```
+
+<!-- fiddle-end -->
+
+## Stop `cy.each` iteration
+
+The original [issue #8652](https://github.com/cypress-io/cypress/issues/8652)
+
+<!-- fiddle .each example -->
+
+Let's take the list of fruits again
+
+```html
+<ul>
+  <li>Apples</li>
+  <li>Bananas</li>
+  <li>Grapes</li>
+</ul>
 ```
 
 Let's print each item and then check that we have called `console.log` three times.
