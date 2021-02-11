@@ -73,6 +73,8 @@ Note: find even more examples of matching element's text content in this [FAQ an
 
 <!-- fiddle Implicit Assertions / .should() - input elements have value -->
 
+#### Input elements
+
 When using HTML input elements, use `have.value` assertion.
 
 ```html
@@ -92,6 +94,8 @@ cy.get('#rent').type('630.00').should('have.value', '630.00')
 <!-- fiddle-end -->
 
 <!-- fiddle Implicit Assertions / .should() - non-input elements contain text -->
+
+#### Non-input elements
 
 With non-input HTML elements, you can use the `contain` assertion.
 
@@ -211,6 +215,8 @@ Except for several assertions that DO change the subject:
 
 as the next tests demonstrate
 
+#### `have.property` assertion
+
 <!-- fiddle Implicit Assertions / .should() - have.property changes the subject -->
 
 ```js
@@ -239,6 +245,8 @@ cy.wrap(employee) // full object
 ```
 
 <!-- fiddle-end -->
+
+#### `have.attr` assertion
 
 <!-- fiddle Implicit Assertions / .should() - have.attr changes the subject -->
 
@@ -270,6 +278,8 @@ cy.get('[data-cy=subject-example]') // jQuery element
 ```
 
 <!-- fiddle-end -->
+
+#### `have.attr` assertion chain
 
 <!-- fiddle Implicit Assertions / .should() - have.attr matching part of the string -->
 
@@ -331,6 +341,8 @@ expect('FooBar').to.match(/bar$/i)
 ```
 
 <!-- fiddle-end -->
+
+#### Compare two lists of elements
 
 Let's compare the text content of two lists. We would like to assert that the second list is a subset of the first one. First, we need to get the text from each list, then compare them.
 
@@ -436,6 +448,8 @@ cy.get('.assertions-p')
 
 <!-- fiddle-end -->
 
+#### Partial string match example
+
 Assert that element's class includes `heading-`.
 
 <!-- fiddle Should(cb) / finds element by class name regex -->
@@ -465,6 +479,8 @@ cy.get('.docs-header')
 ```
 
 <!-- fiddle-end -->
+
+#### Throwing own errors
 
 You can throw any error from the callback function. The callback will be retried, but the assertions will not be shown as nicely in the Command Log UI as Chai assertions.
 
@@ -496,6 +512,8 @@ cy.get('.docs-header-example')
 ```
 
 <!-- fiddle-end -->
+
+#### Dynamic text example
 
 We [strongly recommend that your tests are deterministic](https://on.cypress.io/conditional-testing). But sometimes you might need to match text between two elements, and you do not know what that text should be. Save the value from the first element, then compare it from a `should(cb)` callback.
 
@@ -540,6 +558,8 @@ cy.get('.two-elements')
 ```
 
 <!-- fiddle-end -->
+
+#### Retrying should callback
 
 Remember that Cypress only [retries the very last command](https://on.cypress.io/retry-ability), if it allows retrying. If you need to perform additional steps before running an assertion, you can use `.should(callbackFn)` to retry multiple operations.
 
