@@ -33,6 +33,25 @@ cy.wait(1000)
 
 <!-- fiddle-end -->
 
+### Waiting does not change the subject
+
+<!-- fiddle cy.wait() / wait keeps the subject -->
+
+```html
+<div id="wait-subject">The subject</div>
+```
+
+```js
+cy.wrap('Hello').wait(100).should('equal', 'Hello')
+cy.get('#wait-subject').wait(100).should('have.text', 'The subject')
+// if there is no subject, yields undefined
+cy.wait(100).should('equal', undefined)
+```
+
+<!-- fiddle-end -->
+
+### Waiting for network
+
 You can wait for a specific route
 
 <!-- fiddle cy.wait() / waiting for specific route -->
