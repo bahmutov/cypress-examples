@@ -237,6 +237,8 @@ cy.get('.action-btn')
 
 <!-- fiddle-end -->
 
+### Click on canvas
+
 <!-- fiddle click on canvas -->
 
 ```html
@@ -303,6 +305,8 @@ cy.get('#action-canvas')
 ```
 
 <!-- fiddle-end -->
+
+### Click on multiple elements
 
 You can click on multiple elements by passing an option `multiple: true`
 
@@ -373,6 +377,8 @@ cy.get('[data-toggle=popover][aria-describedby]').should(
 
 <!-- fiddle-end -->
 
+### Click on disabled element
+
 You can override Cypress' built-in checks and click on the disable element.
 
 <!-- fiddle click on disabled element -->
@@ -423,6 +429,52 @@ You can override Cypress' built-in checks and click on the disable element.
 ```js
 // Ignore error checking prior to clicking
 cy.get('.action-opacity>.btn').click({ force: true })
+```
+
+<!-- fiddle-end -->
+
+### Click waits for visible element
+
+The element will need to be visible and actionable for `.click` to work. If the element is invisible for example, the `.click` retries until the element becomes visible or the command times out.
+
+<!-- fiddle waits for element to be visible -->
+
+```html
+<button id="invisible-at-first" style="display:none">Click me</button>
+<script>
+  setTimeout(function () {
+    document.getElementById('invisible-at-first').style.display =
+      'block'
+  }, 500)
+</script>
+```
+
+```js
+cy.get('#invisible-at-first').click({ timeout: 1000 })
+```
+
+<!-- fiddle-end -->
+
+<!-- fiddle click after assertion -->
+
+To be explicit about visibility, you might insert an assertion before the `.click` command.
+
+```html
+<button id="invisible-at-first2" style="display:none">
+  Click me
+</button>
+<script>
+  setTimeout(function () {
+    document.getElementById('invisible-at-first2').style.display =
+      'block'
+  }, 500)
+</script>
+```
+
+```js
+cy.get('#invisible-at-first2')
+  .should('be.visible')
+  .click({ timeout: 50 })
 ```
 
 <!-- fiddle-end -->
