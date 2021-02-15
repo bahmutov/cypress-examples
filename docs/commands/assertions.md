@@ -630,3 +630,22 @@ cy.get('#loading').should('exist').and('have.text', 'Loading ...')
 ```
 
 <!-- fiddle-end -->
+
+## Comparing arrays
+
+Whenever you assert arrays and other objects, you probably mean to assert the values inside, and not the references.
+
+<!-- fiddle Array assertions -->
+
+```js
+const arr = ['Apples', 'Bananas', 'Grapes']
+// assert that cy.wrap yields the same array reference
+// as we passed into it
+cy.wrap(arr).should('equal', arr)
+// assert the yielded array has the expected items inside
+cy.wrap(arr)
+  .invoke('reverse')
+  .should('deep.equal', ['Grapes', 'Bananas', 'Apples'])
+```
+
+<!-- fiddle-end -->
