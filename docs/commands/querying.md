@@ -219,6 +219,31 @@ cy.get('.query-form').within(() => {
 
 <!-- fiddle-end -->
 
+### Number of elements
+
+<!-- fiddle picture example -->
+
+Using `.within` followed by `cy.get` is convenient for finding multiple matching elements inside another element. For example, let's confirm that the given picture element has at least 2 `source` elements and 1 `img` child element.
+
+```html
+<picture>
+  <source srcset="logo-768.png 768w, logo-768-1.5x.png 1.5x" />
+  <source srcset="logo-480.png, logo-480-2x.png 2x" />
+  <img src="logo-320.png" alt="logo" />
+</picture>
+```
+
+```js
+cy.get('picture').within(() => {
+  // at least 2 source elements
+  cy.get('source').should('have.length.gt', 1)
+  // single img element
+  cy.get('img').should('have.length', 1)
+})
+```
+
+<!-- fiddle-end -->
+
 ## [cy.root()](https://on.cypress.io/root)
 
 We can find the root DOM element `cy.root()`
