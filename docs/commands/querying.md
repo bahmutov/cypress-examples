@@ -19,8 +19,9 @@ To query for the button, use the `cy.get()` command.
 ```
 
 ```js
+// selects the button using ID
 cy.get('#query-btn').should('contain', 'Button')
-
+// selects the button using class
 cy.get('.query-btn').should('contain', 'Button')
 
 // Use CSS selectors just like jQuery
@@ -28,6 +29,31 @@ cy.get('#querying-example .well>button:first').should(
   'contain',
   'Button',
 )
+```
+
+<!-- fiddle-end -->
+
+### Number of items
+
+You can attach an assertion to confirm the number of elements.
+
+<!-- fiddle get headings -->
+
+```html
+<section class="example">
+  <h1>Demo page</h1>
+  <h2>Querying elements</h2>
+  <p>This page has heading elements</p>
+  <h3>cy.get</h3>
+</section>
+```
+
+```js
+// confirm the exact number of H1 + H2 + H3 elements
+cy.get('.example h1,h2,h3').should('have.length', 3)
+// or we can confirm the minimum number of elements
+// using the "greater" assertion
+cy.get('.example h1,h2,h3').should('have.length.gt', 1)
 ```
 
 <!-- fiddle-end -->
