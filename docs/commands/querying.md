@@ -49,7 +49,8 @@ You can attach an assertion to confirm the number of elements.
 ```
 
 ```js
-// we can confirm the minimum number of elements
+// find all H4 + H5 + H6 elements
+// and confirm the minimum number of elements
 // using the "greater" assertion
 cy.get('h4,h5,h6').should('have.length.gt', 1)
 ```
