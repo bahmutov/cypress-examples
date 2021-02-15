@@ -49,12 +49,12 @@ You can attach an assertion to confirm the number of elements.
 ```
 
 ```js
-// confirm the exact number of H4 + H5 + H6 elements
-cy.get('h4,h5,h6').should('have.length', 3)
-// or we can confirm the minimum number of elements
+// we can confirm the minimum number of elements
 // using the "greater" assertion
-cy.get('h4,h5,h7').should('have.length.gt', 1)
+cy.get('h4,h5,h6').should('have.length.gt', 1)
 ```
+
+**Tip:** use the `.should('have.length', N)` assertion to confirm the exact number of elements. For example, see [Assertions](./assertions.md) page.
 
 <!-- fiddle-end -->
 
