@@ -100,7 +100,7 @@ You can grab elements with a given attribute. For example, let's make sure there
 ```html
 <a href="article1.html">Article 1</a>
 <a href="article2.html">Article 2</a>
-<a href=article3.html">Article 3</a>
+<a href="article3.html">Article 3</a>
 <a href="index.html">index</a>
 ```
 
