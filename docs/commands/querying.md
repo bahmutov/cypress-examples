@@ -93,6 +93,25 @@ cy.get('td:not(:contains(Same))')
 
 ### Using attribute selector
 
+You can grab elements with a given attribute. For example, let's make sure there is only a single `<a>` element pointing at "index.html":
+
+<!-- fiddle get anchor links with specific href -->
+
+```html
+<a href="article1.html">Article 1</a>
+<a href="article2.html">Article 2</a>
+<a href=article3.html">Article 3</a>
+<a href="index.html">index</a>
+```
+
+```js
+cy.get('a[href="index.html"]').should('have.length', 1)
+```
+
+<!-- fiddle-end -->
+
+#### Using data attribute
+
 To find elements by data attribute, query using the attribute selector.
 
 <!-- fiddle get by data attribute -->
