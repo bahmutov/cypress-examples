@@ -246,6 +246,26 @@ cy.wrap(employee) // full object
 
 <!-- fiddle-end -->
 
+#### Multiple properties
+
+If you want to check multiple properties at once we can use `deep.include` assertion. Note we cannot use `deep.equals` in this case, since the object has extra properties we are not interested in.
+
+<!-- fiddle Implicit Assertions / .should() - multiple properties -->
+
+```js
+const person = {
+  firstName: 'Joe',
+  lastName: 'Smith',
+  age: 29,
+}
+cy.wrap(person).should('deep.include', {
+  firstName: 'Joe',
+  lastName: 'Smith',
+})
+```
+
+<!-- fiddle-end -->
+
 #### `have.attr` assertion
 
 <!-- fiddle Implicit Assertions / .should() - have.attr changes the subject -->
@@ -646,6 +666,66 @@ cy.wrap(arr).should('equal', arr)
 cy.wrap(arr)
   .invoke('reverse')
   .should('deep.equal', ['Grapes', 'Bananas', 'Apples'])
+```
+
+<!-- fiddle-end -->
+
+## Adding assertions
+
+### Multiple attributes
+
+The built-in Chai assertion `have.attr` only confirms a single attribute. What if we want to confirm multiple attributes? We could write it like this:
+
+<!-- fiddle Adding assertions / multiple assertions -->
+
+```html
+<a id="about-page" href="/about" target="_blank">About</a>
+```
+
+```js
+cy.contains('a', 'About').should((el) => {
+  // we do not care about ID attribute
+  expect(el).to.have.attr('href', '/about')
+  expect(el).to.have.attr('target', '_blank')
+})
+```
+
+<!-- fiddle-end -->
+
+Alternatively, we can add a custom Chai assertion to our global `chai` object.
+
+<!-- fiddle Adding assertions / adding custom assertion -->
+
+```html
+<a id="about-page" href="/about" target="_blank">About</a>
+```
+
+```js
+// add custom Chai assertion to confirm multiple attributes
+chai.use((_chai, utils) => {
+  // use "function" syntax to make sure when Chai
+  // calls it, the "this" object points at Chai
+
+  function assertAttributes(attributes) {
+    Object.keys(attributes).forEach((attr) => {
+      const value = this._obj.attr(attr)
+      const expectedValue = attributes[attr]
+      this.assert(
+        value === expectedValue,
+        `expected to find attribute **${attr}: ${expectedValue}**, found **${value}**`,
+      )
+    })
+  }
+  _chai.Assertion.addMethod('attributes', assertAttributes)
+})
+
+// now let's use our custom Chai assertion
+// to confirm multiple element attributes at once
+cy.contains('a', 'About').should('have.attributes', {
+  href: '/about',
+  target: '_blank',
+  // but we do not care about "id" attribute
+})
 ```
 
 <!-- fiddle-end -->
