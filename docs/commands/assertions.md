@@ -692,6 +692,8 @@ cy.contains('a', 'About').should((el) => {
 
 <!-- fiddle-end -->
 
+### Custom Chai assertion
+
 Alternatively, we can add a custom Chai assertion to our global `chai` object.
 
 <!-- fiddle Adding assertions / adding custom assertion -->

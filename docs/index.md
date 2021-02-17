@@ -65,6 +65,8 @@ Commands drive your tests in the browser like a real user would. They let you pe
     - [assert](./commands/assertions.md#assert)
   - [Should with callback function](./commands/assertions.md#should-with-callback-function)
   - [Multiple assertions](./commands/assertions.md#multiple-assertions)
+  - [Comparing arrays](./commands/assertions.md#comparing-arrays)
+  - [Custom assertions](./commands/assertions.md#custom-chai-assertions)
 - [Navigation](./commands/navigation.md)
   - [go](./commands/navigation.md#cy-go)
   - [reload](./commands/navigation.md#cy-reload)
