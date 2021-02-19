@@ -151,3 +151,57 @@ cy.fixture('profile').should((profile) => {
 ```
 
 <!-- fiddle-end -->
+
+### Writing combined JSON object
+
+Sometimes you want to read an object from a file, add new properties, and then write the result into a JSON file. Just appending to the file would append the text, breaking the JSON format. Instead you can read the file, update the JSON object, then write the combined result back.
+
+<!-- fiddle cy.writeFile() - write combined JSON object -->
+
+```js
+// write the initial object
+const filename = './person.json'
+cy.writeFile(filename, { name: 'Joe' })
+// let's add another property
+cy.readFile(filename).then((person) => {
+  person.dress = 'sharp'
+  // write the merged object
+  cy.writeFile(filename, person)
+})
+// verify the file has the combined object
+cy.readFile(filename).should('deep.equal', {
+  name: 'Joe',
+  dress: 'sharp',
+})
+```
+
+<!-- fiddle-end -->
+
+### Writing combined JSON array
+
+Similarly, to add new items to the array, read the array, add new items, then write the updated array back.
+
+<!-- fiddle cy.writeFile() - write combined JSON array -->
+
+```js
+// write the initial list
+const filename = './people.json'
+cy.writeFile(filename, [{ name: 'Joe' }])
+// let's add another person
+cy.readFile(filename).then((people) => {
+  people.push({ name: 'Mike' })
+  // write the merged list
+  cy.writeFile(filename, people)
+})
+// verify the file has the combined array
+cy.readFile(filename).should('deep.equal', [
+  {
+    name: 'Joe',
+  },
+  {
+    name: 'Mike',
+  },
+])
+```
+
+<!-- fiddle-end -->

@@ -11,3 +11,5 @@ public
 .publish
 # redirects to versioned pages
 redirects
+people.json
+person.json
