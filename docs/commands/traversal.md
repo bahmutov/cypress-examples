@@ -171,6 +171,48 @@ cy.get('.traversal-pagination')
 
 <!-- fiddle-end -->
 
+### Finds all elements
+
+The `.find()` command is a child command. For every element yielded by the parent command, `.find` finds the elements matching the selectors.
+
+<!-- fiddle find returns list items -->
+
+```html
+<ul id="a-list">
+  <li>first</li>
+  <li>second</li>
+  <li>third</li>
+</ul>
+```
+
+```js
+cy.get('ul#a-list').find('li').should('have.length', 3)
+```
+
+<!-- fiddle-end -->
+
+Now imagine we grab the `<LI>` elements and try to find elements in each one.
+
+<!-- fiddle finds elements in each parent element -->
+
+```html
+<ul id="anchors">
+  <li><a>link A</a>, <a>link B</a></li>
+  <li><a>link C</a>, <a>link D</a></li>
+  <li><a>link E</a>, <a>link F</a></li>
+</ul>
+```
+
+```js
+cy.get('ul#anchors li')
+  .should('have.length', 3)
+  // inside each LI element, find the A elements
+  .find('a')
+  .should('have.length', 6)
+```
+
+<!-- fiddle-end -->
+
 ## [.first()](https://on.cypress.io/first)
 
 To get the first DOM element within elements, use the `.first()` command.
