@@ -101,6 +101,30 @@ cy.get('.traversal-nav > li a')
 
 <!-- fiddle-end -->
 
+### Visible elements
+
+You can use `.filter` to find visible elements using jQuery selector `:visible`
+
+<!-- fiddle filter visible elements -->
+
+```html
+<ul class="visible-items">
+  <li>first</li>
+  <li style="display:none">second</li>
+  <li style="display:none">third</li>
+  <li>fourth</li>
+</ul>
+```
+
+```js
+cy.get('.visible-items li')
+  .should('have.length', 4) // all LI items
+  .filter(':visible')
+  .should('have.length', 2) // only 2 visible LI items
+```
+
+<!-- fiddle-end -->
+
 ## [.find()](https://on.cypress.io/find)
 
 To get descendant DOM elements of the selector, use the `.find()` command.
