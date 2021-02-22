@@ -53,6 +53,8 @@ cy.server({
 
 ## [cy.request()](https://on.cypress.io/request)
 
+### Making a request
+
 To make an XHR request, use the `cy.request()` command.
 
 <!-- fiddle cy.request() - make an XHR request -->
@@ -74,6 +76,27 @@ cy.request('https://jsonplaceholder.cypress.io/comments').should(
 ```
 
 <!-- fiddle-end -->
+
+### Assert a returned header
+
+From the response, you can get the individual headers.
+
+<!-- fiddle cy.request() - confirm the response header -->
+
+```js
+cy.request('https://jsonplaceholder.cypress.io/todos/1')
+  .its('headers')
+  .then((responseHeaders) => {
+    expect(responseHeaders).to.have.property(
+      'x-powered-by',
+      'Express',
+    )
+  })
+```
+
+<!-- fiddle-end -->
+
+### Request with query parameters
 
 <!-- fiddle cy.request() - with query parameters -->
 
@@ -98,6 +121,8 @@ cy.request({
 ```
 
 <!-- fiddle-end -->
+
+### Making multiple requests
 
 A request can pass the response data to the next request.
 
@@ -141,6 +166,8 @@ cy.request('https://jsonplaceholder.cypress.io/users?_limit=1')
 ```
 
 <!-- fiddle-end -->
+
+### Using the shared test context
 
 A good idea is to save the response data to be used later in the shared test context.
 
