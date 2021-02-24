@@ -45,6 +45,8 @@ jobs:
 
       # only pass the local folders we built / updated
       #   ./docs and ./public
+      # TIP: we want to avoid uploading node_modules since it is SLOW
+      # https://glebbahmutov.com/blog/parallel-cypress-tests-gh-action/
       - name: Save built folders 🆙
         uses: actions/upload-artifact@v2
         with:
