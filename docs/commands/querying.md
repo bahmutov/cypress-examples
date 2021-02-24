@@ -239,6 +239,22 @@ cy.get('.query-form').within(() => {
 
 <!-- fiddle-end -->
 
+### Temporarily escape `.within`
+
+You can temporarily escape the `.within` scope by chaining of the `cy.document()` command.
+
+<!-- does not work in Markdown fiddle due to double .within -->
+<!-- fiddle.export .within escape -->
+
+```js
+cy.get('.query-form').within(() => {
+  // escape back to the document to find H6
+  cy.document().contains('h6', 'Name input')
+})
+```
+
+<!-- fiddle-end -->
+
 ### Number of elements
 
 <!-- fiddle picture example -->
