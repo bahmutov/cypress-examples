@@ -319,6 +319,10 @@ cy.get('.network-route-btn').click()
 
 // https://on.cypress.io/wait
 cy.wait('@getComment').its('status').should('eq', 200)
+// the request has duration in milliseconds
+cy.get('@getComment')
+  .should('have.property', 'duration')
+  .and('be.a', 'number')
 
 // Listen to POST to comments
 cy.route('POST', '/comments').as('postComment')
@@ -521,6 +525,66 @@ cy.intercept('DELETE', '/comments/1').as('delete')
 cy.get('.network-delete').click()
 cy.wait('@delete')
 cy.contains('.network-delete-comment', 'Comment deleted!')
+```
+
+<!-- fiddle-end -->
+
+## cy.intercept duration
+
+<!-- fiddle cy.intercept() duration -->
+
+```html
+<button class="network-timed-btn btn btn-primary">Get Comment</button>
+<div class="network-comment-timed"></div>
+<script>
+  // place the example code into a closure to isolate its variables
+  ;(function () {
+    // we fetch all data from this REST json backend
+    const root = 'https://jsonplaceholder.cypress.io'
+
+    function getComment() {
+      $.ajax({
+        url: `${root}/comments/1`,
+        method: 'GET',
+      }).then(function (data) {
+        $('.network-comment-timed').text(data.body)
+      })
+    }
+
+    $('.network-timed-btn').on('click', function (e) {
+      e.preventDefault()
+      getComment(e)
+    })
+  })()
+</script>
+```
+
+The intercepted call has basic properties like the request and the response. It does not have the "duration" property, but we can measure the network call's duration ourselves.
+
+```js
+let duration
+cy.intercept('GET', '**/comments/*', (req) => {
+  const started = +new Date()
+  req.reply(() => {
+    // we are not interested in modifying the response
+    // just measuring the elapsed duration
+    duration = +new Date() - started
+  })
+}).as('getCommentTimed')
+
+cy.get('.network-timed-btn').click()
+
+cy.wait('@getCommentTimed').should('include.keys', [
+  'request',
+  'response',
+])
+// there is no "duration" property
+cy.get('@getCommentTimed')
+  .should('not.have.property', 'duration')
+  .then(() => {
+    // but the local variable duration should have been set by now
+    expect(duration).to.be.a('number')
+  })
 ```
 
 <!-- fiddle-end -->
