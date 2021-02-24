@@ -241,19 +241,52 @@ cy.get('.query-form').within(() => {
 
 ### Temporarily escape `.within`
 
-You can temporarily escape the `.within` scope by chaining of the `cy.document()` command.
+You can temporarily escape the `.within` scope by using [cy.root](https://on.cypress.io/root) + [cy.closest](https://on.cypress.io/closest) commands.
 
-<!-- does not work in Markdown fiddle due to double .within -->
-<!-- fiddle.export .within escape -->
+<!-- fiddle .within escape -->
+
+```html
+<section id="escape-example">
+  <h6>Name input</h6>
+  <input
+    type="text"
+    id="inputName"
+    class="form-control"
+    placeholder="Name"
+  />
+  <h6>Form</h6>
+  <form class="the-form">
+    <input
+      type="text"
+      id="inputEmail"
+      class="form-control"
+      placeholder="Email"
+    />
+    <input
+      type="text"
+      id="inputPassword"
+      class="form-control"
+      placeholder="Password"
+    />
+  </form>
+</section>
+```
 
 ```js
-cy.get('.query-form').within(() => {
-  // escape back to the document to find H6
-  cy.document().contains('h6', 'Name input')
+cy.get('.the-form').within(() => {
+  // escape back find H6
+  cy.root().closest('#escape-example').contains('h6', 'Name input')
+  // escape and enter text into the input field
+  cy.root()
+    .closest('#escape-example')
+    .find('input#inputName')
+    .type('Batman')
 })
 ```
 
 <!-- fiddle-end -->
+
+**Note:** you need the `cy.root()` command first because `cy.closest` is a child command and cannot be used to start the new command chain.
 
 ### Number of elements
 
