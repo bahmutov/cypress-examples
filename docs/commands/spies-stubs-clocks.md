@@ -162,11 +162,13 @@ A spy is just an object. You can access and assert its individual properties usi
 <script>
   // note to make things more interesting
   // we will log the message asynchronously
-  document.getElementById('greet').addEventListener('click', () => {
-    setTimeout(() => {
-      console.log('Happy Testing!')
-    }, 200)
-  })
+  document
+    .getElementById('greet')
+    .addEventListener('click', function () {
+      setTimeout(() => {
+        console.log('Happy Testing!')
+      }, 200)
+    })
 </script>
 ```
 
