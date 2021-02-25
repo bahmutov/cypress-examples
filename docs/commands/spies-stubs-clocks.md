@@ -25,6 +25,8 @@ cy.get('@anyArgs').should('have.been.called')
 
 <!-- fiddle-end -->
 
+### Spy retries
+
 <!-- fiddle cy.spy() / retries until assertions pass -->
 
 `cy.spy()` retries until the assertions that follow it pass.
@@ -48,6 +50,8 @@ cy.get('@foo').should('have.been.calledTwice')
 ```
 
 <!-- fiddle-end -->
+
+### Matchers
 
 `cy.spy` and `cy.stub` match call arguments using [Sinon matchers](https://sinonjs.org/releases/latest/matchers/).
 
@@ -147,6 +151,38 @@ cy.get('@add').should('have.been.calledWith', M.number, M(3))
 
 <!-- fiddle-end -->
 
+### Call count
+
+A spy is just an object. You can access and assert its individual properties using [.its](https://on.cypress.io/its) command.
+
+<!-- fiddle cy.spy and cy.stub / call count -->
+
+```html
+<button id="greet">Log greeting</button>
+<script>
+  // note to make things more interesting
+  // we will log the message asynchronously
+  document.getElementById('greet').addEventListener('click', () => {
+    setTimeout(() => {
+      console.log('Happy Testing!')
+    }, 200)
+  })
+</script>
+```
+
+```js
+// first, let's spy on the console.log method
+cy.window()
+  .its('console')
+  .then((console) => cy.spy(console, 'log').as('log'))
+// second, act on the UI
+cy.get('#greet').click().click().click()
+// third assert the spy was called three times
+cy.get('@log').its('callCount').should('eq', 3)
+```
+
+<!-- fiddle-end -->
+
 ## [cy.stub()](https://on.cypress.io/stub)
 
 To create a stub and/or replace a function with a stub, use the `cy.stub()` command.
@@ -227,6 +263,8 @@ expect(greeter.greet()).to.equal('Hello, undefined!')
 ```
 
 <!-- fiddle-end -->
+
+### Stub application code
 
 If you want to stub a method deep inside the application's code, access it using App Actions by passing the object reference via `window` object.
 
