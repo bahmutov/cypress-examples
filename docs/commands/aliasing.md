@@ -150,3 +150,101 @@ cy.wait('@getComment').its('status').should('eq', 200)
 ```
 
 <!-- fiddle-end -->
+
+### Alias values
+
+<!-- fiddle .as() - alias a value for later use -->
+
+```html
+<button data-cy="magic-number">42</button>
+```
+
+```js
+// retrieve the element's text and convert into a number
+cy.get('[data-cy=magic-number]')
+  .invoke('text')
+  .then(parseInt)
+  .as('magicNumber')
+// saved the value 42 under an alias
+// retrieve it some time later
+cy.get('@magicNumber').should('equal', 42)
+```
+
+<!-- fiddle-end -->
+
+### Test context
+
+The aliased values are set as properties in the `test context` object. You can retrieve them later using `this.alias` syntax **if** you use the `function () {...}` callback syntax.
+
+<!-- fiddle .as() - alias is saved in the test context -->
+
+Let's confirm the two list items have different text.
+
+```html
+<ul data-cy="test-context">
+  <li>Purple</li>
+  <li>Orange</li>
+</ul>
+```
+
+```js
+cy.get('[data-cy=test-context] li').first().invoke('text').as('first')
+cy.get('[data-cy=test-context] li')
+  .eq(1)
+  .invoke('text')
+  .as('second')
+  .then(function () {
+    // by the time this callback runs
+    // both "first" and "second" properties are set
+    // notice the "function () {...}" syntax
+    // to get the "this" to point at the test context object
+    expect(this.first)
+      .to.equal('Purple') // sanity check
+      .and.not.equal(this.second)
+  })
+```
+
+Alternatively, we could have used `.then` callbacks to get a "pyramid of Doom"
+
+```js
+cy.log('**using callbacks**')
+cy.get('[data-cy=test-context] li')
+  .first()
+  .invoke('text')
+  .then((first) => {
+    cy.get('[data-cy=test-context] li')
+      .eq(1)
+      .invoke('text')
+      .then((second) => {
+        expect(first)
+          .to.equal('Purple') // sanity check
+          .and.not.equal(second)
+      })
+  })
+```
+
+Finally, we could have used local variables
+
+```js
+let first, second
+cy.log('**using variables**')
+cy.get('[data-cy=test-context] li')
+  .first()
+  .invoke('text')
+  .then((x) => (first = x))
+
+cy.get('[data-cy=test-context] li')
+  .eq(1)
+  .invoke('text')
+  .then((x) => (second = x))
+
+// by the time this callback runs, both local
+// variables are set
+cy.then((second) => {
+  expect(first)
+    .to.equal('Purple') // sanity check
+    .and.not.equal(second)
+})
+```
+
+<!-- fiddle-end -->
