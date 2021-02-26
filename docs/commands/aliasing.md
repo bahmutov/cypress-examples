@@ -4,6 +4,8 @@ Examples of referencing DOM elements or resources for later use in Cypress, for 
 
 ## .as
 
+### Alias a DOM element
+
 <!-- fiddle .as() - alias a DOM element for later use -->
 
 ```html
@@ -68,6 +70,48 @@ cy.get('@firstBtn')
 ```
 
 <!-- fiddle-end -->
+
+### List example
+
+Another example of aliasing a DOM element
+
+<!-- fiddle .as() - query the alias -->
+
+```html
+<ul data-cy="query-the-alias">
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Grape</li>
+</ul>
+```
+
+```js
+cy.get('[data-cy=query-the-alias]').as('fruits')
+// now we can use cy.get to grab the DOM element
+cy.get('@fruits')
+  .should('have.prop', 'tagName', 'UL')
+  .and('be.visible')
+// find child elements
+cy.get('@fruits').find('li').should('have.length', 3)
+cy.get('@fruits').contains('li', 'Banana')
+cy.get('@fruits').contains('li', 'Grape')
+```
+
+Note: if all the assertions related to the DOM elements are grouped together, it is simpler to use [cy.within](https://on.cypress.io/within) command.
+
+```js
+cy.log('**equivalent code using cy.within**')
+cy.get('[data-cy=query-the-alias]').within(() => {
+  cy.root().should('have.prop', 'tagName', 'UL').and('be.visible')
+  cy.get('li').should('have.length', 3)
+  cy.contains('li', 'Banana')
+  cy.contains('li', 'Grape')
+})
+```
+
+<!-- fiddle-end -->
+
+### Alias a network route
 
 <!-- fiddle .as() - alias a route for later use -->
 
