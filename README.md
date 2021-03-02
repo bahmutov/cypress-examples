@@ -1,6 +1,6 @@
 # @bahmutov/cypress-examples [![cypress-examples](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/count/dis6wg/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/dis6wg/runs)
 
-[![ci status][ci image]][ci url] [![prettier status][prettier image]][prettier url] [![deployed status][deployed image]][deployed url] [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-6.5.0-brightgreen)
+[![ci status][ci image]][ci url] [![prettier status][prettier image]][prettier url] [![deployed status][deployed image]][deployed url] [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-6.6.0-brightgreen)
 
 > Static site with Cypress examples tested right from the Markdown sources
 
