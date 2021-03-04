@@ -131,19 +131,19 @@ cy.get('[id^=local-example]').should('have.text', 'first')
 
 ### Attribute suffix
 
-Let's get the element with ID ending with "example-456" string
+Let's get the element with ID ending with "example-AF9" string
 
 <!-- fiddle get / attribute suffix -->
 
 ```html
 <ul>
-  <li id="this-example-123">first</li>
-  <li id="that-example-456">second</li>
+  <li id="this-example-ZFX">first</li>
+  <li id="that-example-AF9">second</li>
 </ul>
 ```
 
 ```js
-cy.get('[id$=example-456]').should('have.text', 'second')
+cy.get('[id$=example-AF9]').should('have.text', 'second')
 ```
 
 <!-- fiddle-end -->
