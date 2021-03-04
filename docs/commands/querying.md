@@ -6,7 +6,7 @@ Examples of querying for DOM elements in Cypress, for a full reference of comman
 
 To query for the button, use the `cy.get()` command.
 
-<!-- fiddle get button -->
+<!-- fiddle get / button -->
 
 ```html
 <div id="querying-example">
@@ -37,7 +37,7 @@ cy.get('#querying-example .well>button:first').should(
 
 You can attach an assertion to confirm the number of elements.
 
-<!-- fiddle get headings -->
+<!-- fiddle get / headings -->
 
 ```html
 <section>
@@ -61,7 +61,7 @@ cy.get('h4,h5,h6').should('have.length.gt', 1)
 
 ### jQuery selectors
 
-<!-- fiddle get with jQuery text selector -->
+<!-- fiddle get / with jQuery text selector -->
 
 `cy.get` uses [jQuery selectors](https://api.jquery.com/category/selectors/), thus you can immediately use them to find elements by text (or without given text).
 
@@ -95,7 +95,7 @@ cy.get('td:not(:contains(Same))')
 
 You can grab elements with a given attribute. For example, let's make sure there is only a single `<a>` element pointing at "index.html":
 
-<!-- fiddle get anchor links with specific href -->
+<!-- fiddle get / anchor links with specific href -->
 
 ```html
 <a href="article1.html">Article 1</a>
@@ -110,11 +110,68 @@ cy.get('a[href="index.html"]').should('have.length', 1)
 
 <!-- fiddle-end -->
 
+### Attribute prefix
+
+Let's get the element with ID starting with "local-example" prefix
+
+<!-- fiddle get / attribute prefix -->
+
+```html
+<ul>
+  <li id="local-example-123">first</li>
+  <li id="remote-example-456">second</li>
+</ul>
+```
+
+```js
+cy.get('[id^=local-example]').should('have.text', 'first')
+```
+
+<!-- fiddle-end -->
+
+### Attribute suffix
+
+Let's get the element with ID ending with "example-456" string
+
+<!-- fiddle get / attribute suffix -->
+
+```html
+<ul>
+  <li id="local-example-123">first</li>
+  <li id="remote-example-456">second</li>
+</ul>
+```
+
+```js
+cy.get('[id$=example-456]').should('have.text', 'second')
+```
+
+<!-- fiddle-end -->
+
+### Combining attribute selectors
+
+Let's get the element with ID that starts with "local-" prefix and ending with "-example" suffix
+
+<!-- fiddle get / combine attributes -->
+
+```html
+<ul>
+  <li id="local-first-123">first</li>
+  <li id="local-second-example">second</li>
+</ul>
+```
+
+```js
+cy.get('[id^=local-][id$=-example]').should('have.text', 'second')
+```
+
+<!-- fiddle-end -->
+
 #### Using data attribute
 
 To find elements by data attribute, query using the attribute selector.
 
-<!-- fiddle get by data attribute -->
+<!-- fiddle get / by data attribute -->
 
 ```html
 <div data-test-id="test-example" class="example">
