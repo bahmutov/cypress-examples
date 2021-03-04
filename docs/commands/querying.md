@@ -137,8 +137,8 @@ Let's get the element with ID ending with "example-456" string
 
 ```html
 <ul>
-  <li id="local-example-123">first</li>
-  <li id="remote-example-456">second</li>
+  <li id="this-example-123">first</li>
+  <li id="that-example-456">second</li>
 </ul>
 ```
 
@@ -150,19 +150,19 @@ cy.get('[id$=example-456]').should('have.text', 'second')
 
 ### Combining attribute selectors
 
-Let's get the element with ID that starts with "local-" prefix and ending with "-example" suffix
+Let's get the element with ID that starts with "my-" prefix and ending with "-yours" suffix
 
 <!-- fiddle get / combine attributes -->
 
 ```html
 <ul>
-  <li id="local-first-123">first</li>
-  <li id="local-second-example">second</li>
+  <li id="my-first-123">first</li>
+  <li id="my-second-yours">second</li>
 </ul>
 ```
 
 ```js
-cy.get('[id^=local-][id$=-example]').should('have.text', 'second')
+cy.get('[id^=my-][id$=-yours]').should('have.text', 'second')
 ```
 
 <!-- fiddle-end -->
