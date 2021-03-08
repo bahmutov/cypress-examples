@@ -128,6 +128,9 @@ cy.get('#cars_list option')
   )
   // and check now
   .should('deep.equal', ['BMW', 'Mercedes', 'Audi'])
+  // TIP: sort the array for consistency
+  .invoke('sort')
+  .should('deep.equal', ['Audi', 'BMW', 'Mercedes'])
 ```
 
 <!-- fiddle-end -->
