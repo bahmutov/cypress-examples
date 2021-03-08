@@ -97,3 +97,37 @@ cy.get('select').invoke('val').should('equal', '457')
 ```
 
 <!-- fiddle-end -->
+
+## Verify options text
+
+Let's say we want to verify all available options and confirm their text. The options below should include only "BMW", "Mercedes", and "Audi".
+
+<!-- fiddle Confirm options text -->
+
+```html
+<select id="cars_list">
+  <option value="-1">--Select Car--</option>
+  <option value="B">BMW</option>
+  <option value="M">Mercedes</option>
+  <option value="A">Audi</option>
+</select>
+```
+
+The test is verbose on purpose, converting and confirming everything step by step.
+
+```js
+cy.get('#cars_list option')
+  .then(($options) => {
+    // get the text of each option
+    return Cypress._.map($options, ($option) => $option.innerText)
+  })
+  .should('deep.equal', ['--Select Car--', 'BMW', 'Mercedes', 'Audi'])
+  // let's skip the "--Select Car--" default option
+  .then((list) =>
+    Cypress._.filter(list, (s) => s !== '--Select Car--'),
+  )
+  // and check now
+  .should('deep.equal', ['BMW', 'Mercedes', 'Audi'])
+```
+
+<!-- fiddle-end -->
