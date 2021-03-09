@@ -358,6 +358,10 @@ expect(o).to.deep.equal({ foo: 'bar' })
 
 // matching text using regular expression
 expect('FooBar').to.match(/bar$/i)
+
+// check if the response status code is successful
+const statusCode = 204
+expect(statusCode, 'status code').to.be.within(200, 399)
 ```
 
 <!-- fiddle-end -->
