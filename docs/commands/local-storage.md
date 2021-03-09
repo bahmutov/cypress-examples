@@ -45,9 +45,11 @@ To clear all data in local storage, use the `cy.clearLocalStorage()` command.
 <!-- fiddle cy.clearLocalStorage() - clear all data in local storage -->
 
 ```html
-<button class="ls-btn btn btn-success">Populate Local Storage</button>
+<button id="clear-local-storage" class="ls-btn btn btn-success">
+  Populate Local Storage
+</button>
 <script>
-  $('.ls-btn').on('click', function (e) {
+  $('#clear-local-storage').on('click', function (e) {
     e.preventDefault()
     populateStorage(e)
   })
@@ -62,7 +64,7 @@ To clear all data in local storage, use the `cy.clearLocalStorage()` command.
 ```
 
 ```js
-cy.get('.ls-btn')
+cy.get('#clear-local-storage')
   .click()
   .should(() => {
     expect(localStorage.getItem('prop1')).to.eq('red')
@@ -78,7 +80,7 @@ cy.clearLocalStorage().should((ls) => {
 })
 
 // Clear key matching string in Local Storage
-cy.get('.ls-btn')
+cy.get('#clear-local-storage')
   .click()
   .should(() => {
     expect(localStorage.getItem('prop1')).to.eq('red')
@@ -93,7 +95,7 @@ cy.clearLocalStorage('prop1').should((ls) => {
 })
 
 // Clear keys matching regex in Local Storage
-cy.get('.ls-btn')
+cy.get('#clear-local-storage')
   .click()
   .should(() => {
     expect(localStorage.getItem('prop1')).to.eq('red')
