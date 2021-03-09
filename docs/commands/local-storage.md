@@ -2,6 +2,42 @@
 
 Examples of managing local storage in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io/api)
 
+## Access the local storage
+
+You can directly access the browser's `localStorage` object.
+
+<!-- fiddle access the localStorage -->
+
+```html
+<button id="set-local-storage" class="ls-btn btn btn-success">
+  Set Local Storage
+</button>
+<script>
+  $('#set-local-storage').on('click', function (e) {
+    e.preventDefault()
+    localStorage.setItem('AppSays', 'Hello')
+  })
+</script>
+```
+
+```js
+// set and get the local storage from the test
+localStorage.setItem('demo', 'Set')
+expect(localStorage.getItem('demo')).to.equal('Set')
+// clear the local storage
+cy.clearLocalStorage().then(() => {
+  expect(localStorage.getItem('AppSays')).to.be.null
+})
+// set the item from the app
+cy.get('#set-local-storage')
+  .click()
+  .then(() => {
+    expect(localStorage.getItem('AppSays')).to.equal('Hello')
+  })
+```
+
+<!-- fiddle-end -->
+
 ## [cy.clearLocalStorage()](https://on.cypress.io/clearlocalstorage)
 
 To clear all data in local storage, use the `cy.clearLocalStorage()` command.
