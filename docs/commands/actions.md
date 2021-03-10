@@ -676,7 +676,7 @@ cy.get('.action-radios [type="radio"]')
 
 You can get the currently checked option using the jQuery's [:checked selector](https://api.jquery.com/checked-selector/).
 
-<!-- fiddle checked selector for radio input -->
+<!-- fiddle checked selector / for radio input -->
 
 ```html
 <form id="pick-fruit">
@@ -712,7 +712,7 @@ cy.get('#pick-fruit :checked')
 
 The same selector works for checkbox elements
 
-<!-- fiddle checked selector for checkbox elements -->
+<!-- fiddle checked selector / for checkbox elements -->
 
 ```html
 <form id="newsletter">
