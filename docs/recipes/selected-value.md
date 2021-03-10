@@ -134,3 +134,23 @@ cy.get('#cars_list option')
 ```
 
 <!-- fiddle-end -->
+
+## Get selected option
+
+You can get the currently selected option using jQuery's [:selected selector](https://api.jquery.com/selected-selector/).
+
+<!-- fiddle Get selected option text -->
+
+```html
+<select id="name">
+  <option>Joe</option>
+  <option>Mary</option>
+  <option selected="selected">Peter</option>
+</select>
+```
+
+```js
+cy.get('select#name option:selected').should('have.text', 'Peter')
+```
+
+<!-- fiddle-end -->
