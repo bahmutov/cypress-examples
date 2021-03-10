@@ -137,7 +137,7 @@ cy.get('#cars_list option')
 
 ## Get selected option
 
-You can get the currently selected option using jQuery's [:selected selector](https://api.jquery.com/selected-selector/).
+You can get the currently selected option using the jQuery's [:selected selector](https://api.jquery.com/selected-selector/).
 
 <!-- fiddle Get selected option text -->
 

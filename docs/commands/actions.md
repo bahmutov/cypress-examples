@@ -672,6 +672,99 @@ cy.get('.action-radios [type="radio"]')
 
 <!-- fiddle-end -->
 
+### Get checked option
+
+You can get the currently checked option using the jQuery's [:checked selector](https://api.jquery.com/checked-selector/).
+
+<!-- fiddle checked selector for radio input -->
+
+```html
+<form id="pick-fruit">
+  <div>
+    <input type="radio" name="fruit" value="orange" id="orange" />
+    <label for="orange">orange</label>
+  </div>
+  <div>
+    <input
+      type="radio"
+      name="fruit"
+      value="apple"
+      id="apple"
+      checked="checked"
+    />
+    <label for="apple">apple</label>
+  </div>
+  <div>
+    <input type="radio" name="fruit" value="banana" id="banana" />
+    <label for="banana">banana</label>
+  </div>
+  <div id="log"></div>
+</form>
+```
+
+```js
+cy.get('#pick-fruit :checked')
+  .should('be.checked')
+  .and('have.value', 'apple')
+```
+
+<!-- fiddle-end -->
+
+The same selector works for checkbox elements
+
+<!-- fiddle checked selector for checkbox elements -->
+
+```html
+<form id="newsletter">
+  <h3>Newsletter frequency</h3>
+  <p>
+    <input
+      type="checkbox"
+      name="newsletter"
+      value="Hourly"
+      checked="checked"
+      title="hourly"
+    />
+
+    <input
+      type="checkbox"
+      name="newsletter"
+      value="Daily"
+      title="daily"
+    />
+    <input
+      type="checkbox"
+      name="newsletter"
+      value="Weekly"
+      title="weekly"
+    />
+
+    <input
+      type="checkbox"
+      name="newsletter"
+      value="Monthly"
+      title="monthly"
+      checked
+    />
+    <input
+      type="checkbox"
+      name="newsletter"
+      value="Yearly"
+      title="yearly"
+    />
+  </p>
+</form>
+```
+
+```js
+cy.get('#newsletter :checked')
+  .should('have.length', 2)
+  .first()
+  .should('have.value', 'Hourly')
+```
+
+<!-- fiddle-end -->
+
 ## [.uncheck()](https://on.cypress.io/uncheck)
 
 To uncheck a checkbox or radio, use the `.uncheck()` command.
