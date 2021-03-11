@@ -52,6 +52,8 @@ cy.contains('[class="day old"]', 'third B')
 
 <!-- fiddle-end -->
 
+## Selecting by exact text
+
 If you want to select using the exact text, use a regular expression
 
 <!-- fiddle Exact class and text -->
@@ -75,6 +77,31 @@ We want to select ".day" with the exact text "8" from the HTML below.
 cy.contains('[class=day]', '8').should('have.text', '28')
 // using regular expression finds the exact text match
 cy.contains('[class=day]', /^8$/).should('have.text', '8')
+```
+
+<!-- fiddle-end -->
+
+## Filter elements using cy.not
+
+We can filter items using the [cy.not](https://on.cypress.io/not) command.
+
+<!-- fiddle Filter using cy.not -->
+
+```html
+<ul>
+  <li class="initial active">Apples</li>
+  <li class="initial current">Oranges</li>
+  <li class="initial active">Grapes</li>
+  <li class="initial current">Melons</li>
+</ul>
+```
+
+```js
+cy.get('.initial')
+  .not('.active')
+  .should('have.length', 2)
+  .first()
+  .should('have.text', 'Oranges')
 ```
 
 <!-- fiddle-end -->
