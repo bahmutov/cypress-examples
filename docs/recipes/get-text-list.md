@@ -61,6 +61,8 @@ So the final advice to extract text from the list of found elements is to use th
 cy.get('.matching').then(($els) => Cypress._.map($els, 'innerText'))
 ```
 
+## Array vs jQuery object
+
 **Note:** we cannot use `cy.get(...).then(Cypress.$.makeArray).then(els => ...)` to convert from jQuery object first, because the result of the `$.makeArray` is an array of elements, and it gets immediately wrapped back into jQuery object after returning from `.then`
 
 <!-- fiddle Array becomes jQuery -->
@@ -91,6 +93,35 @@ cy.get('.matching')
       .true
     expect(x, 'an not a array').to.not.be.an('array')
     expect(x.length, '3 elements').to.equal(3)
+  })
+```
+
+<!-- fiddle-end -->
+
+## Confirm the number of items
+
+Let's imagine the page shows the number of items in the list, and we want to confirm the displayed number is correct.
+
+<!-- fiddle Confirm the number of items -->
+
+```html
+<div>There are <span id="items-count">4</span> items</div>
+<ul id="items">
+  <li>Apples</li>
+  <li>Oranges</li>
+  <li>Pears</li>
+  <li>Grapes</li>
+</div>
+```
+
+Because the commands are asynchronous we cannot get the number "4" and immediately use it to assert the number of `<LI>` items. Instead we need to use `.then` callback.
+
+```js
+cy.get('#items-count')
+  .invoke('text')
+  .then(parseInt)
+  .then((n) => {
+    cy.get('#items li').should('have.length', n)
   })
 ```
 
