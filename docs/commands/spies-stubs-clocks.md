@@ -189,25 +189,6 @@ cy.get('@log').its('callCount').should('eq', 3)
 
 To create a stub and/or replace a function with a stub, use the `cy.stub()` command.
 
-<!-- fiddle cy.stub() / replace method -->
-
-```js
-let obj = {
-  foo() {},
-}
-
-const stub = cy.stub(obj, 'foo').as('foo')
-
-obj.foo('foo', 'bar')
-
-// access the stub directly
-expect(stub).to.be.called
-// access the stub using alias
-cy.get('@foo').should('have.been.called')
-```
-
-<!-- fiddle-end -->
-
 <!-- fiddle cy.stub() / replace a method with a stub -->
 
 ```js
@@ -223,7 +204,7 @@ const obj = {
   },
 }
 
-const stub = cy.stub(obj, 'foo').as('foo')
+const stub = cy.stub(obj, 'foo')
 
 obj.foo('foo', 'bar')
 
@@ -231,6 +212,26 @@ expect(stub).to.be.called
 ```
 
 <!-- fiddle-end -->
+
+### Saving stub under an alias
+
+<!-- fiddle cy.stub() / save under an alias -->
+
+```js
+const obj = {
+  foo() {},
+}
+
+cy.stub(obj, 'foo').as('foo')
+obj.foo('foo', 'bar')
+
+// access the stub using alias
+cy.get('@foo').should('have.been.called')
+```
+
+<!-- fiddle-end -->
+
+### Matching stub depending on arguments
 
 <!-- fiddle cy.stub() / matches depending on arguments -->
 
@@ -262,6 +263,29 @@ expect(greeter.greet).to.have.been.calledTwice
 // non-matched calls goes the actual method
 // @ts-ignore
 expect(greeter.greet()).to.equal('Hello, undefined!')
+```
+
+<!-- fiddle-end -->
+
+### Stub a property
+
+If we want to temporarily replace an object's property (not a method), we can use `.value`
+
+<!-- fiddle cy.stub() / property -->
+
+```js
+const person = {
+  name: 'Joe',
+  getName() {
+    return this.name
+  },
+}
+expect(person.getName(), 'real name').to.equal('Joe')
+// change the property using cy.stub
+cy.stub(person, 'name').value('Mike')
+cy.then(() => {
+  expect(person.getName(), 'stub name').to.equal('Mike')
+})
 ```
 
 <!-- fiddle-end -->
