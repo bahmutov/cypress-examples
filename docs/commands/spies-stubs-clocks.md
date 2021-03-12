@@ -389,6 +389,35 @@ cy.get('@alerted').should('have.been.called')
 
 <!-- fiddle-end -->
 
+### Call the original method from the stub
+
+<!-- fiddle cy.stub() / call the original method -->
+
+Sometimes you might want to call the original method from the stub.
+
+```js
+const person = {
+  getName() {
+    return 'Joe'
+  },
+}
+
+cy.stub(person, 'getName').callsFake(() => {
+  // call the real person.getName()
+  return (
+    person.getName
+      .wrappedMethod()
+      // but then reverse the returned string
+      .split('')
+      .reverse()
+      .join('')
+  )
+})
+expect(person.getName()).to.equal('eoJ')
+```
+
+<!-- fiddle-end -->
+
 ## [cy.clock()](https://on.cypress.io/clock)
 
 To control time in the browser, use the `cy.clock()` command.
