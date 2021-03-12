@@ -231,6 +231,55 @@ cy.get('@foo').should('have.been.called')
 
 <!-- fiddle-end -->
 
+### Restore a stub
+
+When you no longer want to use the stub, call `.restore()` method on the stub
+
+<!-- fiddle cy.stub() / restore -->
+
+```js
+const person = {
+  getName() {
+    return 'Joe'
+  },
+}
+
+expect(person.getName(), 'true name').to.equal('Joe')
+cy.stub(person, 'getName').returns('Cliff')
+expect(person.getName(), 'mock name').to.equal('Cliff')
+// restore the original method
+person.getName.restore()
+expect(person.getName(), 'restored name').to.equal('Joe')
+```
+
+<!-- fiddle-end -->
+
+### Restore a stub from an alias
+
+You can also restore the original method from its alias
+
+<!-- fiddle cy.stub() / restore from an alias -->
+
+```js
+const person = {
+  getName() {
+    return 'Joe'
+  },
+}
+
+expect(person.getName(), 'true name').to.equal('Joe')
+cy.stub(person, 'getName').returns('Cliff').as('getName')
+expect(person.getName(), 'mock name').to.equal('Cliff')
+cy.get('@getName')
+  .should('have.been.calledOnce')
+  .invoke('restore')
+  .then(() => {
+    expect(person.getName(), 'restored name').to.equal('Joe')
+  })
+```
+
+<!-- fiddle-end -->
+
 ### Matching stub depending on arguments
 
 <!-- fiddle cy.stub() / matches depending on arguments -->
