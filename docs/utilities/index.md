@@ -84,7 +84,6 @@ cy.get('.utility-blob').then(($div) =>
     undefined,
     'anonymous',
   ).then((dataUrl) => {
-    debugger
     // create an '<img />' element and set its src to the dataUrl
     let img = Cypress.$('<img />', { src: dataUrl })
     // need to explicitly return cy here since we are initially returning
