@@ -619,16 +619,21 @@ If you attach multiple assertions to the same command, all assertions must pass 
 
 ```html
 <div style="display: none" id="loading">Loading ...</div>
+<button id="load-something">Load</button>
 <script>
-  const loadingElement = document.getElementById('loading')
-  // first show the loading element
-  setTimeout(function showLoading() {
-    loadingElement.style.display = 'block'
-  }, 1500)
-  // then hide the loading element
-  setTimeout(function hideLoading() {
-    loadingElement.style.display = 'none'
-  }, 2500)
+  document
+    .getElementById('load-something')
+    .addEventListener('click', function () {
+      const loadingElement = document.getElementById('loading')
+      // first show the loading element
+      setTimeout(function showLoading() {
+        loadingElement.style.display = 'block'
+      }, 1500)
+      // then hide the loading element
+      setTimeout(function hideLoading() {
+        loadingElement.style.display = 'none'
+      }, 2500)
+    })
 </script>
 ```
 
@@ -636,6 +641,7 @@ The command below fails because the element cannot be visible AND invisible at t
 
 ```js
 // ⛔️ DOES NOT WORK
+// cy.get('#load-something').click()
 // cy.get('#loading').should('be.visible').and('not.be.visible')
 ```
 
@@ -643,6 +649,7 @@ Instead split the assertions to have separate command to re-query the element an
 
 ```js
 // ✅ THE CORRECT WAY
+cy.get('#load-something').click()
 cy.get('#loading').should('be.visible')
 cy.get('#loading').should('not.be.visible')
 ```
