@@ -155,6 +155,28 @@ cy.get('#greeting')
 
 <!-- fiddle-end -->
 
+#### Disabled elements
+
+<!-- fiddle Implicit Assertions / .should() - disabled element -->
+
+```html
+<input type="text" id="example-input" disabled />
+```
+
+```js
+cy.get('#example-input')
+  .should('be.disabled')
+  // let's enable this element from the test
+  .invoke('prop', 'disabled', false)
+cy.get('#example-input')
+  // we can use "enabled" assertion
+  .should('be.enabled')
+  // or negate the "disabled" assertion
+  .and('not.be.disabled')
+```
+
+<!-- fiddle-end -->
+
 ### [.and()](https://on.cypress.io/and)
 
 To chain multiple assertions together, use the `.and()` command.
