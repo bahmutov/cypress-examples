@@ -126,3 +126,43 @@ cy.get('#items-count')
 ```
 
 <!-- fiddle-end -->
+
+### with text matching
+
+Sometimes the number of items is a part of the text and needs to be extracted first before parsing into a number. Notice the number "4" is hiding inside the brackets and does not have its own element to query.
+
+<!-- fiddle Confirm the number of items with parsing -->
+
+```html
+<div id="items-intro">There are [ 4 ] items</div>
+<ul id="my-items">
+  <li>Apples</li>
+  <li>Oranges</li>
+  <li>Pears</li>
+  <li>Grapes</li>
+</div>
+```
+
+We need to grab the entire text
+
+```js
+cy.get('#items-intro')
+  .invoke('text')
+  .then((s) => {
+    // by adding an assertion here we print
+    // the text in the command log for simple debugging
+    expect(s).to.be.a('string')
+    const matches = /\[\s*(\d+)\s*\]/.exec(s)
+    return matches[1]
+  })
+  .then(parseInt)
+  // another assertion to log the parsed number in the command log
+  .should('be.a', 'number')
+  // we expect between 1 and 10 items
+  .and('be.within', 1, 10)
+  .then((n) => {
+    cy.get('#my-items li').should('have.length', n)
+  })
+```
+
+<!-- fiddle-end -->
