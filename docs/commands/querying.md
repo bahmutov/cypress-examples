@@ -259,7 +259,7 @@ cy.get('.query-button')
 
 We can find elements within a specific DOM element `.within()`
 
-<!-- fiddle form example -->
+<!-- fiddle .within / form example -->
 
 ```html
 <h6>Name input</h6>
@@ -300,7 +300,7 @@ cy.get('.query-form').within(() => {
 
 You can temporarily escape the `.within` scope by using [cy.root](https://on.cypress.io/root) + [cy.closest](https://on.cypress.io/closest) commands.
 
-<!-- fiddle .within escape -->
+<!-- fiddle .within / escape -->
 
 ```html
 <section id="escape-example">
@@ -347,7 +347,7 @@ cy.get('.the-form').within(() => {
 
 ### Number of elements
 
-<!-- fiddle picture example -->
+<!-- fiddle .within / picture example -->
 
 Using `.within` followed by `cy.get` is convenient for finding multiple matching elements inside another element. For example, let's confirm that the given picture element has at least 2 `source` elements and 1 `img` child element.
 
@@ -365,6 +365,29 @@ cy.get('picture').within(() => {
   cy.get('source').should('have.length.gt', 1)
   // single img element
   cy.get('img').should('have.length', 1)
+})
+```
+
+<!-- fiddle-end -->
+
+### Within works with multiple elements
+
+The parent command can yield multiple elements.
+
+<!-- fiddle .within / multiple elements -->
+
+```html
+<ul id="fruits">
+  <li id="item-apples"><a href="/apples">Apples</a></li>
+  <li id="item-oranges"><a href="/oranges">Oranges</a></li>
+</ul>
+```
+
+```js
+cy.get('#fruits li').within(() => {
+  cy.root().should('have.length', 2) // there are 2 LI items
+  cy.contains('a', 'Apples').should('have.attr', 'href', '/apples')
+  cy.contains('a', 'Oranges').should('have.attr', 'href', '/oranges')
 })
 ```
 
