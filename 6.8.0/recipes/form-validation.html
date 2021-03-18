@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Form validation | Cypress examples (v6.8.0)</title>
+    <meta name="description" content="Static site with Cypress examples tested right from the Markdown sources">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <style>.action-focus.focus { border: 5px solid orange; } .hidden { display: none !important; }</style>
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
+    <link rel="preload" href="/cypress-examples/6.8.0/assets/css/0.styles.23435798.css" as="style"><link rel="preload" href="/cypress-examples/6.8.0/assets/js/app.e37b987d.js" as="script"><link rel="preload" href="/cypress-examples/6.8.0/assets/js/3.add9cb56.js" as="script"><link rel="preload" href="/cypress-examples/6.8.0/assets/js/31.87ae7ad7.js" as="script"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/10.c9b8a9d2.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/11.34ada1ec.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/12.9c3926dd.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/13.8759d0d1.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/14.74d2b797.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/15.ee8d4188.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/16.02072f9b.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/17.dd993d2b.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/18.ceee91c0.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/19.d26d63b4.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/20.56ae1c8e.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/21.d416e784.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/22.a285ff5a.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/23.7277f1cb.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/24.8fca2aa0.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/25.2c02ecb4.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/26.9d7770f5.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/27.ca1eb3c3.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/28.fe310494.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/29.37ea55eb.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/30.efe51bf3.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/32.8f1a6744.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/33.f6c8b6c1.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/34.b44c09ed.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/35.0b4ba6cf.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/36.068753e1.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/37.d6dfd7bf.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/38.02221c59.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/4.e41820f0.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/5.42cdd539.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/6.cf884389.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/7.b924b230.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/8.1e74fc98.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/9.dee95338.js"><link rel="prefetch" href="/cypress-examples/6.8.0/assets/js/vendors~docsearch.3f9d2285.js">
+    <link rel="stylesheet" href="/cypress-examples/6.8.0/assets/css/0.styles.23435798.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/cypress-examples/6.8.0/" class="home-link router-link-active"><!----> <span class="site-name">Cypress examples (v6.8.0)</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/6.8.0/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/6.8.0/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/6.8.0/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/6.8.0/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/6.8.0/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Form validation</span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="form-validation"><a href="#form-validation" class="header-anchor">#</a> Form validation</h1> <p>Imagine a form with HTML validations for the input elements. Let's confirm the validation errors are present, if we do not enter the item or pick the wrong quantity.</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>form-validation<span class="token punctuation">&quot;</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/action_page.php<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>item<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Item:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>item<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>item<span class="token punctuation">&quot;</span></span> <span class="token attr-name">required</span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>quantity<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Quantity (between 1 and 5):<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+      <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>number<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>quantity<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>quantity<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>5<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">required</span>
+    <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>submit<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="example"><form id="form-validation" action="/action_page.php"><div><label for="item">Item:</label> <input id="item" type="text" name="item" required="required"></div> <div><label for="quantity">Quantity (between 1 and 5):</label> <input type="number" id="quantity" name="quantity" min="1" max="5" required="required"></div> <input type="submit"></form></div></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// the form is invalid due to its input fields</span>
+<span class="token comment">// we can call the native HTML method</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#form-validation'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token parameter">$form</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">expect</span><span class="token punctuation">(</span>$form<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">checkValidity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>be<span class="token punctuation">.</span><span class="token boolean">false</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+<span class="token comment">// both input elements are invalid at the start</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#form-validation :invalid'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.length'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#item:invalid'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span><span class="token string">'prop'</span><span class="token punctuation">,</span> <span class="token string">'validationMessage'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'equal'</span><span class="token punctuation">,</span> <span class="token string">'Please fill out this field.'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// let's fill both fields, but if we enter the</span>
+<span class="token comment">// incorrect quantity, it will have its own error message</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#item'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token string">'Push pin'</span><span class="token punctuation">)</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#quantity'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token string">'1000'</span><span class="token punctuation">)</span> <span class="token comment">// too many 📌!</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#quantity:invalid'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span><span class="token string">'prop'</span><span class="token punctuation">,</span> <span class="token string">'validationMessage'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'eq'</span><span class="token punctuation">,</span> <span class="token string">'Value must be less than or equal to 5.'</span><span class="token punctuation">)</span>
+<span class="token comment">// retrieve the validity object</span>
+<span class="token comment">// https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#quantity:invalid'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span><span class="token string">'prop'</span><span class="token punctuation">,</span> <span class="token string">'validity'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'deep.include'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    rangeOverflow<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    rangeUnderflow<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    valid<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    valueMissing<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// form does not submit with invalid values</span>
+<span class="token comment">// NOTE: if we use Cypress cy.submit() command it bypasses HTML checks</span>
+<span class="token comment">// https://on.cypress.io/submit</span>
+<span class="token comment">// so we use cy.click() to experience what the user experiences</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#form-validation input[type=submit]'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// let's enter valid quantity and the form submits</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#quantity'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token string">'4'</span><span class="token punctuation">)</span> <span class="token comment">// a good number of 📌</span>
+<span class="token comment">// the form is now valid</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#form-validation'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token parameter">$form</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">expect</span><span class="token punctuation">(</span>$form<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">checkValidity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>be<span class="token punctuation">.</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+<span class="token comment">// there are no invalid input elements</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#form-validation :invalid'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'not.exist'</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bahmutov/cypress-examples/edit/master/docs/recipes/form-validation.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/cypress-examples/6.8.0/assets/js/app.e37b987d.js" defer></script><script src="/cypress-examples/6.8.0/assets/js/3.add9cb56.js" defer></script><script src="/cypress-examples/6.8.0/assets/js/31.87ae7ad7.js" defer></script>
+  </body>
+</html>
