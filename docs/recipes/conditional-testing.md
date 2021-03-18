@@ -108,3 +108,48 @@ cy.get('#either #hides').should(($el) => {
 ```
 
 <!-- fiddle-end -->
+
+## Click a button if a class is present
+
+Sometimes you want to click the button, but only if the element has a class
+
+<!-- fiddle Click a button if a class is present -->
+
+```html
+<button id="first" class="urgent important" disabled="disabled">
+  Click NOW
+</button>
+<script>
+  // notice that at first the button is disabled
+  // and we need to use the built-in action checks in cy.click
+  const first = document.getElementById('first')
+  first.addEventListener('click', () => {
+    console.log('first click')
+  })
+  // remove the disabled property
+  setTimeout(() => {
+    first.disabled = false
+  }, 1000)
+</script>
+```
+
+```js
+// spy on the console.log to make sure it is called
+cy.window()
+  .its('console')
+  .then((console) => cy.spy(console, 'log').as('log'))
+
+cy.get('#first').then(($first) => {
+  if ($first.hasClass('important')) {
+    // note that we cannot simply use jQuery .click() method
+    // since it won't wait for the button to be enabled
+    // $first.click()
+    // instead we wrap the element and use the cy.click() command
+    cy.wrap($first).click()
+  }
+})
+// confirm the button was called correctly
+cy.get('@log').should('be.calledOnceWith', 'first click')
+```
+
+<!-- fiddle-end -->
