@@ -422,7 +422,7 @@ expect(person.getName()).to.equal('eoJ')
 
 To control time in the browser, use the `cy.clock()` command.
 
-<!-- fiddle clock -->
+<!-- fiddle clock / set the application clock -->
 
 ```html
 <div id="clock-div">
@@ -444,6 +444,60 @@ const now = new Date(Date.UTC(2017, 2, 14)).getTime()
 
 cy.clock(now)
 cy.get('#clock-div').click().should('have.text', '1489449600')
+```
+
+<!-- fiddle-end -->
+
+### Changes the application clock only
+
+When running Cypress tests, the tests themselves are outside the application's iframe. When you use `cy.clock()` command you change the application clock, and not the spec's clock.
+
+<!-- fiddle clock / does not change the spec clock -->
+
+Fist, let's show that the two `Date` constructors are different between the application and the spec iframes.
+
+```js
+cy.window().its('Date').should('not.equal', Date)
+```
+
+Now let's confirm that `cy.clock()` controls the application's `Date`, but not the spec `Date`.
+
+```js
+const specNow = new Date()
+const now = new Date(Date.UTC(2017, 2, 14)).getTime()
+cy.clock(now) // sets the application clock and pause time
+  .then(() => {
+    // spec clock keeps ticking
+    const specNow2 = new Date()
+    // confirm by comparing the timestamps in milliseconds
+    expect(+specNow2, 'spec timestamps').to.be.greaterThan(+specNow)
+  })
+// but the application's time is frozen
+cy.window()
+  .its('Date')
+  .then((appDate) => {
+    const appNow = new appDate()
+    expect(+appNow, 'application timestamps')
+      .to.equal(+now)
+      .and.to.equal(1489449600000) // the timestamp in milliseconds
+  })
+// we can advance the application clock by 5 seconds
+cy.tick(5000)
+cy.window()
+  .its('Date')
+  .then((appDate) => {
+    const appNow = new appDate()
+    expect(+appNow, 'timestamp after 5 synthetic seconds').to.equal(
+      1489449605000,
+    )
+  })
+  // meanwhile the spec clock only advanced by probably less than 100ms
+  .then(() => {
+    const specNow3 = new Date()
+    expect(+specNow3, 'elapsed on the spec clock').to.be.lessThan(
+      +specNow + 100,
+    )
+  })
 ```
 
 <!-- fiddle-end -->
