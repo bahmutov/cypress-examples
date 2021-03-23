@@ -151,3 +151,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Get the inner text of a list of elements](recipes/get-text-list.md)
 - [Conditional testing](recipes/conditional-testing.md)
 - [Form input validation](recipes/form-validation.md)
+- [Retry-ability examples](recipes/retry-ability.md)
