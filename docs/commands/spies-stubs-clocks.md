@@ -226,7 +226,6 @@ If you want to return one value on the first call, then another value on the sec
   document
     .getElementById('fav-color')
     .addEventListener('click', function () {
-      console.log('prompt')
       const color = window.prompt('What is your favorite color?')
       document.getElementById('color-output').innerText = color
     })
@@ -266,15 +265,14 @@ If you want to return one value on the first call, then another value on the sec
 <!-- fiddle cy.stub() / returns different dynamic values -->
 
 ```html
-<button id="fav-color">Ask about color</button>
-<div id="color-output" />
+<button id="fav-colors">Ask about color</button>
+<div id="colors-output" />
 <script>
   document
-    .getElementById('fav-color')
+    .getElementById('fav-colors')
     .addEventListener('click', function () {
-      console.log('prompt')
       const color = window.prompt('What is your favorite color?')
-      document.getElementById('color-output').innerText = color
+      document.getElementById('colors-output').innerText = color
     })
 </script>
 ```
@@ -295,13 +293,13 @@ cy.window().then((w) => {
     // so we can check the number of calls later
     .as('color-stub')
 })
-cy.get('#fav-color').click()
-cy.contains('#color-output', 'green')
-cy.get('#fav-color').click()
-cy.contains('#color-output', 'red')
-cy.get('#fav-color').click().click().click()
-cy.contains('#color-output', 'purple')
-cy.get('@color-stub').should('have.property', 'callCount', 5)
+cy.get('#fav-colors').click()
+cy.contains('#colors-output', 'green')
+cy.get('#fav-colors').click()
+cy.contains('#colors-output', 'red')
+cy.get('#fav-colors').click().click().click()
+cy.contains('#colors-output', 'purple')
+cy.get('@colors-stub').should('have.property', 'callCount', 5)
 ```
 
 <!-- fiddle-end -->
