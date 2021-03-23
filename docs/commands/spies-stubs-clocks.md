@@ -291,7 +291,7 @@ cy.window().then((w) => {
   s.returns('purple')
     // give the stub an alias
     // so we can check the number of calls later
-    .as('color-stub')
+    .as('colors-stub')
 })
 cy.get('#fav-colors').click()
 cy.contains('#colors-output', 'green')
