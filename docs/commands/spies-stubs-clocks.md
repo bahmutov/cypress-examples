@@ -259,6 +259,53 @@ cy.get('@color-stub').should('have.property', 'callCount', 5)
 
 <!-- fiddle-end -->
 
+### Return different dynamic values
+
+If you want to return one value on the first call, then another value on the second call, etc and the return values come from an array, you cannot use `stub.onFirstCall`, `stub.onSecondCall`, etc. Instead use `stub.onCall(k)` method
+
+<!-- fiddle cy.stub() / returns different dynamic values -->
+
+```html
+<button id="fav-color">Ask about color</button>
+<div id="color-output" />
+<script>
+  document
+    .getElementById('fav-color')
+    .addEventListener('click', function () {
+      console.log('prompt')
+      const color = window.prompt('What is your favorite color?')
+      document.getElementById('color-output').innerText = color
+    })
+</script>
+```
+
+```js
+cy.window().then((w) => {
+  const colors = ['green', 'red']
+
+  // see how to use Sinon stubs
+  // https://sinonjs.org/releases/v10.0.0/stubs/
+  const s = cy.stub(w, 'prompt')
+  colors.forEach(function (color, k) {
+    s.onCall(k).returns(color)
+  })
+  // after that always return purple
+  s.returns('purple')
+    // give the stub an alias
+    // so we can check the number of calls later
+    .as('color-stub')
+})
+cy.get('#fav-color').click()
+cy.contains('#color-output', 'green')
+cy.get('#fav-color').click()
+cy.contains('#color-output', 'red')
+cy.get('#fav-color').click().click().click()
+cy.contains('#color-output', 'purple')
+cy.get('@color-stub').should('have.property', 'callCount', 5)
+```
+
+<!-- fiddle-end -->
+
 ### Saving stub under an alias
 
 <!-- fiddle cy.stub() / save under an alias -->
