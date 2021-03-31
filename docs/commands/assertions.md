@@ -155,6 +155,26 @@ cy.get('#greeting')
 
 <!-- fiddle-end -->
 
+#### Text matching the regular expression
+
+We can use regular expressions with "match" assertions to confirm part of the text.
+
+<!-- fiddle Implicit Assertions / .should() - text matching the regular expression -->
+
+```html
+<div id="a-greeting">Hello, there!</div>
+```
+
+```js
+cy.get('#a-greeting')
+  .invoke('text')
+  .should('match', /^Hello/)
+// tip: use cy.contains to find element with text matching a regular expression
+cy.contains('#a-greeting', /^Hello/)
+```
+
+<!-- fiddle-end -->
+
 #### Disabled elements
 
 <!-- fiddle Implicit Assertions / .should() - disabled element -->
