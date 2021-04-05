@@ -213,6 +213,32 @@ cy.get('ul#anchors li')
 
 <!-- fiddle-end -->
 
+### Find all links
+
+If we want to find every child element with `href` attribute:
+
+<!-- fiddle finds elements with href attribute for every LI -->
+
+```html
+<ul id="links">
+  <li><a href="a">link A</a>, <a>link B</a></li>
+  <li><a>link C</a>, <a href="d">link D</a></li>
+  <li><a href="e">link E</a>, <a href="f">link F</a></li>
+</ul>
+```
+
+Notice how only some of the `<A>` elements have `href` attribute
+
+```js
+cy.get('ul#links li')
+  .should('have.length', 3)
+  // inside each LI element, find the elements with href attribute
+  .find('[href]')
+  .should('have.length', 4)
+```
+
+<!-- fiddle-end -->
+
 ## [.first()](https://on.cypress.io/first)
 
 To get the first DOM element within elements, use the `.first()` command.
