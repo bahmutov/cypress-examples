@@ -153,3 +153,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Conditional testing](recipes/conditional-testing.md)
 - [Form input validation](recipes/form-validation.md)
 - [Retry-ability examples](recipes/retry-ability.md)
+- [Get multiple fields at once](./recipes/get-multiple-fields.md)
