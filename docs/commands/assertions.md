@@ -201,8 +201,29 @@ We can use regular expressions with "match" assertions to confirm part of the te
 cy.get('#a-greeting')
   .invoke('text')
   .should('match', /^Hello/)
-// tip: use cy.contains to find element with text matching a regular expression
+// tip: use cy.contains to find element with text
+// matching a regular expression
 cy.contains('#a-greeting', /^Hello/)
+```
+
+<!-- fiddle-end -->
+
+#### OR match using regular expression
+
+If you want to confirm the text matches one string or another, use a regular expression
+
+<!-- fiddle Implicit Assertions / .should() - OR match -->
+
+```html
+<div id="or-match">Joe</div>
+```
+
+```js
+cy.get('#or-match')
+  .invoke('text')
+  .should('match', /^(Joe|Mary)$/)
+// the same can be done using cy.contains command
+cy.contains('#or-match', /^(Joe|Mary)$/)
 ```
 
 <!-- fiddle-end -->
