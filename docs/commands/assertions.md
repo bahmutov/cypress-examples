@@ -71,11 +71,11 @@ Note: find even more examples of matching element's text content in this [FAQ an
 
 <!-- fiddle-end -->
 
-<!-- fiddle Implicit Assertions / .should() - input elements have value -->
-
 #### Input elements
 
 When using HTML input elements, use `have.value` assertion.
+
+<!-- fiddle Implicit Assertions / .should() - input elements have value -->
 
 ```html
 <input
@@ -93,9 +93,9 @@ cy.get('#rent').type('630.00').should('have.value', '630.00')
 
 <!-- fiddle-end -->
 
-<!-- fiddle Implicit Assertions / .should() - non-input elements contain text -->
-
 #### Non-input elements
+
+<!-- fiddle Implicit Assertions / .should() - non-input elements contain text -->
 
 With non-input HTML elements, you can use the `contain` assertion.
 
@@ -105,6 +105,38 @@ With non-input HTML elements, you can use the `contain` assertion.
 
 ```js
 cy.get('#text-example').should('contain', 'brown fox')
+```
+
+<!-- fiddle-end -->
+
+#### HTML entities
+
+<!-- fiddle Implicit Assertions / .should() - html entities -->
+
+```html
+<span id="y-value">&radic;y</span>
+```
+
+```js
+cy.get('#y-value')
+  // use the text value of the HTML entity
+  .should('have.html', '√y')
+  // "have.html", "have.text", and "contain"
+  // assertions work the same with text
+  .and('have.text', '√y')
+  .and('contain', '√y')
+```
+
+Unfortunately, there is no standard built-in JavaScript method for converting HTML entities like `&radic;` into the browser text. Thus the test can encode it itself to use in the assertion.
+
+```js
+// a utility for converting HTML entities into text
+const encode = (s) => {
+  const p = document.createElement('p')
+  p.innerHTML = s // encodes
+  return p.innerText
+}
+cy.get('#y-value').should('have.text', encode('&radic;y'))
 ```
 
 <!-- fiddle-end -->
