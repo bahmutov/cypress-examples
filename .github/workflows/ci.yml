@@ -108,6 +108,7 @@ jobs:
           record: true
           parallel: true
           group: 1. Markdown
+          tag: markdown
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.recordKey }}
           # pass GitHub token to allow accurately detecting a build vs a re-run build
@@ -154,6 +155,7 @@ jobs:
           record: true
           parallel: true
           group: 2. JavaScript specs
+          tag: javascript
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.recordKey }}
           # pass GitHub token to allow accurately detecting a build vs a re-run build
