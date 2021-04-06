@@ -21,6 +21,8 @@ To get a browser cookie, use the `cy.getCookie()` command.
 ```
 
 ```js
+cy.clearCookies()
+
 cy.get('#getCookie .set-a-cookie').click()
 
 // cy.getCookie() yields a cookie object
@@ -48,6 +50,7 @@ To get all browser cookies, use the `cy.getCookies()` command.
 ```
 
 ```js
+cy.clearCookies()
 cy.getCookies().should('be.empty')
 
 cy.get('#getCookies .set-a-cookie').click()
@@ -75,6 +78,7 @@ To set a browser cookie, use the `cy.setCookie()` command.
 <!-- fiddle cy.setCookie() - set a browser cookie -->
 
 ```js
+cy.clearCookies()
 cy.getCookies().should('be.empty')
 
 cy.setCookie('foo', 'bar')
@@ -104,6 +108,7 @@ To clear a browser cookie, use the `cy.clearCookie()` command.
 ```
 
 ```js
+cy.clearCookies()
 cy.getCookie('token').should('be.null')
 
 cy.get('#clearCookie .set-a-cookie').click()
@@ -137,6 +142,7 @@ To clear all browser cookies, use the `cy.clearCookies()` command.
 ```
 
 ```js
+cy.clearCookies()
 cy.getCookies().should('be.empty')
 
 cy.get('#clearCookies .set-a-cookie').click()
