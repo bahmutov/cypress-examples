@@ -119,7 +119,6 @@ Utilities give you access to methods from other commonly used libraries.
 - [\$](./utilities/index.md#cypress-2)
 - [Blob](./utilities/index.md#cypress-blob)
 - [minimatch](./utilities/index.md#cypress-minimatch)
-- [moment](./utilities/index.md#cypress-moment)
 - [Promise](./utilities/index.md#cypress-promise)
 
 ## Cypress API
