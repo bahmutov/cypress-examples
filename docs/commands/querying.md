@@ -91,6 +91,25 @@ cy.get('td:not(:contains(Same))')
 
 <!-- fiddle-end -->
 
+### Escaping special characters
+
+If the element's selector has special characters like `.` or `:` escape the using `\\` character
+
+<!-- fiddle get / escape special characters -->
+
+```html
+<div id="user:1234" class="admin.user">Joe</div>
+```
+
+```js
+cy.get('#user\\:1234').should('have.text', 'Joe')
+cy.get('.admin\\.user')
+  // no need to escape the non-selector text
+  .should('have.id', 'user:1234')
+```
+
+<!-- fiddle-end -->
+
 ### Using attribute selector
 
 You can grab elements with a given attribute. For example, let's make sure there is only a single `<a>` element pointing at "index.html":
