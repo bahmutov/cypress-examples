@@ -26,9 +26,9 @@ cy.get('.connectors-each-ul>li').each(function ($el, index, $list) {
 
 ## [.its()](https://on.cypress.io/its)
 
-To get the properties on the current subject, use the `.its()` command.
+To get the properties on the current subject, use the `.its()` command. For example, if the subject is the list of found elements, we can grab its `length` property and use it in the assertion:
 
-<!-- fiddle its -->
+<!-- fiddle its / number of elements -->
 
 ```html
 <ul class="connectors-its-ul">
@@ -43,6 +43,39 @@ cy.get('.connectors-its-ul>li')
   // calls the 'length' property returning that value
   .its('length')
   .should('be.gt', 2)
+// tip: this is an equivalent assertion
+cy.get('.connectors-its-ul>li').should('have.length.gt', 2)
+```
+
+<!-- fiddle-end -->
+
+Under the hood, `.its` uses Lodash `_.property` method, thus you can grab the nested values using dot notation:
+
+<!-- fiddle its / nested property -->
+
+```js
+const person = {
+  name: {
+    first: 'Joe',
+    last: 'Smith',
+  },
+  organizationIds: [
+    {
+      id: 1,
+      name: 'Acme, inc',
+    },
+    {
+      id: 2,
+      name: 'IEEE',
+    },
+  ],
+}
+cy.wrap(person)
+  // grab nested property using "." notation
+  .its('name.first')
+  .should('equal', 'Joe')
+// the dot notation works with arrays
+cy.wrap(person).its('organizationIds.1.name').should('equal', 'IEEE')
 ```
 
 <!-- fiddle-end -->
