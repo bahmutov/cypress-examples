@@ -66,7 +66,7 @@ cy.get('h4,h5,h6').should('have.length.gt', 1)
 `cy.get` uses [jQuery selectors](https://api.jquery.com/category/selectors/), thus you can immediately use them to find elements by text (or without given text).
 
 ```html
-<table>
+<table id="jquery-selectors">
   <tbody>
     <tr>
       <td>Same</td>
@@ -80,11 +80,14 @@ cy.get('h4,h5,h6').should('have.length.gt', 1)
 
 ```js
 // selects all table cells with text "Same"
-cy.get('td:contains("Same")').should('have.length', 3)
+cy.get('#jquery-selectors td:contains("Same")').should(
+  'have.length',
+  3,
+)
 // if the text does not have white spaces, no need to quote it
-cy.get('td:contains(Same)').should('have.length', 3)
+cy.get('#jquery-selectors td:contains(Same)').should('have.length', 3)
 // you can find elements NOT having the given text
-cy.get('td:not(:contains(Same))')
+cy.get('#jquery-selectors td:not(:contains(Same))')
   .should('have.length', 1)
   .and('have.text', 'Different')
 ```
