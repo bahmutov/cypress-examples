@@ -77,7 +77,7 @@ cy.get('.traversal-list>li').eq(1).should('contain', 'siamese')
 
 To get DOM elements that match a specific selector, use the `.filter()` command.
 
-<!-- fiddle filter -->
+<!-- fiddle filter / by class -->
 
 ```html
 <ul class="traversal-nav nav nav-tabs">
@@ -101,11 +101,53 @@ cy.get('.traversal-nav > li a')
 
 <!-- fiddle-end -->
 
+### Elements with an attribute
+
+Let's grab all row elements, but then keep only the elements with an attribute `line` present:
+
+<!-- fiddle filter / elements with an attribute -->
+
+```html
+<table id="filter-attribute">
+  <tbody>
+    <tr>
+      <td>No line</td>
+    </tr>
+    <tr>
+      <td>No line</td>
+    </tr>
+    <!-- attribute line has no value at all -->
+    <tr line>
+      <td>line</td>
+    </tr>
+    <tr line="up">
+      <td>line</td>
+    </tr>
+    <tr line="down">
+      <td>line</td>
+    </tr>
+    <tr>
+      <td>No line</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+```js
+cy.get('#filter-attribute tr')
+  // only interested in the elements
+  // that have the attribute "line"
+  .filter('[line]')
+  .should('have.length', 3)
+```
+
+<!-- fiddle-end -->
+
 ### Visible elements
 
 You can use `.filter` to find visible elements using jQuery selector `:visible`
 
-<!-- fiddle filter visible elements -->
+<!-- fiddle filter / visible elements -->
 
 ```html
 <ul class="visible-items">
