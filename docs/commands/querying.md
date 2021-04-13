@@ -112,6 +112,42 @@ cy.get('.admin\\.user')
 
 ### Using attribute selector
 
+You can grab all elements that have an attribute present. For example, to find all `<TR>` rows with an attribute "line" present:
+
+<!-- fiddle get / elements with an attribute -->
+
+```html
+<table id="row-attributes">
+  <tbody>
+    <tr>
+      <td>No line</td>
+    </tr>
+    <tr>
+      <td>No line</td>
+    </tr>
+    <!-- attribute line has no value at all -->
+    <tr line>
+      <td>line</td>
+    </tr>
+    <tr line="up">
+      <td>line</td>
+    </tr>
+    <tr line="down">
+      <td>line</td>
+    </tr>
+    <tr>
+      <td>No line</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+```js
+cy.get('#row-attributes tr[line]').should('have.length', 3)
+```
+
+<!-- fiddle-end -->
+
 You can grab elements with a given attribute. For example, let's make sure there is only a single `<a>` element pointing at "index.html":
 
 <!-- fiddle get / anchor links with specific href -->
