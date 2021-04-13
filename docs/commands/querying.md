@@ -66,7 +66,7 @@ cy.get('h4,h5,h6').should('have.length.gt', 1)
 `cy.get` uses [jQuery selectors](https://api.jquery.com/category/selectors/), thus you can immediately use them to find elements by text (or without given text).
 
 ```html
-<table id="jquery-selectors">
+<table>
   <tbody>
     <tr>
       <td>Same</td>
@@ -80,14 +80,11 @@ cy.get('h4,h5,h6').should('have.length.gt', 1)
 
 ```js
 // selects all table cells with text "Same"
-cy.get('#jquery-selectors td:contains("Same")').should(
-  'have.length',
-  3,
-)
+cy.get('td:contains("Same")').should('have.length', 3)
 // if the text does not have white spaces, no need to quote it
-cy.get('#jquery-selectors td:contains(Same)').should('have.length', 3)
+cy.get('td:contains(Same)').should('have.length', 3)
 // you can find elements NOT having the given text
-cy.get('#jquery-selectors td:not(:contains(Same))')
+cy.get('td:not(:contains(Same))')
   .should('have.length', 1)
   .and('have.text', 'Different')
 ```
@@ -115,38 +112,24 @@ cy.get('.admin\\.user')
 
 ### Using attribute selector
 
-You can grab all elements that have an attribute present. For example, to find all `<TR>` rows with an attribute "line" present:
+You can grab all elements that have an attribute present. For example, to find all `<LI>` rows with an attribute "line" present:
 
 <!-- fiddle get / elements with an attribute -->
 
 ```html
-<table id="row-attributes">
-  <tbody>
-    <tr>
-      <td>No line</td>
-    </tr>
-    <tr>
-      <td>No line</td>
-    </tr>
-    <!-- attribute line has no value at all -->
-    <tr line>
-      <td>line</td>
-    </tr>
-    <tr line="up">
-      <td>line</td>
-    </tr>
-    <tr line="down">
-      <td>line</td>
-    </tr>
-    <tr>
-      <td>No line</td>
-    </tr>
-  </tbody>
-</table>
+<ul id="row-attributes">
+  <li>No line</li>
+  <li>No line</li>
+  <!-- attribute line has no value at all -->
+  <li line>line</li>
+  <li line="up">line</li>
+  <li line="down">line</li>
+  <li>No line</li>
+</ul>
 ```
 
 ```js
-cy.get('#row-attributes tr[line]').should('have.length', 3)
+cy.get('#row-attributes li[line]').should('have.length', 3)
 ```
 
 <!-- fiddle-end -->
