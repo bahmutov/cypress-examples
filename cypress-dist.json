@@ -5,5 +5,8 @@
   "integrationFolder": "docs",
   "testFiles": "**/*.js",
   "viewportHeight": 1000,
-  "projectId": "dis6wg"
+  "projectId": "dis6wg",
+  "retries": {
+    "runMode": 2
+  }
 }
