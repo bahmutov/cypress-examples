@@ -2,6 +2,8 @@
 
 Sometimes you want to wait for the data to populate the list. For example, a network `cy.intercept` could listen for all requests and grab a list of posted items, and the test needs to check this list.
 
+## Using cy.should callback function
+
 <!-- fiddle using the cy.should callback -->
 
 ```html
