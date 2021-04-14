@@ -203,7 +203,7 @@ cy.get('.action-form')
 
 To click a DOM element, use the `.click()` command.
 
-<!-- fiddle click -->
+<!-- fiddle click / a single button -->
 <!-- fiddle-markup
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 -->
@@ -239,7 +239,7 @@ cy.get('.action-btn')
 
 ### Click on canvas
 
-<!-- fiddle click on canvas -->
+<!-- fiddle click / on a canvas -->
 
 ```html
 <h6>Canvas to Illustrate Click Positions</h6>
@@ -310,7 +310,7 @@ cy.get('#action-canvas')
 
 You can click on multiple elements by passing an option `multiple: true`
 
-<!-- fiddle click on multiple elements -->
+<!-- fiddle click / on multiple elements -->
 <!-- fiddle-markup
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 -->
@@ -318,42 +318,42 @@ You can click on multiple elements by passing an option `multiple: true`
 ```html
 <div class="action-labels">
   <span
-    class="badge badge-pill badge-primary"
+    class="badge badge-pill badge-primary label"
     data-toggle="popover"
     data-placement="bottom"
     data-content="clicked"
     >click me</span
   >
   <span
-    class="badge badge-pill badge-primary"
+    class="badge badge-pill badge-primary label"
     data-toggle="popover"
     data-placement="bottom"
     data-content="clicked"
     >and me</span
   >
   <span
-    class="badge badge-pill badge-primary"
+    class="badge badge-pill badge-primary label"
     data-toggle="popover"
     data-placement="bottom"
     data-content="clicked"
     >and me</span
   >
   <span
-    class="badge badge-pill badge-primary"
+    class="badge badge-pill badge-primary label"
     data-toggle="popover"
     data-placement="bottom"
     data-content="clicked"
     >and me</span
   >
   <span
-    class="badge badge-pill badge-primary"
+    class="badge badge-pill badge-primary label"
     data-toggle="popover"
     data-placement="bottom"
     data-content="clicked"
     >and me</span
   >
   <span
-    class="badge badge-pill badge-primary"
+    class="badge badge-pill badge-primary label"
     data-toggle="popover"
     data-placement="bottom"
     data-content="clicked"
@@ -367,7 +367,7 @@ You can click on multiple elements by passing an option `multiple: true`
 
 ```js
 // click multiple elements by passing multiple: true
-cy.get('.action-labels>.badge').click({ multiple: true })
+cy.get('.action-labels>.label').click({ multiple: true })
 // confirm the badges got popovers
 cy.get('[data-toggle=popover][aria-describedby]').should(
   'have.length',
@@ -381,7 +381,7 @@ cy.get('[data-toggle=popover][aria-describedby]').should(
 
 You can override Cypress' built-in checks and click on the disable element.
 
-<!-- fiddle click on disabled element -->
+<!-- fiddle click / on disabled element -->
 <!-- fiddle-markup
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 -->
@@ -437,7 +437,7 @@ cy.get('.action-opacity>.btn').click({ force: true })
 
 The element will need to be visible and actionable for `.click` to work. If the element is invisible for example, the `.click` retries until the element becomes visible or the command times out.
 
-<!-- fiddle waits for element to be visible -->
+<!-- fiddle click / waits for element to be visible -->
 
 ```html
 <button id="invisible-at-first" style="display:none">Click me</button>
@@ -455,7 +455,7 @@ cy.get('#invisible-at-first').click({ timeout: 1000 })
 
 <!-- fiddle-end -->
 
-<!-- fiddle click after assertion -->
+<!-- fiddle click / after assertion -->
 
 To be explicit about visibility, you might insert an assertion before the `.click` command.
 
