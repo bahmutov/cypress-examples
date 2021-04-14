@@ -582,11 +582,11 @@ cy.window()
       1489449605000,
     )
   })
-  // meanwhile the spec clock only advanced by probably less than 100ms
+  // meanwhile the spec clock only advanced by probably less than 200ms
   .then(() => {
     const specNow3 = new Date()
     expect(+specNow3, 'elapsed on the spec clock').to.be.lessThan(
-      +specNow + 100,
+      +specNow + 200,
     )
   })
 ```
