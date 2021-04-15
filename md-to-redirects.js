@@ -21,10 +21,11 @@ console.log(
 const docsFolder = 'docs'
 const markdownFiles = globby.sync(
   [
+    // create HTML redirect pages for all Markdown documents
+    // so that we can send URL like cypress-examples/commands/actions
+    // and it would redirect the user to the latest
+    // cypress-examples/x.y.z/commands/actions.html
     '**/*.md',
-    // we skip the recipes Markdown files,
-    // let's not make JavaScript spec out of it
-    '!recipes/**/*.md',
   ],
   {
     cwd: docsFolder,
