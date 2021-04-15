@@ -155,3 +155,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Get multiple fields at once](./recipes/get-multiple-fields.md)
 - [Find an object in the array](./recipes/find-object.md)
 - [Wait for data](./recipes/wait-for-data.md) to be set
+- [Return value from .within() command](./recipes/return-value-from-within.md)
