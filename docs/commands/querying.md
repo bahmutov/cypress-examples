@@ -6,7 +6,7 @@ Examples of querying for DOM elements in Cypress, for a full reference of comman
 
 To query for the button, use the `cy.get()` command.
 
-<!-- fiddle get / button -->
+<!-- fiddle cy.get / button -->
 
 ```html
 <div id="querying-example">
@@ -37,7 +37,7 @@ cy.get('#querying-example .well>button:first').should(
 
 You can attach an assertion to confirm the number of elements.
 
-<!-- fiddle get / headings -->
+<!-- fiddle cy.get / headings -->
 
 ```html
 <section>
@@ -61,7 +61,7 @@ cy.get('h4,h5,h6').should('have.length.gt', 1)
 
 ### jQuery selectors
 
-<!-- fiddle get / with jQuery text selector -->
+<!-- fiddle cy.get / with jQuery text selector -->
 
 `cy.get` uses [jQuery selectors](https://api.jquery.com/category/selectors/), thus you can immediately use them to find elements by text (or without given text).
 
@@ -95,7 +95,7 @@ cy.get('td:not(:contains(Same))')
 
 If the element's selector has special characters like `.` or `:` escape the using `\\` character
 
-<!-- fiddle get / escape special characters -->
+<!-- fiddle cy.get / escape special characters -->
 
 ```html
 <div id="user:1234" class="admin.user">Joe</div>
@@ -114,7 +114,7 @@ cy.get('.admin\\.user')
 
 You can grab all elements that have an attribute present. For example, to find all `<LI>` rows with an attribute "line" present:
 
-<!-- fiddle get / elements with an attribute -->
+<!-- fiddle cy.get / elements with an attribute -->
 
 ```html
 <ul id="row-attributes">
@@ -136,7 +136,7 @@ cy.get('#row-attributes li[line]').should('have.length', 3)
 
 You can grab elements with a given attribute. For example, let's make sure there is only a single `<a>` element pointing at "index.html":
 
-<!-- fiddle get / anchor links with specific href -->
+<!-- fiddle cy.get / anchor links with specific href -->
 
 ```html
 <a href="article1.html">Article 1</a>
@@ -155,7 +155,7 @@ cy.get('a[href="index.html"]').should('have.length', 1)
 
 Let's get the element with ID starting with "local-example" prefix
 
-<!-- fiddle get / attribute prefix -->
+<!-- fiddle cy.get / attribute prefix -->
 
 ```html
 <ul>
@@ -174,7 +174,7 @@ cy.get('[id^=local-example]').should('have.text', 'first')
 
 Let's get the element with ID ending with "example-AF9" string
 
-<!-- fiddle get / attribute suffix -->
+<!-- fiddle cy.get / attribute suffix -->
 
 ```html
 <ul>
@@ -193,7 +193,7 @@ cy.get('[id$=example-AF9]').should('have.text', 'second')
 
 Let's get the element with ID that starts with "my-" prefix and ending with "-yours" suffix
 
-<!-- fiddle get / combine attributes -->
+<!-- fiddle cy.get / combine attributes -->
 
 ```html
 <ul>
@@ -212,7 +212,7 @@ cy.get('[id^=my-][id$=-yours]').should('have.text', 'second')
 
 To find elements by data attribute, query using the attribute selector.
 
-<!-- fiddle get / by data attribute -->
+<!-- fiddle cy.get / by data attribute -->
 
 ```html
 <div data-test-id="test-example" class="example">
@@ -333,6 +333,57 @@ cy.get('.query-form').within(() => {
   cy.get('input:first').should('have.attr', 'placeholder', 'Email')
   cy.get('input:last').should('have.attr', 'placeholder', 'Password')
 })
+```
+
+<!-- fiddle-end -->
+
+### Yields the original element
+
+The `cy.within` yields the same DOM element it received as the parent.
+
+<!-- fiddle .within / yields the original element -->
+
+```html
+<div id="within-yields">
+  The parent div
+  <div class="some-child">Child element</div>
+</div>
+```
+
+```js
+cy.get('#within-yields')
+  .within(() => {
+    // we are trying to return something
+    // from the .within callback,
+    // but it won't have any effect
+    return cy
+      .contains('Child element')
+      .should('have.class', 'some-child')
+  })
+  .should('have.id', 'within-yields')
+```
+
+<!-- fiddle-end -->
+
+You can attempt to [cy.wrap](https://on.cypress.io/wrap) a different value - still the original parent element is going to be yielded.
+
+<!-- fiddle .within / yields the original element even after cy.wrap -->
+
+```html
+<div id="wrap-inside-within">
+  The parent div
+  <div class="some-child">Child element</div>
+</div>
+```
+
+```js
+cy.get('#wrap-inside-within')
+  .within(() => {
+    // returning cy.wrap(...) has no effect on the yielded value
+    // it will still be the original parent DOM element
+    return cy.wrap('a new value')
+  })
+  .should('have.id', 'wrap-inside-within')
 ```
 
 <!-- fiddle-end -->
