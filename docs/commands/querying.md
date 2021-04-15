@@ -508,9 +508,9 @@ cy.get('#best-practices').within(() => {
 
 <!-- fiddle-end -->
 
-## [cy.get](https://on.cypress.io/get) vs [.find](https://on.cypress.io/find)
+## cy.get vs .find
 
-The `cy.get` command always starts its search from the `document` element, or, if used inside `.within`, from the [cy.root](https://on.cypress.io/root) element. The [.find](https://on.cypress.io/find) command starts the search from the current subject.
+The [cy.get](https://on.cypress.io/get) command always starts its search from the `document` element, or, if used inside `.within`, from the [cy.root](https://on.cypress.io/root) element. The [.find](https://on.cypress.io/find) command starts the search from the current subject.
 
 <!-- fiddle cy.get vs .find -->
 
