@@ -5,29 +5,44 @@ Imagine a table with rows, and each row has a button to fetch some data. How do 
 <!-- fiddle Table update -->
 
 ```html
-<table>
-  <tr id="a1">
-    <td>First row</td>
-    <td class="status">Pending</td>
-    <td>
-      <button>Load row</button>
-    </td>
-  </tr>
-  <tr id="b1">
-    <td>Second row</td>
-    <td class="status">Pending</td>
-    <td>
-      <button>Load row</button>
-    </td>
-  </tr>
-  <tr id="c1">
-    <td>Third row</td>
-    <td class="status">Pending</td>
-    <td>
-      <button>Load row</button>
-    </td>
-  </tr>
+<table id="example-table">
+  <tbody>
+    <tr id="a1">
+      <td>First row</td>
+      <td class="status">Pending.</td>
+      <td>
+        <button>Load row</button>
+      </td>
+    </tr>
+    <tr id="b1">
+      <td>Second row</td>
+      <td class="status">Pending..</td>
+      <td>
+        <button>Load row</button>
+      </td>
+    </tr>
+    <tr id="c1">
+      <td>Third row</td>
+      <td class="status">Pending...</td>
+      <td>
+        <button id="load-row-c1">Load row</button>
+      </td>
+    </tr>
+  </tbody>
 </table>
+<script>
+  document
+    .getElementById('load-row-c1')
+    .addEventListener('click', () => {
+      setTimeout(() => {
+        const table = document.querySelector('table#example-table')
+        table.innerHTML = table.innerHTML.replace(
+          'Pending...',
+          'Loaded!!!',
+        )
+      }, 1500)
+    })
+</script>
 ```
 
 ```js
@@ -37,6 +52,21 @@ let rowId
 cy.contains('tr', 'Third row')
   .should('have.attr', 'id')
   .then((id) => (rowId = id))
+  .then(() => {
+    // click the button in the row we want
+    const rowSelector = `tr#${rowId}`
+    cy.get(rowSelector).contains('Load row').click()
+
+    // notice the click replaces the entire table DOM structure
+    // thus we want to write the entire query as a single command
+    // to be retried at once: find a row with cell
+    // with specific class with text "Loaded"
+    cy.contains(`table ${rowSelector} td.status`, 'Loaded')
+      // and now we can "move" up the tree to the parent row
+      // and confirm other values ...
+      .parent('tr')
+      .contains('td', 'Third row')
+  })
 ```
 
 <!-- fiddle-end -->
