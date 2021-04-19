@@ -157,3 +157,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Wait for data](./recipes/wait-for-data.md) to be set
 - [Return value from .within() command](./recipes/return-value-from-within.md)
 - [Confirm an attribute of an element](./recipes/confirm-attribute.md)
+- [Update table row with retries](./recipes/table-update.md)
