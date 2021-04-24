@@ -209,7 +209,7 @@ Let's checks if a list of elements becomes invisible after some time.
         function () {
           document
             .querySelectorAll('#multiple-elements li')
-            .forEach((el) => {
+            .forEach(function (el) {
               el.style.display = 'none'
             })
         },
