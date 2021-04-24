@@ -187,6 +187,61 @@ cy.get('#greeting')
 
 <!-- fiddle-end -->
 
+#### Visibility of multiple elements
+
+Let's checks if a list of elements becomes invisible after some time.
+
+<!-- fiddle Implicit Assertions / .should() - visibility of multiple elements -->
+
+```html
+<ul id="multiple-elements">
+  <li>first</li>
+  <li>second</li>
+  <li>third</li>
+</ul>
+<button id="hide-multiple-elements">Hide items</button>
+<script>
+  document
+    .getElementById('hide-multiple-elements')
+    .addEventListener('click', function () {
+      // we hide the elements after some unknown delay
+      setTimeout(
+        function () {
+          document
+            .querySelectorAll('#multiple-elements li')
+            .forEach((el) => {
+              el.style.display = 'none'
+            })
+        },
+        // elements disappear after 1 - 2 seconds
+        Math.random() * 1000 + 1000,
+      )
+    })
+</script>
+```
+
+At first, all elements are visible
+
+```js
+cy.get('#multiple-elements li')
+  .should('have.length', 3)
+  .and('be.visible')
+```
+
+The elements become invisible after clicking on the button
+
+```js
+cy.get('#hide-multiple-elements').click()
+cy.get('#multiple-elements li')
+  // the elements still exist in the DOM
+  .should('exist')
+  .and('have.length', 3)
+  // but should not be visible to the user
+  .and('not.be.visible')
+```
+
+<!-- fiddle-end -->
+
 #### Text matching the regular expression
 
 We can use regular expressions with "match" assertions to confirm part of the text.
