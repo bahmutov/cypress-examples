@@ -1,5 +1,7 @@
 # Find elements by class and text
 
+## Elements with just given class
+
 This recipe answers the question [#14281](https://github.com/cypress-io/cypress/issues/14281) - how do I select an element having an exact class? We can use [cy.get](https://on.cypress.io/get) or [cy.contains](https://on.cypress.io/contains)
 
 <!-- fiddle Filter by class -->
@@ -102,6 +104,52 @@ cy.get('.initial')
   .should('have.length', 2)
   .first()
   .should('have.text', 'Oranges')
+```
+
+<!-- fiddle-end -->
+
+## Complex filtering
+
+Sometimes the filtering logic is too complex to be expressed by CSS3 selectors. For example, how to get all matching elements _not_ inside a given `<UL>` list?
+
+<!-- fiddle Filter out by the parent selector -->
+
+```html
+<div class="target">target</div>
+<ul>
+  <li>
+    First
+    <div>example</div>
+  </li>
+  <li>
+    Second
+    <div>example</div>
+  </li>
+</ul>
+<div class="target">last target</div>
+```
+
+We need to find the elements, then use a callback function to check if each element has `ul` ancestor. Using `.then` callback is great for such tasks, and we can utilize the bundled `Cypress.jQuery` methods for checking the ancestors of the given element.
+
+```js
+cy.get('div')
+  // an assertion ensures we have elements
+  // before starting filtering
+  .should('have.length.gt', 1)
+  .then(($els) => {
+    const $filtered = $els.filter((k, el) => {
+      // if the found element is inside <UL> element
+      // then reject it by returning false
+      const $ul = Cypress.$(el).closest('ul')
+      return $ul.length === 0
+    })
+
+    return $filtered
+  })
+  // finds only the elements outside the <UL> element
+  .should('have.length', 2)
+  // check by confirming the class on each found element
+  .and('have.class', 'target')
 ```
 
 <!-- fiddle-end -->
