@@ -166,3 +166,43 @@ cy.get('#items-intro')
 ```
 
 <!-- fiddle-end -->
+
+## Text at index K
+
+Let's say we want to robustly check each item's text. But the items can be added dynamically, and the item's order matters.
+
+<!-- fiddle text at index k -->
+
+```html
+<ul id="fruits"></ul>
+<script>
+  const fruits = document.getElementById('fruits')
+  function addFruit(name, timeout) {
+    setTimeout(function () {
+      const li = document.createElement('li')
+      li.appendChild(document.createTextNode(name))
+      fruits.appendChild(li)
+    }, timeout)
+  }
+  // insert each list item asynchronously
+  addFruit('apples', 500)
+  addFruit('kiwi', 1000)
+  addFruit('grapes', 1600)
+</script>
+```
+
+Let's check if "apples" is in the list at first position. Then "kiwi", followed by "grapes"
+
+```js
+// check each fruit in this list
+const fruits = ['apples', 'kiwi', 'grapes']
+fruits.forEach((fruit, k) => {
+  // the order matters, thus we use the index k
+  // to form CSS "nth-child" selector
+  // Note: the CSS selector starts at 1, thus
+  // we need to add 1 to the index k
+  cy.contains(`#fruits li:nth-child(${k + 1})`, fruit)
+})
+```
+
+<!-- fiddle-end -->
