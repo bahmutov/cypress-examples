@@ -189,9 +189,40 @@ cy.get('#greeting')
 
 #### Visibility of multiple elements
 
-Let's checks if a list of elements becomes invisible after some time.
+Only some elements should be visible for the assertion `should('be.visible')` to pass.
 
 <!-- fiddle Implicit Assertions / .should() - visibility of multiple elements -->
+
+```html
+<ul id="few-elements">
+  <li>first</li>
+  <li style="display:none">second</li>
+  <li>third</li>
+</ul>
+```
+
+The test passes, even if some elements are invisible.
+
+```js
+cy.get('#few-elements li').should('be.visible').and('have.length', 3)
+// while the second element is still invisible
+cy.contains('#few-elements li', 'second').should('not.be.visible')
+// we can use jQuery selector :visible to get just the visible elements
+cy.get('#few-elements li:visible').should('have.length', 2)
+// we can filter elements to get just the invisible elements
+cy.get('#few-elements li')
+  .not(':visible')
+  .should('have.length', 1)
+  .and('have.text', 'second')
+```
+
+<!-- fiddle-end -->
+
+#### Elements becoming invisible
+
+Let's checks if a list of elements becomes invisible after some time.
+
+<!-- fiddle Implicit Assertions / .should() - elements becoming invisible -->
 
 ```html
 <ul id="multiple-elements">
