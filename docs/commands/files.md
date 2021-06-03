@@ -90,11 +90,7 @@ expect(this.example, 'fixture in the test context').to.deep.equal(
 )
 
 // or use "cy.wrap" and "should('deep.equal', ...)" assertion
-// @ts-ignore
-cy.wrap(this.example, 'fixture vs require').should(
-  'deep.equal',
-  requiredExample,
-)
+cy.wrap(this.example).should('deep.equal', requiredExample)
 ```
 
 <!-- fiddle-end -->
