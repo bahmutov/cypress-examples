@@ -57,10 +57,7 @@ cy.get('#getCookies .set-a-cookie').click()
 
 // cy.getCookies() yields an array of cookies
 cy.getCookies()
-  .should('have.length.gt', 0)
-  .then((cookies) => {
-    cy.log(JSON.stringify(cookies))
-  })
+  .should('have.length', 0)
   // there could be other cookies set by the static hosting
   // we are only interested in the cookie the app sets
   .then((cookies) => Cypress._.filter(cookies, { name: 'token' }))
