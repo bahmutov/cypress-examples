@@ -57,20 +57,16 @@ cy.get('#getCookies .set-a-cookie').click()
 
 // cy.getCookies() yields an array of cookies
 cy.getCookies()
-  .should('have.length', 0)
-  // there could be other cookies set by the static hosting
-  // we are only interested in the cookie the app sets
-  .then((cookies) => Cypress._.filter(cookies, { name: 'token' }))
   .should('have.length', 1)
-  .should((cookies) => {
-    // each cookie has these properties
-    expect(cookies[0]).to.have.property('name', 'token')
-    expect(cookies[0]).to.have.property('value', '123ABC')
-    expect(cookies[0]).to.have.property('httpOnly', false)
-    expect(cookies[0]).to.have.property('secure', false)
-    expect(cookies[0]).to.have.property('domain')
-    expect(cookies[0]).to.have.property('path')
+  .its(0)
+  .should('include', {
+    name: 'token',
+    value: '123ABC',
+    httpOnly: false,
+    secure: false,
   })
+  // there are also other properties in the cookie object
+  .and('include.keys', ['domain', 'path'])
 ```
 
 <!-- fiddle-end -->
