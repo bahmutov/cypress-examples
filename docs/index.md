@@ -139,7 +139,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 ## Recipes
 
 - [Checking the length of the list after adding an item](./recipes/add-list-item.md)
-- [CSS examples](./recipes/css-examples.md)
+- [CSS class name examples](./recipes/css-examples.md)
 - [Iterate over elements using `.each` command](./recipes/each-example.md)
 - [Non-breaking space](recipes/non-breaking-space.md)
 - [Checking a dynamic property added to the `window` object](./recipes/window-property.md)
