@@ -11,6 +11,15 @@ To type into a DOM element, use the `.type()` command.
 ```html
 <form>
   <div class="form-group">
+    <label for="name1">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name1"
+      placeholder="Joe Bravo"
+    />
+  </div>
+  <div class="form-group">
     <label for="email1">Email address</label>
     <input
       type="email"
@@ -53,6 +62,18 @@ cy.get('.action-disabled')
   // like whether the input is visible or disabled
   .type('disabled error checking', { force: true })
   .should('have.value', 'disabled error checking')
+```
+
+You can clear the field before typing
+
+```js
+cy.get('#name1')
+  .type('Joe')
+  // use "have.value" assertion to check the input element's value
+  .should('have.value', 'Joe')
+  .clear()
+  .type('Джо Браво')
+  .should('have.value', 'Джо Браво')
 ```
 
 <!-- fiddle-end -->
