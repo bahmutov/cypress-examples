@@ -109,6 +109,22 @@ cy.get('#text-example').should('contain', 'brown fox')
 
 <!-- fiddle-end -->
 
+#### HTML element tag
+
+<!-- fiddle Implicit Assertions / .should() - HTML element tag -->
+
+To confirm the HTML element's tag name, use `have.prop` assertion with property `nodeName`. Remember that node names are all capitalized like `DIV`, `P`, etc.
+
+```html
+<marquee id="tag-example">A brown fox ...</marquee>
+```
+
+```js
+cy.get('#tag-example').should('have.prop', 'nodeName', 'MARQUEE')
+```
+
+<!-- fiddle-end -->
+
 #### HTML entities
 
 <!-- fiddle Implicit Assertions / .should() - html entities -->
