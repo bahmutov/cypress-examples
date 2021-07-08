@@ -255,7 +255,7 @@ cy.get('[data-test-id="test-example"]')
 
 We can find elements by their content using `cy.contains()`
 
-<!-- fiddle contains -->
+<!-- fiddle contains / returns an element -->
 
 ```html
 <div id="querying">
@@ -292,6 +292,54 @@ cy.get('div#querying')
 cy.get('.query-button')
   .contains('Save Form')
   .should('have.class', 'btn')
+```
+
+<!-- fiddle-end -->
+
+### cy.contains with selector and text
+
+You can give the element selector to match. The text can be anywhere in the element or its children.
+
+<!-- fiddle contains / selector and text -->
+
+```html
+<div
+  data-cy="parent"
+  style="font-weight: heavy; text-decoration: underline"
+>
+  <span>Some text</span>
+</div>
+```
+
+```js
+// finds the immediate element
+cy.contains('Some text').should('have.prop', 'nodeName', 'SPAN')
+// find the parent element with "Some text" somewhere inside
+cy.contains('[data-cy=parent]', 'Some text')
+  .should('have.prop', 'nodeName', 'DIV') // we found the parent div
+  .and('have.css', 'text-decoration')
+  // the text-decoration style string includes color and line type
+  // we are only interested in the presence of the "underline" keyword
+  .should('include', 'underline')
+```
+
+<!-- fiddle-end -->
+
+### cy.contains with regular expression
+
+You can use a regular expression instead of text
+
+<!-- fiddle contains / regular expression -->
+
+```html
+<div id="user-name">Cypress User</div>
+```
+
+```js
+// ignore case
+cy.contains(/cypress user/i)
+// match text exactly
+cy.contains(/^Cypress User$/)
 ```
 
 <!-- fiddle-end -->
