@@ -1,24 +1,17 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:base"],
   "automerge": true,
-  "schedule": [
-    "before 2am"
-  ],
+  "schedule": ["before 2am"],
   "updateNotScheduled": false,
   "timezone": "America/New_York",
   "masterIssue": true,
   "packageRules": [
     {
-      "packagePatterns": [
-        "*"
-      ],
+      "packagePatterns": ["*"],
       "excludePackagePatterns": [
         "cypress",
         "cypress-markdown-preprocessor",
-        "start-server-and-test",
-        "vuepress"
+        "start-server-and-test"
       ],
       "enabled": false
     }
