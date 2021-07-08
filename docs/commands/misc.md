@@ -2,6 +2,76 @@
 
 Examples of miscellaneous commands in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io/api)
 
+## [cy.log()](https://on.cypress.io/log)
+
+To print a value into Command Log on the left side of the test runner, use `cy.log()` command.
+
+<!-- fiddle .log() / prints a string -->
+
+```js
+cy.log('this is a string')
+// you can use a small subset of Markdown: italics, bold
+cy.log('this is **important**')
+// you can pass arguments
+const user = { name: 'Joe', age: 20 }
+cy.log('user object', user)
+cy.log('name', user.name, 'age', user.age)
+// or form the message yourself
+cy.log(`name \`${user.name}\` age \`${user.age}\``)
+```
+
+<!-- fiddle-end -->
+
+### cy.log binds its arguments
+
+When you call `cy.log(arg)` due to JavaScript rules, the value of the argument `arg` is _bound_ immediately, but the printing happens _asynchronously_ because every declared Cypress command is chained and executes after the previous command has finished. The following test shows both incorrect and correct way of printing the value of an HTML element.
+
+<!-- fiddle .log() / binds the primitive value -->
+
+```html
+<div id="username">Mary</div>
+```
+
+```js
+// ⛔️ INCORRECT - PRINTS NULL
+let username = null
+cy.get('#username').then(($el) => (username = $el.text()))
+cy.log(username) // always prints null ⚠️
+```
+
+When `cy.log(username)` is called in the above text block, the value of `username` is `null`. JavaScript passes primitive types by value. Thus the value `null` is passed into `cy.log()` call. Later, when the `cy.get` and `.then` commands complete, the command `cy.log` in the chain gets its turn to run - and it prints the value of the argument it has received _at the start_ which is `null`.
+
+Instead we need to call `cy.log` only when the argument value is known and set.
+
+```js
+// ✅ CORRECT - prints "Mary"
+cy.get('#username')
+  .then(($el) => (username = $el.text()))
+  .then(() => {
+    // by this point the "username" primitive variable
+    // has been set, and the call is made cy.log("Mary")
+    cy.log(username)
+  })
+```
+
+<!-- fiddle-end -->
+
+<!-- fiddle .log() / prints an object -->
+
+```html
+<div id="last-user">Mary</div>
+```
+
+An alternative to using a primitive variable with `cy.log` is to pass an object by reference, then fill a value in the object. Since the reference passed to `cy.log` is unchanged, the Command Log will print the values inside the object at the moment `LOG` runs after previous commands have finished.
+
+```js
+const user = { name: null }
+cy.get('#last-user').then(($el) => (user.name = $el.text()))
+cy.log(user) // prints { user: "Mary" }
+```
+
+<!-- fiddle-end -->
+
 ## [.end()](https://on.cypress.io/end)
 
 To end the command chain, use the `.end()` command.
