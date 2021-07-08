@@ -303,24 +303,28 @@ You can give the element selector to match. The text can be anywhere in the elem
 <!-- fiddle contains / selector and text -->
 
 ```html
-<div
-  data-cy="parent"
-  style="font-weight: heavy; text-decoration: underline"
->
-  <span>Some text</span>
+<div id="contains-example">
+  <div
+    data-cy="parent"
+    style="font-weight: heavy; text-decoration: underline"
+  >
+    <span>Some text</span>
+  </div>
 </div>
 ```
 
 ```js
-// finds the immediate element
-cy.contains('Some text').should('have.prop', 'nodeName', 'SPAN')
-// find the parent element with "Some text" somewhere inside
-cy.contains('[data-cy=parent]', 'Some text')
-  .should('have.prop', 'nodeName', 'DIV') // we found the parent div
-  .and('have.css', 'text-decoration')
-  // the text-decoration style string includes color and line type
-  // we are only interested in the presence of the "underline" keyword
-  .should('include', 'underline')
+cy.get('#contains-example').within(() => {
+  // finds the immediate element
+  cy.contains('Some text').should('have.prop', 'nodeName', 'SPAN')
+  // find the parent element with "Some text" somewhere inside
+  cy.contains('[data-cy=parent]', 'Some text')
+    .should('have.prop', 'nodeName', 'DIV') // we found the parent div
+    .and('have.css', 'text-decoration')
+    // the text-decoration style string includes color and line type
+    // we are only interested in the presence of the "underline" keyword
+    .should('include', 'underline')
+})
 ```
 
 <!-- fiddle-end -->
