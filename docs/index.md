@@ -76,6 +76,7 @@ Commands drive your tests in the browser like a real user would. They let you pe
 - [Waiting](./commands/waiting.md)
   - [wait](./commands/waiting.md#cy-wait)
 - [Misc](./commands/misc.md)
+  - [log](./commands/misc.md#log)
   - [end](./commands/misc.md#end)
   - [exec](./commands/misc.md#cy-exec)
   - [focused](./commands/misc.md#cy-focused)
