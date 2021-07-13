@@ -348,6 +348,28 @@ cy.contains(/^Cypress User$/)
 
 <!-- fiddle-end -->
 
+Even if there are optional white space characters around the text, you can still use `^` and `$` to require no other text in the element.
+
+<!-- prettier-ignore-start -->
+
+<!-- fiddle contains / regular expression with whitespace -->
+
+Note  the whitespace around the word "Incredible"
+
+```html
+<div class="nickname">  Incredible    </div>
+```
+
+```js
+// find the nickname "Incredible" that can have whitespace around it
+// but cannot have any other characters
+cy.contains('.nickname', /^\s*Incredible\s*$/)
+```
+
+<!-- fiddle-end -->
+
+<!-- prettier-ignore-end -->
+
 ## [.within](https://on.cypress.io/within)
 
 We can find elements within a specific DOM element `.within()`
