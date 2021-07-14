@@ -160,3 +160,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Confirm an attribute of an element](./recipes/confirm-attribute.md)
 - [Update table row with retries](./recipes/table-update.md)
 - [Click a random element](./recipes/click-random-element.md)
+- [Number of rows matches a number in an element](./recipes/number-of-rows.md)
