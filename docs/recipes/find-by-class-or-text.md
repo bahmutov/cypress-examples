@@ -83,6 +83,50 @@ cy.contains('[class=day]', /^8$/).should('have.text', '8')
 
 <!-- fiddle-end -->
 
+## Find multiple elements with text
+
+The command `cy.contains` yields the first element. If you want to find multiple elements that contain the given text, use jQuery selector [:contains](https://api.jquery.com/contains-selector/). Note that the selector text is case sensitive.
+
+<!-- fiddle Multiple elements with text -->
+
+```html
+<ul>
+  <li>apple</li>
+  <li>pineapple</li>
+  <li>grapes</li>
+  <li>crab apple</li>
+  <li>crab legs</li>
+</ul>
+```
+
+```js
+// cy.contains finds the first element that contains the text "apple"
+cy.contains('apple')
+  .should('have.length', 1)
+  .and('have.text', 'apple')
+// using jQuery :contains selector we can find all elements with text "apple"
+cy.get('li:contains(apple)')
+  .should('have.length', 3)
+  .first()
+  .should('have.text', 'apple')
+// quote the text with multiple words
+cy.get('li:contains("crab apple")')
+  .should('have.length', 1)
+  .and('have.text', 'crab apple')
+```
+
+Note: use a selector before `:contains` otherwise, both `UL` and `LI` elements will be returned.
+
+```js
+// without LI selector, the results will include the parent UL element
+cy.get(':contains(apple)')
+  .should('have.length', 4)
+  .first()
+  .should('have.prop', 'nodeName', 'UL')
+```
+
+<!-- fiddle-end -->
+
 ## Filter elements using cy.not
 
 We can filter items using the [cy.not](https://on.cypress.io/not) command.

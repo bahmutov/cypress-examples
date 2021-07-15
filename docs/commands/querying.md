@@ -274,14 +274,20 @@ We can find elements by their content using `cy.contains()`
 ```
 
 ```js
+// finds the first element with the given text
+cy.get('.query-list').contains('apples').should('have.class', 'first')
+// ignore text when matching
+cy.get('.query-list')
+  .contains('APPLE', { matchCase: false })
+  .should('have.class', 'first')
+  .and('have.text', 'apples')
+
 cy.get('.query-list')
   .contains('bananas')
   .should('have.class', 'third')
 
 // we can pass a regexp to `.contains()`
 cy.get('.query-list').contains(/^b\w+/).should('have.class', 'third')
-
-cy.get('.query-list').contains('apples').should('have.class', 'first')
 
 // passing a selector to contains will
 // yield the selector containing the text

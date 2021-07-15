@@ -146,7 +146,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Checking a dynamic property added to the `window` object](./recipes/window-property.md)
 - [Get input element by its label](recipes/form-input-by-label.md) by writing a custom command
 - [Set nested property inside the environment object](recipes/set-env-prop.md) when using [Cypress.env](https://on.cypress.io/env)
-- [Find element by exact class and text](recipes/find-by-class.md)
+- [Find elements by exact class or text](recipes/find-by-class-or-text.md)
 - [Assert the selected value or multiple values](recipes/selected-value.md) in a `<select>` element
 - [Select an item by id](./recipes/select-value-by-id.md)
 - [Get the inner text of a list of elements](recipes/get-text-list.md)
