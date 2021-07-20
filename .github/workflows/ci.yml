@@ -120,6 +120,8 @@ jobs:
       # if there are any updated PNG images, commit and push them
       - name: Commit any changed images 💾
         uses: stefanzweifel/git-auto-commit-action@v4
+        # only perform it for the master branch
+        if: github.ref == 'refs/heads/master'
         with:
           commit_message: Updated screenshots
           branch: master
