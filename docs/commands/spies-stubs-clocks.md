@@ -51,6 +51,46 @@ cy.get('@foo').should('have.been.calledTwice')
 
 <!-- fiddle-end -->
 
+### Checking the call arguments
+
+You can verify the spy or stub was called with expected arguments.
+
+<!-- fiddle cy.spy and cy.stub / checking arguments -->
+
+```js
+const person = {
+  setName(first, last) {
+    this.name = first + ' ' + last
+  },
+}
+
+cy.spy(person, 'setName').as('setName')
+// simulate the application calling the method
+// after some random delay
+setTimeout(() => {
+  person.setName('Joe', 'Smith')
+}, Math.random() * 2000)
+// check if the spy was called
+cy.get('@setName').should('have.been.called')
+// check if the spy was called exactly once
+cy.get('@setName').should('have.been.calledOnce')
+// check if the spy was called with first argument 'Joe'
+// the call might have had more arguments, but we do not check them
+cy.get('@setName').should('have.been.calledOnceWith', 'Joe')
+// check if the spy was called with these arguments
+cy.get('@setName').should('have.been.calledOnceWith', 'Joe', 'Smith')
+// check if the spy was called once with a string and "Smith"
+cy.get('@setName').should(
+  'have.been.calledOnceWith',
+  Cypress.sinon.match.string,
+  'Smith',
+)
+// verify the property was set
+cy.wrap(person).should('have.property', 'name', 'Joe Smith')
+```
+
+<!-- fiddle-end -->
+
 ### Matchers
 
 `cy.spy` and `cy.stub` match call arguments using [Sinon matchers](https://sinonjs.org/releases/latest/matchers/).
