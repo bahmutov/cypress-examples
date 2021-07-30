@@ -878,6 +878,98 @@ cy.wrap(arr)
 
 <!-- fiddle-end -->
 
+## Objects
+
+### Checking a property
+
+Check if an object has a property
+
+<!-- fiddle Objects / has a property -->
+
+```js
+const person = {
+  name: 'Joe',
+}
+// check if the property is present, but do not check the value
+cy.wrap(person).should('have.property', 'name')
+// check if the property is present and has a specific value
+cy.wrap(person).should('have.property', 'name', 'Joe')
+// check if the value is a string and matches a regular expression
+cy.wrap(person)
+  .should('have.property', 'name')
+  // now we are working with the value from person.name
+  .should('be.a', 'string')
+  .and('match', /joe/i)
+```
+
+Assertions `have.property` and `have.key` are similar.
+
+```js
+// the assertion "have.property" yields the value
+cy.wrap(person).should('have.property', 'name').should('equal', 'Joe')
+// the assertion "have.key" yields the same object
+cy.wrap(person)
+  .should('have.key', 'name')
+  // we are still working with the object
+  .should('deep.equal', { name: 'Joe' })
+```
+
+<!-- fiddle-end -->
+
+### Multiple properties
+
+If the object has multiple properties, use `have.keys` if you want to precisely assert them.
+
+<!-- fiddle Objects / multiple properties -->
+
+```js
+const address = {
+  city: 'Boston',
+  state: 'MA',
+  zip: '90210',
+}
+// you can specify keys as an array argument
+cy.wrap(address).should('have.keys', ['city', 'state', 'zip'])
+// or as separate arguments
+cy.wrap(address).should('have.keys', 'city', 'state', 'zip')
+```
+
+If you are only interested in some properties, use the `include.keys` assertion
+
+```js
+// the object has city and state keys (and possible others)
+cy.wrap(address).should('include.keys', ['city', 'state'])
+// can pass keys as separate arguments
+cy.wrap(address).should('include.keys', 'city', 'state')
+```
+
+<!-- fiddle-end -->
+
+### Partial match
+
+If we want to check a part of the an object, we can use `deep.include` assertion.
+
+<!-- fiddle Objects / partial match -->
+
+```js
+const address = {
+  city: 'Boston',
+  state: 'MA',
+  zip: '90210',
+}
+cy.wrap(address)
+  .should('deep.include', {
+    city: 'Boston',
+    zip: '90210',
+  })
+  // continue working with the original object
+  .and('deep.include', {
+    state: 'MA',
+  })
+```
+
+<!-- fiddle-end -->
+
 ## Adding assertions
 
 ### Multiple attributes
