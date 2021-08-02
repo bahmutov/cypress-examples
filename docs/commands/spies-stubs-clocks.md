@@ -225,6 +225,49 @@ cy.get('@log').its('callCount').should('eq', 3)
 
 <!-- fiddle-end -->
 
+### Reset call count
+
+You can reset a spy / stub using the `.resetHistory` method.
+
+<!-- fiddle cy.spy and cy.stub / reset history -->
+
+```js
+// test subject
+const person = {
+  age: 0,
+  birthday() {
+    this.age += 1
+  },
+}
+// spy on the subject's method
+cy.spy(person, 'birthday').as('birthday')
+cy.wrap(person)
+  .its('age')
+  .should('equal', 0)
+  .then(() => {
+    // the application calls the method twice
+    person.birthday()
+    person.birthday()
+  })
+// verify the spy recorded two calls
+cy.get('@birthday').should('have.been.calledTwice')
+cy.wrap(person)
+  .its('age')
+  .should('equal', 2)
+  .then(() => {
+    person.birthday()
+    person.birthday()
+  })
+cy.get('@birthday').its('callCount').should('equal', 4)
+cy.log('**reset history**')
+cy.get('@birthday').invoke('resetHistory')
+// the spy call count and the history have been cleared
+cy.get('@birthday').its('callCount').should('equal', 0)
+cy.get('@birthday').should('not.have.been.called')
+```
+
+<!-- fiddle-end -->
+
 ## [cy.stub()](https://on.cypress.io/stub)
 
 To create a stub and/or replace a function with a stub, use the `cy.stub()` command.
