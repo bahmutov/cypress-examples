@@ -249,7 +249,7 @@ cy.wrap(Cypress.spec).should('include.keys', [
 
 <!-- fiddle-end -->
 
-## [Cypress.currentTest](https://on.cypress.io/currentest)
+## [Cypress.currentTest](https://docs.cypress.io/api/cypress-api/currenttest)
 
 `Cypress.currentTest` is an object representing the currently executing test instance, with properties to access the title of the test.
 
