@@ -248,3 +248,30 @@ cy.wrap(Cypress.spec).should('include.keys', [
 ```
 
 <!-- fiddle-end -->
+
+## [Cypress.currentTest](https://on.cypress.io/currentest)
+
+`Cypress.currentTest` is an object representing the currently executing test instance, with properties to access the title of the test.
+
+<!-- fiddle Cypress.currentTest / Get the current test information -->
+
+```js
+// https://on.cypress.io/currenttest
+// wrap the object so we can inspect it easily by clicking in the command log
+cy.wrap(Cypress.currentTest)
+  .should('include.keys', ['title', 'titlePath'])
+  .then((currentTest) => {
+    expect(currentTest).to.have.property(
+      'title',
+      'Get the current test information',
+    )
+    // get the entire full title, including the parent suite titles
+    expect(currentTest).to.have.property('titlePath').to.deep.equal([
+      'Cypress API', // the top suite
+      'Cypress.currentTest', // the parent suite
+      'Get the current test information', // the test title
+    ])
+  })
+```
+
+<!-- fiddle-end -->
