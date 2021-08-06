@@ -32,6 +32,14 @@ cy.window({ timeout: 11000 }).should((win) => {
 cy.window({ timeout: 11000 })
   .its('myproperty.Hash')
   .should('equal', '1234')
+// just confirm the property is set, without checking the value
+cy.window().its('myproperty.Hash')
+// confirm "window.myproperty" is set
+cy.window()
+  .should('have.property', 'myproperty')
+  .should('deep.equal', {
+    Hash: '1234',
+  })
 ```
 
 <!-- fiddle-end -->
