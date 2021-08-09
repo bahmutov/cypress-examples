@@ -275,3 +275,15 @@ cy.wrap(Cypress.currentTest)
 ```
 
 <!-- fiddle-end -->
+
+## [Cypress.testingType](https://docs.cypress.io/api/cypress-api/testing-type)
+
+`Cypress.testingType` returns the current testing type, determined by the Test Runner chosen to run. The `Cypress.testingType` returns "e2e" for Cypress Test Runner integration tests, or "component" for experimental [Component Testing](https://on.cypress.io/component-testing).
+
+<!-- fiddle.only Cypress.testingType -->
+
+```js
+expect(Cypress.testingType).to.be.oneOf(['e2e', 'component'])
+```
+
+<!-- fiddle-end -->

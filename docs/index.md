@@ -137,6 +137,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [version](./cypress-api/index.md#cypress-version)
 - [spec](./cypress-api/index.md#cypress-spec)
 - [currentTest](./cypress-api/index.md#cypress-currenttest)
+- [testingType](./cypress-api/index.md#cypress-testingtype)
 
 ## Recipes
 
