@@ -970,6 +970,29 @@ cy.wrap(address)
 
 <!-- fiddle-end -->
 
+### Multiple variants
+
+<!-- fiddle Multiple variants -->
+
+```js
+expect('hello').to.be.oneOf(['hi', 'good morning', 'hello'])
+cy.wrap(42).should('be.oneOf', [10, 42, 30])
+```
+
+<!-- fiddle-end -->
+
+### Approximate value
+
+<!-- fiddle Approximate value -->
+
+```js
+// expected 32.7 to be close to 32 +/- 1
+expect(32.7).to.be.closeTo(32, 1.0)
+cy.wrap(52.9).should('be.closeTo', 50, 3)
+```
+
+<!-- fiddle-end -->
+
 ## Adding assertions
 
 ### Multiple attributes
