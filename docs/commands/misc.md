@@ -243,7 +243,7 @@ Cypress.Screenshot.defaults({
 
 To wrap an object or a value, use the `cy.wrap()` command.
 
-<!-- fiddle cy.wrap() - wrap an object -->
+<!-- fiddle cy.wrap() / wrap an object -->
 
 ```js
 // https://on.cypress.io/wrap
@@ -257,7 +257,7 @@ cy.wrap(42).should('equal', 42)
 
 Once you have an object wrapped, you can access its properties, invoke its methods, and even pass it via an alias.
 
-<!-- fiddle cy.wrap() - invoke a method -->
+<!-- fiddle cy.wrap() / invoke a method -->
 
 ```js
 cy.wrap({
@@ -293,15 +293,72 @@ cy.get('@wrappedObject').invoke('getNumber').should('equal', 42)
 
 <!-- fiddle-end -->
 
+### Wrapping promises
+
 If `cy.wrap` receives a Promise as an argument, Cypress automatically waits for the promise to complete.
 
-<!-- fiddle cy.wrap() - waits on a promise automatically -->
+<!-- fiddle cy.wrap() / waits on a promise automatically -->
 
 ```js
 const p = new Promise((resolve) => {
-  resolve('Hello')
-}, 100)
+  setTimeout(() => {
+    resolve('Hello')
+  }, 1000)
+})
 cy.wrap(p).should('equal', 'Hello')
+```
+
+<!-- fiddle-end -->
+
+### Cypress.Promise
+
+Cypress bundles [Bluebird](https://github.com/petkaantonov/bluebird) library under [Cypress.Promise](https://on.cypress.io/promise) property. This library has a lot of helper methods, making writing asynchronous code very intuitive.
+
+<!-- fiddle cy.wrap() / using Cypress.Promise -->
+
+```js
+const p = Cypress.Promise.resolve(42).delay(450)
+cy.wrap(p)
+  .should('equal', 42)
+  // you can wrap the already resolved promise
+  .then(() => {
+    cy.wrap(p).should('be.a', 'number').and('equal', 42)
+  })
+```
+
+<!-- fiddle-end -->
+
+### Promises are eager
+
+As soon as a promise object is created, it start running. Other Cypress commands are chained first and run one after another. To create a Promise and wrap it after a Cypress commands completes, construct the Promise inside `.than` callback.
+
+<!-- fiddle cy.wrap() / promises are eager -->
+
+```js
+cy.wait(1000)
+  .then(() => {
+    // create the promise after the previous command
+    // cy.wait(1000) has finished
+    cy.wrap(Cypress.Promise.resolve('starts now').delay(1000))
+    // note that wrapped value is automatically yielded
+    // to the command or assertion in the command chain
+  })
+  .should('equal', 'starts now')
+```
+
+The above test can be rewritten without `cy.wrap` - by just returning the promise from the `.then` callback.
+
+```js
+// wait one second
+// create the promise, wait for it to resolve
+// then assert the yielded value
+cy.wait(1000)
+  .then(() => {
+    // create the promise after the previous command
+    // cy.wait(1000) has finished
+    return Cypress.Promise.resolve('starts now').delay(1000)
+  })
+  .should('equal', 'starts now')
 ```
 
 <!-- fiddle-end -->
