@@ -50,6 +50,12 @@ npm run dev:export
 
 This command builds the static site, exports the Markdown specs into JavaScript specs, starts local server, and when it responds, starts Cypress.
 
+You can also export all Markdown files into JavaScript, run them locally, and run all E2E tests using the JS specs with:
+
+```
+npm run run:exported
+```
+
 [ci image]: https://github.com/bahmutov/cypress-examples/workflows/ci/badge.svg?branch=master
 [ci url]: https://github.com/bahmutov/cypress-examples/actions?query=workflow%3Aci
 [prettier image]: https://github.com/bahmutov/cypress-examples/workflows/prettier/badge.svg?branch=master

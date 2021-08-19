@@ -7,6 +7,7 @@
     "test": "cypress run",
     "cy:open": "cypress open",
     "cy:open:exported": "cypress open --config-file cypress-dist.json",
+    "cy:run:exported": "cypress run --config-file cypress-dist.json",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "check:links": "find . -type f -name '*.md' ! -path './node_modules/*' | xargs -L1 npx markdown-link-check --quiet",
@@ -18,7 +19,9 @@
     "semantic-release": "semantic-release",
     "badges": "update-badge cypress",
     "predev:export": "npm run docs:build && npm run to-js",
-    "dev:export": "start-test serve 5000 cy:open:exported"
+    "dev:export": "start-test serve 5000 cy:open:exported",
+    "prerun:export": "npm run docs:build && npm run to-js",
+    "run:exported": "start-test serve 5000 cy:run:exported"
   },
   "repository": {
     "type": "git",
