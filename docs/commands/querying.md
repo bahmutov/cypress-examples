@@ -276,14 +276,16 @@ Let's get the element with ID that starts with "my-" prefix and ending with "-yo
 <!-- fiddle cy.get / combine attributes -->
 
 ```html
-<ul>
+<ul id="combine-attributes">
   <li id="my-first-123">first</li>
   <li id="my-second-yours">second</li>
 </ul>
 ```
 
 ```js
-cy.get('[id^=my-][id$=-yours]').should('have.text', 'second')
+cy.get('#combine-attributes').within(() => {
+  cy.get('[id^=my-][id$=-yours]').should('have.text', 'second')
+})
 ```
 
 <!-- fiddle-end -->
