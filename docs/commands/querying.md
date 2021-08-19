@@ -333,23 +333,6 @@ cy.get('[data-test-id="test-example"]')
 
 <!-- fiddle-end -->
 
-Let's get the element with ID that starts with "my-" prefix and ending with "-yours" suffix
-
-<!-- fiddle cy.get / combine attributes -->
-
-```html
-<ul>
-  <li id="my-first-123">first</li>
-  <li id="my-second-yours">second</li>
-</ul>
-```
-
-```js
-cy.get('[id^=my-][id$=-yours]').should('have.text', 'second')
-```
-
-<!-- fiddle-end -->
-
 ### AND selector
 
 Let's find all `P` and `LI` elements. You can combine multiple selectors using comma operator.
