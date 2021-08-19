@@ -340,7 +340,7 @@ Let's find all `P` and `LI` elements. You can combine multiple selectors using c
 <!-- fiddle cy.get / AND selector -->
 
 ```html
-<div id="and-selector">
+<div id="and-selector-example">
   <ul>
     <li id="first">first</li>
     <li id="second">second</li>
@@ -350,12 +350,15 @@ Let's find all `P` and `LI` elements. You can combine multiple selectors using c
 ```
 
 ```js
-// find all P elements inside the element with id "and-selector"
-// and all LI elements inside the element with id "and-selector"
-cy.get('#and-selector p, #and-selector li').should('have.length', 3)
-// alternative: first find the element with id "and-selector"
+// find all P elements inside the element with id "and-selector-example"
+// and all LI elements inside the element with id "and-selector-example"
+cy.get('#and-selector-example p, #and-selector-example li').should(
+  'have.length',
+  3,
+)
+// alternative: first find the element with id "and-selector-example"
 // then find P and LI elements
-cy.get('#and-selector').within(() => {
+cy.get('#and-selector-example').within(() => {
   cy.get('p, li').should('have.length', 3)
 })
 ```
