@@ -110,9 +110,34 @@ cy.get('.admin\\.user')
 
 <!-- fiddle-end -->
 
+### Find elements without given class
+
+<!-- fiddle cy.get / find elements without given class -->
+
+In the HTML below all links have the class "help", but some links have the class "external". We want to find all links having the class "help", but without the class "external".
+
+```html
+<a href="article1.html" class="help external">Article 1</a>
+<a href="article2.html" class="help">Article 2</a>
+<a href="article3.html" class="help external">Article 3</a>
+<a href="index.html" class="help">index</a>
+```
+
+```js
+cy.get('a.help:not(.external)')
+  .should('have.length', 2)
+  .within(() => {
+    // confirm the two found elements
+    cy.root().eq(0).should('have.text', 'Article 2')
+    cy.root().eq(1).should('have.text', 'index')
+  })
+```
+
+<!-- fiddle-end -->
+
 ### Using attribute selector
 
-You can grab all elements that have an attribute present. For example, to find all `<LI>` rows with an attribute "line" present:
+You can grab all elements that have an attribute present. For example, to find all `<LI>` rows with the attribute "line" present:
 
 <!-- fiddle cy.get / elements with an attribute -->
 
@@ -120,7 +145,7 @@ You can grab all elements that have an attribute present. For example, to find a
 <ul id="row-attributes">
   <li>No line</li>
   <li>No line</li>
-  <!-- attribute line has no value at all -->
+  <!-- this attribute "line" has no value at all -->
   <li line>line</li>
   <li line="up">line</li>
   <li line="down">line</li>
@@ -185,6 +210,55 @@ Let's get the element with ID ending with "example-AF9" string
 
 ```js
 cy.get('[id$=example-AF9]').should('have.text', 'second')
+```
+
+<!-- fiddle-end -->
+
+### Attribute contains text
+
+Let's find an anchor element with HREF attribute that includes the text "help"
+
+<!-- fiddle cy.get / attribute contains text -->
+
+```html
+<a href="/some/link.html">Link 1</a>
+<a href="/another/link">Link 2</a>
+<a href="/link/to/help/article.html">Link 3</a>
+```
+
+```js
+// quotes around the text without spaces are optional
+cy.get('a[href*="help"]')
+  .should('have.length', 1)
+  .and('have.text', 'Link 3')
+```
+
+<!-- fiddle-end -->
+
+### Having attribute disabled
+
+Let's find all buttons with the attribute "disabled" present. While we are at it, let's find all the elements _without_ such attribute.
+
+<!-- fiddle cy.get / having attribute disabled -->
+
+```html
+<button>First</button>
+<button disabled>Second</button>
+<button disabled>Third</button>
+<button>Fourth</button>
+```
+
+```js
+// finds both button that have the attribute "disabled"
+cy.get('button[disabled]')
+  .should('have.length', 2)
+  .first()
+  .should('have.text', 'Second')
+// finds the two buttons without the attribute "disabled"
+cy.get('button:not([disabled])')
+  .should('have.length', 2)
+  .last()
+  .should('have.text', 'Fourth')
 ```
 
 <!-- fiddle-end -->
