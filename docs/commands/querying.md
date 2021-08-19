@@ -164,14 +164,18 @@ You can grab elements with a given attribute. For example, let's make sure there
 <!-- fiddle cy.get / anchor links with specific href -->
 
 ```html
-<a href="article1.html">Article 1</a>
-<a href="article2.html">Article 2</a>
-<a href="article3.html">Article 3</a>
-<a href="index.html">index</a>
+<div id="specific-href">
+  <a href="article1.html">Article 1</a>
+  <a href="article2.html">Article 2</a>
+  <a href="article3.html">Article 3</a>
+  <a href="index.html">index</a>
+</div>
 ```
 
 ```js
-cy.get('a[href="index.html"]').should('have.length', 1)
+cy.get('#specific-href a[href="index.html"]')
+  .should('have.length', 1)
+  .and('have.text', 'index')
 ```
 
 <!-- fiddle-end -->
@@ -242,20 +246,22 @@ Let's find all buttons with the attribute "disabled" present. While we are at it
 <!-- fiddle cy.get / having attribute disabled -->
 
 ```html
-<button>First</button>
-<button disabled>Second</button>
-<button disabled>Third</button>
-<button>Fourth</button>
+<div id="few-buttons">
+  <button>First</button>
+  <button disabled>Second</button>
+  <button disabled>Third</button>
+  <button>Fourth</button>
+</div>
 ```
 
 ```js
 // finds both button that have the attribute "disabled"
-cy.get('button[disabled]')
+cy.get('#few-buttons button[disabled]')
   .should('have.length', 2)
   .first()
   .should('have.text', 'Second')
 // finds the two buttons without the attribute "disabled"
-cy.get('button:not([disabled])')
+cy.get('#few-buttons button:not([disabled])')
   .should('have.length', 2)
   .last()
   .should('have.text', 'Fourth')
@@ -321,6 +327,52 @@ Alternatively, chain assertions directly to the `cy.get()` call. See [assertions
 cy.get('[data-test-id="test-example"]')
   .should('have.attr', 'data-test-id', 'test-example')
   .and('have.css', 'position', 'static')
+```
+
+<!-- fiddle-end -->
+
+Let's get the element with ID that starts with "my-" prefix and ending with "-yours" suffix
+
+<!-- fiddle cy.get / combine attributes -->
+
+```html
+<ul>
+  <li id="my-first-123">first</li>
+  <li id="my-second-yours">second</li>
+</ul>
+```
+
+```js
+cy.get('[id^=my-][id$=-yours]').should('have.text', 'second')
+```
+
+<!-- fiddle-end -->
+
+### AND selector
+
+Let's find all `P` and `LI` elements. You can combine multiple selectors using comma operator.
+
+<!-- fiddle cy.get / AND selector -->
+
+```html
+<div id="and-selector">
+  <ul>
+    <li id="first">first</li>
+    <li id="second">second</li>
+  </ul>
+  <p>Another line</p>
+</div>
+```
+
+```js
+// find all P elements inside the element with id "and-selector"
+// and all LI elements inside the element with id "and-selector"
+cy.get('#and-selector p, #and-selector li').should('have.length', 3)
+// alternative: first find the element with id "and-selector"
+// then find P and LI elements
+cy.get('#and-selector').within(() => {
+  cy.get('p, li').should('have.length', 3)
+})
 ```
 
 <!-- fiddle-end -->
