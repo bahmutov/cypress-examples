@@ -20,7 +20,7 @@
     "badges": "update-badge cypress",
     "predev:export": "npm run docs:build && npm run to-js",
     "dev:export": "start-test serve 5000 cy:open:exported",
-    "prerun:export": "npm run docs:build && npm run to-js",
+    "prerun:exported": "npm run docs:build && npm run to-js",
     "run:exported": "start-test serve 5000 cy:run:exported"
   },
   "repository": {
