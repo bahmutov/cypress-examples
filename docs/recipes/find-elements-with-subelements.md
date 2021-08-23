@@ -59,4 +59,38 @@ cy.get('#list li')
   .should('have.text', 'first')
 ```
 
+What if we want to use Cypress commands inside the element filter callback? Like `cy.contains`? Let's find all `LI` elements that have labels with the text "Advanced" in them.
+
+```js
+cy.get('#list li')
+  .should('have.length', 5)
+  .then(($elements) => {
+    // all found LI elements
+    const filtered = []
+
+    Cypress._.each($elements, (li) => {
+      // to run a Cypress command against the DOM element
+      // wrap it inside Cypress chain
+      cy.wrap(li)
+        .contains('.label', 'Advanced')
+        .should(($label) => {
+          // there might NOT be such element
+          if ($label.length) {
+            // only if there is such label,
+            // put the original "li" element
+            // into the filtered list
+            filtered.push(li)
+          }
+        })
+    })
+
+    // yield the filtered list of DOM elements
+    // to the next Cypress assertion / command
+    cy.wrap(filtered)
+  })
+  .should('have.length', 1) // yields [li] array
+  .its(0) // yields the first LI DOM element from the array
+  .should('include.text', 'fifth') // confirm we found the right element
+```
+
 <!-- fiddle.end -->

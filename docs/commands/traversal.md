@@ -161,6 +161,7 @@ You can use `.filter` to find visible elements using jQuery selector `:visible`
 ```js
 cy.get('.visible-items li')
   .should('have.length', 4) // all LI items
+  // from all found elements, find only the visible ones
   .filter(':visible')
   .should('have.length', 2) // only 2 visible LI items
 ```
