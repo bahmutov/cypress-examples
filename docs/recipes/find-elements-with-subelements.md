@@ -47,6 +47,16 @@ cy.get('#list li')
   .should('include.text', 'fifth')
   .find('.label')
   .should('have.text', 'Advanced!')
+// we can perform the opposite: only take the elements
+// WITHOUT child element with class "badge" inside
+cy.get('#list li')
+  .then(($elements) =>
+    // Lodash _.reject method is the opposite of _.filter
+    Cypress._.reject($elements, (el) => el.querySelector('.label')),
+  )
+  .should('have.length', 2)
+  .first()
+  .should('have.text', 'first')
 ```
 
 <!-- fiddle.end -->
