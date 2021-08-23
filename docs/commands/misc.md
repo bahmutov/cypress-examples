@@ -293,6 +293,36 @@ cy.get('@wrappedObject').invoke('getNumber').should('equal', 42)
 
 <!-- fiddle-end -->
 
+### Wrapping DOM objects
+
+If you have a reference to a plain DOM element, you can wrap it to perform Cypress commands and assertions.
+
+<!-- fiddle cy.wrap() / DOM object -->
+
+```html
+<div id="wrap-dom-example">
+  <p class="inner">This is some text</p>
+</div>
+```
+
+```js
+// first, let's imagine we got the reference to the LI element
+// using DOM traversal method instead of cy.get
+cy.document().then((doc) => {
+  const div = doc.querySelector('#wrap-dom-example')
+  expect(Cypress.dom.isElement(div), 'is element').to.be.true
+  expect(Cypress.dom.isJquery(div), 'is wrapped in jQuery').to.be
+    .false
+  // if we want to use cy.contains to find specific text
+  // we can use cy.wrap first
+  cy.wrap(div).contains('some text').should('have.class', 'inner')
+  // we can wrap the element to use jQuery assertions
+  cy.wrap(div).should('have.id', 'wrap-dom-example')
+})
+```
+
+<!-- fiddle-end -->
+
 ### Wrapping promises
 
 If `cy.wrap` receives a Promise as an argument, Cypress automatically waits for the promise to complete.
