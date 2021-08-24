@@ -6,7 +6,7 @@ Examples of uses of the Cypress API, for a full reference, go to [docs.cypress.i
 
 To add a command, use `Cypress.Commands.add()`.
 
-<!-- fiddle add command -->
+<!-- fiddle Custom commands / add command -->
 
 ```js
 Cypress.Commands.add(
@@ -24,6 +24,24 @@ Cypress.Commands.add(
 )
 // prints the object to the window console
 cy.wrap({ life: 42 }).console('info')
+```
+
+<!-- fiddle-end -->
+
+### Calling other custom commands
+
+You can call other custom commands from inside a custom command.
+
+<!-- fiddle Custom commands / calling other commands -->
+
+```js
+Cypress.Commands.add('name', () => 'Joe')
+Cypress.Commands.add('greeting', () =>
+  // call the custom command cy.name
+  // then form the full greeting text and yield it
+  cy.name().then((n) => `Hello, ${n}`),
+)
+cy.greeting().should('equal', 'Hello, Joe')
 ```
 
 <!-- fiddle-end -->
