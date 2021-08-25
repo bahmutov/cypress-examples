@@ -66,6 +66,21 @@ cy.get('.price')
   })
 ```
 
-Of course, the above code has a lot of duplication and is hard to read. You should refactor it to make it easy to understand.
+Of course, the above code has a lot of duplication and is hard to read. You should refactor it to make it easy to understand. For example, we could avoid using individual `.then` commands and just extract the prices in a single callback.
+
+```js
+// alternative: extract and convert the prices using single .then callback
+cy.get('.price').then(($prices) => {
+  const innerText = (el) => el.innerText
+  const firstWord = (text) => text.split(' ')[0]
+  const justDigits = (str) => str.replace(/[^0-9.]/g, '')
+  const prices = Cypress._.map($prices, (el) =>
+    parseFloat(justDigits(firstWord(innerText(el)))),
+  )
+  // cy.log(prices.join(', '))
+  // confirm the "prices" array is already sorted
+  return prices
+})
+```
 
 <!-- fiddle.end -->
