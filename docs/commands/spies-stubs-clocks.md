@@ -268,6 +268,30 @@ cy.get('@birthday').should('not.have.been.called')
 
 <!-- fiddle-end -->
 
+### Returned value
+
+We can check the value returned by the method.
+
+<!-- fiddle cy.spy() / returned value -->
+
+```js
+const calc = {
+  add(a, b) {
+    return a + b
+  },
+}
+cy.spy(calc, 'add').as('add')
+expect(calc.add(4, 5), 'sum').to.equal(9)
+cy.get('@add').should('have.returned', 9)
+// if there are several calls
+calc.add(1, 2)
+calc.add(100, 200)
+// the assertion will pass if at least one returned 3
+cy.get('@add').should('have.returned', 3)
+```
+
+<!-- fiddle-end -->
+
 ## [cy.stub()](https://on.cypress.io/stub)
 
 To create a stub and/or replace a function with a stub, use the `cy.stub()` command.
