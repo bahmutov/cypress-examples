@@ -292,6 +292,43 @@ cy.get('@add').should('have.returned', 3)
 
 <!-- fiddle-end -->
 
+### Resolved value
+
+We can check the value returned by the method.
+
+<!-- fiddle cy.spy() / resolved values -->
+
+```js
+const calc = {
+  async add(a, b) {
+    const sum = await Cypress.Promise.resolve(a + b).delay(1000)
+    return sum
+  },
+}
+cy.spy(calc, 'add').as('add')
+// wait for the promise to resolve
+// then confirm its resolved value
+cy.wrap(calc.add(4, 5)).should('equal', 9)
+// make a few more calls
+cy.wrap(calc.add(1, 90)).should('equal', 91)
+cy.wrap(calc.add(-5, -8)).should('equal', -13)
+// example of confirming one of the calls used add(4, 5)
+cy.get('@add').should('have.been.calledWith', 4, 5)
+// now let's confirm the resolved values
+// first we need to wait for all promises to resolve
+cy.get('@add')
+  .its('returnValues')
+  // yields N promises, let's wait for them to resolve
+  // in this test they should be resolved already
+  // since we used cy.wrap() individually
+  .then(Promise.all.bind(Promise))
+  // alternative: to avoid the wrong "this" value when using Promise.all
+  // .then((ps) => Promise.all(ps))
+  .should('deep.equal', [9, 91, -13])
+```
+
+<!-- fiddle-end -->
+
 ## [cy.stub()](https://on.cypress.io/stub)
 
 To create a stub and/or replace a function with a stub, use the `cy.stub()` command.
