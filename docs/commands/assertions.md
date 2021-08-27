@@ -310,6 +310,41 @@ cy.contains('#a-greeting', /^Hello/)
 
 <!-- fiddle-end -->
 
+#### Converting text
+
+Sometimes you need to extract the text and convert it into a number before running an assertion.
+
+<!-- fiddle Implicit Assertions / .should() - convert text to number -->
+
+```html
+<div id="num-example">Messages <span class="messages">4</span></div>
+```
+
+```js
+cy.get('#num-example .messages')
+  .invoke('text')
+  .then(parseInt)
+  .should('equal', 4)
+  // if you do not know the exact expected number
+  // use range assertions, like "greater than", "within"
+  .and('be.gt', 0)
+  .and('be.within', 0, 10)
+```
+
+You can also combine multiple steps into a single "should" callback for greater [retry-ability](https://on.cypress.io/retry-ability).
+
+```js
+// use command + single assertion callback
+cy.get('#num-example .messages').should(($el) => {
+  const n = parseInt($el.text())
+  expect(n, 'number of messages')
+    .to.be.a('number')
+    .and.be.within(0, 10)
+})
+```
+
+<!-- fiddle-end -->
+
 #### OR match using regular expression
 
 If you want to confirm the text matches one string or another, use a regular expression
