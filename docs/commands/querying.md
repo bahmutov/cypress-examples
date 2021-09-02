@@ -490,6 +490,29 @@ cy.contains('.nickname', /^\s*Incredible\s*$/)
 
 <!-- prettier-ignore-end -->
 
+### Extract part of the text
+
+Once you found an element with some text, you can extract a specific part using a regular expression with [named groups](https://caniuse.com/mdn-javascript_builtins_regexp_named_capture_groups), which are supported by the modern browsers.
+
+<!-- fiddle contains / extract part of the text -->
+
+```html
+<div id="my-name">My name is Gleb, what's yours?</div>
+```
+
+```js
+cy.contains('#my-name', 'My name is')
+  // let's extract the name
+  .invoke('text')
+  // match a group using a regex
+  .invoke('match', /name is (?<name>\w+),/)
+  // grab just the specific group "name"
+  .its('groups.name')
+  .should('equal', 'Gleb')
+```
+
+<!-- fiddle-end -->
+
 ## [.within](https://on.cypress.io/within)
 
 We can find elements within a specific DOM element `.within()`
