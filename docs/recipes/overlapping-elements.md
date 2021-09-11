@@ -1,6 +1,6 @@
 # Overlapping elements
 
-Sometimes you want to make sure the DOM elements are overlapping or non-overlapping on the page.
+Sometimes you want to make sure the DOM elements are overlapping or non-overlapping on the page. We can get the bounding rectangle of an element on the page by calling the method `getBoundingClientRect`, then compare the two rectangles to see if they overlap. Using it from the Cypress test is simple: get both elements, get their rectangles, compute the overlap boolean, and assert if it matches the expected result. Note, that this version does not retry getting the elements or their rectangles if the assertion fails, thus it is not suitable to check the overlap between moving elements.
 
 <!-- fiddle Overlapping elements -->
 
@@ -13,6 +13,9 @@ Sometimes you want to make sure the DOM elements are overlapping or non-overlapp
 <style>
   .example-container {
     position: relative;
+    width: 200px;
+    height: 160px;
+    margin-top: 20px;
   }
   .rect {
     width: 100px;
@@ -20,18 +23,18 @@ Sometimes you want to make sure the DOM elements are overlapping or non-overlapp
     position: absolute;
   }
   .A {
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
     border: 1px red solid;
   }
   .B {
-    top: 10;
-    left: 120;
+    top: 10px;
+    left: 120px;
     border: 1px green solid;
   }
   .C {
-    top: 40;
-    left: 30;
+    top: 40px;
+    left: 30px;
     border: 1px blue solid;
   }
 </style>
@@ -93,6 +96,14 @@ cy.get('.A')
           })
       })
   })
+```
+
+Just for completeness, let's show which rectangles are considered visible by Cypress; I believe currently they all are.
+
+```js
+cy.get('.A').should('be.visible')
+cy.get('.B').should('be.visible')
+cy.get('.C').should('be.visible')
 ```
 
 <!-- fiddle-end -->
