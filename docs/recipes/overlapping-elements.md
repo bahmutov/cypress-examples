@@ -2,6 +2,8 @@
 
 Sometimes you want to make sure the DOM elements are overlapping or non-overlapping on the page. We can get the bounding rectangle of an element on the page by calling the method `getBoundingClientRect`, then compare the two rectangles to see if they overlap. Using it from the Cypress test is simple: get both elements, get their rectangles, compute the overlap boolean, and assert if it matches the expected result. Note, that this version does not retry getting the elements or their rectangles if the assertion fails, thus it is not suitable to check the overlap between moving elements.
 
+**Video:** watch me going through writing this test in the video [Overlapping Elements](https://youtu.be/HGju0gZdZ6o).
+
 <!-- fiddle Overlapping elements -->
 
 ```html
