@@ -203,6 +203,37 @@ cy.get('#greeting')
 
 <!-- fiddle-end -->
 
+#### Partial text match
+
+<!-- fiddle Implicit Assertions / .should() - partial text match -->
+
+```html
+<div id="parent-element">
+  some text at the start
+  <span class="inner">main content</span>
+  and some text afterwards
+</div>
+```
+
+```js
+cy.get('#parent-element')
+  // we only know a part of the text somewhere
+  // inside the element
+  .should('include.text', 'at the start')
+  // "include.text" and "contain" are synonym assertions
+  // to find partial text match
+  .and('contain', 'some text afterwards')
+  // the text inside the child element also counts
+  .and('contain', 'main content')
+cy.get('#parent-element')
+  // if we use cy.contains command
+  // we find the child <span> element
+  .contains('main')
+  .should('have.class', 'inner')
+```
+
+<!-- fiddle-end -->
+
 #### Visibility of multiple elements
 
 Only some elements should be visible for the assertion `should('be.visible')` to pass.
@@ -704,7 +735,7 @@ cy.get('.assertions-p')
 
 <!-- fiddle-end -->
 
-#### Partial string match example
+#### Partial class string match example
 
 Assert that element's class includes `heading-`.
 
