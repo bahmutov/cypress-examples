@@ -422,7 +422,7 @@ cy.get('#veggies').nextUntil('#nuts').should('have.length', 3)
 
 To remove DOM element(s) from the set of elements, use the `.not()` command.
 
-<!-- fiddle .not() - remove DOM elements from set of DOM elements -->
+<!-- fiddle .not() / remove DOM elements from set of DOM elements -->
 
 ```html
 <div class="traversal-disabled">
@@ -437,6 +437,41 @@ To remove DOM element(s) from the set of elements, use the `.not()` command.
 cy.get('.traversal-disabled .btn')
   .not('[disabled]')
   .should('not.contain', 'Disabled')
+```
+
+<!-- fiddle-end -->
+
+### Find all incomplete items
+
+Another example, showing the `.not` command vs jQuery `:not(...)` selector. Let's say we have several TODO items, and some of them are already completed.
+
+<!-- fiddle .not() / find incomplete items -->
+
+```html
+<style>
+  .todo.completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+</style>
+<ul id="todo-items">
+  <li class="todo completed">Code apps</li>
+  <li class="todo">Write tests</li>
+  <li class="todo completed">Get paid</li>
+</ul>
+```
+
+```js
+// there are two completed items
+cy.get('#todo-items').within(() => {
+  cy.get('.todo.completed').should('have.length', 2)
+  // select all elements with class "todo"
+  // remove all elements with class "completed"
+  cy.get('.todo').not('.completed').should('have.length', 1)
+  // slightly more robust command that does not split the query
+  // can be written using the jQuery ":not" selector
+  cy.get('.todo:not(.completed)').should('have.length', 1)
+})
 ```
 
 <!-- fiddle-end -->
