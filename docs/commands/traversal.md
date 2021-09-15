@@ -462,14 +462,15 @@ Another example, showing the `.not` command vs jQuery `:not(...)` selector. Let'
 ```
 
 ```js
-// there are two completed items
 cy.get('#todo-items').within(() => {
+  // there are two completed items
   cy.get('.todo.completed').should('have.length', 2)
-  // select all elements with class "todo"
-  // remove all elements with class "completed"
+  // but how do we find the incomplete items?
+  // 1. select all elements with class "todo"
+  // 2. remove all elements with class "completed"
   cy.get('.todo').not('.completed').should('have.length', 1)
-  // slightly more robust command that does not split the query
-  // can be written using the jQuery ":not" selector
+  // ALTERNATIVE: a slightly more robust way that does not split the query
+  // commands; we can use the jQuery ":not" selector
   cy.get('.todo:not(.completed)').should('have.length', 1)
 })
 ```
