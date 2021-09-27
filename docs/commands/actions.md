@@ -898,6 +898,27 @@ cy.get('.action-select-multiple')
   .should('include', 'fr-oranges')
 ```
 
+You can select an option by index.
+
+```js
+// select the very first option (the index starts at zero)
+cy.get('.action-select')
+  .select(0)
+  .should('have.value', '--Select a fruit--')
+  // select the apple option, which is at index 1
+  .select(1)
+  .should('have.value', 'fr-apples')
+```
+
+Select multiple options by index
+
+```js
+cy.get('.action-select-multiple')
+  .select([1, 2])
+  .invoke('val')
+  .should('deep.equal', ['fr-oranges', 'fr-bananas'])
+```
+
 <!-- fiddle-end -->
 
 ## [.scrollIntoView()](https://on.cypress.io/scrollintoview)
