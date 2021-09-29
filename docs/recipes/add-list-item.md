@@ -45,6 +45,51 @@ cy.get('#add')
 cy.takeRunnerPic('add-list-item')
 ```
 
-<!-- fiddle.end -->
+<!-- fiddle-end -->
 
 ![Add list item test](./pics/add-list-item.png)
+
+## Delete list item
+
+<!-- fiddle "Delete list item" -->
+
+```html
+<ol id="list">
+  <li>first</li>
+  <li>second</li>
+  <li>third</li>
+</ol>
+<button id="del">Delete a list item</button>
+<script>
+  let list2 = document.getElementById('list')
+  document
+    .getElementById('del')
+    .addEventListener('click', function () {
+      // simulate an application with random delay
+      setTimeout(() => {
+        list2.children[0].remove()
+      }, Math.random() * 1000 + 1500)
+    })
+</script>
+```
+
+```js
+// first, get the number of elements currently in the list
+cy.get('#list li')
+  // by adding an assertion like this
+  // we support an empty initial list without any items
+  .should('have.length.gte', 0)
+  .its('length')
+  .then((N) => {
+    // if N is zero, nothing to delete
+    if (N === 0) {
+      return
+    }
+    // delete one element
+    cy.get('#del').click()
+    // fetch the list items; there should be N - 1 items
+    cy.get('#list li').should('have.length', N - 1)
+  })
+```
+
+<!-- fiddle-end -->

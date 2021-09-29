@@ -153,3 +153,7 @@ cy.get('@log').should('be.calledOnceWith', 'first click')
 ```
 
 <!-- fiddle-end -->
+
+## More examples
+
+- [Add / delete list item recipe](./add-list-item.md)
