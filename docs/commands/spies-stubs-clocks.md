@@ -653,6 +653,34 @@ expect(person.getName()).to.equal('eoJ')
 
 <!-- fiddle-end -->
 
+### Check the order of calls
+
+<!-- fiddle cy.stub() / check the order of calls -->
+
+You can check if one stub was called before or after another stub.
+
+```js
+const cart = {
+  init() {
+    return 'initialized'
+  },
+  finalize() {
+    return 'finalized'
+  },
+  execute() {
+    this.init()
+    this.finalize()
+  },
+}
+cy.spy(cart, 'init')
+cy.spy(cart, 'finalize')
+cart.execute()
+// confirm the "init" method was called before the "finalize" method
+expect(cart.init).to.have.been.calledBefore(cart.finalize)
+```
+
+<!-- fiddle-end -->
+
 ## [cy.clock()](https://on.cypress.io/clock)
 
 To control time in the browser, use the `cy.clock()` command.
