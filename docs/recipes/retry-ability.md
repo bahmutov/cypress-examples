@@ -34,7 +34,7 @@ cy.get('#inner')
 
 ## Counts retries
 
-One can even count how many times the command and assertion were retried by providing a dummy `.should(cb)` function.
+One can even count how many times the command and assertion were retried by providing a dummy `.should(cb)` function. A similar approach was described in the blog post [When Can The Test Click?](https://www.cypress.io/blog/2019/01/22/when-can-the-test-click/).
 
 <!-- fiddle Retry-ability / count retries -->
 
