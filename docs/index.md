@@ -153,10 +153,11 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Find elements by exact class or text](recipes/find-by-class-or-text.md)
 - [Assert the selected value or multiple values](recipes/selected-value.md) in a `<select>` element
 - [Select an item by id](./recipes/select-value-by-id.md)
-- [Get the inner text of a list of elements](recipes/get-text-list.md)
-- [Conditional testing](recipes/conditional-testing.md)
-- [Form input validation](recipes/form-validation.md)
-- [Retry-ability examples](recipes/retry-ability.md)
+- [Get the inner text of a list of elements](./recipes/get-text-list.md)
+- [Conditional testing](./recipes/conditional-testing.md)
+- [Form input validation](./recipes/form-validation.md)
+- [Retry-ability examples](./recipes/retry-ability.md)
+  - [Count retries](./recipes/retry-ability.md#count-retries)
 - [Get multiple fields at once](./recipes/get-multiple-fields.md)
 - [Find an object in the array](./recipes/find-object.md)
 - [Wait for data](./recipes/wait-for-data.md) to be set
