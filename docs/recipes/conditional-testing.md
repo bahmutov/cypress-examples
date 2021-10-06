@@ -154,6 +154,27 @@ cy.get('@log').should('be.calledOnceWith', 'first click')
 
 <!-- fiddle-end -->
 
+## Use a cookie if present
+
+Getting a cookie using [cy.getCookie](https://on.cypress.io/getcookie) command does not retry, thus you can simply work with the yielded value.
+
+<!-- fiddle Print the cookie if it exists -->
+
+```js
+function printCookieMaybe(cookie) {
+  if (cookie) {
+    cy.log(`Found the cookie with value: ${cookie.value}`)
+  } else {
+    cy.log('No cookie for you')
+  }
+}
+cy.getCookie('my-cookie').then(printCookieMaybe)
+cy.setCookie('my-cookie', 'nice')
+cy.getCookie('my-cookie').then(printCookieMaybe)
+```
+
+<!-- fiddle-end -->
+
 ## More examples
 
 - [Add / delete list item recipe](./add-list-item.md)
