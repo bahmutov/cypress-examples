@@ -125,6 +125,45 @@ cy.get('#tag-example').should('have.prop', 'nodeName', 'MARQUEE')
 
 <!-- fiddle-end -->
 
+#### Newlines
+
+If the text contais newline characters, you can trim it before asserting the text contents or use [cy.contains](https://on.cypress.io/contains) or `include.text` assertion.
+
+<!-- fiddle Implicit Assertions / .should() - text with newlines -->
+
+To better show how assertions wait for the application to be ready, this element adds "there!" after a delay.
+
+```html
+<div id="newlines">
+  hello
+</div>
+<script>
+  setTimeout(() => {
+    document.getElementById('newlines').innerText += ', there!\n'
+  }, 1000)
+</script>
+```
+
+```js
+cy.get('#newlines')
+  // cannot use "have.text" because it requires
+  // and exact match, and the element has "\n...\n"
+  // .should('have.text', 'hello, there!')
+  // if you want to perform specific text transforms
+  // before checking it, do it inside a should(cb) function
+  .should(($el) => {
+    // yget and trim the text before comparing
+    const text = $el.text().trim()
+    expect(text).to.equal('hello, there!')
+  })
+  // the "include.text" assertion only checks part of the text
+  .and('include.text', 'hello, there!')
+// cy.contains uses partial text match too
+cy.contains('#newlines', 'hello, there!')
+```
+
+<!-- fiddle-end -->
+
 #### HTML entities
 
 <!-- fiddle Implicit Assertions / .should() - html entities -->
