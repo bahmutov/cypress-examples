@@ -134,18 +134,19 @@ If the text contais newline characters, you can trim it before asserting the tex
 To better show how assertions wait for the application to be ready, this element adds "there!" after a delay.
 
 ```html
-<div id="newlines">
+<div id="newlines-example">
   hello
 </div>
 <script>
   setTimeout(function () {
-    document.getElementById('newlines').innerText += ', there!\n'
+    document.getElementById('newlines-example').innerText +=
+      ', there!\n'
   }, 1000)
 </script>
 ```
 
 ```js
-cy.get('#newlines')
+cy.get('#newlines-example')
   // cannot use "have.text" because it requires
   // and exact match, and the element has "\n...\n"
   // .should('have.text', 'hello, there!')
@@ -158,8 +159,9 @@ cy.get('#newlines')
   })
   // the "include.text" assertion only checks part of the text
   .and('include.text', 'hello, there!')
+
 // cy.contains uses partial text match too
-cy.contains('#newlines', 'hello, there!')
+cy.contains('#newlines-example', 'hello, there!')
 ```
 
 <!-- fiddle-end -->
