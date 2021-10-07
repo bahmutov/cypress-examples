@@ -138,7 +138,7 @@ To better show how assertions wait for the application to be ready, this element
   hello
 </div>
 <script>
-  setTimeout(() => {
+  setTimeout(function () {
     document.getElementById('newlines').innerText += ', there!\n'
   }, 1000)
 </script>
