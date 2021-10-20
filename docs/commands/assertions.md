@@ -776,7 +776,7 @@ cy.get('.assertions-p')
 
 <!-- fiddle-end -->
 
-#### Partial class string match example
+### Partial class string match example
 
 Assert that element's class includes `heading-`.
 
@@ -808,7 +808,7 @@ cy.get('.docs-header')
 
 <!-- fiddle-end -->
 
-#### Throwing own errors
+### Throwing own errors
 
 You can throw any error from the callback function. The callback will be retried, but the assertions will not be shown as nicely in the Command Log UI as Chai assertions.
 
@@ -841,7 +841,7 @@ cy.get('.docs-header-example')
 
 <!-- fiddle-end -->
 
-#### Dynamic text example
+### Dynamic text example
 
 We [strongly recommend that your tests are deterministic](https://on.cypress.io/conditional-testing). But sometimes you might need to match text between two elements, and you do not know what that text should be. Save the value from the first element, then compare it from a `should(cb)` callback.
 
@@ -887,7 +887,7 @@ cy.get('.two-elements')
 
 <!-- fiddle-end -->
 
-#### Retrying should callback
+### Retrying should callback
 
 Remember that Cypress only [retries the very last command](https://on.cypress.io/retry-ability), if it allows retrying. If you need to perform additional steps before running an assertion, you can use `.should(callbackFn)` to retry multiple operations.
 
