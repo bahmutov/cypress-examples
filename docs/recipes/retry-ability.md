@@ -2,6 +2,8 @@
 
 For more information see [Cypress retry-ability guide](https://on.cypress.io/retry-ability).
 
+## Multiple assertions
+
 <!-- fiddle Retry-ability / text appears and becomes red -->
 
 ```html
@@ -62,6 +64,38 @@ cy.get('#red-example')
   .then(() => {
     cy.log(`retried **${count}** times`)
   })
+```
+
+<!-- fiddle-end -->
+
+## Merging queries
+
+Instead of splitting querying commands like `cy.get(...).first()` use a single `cy.get` with a combined CSS querty using the `:first` selector.
+
+<!-- fiddle Retry-ability / merging queries -->
+
+```html
+<ul id="items">
+  <li>Apples</li>
+</ul>
+<script>
+  setTimeout(() => {
+    // notice that we re-render the entire list
+    // and insert the item at the first position
+    document.getElementById('items').innerHTML = `
+      <li>Grapes</li>
+      <li>Apples</li>
+    `
+  }, 2000)
+</script>
+```
+
+How do we confirm that the first element in the list is "Grapes"? By using a single `cy.get` command.
+
+```js
+cy.get('#items li:first').should('have.text', 'Grapes')
+// equivalent
+cy.contains('#items li:first', 'Grapes')
 ```
 
 <!-- fiddle-end -->
