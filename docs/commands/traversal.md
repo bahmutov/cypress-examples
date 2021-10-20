@@ -318,6 +318,42 @@ cy.get('.traversal-table td').first().should('contain', '1')
 
 <!-- fiddle-end -->
 
+## :first selector
+
+You can also use `:first` CSS selector to merge the `cy.get` and `.first` commands into a single one for better [retry-ability](https://on.cypress.io/retry-ability)
+
+<!-- fiddle :first CSS selector -->
+
+```html
+<table class="table traversal-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Jane</td>
+      <td>Lane</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>John</td>
+      <td>Doe</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+```js
+cy.get('.traversal-table td:first').should('have.text', '1')
+```
+
+<!-- fiddle-end -->
+
 ## [.last()](https://on.cypress.io/last)
 
 To get the last DOM element within elements, use the `.last()` command.
