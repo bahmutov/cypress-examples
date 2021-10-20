@@ -915,6 +915,28 @@ cy.get('#random-number').should(($div) => {
 
 <!-- fiddle-end -->
 
+### Should vs Then
+
+You can write assertions inside `.should(callback)` or using the `.then(callback)` functions. The `.should(callback)` will _retry_ if the assertions fail and the previous command can be retried. If an assertion inside `.then(callback)` fails, then the test fails immediately. Thus I suggest using `.then(cb)` if the previous command is never going to be retried like `cy.request` or `cy.wrap`
+
+<!-- fiddle Should(cb) / retries in vain -->
+
+```js
+// works, but is NOT recommended
+// because it will retry the assertion even if the object never changes
+// until the command time out passes
+cy.wrap({ name: 'Joe' }).should((o) => {
+  expect(o).to.have.property('name', 'Joe')
+})
+// recommended: using .then to immediately fail
+// if the assertion fails
+cy.wrap({ name: 'Joe' }).then((o) => {
+  expect(o).to.have.property('name', 'Joe')
+})
+```
+
+<!-- fiddle-end -->
+
 ## Multiple assertions
 
 If you attach multiple assertions to the same command, all assertions must pass at once. For example, here is a test that shows how to correctly check the disappearing element.
