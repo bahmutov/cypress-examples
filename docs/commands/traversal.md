@@ -349,7 +349,10 @@ You can also use `:first` CSS selector to merge the `cy.get` and `.first` comman
 ```
 
 ```js
+// get the first table cell using the :first CSS selector
 cy.get('.traversal-table td:first').should('have.text', '1')
+// get the first row
+cy.get('.traversal-table tbody tr:first').contains('td', 'Lane')
 ```
 
 <!-- fiddle-end -->
@@ -373,6 +376,9 @@ To get the last DOM element within elements, use the `.last()` command.
 
 ```js
 cy.get('.traversal-buttons .btn').last().should('contain', 'Submit')
+// you can also use the CSS selector :last to avoid
+// using a separate .last() command
+cy.get('.traversal-buttons .btn:last').should('contain', 'Submit')
 ```
 
 <!-- fiddle-end -->

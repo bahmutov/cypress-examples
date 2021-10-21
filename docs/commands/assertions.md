@@ -924,7 +924,7 @@ You can write assertions inside `.should(callback)` or using the `.then(callback
 ```js
 // works, but is NOT recommended
 // because it will retry the assertion even if the object never changes
-// until the command time out passes
+// until the command timeout passes
 cy.wrap({ name: 'Joe' }).should((o) => {
   expect(o).to.have.property('name', 'Joe')
 })
