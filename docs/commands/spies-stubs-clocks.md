@@ -712,6 +712,35 @@ cy.get('@alert').its('callCount').should('equal', 3)
 
 <!-- fiddle-end -->
 
+### Stub window.prompt
+
+If the application is asking the user for simple information using `window.prompt`, you can use `cy.stub` to respond with a test answer.
+
+<!-- fiddle cy.stub() / stub window.prompt -->
+
+```html
+<button id="greet-by-name">Greet me</button>
+<script>
+  document
+    .getElementById('greet-by-name')
+    .addEventListener('click', function () {
+      const name = prompt('What is your name?')
+      alert('Hello ' + name)
+    })
+</script>
+```
+
+```js
+cy.window().then((win) => {
+  cy.stub(win, 'prompt').returns('Cy')
+  cy.stub(win, 'alert').as('alert')
+})
+cy.get('#greet-by-name').click()
+cy.get('@alert').should('have.been.calledOnceWith', 'Hello Cy')
+```
+
+<!-- fiddle-end -->
+
 ## [cy.clock()](https://on.cypress.io/clock)
 
 To control time in the browser, use the `cy.clock()` command.
