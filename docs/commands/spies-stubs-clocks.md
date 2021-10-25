@@ -681,6 +681,37 @@ expect(cart.init).to.have.been.calledBefore(cart.finalize)
 
 <!-- fiddle-end -->
 
+### Stub window.alert
+
+If the application is using `window.alert` to show short messages to the user, you can use `cy.stub` to intercept those calls and avoid blocking the test runner.
+
+<!-- fiddle cy.stub() / stub window.alert -->
+
+```html
+<button id="sayhi">Click me</button>
+<script>
+  document
+    .getElementById('sayhi')
+    .addEventListener('click', function () {
+      alert('Hello there!')
+    })
+</script>
+```
+
+```js
+cy.window().then((win) => {
+  cy.stub(win, 'alert').as('alert')
+})
+cy.get('#sayhi').click()
+cy.get('@alert').should('have.been.calledOnceWith', 'Hello there!')
+// the application can trigger the alert several times
+cy.get('#sayhi').click().click()
+// we can confirm the total number of calls
+cy.get('@alert').its('callCount').should('equal', 3)
+```
+
+<!-- fiddle-end -->
+
 ## [cy.clock()](https://on.cypress.io/clock)
 
 To control time in the browser, use the `cy.clock()` command.
