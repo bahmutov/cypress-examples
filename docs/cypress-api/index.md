@@ -267,6 +267,22 @@ cy.wrap(Cypress.spec).should('include.keys', [
 
 <!-- fiddle-end -->
 
+### Multiple specs
+
+If you are using `cypress open` to run multiple specs at once, you can detect it by using the `Cypress.spec` object. The field `name` will be set to "All Integration Specs" and the fields `absolute` and `relative` will be set to "\_\_all".
+
+<!-- fiddle Cypress.spec / Multiple specs -->
+
+```js
+if (Cypress.spec.absolute === '__all') {
+  cy.log('Running several specs together')
+} else {
+  cy.log(`Running a single spec ${Cypress.spec.relative}`)
+}
+```
+
+<!-- fiddle-end -->
+
 ## [Cypress.currentTest](https://docs.cypress.io/api/cypress-api/currenttest)
 
 `Cypress.currentTest` is an object representing the currently executing test instance, with properties to access the title of the test.
