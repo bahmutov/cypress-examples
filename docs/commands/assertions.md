@@ -603,6 +603,32 @@ cy.get('[data-cy=subject-example]') // jQuery element
 
 <!-- fiddle-end -->
 
+#### Escape special characters
+
+Sometimes an attribute can have a special character like `.` or `:` in it. If you are just checking the attribute name, you do not need to escape them.
+
+<!-- fiddle Implicit Assertions / .should() - have.attr with a dot -->
+
+```html
+<div id="escape-attribute" attr.aria-label="Attribute example">
+  Example
+</div>
+```
+
+```js
+// confirm the element has the attribute
+cy.get('#escape-attribute').should('have.attr', 'attr.aria-label')
+// confirm the element has the attribute and that attribute
+// has the specific value
+cy.get('#escape-attribute').should(
+  'have.attr',
+  'attr.aria-label',
+  'Attribute example',
+)
+```
+
+<!-- fiddle-end -->
+
 #### `have.attr` assertion chain
 
 <!-- fiddle Implicit Assertions / .should() - have.attr matching part of the string -->

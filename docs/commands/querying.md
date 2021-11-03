@@ -180,6 +180,28 @@ cy.get('#specific-href a[href="index.html"]')
 
 <!-- fiddle-end -->
 
+### Escape the attribute
+
+Sometimes an attribute can have a special character like `.` or `:` in it. Please escape the attribute using the `\\` character.
+
+<!-- fiddle cy.get / escape special characters in attribute -->
+
+```html
+<div id="escape-attribute" attr.aria-label="Attribute example">
+  Example
+</div>
+```
+
+```js
+cy.get('[attr\\.aria-label="Attribute example"]')
+  .should('have.id', 'escape-attribute')
+  // ignore the newline characters by using the assertion "include.text"
+  // rather than the assertion "have.text"
+  .and('include.text', 'Example')
+```
+
+<!-- fiddle-end -->
+
 ### Attribute prefix
 
 Let's get the element with ID starting with "local-example" prefix
