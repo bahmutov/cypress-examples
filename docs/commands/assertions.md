@@ -508,6 +508,8 @@ cy.contains('#data-attributes li', 'third')
 
 <!-- fiddle-end -->
 
+**Tip:** you can simplify checking for "data-" attributes by adding your own custom Chai assertion, see the [recipe](../recipes/add-data-assertion.md).
+
 ### [.and()](https://on.cypress.io/and)
 
 To chain multiple assertions together, use the `.and()` command.
