@@ -34,4 +34,17 @@ cy.get('#list li')
   .should('have.id', 'answer')
 ```
 
+Another solution is to use [.nextUntil](https://on.cypress.io/nextuntil) command.
+
+```js
+// alternative solution: slice using cy.nextUntil
+cy.get('#list li')
+  .contains('li', 'org2')
+  // all LI siblings after "<li>org2</li>" element
+  .nextUntil()
+  .should('have.length', 2)
+  .contains('workspace1')
+  .should('have.id', 'answer')
+```
+
 <!-- fiddle.end -->
