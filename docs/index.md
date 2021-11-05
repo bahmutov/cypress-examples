@@ -169,3 +169,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Find elements with subelements](./recipes/find-elements-with-subelements.md)
 - [Confirm the sorted list](./recipes/sorted-list.md)
 - [Overlapping elements on the page](./recipes/overlapping-elements.md)
+- [Search part of the list](./recipes/search-part-of-the-list.md)
