@@ -99,3 +99,35 @@ cy.contains('#items li:first', 'Grapes')
 ```
 
 <!-- fiddle-end -->
+
+## Using aliases
+
+You can split the Cypress commands if you use an element alias with the [cy.as](https://on.cypress.io/as) command. When the element is checked, if
+
+<!-- fiddle Retry-ability / using aliases -->
+
+```html
+<ul id="items">
+  <li>Apples</li>
+</ul>
+<script>
+  setTimeout(() => {
+    // notice that we re-render the entire list
+    // and insert the item at the first position
+    document.getElementById('items').innerHTML = `
+      <li>Grapes</li>
+      <li>Apples</li>
+    `
+  }, 2000)
+</script>
+```
+
+```js
+// notice how we create an alias to the element we want to check
+cy.get('#items li').first().as('firstItem')
+// when using the alias, if the element is detached from DOM
+// the entire chain is recomputed (but non-querying commands are skipped)
+cy.get('@firstItem').should('have.text', 'Grapes')
+```
+
+<!-- fiddle-end -->
