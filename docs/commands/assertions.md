@@ -459,6 +459,55 @@ cy.get('#example-input')
 
 <!-- fiddle-end -->
 
+#### Data attributes
+
+<!-- fiddle Implicit Assertions / .should() - data attributes -->
+
+```html
+<ul id="data-attributes">
+  <li data-test-id="first">first</li>
+  <li data-e2e="second">second</li>
+  <li data-e2e="one" data-cy="two">third</li>
+</ul>
+```
+
+We can check if an element has a particular "data-x" attribute present, and its value using a "have.data" assertion.
+
+```js
+cy.contains('#data-attributes li', 'first')
+  // "data" object converts names to camel case
+  .should('have.data', 'testId', 'first')
+  // the assertion yields the value of the data attribute
+  .should('equal', 'first')
+
+cy.contains('#data-attributes li', 'second')
+  // first assertion confirms there is such "data-x" property
+  .should('have.data', 'e2e')
+  // and yields the value that we assert in the next assertion
+  .should('equal', 'second')
+
+// multiple "data-" properties need multiple commands
+cy.contains('#data-attributes li', 'third').should(
+  'have.data',
+  'e2e',
+  'one',
+)
+cy.contains('#data-attributes li', 'third').should(
+  'have.data',
+  'cy',
+  'two',
+)
+// or a single "data()" call to get an object of values
+cy.contains('#data-attributes li', 'third')
+  .invoke('data')
+  .should('deep.equal', {
+    e2e: 'one',
+    cy: 'two',
+  })
+```
+
+<!-- fiddle-end -->
+
 ### [.and()](https://on.cypress.io/and)
 
 To chain multiple assertions together, use the `.and()` command.
