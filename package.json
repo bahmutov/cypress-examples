@@ -49,7 +49,7 @@
     "common-tags": "1.8.0",
     "cypress": "8.7.0",
     "cypress-book": "1.5.0",
-    "cypress-markdown-preprocessor": "1.1.7",
+    "cypress-markdown-preprocessor": "1.1.8",
     "dependency-version-badge": "1.2.0",
     "globby": "11.0.1",
     "http-server": "0.12.3",
