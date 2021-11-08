@@ -28,3 +28,5 @@ cy.get('#output')
 ```
 
 <!-- fiddle-end -->
+
+Watch the explanation video [Confirm The Text On The Page Changes After A Click](https://youtu.be/BbxjeXmIUeo).
