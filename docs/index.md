@@ -143,6 +143,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 
 ## Recipes
 
+- [Confirm the text changes after the click](./recipes/text-changes.md)
 - [Checking the length of the list after adding or deleting an item](./recipes/add-list-item.md)
 - [CSS class name examples](./recipes/css-examples.md)
 - [Iterate over elements using `.each` command](./recipes/each-example.md)
