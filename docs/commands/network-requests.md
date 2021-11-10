@@ -588,3 +588,55 @@ cy.get('@getCommentTimed')
 ```
 
 <!-- fiddle-end -->
+
+## cy.intercept number
+
+Let's say you want to confirm how many times a specific network intercept happens
+
+<!-- fiddle cy.intercept() number -->
+
+```html
+<button class="network-count-btn btn btn-primary">Get Comment</button>
+<div class="network-count-comment"></div>
+<script>
+  // place the example code into a closure to isolate its variables
+  ;(function () {
+    // we fetch all data from this REST json backend
+    const root = 'https://jsonplaceholder.cypress.io'
+
+    function getComment() {
+      $.ajax({
+        url: `${root}/comments/1`,
+        method: 'GET',
+      }).then(function (data) {
+        $('.network-count-comment').text(data.body)
+      })
+    }
+
+    $('.network-count-btn').on('click', function (e) {
+      e.preventDefault()
+      // fetch the comment after some random delay
+      setTimeout(function () {
+        getComment()
+      }, 1000 + 1000 * Math.random())
+    })
+  })()
+</script>
+```
+
+```js
+let count = 0
+cy.intercept('GET', '**/comments/*', () => {
+  count += 1
+}).as('getComment')
+cy.get('.network-count-btn').click().click().click()
+// WRONG: unfortunately the "getComment.all" does NOT retry
+// thus the following command immediately fails
+// cy.get('@getComment.all').should('have.length', 3)
+// you can use cypress-recurse to retry OR keep the count yourself
+cy.should(() => {
+  expect(count, 'network call count').to.equal(3)
+})
+```
+
+<!-- fiddle-end -->
