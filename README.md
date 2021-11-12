@@ -18,6 +18,15 @@ Live site [glebbahmutov.com/cypress-examples/](https://glebbahmutov.com/cypress-
 - recipes that are not included in the NPM package but deployed to the static pages
 - top level pages redirect to the deployed version pages. For example if the user visits `/cypress-examples/` they are redirected to `/cypress-examples/x.y.z/` page.
 
+## Blog posts
+
+The following blog posts explain how I write Cypress demo tests using Markdown in this repository
+
+- [Run End-to-end Tests from Markdown Files](https://glebbahmutov.com/blog/cypress-fiddle/)
+- [Write Cypress Markdown Preprocessor](https://glebbahmutov.com/blog/write-cypress-preprocessor/)
+
+You can see the [cypress.json](./cypress.json) and [plugins.js](./plugins.js) to learn how [cypress-markdown-preprocessor](https://github.com/bahmutov/cypress-markdown-preprocessor) is set tup.
+
 ## Notes
 
 - use "function" syntax in `<script>` tags that need to be live, otherwise Markdown escapes `=>` arrows?!
