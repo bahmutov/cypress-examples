@@ -45,3 +45,5 @@ cy.get('[data-cy=comment-number]')
 ```
 
 <!-- fiddle-end -->
+
+You can find this recipe explained in the video [Request A Specific Comment Using Text From The Page](https://youtu.be/pz_orYM-7xM)
