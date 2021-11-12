@@ -5,7 +5,7 @@ Imagine we have a page showing a number of a comment to fetch. The test needs to
 <!-- fiddle Request a specific comment -->
 
 ```html
-<div>Comment number <span data-cy="comment-number">#23</span></div>
+<div>Comment number <span data-cy="comment-number">#23#</span></div>
 ```
 
 ```js
