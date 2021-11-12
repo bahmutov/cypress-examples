@@ -15,7 +15,7 @@ cy.get('[data-cy=comment-number]')
   // the text might have other characters which we will remove
   // the comment number must be an integer
   // thus we will remove all non-digit characters
-  .then((s) => Cypress._.replace(s, /[\D]/, ''))
+  .invoke('replace', /[\D]/g, '')
   .should('not.be.empty')
   .then(parseInt)
   .should('be.a', 'number')
