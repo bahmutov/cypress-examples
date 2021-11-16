@@ -30,6 +30,7 @@ You can see the [cypress.json](./cypress.json) and [plugins.js](./plugins.js) to
 ## Notes
 
 - use "function" syntax in `<script>` tags that need to be live, otherwise Markdown escapes `=>` arrows?!
+- if the HTML block includes the `<style>` section, put it at the start of the block, otherwise it might get lost
 
 ## Try published specs
 
