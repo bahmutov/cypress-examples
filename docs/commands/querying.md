@@ -844,14 +844,16 @@ Some of the anchor elements below do not have `href` attribute, thus they are no
 ```
 
 ```js
-cy.get('[data-cy=pseudo-links]').within(() => {
-  // by default, "a" returns all 3 elements
-  cy.get('a').should('have.length', 3)
-  // select "a" elements with "href" attribute
-  cy.get('a:link').should('have.length', 2)
-  // which is equivalent to
-  cy.get('a[href]').should('have.length', 2)
-})
+cy.get('[data-cy=pseudo-links]')
+  .scrollIntoView()
+  .within(() => {
+    // by default, "a" returns all 3 elements
+    cy.get('a').should('have.length', 3)
+    // select "a" elements with "href" attribute
+    cy.get('a:link').should('have.length', 2)
+    // which is equivalent to
+    cy.get('a[href]').should('have.length', 2)
+  })
 ```
 
 <!-- fiddle-end -->
@@ -872,12 +874,14 @@ Let's find all elements without any content using `:empty` pseudo selector. Noti
 ```
 
 ```js
-cy.get('[data-cy=empty-elements]').within(() => {
-  cy.get('p:empty')
-    .should('have.length', 3)
-    .last()
-    .should('have.class', 'nothing')
-})
+cy.get('[data-cy=empty-elements]')
+  .scrollIntoView()
+  .within(() => {
+    cy.get('p:empty')
+      .should('have.length', 3)
+      .last()
+      .should('have.class', 'nothing')
+  })
 ```
 
 <!-- fiddle-end -->
@@ -900,13 +904,15 @@ cy.get('[data-cy=empty-elements]').within(() => {
 ```
 
 ```js
-cy.get('[data-cy=first-letter]').within(() => {
-  // Cypress does not recognize the selector "p::first-letter"
-  // because the jQuery engine does not support them
-  // thus the following DOES NOT WORK with error
-  // "Syntax error, unrecognized expression: p::first-letter"
-  // cy.get('p::first-letter')
-})
+cy.get('[data-cy=first-letter]')
+  .scrollIntoView()
+  .within(() => {
+    // Cypress does not recognize the selector "p::first-letter"
+    // because the jQuery engine does not support them
+    // thus the following DOES NOT WORK with error
+    // "Syntax error, unrecognized expression: p::first-letter"
+    // cy.get('p::first-letter')
+  })
 ```
 
 <!-- fiddle-end -->
@@ -929,20 +935,22 @@ cy.get('[data-cy=first-letter]').within(() => {
 ```
 
 ```js
-cy.get('[data-cy=before-example]').within(() => {
-  // Cypress does not recognize the selector "p::before"
-  // because the jQuery engine does not support them
-  // so we get the content through the computed style
-  // see https://codepen.io/chriscoyier/pen/Pzzawj
-  cy.window().then((win) => {
-    cy.contains('Hello').then(($el) => {
-      const before = win.getComputedStyle($el[0], '::before')
-      const beforeContent = before.getPropertyValue('content')
-      // the content is a string, thus we need to quote it
-      expect(beforeContent).to.equal('"Greeting"')
+cy.get('[data-cy=before-example]')
+  .scrollIntoView()
+  .within(() => {
+    // Cypress does not recognize the selector "p::before"
+    // because the jQuery engine does not support them
+    // so we get the content through the computed style
+    // see https://codepen.io/chriscoyier/pen/Pzzawj
+    cy.window().then((win) => {
+      cy.contains('Hello').then(($el) => {
+        const before = win.getComputedStyle($el[0], '::before')
+        const beforeContent = before.getPropertyValue('content')
+        // the content is a string, thus we need to quote it
+        expect(beforeContent).to.equal('"Greeting"')
+      })
     })
   })
-})
 ```
 
 <!-- fiddle-end -->
