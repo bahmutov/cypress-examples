@@ -166,6 +166,16 @@ cy.get('.visible-items li')
   .should('have.length', 2) // only 2 visible LI items
 ```
 
+**Tip:** you can make the test more robust against flake by merging the two commands `cy.get` + `.filter` into a single one following the advice given in the [Cypress Retry-ability](https://on.cypress.io/retry-ability) guide.
+
+```js
+cy.log('**single :visible selector query**')
+// use a single CSS + :visible jQuery selector
+cy.get('.visible-items li:visible')
+  // only 2 visible LI items
+  .should('have.length', 2)
+```
+
 <!-- fiddle-end -->
 
 ## [.find()](https://on.cypress.io/find)
