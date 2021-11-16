@@ -109,6 +109,52 @@ cy.get('#either #hides').should(($el) => {
 
 <!-- fiddle-end -->
 
+## Click a button if present
+
+Let's say that we want to click a button if it is present on the page. We need to avoid triggering the built-in existence assertion in the `cy.get` or `cy.contains` commands, and click the button only after checking it ourselves.
+
+<!-- fiddle Click a button if present -->
+
+```html
+<div>
+  <p>The button might appear here</p>
+  <div id="output"></div>
+</div>
+<script>
+  if (Math.random() < 0.5) {
+    const output = document.getElementById('output')
+    const btn = document.createElement('button')
+    btn.innerHTML = 'Click Me'
+    output.appendChild(btn)
+    btn.addEventListener('click', () => {
+      console.log('Clicked')
+    })
+  }
+</script>
+```
+
+```js
+// get the button but disable the built-in cy.contains assertions
+// by appending our own dummy .should() assertion
+cy.contains('button', 'Click Me')
+  .should((_) => {})
+  .then(($button) => {
+    if (!$button.length) {
+      // there is no button
+      cy.log('there is no button')
+      return
+    } else {
+      cy.window().then((win) => {
+        cy.spy(win.console, 'log').as('log')
+      })
+      cy.wrap($button).click()
+      cy.get('@log').should('have.been.calledOnceWith', 'Clicked')
+    }
+  })
+```
+
+<!-- fiddle-end -->
+
 ## Click a button if a class is present
 
 Sometimes you want to click the button, but only if the element has a class

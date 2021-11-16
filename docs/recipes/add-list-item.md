@@ -93,3 +93,5 @@ cy.get('#list li')
 ```
 
 <!-- fiddle-end -->
+
+Also watch [Conditionally Clear Items In A Cypress Test](https://www.youtube.com/watch?v=sG_ulvTKJzw)
