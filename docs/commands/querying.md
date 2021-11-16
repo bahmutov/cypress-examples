@@ -916,9 +916,6 @@ cy.get('[data-cy=first-letter]').within(() => {
 <!-- fiddle pseudo-selectors / before selector -->
 
 ```html
-<div data-cy="before-example">
-  <p>Hello, world!</p>
-</div>
 <style>
   /* add a word in front of each paragraph */
   [data-cy='before-example'] p::before {
@@ -926,6 +923,9 @@ cy.get('[data-cy=first-letter]').within(() => {
     margin-right: 1em;
   }
 </style>
+<div data-cy="before-example">
+  <p>Hello, world!</p>
+</div>
 ```
 
 ```js
