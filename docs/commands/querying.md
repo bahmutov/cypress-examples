@@ -496,7 +496,7 @@ Even if there are optional white space characters around the text, you can still
 
 <!-- fiddle contains / regular expression with whitespace -->
 
-Note  the whitespace around the word "Incredible"
+Note the whitespace around the word "Incredible"
 
 ```html
 <div class="nickname">  Incredible    </div>
@@ -506,6 +506,45 @@ Note  the whitespace around the word "Incredible"
 // find the nickname "Incredible" that can have whitespace around it
 // but cannot have any other characters
 cy.contains('.nickname', /^\s*Incredible\s*$/)
+```
+
+<!-- fiddle-end -->
+
+<!-- prettier-ignore-end -->
+
+### cy.contains with duplicate white spaces
+
+If the HTML element contains duplicate white spaces, using `cy.contains` becomes trickier. The example below has a double space between the `:` and `b` characters.
+
+<!-- prettier-ignore-start -->
+
+<!-- fiddle contains / duplicate white spaces -->
+
+```html
+<div id="spaces">LEGO:  blocks</div>
+```
+
+If you inspect this element in the browser's console, you will see that the browser returns different strings for `innerHTML` and `innerText` properties - and the browser collapses multiple spaces into one.
+
+```text
+> $0.innerText.length
+> 12
+> $0.innerHTML.length
+> 13
+```
+
+If you are using the literal string for matching, the `cy.contains` will fail, since it uses the `innerText` property.
+
+```js
+// FAILS, cannot find the element while having "  " double space
+// cy.contains('#spaces', 'LEGO:  blocks')
+// solution: find the element and assert its text yourself
+cy.get('#spaces').should($el => {
+  expect($el).to.have.html('LEGO:  blocks')
+})
+// you can also remove duplicate white spaces before calling cy.contains
+// and for good measure trimp the text we are looking for
+cy.contains('#spaces', 'LEGO:  blocks'.replace(/\s+/, ' ').trim())
 ```
 
 <!-- fiddle-end -->
