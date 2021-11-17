@@ -544,7 +544,7 @@ cy.get('#spaces').should($el => {
 })
 // you can also remove duplicate white spaces before calling cy.contains
 // and for good measure trimp the text we are looking for
-cy.contains('#spaces', 'LEGO:  blocks'.replace(/\s+/, ' ').trim())
+cy.contains('#spaces', 'LEGO:  blocks'.replace(/\s+/g, ' ').trim())
 ```
 
 <!-- fiddle-end -->
