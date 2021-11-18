@@ -1,5 +1,7 @@
 # Confirm the sorted list
 
+## Static list
+
 Let's confirm that all `<LI>` elements are sorted by the prices displayed inside. The price is a child element with its own selector, but could have additional text words there like 'On Sale'.
 
 <!-- fiddle Confirm the sorted list -->
@@ -56,7 +58,8 @@ cy.get('.price')
   .then((list) => list.map(parseFloat))
   .then((list) => cy.log(list.slice(0, 3).join(', ')))
   .then((list) => {
-    // confirm the list is sorted
+    // confirm the list is sorted by sorting it using Lodash
+    // and comparing the original and sorted lists
     const sorted = Cypress._.sortBy(list)
     expect(sorted).to.deep.equal(list)
     // we can also confirm each number is between min and max
@@ -77,8 +80,9 @@ cy.get('.price').then(($prices) => {
   const prices = Cypress._.map($prices, (el) =>
     parseFloat(justDigits(firstWord(innerText(el)))),
   )
-  // cy.log(prices.join(', '))
   // confirm the "prices" array is already sorted
+  const sorted = Cypress._.sortBy(prices)
+  expect(sorted).to.deep.equal(prices)
   return prices
 })
 ```
