@@ -114,15 +114,15 @@ Imagine we have a table that is NOT sorted at first, but it gets sorted on a cli
   </thead>
   <tbody id="people-data">
     <tr>
-      <td>Mary</td>
+      <td>Dave</td>
       <td>2023-12-23</td>
     </tr>
     <tr>
-      <td>Joe</td>
+      <td>Cary</td>
       <td>2024-01-24</td>
     </tr>
     <tr>
-      <td>Dave</td>
+      <td>Joe</td>
       <td>2022-02-25</td>
     </tr>
     <tr>
@@ -136,15 +136,15 @@ Imagine we have a table that is NOT sorted at first, but it gets sorted on a cli
   function sortTable() {
     document.getElementById('people-data').innerHTML = `
       <tr>
-        <td>Dave</td>
+        <td>Joe</td>
         <td>2022-02-25</td>
       </tr>
       <tr>
-        <td>Mary</td>
+        <td>Dave</td>
         <td>2023-12-23</td>
       </tr>
       <tr>
-        <td>Joe</td>
+        <td>Cary</td>
         <td>2024-01-24</td>
       </tr>
       <tr>
@@ -174,6 +174,26 @@ cy.get('table#people tbody td + td').should(($cells) => {
   // check if the timestamps are sorted
   const sorted = Cypress._.sortBy(timestamps)
   expect(timestamps, 'sorted timestamps').to.deep.equal(sorted)
+})
+```
+
+For convenience, you can use 3rd party Chai assertions, for example [chai-sorted](https://www.chaijs.com/plugins/chai-sorted/). We have already registered the `chai-sorted` in the support file `cypress/support/index.js`
+
+```js
+cy.get('table#people tbody td + td').should(function ($cells) {
+  // again, convert the date strings into timestamps
+  const timestamps = Cypress._.map($cells, ($cell) => $cell.innerText)
+    .map((str) => new Date(str))
+    .map((d) => d.getTime())
+  // and use an assertion from chai-sorted to confirm
+  expect(timestamps).to.be.sorted()
+})
+// notice that after sorting, the first column of names
+// is also sorted by in reverse alphabetical order
+// Let's confirm this by grabbing inner text from each cell
+cy.get('table#people tbody td +').should(($cells) => {
+  const names = Cypress._.map($cells, ($cell) => $cell.innerText)
+  expect(names).to.be.ascending
 })
 ```
 

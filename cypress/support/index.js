@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+chai.use(require('chai-sorted'))
+
 // a little utility command for taking the screenshot of the entire runner
 // to be used only in the recipes that are NOT distributed as JavaScript specs
 // since this requires the support file
