@@ -93,7 +93,7 @@ cy.get('.price').then(($prices) => {
 
 Imagine we have a table that is NOT sorted at first, but it gets sorted on a click.
 
-<!-- fiddle.only Confirm the table is sorted -->
+<!-- fiddle Confirm the table is sorted -->
 
 ```html
 <style>
