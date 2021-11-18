@@ -168,6 +168,9 @@ cy.get('#sort-by-date').click()
 // confirm the second column is sorted at some time later
 // Tip: select the cells in the second column using "tbody td + td" selector
 cy.get('table#people tbody td + td').should(($cells) => {
+  // tip: Lodash has a shortcut notation
+  // instead of _.map($cells, ($cell) => $cell.innerText)
+  // you can write _.map($cells, 'innerText')
   const timestamps = Cypress._.map($cells, ($cell) => $cell.innerText)
     .map((str) => new Date(str))
     .map((d) => d.getTime())
@@ -176,6 +179,8 @@ cy.get('table#people tbody td + td').should(($cells) => {
   expect(timestamps, 'sorted timestamps').to.deep.equal(sorted)
 })
 ```
+
+You can find the explanation for the above test in the video [Confirm The Table Is Sorted By A Column](https://youtu.be/21MXha13qCU).
 
 For convenience, you can use 3rd party Chai assertions, for example [chai-sorted](https://www.chaijs.com/plugins/chai-sorted/). We have already registered the `chai-sorted` in the support file `cypress/support/index.js`
 
