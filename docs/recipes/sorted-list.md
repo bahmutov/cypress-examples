@@ -93,7 +93,7 @@ cy.get('.price').then(($prices) => {
 
 Imagine we have a table that is NOT sorted at first, but it gets sorted on a click.
 
-<!-- fiddle Confirm the table is sorted -->
+<!-- fiddle.only Confirm the table is sorted -->
 
 ```html
 <style>
@@ -132,25 +132,22 @@ Imagine we have a table that is NOT sorted at first, but it gets sorted on a cli
   </tbody>
 </table>
 <button id="sort-by-date">Sort by date</button>
+<button id="sort-reverse">Reverse sort</button>
 <script>
   function sortTable() {
     document.getElementById('people-data').innerHTML = `
-      <tr>
-        <td>Joe</td>
-        <td>2022-02-25</td>
-      </tr>
-      <tr>
-        <td>Dave</td>
-        <td>2023-12-23</td>
-      </tr>
-      <tr>
-        <td>Cary</td>
-        <td>2024-01-24</td>
-      </tr>
-      <tr>
-        <td>Anna</td>
-        <td>2027-03-26</td>
-      </tr>
+      <tr><td>Joe</td><td>2022-02-25</td></tr>
+      <tr><td>Dave</td><td>2023-12-23</td></tr>
+      <tr><td>Cary</td><td>2024-01-24</td></tr>
+      <tr><td>Anna</td><td>2027-03-26</td></tr>
+    `
+  }
+  function reverseSortTable() {
+    document.getElementById('people-data').innerHTML = `
+      <tr><td>Anna</td><td>2027-03-26</td></tr>
+      <tr><td>Cary</td><td>2024-01-24</td></tr>
+      <tr><td>Dave</td><td>2023-12-23</td></tr>
+      <tr><td>Joe</td><td>2022-02-25</td></tr>
     `
   }
   document
@@ -158,6 +155,12 @@ Imagine we have a table that is NOT sorted at first, but it gets sorted on a cli
     .addEventListener('click', function () {
       // sort the table after some random interval
       setTimeout(sortTable, Math.random() * 2000 + 500)
+    })
+  document
+    .getElementById('sort-reverse')
+    .addEventListener('click', function () {
+      // sort the table after some random interval
+      setTimeout(reverseSortTable, Math.random() * 2000 + 500)
     })
 </script>
 ```
@@ -199,6 +202,22 @@ cy.get('table#people tbody td + td').should(function ($cells) {
 cy.get('table#people tbody td +').should(($cells) => {
   const names = Cypress._.map($cells, ($cell) => $cell.innerText)
   expect(names).to.be.ascending
+})
+```
+
+You can take advantage of advanced Lodash methods, for example you can wrap the entire jQuery object and conveniently extract the inner text from every element, convert strings to dates, then to timestamps, and check if they are sorted.
+
+```js
+cy.log('**reverse sort**')
+cy.get('#sort-reverse').click()
+cy.get('table#people tbody td + td').should(($cells) => {
+  expect(
+    Cypress._($cells) // wrap jQuery object
+      .map('innerText') // extract "innerText" from each element
+      .map((s) => new Date(s)) // convert string to Date
+      .invokeMap('getTime') // convert Date to timestamp
+      .value(), // get back an array of timestamps
+  ).to.be.descending
 })
 ```
 
