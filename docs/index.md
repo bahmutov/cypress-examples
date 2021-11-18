@@ -168,7 +168,9 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Click a random element](./recipes/click-random-element.md)
 - [Number of rows matches a number in an element](./recipes/number-of-rows.md)
 - [Find elements with subelements](./recipes/find-elements-with-subelements.md)
-- [Confirm the sorted list](./recipes/sorted-list.md)
+- [Confirm the sorted lists](./recipes/sorted-list.md)
+  - static list
+  - a table is sorted by column
 - [Overlapping elements on the page](./recipes/overlapping-elements.md)
 - [Search part of the list](./recipes/search-part-of-the-list.md)
 - [Add a custom data-... attribute assertion](./recipes/add-data-assertion.md)

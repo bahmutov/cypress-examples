@@ -4,7 +4,7 @@
 
 Let's confirm that all `<LI>` elements are sorted by the prices displayed inside. The price is a child element with its own selector, but could have additional text words there like 'On Sale'.
 
-<!-- fiddle Confirm the sorted list -->
+<!-- fiddle Confirm the static list is sorted -->
 
 ```html
 <ol>
@@ -84,6 +84,96 @@ cy.get('.price').then(($prices) => {
   const sorted = Cypress._.sortBy(prices)
   expect(sorted).to.deep.equal(prices)
   return prices
+})
+```
+
+<!-- fiddle.end -->
+
+## Dynamic table
+
+Imagine we have a table that is NOT sorted at first, but it gets sorted on a click.
+
+<!-- fiddle Confirm the table is sorted -->
+
+```html
+<style>
+  table td {
+    border: 3px solid black;
+    padding: 3px 5px;
+  }
+  #sort-by-date {
+    margin: 10px 0px;
+  }
+</style>
+<table id="people">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Date (YYYY-MM-DD)</td>
+    </tr>
+  </thead>
+  <tbody id="people-data">
+    <tr>
+      <td>Mary</td>
+      <td>2023-12-23</td>
+    </tr>
+    <tr>
+      <td>Joe</td>
+      <td>2024-01-24</td>
+    </tr>
+    <tr>
+      <td>Dave</td>
+      <td>2022-02-25</td>
+    </tr>
+    <tr>
+      <td>Anna</td>
+      <td>2027-03-26</td>
+    </tr>
+  </tbody>
+</table>
+<button id="sort-by-date">Sort by date</button>
+<script>
+  function sortTable() {
+    document.getElementById('people-data').innerHTML = `
+      <tr>
+        <td>Dave</td>
+        <td>2022-02-25</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>2023-12-23</td>
+      </tr>
+      <tr>
+        <td>Joe</td>
+        <td>2024-01-24</td>
+      </tr>
+      <tr>
+        <td>Anna</td>
+        <td>2027-03-26</td>
+      </tr>
+    `
+  }
+  document
+    .getElementById('sort-by-date')
+    .addEventListener('click', function () {
+      // sort the table after some random interval
+      setTimeout(sortTable, Math.random() * 2000 + 500)
+    })
+</script>
+```
+
+```js
+cy.get('#people').scrollIntoView()
+cy.get('#sort-by-date').click()
+// confirm the second column is sorted at some time later
+// Tip: select the cells in the second column using "tbody td + td" selector
+cy.get('table#people tbody td + td').should(($cells) => {
+  const timestamps = Cypress._.map($cells, ($cell) => $cell.innerText)
+    .map((str) => new Date(str))
+    .map((d) => d.getTime())
+  // check if the timestamps are sorted
+  const sorted = Cypress._.sortBy(timestamps)
+  expect(timestamps, 'sorted timestamps').to.deep.equal(sorted)
 })
 ```
 
