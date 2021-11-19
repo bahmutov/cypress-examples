@@ -25,8 +25,10 @@ You can use the yielded `window` object to call the methods on that window direc
 ```html
 <script>
   // the application adds a method "getAppName" at some point
-  setTimeout(() => {
-    window.getAppName = (version) => `App_v${version}`
+  setTimeout(function () {
+    window.getAppName = function (version) {
+      return `App_v${version}`
+    }
   }, 1000)
 </script>
 ```
@@ -47,6 +49,8 @@ cy.window()
 ```
 
 <!-- fiddle-end -->
+
+Watch the explanation in the video [Call Window Method From Cypress Spec](https://youtu.be/Z5i60En_33A).
 
 ## [cy.document()](https://on.cypress.io/document)
 
