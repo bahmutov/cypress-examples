@@ -89,7 +89,7 @@ cy.get('.price').then(($prices) => {
 
 <!-- fiddle.end -->
 
-## Dynamic table
+## Dynamic sorted table
 
 Imagine we have a table that is NOT sorted at first, but it gets sorted on a click.
 

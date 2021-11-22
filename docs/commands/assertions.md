@@ -731,18 +731,29 @@ To make a BDD assertion about a specified subject, use `expect`.
 <!-- fiddle Explicit Assertions / expect - make an assertion about a specified subject -->
 
 ```js
-expect(true).to.be.true
+expect(true, 'it is true').to.be.true
 
 const o = { foo: 'bar' }
-expect(o).to.equal(o)
-expect(o).to.deep.equal({ foo: 'bar' })
+expect(o, 'object reference').to.equal(o)
+expect(o, 'deep equality').to.deep.equal({ foo: 'bar' })
 
 // matching text using regular expression
 expect('FooBar').to.match(/bar$/i)
+// check if the variable is defined, is a string, and has characters
+const orgId = '4AB001C'
+expect(orgId, 'org id').to.be.a('string').and.not.be.empty
 
 // check if the response status code is successful
 const statusCode = 204
 expect(statusCode, 'status code').to.be.within(200, 399)
+
+// check if a value is one of the three allowed choices
+const fruit = 'Grapes'
+expect(fruit, 'the fruit').to.be.oneOf([
+  'Apples',
+  'Oranges',
+  'Grapes',
+])
 ```
 
 <!-- fiddle-end -->
