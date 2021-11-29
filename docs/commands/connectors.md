@@ -4,7 +4,7 @@ Examples of connecting commands in Cypress, for a full reference of commands, go
 
 ## [.each()](https://on.cypress.io/each)
 
-<!-- fiddle each -->
+<!-- fiddle each / print each element -->
 
 To iterate over the elements of a current subject, use the `.each()` command.
 
@@ -19,6 +19,30 @@ To iterate over the elements of a current subject, use the `.each()` command.
 ```js
 cy.get('.connectors-each-ul>li').each(function ($el, index, $list) {
   console.log($el, index, $list)
+})
+```
+
+<!-- fiddle-end -->
+
+### Put complex logic into each callback
+
+Let's say that we want to confirm that each element in the list has the text content `Item <index>` where the index starts with 1, and the tooltip attribute is `Click me`.
+
+<!-- fiddle each / use cy commands inside the callback -->
+
+```html
+<ul class="items">
+  <li title="Click me">Item: 1</li>
+  <li title="Click me">Item: 2</li>
+  <li title="Click me">Item: 3</li>
+</ul>
+```
+
+```js
+cy.get('.items>li').each(function ($el, index, $list) {
+  cy.wrap($el)
+    .should('have.text', `Item: ${index + 1}`)
+    .and('have.attr', 'title', 'Click me')
 })
 ```
 
