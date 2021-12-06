@@ -693,6 +693,8 @@ cy.get('.action-radios [type="radio"]')
 
 <!-- fiddle-end -->
 
+**Tip:** Looking to check [indeterminate checkboxes](https://css-tricks.com/indeterminate-checkboxes/)? Check out the example repo [bahmutov/indeterminate-checkboxes](https://github.com/bahmutov/indeterminate-checkboxes).
+
 ### Get checked option
 
 You can get the currently checked option using the jQuery's [:checked selector](https://api.jquery.com/checked-selector/).
