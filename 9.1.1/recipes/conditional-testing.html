@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Conditional testing | Cypress examples (v9.1.1)</title>
+    <meta name="description" content="Static site with Cypress examples tested right from the Markdown sources">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <style>.action-focus.focus { border: 5px solid orange; } .hidden { display: none !important; }</style>
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
+    <link rel="preload" href="/cypress-examples/9.1.1/assets/css/0.styles.b05ba7cd.css" as="style"><link rel="preload" href="/cypress-examples/9.1.1/assets/js/app.522dbd2a.js" as="script"><link rel="preload" href="/cypress-examples/9.1.1/assets/js/3.add9cb56.js" as="script"><link rel="preload" href="/cypress-examples/9.1.1/assets/js/30.4d1e9cb8.js" as="script"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/10.c9b8a9d2.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/11.b7a216c3.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/12.8ed44897.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/13.bc80b41c.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/14.fc4c2cd0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/15.ee8d4188.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/16.02072f9b.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/17.358dae48.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/18.ceee91c0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/19.38b89d1a.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/20.a33d9603.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/21.1d9961da.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/22.ea686b46.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/23.7277f1cb.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/24.8fca2aa0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/25.441e00a4.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/26.23a3aa81.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/27.daa219e3.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/28.c2a8a5bb.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/29.95acce80.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/31.8f8a6649.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/32.d4138c87.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/33.214d61f8.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/34.f215d5fd.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/35.8180e57d.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/36.1d71bf51.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/37.5ea0b82d.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/38.0861784b.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/39.4983a0cc.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/4.96d0ceb0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/40.7e05fe2a.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/41.531847fd.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/42.a07e5a70.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/43.3dd90089.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/44.e709e4e0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/45.ff9e93ca.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/46.a26574a0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/47.aeac3368.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/48.949bd806.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/49.8fccbd3f.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/5.3676c4ef.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/50.3842995c.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/51.e688c60e.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/52.5715ef39.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/53.cc2098da.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/54.42688a18.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/55.19f87a07.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/56.697bc708.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/6.1fc70797.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/7.2fdb6cb7.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/8.1e74fc98.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/9.0c66a986.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/vendors~docsearch.3f9d2285.js">
+    <link rel="stylesheet" href="/cypress-examples/9.1.1/assets/css/0.styles.b05ba7cd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/cypress-examples/9.1.1/" class="home-link router-link-active"><!----> <span class="site-name">Cypress examples (v9.1.1)</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/9.1.1/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/9.1.1/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/9.1.1/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/9.1.1/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Conditional testing</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/cypress-examples/9.1.1/recipes/conditional-testing.html#toggle-checkbox" class="sidebar-link">Toggle checkbox</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/cypress-examples/9.1.1/recipes/conditional-testing.html#element-does-not-exist-or-is-invisible" class="sidebar-link">Element does not exist or is invisible</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/cypress-examples/9.1.1/recipes/conditional-testing.html#click-a-button-if-present" class="sidebar-link">Click a button if present</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/cypress-examples/9.1.1/recipes/conditional-testing.html#click-a-button-if-a-class-is-present" class="sidebar-link">Click a button if a class is present</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/cypress-examples/9.1.1/recipes/conditional-testing.html#use-a-cookie-if-present" class="sidebar-link">Use a cookie if present</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/cypress-examples/9.1.1/recipes/conditional-testing.html#more-examples" class="sidebar-link">More examples</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="conditional-testing"><a href="#conditional-testing" class="header-anchor">#</a> Conditional testing</h1> <p>Conditional testing is <a href="https://on.cypress.io/conditional-testing" target="_blank" rel="noopener noreferrer">strongly discouraged<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> in Cypress. But if you <em>must</em> do something conditionally in Cypress depending on the page, here are few examples.</p> <h2 id="toggle-checkbox"><a href="#toggle-checkbox" class="header-anchor">#</a> Toggle checkbox</h2> <p>Let's say that you have a checkbox when the page loads. Sometimes the checkbox is checked, sometimes not. How do you toggle the checkbox?</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>checkbox<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>done<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>done<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Toggle me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token comment">// sometimes the checkbox is checked</span>
+  <span class="token keyword">const</span> dice <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>dice <span class="token operator">&lt;</span> <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>checked <span class="token operator">=</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="example"><div><input type="checkbox" id="done"> <label for="done">Toggle me!</label></div> <script>
+  // sometimes the checkbox is checked
+  const dice = Math.random()
+  if (dice &lt; 0.5) {
+    document.querySelector('input').checked = true
+  }
+</script></div></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// first solution using jQuery $.prop</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">$checkbox</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> initial <span class="token operator">=</span> <span class="token function">Boolean</span><span class="token punctuation">(</span>$checkbox<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'checked'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token comment">// let's toggle</span>
+  cy<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Initial checkbox: **</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>initial<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">**</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token comment">// toggle the property &quot;checked&quot;</span>
+  $checkbox<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'checked'</span><span class="token punctuation">,</span> <span class="token operator">!</span>initial<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div> <p>Alternative solution</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>checkbox<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>done<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>done<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Toggle me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token comment">// sometimes the checkbox is checked</span>
+  <span class="token keyword">const</span> dice <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>dice <span class="token operator">&lt;</span> <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>checked <span class="token operator">=</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="example"><div><input type="checkbox" id="done"> <label for="done">Toggle me!</label></div> <script>
+  // sometimes the checkbox is checked
+  const dice = Math.random()
+  if (dice &lt; 0.5) {
+    document.querySelector('input').checked = true
+  }
+</script></div></div><div class="language-js extra-class"><pre class="language-js"><code>cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">as</span><span class="token punctuation">(</span><span class="token string">'checkbox'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span><span class="token string">'is'</span><span class="token punctuation">,</span> <span class="token string">':checked'</span><span class="token punctuation">)</span> <span class="token comment">// use jQuery $.is(...)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">initial</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    cy<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Initial checkbox: **</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>initial<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">**</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>initial<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'@checkbox'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">uncheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'@checkbox'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">check</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div> <h2 id="element-does-not-exist-or-is-invisible"><a href="#element-does-not-exist-or-is-invisible" class="header-anchor">#</a> Element does not exist or is invisible</h2> <p>Imagine we want to pass the test if the element does not exist or is invisible. We will use <a href="/cypress-examples/9.1.1/cypress-api/">Cypress.dom</a> utility methods and retry the assertion using <a href="/cypress-examples/9.1.1/commands/assertions.html">.should(cb)</a> method.</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>either<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>disappears<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Should go away<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>hides<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Should not see me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> disappears <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'disappears'</span><span class="token punctuation">)</span>
+    disappears<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>disappears<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span>
+
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> hides <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'hides'</span><span class="token punctuation">)</span>
+    hides<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="example"><div id="either"><div id="disappears">Should go away</div> <div id="hides">Should not see me</div></div> <script>
+  setTimeout(() =&gt; {
+    const disappears = document.getElementById('disappears')
+    disappears.parentNode.removeChild(disappears)
+  }, 500)
+
+  setTimeout(() =&gt; {
+    const hides = document.getElementById('hides')
+    hides.style.display = 'none'
+  }, 1000)
+</script></div></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">isNonExistentOrHidden</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">$el</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+  <span class="token operator">!</span>Cypress<span class="token punctuation">.</span>dom<span class="token punctuation">.</span><span class="token function">isElement</span><span class="token punctuation">(</span>$el<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token operator">!</span>Cypress<span class="token punctuation">.</span>dom<span class="token punctuation">.</span><span class="token function">isVisible</span><span class="token punctuation">(</span>$el<span class="token punctuation">)</span>
+
+<span class="token comment">// let's assert an element does not exist</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#either #disappears'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">$el</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">isNonExistentOrHidden</span><span class="token punctuation">(</span>$el<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>be<span class="token punctuation">.</span><span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// let's assert an element becomes invisible</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#either #hides'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">$el</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">isNonExistentOrHidden</span><span class="token punctuation">(</span>$el<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>be<span class="token punctuation">.</span><span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div> <h2 id="click-a-button-if-present"><a href="#click-a-button-if-present" class="header-anchor">#</a> Click a button if present</h2> <p>Let's say that we want to click a button if it is present on the page. We need to avoid triggering the built-in existence assertion in the <code>cy.get</code> or <code>cy.contains</code> commands, and click the button only after checking it ourselves.</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>The button might appear here<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>output<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> output <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'output'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span>
+    btn<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'Click Me'</span>
+    output<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span>
+    btn<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Clicked'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="example"><div><p>The button might appear here</p> <div id="output"></div></div> <script>
+  if (Math.random() &lt; 0.5) {
+    const output = document.getElementById('output')
+    const btn = document.createElement('button')
+    btn.innerHTML = 'Click Me'
+    output.appendChild(btn)
+    btn.addEventListener('click', () =&gt; {
+      console.log('Clicked')
+    })
+  }
+</script></div></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// get the button but disable the built-in cy.contains assertions</span>
+<span class="token comment">// by appending our own dummy .should() assertion</span>
+cy<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">,</span> <span class="token string">'Click Me'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">_</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">$button</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>$button<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// there is no button</span>
+      cy<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'there is no button'</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      cy<span class="token punctuation">.</span><span class="token function">window</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">win</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        cy<span class="token punctuation">.</span><span class="token function">spy</span><span class="token punctuation">(</span>win<span class="token punctuation">.</span>console<span class="token punctuation">,</span> <span class="token string">'log'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">as</span><span class="token punctuation">(</span><span class="token string">'log'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      cy<span class="token punctuation">.</span><span class="token function">wrap</span><span class="token punctuation">(</span>$button<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'@log'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.been.calledOnceWith'</span><span class="token punctuation">,</span> <span class="token string">'Clicked'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div> <h2 id="click-a-button-if-a-class-is-present"><a href="#click-a-button-if-a-class-is-present" class="header-anchor">#</a> Click a button if a class is present</h2> <p>Sometimes you want to click the button, but only if the element has a class</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>first<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>urgent important<span class="token punctuation">&quot;</span></span> <span class="token attr-name">disabled</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>disabled<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  Click NOW
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token comment">// notice that at first the button is disabled</span>
+  <span class="token comment">// and we need to use the built-in action checks in cy.click</span>
+  <span class="token keyword">const</span> first <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'first'</span><span class="token punctuation">)</span>
+  first<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'first click'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token comment">// remove the disabled property</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    first<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="example"><button id="first" disabled="disabled" class="urgent important">
+  Click NOW
+</button> <script>
+  // notice that at first the button is disabled
+  // and we need to use the built-in action checks in cy.click
+  const first = document.getElementById('first')
+  first.addEventListener('click', () =&gt; {
+    console.log('first click')
+  })
+  // remove the disabled property
+  setTimeout(() =&gt; {
+    first.disabled = false
+  }, 1000)
+</script></div></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// spy on the console.log to make sure it is called</span>
+cy<span class="token punctuation">.</span><span class="token function">window</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">its</span><span class="token punctuation">(</span><span class="token string">'console'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">console</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> cy<span class="token punctuation">.</span><span class="token function">spy</span><span class="token punctuation">(</span>console<span class="token punctuation">,</span> <span class="token string">'log'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">as</span><span class="token punctuation">(</span><span class="token string">'log'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#first'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">$first</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>$first<span class="token punctuation">.</span><span class="token function">hasClass</span><span class="token punctuation">(</span><span class="token string">'important'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// note that we cannot simply use jQuery .click() method</span>
+    <span class="token comment">// since it won't wait for the button to be enabled</span>
+    <span class="token comment">// $first.click()</span>
+    <span class="token comment">// instead we wrap the element and use the cy.click() command</span>
+    cy<span class="token punctuation">.</span><span class="token function">wrap</span><span class="token punctuation">(</span>$first<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// confirm the button was called correctly</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'@log'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'be.calledOnceWith'</span><span class="token punctuation">,</span> <span class="token string">'first click'</span><span class="token punctuation">)</span>
+</code></pre></div> <h2 id="use-a-cookie-if-present"><a href="#use-a-cookie-if-present" class="header-anchor">#</a> Use a cookie if present</h2> <p>Getting a cookie using <a href="https://on.cypress.io/getcookie" target="_blank" rel="noopener noreferrer">cy.getCookie<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> command does not retry, thus you can simply work with the yielded value.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">printCookieMaybe</span><span class="token punctuation">(</span><span class="token parameter">cookie</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>cookie<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cy<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Found the cookie with value: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>cookie<span class="token punctuation">.</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    cy<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'No cookie for you'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+cy<span class="token punctuation">.</span><span class="token function">getCookie</span><span class="token punctuation">(</span><span class="token string">'my-cookie'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>printCookieMaybe<span class="token punctuation">)</span>
+cy<span class="token punctuation">.</span><span class="token function">setCookie</span><span class="token punctuation">(</span><span class="token string">'my-cookie'</span><span class="token punctuation">,</span> <span class="token string">'nice'</span><span class="token punctuation">)</span>
+cy<span class="token punctuation">.</span><span class="token function">getCookie</span><span class="token punctuation">(</span><span class="token string">'my-cookie'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>printCookieMaybe<span class="token punctuation">)</span>
+</code></pre></div> <h2 id="more-examples"><a href="#more-examples" class="header-anchor">#</a> More examples</h2> <ul><li><a href="/cypress-examples/9.1.1/recipes/add-list-item.html">Add / delete list item recipe</a></li></ul></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bahmutov/cypress-examples/edit/master/docs/recipes/conditional-testing.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/cypress-examples/9.1.1/assets/js/app.522dbd2a.js" defer></script><script src="/cypress-examples/9.1.1/assets/js/3.add9cb56.js" defer></script><script src="/cypress-examples/9.1.1/assets/js/30.4d1e9cb8.js" defer></script>
+  </body>
+</html>

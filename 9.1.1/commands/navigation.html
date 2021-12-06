@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Navigation | Cypress examples (v9.1.1)</title>
+    <meta name="description" content="Static site with Cypress examples tested right from the Markdown sources">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <style>.action-focus.focus { border: 5px solid orange; } .hidden { display: none !important; }</style>
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
+    <link rel="preload" href="/cypress-examples/9.1.1/assets/css/0.styles.b05ba7cd.css" as="style"><link rel="preload" href="/cypress-examples/9.1.1/assets/js/app.522dbd2a.js" as="script"><link rel="preload" href="/cypress-examples/9.1.1/assets/js/3.add9cb56.js" as="script"><link rel="preload" href="/cypress-examples/9.1.1/assets/js/18.ceee91c0.js" as="script"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/10.c9b8a9d2.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/11.b7a216c3.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/12.8ed44897.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/13.bc80b41c.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/14.fc4c2cd0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/15.ee8d4188.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/16.02072f9b.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/17.358dae48.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/19.38b89d1a.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/20.a33d9603.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/21.1d9961da.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/22.ea686b46.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/23.7277f1cb.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/24.8fca2aa0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/25.441e00a4.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/26.23a3aa81.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/27.daa219e3.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/28.c2a8a5bb.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/29.95acce80.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/30.4d1e9cb8.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/31.8f8a6649.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/32.d4138c87.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/33.214d61f8.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/34.f215d5fd.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/35.8180e57d.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/36.1d71bf51.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/37.5ea0b82d.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/38.0861784b.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/39.4983a0cc.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/4.96d0ceb0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/40.7e05fe2a.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/41.531847fd.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/42.a07e5a70.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/43.3dd90089.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/44.e709e4e0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/45.ff9e93ca.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/46.a26574a0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/47.aeac3368.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/48.949bd806.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/49.8fccbd3f.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/5.3676c4ef.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/50.3842995c.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/51.e688c60e.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/52.5715ef39.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/53.cc2098da.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/54.42688a18.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/55.19f87a07.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/56.697bc708.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/6.1fc70797.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/7.2fdb6cb7.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/8.1e74fc98.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/9.0c66a986.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/vendors~docsearch.3f9d2285.js">
+    <link rel="stylesheet" href="/cypress-examples/9.1.1/assets/css/0.styles.b05ba7cd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/cypress-examples/9.1.1/" class="home-link router-link-active"><!----> <span class="site-name">Cypress examples (v9.1.1)</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/9.1.1/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/9.1.1/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/9.1.1/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/9.1.1/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Navigation</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/cypress-examples/9.1.1/commands/navigation.html#cy-go" class="sidebar-link">cy.go()</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/cypress-examples/9.1.1/commands/navigation.html#cy-reload" class="sidebar-link">cy.reload()</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/cypress-examples/9.1.1/commands/navigation.html#cy-visit" class="sidebar-link">cy.visit()</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="navigation"><a href="#navigation" class="header-anchor">#</a> Navigation</h1> <p>Examples of navigating to pages within your application in Cypress, for a full reference of commands, go to <a href="https://on.cypress.io/api" target="_blank" rel="noopener noreferrer">docs.cypress.io<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="cy-go"><a href="#cy-go" class="header-anchor">#</a> <a href="https://on.cypress.io/go" target="_blank" rel="noopener noreferrer">cy.go()<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></h2> <p>To go back or forward in the browser's history, use the <code>cy.go()</code> command.</p> <div class="language-js extra-class"><pre class="language-js"><code>cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'.nav-item'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">'Commands'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'.dropdown-item'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">'Navigation'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+cy<span class="token punctuation">.</span><span class="token function">location</span><span class="token punctuation">(</span><span class="token string">'pathname'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'include'</span><span class="token punctuation">,</span> <span class="token string">'navigation'</span><span class="token punctuation">)</span>
+
+cy<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token string">'back'</span><span class="token punctuation">)</span>
+cy<span class="token punctuation">.</span><span class="token function">location</span><span class="token punctuation">(</span><span class="token string">'pathname'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'not.include'</span><span class="token punctuation">,</span> <span class="token string">'navigation'</span><span class="token punctuation">)</span>
+
+cy<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token string">'forward'</span><span class="token punctuation">)</span>
+cy<span class="token punctuation">.</span><span class="token function">location</span><span class="token punctuation">(</span><span class="token string">'pathname'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'include'</span><span class="token punctuation">,</span> <span class="token string">'navigation'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// clicking back</span>
+cy<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+cy<span class="token punctuation">.</span><span class="token function">location</span><span class="token punctuation">(</span><span class="token string">'pathname'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'not.include'</span><span class="token punctuation">,</span> <span class="token string">'navigation'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// clicking forward</span>
+cy<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+cy<span class="token punctuation">.</span><span class="token function">location</span><span class="token punctuation">(</span><span class="token string">'pathname'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'include'</span><span class="token punctuation">,</span> <span class="token string">'navigation'</span><span class="token punctuation">)</span>
+</code></pre></div> <h2 id="cy-reload"><a href="#cy-reload" class="header-anchor">#</a> <a href="https://on.cypress.io/reload" target="_blank" rel="noopener noreferrer">cy.reload()<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></h2> <p>To reload the page, use the <code>cy.reload()</code> command.</p> <div class="language-js extra-class"><pre class="language-js"><code>cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'.nav-item'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">'Commands'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'.dropdown-item'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">'Navigation'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+cy<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// reload the page without using the cache</span>
+cy<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+</code></pre></div> <h2 id="cy-visit"><a href="#cy-visit" class="header-anchor">#</a> <a href="https://on.cypress.io/visit" target="_blank" rel="noopener noreferrer">cy.visit()<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></h2> <p>To visit a remote page, use the <code>cy.visit()</code> command.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// trick: dynamically set base url in this test only</span>
+Cypress<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span>
+  <span class="token string">'baseUrl'</span><span class="token punctuation">,</span>
+  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>origin<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/cypress-examples/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Cypress<span class="token punctuation">.</span>version<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">// Visit any sub-domain of your current domain,</span>
+<span class="token comment">// if you set baseUrl option</span>
+<span class="token comment">// https://on.cypress.io/best-practices#Setting-a-global-baseUrl</span>
+
+<span class="token comment">// Pass options to the visit</span>
+cy<span class="token punctuation">.</span><span class="token function">visit</span><span class="token punctuation">(</span><span class="token string">'/commands/navigation'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  timeout<span class="token operator">:</span> <span class="token number">50000</span><span class="token punctuation">,</span> <span class="token comment">// increase total time for the visit to resolve</span>
+  <span class="token function-variable function">onBeforeLoad</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">contentWindow</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// contentWindow is the remote page's window object</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>
+      <span class="token keyword">typeof</span> contentWindow<span class="token punctuation">,</span>
+      <span class="token string">'onBeforeLoad window reference'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token string">'object'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">onLoad</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">contentWindow</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// contentWindow is the remote page's window object</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> contentWindow<span class="token punctuation">,</span> <span class="token string">'onLoad window reference'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>
+      <span class="token string">'object'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bahmutov/cypress-examples/edit/master/docs/commands/navigation.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/cypress-examples/9.1.1/assets/js/app.522dbd2a.js" defer></script><script src="/cypress-examples/9.1.1/assets/js/3.add9cb56.js" defer></script><script src="/cypress-examples/9.1.1/assets/js/18.ceee91c0.js" defer></script>
+  </body>
+</html>

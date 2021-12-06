@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Table update | Cypress examples (v9.1.1)</title>
+    <meta name="description" content="Static site with Cypress examples tested right from the Markdown sources">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <style>.action-focus.focus { border: 5px solid orange; } .hidden { display: none !important; }</style>
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
+    <link rel="preload" href="/cypress-examples/9.1.1/assets/css/0.styles.b05ba7cd.css" as="style"><link rel="preload" href="/cypress-examples/9.1.1/assets/js/app.522dbd2a.js" as="script"><link rel="preload" href="/cypress-examples/9.1.1/assets/js/3.add9cb56.js" as="script"><link rel="preload" href="/cypress-examples/9.1.1/assets/js/51.e688c60e.js" as="script"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/10.c9b8a9d2.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/11.b7a216c3.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/12.8ed44897.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/13.bc80b41c.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/14.fc4c2cd0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/15.ee8d4188.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/16.02072f9b.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/17.358dae48.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/18.ceee91c0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/19.38b89d1a.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/20.a33d9603.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/21.1d9961da.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/22.ea686b46.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/23.7277f1cb.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/24.8fca2aa0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/25.441e00a4.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/26.23a3aa81.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/27.daa219e3.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/28.c2a8a5bb.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/29.95acce80.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/30.4d1e9cb8.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/31.8f8a6649.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/32.d4138c87.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/33.214d61f8.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/34.f215d5fd.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/35.8180e57d.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/36.1d71bf51.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/37.5ea0b82d.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/38.0861784b.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/39.4983a0cc.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/4.96d0ceb0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/40.7e05fe2a.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/41.531847fd.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/42.a07e5a70.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/43.3dd90089.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/44.e709e4e0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/45.ff9e93ca.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/46.a26574a0.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/47.aeac3368.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/48.949bd806.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/49.8fccbd3f.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/5.3676c4ef.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/50.3842995c.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/52.5715ef39.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/53.cc2098da.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/54.42688a18.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/55.19f87a07.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/56.697bc708.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/6.1fc70797.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/7.2fdb6cb7.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/8.1e74fc98.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/9.0c66a986.js"><link rel="prefetch" href="/cypress-examples/9.1.1/assets/js/vendors~docsearch.3f9d2285.js">
+    <link rel="stylesheet" href="/cypress-examples/9.1.1/assets/css/0.styles.b05ba7cd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/cypress-examples/9.1.1/" class="home-link router-link-active"><!----> <span class="site-name">Cypress examples (v9.1.1)</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/9.1.1/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/9.1.1/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.1.1/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/9.1.1/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/9.1.1/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Table update</span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="table-update"><a href="#table-update" class="header-anchor">#</a> Table update</h1> <p>Imagine a table with rows, and each row has a button to fetch some data. How do we assert the data has finished fetching? The cell does change its text contents when the update is finished, but we want to <a href="https://on.cypress.io/retry-ability" target="_blank" rel="noopener noreferrer">retry<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> without hitting the dreaded &quot;the element has detached from DOM&quot; error, thus we need to express the query as a single command ...</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>example-table<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>a1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>First row<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>status<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Pending.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>Load row<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>b1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Second row<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>status<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Pending..<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>Load row<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>c1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Third row<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>status<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Pending...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>load-row-c1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Load row<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  document
+    <span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'load-row-c1'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> table <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'table#example-table'</span><span class="token punctuation">)</span>
+        table<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> table<span class="token punctuation">.</span>innerHTML<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>
+          <span class="token string">'Pending...'</span><span class="token punctuation">,</span>
+          <span class="token string">'Loaded!!!'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1500</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="example"><table id="example-table"><tbody><tr id="a1"><td>First row</td> <td class="status">Pending.</td> <td><button>Load row</button></td></tr> <tr id="b1"><td>Second row</td> <td class="status">Pending..</td> <td><button>Load row</button></td></tr> <tr id="c1"><td>Third row</td> <td class="status">Pending...</td> <td><button id="load-row-c1">Load row</button></td></tr></tbody></table> <script>
+  document
+    .getElementById('load-row-c1')
+    .addEventListener('click', () =&gt; {
+      setTimeout(() =&gt; {
+        const table = document.querySelector('table#example-table')
+        table.innerHTML = table.innerHTML.replace(
+          'Pending...',
+          'Loaded!!!',
+        )
+      }, 1500)
+    })
+</script></div></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// first, find the row of interest</span>
+<span class="token comment">// and save its ID in a local variable</span>
+<span class="token keyword">let</span> rowId
+cy<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">'tr'</span><span class="token punctuation">,</span> <span class="token string">'Third row'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.attr'</span><span class="token punctuation">,</span> <span class="token string">'id'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>rowId <span class="token operator">=</span> id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// click the button in the row we want</span>
+    <span class="token keyword">const</span> rowSelector <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">tr#</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rowId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+    cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>rowSelector<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">'Load row'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// notice the click replaces the entire table DOM structure</span>
+    <span class="token comment">// thus we want to write the entire query as a single command</span>
+    <span class="token comment">// to be retried at once: find a row with cell</span>
+    <span class="token comment">// with specific class with text &quot;Loaded&quot;</span>
+    cy<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">table </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rowSelector<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> td.status</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token string">'Loaded'</span><span class="token punctuation">)</span>
+      <span class="token comment">// and now we can &quot;move&quot; up the tree to the parent row</span>
+      <span class="token comment">// and confirm other values ...</span>
+      <span class="token punctuation">.</span><span class="token function">parent</span><span class="token punctuation">(</span><span class="token string">'tr'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">'td'</span><span class="token punctuation">,</span> <span class="token string">'Third row'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bahmutov/cypress-examples/edit/master/docs/recipes/table-update.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/cypress-examples/9.1.1/assets/js/app.522dbd2a.js" defer></script><script src="/cypress-examples/9.1.1/assets/js/3.add9cb56.js" defer></script><script src="/cypress-examples/9.1.1/assets/js/51.e688c60e.js" defer></script>
+  </body>
+</html>
