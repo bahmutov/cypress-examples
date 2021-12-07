@@ -61,9 +61,11 @@ cy.get('h4,h5,h6').should('have.length.gt', 1)
 
 ### jQuery selectors
 
+#### Containing text
+
 <!-- fiddle cy.get / with jQuery text selector -->
 
-`cy.get` uses [jQuery selectors](https://api.jquery.com/category/selectors/), thus you can immediately use them to find elements by text (or without given text).
+`cy.get` uses [jQuery selectors](https://api.jquery.com/category/selectors/), thus you can immediately use them to find elements by text (or without given text). Use `:contains(text)` to find elements with the given text string and `:not(:contains(text))` to get elements without the text.
 
 ```html
 <table>
