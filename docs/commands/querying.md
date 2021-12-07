@@ -576,6 +576,35 @@ cy.contains('#my-name', 'My name is')
 
 <!-- fiddle-end -->
 
+### Escape text
+
+<!-- fiddle contains / escape text -->
+
+```html
+<div id="escape-text-example">
+  <div id="message">[INFO]: this is \\a message\\</div>
+</div>
+```
+
+```js
+// notice how we need to escape the JavaScript string
+// because it needs to have double back slashes
+const msg = '[INFO]: this is \\\\a message\\\\'
+cy.get('#escape-text-example')
+  .contains(msg)
+  .should('have.id', 'message')
+cy.get('#escape-text-example')
+  // almost equivalent jQuery :contains(text) selector
+  // but unfortunately it breaks on back slashes
+  // https://api.jquery.com/contains-selector/
+  // .find(`:contains("${msg}")`)
+  // we need to escape each escaped backslash!
+  .find(`:contains("[INFO]: this is \\\\\\\\a message\\\\\\\\")`)
+  .should('have.id', 'message')
+```
+
+<!-- fiddle-end -->
+
 ## [.within](https://on.cypress.io/within)
 
 We can find elements within a specific DOM element `.within()`
