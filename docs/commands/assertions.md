@@ -71,451 +71,6 @@ Note: find even more examples of matching element's text content in this [FAQ an
 
 <!-- fiddle-end -->
 
-#### Input elements
-
-When using HTML input elements, use `have.value` assertion.
-
-<!-- fiddle Implicit Assertions / .should() - input elements have value -->
-
-```html
-<input
-  id="rent"
-  type="text"
-  pattern="[0-9]+\.*[0-9]*"
-  placeholder="e.g 000.00"
-  required
-/>
-```
-
-```js
-cy.get('#rent').type('630.00').should('have.value', '630.00')
-```
-
-<!-- fiddle-end -->
-
-#### Non-input elements
-
-<!-- fiddle Implicit Assertions / .should() - non-input elements contain text -->
-
-With non-input HTML elements, you can use the `contain` assertion.
-
-```html
-<p id="text-example">A brown fox ...</p>
-```
-
-```js
-cy.get('#text-example').should('contain', 'brown fox')
-```
-
-<!-- fiddle-end -->
-
-#### HTML element tag
-
-<!-- fiddle Implicit Assertions / .should() - HTML element tag -->
-
-To confirm the HTML element's tag name, use `have.prop` assertion with property `nodeName`. Remember that node names are all capitalized like `DIV`, `P`, etc.
-
-```html
-<marquee id="tag-example">A brown fox ...</marquee>
-```
-
-```js
-cy.get('#tag-example').should('have.prop', 'nodeName', 'MARQUEE')
-```
-
-<!-- fiddle-end -->
-
-#### Newlines
-
-If the text contais newline characters, you can trim it before asserting the text contents or use [cy.contains](https://on.cypress.io/contains) or `include.text` assertion.
-
-<!-- fiddle Implicit Assertions / .should() - text with newlines -->
-
-To better show how assertions wait for the application to be ready, this element adds "there!" after a delay.
-
-```html
-<div id="newlines-example">
-  hello
-</div>
-<script>
-  setTimeout(function () {
-    document.getElementById('newlines-example').innerText +=
-      ', there!\n'
-  }, 1000)
-</script>
-```
-
-```js
-cy.get('#newlines-example')
-  // cannot use "have.text" because it requires
-  // and exact match, and the element has "\n...\n"
-  // .should('have.text', 'hello, there!')
-  // if you want to perform specific text transforms
-  // before checking it, do it inside a should(cb) function
-  .should(($el) => {
-    // yget and trim the text before comparing
-    const text = $el.text().trim()
-    expect(text).to.equal('hello, there!')
-  })
-  // the "include.text" assertion only checks part of the text
-  .and('include.text', 'hello, there!')
-
-// cy.contains uses partial text match too
-cy.contains('#newlines-example', 'hello, there!')
-```
-
-<!-- fiddle-end -->
-
-#### HTML entities
-
-<!-- fiddle Implicit Assertions / .should() - html entities -->
-
-```html
-<span id="y-value">&radic;y</span>
-```
-
-```js
-cy.get('#y-value')
-  // use the text value of the HTML entity
-  .should('have.html', '√y')
-  // "have.html", "have.text", and "contain"
-  // assertions work the same with text
-  .and('have.text', '√y')
-  .and('contain', '√y')
-```
-
-Unfortunately, there is no standard built-in JavaScript method for converting HTML entities like `&radic;` into the browser text. Thus the test can encode it itself to use in the assertion.
-
-```js
-// a utility for converting HTML entities into text
-const encode = (s) => {
-  const p = document.createElement('p')
-  p.innerHTML = s // encodes
-  return p.innerText
-}
-cy.get('#y-value').should('have.text', encode('&radic;y'))
-```
-
-<!-- fiddle-end -->
-
-#### Placeholder attribute
-
-Let's validate the input element's placeholder attribute.
-
-<!-- fiddle Implicit Assertions / .should() - placeholder attribute -->
-
-```html
-<input
-  type="text"
-  id="inputEmail"
-  class="form-control"
-  placeholder="Email"
-/>
-```
-
-```js
-cy.get('#inputEmail').should('have.attr', 'placeholder', 'Email')
-```
-
-<!-- fiddle-end -->
-
-#### Visible element with text
-
-Let's confirm that the page contains a visible element with some text.
-
-<!-- fiddle Implicit Assertions / .should() - visible non-empty text -->
-
-```html
-<div id="greeting">Hello, there!</div>
-```
-
-```js
-// if we know the precise text we are looking for
-cy.get('#greeting')
-  .should('be.visible')
-  .and('have.text', 'Hello, there!')
-// if we do not know the text
-cy.get('#greeting')
-  .should('be.visible')
-  .invoke('text')
-  .should('be.a', 'string')
-  .and('be.not.empty')
-```
-
-<!-- fiddle-end -->
-
-#### Partial text match
-
-<!-- fiddle Implicit Assertions / .should() - partial text match -->
-
-```html
-<div id="parent-element">
-  some text at the start
-  <span class="inner">main content</span>
-  and some text afterwards
-</div>
-```
-
-```js
-cy.get('#parent-element')
-  // we only know a part of the text somewhere
-  // inside the element
-  .should('include.text', 'at the start')
-  // "include.text" and "contain" are synonym assertions
-  // to find partial text match
-  .and('contain', 'some text afterwards')
-  // the text inside the child element also counts
-  .and('contain', 'main content')
-cy.get('#parent-element')
-  // if we use cy.contains command
-  // we find the child <span> element
-  .contains('main')
-  .should('have.class', 'inner')
-```
-
-<!-- fiddle-end -->
-
-#### Visibility of multiple elements
-
-Only some elements should be visible for the assertion `should('be.visible')` to pass.
-
-<!-- fiddle Implicit Assertions / .should() - visibility of multiple elements -->
-
-```html
-<ul id="few-elements">
-  <li>first</li>
-  <li style="display:none">second</li>
-  <li>third</li>
-</ul>
-```
-
-The test passes, even if some elements are invisible.
-
-```js
-cy.get('#few-elements li').should('be.visible').and('have.length', 3)
-// while the second element is still invisible
-cy.contains('#few-elements li', 'second').should('not.be.visible')
-// workarounds for visibility checks
-// 1. we can use jQuery selector :visible to get just the visible elements
-cy.get('#few-elements li:visible').should('have.length', 2)
-// 2. we can filter visible elements using jQuery selector
-cy.get('#few-elements li')
-  .should('have.length', 3)
-  .filter(':visible')
-  .should('have.length', 2)
-// 3. we can filter elements to get just the invisible elements
-cy.get('#few-elements li')
-  .not(':visible')
-  .should('have.length', 1)
-  .and('have.text', 'second')
-```
-
-<!-- fiddle-end -->
-
-#### Elements becoming invisible
-
-Let's checks if a list of elements becomes invisible after some time.
-
-<!-- fiddle Implicit Assertions / .should() - elements becoming invisible -->
-
-```html
-<ul id="multiple-elements">
-  <li>first</li>
-  <li>second</li>
-  <li>third</li>
-</ul>
-<button id="hide-multiple-elements">Hide items</button>
-<script>
-  document
-    .getElementById('hide-multiple-elements')
-    .addEventListener('click', function () {
-      // we hide the elements after some unknown delay
-      setTimeout(
-        function () {
-          document
-            .querySelectorAll('#multiple-elements li')
-            .forEach(function (el) {
-              el.style.display = 'none'
-            })
-        },
-        // elements disappear after 1 - 2 seconds
-        Math.random() * 1000 + 1000,
-      )
-    })
-</script>
-```
-
-At first, all elements are visible
-
-```js
-cy.get('#multiple-elements li')
-  .should('have.length', 3)
-  .and('be.visible')
-```
-
-The elements become invisible after clicking on the button
-
-```js
-cy.get('#hide-multiple-elements').click()
-cy.get('#multiple-elements li')
-  // the elements still exist in the DOM
-  .should('exist')
-  .and('have.length', 3)
-  // but should not be visible to the user
-  .and('not.be.visible')
-```
-
-<!-- fiddle-end -->
-
-#### Text matching the regular expression
-
-We can use regular expressions with "match" assertions to confirm part of the text.
-
-<!-- fiddle Implicit Assertions / .should() - text matching the regular expression -->
-
-```html
-<div id="a-greeting">Hello, there!</div>
-```
-
-```js
-cy.get('#a-greeting')
-  .invoke('text')
-  .should('match', /^Hello/)
-// tip: use cy.contains to find element with text
-// matching a regular expression
-cy.contains('#a-greeting', /^Hello/)
-```
-
-<!-- fiddle-end -->
-
-#### Converting text
-
-Sometimes you need to extract the text and convert it into a number before running an assertion.
-
-<!-- fiddle Implicit Assertions / .should() - convert text to number -->
-
-```html
-<div id="num-example">Messages <span class="messages">4</span></div>
-```
-
-```js
-cy.get('#num-example .messages')
-  .invoke('text')
-  .then(parseInt)
-  .should('equal', 4)
-  // if you do not know the exact expected number
-  // use range assertions, like "greater than", "within"
-  .and('be.gt', 0)
-  .and('be.within', 0, 10)
-```
-
-You can also combine multiple steps into a single "should" callback for greater [retry-ability](https://on.cypress.io/retry-ability).
-
-```js
-// use command + single assertion callback
-cy.get('#num-example .messages').should(($el) => {
-  const n = parseInt($el.text())
-  expect(n, 'number of messages')
-    .to.be.a('number')
-    .and.be.within(0, 10)
-})
-```
-
-<!-- fiddle-end -->
-
-#### OR match using regular expression
-
-If you want to confirm the text matches one string or another, use a regular expression
-
-<!-- fiddle Implicit Assertions / .should() - OR match -->
-
-```html
-<div id="or-match">Joe</div>
-```
-
-```js
-cy.get('#or-match')
-  .invoke('text')
-  .should('match', /^(Joe|Mary)$/)
-// the same can be done using cy.contains command
-cy.contains('#or-match', /^(Joe|Mary)$/)
-```
-
-<!-- fiddle-end -->
-
-#### Disabled elements
-
-<!-- fiddle Implicit Assertions / .should() - disabled element -->
-
-```html
-<input type="text" id="example-input" disabled />
-```
-
-```js
-cy.get('#example-input')
-  .should('be.disabled')
-  // let's enable this element from the test
-  .invoke('prop', 'disabled', false)
-cy.get('#example-input')
-  // we can use "enabled" assertion
-  .should('be.enabled')
-  // or negate the "disabled" assertion
-  .and('not.be.disabled')
-```
-
-<!-- fiddle-end -->
-
-#### Data attributes
-
-<!-- fiddle Implicit Assertions / .should() - data attributes -->
-
-```html
-<ul id="data-attributes">
-  <li data-test-id="first">first</li>
-  <li data-e2e="second">second</li>
-  <li data-e2e="one" data-cy="two">third</li>
-</ul>
-```
-
-We can check if an element has a particular "data-x" attribute present, and its value using a "have.data" assertion.
-
-```js
-cy.contains('#data-attributes li', 'first')
-  // "data" object converts names to camel case
-  .should('have.data', 'testId', 'first')
-  // the assertion yields the value of the data attribute
-  .should('equal', 'first')
-
-cy.contains('#data-attributes li', 'second')
-  // first assertion confirms there is such "data-x" property
-  .should('have.data', 'e2e')
-  // and yields the value that we assert in the next assertion
-  .should('equal', 'second')
-
-// multiple "data-" properties need multiple commands
-cy.contains('#data-attributes li', 'third').should(
-  'have.data',
-  'e2e',
-  'one',
-)
-cy.contains('#data-attributes li', 'third').should(
-  'have.data',
-  'cy',
-  'two',
-)
-// or a single "data()" call to get an object of values
-cy.contains('#data-attributes li', 'third')
-  .invoke('data')
-  .should('deep.equal', {
-    e2e: 'one',
-    cy: 'two',
-  })
-```
-
-<!-- fiddle-end -->
-
-**Tip:** you can simplify checking for "data-" attributes by adding your own custom Chai assertion, see the [recipe](../recipes/add-data-assertion.md).
-
 ### [.and()](https://on.cypress.io/and)
 
 To chain multiple assertions together, use the `.and()` command.
@@ -1081,6 +636,451 @@ cy.get('#loading').should('exist').and('have.text', 'Loading ...')
 ```
 
 <!-- fiddle-end -->
+
+## Input elements
+
+When using HTML input elements, use `have.value` assertion.
+
+<!-- fiddle Implicit Assertions / .should() - input elements have value -->
+
+```html
+<input
+  id="rent"
+  type="text"
+  pattern="[0-9]+\.*[0-9]*"
+  placeholder="e.g 000.00"
+  required
+/>
+```
+
+```js
+cy.get('#rent').type('630.00').should('have.value', '630.00')
+```
+
+<!-- fiddle-end -->
+
+## Non-input elements
+
+<!-- fiddle Implicit Assertions / .should() - non-input elements contain text -->
+
+With non-input HTML elements, you can use the `contain` assertion.
+
+```html
+<p id="text-example">A brown fox ...</p>
+```
+
+```js
+cy.get('#text-example').should('contain', 'brown fox')
+```
+
+<!-- fiddle-end -->
+
+## HTML element tag
+
+<!-- fiddle Implicit Assertions / .should() - HTML element tag -->
+
+To confirm the HTML element's tag name, use `have.prop` assertion with property `nodeName`. Remember that node names are all capitalized like `DIV`, `P`, etc.
+
+```html
+<marquee id="tag-example">A brown fox ...</marquee>
+```
+
+```js
+cy.get('#tag-example').should('have.prop', 'nodeName', 'MARQUEE')
+```
+
+<!-- fiddle-end -->
+
+## Newlines
+
+If the text contains newline characters, you can trim it before asserting the text contents or use [cy.contains](https://on.cypress.io/contains) or `include.text` assertion.
+
+<!-- fiddle Implicit Assertions / .should() - text with newlines -->
+
+To better show how assertions wait for the application to be ready, this element adds "there!" after a delay.
+
+```html
+<div id="newlines-example">
+  hello
+</div>
+<script>
+  setTimeout(function () {
+    document.getElementById('newlines-example').innerText +=
+      ', there!\n'
+  }, 1000)
+</script>
+```
+
+```js
+cy.get('#newlines-example')
+  // cannot use "have.text" because it requires
+  // and exact match, and the element has "\n...\n"
+  // .should('have.text', 'hello, there!')
+  // if you want to perform specific text transforms
+  // before checking it, do it inside a should(cb) function
+  .should(($el) => {
+    // yget and trim the text before comparing
+    const text = $el.text().trim()
+    expect(text).to.equal('hello, there!')
+  })
+  // the "include.text" assertion only checks part of the text
+  .and('include.text', 'hello, there!')
+
+// cy.contains uses partial text match too
+cy.contains('#newlines-example', 'hello, there!')
+```
+
+<!-- fiddle-end -->
+
+## HTML entities
+
+<!-- fiddle Implicit Assertions / .should() - html entities -->
+
+```html
+<span id="y-value">&radic;y</span>
+```
+
+```js
+cy.get('#y-value')
+  // use the text value of the HTML entity
+  .should('have.html', '√y')
+  // "have.html", "have.text", and "contain"
+  // assertions work the same with text
+  .and('have.text', '√y')
+  .and('contain', '√y')
+```
+
+Unfortunately, there is no standard built-in JavaScript method for converting HTML entities like `&radic;` into the browser text. Thus the test can encode it itself to use in the assertion.
+
+```js
+// a utility for converting HTML entities into text
+const encode = (s) => {
+  const p = document.createElement('p')
+  p.innerHTML = s // encodes
+  return p.innerText
+}
+cy.get('#y-value').should('have.text', encode('&radic;y'))
+```
+
+<!-- fiddle-end -->
+
+## Placeholder attribute
+
+Let's validate the input element's placeholder attribute.
+
+<!-- fiddle Implicit Assertions / .should() - placeholder attribute -->
+
+```html
+<input
+  type="text"
+  id="inputEmail"
+  class="form-control"
+  placeholder="Email"
+/>
+```
+
+```js
+cy.get('#inputEmail').should('have.attr', 'placeholder', 'Email')
+```
+
+<!-- fiddle-end -->
+
+## Visible element with text
+
+Let's confirm that the page contains a visible element with some text.
+
+<!-- fiddle Implicit Assertions / .should() - visible non-empty text -->
+
+```html
+<div id="greeting">Hello, there!</div>
+```
+
+```js
+// if we know the precise text we are looking for
+cy.get('#greeting')
+  .should('be.visible')
+  .and('have.text', 'Hello, there!')
+// if we do not know the text
+cy.get('#greeting')
+  .should('be.visible')
+  .invoke('text')
+  .should('be.a', 'string')
+  .and('be.not.empty')
+```
+
+<!-- fiddle-end -->
+
+## Partial text match
+
+<!-- fiddle Implicit Assertions / .should() - partial text match -->
+
+```html
+<div id="parent-element">
+  some text at the start
+  <span class="inner">main content</span>
+  and some text afterwards
+</div>
+```
+
+```js
+cy.get('#parent-element')
+  // we only know a part of the text somewhere
+  // inside the element
+  .should('include.text', 'at the start')
+  // "include.text" and "contain" are synonym assertions
+  // to find partial text match
+  .and('contain', 'some text afterwards')
+  // the text inside the child element also counts
+  .and('contain', 'main content')
+cy.get('#parent-element')
+  // if we use cy.contains command
+  // we find the child <span> element
+  .contains('main')
+  .should('have.class', 'inner')
+```
+
+<!-- fiddle-end -->
+
+## Visibility of multiple elements
+
+Only some elements should be visible for the assertion `should('be.visible')` to pass.
+
+<!-- fiddle Implicit Assertions / .should() - visibility of multiple elements -->
+
+```html
+<ul id="few-elements">
+  <li>first</li>
+  <li style="display:none">second</li>
+  <li>third</li>
+</ul>
+```
+
+The test passes, even if some elements are invisible.
+
+```js
+cy.get('#few-elements li').should('be.visible').and('have.length', 3)
+// while the second element is still invisible
+cy.contains('#few-elements li', 'second').should('not.be.visible')
+// workarounds for visibility checks
+// 1. we can use jQuery selector :visible to get just the visible elements
+cy.get('#few-elements li:visible').should('have.length', 2)
+// 2. we can filter visible elements using jQuery selector
+cy.get('#few-elements li')
+  .should('have.length', 3)
+  .filter(':visible')
+  .should('have.length', 2)
+// 3. we can filter elements to get just the invisible elements
+cy.get('#few-elements li')
+  .not(':visible')
+  .should('have.length', 1)
+  .and('have.text', 'second')
+```
+
+<!-- fiddle-end -->
+
+## Elements becoming invisible
+
+Let's checks if a list of elements becomes invisible after some time.
+
+<!-- fiddle Implicit Assertions / .should() - elements becoming invisible -->
+
+```html
+<ul id="multiple-elements">
+  <li>first</li>
+  <li>second</li>
+  <li>third</li>
+</ul>
+<button id="hide-multiple-elements">Hide items</button>
+<script>
+  document
+    .getElementById('hide-multiple-elements')
+    .addEventListener('click', function () {
+      // we hide the elements after some unknown delay
+      setTimeout(
+        function () {
+          document
+            .querySelectorAll('#multiple-elements li')
+            .forEach(function (el) {
+              el.style.display = 'none'
+            })
+        },
+        // elements disappear after 1 - 2 seconds
+        Math.random() * 1000 + 1000,
+      )
+    })
+</script>
+```
+
+At first, all elements are visible
+
+```js
+cy.get('#multiple-elements li')
+  .should('have.length', 3)
+  .and('be.visible')
+```
+
+The elements become invisible after clicking on the button
+
+```js
+cy.get('#hide-multiple-elements').click()
+cy.get('#multiple-elements li')
+  // the elements still exist in the DOM
+  .should('exist')
+  .and('have.length', 3)
+  // but should not be visible to the user
+  .and('not.be.visible')
+```
+
+<!-- fiddle-end -->
+
+## Text matching the regular expression
+
+We can use regular expressions with "match" assertions to confirm part of the text.
+
+<!-- fiddle Implicit Assertions / .should() - text matching the regular expression -->
+
+```html
+<div id="a-greeting">Hello, there!</div>
+```
+
+```js
+cy.get('#a-greeting')
+  .invoke('text')
+  .should('match', /^Hello/)
+// tip: use cy.contains to find element with text
+// matching a regular expression
+cy.contains('#a-greeting', /^Hello/)
+```
+
+<!-- fiddle-end -->
+
+## Converting text
+
+Sometimes you need to extract the text and convert it into a number before running an assertion.
+
+<!-- fiddle Implicit Assertions / .should() - convert text to number -->
+
+```html
+<div id="num-example">Messages <span class="messages">4</span></div>
+```
+
+```js
+cy.get('#num-example .messages')
+  .invoke('text')
+  .then(parseInt)
+  .should('equal', 4)
+  // if you do not know the exact expected number
+  // use range assertions, like "greater than", "within"
+  .and('be.gt', 0)
+  .and('be.within', 0, 10)
+```
+
+You can also combine multiple steps into a single "should" callback for greater [retry-ability](https://on.cypress.io/retry-ability).
+
+```js
+// use command + single assertion callback
+cy.get('#num-example .messages').should(($el) => {
+  const n = parseInt($el.text())
+  expect(n, 'number of messages')
+    .to.be.a('number')
+    .and.be.within(0, 10)
+})
+```
+
+<!-- fiddle-end -->
+
+## OR match using regular expression
+
+If you want to confirm the text matches one string or another, use a regular expression
+
+<!-- fiddle Implicit Assertions / .should() - OR match -->
+
+```html
+<div id="or-match">Joe</div>
+```
+
+```js
+cy.get('#or-match')
+  .invoke('text')
+  .should('match', /^(Joe|Mary)$/)
+// the same can be done using cy.contains command
+cy.contains('#or-match', /^(Joe|Mary)$/)
+```
+
+<!-- fiddle-end -->
+
+## Disabled elements
+
+<!-- fiddle Implicit Assertions / .should() - disabled element -->
+
+```html
+<input type="text" id="example-input" disabled />
+```
+
+```js
+cy.get('#example-input')
+  .should('be.disabled')
+  // let's enable this element from the test
+  .invoke('prop', 'disabled', false)
+cy.get('#example-input')
+  // we can use "enabled" assertion
+  .should('be.enabled')
+  // or negate the "disabled" assertion
+  .and('not.be.disabled')
+```
+
+<!-- fiddle-end -->
+
+## Data attributes
+
+<!-- fiddle Implicit Assertions / .should() - data attributes -->
+
+```html
+<ul id="data-attributes">
+  <li data-test-id="first">first</li>
+  <li data-e2e="second">second</li>
+  <li data-e2e="one" data-cy="two">third</li>
+</ul>
+```
+
+We can check if an element has a particular "data-x" attribute present, and its value using a "have.data" assertion.
+
+```js
+cy.contains('#data-attributes li', 'first')
+  // "data" object converts names to camel case
+  .should('have.data', 'testId', 'first')
+  // the assertion yields the value of the data attribute
+  .should('equal', 'first')
+
+cy.contains('#data-attributes li', 'second')
+  // first assertion confirms there is such "data-x" property
+  .should('have.data', 'e2e')
+  // and yields the value that we assert in the next assertion
+  .should('equal', 'second')
+
+// multiple "data-" properties need multiple commands
+cy.contains('#data-attributes li', 'third').should(
+  'have.data',
+  'e2e',
+  'one',
+)
+cy.contains('#data-attributes li', 'third').should(
+  'have.data',
+  'cy',
+  'two',
+)
+// or a single "data()" call to get an object of values
+cy.contains('#data-attributes li', 'third')
+  .invoke('data')
+  .should('deep.equal', {
+    e2e: 'one',
+    cy: 'two',
+  })
+```
+
+<!-- fiddle-end -->
+
+**Tip:** you can simplify checking for "data-" attributes by adding your own custom Chai assertion, see the [recipe](../recipes/add-data-assertion.md).
 
 ## Comparing arrays
 
