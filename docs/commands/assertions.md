@@ -295,9 +295,15 @@ The test passes, even if some elements are invisible.
 cy.get('#few-elements li').should('be.visible').and('have.length', 3)
 // while the second element is still invisible
 cy.contains('#few-elements li', 'second').should('not.be.visible')
-// we can use jQuery selector :visible to get just the visible elements
+// workarounds for visibility checks
+// 1. we can use jQuery selector :visible to get just the visible elements
 cy.get('#few-elements li:visible').should('have.length', 2)
-// we can filter elements to get just the invisible elements
+// 2. we can filter visible elements using jQuery selector
+cy.get('#few-elements li')
+  .should('have.length', 3)
+  .filter(':visible')
+  .should('have.length', 2)
+// 3. we can filter elements to get just the invisible elements
 cy.get('#few-elements li')
   .not(':visible')
   .should('have.length', 1)
