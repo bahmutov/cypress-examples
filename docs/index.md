@@ -176,3 +176,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Add a custom data-... attribute assertion](./recipes/add-data-assertion.md)
 - [Request a specific comment](./recipes/request-a-comment.md) using an ID read from the page
 - [Pseudo CSS selectors](./recipes/pseudo-selectors.md) like `:link`, `:empty`, `::before`
+- [Create long text](./recipes/create-long-text.md) using `Cypress._.repeat` function
