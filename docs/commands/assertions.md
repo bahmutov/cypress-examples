@@ -878,6 +878,8 @@ cy.get('#few-elements li')
 
 <!-- fiddle-end -->
 
+For more, see my video [Visibility Of Multiple Elements Explained](https://youtu.be/84NQf-HVWWE).
+
 ## Elements becoming invisible
 
 Let's checks if a list of elements becomes invisible after some time.
