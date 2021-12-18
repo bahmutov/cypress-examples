@@ -165,7 +165,9 @@ jobs:
 
   deploy:
     runs-on: ubuntu-20.04
-    needs: [install, test-link, test-markdown, test-js]
+    # do not depend on testing the links
+    # since some external sites are not always available
+    needs: [install, test-markdown, test-js]
     # only deploy from the master branch
     if: github.ref == 'refs/heads/master'
     steps:
