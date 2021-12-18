@@ -15,12 +15,14 @@
 The check below reports if the array of unique elements has the same length as the original. It does not report which elements are duplicates.
 
 ```js
+// destructure Cypress._ for convenience
+const { map, uniq, countBy, pickBy } = Cypress._
 cy.get('li')
   // wait for the list to be stable
   .should('have.length', 3)
   .and(($list) => {
     const values = Cypress._.map($list, 'innerText')
-    const distinct = Cypress._.uniq(values)
+    const distinct = uniq(values)
     expect(distinct, 'all strings are different').to.have.length(
       values.length,
     )
@@ -30,13 +32,11 @@ cy.get('li')
 If you need to report the duplicate elements, I suggest using Lodash `countBy` and `pickBy` functions and reporting all entries with the count larger than 1.
 
 ```js
-// destructure Cypress._ for convenience
-const { map, countBy, pickBy } = Cypress._
-cy.get('li')
-  .then(($list) => map($list, 'innerText'))
-  .then(countBy)
-  .then((counts) => pickBy(counts, (n) => n > 1))
-  .should('be.empty')
+cy.get('li').should(($list) => {
+  const counts = countBy(map($list, 'innerText'))
+  const duplicates = pickBy(counts, (n) => n > 1)
+  expect(duplicates, 'duplicates').to.be.empty
+})
 ```
 
 <!-- fiddle-end -->
