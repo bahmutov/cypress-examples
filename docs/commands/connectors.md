@@ -24,6 +24,8 @@ cy.get('.connectors-each-ul>li').each(function ($el, index, $list) {
 
 <!-- fiddle-end -->
 
+For more `cy.each` examples, see the [cy.each recipe](../recipes/each-example.md).
+
 ### Put complex logic into each callback
 
 Let's say that we want to confirm that each element in the list has the text content `Item <index>` where the index starts with 1, and the tooltip attribute is `Click me`.

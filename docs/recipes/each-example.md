@@ -2,7 +2,7 @@
 
 ## Collect items text
 
-<!-- fiddle .each collect items text -->
+<!-- fiddle .each / collect items text -->
 
 Let's say we have a list of items
 
@@ -33,7 +33,7 @@ cy.get('li')
 
 ## Count items with matching text
 
-<!-- fiddle .each count items by text -->
+<!-- fiddle .each / count items by text -->
 
 If we have a list of items and want to count how many times the word "Apples" is in it
 
@@ -76,7 +76,7 @@ cy.get('li:contains("Apples")').should('have.length', 3)
 
 The original [issue #8652](https://github.com/cypress-io/cypress/issues/8652)
 
-<!-- fiddle .each example -->
+<!-- fiddle .each / stop iteration by returning false -->
 
 Let's take the list of fruits again
 
@@ -124,7 +124,7 @@ cy.takeRunnerPic('each-example')
 
 ## How to read values from elements using `.each`?
 
-<!-- fiddle read numbers -->
+<!-- fiddle .each / read numbers from elements -->
 
 ```html
 <ul>
@@ -148,7 +148,7 @@ cy.get('li')
 
 <!-- fiddle-end -->
 
-<!-- fiddle read using custom command -->
+<!-- fiddle .each / read numbers using a custom command -->
 
 ```html
 <ul>
