@@ -185,3 +185,56 @@ cy.takeRunnerPic('each-list')
 <!-- fiddle-end -->
 
 ![Each example test](./pics/each-list.png)
+
+## Match regular expression with OR
+
+Imagine we have a lit of prices, and each item can have a dollar amount or "Pay As You Want" string. Let's confirm this.
+
+<!-- fiddle .each / matches using a regular expression -->
+
+```html
+<ul>
+  <li>
+    <span class="item">Apples</span> <span class="price">$0.99</span>
+  </li>
+  <li>
+    <span class="item">Grapes</span>
+    <span class="price">Pay As You Want</span>
+  </li>
+  <li>
+    <span class="item">Tomatoes</span>
+    <span class="price">$2.69</span>
+  </li>
+  <li>
+    <span class="item">Lemons</span>
+    <span class="price">Pay as you want</span>
+  </li>
+</ul>
+<style>
+  .price {
+    font-weight: bold;
+  }
+</style>
+```
+
+```js
+// first ensure the number of prices is the same as items
+cy.get('.item')
+  .should('have.length.gt', 0)
+  .its('length')
+  .then((n) => {
+    cy.get('.price').should('have.length', n)
+  })
+// cy.each callback receives the jQuery element
+cy.get('.price').each(($price, k) => {
+  const text = $price.text()
+  // find out the item name for better messaging
+  const item = $price.parent().find('.item').text()
+  // our regular expression should match prices
+  // and the "pay as you go text" and ignore case
+  const expression = /^(\$\d+\.\d\d|pay as you want)$/i
+  expect(text, `${k + 1}: ${item}`).to.match(expression)
+})
+```
+
+<!-- fiddle-end -->
