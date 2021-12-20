@@ -34,6 +34,30 @@ cy.contains('The code example').should(
 
 <!-- fiddle-end -->
 
+The "have.attr" assertion yields the value of the attribute, which makes it convenient when checking a value you know only partially. For example, if the element is an image, and the URL changes, you can confirm the a part of it.
+
+<!-- fiddle Confirm part of the attribute value -->
+
+For example, we do not know the exact value of the "integrity" attribute of the included jQuery library, but we know it should start with "sha256" string.
+
+```html
+<script
+  data-cy="jQuery"
+  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+  crossorigin="anonymous"
+></script>
+```
+
+```js
+cy.get('script[data-cy=jQuery]')
+  .should('have.attr', 'integrity')
+  // now we are checking the value "sha256-u7e5..."
+  .should('match', /^sha256-/)
+```
+
+<!-- fiddle-end -->
+
 ## Multiple elements
 
 Confirm the title attributes from multiple elements by extracting them into an array.
