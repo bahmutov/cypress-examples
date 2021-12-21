@@ -19,7 +19,7 @@ cy.hash().should('be.empty')
 
 To get `window.location`, use the `cy.location()` command.
 
-<!-- fiddle cy.location() / get the current location object -->
+<!-- fiddle.skip cy.location() / get the current location object -->
 
 ```js
 cy.visit('https://example.cypress.io/commands/location')
@@ -42,9 +42,11 @@ cy.location().should((location) => {
 
 <!-- fiddle-end -->
 
+### location part
+
 You can pass an argument to return just the part you are interested in
 
-<!-- fiddle cy.location() / get part of the URL -->
+<!-- fiddle.skip cy.location() / get part of the URL -->
 
 ```js
 cy.visit(
@@ -60,11 +62,48 @@ cy.location('hash').should('equal', '#top')
 
 <!-- fiddle-end -->
 
+### parsed search
+
+If you want to check a specific value inside the search part of the URL, use the browser built-in object [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
+
+<!-- fiddle.skip cy.location() / parsed search -->
+
+```js
+// the full URL includes several search terms
+cy.visit(
+  'https://example.cypress.io/commands/location?search=value&id=1234',
+)
+cy.location('search')
+  .should('equal', '?search=value&id=1234')
+  // let's parse the search value
+  .then((s) => new URLSearchParams(s))
+  .invoke('get', 'id') // check a specific key
+  .should('equal', '1234')
+```
+
+We can convert the `URLSearchParams` into a plain object using the bundled Lodash function
+
+```js
+// tip: move the conversion from the search string to
+// a plain object to an utility function
+cy.location('search').should((search) => {
+  const parsed = new URLSearchParams(search)
+  const pairs = Array.from(parsed.entries())
+  const plain = Cypress._.fromPairs(pairs)
+  expect(plain, 'search params').to.deep.equal({
+    search: 'value',
+    id: '1234',
+  })
+})
+```
+
+<!-- fiddle-end -->
+
 ## [cy.url()](https://on.cypress.io/url)
 
 To get the current URL string, use the `cy.url()` command.
 
-<!-- fiddle cy.url() - get the current URL string -->
+<!-- fiddle.skip cy.url() - get the current URL string -->
 
 ```js
 cy.visit('https://example.cypress.io/commands/location')
