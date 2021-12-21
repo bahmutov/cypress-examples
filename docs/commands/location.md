@@ -19,9 +19,13 @@ cy.hash().should('be.empty')
 
 To get `window.location`, use the `cy.location()` command.
 
+<!-- fiddle cy.location() / get the current location object -->
+
 ```js
+cy.visit('https://example.cypress.io/commands/location')
 // https://on.cypress.io/location
 cy.location().should((location) => {
+  // returns an object with every part of the URL
   expect(location.hash).to.be.empty
   expect(location.href).to.eq(
     'https://example.cypress.io/commands/location',
@@ -36,11 +40,36 @@ cy.location().should((location) => {
 })
 ```
 
-## [cy.url()](https://on.cypress.io/url)
+<!-- fiddle-end -->
 
-To get the current URL, use the `cy.url()` command.
+You can pass an argument to return just the part you are interested in
+
+<!-- fiddle cy.location() / get part of the URL -->
 
 ```js
+cy.visit(
+  'https://example.cypress.io/commands/location?search=value#top',
+)
+// yields a specific part of the location
+cy.location('protocol').should('equal', 'https:')
+cy.location('hostname').should('equal', 'example.cypress.io')
+cy.location('pathname').should('equal', '/commands/location')
+cy.location('search').should('equal', '?search=value')
+cy.location('hash').should('equal', '#top')
+```
+
+<!-- fiddle-end -->
+
+## [cy.url()](https://on.cypress.io/url)
+
+To get the current URL string, use the `cy.url()` command.
+
+<!-- fiddle cy.url() - get the current URL string -->
+
+```js
+cy.visit('https://example.cypress.io/commands/location')
 // https://on.cypress.io/url
 cy.url().should('eq', 'https://example.cypress.io/commands/location')
 ```
+
+<!-- fiddle-end -->
