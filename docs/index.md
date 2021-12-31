@@ -178,3 +178,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Pseudo CSS selectors](./recipes/pseudo-selectors.md) like `:link`, `:empty`, `::before`
 - [Create long text](./recipes/create-long-text.md) using `Cypress._.repeat` function
 - [Detect duplicate values](./recipes/duplicates.md) by text or by attribute
+- Save multiple elements under [aliases](./recipes/aliases.md)
