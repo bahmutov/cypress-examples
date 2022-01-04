@@ -12,21 +12,25 @@ In this example, we want to confirm that the number shown is incremented by one 
   // we do not know the initial count value
   let count = Math.round(Math.random() * 100)
   document.getElementById('count').innerText = count
-  document.getElementById('add').addEventListener('click', () => {
-    // change the text, but do it after a random delay,
-    // almost like the application is loading something from the backend
-    setTimeout(() => {
-      count += 1
-      document.getElementById('count').innerText = count
-    }, 1000 + 1000 * Math.random())
-  })
-  document.getElementById('add-x').addEventListener('click', () => {
-    setTimeout(() => {
-      // increment the count by some random positive number
-      count += Math.ceil(Math.random() * 10)
-      document.getElementById('count').innerText = count
-    }, 1000 + 1000 * Math.random())
-  })
+  document
+    .getElementById('add')
+    .addEventListener('click', function () {
+      // change the text, but do it after a random delay,
+      // almost like the application is loading something from the backend
+      setTimeout(function () {
+        count += 1
+        document.getElementById('count').innerText = count
+      }, 1000 + 1000 * Math.random())
+    })
+  document
+    .getElementById('add-x')
+    .addEventListener('click', function () {
+      setTimeout(function () {
+        // increment the count by some random positive number
+        count += Math.ceil(Math.random() * 10)
+        document.getElementById('count').innerText = count
+      }, 1000 + 1000 * Math.random())
+    })
 </script>
 ```
 
