@@ -389,6 +389,76 @@ cy.get('#and-selector-example').within(() => {
 
 <!-- fiddle-end -->
 
+### Table column
+
+You can get the table column using CSS selectors
+
+<!-- fiddle cy.get / Table column -->
+
+```html
+<style>
+  table td {
+    border: 3px solid black;
+    padding: 3px 5px;
+  }
+  #sort-by-date {
+    margin: 10px 0px;
+  }
+</style>
+<table id="people">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Age</td>
+      <td>Date (YYYY-MM-DD)</td>
+    </tr>
+  </thead>
+  <tbody id="people-data">
+    <tr>
+      <td>Dave</td>
+      <td>20</td>
+      <td>2023-12-23</td>
+    </tr>
+    <tr>
+      <td>Cary</td>
+      <td>30</td>
+      <td>2024-01-24</td>
+    </tr>
+    <tr>
+      <td>Joe</td>
+      <td>28</td>
+      <td>2022-02-25</td>
+    </tr>
+    <tr>
+      <td>Anna</td>
+      <td>22</td>
+      <td>2027-03-26</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+```js
+// let's get the first column
+cy.get('table#people tbody td:nth-child(1)').should(($cells) => {
+  expect($cells[0]).to.have.text('Dave')
+  expect($cells[1]).to.have.text('Cary')
+  expect($cells[2]).to.have.text('Joe')
+  expect($cells[3]).to.have.text('Anna')
+})
+// let's get the second column
+cy.get('table#people tbody td:nth-child(2)').should(($cells) => {
+  expect($cells[0]).to.have.text('20')
+  expect($cells[1]).to.have.text('30')
+  expect($cells[2]).to.have.text('28')
+  expect($cells[3]).to.have.text('22')
+})
+```
+
+Tip: you can extract multiple values and create assertions using [cypress-should-really](https://github.com/bahmutov/cypress-should-really) helpers.
+
+<!-- fiddle-end -->
+
 ## [cy.contains()](https://on.cypress.io/contains)
 
 We can find elements by their content using `cy.contains()`
