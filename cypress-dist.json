@@ -8,5 +8,7 @@
   "projectId": "dis6wg",
   "retries": {
     "runMode": 2
-  }
+  },
+  "videoCompression": 1,
+  "$schema": "https://on.cypress.io/cypress.schema.json"
 }
