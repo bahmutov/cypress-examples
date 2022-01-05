@@ -1,0 +1,13 @@
+name: deployed
+# https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
+on: [deployment, deployment_status]
+jobs:
+  print-event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print GitHub event 🖨
+        env:
+          GITHUB_EVENT: ${{ toJson(github.event) }}
+        run: echo "$GITHUB_EVENT"
+      - name: Print the context 📋
+        run: echo "context ${{ github.event.context }} state ${{ github.event.state }}"
