@@ -1,4 +1,4 @@
-name: deployed
+name: deployment
 # https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on: [deployment, deployment_status]
 jobs:
