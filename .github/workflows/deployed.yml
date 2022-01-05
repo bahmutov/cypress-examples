@@ -6,6 +6,14 @@ on:
     branches:
       - master
 jobs:
+  print-event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print GitHub event 🖨
+        env:
+          GITHUB_EVENT: ${{ toJson(github.event) }}
+        run: echo "$GITHUB_EVENT"
+
   test-publish-scrape:
     if: github.event.context == 'github/pages' && github.event.state == 'success'
     runs-on: ubuntu-latest
