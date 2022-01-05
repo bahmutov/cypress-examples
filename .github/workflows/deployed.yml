@@ -13,6 +13,8 @@ jobs:
         env:
           GITHUB_EVENT: ${{ toJson(github.event) }}
         run: echo "$GITHUB_EVENT"
+      - name: Print the context 📋
+        run: echo "context ${{ github.event.context }} state ${{ github.event.state }}"
 
   test-publish-scrape:
     if: github.event.context == 'github/pages' && github.event.state == 'success'
