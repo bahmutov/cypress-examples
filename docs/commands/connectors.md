@@ -132,9 +132,11 @@ cy.get('.connectors-div')
 
 ## [.spread()](https://on.cypress.io/spread)
 
+### Spread an array
+
 To spread an array as individual arguments to a callback function, use the `.spread()` command.
 
-<!-- fiddle spread -->
+<!-- fiddle spread / an array -->
 
 ```js
 const arr = ['foo', 'bar', 'baz']
@@ -144,6 +146,79 @@ cy.wrap(arr).spread(function (foo, bar, baz) {
   expect(bar).to.eq('bar')
   expect(baz).to.eq('baz')
 })
+```
+
+<!-- fiddle-end -->
+
+### Spread DOM elements
+
+<!-- fiddle spread / DOM elements -->
+
+If the previous command yields a jQuery object, it can be spread into individual DOM elements.
+
+```html
+<ol id="friends">
+  <li>The best friend</li>
+  <li>Childhood friend</li>
+  <li>An acquaintance</li>
+</ol>
+```
+
+```js
+cy.get('#friends li').spread((top, middle, last) => {
+  // each argument here is a DOM element
+  expect(Cypress.dom.isElement(top)).to.be.true
+  expect(Cypress.dom.isElement(middle)).to.be.true
+  expect(Cypress.dom.isElement(last)).to.be.true
+  // we can confirm the element's properties
+  expect(top, 'top').to.have.text('The best friend')
+  expect(middle, 'middle').to.include.text('Childhood')
+  expect(last.innerText, 'last').to.match(/^An acq/)
+})
+```
+
+<!-- fiddle-end -->
+
+### Spread network intercepts
+
+<!-- fiddle spread / network intercepts -->
+
+```html
+<button id="load-resources">Load resources</button>
+<script>
+  document
+    .getElementById('load-resources')
+    .addEventListener('click', function () {
+      // the application requests multiple resources
+      const root = 'https://jsonplaceholder.cypress.io'
+      fetch(root + '/users/1')
+      fetch(root + '/users/2')
+      fetch(root + '/users/3')
+    })
+</script>
+```
+
+```js
+// spy on multiple network requests
+cy.intercept('GET', '/users/1').as('first')
+cy.intercept('GET', '/users/2').as('second')
+cy.intercept('GET', '/users/3').as('third')
+cy.get('#load-resources').click()
+// wait for the intercepts and spread them into individual arguments
+cy.wait(['@first', '@second', '@third']).spread(
+  (first, second, third) => {
+    cy.log(first.request.url)
+    cy.log(second.request.url)
+    cy.log(third.request.url)
+      // make sure we log the results first
+      // before making assertions
+      .then(() => {
+        expect(first.request.url, 'first').to.match(/\/1$/)
+        expect(second.request.url, 'second').to.match(/\/2$/)
+        expect(third.request.url, 'third').to.match(/\/3$/)
+      })
+  },
+)
 ```
 
 <!-- fiddle-end -->
