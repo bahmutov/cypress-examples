@@ -1,5 +1,3 @@
-# Scrape deployed site into Algolia index
-# https://glebbahmutov.com/blog/scrape-static-site-with-algolia/
 name: deployed
 on:
   status:
@@ -86,22 +84,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Update Algolia config 📝
-        run: node ./update-algolia-config https://glebbahmutov.com/cypress-examples/${{ steps.cypress.outputs.version }}
-
-      # when scraping the site, inject secrets as environment variables
-      # then pass their values into the Docker container using "-e" syntax
-      # and inject config.json contents as another variable
-      # You can run the scraper locally using as-a to pass the environment variables
-      # and using a local Docker container
-      # $ as-a . docker run-e APPLICATION_ID -e API_KEY ...
-      - name: scrape the site 🧽
-        env:
-          APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
-          API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
-        run: |
-          docker run \
-          -e APPLICATION_ID -e API_KEY \
-          -e CONFIG="$(cat algolia-config.json)" \
-          algolia/docsearch-scraper:v1.6.0
