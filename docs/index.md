@@ -180,3 +180,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Create long text](./recipes/create-long-text.md) using `Cypress._.repeat` function
 - [Detect duplicate values](./recipes/duplicates.md) by text or by attribute
 - Save multiple elements under [aliases](./recipes/aliases.md)
+- Avoid "Mixing async and sync code" by controlling the [value the code yields](./recipes/yield-value.md)
