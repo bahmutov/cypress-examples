@@ -882,6 +882,7 @@ cy.get('.action-select-multiple')
   .select(['apples', 'oranges', 'bananas'])
   // when getting multiple values, invoke "val" method first
   .invoke('val')
+  // because we are comparing arrays, we need to use "deep.equal" assertion
   .should('deep.equal', ['fr-apples', 'fr-oranges', 'fr-bananas'])
 
 // Select option(s) with matching value
@@ -893,6 +894,7 @@ cy.get('.action-select')
 cy.get('.action-select-multiple')
   .select(['fr-apples', 'fr-oranges', 'fr-bananas'])
   .invoke('val')
+  // because we are comparing arrays, we need to use "deep.equal" assertion
   .should('deep.equal', ['fr-apples', 'fr-oranges', 'fr-bananas'])
 // assert the selected values include oranges
 cy.get('.action-select-multiple')
@@ -918,6 +920,7 @@ Select multiple options by index
 cy.get('.action-select-multiple')
   .select([1, 2])
   .invoke('val')
+  // because we are comparing arrays, we need to use "deep.equal" assertion
   .should('deep.equal', ['fr-oranges', 'fr-bananas'])
 ```
 

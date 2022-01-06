@@ -296,6 +296,7 @@ expect(true, 'it is true').to.be.true
 
 const o = { foo: 'bar' }
 expect(o, 'object reference').to.equal(o)
+// "deep.equal" assertion compares the properties inside the object
 expect(o, 'deep equality').to.deep.equal({ foo: 'bar' })
 
 // matching text using regular expression
@@ -1086,7 +1087,7 @@ cy.contains('#data-attributes li', 'third')
 
 ## Comparing arrays
 
-Whenever you assert arrays and other objects, you probably mean to assert the values inside, and not the references.
+Whenever you assert arrays and other objects, you probably mean to assert the values inside, and not the references. Thus you need to use the `deep.equal` assertion.
 
 <!-- fiddle Array assertions -->
 
@@ -1095,9 +1096,16 @@ const arr = ['Apples', 'Bananas', 'Grapes']
 // assert that cy.wrap yields the same array reference
 // as we passed into it
 cy.wrap(arr).should('equal', arr)
+// if you have another array, even if the values are the same
+// the "equal" assertion compares just the reference
+// thus an array is "not.equal" to its copy
+cy.wrap(arr).should('not.equal', Cypress._.clone(arr))
+// but it is "deep.equal" to another array if the values are the same
+cy.wrap(arr).should('deep.equal', Cypress._.clone(arr))
 // assert the yielded array has the expected items inside
 cy.wrap(arr)
   .invoke('reverse')
+  // because we are comparing arrays, we need to use "deep.equal" assertion
   .should('deep.equal', ['Grapes', 'Bananas', 'Apples'])
 ```
 
