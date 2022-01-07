@@ -182,3 +182,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Save multiple elements under [aliases](./recipes/aliases.md)
 - Avoid "Mixing async and sync code" by controlling the [value the code yields](./recipes/yield-value.md)
 - [Type characters one by one into separate input elements](./recipes/type-one-by-one.md)
+- [Sibling elements](./recipes/sibling-element.md) using `.next` and CSS selector `+`

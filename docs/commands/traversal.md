@@ -416,6 +416,8 @@ cy.get('.traversal-ul')
 
 <!-- fiddle-end -->
 
+See also [Sibling element](../../recipes/sibling-element.md) recipe.
+
 ## [.nextAll()](https://on.cypress.io/nextall)
 
 To get all of the next sibling DOM elements within elements, use the `.nextAll()` command.
