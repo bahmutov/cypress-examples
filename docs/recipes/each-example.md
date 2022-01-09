@@ -195,7 +195,8 @@ Imagine we have a lit of prices, and each item can have a dollar amount or "Pay 
 ```html
 <ul>
   <li>
-    <span class="item">Apples</span> <span class="price">$0.99</span>
+    <span class="item">Apples</span>
+    <span class="price">$0.99</span>
   </li>
   <li>
     <span class="item">Grapes</span>
@@ -238,3 +239,5 @@ cy.get('.price').each(($price, k) => {
 ```
 
 <!-- fiddle-end -->
+
+See also [Collect Headings recipe](./collect-headings.md).

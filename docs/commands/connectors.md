@@ -17,14 +17,18 @@ To iterate over the elements of a current subject, use the `.each()` command.
 ```
 
 ```js
-cy.get('.connectors-each-ul>li').each(function ($el, index, $list) {
+cy.get('.connectors-each-ul>li').each(function (
+  $el,
+  index,
+  $list,
+) {
   console.log($el, index, $list)
 })
 ```
 
 <!-- fiddle-end -->
 
-For more `cy.each` examples, see the [cy.each recipe](../recipes/each-example.md).
+For more `cy.each` examples, see the [cy.each recipe](../recipes/each-example.md) and [Collect Headings recipe](../recipes/collect-headings.md).
 
 ### Put complex logic into each callback
 
@@ -101,7 +105,9 @@ cy.wrap(person)
   .its('name.first')
   .should('equal', 'Joe')
 // the dot notation works with arrays
-cy.wrap(person).its('organizationIds.1.name').should('equal', 'IEEE')
+cy.wrap(person)
+  .its('organizationIds.1.name')
+  .should('equal', 'IEEE')
 ```
 
 <!-- fiddle-end -->
