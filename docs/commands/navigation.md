@@ -78,9 +78,10 @@ cy.visit('/commands/navigation', {
   },
   onLoad: function (contentWindow) {
     // contentWindow is the remote page's window object
-    expect(typeof contentWindow, 'onLoad window reference').to.equal(
-      'object',
-    )
+    expect(
+      typeof contentWindow,
+      'onLoad window reference',
+    ).to.equal('object')
   },
 })
 ```

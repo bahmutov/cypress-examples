@@ -47,7 +47,9 @@ cy.wait('@getComment')
   .and('include', 'Using fixtures to represent data')
 
 // you can also just write the fixture in the route
-cy.route('GET', 'comments', 'fixture:example.json').as('getComment')
+cy.route('GET', 'comments', 'fixture:example.json').as(
+  'getComment',
+)
 
 // we have code that gets a comment when
 // the button is clicked in scripts.js
@@ -85,9 +87,10 @@ You can use `require` to load JSON fixtures.
 // we are inside the "function () { ... }"
 // callback and can use test context object "this"
 // "this.example" was loaded in "beforeEach" function callback
-expect(this.example, 'fixture in the test context').to.deep.equal(
-  requiredExample,
-)
+expect(
+  this.example,
+  'fixture in the test context',
+).to.deep.equal(requiredExample)
 
 // or use "cy.wrap" and "should('deep.equal', ...)" assertion
 cy.wrap(this.example).should('deep.equal', requiredExample)

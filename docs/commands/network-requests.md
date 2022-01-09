@@ -139,12 +139,16 @@ cy.request('https://jsonplaceholder.cypress.io/users?_limit=1')
   .then((user) => {
     expect(user).property('id').to.be.a('number')
     // make a new post on behalf of the user
-    cy.request('POST', 'https://jsonplaceholder.cypress.io/posts', {
-      userId: user.id,
-      title: 'Cypress Test Runner',
-      body:
-        'Fast, easy and reliable testing for anything that runs in a browser.',
-    })
+    cy.request(
+      'POST',
+      'https://jsonplaceholder.cypress.io/posts',
+      {
+        userId: user.id,
+        title: 'Cypress Test Runner',
+        body:
+          'Fast, easy and reliable testing for anything that runs in a browser.',
+      },
+    )
   })
   // note that the value here is the returned value of the 2nd request
   // which is the new post object
@@ -186,12 +190,16 @@ cy.request('https://jsonplaceholder.cypress.io/users?_limit=1')
     //  To access the test context we need to use
     //  the "function () { ... }" callback form,
     //  otherwise "this" points at a wrong or undefined object!
-    cy.request('POST', 'https://jsonplaceholder.cypress.io/posts', {
-      userId: this.user.id,
-      title: 'Cypress Test Runner',
-      body:
-        'Fast, easy and reliable testing for anything that runs in a browser.',
-    })
+    cy.request(
+      'POST',
+      'https://jsonplaceholder.cypress.io/posts',
+      {
+        userId: this.user.id,
+        title: 'Cypress Test Runner',
+        body:
+          'Fast, easy and reliable testing for anything that runs in a browser.',
+      },
+    )
       .its('body')
       .as('post') // save the new post from the response
   })
@@ -225,7 +233,9 @@ To route responses to matching requests, use the `cy.route()` command.
 -->
 
 ```html
-<button class="network-route-btn btn btn-primary">Get Comment</button>
+<button class="network-route-btn btn btn-primary">
+  Get Comment
+</button>
 <div class="network-route-comment"></div>
 <button class="network-route-post btn btn-success">
   Post Comment
@@ -379,11 +389,17 @@ To route responses to matching requests, use the `cy.intercept()` command.
 ```html
 <button class="network-btn btn btn-primary">Get Comment</button>
 <div class="network-comment"></div>
-<button class="network-post btn btn-success">Post Comment</button>
+<button class="network-post btn btn-success">
+  Post Comment
+</button>
 <div class="network-post-comment"></div>
-<button class="network-put btn btn-warning">Update Comment</button>
+<button class="network-put btn btn-warning">
+  Update Comment
+</button>
 <div class="network-put-comment"></div>
-<button class="network-delete btn btn-warning">Delete Comment</button>
+<button class="network-delete btn btn-warning">
+  Delete Comment
+</button>
 <div class="network-delete-comment"></div>
 <script>
   // place the example code into a closure to isolate its variables
@@ -427,7 +443,9 @@ To route responses to matching requests, use the `cy.intercept()` command.
         },
         statusCode: {
           404(data) {
-            $('.network-put-comment').text(data.responseJSON.error)
+            $('.network-put-comment').text(
+              data.responseJSON.error,
+            )
           },
         },
       })
@@ -534,7 +552,9 @@ cy.contains('.network-delete-comment', 'Comment deleted!')
 <!-- fiddle cy.intercept() duration -->
 
 ```html
-<button class="network-timed-btn btn btn-primary">Get Comment</button>
+<button class="network-timed-btn btn btn-primary">
+  Get Comment
+</button>
 <div class="network-comment-timed"></div>
 <script>
   // place the example code into a closure to isolate its variables
@@ -596,7 +616,9 @@ Let's say you want to confirm how many times a specific network intercept happen
 <!-- fiddle cy.intercept() number -->
 
 ```html
-<button class="network-count-btn btn btn-primary">Get Comment</button>
+<button class="network-count-btn btn btn-primary">
+  Get Comment
+</button>
 <div class="network-count-comment"></div>
 <script>
   // place the example code into a closure to isolate its variables

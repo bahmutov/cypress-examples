@@ -18,11 +18,14 @@ Let's select the option "oranges" and see what value it has. We can use [cy.sele
 cy.get('select')
   .select('oranges')
   .should(($el) => {
-    expect(Cypress.dom.isElement($el), 'yields DOM element').to.be
+    expect(Cypress.dom.isElement($el), 'yields DOM element').to
+      .be.true
+    expect(Cypress.dom.isJquery($el), 'wrapped in jQuery').to.be
       .true
-    expect(Cypress.dom.isJquery($el), 'wrapped in jQuery').to.be.true
     // note: the yielded element is the <select>
-    expect($el.prop('nodeName'), 'element type').to.equal('SELECT')
+    expect($el.prop('nodeName'), 'element type').to.equal(
+      'SELECT',
+    )
     expect($el.val(), 'option value').to.equal('457')
   })
 // shorter assertion using chaining
@@ -82,9 +85,10 @@ cy.get('select')
   .children()
   .eq(1)
   .then(($option) => {
-    expect($option.prop('label'), 'cannot compare 🍎 to 🍊').to.equal(
-      'oranges',
-    )
+    expect(
+      $option.prop('label'),
+      'cannot compare 🍎 to 🍊',
+    ).to.equal('oranges')
 
     const value = $option.attr('value')
     expect(value).to.equal('457')
@@ -119,9 +123,17 @@ The test is verbose on purpose, converting and confirming everything step by ste
 cy.get('#cars_list option')
   .then(($options) => {
     // get the text of each option
-    return Cypress._.map($options, ($option) => $option.innerText)
+    return Cypress._.map(
+      $options,
+      ($option) => $option.innerText,
+    )
   })
-  .should('deep.equal', ['--Select Car--', 'BMW', 'Mercedes', 'Audi'])
+  .should('deep.equal', [
+    '--Select Car--',
+    'BMW',
+    'Mercedes',
+    'Audi',
+  ])
   // let's skip the "--Select Car--" default option
   .then((list) =>
     Cypress._.filter(list, (s) => s !== '--Select Car--'),
@@ -150,7 +162,10 @@ You can get the currently selected option using the jQuery's [:selected selector
 ```
 
 ```js
-cy.get('select#name option:selected').should('have.text', 'Peter')
+cy.get('select#name option:selected').should(
+  'have.text',
+  'Peter',
+)
 ```
 
 <!-- fiddle-end -->

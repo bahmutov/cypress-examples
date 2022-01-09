@@ -10,7 +10,9 @@ To get a browser cookie, use the `cy.getCookie()` command.
 
 ```html
 <div id="getCookie">
-  <button class="set-a-cookie btn btn-success">Set Cookie</button>
+  <button class="set-a-cookie btn btn-success">
+    Set Cookie
+  </button>
 </div>
 <script>
   $('.set-a-cookie').on('click', function (e) {
@@ -39,7 +41,9 @@ To get all browser cookies, use the `cy.getCookies()` command.
 
 ```html
 <div id="getCookies">
-  <button class="set-a-cookie btn btn-success">Set Cookie</button>
+  <button class="set-a-cookie btn btn-success">
+    Set Cookie
+  </button>
 </div>
 <script>
   $('.set-a-cookie').on('click', function (e) {
@@ -97,7 +101,9 @@ To clear a browser cookie, use the `cy.clearCookie()` command.
 
 ```html
 <div id="clearCookie">
-  <button class="set-a-cookie btn btn-success">Set Cookie</button>
+  <button class="set-a-cookie btn btn-success">
+    Set Cookie
+  </button>
 </div>
 <script>
   $('.set-a-cookie').on('click', function (e) {
@@ -131,7 +137,9 @@ To clear all browser cookies, use the `cy.clearCookies()` command.
 
 ```html
 <div id="clearCookies">
-  <button class="set-a-cookie btn btn-success">Set Cookie</button>
+  <button class="set-a-cookie btn btn-success">
+    Set Cookie
+  </button>
 </div>
 <script>
   $('.set-a-cookie').on('click', function (e) {

@@ -148,7 +148,10 @@ cy.contains('button', 'Click Me')
         cy.spy(win.console, 'log').as('log')
       })
       cy.wrap($button).click()
-      cy.get('@log').should('have.been.calledOnceWith', 'Clicked')
+      cy.get('@log').should(
+        'have.been.calledOnceWith',
+        'Clicked',
+      )
     }
   })
 ```

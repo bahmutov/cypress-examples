@@ -103,7 +103,12 @@ At first, the form has the labels and the input fields, but then the app "hydrat
 ```html
 <form id="hydrate-fails">
   <label for="fname">First name:</label><br />
-  <input type="text" id="fname" name="fname" value="initial" /><br />
+  <input
+    type="text"
+    id="fname"
+    name="fname"
+    value="initial"
+  /><br />
   <label for="lname">Last name:</label><br />
   <input type="text" id="lname" name="lname" />
 </form>
@@ -249,7 +254,9 @@ Cypress.Commands.add('getByLabel2', (label, options = {}) => {
 cy.getByLabel2('First name:').should('exist')
 cy.getByLabel2('First name:').type('Joe')
 // now interact with the second input
-cy.getByLabel2('Last name:').should('have.value', '').type('Smith')
+cy.getByLabel2('Last name:')
+  .should('have.value', '')
+  .type('Smith')
 cy.getByLabel2('Last name:').should('have.value', 'Smith')
 
 cy.takeRunnerPic('form-input')
@@ -266,7 +273,12 @@ Let's try the custom command with hydration example
 ```html
 <form id="hydration">
   <label for="fname">First name:</label><br />
-  <input type="text" id="fname" name="fname" value="initial" /><br />
+  <input
+    type="text"
+    id="fname"
+    name="fname"
+    value="initial"
+  /><br />
   <label for="lname">Last name:</label><br />
   <input type="text" id="lname" name="lname" />
 </form>
@@ -339,7 +351,9 @@ Cypress.Commands.add('getByLabel2', (label, options = {}) => {
   })
 })
 
-cy.getByLabel2('First name:').should('have.value', '').type('Joe')
+cy.getByLabel2('First name:')
+  .should('have.value', '')
+  .type('Joe')
 cy.getByLabel2('First name:').should('have.value', 'Joe')
 ```
 

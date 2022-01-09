@@ -59,7 +59,9 @@ Let's say we need to compare the items by an attribute and detect any duplicates
 // destructure Cypress._ for convenience
 const { map, countBy, pickBy } = Cypress._
 cy.get('li').should(($list) => {
-  const ids = map($list, ($el) => $el.getAttribute('data-product-id'))
+  const ids = map($list, ($el) =>
+    $el.getAttribute('data-product-id'),
+  )
   const counts = countBy(ids)
   const duplicates = pickBy(counts, (n) => n > 1)
   expect(duplicates, 'duplicates').to.be.empty

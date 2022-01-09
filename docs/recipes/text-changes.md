@@ -8,13 +8,15 @@ In this example, we want to confirm that the text on the page changes after the 
 <div id="output">Original text</div>
 <button id="change">Do it</button>
 <script>
-  document.getElementById('change').addEventListener('click', () => {
-    // change the text, but do it after a random delay,
-    // almost like the application is loading something from the backend
-    setTimeout(() => {
-      document.getElementById('output').innerText = 'Changed!'
-    }, 1000 + 1000 * Math.random())
-  })
+  document
+    .getElementById('change')
+    .addEventListener('click', () => {
+      // change the text, but do it after a random delay,
+      // almost like the application is loading something from the backend
+      setTimeout(() => {
+        document.getElementById('output').innerText = 'Changed!'
+      }, 1000 + 1000 * Math.random())
+    })
 </script>
 ```
 

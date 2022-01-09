@@ -52,7 +52,9 @@ cy.get('#list li')
 cy.get('#list li')
   .then(($elements) =>
     // Lodash _.reject method is the opposite of _.filter
-    Cypress._.reject($elements, (el) => el.querySelector('.label')),
+    Cypress._.reject($elements, (el) =>
+      el.querySelector('.label'),
+    ),
   )
   .should('have.length', 2)
   .first()

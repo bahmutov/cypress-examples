@@ -43,7 +43,9 @@ cy.wait(1000)
 
 ```js
 cy.wrap('Hello').wait(100).should('equal', 'Hello')
-cy.get('#wait-subject').wait(100).should('have.text', 'The subject')
+cy.get('#wait-subject')
+  .wait(100)
+  .should('have.text', 'The subject')
 // if there is no subject, yields undefined
 cy.wait(100).should('equal', undefined)
 ```

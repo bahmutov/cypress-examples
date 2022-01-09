@@ -385,10 +385,15 @@ To get the last DOM element within elements, use the `.last()` command.
 ```
 
 ```js
-cy.get('.traversal-buttons .btn').last().should('contain', 'Submit')
+cy.get('.traversal-buttons .btn')
+  .last()
+  .should('contain', 'Submit')
 // you can also use the CSS selector :last to avoid
 // using a separate .last() command
-cy.get('.traversal-buttons .btn:last').should('contain', 'Submit')
+cy.get('.traversal-buttons .btn:last').should(
+  'contain',
+  'Submit',
+)
 ```
 
 <!-- fiddle-end -->
@@ -480,7 +485,11 @@ To remove DOM element(s) from the set of elements, use the `.not()` command.
 
 ```html
 <div class="traversal-disabled">
-  <button type="button" class="btn btn-default" disabled="disabled">
+  <button
+    type="button"
+    class="btn btn-default"
+    disabled="disabled"
+  >
     Disabled
   </button>
   <button type="button" class="btn btn-default">Button</button>
@@ -540,7 +549,8 @@ To get parent DOM element of elements, use the `.parent()` command.
 ```html
 <p>
   Morbi leo risus, porta ac consectetur ac,
-  <mark class="traversal-mark">highlight</mark> vestibulum at eros.
+  <mark class="traversal-mark">highlight</mark> vestibulum at
+  eros.
 </p>
 ```
 
@@ -622,7 +632,10 @@ To get the previous sibling DOM element within elements, use the `.prev()` comma
 ```
 
 ```js
-cy.get('.birds').find('.active').prev().should('contain', 'Lorikeets')
+cy.get('.birds')
+  .find('.active')
+  .prev()
+  .should('contain', 'Lorikeets')
 ```
 
 <!-- fiddle-end -->
@@ -699,7 +712,9 @@ To get all sibling DOM elements of elements, use the `.siblings()` command.
 ```
 
 ```js
-cy.get('.traversal-pills .active').siblings().should('have.length', 2)
+cy.get('.traversal-pills .active')
+  .siblings()
+  .should('have.length', 2)
 ```
 
 <!-- fiddle-end -->

@@ -24,7 +24,9 @@ cy.get('.name')
   .find('+ p')
   .should('have.text', 'Email not verified')
 // we can use the combined selector right away
-cy.contains('.name + p', 'Email not verified').should('be.visible')
+cy.contains('.name + p', 'Email not verified').should(
+  'be.visible',
+)
 ```
 
 You can also use the [cy.next](https://on.cypress.io/next) command

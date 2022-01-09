@@ -35,7 +35,9 @@ Imagine a table with rows, and each row has a button to fetch some data. How do 
     .getElementById('load-row-c1')
     .addEventListener('click', () => {
       setTimeout(() => {
-        const table = document.querySelector('table#example-table')
+        const table = document.querySelector(
+          'table#example-table',
+        )
         table.innerHTML = table.innerHTML.replace(
           'Pending...',
           'Loaded!!!',

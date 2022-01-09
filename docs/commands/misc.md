@@ -128,7 +128,9 @@ To execute a system command, use the `cy.exec()` command.
 // we can use Cypress.platform string to
 // select appropriate command
 // https://on.cypress/io/platform
-cy.log(`Platform ${Cypress.platform} architecture ${Cypress.arch}`)
+cy.log(
+  `Platform ${Cypress.platform} architecture ${Cypress.arch}`,
+)
 
 // on CircleCI Windows build machines we have a failure to run bash shell
 // https://github.com/cypress-io/cypress/issues/5169
@@ -153,7 +155,9 @@ if (isShippable) {
   return
 }
 
-cy.exec('echo Jane Lane').its('stdout').should('contain', 'Jane Lane')
+cy.exec('echo Jane Lane')
+  .its('stdout')
+  .should('contain', 'Jane Lane')
 
 if (Cypress.platform === 'win32') {
   cy.exec('print cypress.json').its('stderr').should('be.empty')
@@ -315,7 +319,9 @@ cy.document().then((doc) => {
     .false
   // if we want to use cy.contains to find specific text
   // we can use cy.wrap first
-  cy.wrap(div).contains('some text').should('have.class', 'inner')
+  cy.wrap(div)
+    .contains('some text')
+    .should('have.class', 'inner')
   // we can wrap the element to use jQuery assertions
   cy.wrap(div).should('have.id', 'wrap-dom-example')
 })

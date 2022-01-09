@@ -23,9 +23,10 @@ expect(
   'last name from person',
 ).to.equal('Smith')
 // same by getting the entire env object
-expect(Cypress.env().person.name.last, 'last name from env').to.equal(
-  'Smith',
-)
+expect(
+  Cypress.env().person.name.last,
+  'last name from env',
+).to.equal('Smith')
 
 // you can use bundled Lodash _.get method
 expect(

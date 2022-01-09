@@ -15,7 +15,9 @@ Let's confirm that all `<LI>` elements are sorted by the prices displayed inside
   <li class="item">
     Water bottle <span class="price">$3.50 on sale</span>
   </li>
-  <li class="item">Backpack <span class="price">$42.99</span></li>
+  <li class="item">
+    Backpack <span class="price">$42.99</span>
+  </li>
 </ol>
 <style>
   .item {
@@ -48,7 +50,9 @@ Now we can extract all the prices (as strings), clean them up, and convert to nu
 
 ```js
 cy.get('.price')
-  .then(($prices) => Cypress._.map($prices, (el) => el.innerText))
+  .then(($prices) =>
+    Cypress._.map($prices, (el) => el.innerText),
+  )
   // because cy.log returns nothing, the original list continues
   .then((list) => cy.log(list.slice(0, 3).join(', ')))
   // only the first word is the price
@@ -174,7 +178,10 @@ cy.get('table#people tbody td + td').should(($cells) => {
   // tip: Lodash has a shortcut notation
   // instead of _.map($cells, ($cell) => $cell.innerText)
   // you can write _.map($cells, 'innerText')
-  const timestamps = Cypress._.map($cells, ($cell) => $cell.innerText)
+  const timestamps = Cypress._.map(
+    $cells,
+    ($cell) => $cell.innerText,
+  )
     .map((str) => new Date(str))
     .map((d) => d.getTime())
   // check if the timestamps are sorted
@@ -190,7 +197,10 @@ For convenience, you can use 3rd party Chai assertions, for example [chai-sorted
 ```js
 cy.get('table#people tbody td + td').should(function ($cells) {
   // again, convert the date strings into timestamps
-  const timestamps = Cypress._.map($cells, ($cell) => $cell.innerText)
+  const timestamps = Cypress._.map(
+    $cells,
+    ($cell) => $cell.innerText,
+  )
     .map((str) => new Date(str))
     .map((d) => d.getTime())
   // and use an assertion from chai-sorted to confirm

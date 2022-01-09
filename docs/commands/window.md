@@ -59,7 +59,9 @@ To get the document object, use the `cy.document()` command.
 <!-- fiddle document -->
 
 ```js
-cy.document().should('have.property', 'charset').and('eq', 'UTF-8')
+cy.document()
+  .should('have.property', 'charset')
+  .and('eq', 'UTF-8')
 ```
 
 <!-- fiddle-end -->

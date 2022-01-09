@@ -229,7 +229,10 @@ Sometimes an attribute can have a special character like `.` or `:` in it. If yo
 
 ```js
 // confirm the element has the attribute
-cy.get('#escape-attribute').should('have.attr', 'attr.aria-label')
+cy.get('#escape-attribute').should(
+  'have.attr',
+  'attr.aria-label',
+)
 // confirm the element has the attribute and that attribute
 // has the specific value
 cy.get('#escape-attribute').should(
@@ -633,7 +636,9 @@ cy.get('#loading').should('not.be.visible')
 It is ok to add multiple assertions that can be true at the same time:
 
 ```js
-cy.get('#loading').should('exist').and('have.text', 'Loading ...')
+cy.get('#loading')
+  .should('exist')
+  .and('have.text', 'Loading ...')
 ```
 
 <!-- fiddle-end -->
@@ -859,9 +864,13 @@ Only some elements should be visible for the assertion `should('be.visible')` to
 The test passes, even if some elements are invisible.
 
 ```js
-cy.get('#few-elements li').should('be.visible').and('have.length', 3)
+cy.get('#few-elements li')
+  .should('be.visible')
+  .and('have.length', 3)
 // while the second element is still invisible
-cy.contains('#few-elements li', 'second').should('not.be.visible')
+cy.contains('#few-elements li', 'second').should(
+  'not.be.visible',
+)
 // workarounds for visibility checks
 // 1. we can use jQuery selector :visible to get just the visible elements
 cy.get('#few-elements li:visible').should('have.length', 2)
@@ -964,7 +973,9 @@ Sometimes you need to extract the text and convert it into a number before runni
 <!-- fiddle Implicit Assertions / .should() - convert text to number -->
 
 ```html
-<div id="num-example">Messages <span class="messages">4</span></div>
+<div id="num-example">
+  Messages <span class="messages">4</span>
+</div>
 ```
 
 ```js
@@ -1139,7 +1150,9 @@ Assertions `have.property` and `have.key` are similar.
 
 ```js
 // the assertion "have.property" yields the value
-cy.wrap(person).should('have.property', 'name').should('equal', 'Joe')
+cy.wrap(person)
+  .should('have.property', 'name')
+  .should('equal', 'Joe')
 // the assertion "have.key" yields the same object
 cy.wrap(person)
   .should('have.key', 'name')

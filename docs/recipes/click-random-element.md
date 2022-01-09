@@ -40,7 +40,8 @@ cy.get('#items li')
   })
   .then(($li) => {
     // the yielded element is automatically wrapped in jQuery by Cypress
-    expect(Cypress.dom.isJquery($li), 'jQuery element').to.be.true
+    expect(Cypress.dom.isJquery($li), 'jQuery element').to.be
+      .true
     cy.log(`you picked "${$li.text()}"`)
     // we do not need to return anything from `cy.then`
     // if we want to continue working with the same element

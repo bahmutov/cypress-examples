@@ -10,7 +10,8 @@ Some of the anchor elements below do not have `href` attribute, thus they are no
 
 ```html
 <div data-cy="pseudo-links">
-  <a href="first">first</a>, <a>second</a>, <a href="third">third</a>,
+  <a href="first">first</a>, <a>second</a>,
+  <a href="third">third</a>,
 </div>
 ```
 

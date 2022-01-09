@@ -5,7 +5,9 @@ Imagine we have a page showing a number of a comment to fetch. The test needs to
 <!-- fiddle Request a specific comment -->
 
 ```html
-<div>Comment number <span data-cy="comment-number">#23#</span></div>
+<div>
+  Comment number <span data-cy="comment-number">#23#</span>
+</div>
 ```
 
 ```js
@@ -24,14 +26,22 @@ cy.get('[data-cy=comment-number]')
   .then((n) => {
     // cy.request automatically fails if the resource is missing
     // https://on.cypress.io/request
-    cy.request(`https://jsonplaceholder.cypress.io/comments/${n}`)
+    cy.request(
+      `https://jsonplaceholder.cypress.io/comments/${n}`,
+    )
       .its('body')
-      .should('have.keys', ['id', 'postId', 'name', 'body', 'email'])
+      .should('have.keys', [
+        'id',
+        'postId',
+        'name',
+        'body',
+        'email',
+      ])
       .then((comment) => {
-        expect(comment, 'fetched the right comment').to.have.property(
-          'id',
-          n,
-        )
+        expect(
+          comment,
+          'fetched the right comment',
+        ).to.have.property('id', n)
         // let's fetch the post for this comment
         cy.log(`fetching post **${comment.postId}**`)
         cy.request(

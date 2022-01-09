@@ -16,7 +16,9 @@ When using [cy.contains](https://on.cypress.io/contains) command Cypress automat
 
 ```js
 // both commands work
-cy.contains('[data-testid=testattr]', 'GBP 0.50').should('be.visible')
+cy.contains('[data-testid=testattr]', 'GBP 0.50').should(
+  'be.visible',
+)
 cy.get('[data-testid=testattr]')
   .filter(':contains("GBP 0.50")')
   .should('have.length', 1)
@@ -37,7 +39,9 @@ But if the HTML contains the whitespace special character `&nbsp;` then checking
 ```
 
 ```js
-cy.contains('[data-testid=testattr]', 'GBP 0.50').should('be.visible')
+cy.contains('[data-testid=testattr]', 'GBP 0.50').should(
+  'be.visible',
+)
 ```
 
 <!-- fiddle-end -->
@@ -101,7 +105,9 @@ Just checking how `.filter(:contains)` works
 ```
 
 ```js
-cy.get('li').filter(':contains("Services")').should('have.length', 2)
+cy.get('li')
+  .filter(':contains("Services")')
+  .should('have.length', 2)
 ```
 
 <!-- fiddle-end -->

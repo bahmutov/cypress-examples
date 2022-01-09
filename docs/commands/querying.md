@@ -378,10 +378,9 @@ Let's find all `P` and `LI` elements. You can combine multiple selectors using c
 ```js
 // find all P elements inside the element with id "and-selector-example"
 // and all LI elements inside the element with id "and-selector-example"
-cy.get('#and-selector-example p, #and-selector-example li').should(
-  'have.length',
-  3,
-)
+cy.get(
+  '#and-selector-example p, #and-selector-example li',
+).should('have.length', 3)
 // alternative: first find the element with id "and-selector-example"
 // then find P and LI elements
 cy.get('#and-selector-example').within(() => {
@@ -485,7 +484,9 @@ We can find elements by their content using `cy.contains()`
 
 ```js
 // finds the first element with the given text
-cy.get('.query-list').contains('apples').should('have.class', 'first')
+cy.get('.query-list')
+  .contains('apples')
+  .should('have.class', 'first')
 // ignore text when matching
 cy.get('.query-list')
   .contains('APPLE', { matchCase: false })
@@ -497,7 +498,9 @@ cy.get('.query-list')
   .should('have.class', 'third')
 
 // we can pass a regexp to `.contains()`
-cy.get('.query-list').contains(/^b\w+/).should('have.class', 'third')
+cy.get('.query-list')
+  .contains(/^b\w+/)
+  .should('have.class', 'third')
 
 // passing a selector to contains will
 // yield the selector containing the text
@@ -532,7 +535,11 @@ You can give the element selector to match. The text can be anywhere in the elem
 ```js
 cy.get('#contains-example').within(() => {
   // finds the immediate element
-  cy.contains('Some text').should('have.prop', 'nodeName', 'SPAN')
+  cy.contains('Some text').should(
+    'have.prop',
+    'nodeName',
+    'SPAN',
+  )
   // find the parent element with "Some text" somewhere inside
   cy.contains('[data-cy=parent]', 'Some text')
     .should('have.prop', 'nodeName', 'DIV') // we found the parent div
@@ -711,8 +718,16 @@ We can find elements within a specific DOM element `.within()`
 ```js
 // validate placeholder attributes
 cy.get('.query-form').within(() => {
-  cy.get('input:first').should('have.attr', 'placeholder', 'Email')
-  cy.get('input:last').should('have.attr', 'placeholder', 'Password')
+  cy.get('input:first').should(
+    'have.attr',
+    'placeholder',
+    'Email',
+  )
+  cy.get('input:last').should(
+    'have.attr',
+    'placeholder',
+    'Password',
+  )
 })
 ```
 
@@ -805,7 +820,9 @@ You can temporarily escape the `.within` scope by using [cy.root](https://on.cyp
 ```js
 cy.get('.the-form').within(() => {
   // escape back find H6
-  cy.root().closest('#escape-example').contains('h6', 'Name input')
+  cy.root()
+    .closest('#escape-example')
+    .contains('h6', 'Name input')
   // escape and enter text into the input field
   cy.root()
     .closest('#escape-example')
@@ -859,8 +876,16 @@ The parent command can yield multiple elements.
 ```js
 cy.get('#fruits li').within(() => {
   cy.root().should('have.length', 2) // there are 2 LI items
-  cy.contains('a', 'Apples').should('have.attr', 'href', '/apples')
-  cy.contains('a', 'Oranges').should('have.attr', 'href', '/oranges')
+  cy.contains('a', 'Apples').should(
+    'have.attr',
+    'href',
+    '/apples',
+  )
+  cy.contains('a', 'Oranges').should(
+    'have.attr',
+    'href',
+    '/oranges',
+  )
 })
 ```
 

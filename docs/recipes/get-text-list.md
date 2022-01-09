@@ -58,7 +58,9 @@ cy.get('.matching')
 So the final advice to extract text from the list of found elements is to use the Lodash `_.map` method.
 
 ```js
-cy.get('.matching').then(($els) => Cypress._.map($els, 'innerText'))
+cy.get('.matching').then(($els) =>
+  Cypress._.map($els, 'innerText'),
+)
 ```
 
 ## Array vs jQuery object
@@ -80,17 +82,19 @@ cy.get('.matching').then(($els) => Cypress._.map($els, 'innerText'))
 ```js
 cy.get('.matching')
   .then(($els) => {
-    expect(Cypress.dom.isJquery($els), 'jQuery object').to.be.true
+    expect(Cypress.dom.isJquery($els), 'jQuery object').to.be
+      .true
     const elements = Cypress.$.makeArray($els)
-    expect(Cypress.dom.isJquery(elements), 'converted').to.be.false
+    expect(Cypress.dom.isJquery(elements), 'converted').to.be
+      .false
     expect(elements, 'to array').to.be.an('array')
     // we are returning an array of DOM elements
     return elements
   })
   .then((x) => {
     // but get back a jQuery object again
-    expect(Cypress.dom.isJquery(x), 'back to jQuery object').to.be
-      .true
+    expect(Cypress.dom.isJquery(x), 'back to jQuery object').to
+      .be.true
     expect(x, 'an not a array').to.not.be.an('array')
     expect(x.length, '3 elements').to.equal(3)
   })

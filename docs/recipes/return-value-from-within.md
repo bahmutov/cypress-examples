@@ -36,24 +36,27 @@ You can use a custom command in this case, just wrap the final result so it beco
 
 ```js
 cy.log('**using custom command**')
-Cypress.Commands.add('getMagicNumber', (selector, options = {}) => {
-  Cypress._.defaults(options, { log: true })
-  cy.log(`getMagicNumber from **${selector}**`)
+Cypress.Commands.add(
+  'getMagicNumber',
+  (selector, options = {}) => {
+    Cypress._.defaults(options, { log: true })
+    cy.log(`getMagicNumber from **${selector}**`)
 
-  let magicNumber
-  cy.get(selector, options)
-    .within(options, () => {
-      cy.get('.magic', options)
-        .invoke(options, 'text')
-        .then(parseInt)
-        .then((x) => {
-          magicNumber = x
-        })
-    })
-    .then(() => {
-      cy.wrap(magicNumber, options)
-    })
-})
+    let magicNumber
+    cy.get(selector, options)
+      .within(options, () => {
+        cy.get('.magic', options)
+          .invoke(options, 'text')
+          .then(parseInt)
+          .then((x) => {
+            magicNumber = x
+          })
+      })
+      .then(() => {
+        cy.wrap(magicNumber, options)
+      })
+  },
+)
 cy.getMagicNumber('#parent', { log: false }).should('equal', 42)
 ```
 

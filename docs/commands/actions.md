@@ -461,7 +461,9 @@ The element will need to be visible and actionable for `.click` to work. If the 
 <!-- fiddle click / waits for element to be visible -->
 
 ```html
-<button id="invisible-at-first" style="display:none">Click me</button>
+<button id="invisible-at-first" style="display:none">
+  Click me
+</button>
 <script>
   setTimeout(function () {
     document.getElementById('invisible-at-first').style.display =
@@ -486,8 +488,9 @@ To be explicit about visibility, you might insert an assertion before the `.clic
 </button>
 <script>
   setTimeout(function () {
-    document.getElementById('invisible-at-first2').style.display =
-      'block'
+    document.getElementById(
+      'invisible-at-first2',
+    ).style.display = 'block'
   }, 500)
 </script>
 ```
@@ -553,14 +556,18 @@ To right click a DOM element, use the `.rightclick()` command.
 <script>
   // listen to contextmenu to demonstrate logic on right click command
   $('.rightclick-action-div').on('contextmenu', function (e) {
-    $('.rightclick-action-input-hidden').removeClass('hidden').focus()
+    $('.rightclick-action-input-hidden')
+      .removeClass('hidden')
+      .focus()
     $(e.currentTarget).addClass('hidden')
   })
 </script>
 ```
 
 ```js
-cy.get('.rightclick-action-div').rightclick().should('not.be.visible')
+cy.get('.rightclick-action-div')
+  .rightclick()
+  .should('not.be.visible')
 cy.get('.rightclick-action-input-hidden').should('be.visible')
 ```
 
@@ -704,7 +711,12 @@ You can get the currently checked option using the jQuery's [:checked selector](
 ```html
 <form id="pick-fruit">
   <div>
-    <input type="radio" name="fruit" value="orange" id="orange" />
+    <input
+      type="radio"
+      name="fruit"
+      value="orange"
+      id="orange"
+    />
     <label for="orange">orange</label>
   </div>
   <div>
@@ -718,7 +730,12 @@ You can get the currently checked option using the jQuery's [:checked selector](
     <label for="apple">apple</label>
   </div>
   <div>
-    <input type="radio" name="fruit" value="banana" id="banana" />
+    <input
+      type="radio"
+      name="fruit"
+      value="banana"
+      id="banana"
+    />
     <label for="banana">banana</label>
   </div>
   <div id="log"></div>
@@ -804,7 +821,12 @@ To uncheck a checkbox or radio, use the `.uncheck()` command.
   </div>
   <div class="checkbox disabled">
     <label>
-      <input type="checkbox" value="checkbox2" disabled checked />
+      <input
+        type="checkbox"
+        value="checkbox2"
+        disabled
+        checked
+      />
       Checkbox two is disabled
     </label>
   </div>
@@ -860,7 +882,10 @@ To select an option in a select, use the `.select()` command.
     <option value="fr-bananas">bananas</option>
   </select>
 
-  <select class="form-control action-select-multiple" multiple="true">
+  <select
+    class="form-control action-select-multiple"
+    multiple="true"
+  >
     <option value="fr-apples">apples</option>
     <option value="fr-oranges">oranges</option>
     <option value="fr-bananas">bananas</option>
@@ -870,7 +895,10 @@ To select an option in a select, use the `.select()` command.
 
 ```js
 // at first, no option should be selected
-cy.get('.action-select').should('have.value', '--Select a fruit--')
+cy.get('.action-select').should(
+  'have.value',
+  '--Select a fruit--',
+)
 
 // Select option(s) with matching text content
 cy.get('.action-select').select('apples')
@@ -883,7 +911,11 @@ cy.get('.action-select-multiple')
   // when getting multiple values, invoke "val" method first
   .invoke('val')
   // because we are comparing arrays, we need to use "deep.equal" assertion
-  .should('deep.equal', ['fr-apples', 'fr-oranges', 'fr-bananas'])
+  .should('deep.equal', [
+    'fr-apples',
+    'fr-oranges',
+    'fr-bananas',
+  ])
 
 // Select option(s) with matching value
 cy.get('.action-select')
@@ -895,7 +927,11 @@ cy.get('.action-select-multiple')
   .select(['fr-apples', 'fr-oranges', 'fr-bananas'])
   .invoke('val')
   // because we are comparing arrays, we need to use "deep.equal" assertion
-  .should('deep.equal', ['fr-apples', 'fr-oranges', 'fr-bananas'])
+  .should('deep.equal', [
+    'fr-apples',
+    'fr-oranges',
+    'fr-bananas',
+  ])
 // assert the selected values include oranges
 cy.get('.action-select-multiple')
   .invoke('val')
@@ -1017,7 +1053,9 @@ To scroll an element into view, use the `.scrollintoview()` command.
   id="scroll-both"
   style="height: 300px; width: 300px; overflow: auto;"
 >
-  <div style="width: 1000px; height: 1000px; position: relative;">
+  <div
+    style="width: 1000px; height: 1000px; position: relative;"
+  >
     Both Scroll
     <button
       class="btn btn-danger"
@@ -1053,7 +1091,9 @@ cy.get('#scroll-vertical button')
 cy.get('#scroll-both button').should('not.be.visible')
 
 // Cypress knows to scroll to the right and down
-cy.get('#scroll-both button').scrollIntoView().should('be.visible')
+cy.get('#scroll-both button')
+  .scrollIntoView()
+  .should('be.visible')
 ```
 
 <!-- fiddle-end -->

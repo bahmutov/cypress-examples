@@ -108,7 +108,10 @@ To get the current URL string, use the `cy.url()` command.
 ```js
 cy.visit('https://example.cypress.io/commands/location')
 // https://on.cypress.io/url
-cy.url().should('eq', 'https://example.cypress.io/commands/location')
+cy.url().should(
+  'eq',
+  'https://example.cypress.io/commands/location',
+)
 ```
 
 <!-- fiddle-end -->

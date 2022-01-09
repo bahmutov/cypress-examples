@@ -102,7 +102,9 @@ Note: if all the assertions related to the DOM elements are grouped together, it
 ```js
 cy.log('**equivalent code using cy.within**')
 cy.get('[data-cy=query-the-alias]').within(() => {
-  cy.root().should('have.prop', 'tagName', 'UL').and('be.visible')
+  cy.root()
+    .should('have.prop', 'tagName', 'UL')
+    .and('be.visible')
   cy.get('li').should('have.length', 3)
   cy.contains('li', 'Banana')
   cy.contains('li', 'Grape')
@@ -188,7 +190,10 @@ Let's confirm the two list items have different text.
 ```
 
 ```js
-cy.get('[data-cy=test-context] li').first().invoke('text').as('first')
+cy.get('[data-cy=test-context] li')
+  .first()
+  .invoke('text')
+  .as('first')
 cy.get('[data-cy=test-context] li')
   .eq(1)
   .invoke('text')

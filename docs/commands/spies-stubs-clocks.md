@@ -78,7 +78,11 @@ cy.get('@setName').should('have.been.calledOnce')
 // the call might have had more arguments, but we do not check them
 cy.get('@setName').should('have.been.calledOnceWith', 'Joe')
 // check if the spy was called with these arguments
-cy.get('@setName').should('have.been.calledOnceWith', 'Joe', 'Smith')
+cy.get('@setName').should(
+  'have.been.calledOnceWith',
+  'Joe',
+  'Smith',
+)
 // check if the spy was called once with a string and "Smith"
 cy.get('@setName').should(
   'have.been.calledOnceWith',
@@ -134,7 +138,10 @@ expect(spy).to.be.calledWith(
 expect(spy).to.be.calledWith(Cypress.sinon.match.any, 3)
 
 // match any value from a list
-expect(spy).to.be.calledWith(Cypress.sinon.match.in([1, 2, 3]), 3)
+expect(spy).to.be.calledWith(
+  Cypress.sinon.match.in([1, 2, 3]),
+  3,
+)
 
 /**
  * Returns true if the given number is event
@@ -145,7 +152,10 @@ const isEven = (x) => x % 2 === 0
 // expect the value to pass a custom predicate function
 // the second argument to "sinon.match(predicate, message)" is
 // shown if the predicate does not pass and assertion fails
-expect(spy).to.be.calledWith(Cypress.sinon.match(isEven, 'isEven'), 3)
+expect(spy).to.be.calledWith(
+  Cypress.sinon.match(isEven, 'isEven'),
+  3,
+)
 
 /**
  * Returns a function that checks if a given number is larger than the limit
@@ -703,7 +713,10 @@ cy.window().then((win) => {
   cy.stub(win, 'alert').as('alert')
 })
 cy.get('#sayhi').click()
-cy.get('@alert').should('have.been.calledOnceWith', 'Hello there!')
+cy.get('@alert').should(
+  'have.been.calledOnceWith',
+  'Hello there!',
+)
 // the application can trigger the alert several times
 cy.get('#sayhi').click().click()
 // we can confirm the total number of calls
@@ -793,7 +806,9 @@ cy.clock(now) // sets the application clock and pause time
     // spec clock keeps ticking
     const specNow2 = new Date()
     // confirm by comparing the timestamps in milliseconds
-    expect(+specNow2, 'spec timestamps').to.be.greaterThan(+specNow)
+    expect(+specNow2, 'spec timestamps').to.be.greaterThan(
+      +specNow,
+    )
   })
 // but the application's time is frozen
 cy.window()
@@ -810,16 +825,18 @@ cy.window()
   .its('Date')
   .then((appDate) => {
     const appNow = new appDate()
-    expect(+appNow, 'timestamp after 5 synthetic seconds').to.equal(
-      1489449605000,
-    )
+    expect(
+      +appNow,
+      'timestamp after 5 synthetic seconds',
+    ).to.equal(1489449605000)
   })
   // meanwhile the spec clock only advanced by probably less than 200ms
   .then(() => {
     const specNow3 = new Date()
-    expect(+specNow3, 'elapsed on the spec clock').to.be.lessThan(
-      +specNow + 200,
-    )
+    expect(
+      +specNow3,
+      'elapsed on the spec clock',
+    ).to.be.lessThan(+specNow + 200)
   })
 ```
 

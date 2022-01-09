@@ -45,7 +45,10 @@ cy.get('#subtotal')
 But a much better approach is to save the values as Cypress aliases using `cy.as` commands, and then use a single function callback to get all values via `this` object.
 
 ```js
-cy.get('#subtotal').invoke('text').then(parseFloat).as('subtotal')
+cy.get('#subtotal')
+  .invoke('text')
+  .then(parseFloat)
+  .as('subtotal')
 cy.get('#tax').invoke('text').then(parseFloat).as('tax')
 cy.get('#tip').invoke('text').then(parseFloat).as('tip')
 cy.get('#total')
