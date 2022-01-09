@@ -44,7 +44,7 @@ cy.get('.name')
 
 The sibling CSS selector returns multiple elements, one for each of the initial elements.
 
-<!-- fiddle.only Multiple elements -->
+<!-- fiddle Multiple elements -->
 
 ```html
 <div class="person">Employee 1</div>
