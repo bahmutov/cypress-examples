@@ -28,6 +28,42 @@ cy.wrap({ life: 42 }).console('info')
 
 <!-- fiddle-end -->
 
+To yield a value from a custom command to the next command or assertion
+
+<!-- fiddle Custom commands / yield a value -->
+
+```js
+Cypress.Commands.add(
+  'double',
+  {
+    prevSubject: true,
+  },
+  (value, method) => {
+    return value * 2
+  },
+)
+cy.wrap(21).double().should('equal', 42)
+```
+
+You can also wrap a value to be returned - Cypress automatically takes the value of the last command.
+
+```js
+Cypress.Commands.add(
+  'triple',
+  {
+    prevSubject: true,
+  },
+  (value, method) => {
+    cy.wrap(value * 3)
+  },
+)
+cy.wrap(21).triple().should('equal', 63)
+```
+
+**Note:** you cannot both use `cy.wrap` and `return` in the same code, since it is ambiguous, watch the video [Fix The Cypress Error "You are mixing async and sync code"](https://youtu.be/f_H7EH0n9tE).
+
+<!-- fiddle-end -->
+
 ### Calling other custom commands
 
 You can call other custom commands from inside a custom command.
@@ -327,7 +363,10 @@ cy.wrap(Cypress.currentTest)
 <!-- fiddle Cypress.testingType -->
 
 ```js
-expect(Cypress.testingType).to.be.oneOf(['e2e', 'component'])
+expect(Cypress.testingType)
+  .to.be.oneOf(['e2e', 'component'])
+  // in this case, we are running e2e spec
+  .and.be.equal('e2e')
 ```
 
 <!-- fiddle-end -->
