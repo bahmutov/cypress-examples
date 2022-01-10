@@ -40,10 +40,17 @@ cy.get('section')
       })
   })
   .then(() => {
+    // confirm the collected data
+    expect(sections).to.deep.equal({
+      Install: ['Step 1', 'Step 2', 'Step 3'],
+      Use: ['Case 1', 'Case 2'],
+    })
     // save into a file
     cy.writeFile('out.json', sections)
   })
 ```
+
+**Tip:** check out [cy-spok](https://github.com/bahmutov/cy-spok) that lets you write complex object assertions with ease.
 
 <!-- fiddle-end -->
 
