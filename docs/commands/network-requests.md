@@ -662,3 +662,5 @@ cy.should(() => {
 ```
 
 <!-- fiddle-end -->
+
+See how to simulate network errors in the [Network errors](../recipes/network-errors.md) recipe.

@@ -184,3 +184,4 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Type characters one by one into separate input elements](./recipes/type-one-by-one.md)
 - [Sibling elements](./recipes/sibling-element.md) using `.next` and CSS selector `+`
 - [Collect headings from the page](./recipes/collect-headings.md) and save as a JSON file
+- [Network errors](./recipes/network-errors.md) recipe.
