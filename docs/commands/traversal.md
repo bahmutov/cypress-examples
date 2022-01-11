@@ -421,7 +421,7 @@ cy.get('.traversal-ul')
 
 <!-- fiddle-end -->
 
-See also [Sibling element](../../recipes/sibling-element.md) recipe.
+See also [Sibling element](../recipes/sibling-element.md) recipe.
 
 ## [.nextAll()](https://on.cypress.io/nextall)
 
