@@ -102,21 +102,25 @@ cy.contains('#items li:first', 'Grapes')
 
 ## Using aliases
 
-You can split the Cypress commands if you use an element alias with the [cy.as](https://on.cypress.io/as) command. When the element is checked, if
+You can split the Cypress commands if you use an element alias with the [cy.as](https://on.cypress.io/as) command. Cypress should re-query the entire chain, skipping the non-query commands if it notices the aliased element has been detached from the DOM.
 
 <!-- fiddle Retry-ability / using aliases -->
 
 ```html
-<ul id="items">
-  <li>Apples</li>
-</ul>
+<div id="chain-example">
+  <ul id="items">
+    <li>Oranges</li>
+  </ul>
+</div>
 <script>
-  setTimeout(() => {
+  setTimeout(function () {
     // notice that we re-render the entire list
     // and insert the item at the first position
-    document.getElementById('items').innerHTML = `
-      <li>Grapes</li>
-      <li>Apples</li>
+    document.getElementById('chain-example').innerHTML = `
+      <ul id="items">
+        <li>Grapes</li>
+        <li>Apples</li>
+      </ul>
     `
   }, 2000)
 </script>
@@ -124,7 +128,12 @@ You can split the Cypress commands if you use an element alias with the [cy.as](
 
 ```js
 // notice how we create an alias to the element we want to check
-cy.get('#items li').first().as('firstItem')
+// The entire chain of commands uses 4 different commands
+cy.get('#chain-example')
+  .find('#items')
+  .find('li')
+  .first()
+  .as('firstItem')
 // when using the alias, if the element is detached from DOM
 // the entire chain is recomputed (but non-querying commands are skipped)
 cy.get('@firstItem').should('have.text', 'Grapes')
