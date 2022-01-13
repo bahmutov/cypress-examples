@@ -156,3 +156,5 @@ cy.get('@firstItem').should('have.text', 'Grapes')
 ```
 
 <!-- fiddle-end -->
+
+You can find the above example explained in the video [Use Cypress Element Alias To Avoid The Element Detached From DOM Error](https://youtu.be/VPznmFpa1Jc).

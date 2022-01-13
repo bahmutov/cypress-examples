@@ -5,6 +5,7 @@
   "integrationFolder": "docs",
   "testFiles": "**/*.md",
   "viewportHeight": 1000,
+  "viewportWidth": 600,
   "env": {
     "cypress-fiddle": {
       "stylesheets": [
