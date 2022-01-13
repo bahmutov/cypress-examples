@@ -110,6 +110,7 @@ You can split the Cypress commands if you use an element alias with the [cy.as](
 <div id="chain-example">
   <ul id="items">
     <li>Oranges</li>
+    <li>Bananas</li>
   </ul>
 </div>
 <script>
@@ -126,12 +127,27 @@ You can split the Cypress commands if you use an element alias with the [cy.as](
 </script>
 ```
 
+The following code DOES NOT work. It only retries the last command plus assertion `.first().should('have.text', 'Grapes')`. The element becomes detached from DOM when the application overwrites the entire list, and Cypress throws an error.
+
+```
+// DOES NOT WORK, just for demo
+cy.get('#chain-example')
+  .find('#items')
+  .find('li')
+  .should('have.length', 2)
+  .first()
+  .should('have.text', 'Grapes')
+```
+
+We need retry the entire chain of commands from the root `cy.get` command. When the application overwrites the elements, we will re-run the `cy.get` fetching the fresh parent element. We can achieve this by storing the querying chain as an alias. Cypress retries the entire chain if the aliased element becomes detached.
+
 ```js
 // notice how we create an alias to the element we want to check
 // The entire chain of commands uses 4 different commands
 cy.get('#chain-example')
   .find('#items')
   .find('li')
+  .should('have.length', 2)
   .first()
   .as('firstItem')
 // when using the alias, if the element is detached from DOM
