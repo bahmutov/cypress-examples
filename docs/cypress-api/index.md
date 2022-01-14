@@ -164,7 +164,7 @@ expect(Cypress.arch).to.exist
 
 To get or set configuration options, use `Cypress.config()`. Note: the config object should be reserved for Cypress settings, like `baseUrl` and `viewportWidth`. To store your custom values use the `Cypress.env()` approach.
 
-<!-- fiddle.only Cypress.config -->
+<!-- fiddle Cypress.config -->
 
 ```js
 const myConfig = Cypress.config()
