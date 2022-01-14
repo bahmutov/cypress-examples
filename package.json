@@ -68,7 +68,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "stop-only; lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run stop-only"
     }
   },
   "lint-staged": {
