@@ -164,7 +164,7 @@ expect(Cypress.arch).to.exist
 
 To get or set configuration options, use `Cypress.config()`. Note: the config object should be reserved for Cypress settings, like `baseUrl` and `viewportWidth`. To store your custom values use the `Cypress.env()` approach.
 
-<!-- fiddle Cypress.config -->
+<!-- fiddle.only Cypress.config -->
 
 ```js
 const myConfig = Cypress.config()
@@ -179,7 +179,12 @@ expect(myConfig).to.have.property('defaultCommandTimeout', 4000)
 expect(myConfig).to.have.property('requestTimeout', 5000)
 expect(myConfig).to.have.property('responseTimeout', 30000)
 expect(myConfig).to.have.property('viewportHeight', 1000)
-expect(myConfig).to.have.property('viewportWidth', 600)
+expect(myConfig)
+  .to.have.property('viewportWidth')
+  // previous assertion yields the value
+  // now let's assert the value pretending
+  // we only know min and max limits
+  .within(600, 1000)
 expect(myConfig).to.have.property('pageLoadTimeout', 60000)
 expect(myConfig).to.have.property('waitForAnimations', true)
 // we can check if the property is present without checking its value
