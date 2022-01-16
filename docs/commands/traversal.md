@@ -402,7 +402,7 @@ cy.get('.traversal-buttons .btn:last').should(
 
 To get the next sibling DOM element within elements, use the `.next()` command.
 
-<!-- fiddle .next() - get next sibling DOM element -->
+<!-- fiddle .next() / get next sibling DOM element -->
 
 ```html
 <ul class="traversal-ul">
@@ -416,12 +416,38 @@ To get the next sibling DOM element within elements, use the `.next()` command.
 cy.get('.traversal-ul')
   .contains('apples')
   .next()
-  .should('contain', 'oranges')
+  .should('have.class', 'second')
+  .and('contain', 'oranges')
 ```
 
 <!-- fiddle-end -->
 
 See also [Sibling element](../recipes/sibling-element.md) recipe.
+
+### [.next()](https://on.cypress.io/next) with selector
+
+Given the previous element (or several), we can find the next element matching the given selector.
+
+<!-- https://github.com/cypress-io/cypress/issues/19724 -->
+<!-- fiddle.skip .next() / get next sibling DOM element matching the selector -->
+
+```html
+<ul id="next-selector">
+  <li>apples</li>
+  <li>oranges</li>
+  <li>bananas</li>
+  <li class="selected">pineapples</li>
+</ul>
+```
+
+```js
+cy.get('#next-selector li')
+  .first()
+  .next('.selected')
+  .should('have.text', 'pineapples')
+```
+
+<!-- fiddle-end -->
 
 ## [.nextAll()](https://on.cypress.io/nextall)
 
