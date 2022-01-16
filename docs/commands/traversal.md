@@ -449,6 +449,8 @@ cy.get('#next-selector li')
 
 <!-- fiddle-end -->
 
+See the video [How To Report A Cypress Bug](https://youtu.be/NnriKHmj5T8).
+
 ## [.nextAll()](https://on.cypress.io/nextall)
 
 To get all of the next sibling DOM elements within elements, use the `.nextAll()` command.
