@@ -3,7 +3,7 @@
 name: scrape
 on:
   # allow running the scraper manually
-  workflow_dispatch
+  workflow_dispatch:
   # and scrape twice a day
   schedule:
     - cron: '0 3,15 * * *'
