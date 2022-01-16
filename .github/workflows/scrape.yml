@@ -2,8 +2,10 @@
 # https://glebbahmutov.com/blog/scrape-static-site-with-algolia/
 name: scrape
 on:
+  # allow running the scraper manually
+  workflow_dispatch
+  # and scrape twice a day
   schedule:
-    # scrape twice a day
     - cron: '0 3,15 * * *'
 
 jobs:
