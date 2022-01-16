@@ -429,7 +429,7 @@ See also [Sibling element](../recipes/sibling-element.md) recipe.
 Given the previous element (or several), we can find the next element matching the given selector.
 
 <!-- https://github.com/cypress-io/cypress/issues/19724 -->
-<!-- fiddle.skip .next() / get next sibling DOM element matching the selector -->
+<!-- fiddle .next() / get next sibling DOM element matching the selector -->
 
 ```html
 <ul id="next-selector">
@@ -440,10 +440,22 @@ Given the previous element (or several), we can find the next element matching t
 </ul>
 ```
 
-```js
+```
+// currently does not work due to bug 19724
 cy.get('#next-selector li')
   .first()
   .next('.selected')
+  .should('have.text', 'pineapples')
+```
+
+Workaround while [#19724](https://github.com/cypress-io/cypress/issues/19724) is open
+
+```js
+// currently does not work due to bug 19724
+cy.get('#next-selector li')
+  .first()
+  .nextAll()
+  .filter('.selected')
   .should('have.text', 'pineapples')
 ```
 
@@ -480,7 +492,7 @@ cy.get('.traversal-next-all')
 
 To get all of the next sibling DOM elements within elements until another element, use the `.nextUntil()` command.
 
-<!-- fiddle .nextUntil() - get next sibling DOM elements until next el -->
+<!-- fiddle .nextUntil() - get next sibling DOM elements until the matching selector -->
 
 ```html
 <ul class="healthy-foods">
@@ -497,10 +509,22 @@ To get all of the next sibling DOM elements within elements until another elemen
   <li>cashews</li>
   <li>almonds</li>
 </ul>
+<style>
+  .header {
+    font-weight: bolder;
+  }
+</style>
 ```
 
 ```js
-cy.get('#veggies').nextUntil('#nuts').should('have.length', 3)
+cy.get('#veggies')
+  .nextUntil('#nuts')
+  .should('have.length', 3)
+  .and(($veggies) => {
+    expect($veggies[0]).to.have.text('cucumbers')
+    expect($veggies[1]).to.have.text('carrots')
+    expect($veggies[2]).to.have.text('corn')
+  })
 ```
 
 <!-- fiddle-end -->
