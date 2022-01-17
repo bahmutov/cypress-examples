@@ -61,6 +61,29 @@ cy.get('h4,h5,h6').should('have.length.gt', 1)
 
 ### jQuery selectors
 
+Cypress querying commands use [jQuery selectors](https://api.jquery.com/category/selectors/) that go beyond the standard CSS selectors. Here are a couple of examples.
+
+#### Containing other elements by selector
+
+Let's find all paragraphs with bold text inside.
+
+<!-- fiddle cy.get / with jQuery has selector -->
+
+```html
+<div id="main-bold">
+  <p>First paragraph</p>
+  <p>Second <b>paragraph</b></p>
+  <p>Third paragraph</p>
+  <p>Fourth <b>paragraph</b></p>
+</div>
+```
+
+```js
+cy.get('#main-bold p:has(b)').should('have.length', 2)
+```
+
+<!-- fiddle-end -->
+
 #### Containing text
 
 <!-- fiddle cy.get / with jQuery text selector -->
