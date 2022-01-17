@@ -82,4 +82,18 @@ cy.get('.person')
   .should('have.class', 'age')
 ```
 
+## General sibling CSS selector
+
+There is the general sibling CSS selector `~`. Here is how we can find the `.age` siblings of the elements selected using the `.person` selector.
+
+```js
+cy.get('.person')
+  .find('~ .age')
+  .should('have.length', 2)
+  .spread((first, second) => {
+    expect(first).to.have.text('27')
+    expect(second).to.have.text('25')
+  })
+```
+
 <!-- fiddle-end -->
