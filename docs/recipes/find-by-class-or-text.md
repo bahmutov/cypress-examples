@@ -125,6 +125,12 @@ cy.get(':contains(apple)')
   .should('have.prop', 'nodeName', 'UL')
 ```
 
+We can also filter the elements to find `LI` elements with the text "crab"
+
+```js
+cy.get('li').filter(':contains(crab)').should('have.length', 2)
+```
+
 <!-- fiddle-end -->
 
 ## Filter elements using cy.not
