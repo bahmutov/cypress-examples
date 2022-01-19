@@ -319,6 +319,40 @@ expect(fruit, 'the fruit').to.be.oneOf([
   'Oranges',
   'Grapes',
 ])
+
+// generic predicate function check using the "satisfy" assertion
+expect('Hello').to.satisfy(
+  (s) => typeof s === 'string' && s.length === 5,
+)
+// you can use built-in Lodash predicates
+expect(window.NaN, 'NaN').to.satisfy(Cypress._.isNaN)
+cy.wrap(2, 'Two').should('satisfy', Cypress._.isFinite)
+```
+
+<!-- fiddle-end -->
+
+#### string assertion
+
+<!-- fiddle Explicit Assertions / expect - assert a substring -->
+
+```html
+<table id="substrings">
+  <tbody>
+    <tr>
+      <td>Column 1</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+```js
+// chai assertion "string" checks the presence of substring
+cy.get('#substrings tbody tr:first td:first')
+  .invoke('text')
+  .then((s) => {
+    expect(s).to.string('Column')
+    expect(s).to.not.string('Row')
+  })
 ```
 
 <!-- fiddle-end -->
@@ -1218,7 +1252,7 @@ cy.wrap(address)
 
 ### Multiple variants
 
-<!-- fiddle Multiple variants -->
+<!-- fiddle Objects / Multiple variants -->
 
 ```js
 expect('hello').to.be.oneOf(['hi', 'good morning', 'hello'])
@@ -1227,7 +1261,25 @@ cy.wrap(42).should('be.oneOf', [10, 42, 30])
 
 <!-- fiddle-end -->
 
-### Approximate value
+### Has a method
+
+You can check if a particular object has a method with a given name.
+
+<!-- fiddle Objects / has a method -->
+
+```js
+const person = {
+  greeting() {
+    return 'Hello'
+  },
+}
+expect(person).to.respondTo('greeting')
+cy.wrap(person).should('respondTo', 'greeting')
+```
+
+<!-- fiddle-end -->
+
+### Approximate value using closeTo
 
 <!-- fiddle Approximate value -->
 
@@ -1238,6 +1290,8 @@ cy.wrap(52.9).should('be.closeTo', 50, 3)
 ```
 
 <!-- fiddle-end -->
+
+See [Chai assertion library](https://www.chaijs.com/api/bdd/)
 
 ## Adding assertions
 
