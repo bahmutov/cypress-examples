@@ -731,7 +731,9 @@ cy.get('#tag-example').should('have.prop', 'nodeName', 'MARQUEE')
 
 <!-- fiddle-end -->
 
-## Newlines
+## Text assertions
+
+### Newlines
 
 If the text contains newline characters, you can trim it before asserting the text contents or use [cy.contains](https://on.cypress.io/contains) or `include.text` assertion.
 
@@ -772,7 +774,7 @@ cy.contains('#newlines-example', 'hello, there!')
 
 <!-- fiddle-end -->
 
-## HTML entities
+### HTML entities
 
 <!-- fiddle Implicit Assertions / .should() - html entities -->
 
@@ -804,28 +806,7 @@ cy.get('#y-value').should('have.text', encode('&radic;y'))
 
 <!-- fiddle-end -->
 
-## Placeholder attribute
-
-Let's validate the input element's placeholder attribute.
-
-<!-- fiddle Implicit Assertions / .should() - placeholder attribute -->
-
-```html
-<input
-  type="text"
-  id="inputEmail"
-  class="form-control"
-  placeholder="Email"
-/>
-```
-
-```js
-cy.get('#inputEmail').should('have.attr', 'placeholder', 'Email')
-```
-
-<!-- fiddle-end -->
-
-## Visible element with text
+### Visible element with text
 
 Let's confirm that the page contains a visible element with some text.
 
@@ -850,7 +831,7 @@ cy.get('#greeting')
 
 <!-- fiddle-end -->
 
-## Partial text match
+### Partial text match
 
 <!-- fiddle Implicit Assertions / .should() - partial text match -->
 
@@ -877,6 +858,94 @@ cy.get('#parent-element')
   // we find the child <span> element
   .contains('main')
   .should('have.class', 'inner')
+```
+
+<!-- fiddle-end -->
+
+### Text matching the regular expression
+
+We can use regular expressions with "match" assertions to confirm part of the text.
+
+<!-- fiddle Implicit Assertions / .should() - text matching the regular expression -->
+
+```html
+<div id="a-greeting">Hello, there!</div>
+```
+
+```js
+cy.get('#a-greeting')
+  .invoke('text')
+  .should('match', /^Hello/)
+// tip: use cy.contains to find element with text
+// matching a regular expression
+cy.contains('#a-greeting', /^Hello/)
+// you can ignore the case and perform case-insensitive match
+cy.get('#a-greeting')
+  .invoke('text')
+  .should('match', /hello, there!/i)
+// a better version would use cy.contains command
+// to perform case-insensitive query
+// you can use either a regular expression
+cy.contains('#a-greeting', /hello, there!/i)
+// or use the contains option to ignore the case
+cy.contains('#a-greeting', 'hello, there!', { matchCase: false })
+```
+
+<!-- fiddle-end -->
+
+### Converting text
+
+Sometimes you need to extract the text and convert it into a number before running an assertion.
+
+<!-- fiddle Implicit Assertions / .should() - convert text to number -->
+
+```html
+<div id="num-example">
+  Messages <span class="messages">4</span>
+</div>
+```
+
+```js
+cy.get('#num-example .messages')
+  .invoke('text')
+  .then(parseInt)
+  .should('equal', 4)
+  // if you do not know the exact expected number
+  // use range assertions, like "greater than", "within"
+  .and('be.gt', 0)
+  .and('be.within', 0, 10)
+```
+
+You can also combine multiple steps into a single "should" callback for greater [retry-ability](https://on.cypress.io/retry-ability).
+
+```js
+// use command + single assertion callback
+cy.get('#num-example .messages').should(($el) => {
+  const n = parseInt($el.text())
+  expect(n, 'number of messages')
+    .to.be.a('number')
+    .and.be.within(0, 10)
+})
+```
+
+<!-- fiddle-end -->
+
+### OR match using regular expression
+
+If you want to confirm the text matches one string or another, use a regular expression
+
+<!-- fiddle Implicit Assertions / .should() - OR match -->
+
+```html
+<div id="or-match">Joe</div>
+```
+
+```js
+cy.get('#or-match')
+  .invoke('text')
+  .should('match', /^(Joe|Mary)$/)
+// the same can be done using cy.contains command
+cy.contains('#or-match', /^(Joe|Mary)$/)
 ```
 
 <!-- fiddle-end -->
@@ -979,80 +1048,23 @@ cy.get('#multiple-elements li')
 
 <!-- fiddle-end -->
 
-## Text matching the regular expression
+## Placeholder attribute
 
-We can use regular expressions with "match" assertions to confirm part of the text.
+Let's validate the input element's placeholder attribute.
 
-<!-- fiddle Implicit Assertions / .should() - text matching the regular expression -->
-
-```html
-<div id="a-greeting">Hello, there!</div>
-```
-
-```js
-cy.get('#a-greeting')
-  .invoke('text')
-  .should('match', /^Hello/)
-// tip: use cy.contains to find element with text
-// matching a regular expression
-cy.contains('#a-greeting', /^Hello/)
-```
-
-<!-- fiddle-end -->
-
-## Converting text
-
-Sometimes you need to extract the text and convert it into a number before running an assertion.
-
-<!-- fiddle Implicit Assertions / .should() - convert text to number -->
+<!-- fiddle Implicit Assertions / .should() - placeholder attribute -->
 
 ```html
-<div id="num-example">
-  Messages <span class="messages">4</span>
-</div>
+<input
+  type="text"
+  id="inputEmail"
+  class="form-control"
+  placeholder="Email"
+/>
 ```
 
 ```js
-cy.get('#num-example .messages')
-  .invoke('text')
-  .then(parseInt)
-  .should('equal', 4)
-  // if you do not know the exact expected number
-  // use range assertions, like "greater than", "within"
-  .and('be.gt', 0)
-  .and('be.within', 0, 10)
-```
-
-You can also combine multiple steps into a single "should" callback for greater [retry-ability](https://on.cypress.io/retry-ability).
-
-```js
-// use command + single assertion callback
-cy.get('#num-example .messages').should(($el) => {
-  const n = parseInt($el.text())
-  expect(n, 'number of messages')
-    .to.be.a('number')
-    .and.be.within(0, 10)
-})
-```
-
-<!-- fiddle-end -->
-
-## OR match using regular expression
-
-If you want to confirm the text matches one string or another, use a regular expression
-
-<!-- fiddle Implicit Assertions / .should() - OR match -->
-
-```html
-<div id="or-match">Joe</div>
-```
-
-```js
-cy.get('#or-match')
-  .invoke('text')
-  .should('match', /^(Joe|Mary)$/)
-// the same can be done using cy.contains command
-cy.contains('#or-match', /^(Joe|Mary)$/)
+cy.get('#inputEmail').should('have.attr', 'placeholder', 'Email')
 ```
 
 <!-- fiddle-end -->
