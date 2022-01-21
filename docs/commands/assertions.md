@@ -737,7 +737,7 @@ cy.get('#tag-example').should('have.prop', 'nodeName', 'MARQUEE')
 
 If the text contains newline characters, you can trim it before asserting the text contents or use [cy.contains](https://on.cypress.io/contains) or `include.text` assertion.
 
-<!-- fiddle Implicit Assertions / .should() - text with newlines -->
+<!-- fiddle Implicit Assertions / Text / .should() - text with newlines -->
 
 To better show how assertions wait for the application to be ready, this element adds "there!" after a delay.
 
@@ -776,7 +776,7 @@ cy.contains('#newlines-example', 'hello, there!')
 
 ### HTML entities
 
-<!-- fiddle Implicit Assertions / .should() - html entities -->
+<!-- fiddle Implicit Assertions / Text / .should() - html entities -->
 
 ```html
 <span id="y-value">&radic;y</span>
@@ -810,7 +810,7 @@ cy.get('#y-value').should('have.text', encode('&radic;y'))
 
 Let's confirm that the page contains a visible element with some text.
 
-<!-- fiddle Implicit Assertions / .should() - visible non-empty text -->
+<!-- fiddle Implicit Assertions / Text / .should() - visible non-empty text -->
 
 ```html
 <div id="greeting">Hello, there!</div>
@@ -833,7 +833,7 @@ cy.get('#greeting')
 
 ### Partial text match
 
-<!-- fiddle Implicit Assertions / .should() - partial text match -->
+<!-- fiddle Implicit Assertions / Text / .should() - partial text match -->
 
 ```html
 <div id="parent-element">
@@ -866,7 +866,7 @@ cy.get('#parent-element')
 
 We can use regular expressions with "match" assertions to confirm part of the text.
 
-<!-- fiddle Implicit Assertions / .should() - text matching the regular expression -->
+<!-- fiddle Implicit Assertions / Text / .should() - text matching the regular expression -->
 
 ```html
 <div id="a-greeting">Hello, there!</div>
@@ -897,7 +897,7 @@ cy.contains('#a-greeting', 'hello, there!', { matchCase: false })
 
 Sometimes you need to extract the text and convert it into a number before running an assertion.
 
-<!-- fiddle Implicit Assertions / .should() - convert text to number -->
+<!-- fiddle Implicit Assertions / Text / .should() - convert text to number -->
 
 ```html
 <div id="num-example">
@@ -934,7 +934,7 @@ cy.get('#num-example .messages').should(($el) => {
 
 If you want to confirm the text matches one string or another, use a regular expression
 
-<!-- fiddle Implicit Assertions / .should() - OR match -->
+<!-- fiddle Implicit Assertions / Text / .should() - OR match -->
 
 ```html
 <div id="or-match">Joe</div>
@@ -946,6 +946,33 @@ cy.get('#or-match')
   .should('match', /^(Joe|Mary)$/)
 // the same can be done using cy.contains command
 cy.contains('#or-match', /^(Joe|Mary)$/)
+```
+
+<!-- fiddle-end -->
+
+### Text should not present
+
+<!-- fiddle Implicit Assertions / Text / .should() - text should not be present -->
+
+```html
+<div id="text-lines">
+  <span>some text at the start</span>
+  <span class="inner">main content</span>
+  <span>and some text afterwards</span>
+</div>
+```
+
+```js
+cy.get('#text-lines').should('include.text', 'main content')
+cy.get('#text-lines .inner').should(
+  'not.include.text',
+  'some text',
+)
+// you can also use :contains and :not selectors
+cy.get('#text-lines span:not(:contains("main content"))').should(
+  'have.length',
+  2,
+)
 ```
 
 <!-- fiddle-end -->
