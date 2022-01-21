@@ -82,6 +82,17 @@ Let's find all paragraphs with bold text inside.
 cy.get('#main-bold p:has(b)').should('have.length', 2)
 ```
 
+We can also combine `:has` with `:not` selectors to find all paragraphs without `<b>` elements.
+
+```js
+cy.get('#main-bold p:not(:has(b))')
+  .should('have.length', 2)
+  .each(($p) => {
+    // should be the first or the first paragraphs
+    expect($p.text()).to.match(/^(First|Third)/)
+  })
+```
+
 <!-- fiddle-end -->
 
 #### Containing text
