@@ -48,7 +48,7 @@
   "devDependencies": {
     "chai-sorted": "^0.2.0",
     "common-tags": "1.8.0",
-    "cypress": "9.3.0",
+    "cypress": "9.3.1",
     "cypress-book": "1.5.0",
     "cypress-markdown-preprocessor": "1.1.10",
     "dependency-version-badge": "1.2.0",
