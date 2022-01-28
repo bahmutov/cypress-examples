@@ -71,3 +71,5 @@ cy.get('#sales tbody tr').each(($row) => {
 ```
 
 <!-- fiddle-end -->
+
+See the video [Check The Prices Table Rows](https://youtu.be/DxlqDA7tIOw).
