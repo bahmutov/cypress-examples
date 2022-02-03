@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Return value from a custom command that uses .within | Cypress examples (v9.4.1)</title>
+    <meta name="description" content="Static site with Cypress examples tested right from the Markdown sources">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <style>.action-focus.focus { border: 5px solid orange; } .hidden { display: none !important; }</style>
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
+    <link rel="preload" href="/cypress-examples/9.4.1/assets/css/0.styles.2aaef224.css" as="style"><link rel="preload" href="/cypress-examples/9.4.1/assets/js/app.25dd46ba.js" as="script"><link rel="preload" href="/cypress-examples/9.4.1/assets/js/3.62aeeeda.js" as="script"><link rel="preload" href="/cypress-examples/9.4.1/assets/js/52.7c3ef1d9.js" as="script"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/10.30254f6c.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/11.7e5d2e21.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/12.8c843f9d.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/13.18c5f2c5.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/14.2d8ab65a.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/15.a60d57a2.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/16.4e8b28f9.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/17.0519e91d.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/18.81b12709.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/19.14dfee08.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/20.d7ff2b63.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/21.db813ef0.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/22.98f9acd6.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/23.0b71b8b3.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/24.9eeb2bcf.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/25.005de124.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/26.898ca036.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/27.cdca241b.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/28.ad92fab6.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/29.c874bf3b.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/30.15e8ea1a.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/31.52d71578.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/32.723d1641.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/33.2e09cfbb.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/34.b98b6e25.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/35.06bba086.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/36.891fe324.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/37.dc1ec502.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/38.3f3be286.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/39.b8585dcb.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/4.e09fd1f6.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/40.362ca324.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/41.90584c35.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/42.a4391a4b.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/43.20ac3280.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/44.f5a94f43.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/45.952a1732.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/46.f207f6ec.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/47.cd7660be.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/48.c8fb7a43.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/49.b8a041d0.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/5.0597ffa5.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/50.b4997742.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/51.a644a292.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/53.a5a3d61d.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/54.1e3f02d2.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/55.2d962866.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/56.a5d7f17d.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/57.6d4a8296.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/58.a783e140.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/59.b062c640.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/6.405216a9.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/60.b79eeb7e.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/61.0bd33f9c.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/62.325c5230.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/63.93eddfa0.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/64.8702c8dc.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/65.e0a88aa1.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/66.b0b7c0cc.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/7.c4a4fd3f.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/8.42333bfc.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/9.6272bbb8.js"><link rel="prefetch" href="/cypress-examples/9.4.1/assets/js/vendors~docsearch.180ed17d.js">
+    <link rel="stylesheet" href="/cypress-examples/9.4.1/assets/css/0.styles.2aaef224.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/cypress-examples/9.4.1/" class="home-link router-link-active"><!----> <span class="site-name">Cypress examples (v9.4.1)</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/9.4.1/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/9.4.1/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.4.1/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/9.4.1/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/9.4.1/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Return value from a custom command that uses .within</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/cypress-examples/9.4.1/recipes/return-value-from-within.html#see-also" class="sidebar-link">See also</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="return-value-from-a-custom-command-that-uses-within"><a href="#return-value-from-a-custom-command-that-uses-within" class="header-anchor">#</a> Return value from a custom command that uses .within</h1> <p>Imagine you are using a custom command and it uses the <a href="https://on.cypress.io/within" target="_blank" rel="noopener noreferrer">.within()<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> internally. How do you return some arbitrary value from that command if the <code>.within()</code> command always yields its parent element?</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parent<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  The parent div
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>some-child<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    Magic number is <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>magic<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>42<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="example"><div id="parent">
+  The parent div
+  <div class="some-child">
+    Magic number is <span class="magic">42</span></div></div></div></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// we can simply use a variable in the same lexical scope</span>
+<span class="token keyword">let</span> magicNumber
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#parent'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">within</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'.magic'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>parseInt<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        magicNumber <span class="token operator">=</span> x
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// outside the .within() callback we can use the magicNumber</span>
+    <span class="token comment">// because it should be set by now</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>magicNumber<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>You can use a custom command in this case, just wrap the final result so it becomes the value yielded from the custom command.</p> <div class="language-js extra-class"><pre class="language-js"><code>cy<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'**using custom command**'</span><span class="token punctuation">)</span>
+Cypress<span class="token punctuation">.</span>Commands<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>
+  <span class="token string">'getMagicNumber'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token parameter">selector<span class="token punctuation">,</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    Cypress<span class="token punctuation">.</span>_<span class="token punctuation">.</span><span class="token function">defaults</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token punctuation">{</span> log<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    cy<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">getMagicNumber from **</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>selector<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">**</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+
+    <span class="token keyword">let</span> magicNumber
+    cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>selector<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">within</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'.magic'</span><span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token string">'text'</span><span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>parseInt<span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            magicNumber <span class="token operator">=</span> x
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        cy<span class="token punctuation">.</span><span class="token function">wrap</span><span class="token punctuation">(</span>magicNumber<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+cy<span class="token punctuation">.</span><span class="token function">getMagicNumber</span><span class="token punctuation">(</span><span class="token string">'#parent'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> log<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'equal'</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">)</span>
+</code></pre></div> <h2 id="see-also"><a href="#see-also" class="header-anchor">#</a> See also</h2> <ul><li><a href="/cypress-examples/9.4.1/commands/querying.html">querying commands</a> including <code>.within()</code></li></ul></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bahmutov/cypress-examples/edit/master/docs/recipes/return-value-from-within.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/cypress-examples/9.4.1/assets/js/app.25dd46ba.js" defer></script><script src="/cypress-examples/9.4.1/assets/js/3.62aeeeda.js" defer></script><script src="/cypress-examples/9.4.1/assets/js/52.7c3ef1d9.js" defer></script>
+  </body>
+</html>
