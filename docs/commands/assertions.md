@@ -893,6 +893,39 @@ cy.contains('#a-greeting', 'hello, there!', { matchCase: false })
 
 <!-- fiddle-end -->
 
+### Match numbers using a regular expression
+
+Imagine we want to validate the date inside an element. The date should have the day number between 1 and 31.
+
+<!-- fiddle Implicit Assertions / Text / .should() - match number -->
+
+```html
+<div id="date-string">
+  Feb 14, 2022
+</div>
+```
+
+```js
+// \b means the word boundary
+// (?<day>...) is a named capture group
+// \d{1,2}, is a one or two digit number followed by a comma
+const dayRegex = /\b(?<day>\d{1,2}),/
+cy.get('#date-string')
+  .invoke('text')
+  .should('match', dayRegex)
+  // extract the day number
+  .invoke('match', dayRegex)
+  // grab the named group, convert to integer
+  .its('groups.day')
+  .then(parseInt)
+  // and confirm its value
+  .should('be.within', 1, 31)
+  // and in our case we know when Valentine's day is
+  .and('equal', 14)
+```
+
+<!-- fiddle-end -->
+
 ### Converting text
 
 Sometimes you need to extract the text and convert it into a number before running an assertion.
