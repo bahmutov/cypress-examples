@@ -339,6 +339,37 @@ cy.get('@add')
 
 <!-- fiddle-end -->
 
+### Call the spy from the test
+
+When spying on the object's method typically you call the method. If you do call the created spy function, it does not have the `this` pointing at the original object. You can bind the `this` to point to the object by using `.bind` method.
+
+<!-- fiddle cy.spy() / call the method spy and have this correctly set -->
+
+```js
+const testRunner = {
+  name: 'Cypress',
+  getName() {
+    return this.name
+  },
+}
+
+const getNameSpy = cy.spy(testRunner, 'getName')
+// the created spy is just a function
+expect(getNameSpy).to.be.a('function')
+// call the object's method
+expect(testRunner.getName(), 'object.method').to.equal('Cypress')
+expect(getNameSpy, 'method was called').to.be.calledOnce
+expect(
+  getNameSpy.call(testRunner),
+  'call the spy directly',
+).to.equal('Cypress')
+expect(getNameSpy, 'method was called twice').to.be.calledTwice
+```
+
+<!-- fiddle-end -->
+
+Watch the video [How To Call The Spy Function](https://youtu.be/g_7LZXuEIMA).
+
 ## [cy.stub()](https://on.cypress.io/stub)
 
 To create a stub and/or replace a function with a stub, use the `cy.stub()` command.
