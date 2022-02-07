@@ -1,5 +1,36 @@
 # `cy.each` examples
 
+## Confirm each item
+
+<!-- fiddle .each / confirm each item -->
+
+Let's say we have a list of items
+
+```html
+<ul>
+  <li class="fruit">Apples $10</li>
+  <li class="fruit">Bananas $20</li>
+  <li class="fruit">Grapes $15</li>
+</ul>
+```
+
+Let's confirm each item starts with the fruit name
+
+```js
+cy.get('li').each(($li) => {
+  // you can use Chai-jQuery assertions
+  expect($li.text()).to.match(/^(Apples|Bananas|Grapes)/)
+  expect($li).to.have.class('fruit')
+  // you can also use cy.wrap($li) to be able to use Cypress commands
+  cy.wrap($li)
+    .should('have.class', 'fruit')
+    .invoke('text')
+    .should('match', /\$\d+$/) // ends with a price
+})
+```
+
+<!-- fiddle-end -->
+
 ## Collect items text
 
 <!-- fiddle .each / collect items text -->
