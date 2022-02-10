@@ -221,7 +221,7 @@ cy.request('https://jsonplaceholder.cypress.io/users?_limit=1')
 
 The `cy.request` command automatically fails if the server responds with an error code. You can allow the requests to fail and handle the response yourself.
 
-<!-- fiddle cy.request() - handle-error-response -->
+<!-- fiddle cy.request() - handle an error response -->
 
 ```js
 const serverUrl = 'https://jsonplaceholder.cypress.io'
@@ -236,6 +236,8 @@ cy.request({
 ```
 
 <!-- fiddle-end -->
+
+See the recipe [Requested resource not found](../recipes/request-not-found.md).
 
 ## [cy.route()](https://on.cypress.io/route)
 
