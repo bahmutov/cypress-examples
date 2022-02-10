@@ -1,6 +1,6 @@
 # Requested resource not found
 
-Sometimes you use [cy.request](https://on.cypress.io/request) to get a resource that might not exist. The server returns 404 and the command fails. In this recipe, I show how to deal with this error by abstracting it away in an utility function.
+Sometimes you use [cy.request](https://on.cypress.io/request) to get a resource that might not exist. The server returns 404 and the command fails. In this recipe, I show how to deal with this error by abstracting it away in an utility function. You can read this recipe or watch the video "[Return Cypress Chain](https://youtu.be/in0ZXw1JtJQ)".
 
 First, let's look at an _incorrect_ solution.
 
