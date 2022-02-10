@@ -53,6 +53,8 @@ cy.server({
 
 ## [cy.request()](https://on.cypress.io/request)
 
+Cypress tests run in the browser, but through [cy.request](https://on.cypress.io/request) command the tests can do HTTP requests without cross-domain restrictions. For more information, read [Cypress request and cookies](https://glebbahmutov.com/blog/cypress-request-and-cookies/) and [How To Check Network Requests Using Cypress](https://glebbahmutov.com/blog/network-requests-with-cypress/).
+
 ### Making a request
 
 To make an XHR request, use the `cy.request()` command.
@@ -211,6 +213,26 @@ cy.request('https://jsonplaceholder.cypress.io/users?_limit=1')
       .property('userId')
       .to.equal(this.user.id)
   })
+```
+
+<!-- fiddle-end -->
+
+### Handle 404
+
+The `cy.request` command automatically fails if the server responds with an error code. You can allow the requests to fail and handle the response yourself.
+
+<!-- fiddle cy.request() - handle-error-response -->
+
+```js
+const serverUrl = 'https://jsonplaceholder.cypress.io'
+cy.request({
+  url: `${serverUrl}/todos/does-not-exist`,
+  failOnStatusCode: false,
+}).then((response) => {
+  expect(response).to.have.property('status', 404)
+  // our server returns an empty object if the Todo is not found
+  expect(response).to.have.property('body').to.be.deep.equal({})
+})
 ```
 
 <!-- fiddle-end -->
@@ -662,5 +684,7 @@ cy.should(() => {
 ```
 
 <!-- fiddle-end -->
+
+## See also
 
 See how to simulate network errors in the [Network errors](../recipes/network-errors.md) recipe.
