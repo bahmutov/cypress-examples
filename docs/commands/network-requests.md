@@ -237,7 +237,7 @@ cy.request({
 
 <!-- fiddle-end -->
 
-See the recipe [Requested resource not found](../recipes/request-not-found.md).
+Watch the explanation in the video [Handle 404 Status Code In cy.request Command](https://youtu.be/Ck5MutpVOQo), and check out the recipe [Requested resource not found](../recipes/request-not-found.md).
 
 ## [cy.route()](https://on.cypress.io/route)
 

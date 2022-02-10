@@ -156,7 +156,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Assert the selected value or multiple values](recipes/selected-value.md) in a `<select>` element
 - [Select an item by id](./recipes/select-value-by-id.md)
 - [Get the inner text of a list of elements](./recipes/get-text-list.md)
-- [Conditional testing](./recipes/conditional-testing.md)
 - [Form input validation](./recipes/form-validation.md)
 - [Retry-ability examples](./recipes/retry-ability.md)
   - [Count retries](./recipes/retry-ability.md#count-retries)
@@ -175,14 +174,22 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Overlapping elements on the page](./recipes/overlapping-elements.md)
 - [Search part of the list](./recipes/search-part-of-the-list.md)
 - [Add a custom data-... attribute assertion](./recipes/add-data-assertion.md)
-- [Request a specific comment](./recipes/request-a-comment.md) using an ID read from the page
 - [Pseudo CSS selectors](./recipes/pseudo-selectors.md) like `:link`, `:empty`, `::before`
 - [Create long text](./recipes/create-long-text.md) using `Cypress._.repeat` function
 - [Detect duplicate values](./recipes/duplicates.md) by text or by attribute
 - Save multiple elements under [aliases](./recipes/aliases.md)
-- Avoid "Mixing async and sync code" by controlling the [value the code yields](./recipes/yield-value.md)
 - [Type characters one by one into separate input elements](./recipes/type-one-by-one.md)
 - [Sibling elements](./recipes/sibling-element.md) using `.next` and CSS selector `+`
 - [Collect headings from the page](./recipes/collect-headings.md) and save as a JSON file
-- [Network errors](./recipes/network-errors.md) recipe.
 - [Table with prices](./recipes/table-with-prices.md) confirms the prices in every table row.
+
+### Cypress secrets recipes
+
+- [Conditional testing](./recipes/conditional-testing.md)
+- Avoid "Mixing async and sync code" by controlling the [value the code yields](./recipes/yield-value.md)
+
+### Network recipes
+
+- [Request a specific comment](./recipes/request-a-comment.md) using an ID read from the page
+- Simulate [Network errors](./recipes/network-errors.md) recipe.
+- Refactor [Requested resource not found](./recipes/request-not-found.md) code into an utility function.
