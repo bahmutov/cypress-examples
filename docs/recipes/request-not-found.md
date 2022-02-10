@@ -74,4 +74,30 @@ getTodo(1)
 getTodo('does-not-exist').should('equal', 'Todo not found')
 ```
 
+## Bonus: compare two responses
+
+Let's get two Todo items and check their responses to confirm they are the same. You can nest `cy.then` callbacks to get both objects before comparing them.
+
+```js
+getTodo(20).then((first) => {
+  getTodo(10 + 10).then((second) => {
+    expect(first, 'todos are equal').to.deep.equal(second)
+  })
+})
+```
+
+We can also save the first response under [an alias](../commands/aliasing.md) and use `function () {...}` callback to be able to access the first response using `this.<alias>`:
+
+```js
+getTodo(20)
+  .as('first')
+  .then(function () {
+    // by using "function () {...}" callback
+    // we get access to the test context object via "this"
+    // that's where every alias created using cy.as command
+    // is available as a property
+    getTodo(10 + 10).should('deep.equal', this.first)
+  })
+```
+
 <!-- fiddle-end -->
