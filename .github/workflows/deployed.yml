@@ -14,7 +14,7 @@ jobs:
       - name: Print the context 📋
         run: echo "context ${{ github.event.context }} state ${{ github.event.state }}"
 
-  test-publish-scrape:
+  test-publish:
     if: github.event.context == 'github/pages' && github.event.state == 'success'
     runs-on: ubuntu-latest
     steps:
