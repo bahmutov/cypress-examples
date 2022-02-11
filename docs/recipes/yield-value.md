@@ -12,7 +12,7 @@ Let's say you want to find the last name of the person in the DIV below.
 
 The following code block will cause an error "mixing up async and sync code"
 
-```jss
+```js skip
 cy.get('#person')
   .invoke('text')
   .then((text) => {
@@ -28,7 +28,7 @@ Cypress is unsure which value do you want to yield to the assertion `.should('eq
 
 Printing using `cy.log` can unexpectedly cause an error, because you do not assume it yields a value. But it is a Cypress command, just like `cy.wrap`. In the test below (which also causes the same error as above), do you expect to yield "Anna" or "Smith"?
 
-```jss
+```js skip
 cy.get('#person')
   .invoke('text')
   .then((text) => {

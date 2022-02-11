@@ -6,7 +6,7 @@ First, let's look at an _incorrect_ solution.
 
 <!-- fiddle cy.request() - handle an error response -->
 
-```jss
+```js skip
 // 🚨 INCORRECT, this will NOT WORK, just for DEMO
 function getTodo(id) {
   const serverUrl = 'https://jsonplaceholder.cypress.io'
@@ -19,7 +19,7 @@ getTodo(1)
 
 The above function `getTodo` schedules the `cy.request` command to run by adding it to the Cypress command queue. The `getTodo` also returns a string right away - probably not something you expect. Instead you want to return _the Cypress command_ to let you attach more commands and assertions.
 
-```jss
+```js skip
 // 🚨 SLIGHTLY BETTER solution
 // DOES NOT HANDLE 404 responses
 function getTodo(id) {
