@@ -102,6 +102,78 @@ cy.get('.matching')
 
 <!-- fiddle-end -->
 
+## Print each list item text
+
+<!-- fiddle Prints the text to the Cypress Command Log -->
+
+```html
+<ul id="items">
+  <li>Apples</li>
+  <li>Oranges</li>
+  <li>Pears</li>
+  <li>Grapes</li>
+</div>
+```
+
+```js
+cy.get('#items li').each(($li) => cy.log($li.text()))
+```
+
+<!-- fiddle-end -->
+
+## Collect the items then print
+
+<!-- fiddle Collect the items first, then print -->
+
+```html
+<ul id="items">
+  <li>Apples</li>
+  <li>Oranges</li>
+  <li>Pears</li>
+  <li>Grapes</li>
+</div>
+```
+
+```js
+const items = []
+cy.get('#items li')
+  .each(($li) => items.push($li.text()))
+  .then(() => {
+    cy.log(items.join(', '))
+  })
+```
+
+<!-- fiddle-end -->
+
+## Collect the items then assert the list
+
+<!-- fiddle Collect the items first, then assert the list -->
+
+```html
+<ul id="items">
+  <li>Apples</li>
+  <li>Oranges</li>
+  <li>Pears</li>
+  <li>Grapes</li>
+</div>
+```
+
+```js
+const items = []
+cy.get('#items li').each(($li) => items.push($li.text()))
+// the items reference is set once
+// and the new items are added by the above commands
+// that is why we don't have to use "cy.then"
+cy.wrap(items).should('deep.equal', [
+  'Apples',
+  'Oranges',
+  'Pears',
+  'Grapes',
+])
+```
+
+<!-- fiddle-end -->
+
 ## Confirm the number of items
 
 Let's imagine the page shows the number of items in the list, and we want to confirm the displayed number is correct.
