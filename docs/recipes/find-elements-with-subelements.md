@@ -95,4 +95,13 @@ cy.get('#list li')
   .should('include.text', 'fifth') // confirm we found the right element
 ```
 
+We can also use the jQuery `:has` selector to find `LI` elements with `.label` elements inside.
+
+```js
+cy.get('li:has(.label)')
+  .should('have.length', 3)
+  .last()
+  .contains('Advanced')
+```
+
 <!-- fiddle.end -->
