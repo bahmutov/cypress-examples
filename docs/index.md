@@ -182,6 +182,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Sibling elements](./recipes/sibling-element.md) using `.next` and CSS selector `+`
 - [Collect headings from the page](./recipes/collect-headings.md) and save as a JSON file
 - [Table with prices](./recipes/table-with-prices.md) confirms the prices in every table row.
+- Querying [SVG example](./recipes/svg-example.md)
 
 ### Cypress secrets recipes
 
