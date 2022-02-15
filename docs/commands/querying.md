@@ -393,6 +393,56 @@ cy.get('[data-test-id="test-example"]')
 
 <!-- fiddle-end -->
 
+#### Using partial data attribute
+
+<!-- fiddle cy.get / by partial data attribute -->
+
+```html
+<div id="partial-data">
+  <div data-test-id="fruit one">Apples</div>
+  <div data-test-id="fruit two">Oranges</div>
+  <div data-test-id="fruit one">Grapes</div>
+  <div data-test-id="not a fruit">Potato</div>
+</div>
+```
+
+Let's find all items with "data-test-id" that includes the text "fruit" anywhere in the string.
+
+```js
+cy.get('#partial-data [data-test-id*=fruit]').should(
+  'have.length',
+  4,
+)
+```
+
+Let's find all items that start with "fruit" in that attribute.
+
+```js
+cy.get('#partial-data [data-test-id^=fruit]').should(
+  'have.length',
+  3,
+)
+```
+
+Let's find the items that end the data attribute with the string "a fruit"
+
+```js
+cy.get('#partial-data [data-test-id$="a fruit"]')
+  .should('have.length', 1)
+  .and('have.text', 'Potato')
+```
+
+Let's find the elements with text "one" anywhere in their text
+
+```js
+cy.get('#partial-data [data-test-id*=one]')
+  .should('have.length', 2)
+  .first()
+  .should('have.text', 'Apples')
+```
+
+<!-- fiddle-end -->
+
 ### AND selector
 
 Let's find all `P` and `LI` elements. You can combine multiple selectors using comma operator.
