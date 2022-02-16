@@ -111,3 +111,5 @@ cy.get('li:has(.label:contains("New"))').should('have.length', 2)
 ```
 
 <!-- fiddle.end -->
+
+Watch the video "[jQuery :has and :contains Selectors in Cypress Tests](https://youtu.be/2NpHXkZN1SY)".
