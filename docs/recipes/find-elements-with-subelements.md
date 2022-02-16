@@ -104,4 +104,10 @@ cy.get('li:has(.label)')
   .contains('Advanced')
 ```
 
+We can even use the `:has` combined with `:contains` to find all `LI` elements with `.label` elements that have the text "New" in them.
+
+```js
+cy.get('li:has(.label:contains("New"))').should('have.length', 2)
+```
+
 <!-- fiddle.end -->
