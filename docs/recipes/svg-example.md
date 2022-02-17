@@ -49,4 +49,6 @@ cy.get('svg')
   .invoke('attr', 'fill', 'red')
 ```
 
+Watch the video "[Querying SVG From A Cypress Test](https://youtu.be/liFRu0Fu-Gs)".
+
 <!-- fiddle-end -->
