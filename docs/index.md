@@ -183,6 +183,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Collect headings from the page](./recipes/collect-headings.md) and save as a JSON file
 - [Table with prices](./recipes/table-with-prices.md) confirms the prices in every table row.
 - Querying [SVG example](./recipes/svg-example.md)
+- Find and confirm the list of [labels for checked checkboxes](./recipes/labels-for-checkboxes.md)
 
 ### Cypress secrets recipes
 
