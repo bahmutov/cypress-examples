@@ -18,9 +18,8 @@ Imagine we have a list of checkboxes, some of them checked. We want to find the 
 ```js
 const labels = []
 // get all checked checkboxes
-cy.get('input[type=checkbox]')
-  .should('have.length', 4)
-  .filter(':checked')
+cy.get('input[type=checkbox]:checked')
+  .should('have.length', 2)
   // for each checkbox, get its label using
   // the "for=<checkbox id>" attribute
   .each(($checkbox) => {
@@ -46,5 +45,7 @@ cy.wrap(labels).should('deep.equal', [
   'I ❤️ grapes',
 ])
 ```
+
+Watch the video "[Labels For Checkboxes](https://youtu.be/0iXISW0owWM)".
 
 <!-- fiddle-end -->
