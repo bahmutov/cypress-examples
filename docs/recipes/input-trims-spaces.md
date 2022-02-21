@@ -21,4 +21,6 @@ cy.get('#name').type('Joe      ')
 cy.get('#name').should('have.value', 'Joe')
 ```
 
+Watch the video [Check Input Element Trimming Spaces From The Entered Values](https://youtu.be/o6hRLV6a9Hc).
+
 <!-- fiddle-end -->
