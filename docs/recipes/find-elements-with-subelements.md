@@ -118,7 +118,7 @@ Watch the video "[jQuery :has and :contains Selectors in Cypress Tests](https://
 
 Imagine that some list elements have plain labels and some have warnings. Can we find the list elements with labels OR warnings using `:has` selector?
 
-<!-- fiddle.only Find list items with labels or warnings -->
+<!-- fiddle Find list items with labels or warnings -->
 
 ```html
 <ol id="list">
@@ -159,5 +159,7 @@ cy.get('li')
   .filter(':has(.label, .warning)')
   .should('have.length', 3)
 ```
+
+Watch the video [Find Elements With Specific Child Elements Using Cypress jQuery :has Selector](https://youtu.be/_b6Mf8xI5bA).
 
 <!-- fiddle.end -->
