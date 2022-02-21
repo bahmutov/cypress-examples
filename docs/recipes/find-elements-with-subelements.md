@@ -113,3 +113,51 @@ cy.get('li:has(.label:contains("New"))').should('have.length', 2)
 <!-- fiddle.end -->
 
 Watch the video "[jQuery :has and :contains Selectors in Cypress Tests](https://youtu.be/2NpHXkZN1SY)".
+
+## Find labels OR warnings
+
+Imagine that some list elements have plain labels and some have warnings. Can we find the list elements with labels OR warnings using `:has` selector?
+
+<!-- fiddle.only Find list items with labels or warnings -->
+
+```html
+<ol id="list">
+  <li>first</li>
+  <li>second</li>
+  <li>
+    <p>third <span class="badge label">New!</span></p>
+  </li>
+  <li>
+    <p>fourth <span class="badge label">New!</span></p>
+  </li>
+  <li>
+    <p>fifth <span class="badge warning">Deprecated</span></p>
+  </li>
+</ol>
+<style>
+  .badge {
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+  }
+  .label {
+    background-color: #8b8bee;
+  }
+  .warning {
+    background-color: #f99650;
+  }
+</style>
+```
+
+```js
+// use jQuery CSS selector :has to find
+// all list items with an element with class label or warning inside
+cy.get('li:has(.label, .warning)').should('have.length', 3)
+// alternative: split into two commands
+// using the https://on.cypress.io/filter command
+cy.get('li')
+  .should('have.length', 5)
+  .filter(':has(.label, .warning)')
+  .should('have.length', 3)
+```
+
+<!-- fiddle.end -->
