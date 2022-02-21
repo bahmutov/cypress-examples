@@ -148,9 +148,9 @@ cy.get('.admin\\.user')
 
 <!-- fiddle-end -->
 
-### Find elements without given class
+### Find elements without a given class
 
-<!-- fiddle cy.get / find elements without given class -->
+<!-- fiddle cy.get / find elements without a given class -->
 
 In the HTML below all links have the class "help", but some links have the class "external". We want to find all links having the class "help", but without the class "external".
 
@@ -169,6 +169,39 @@ cy.get('a.help:not(.external)')
     cy.root().eq(0).should('have.text', 'Article 2')
     cy.root().eq(1).should('have.text', 'index')
   })
+```
+
+<!-- fiddle-end -->
+
+### Find elements without two given classes
+
+<!-- fiddle cy.get / find elements without two given classes -->
+
+Imagine in a calendar date picker we have previous month, this month, and the next month. We want to select the current month's first day. For simplicity, I will only include three elements.
+
+```html
+<div class="datepicker">
+  <!-- 5th of the last month -->
+  <div class="date lastMonth">5</div>
+  <div class="date" data-note="current">5</div>
+  <div class="date nextMonth">5</div>
+</div>
+<style>
+  .lastMonth:after {
+    content: ' last month';
+  }
+  .nextMonth:after {
+    content: ' next month';
+  }
+</style>
+```
+
+We only want to select the "5" day of the current month, and do not include the other days with the digit "5" like "15" and "25".
+
+```js
+cy.get('.date:not(.lastMonth, .nextMonth)')
+  // confirm the got the correct element
+  .should('have.attr', 'data-note', 'current')
 ```
 
 <!-- fiddle-end -->
