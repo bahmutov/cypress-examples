@@ -184,6 +184,8 @@ Imagine in a calendar date picker we have previous month, this month, and the ne
   <!-- 5th of the last month -->
   <div class="date lastMonth">5</div>
   <div class="date" data-note="current">5</div>
+  <div class="date">15</div>
+  <div class="date">25</div>
   <div class="date nextMonth">5</div>
 </div>
 <style>
@@ -200,6 +202,8 @@ We only want to select the "5" day of the current month, and do not include the 
 
 ```js
 cy.get('.date:not(.lastMonth, .nextMonth)')
+  // filter by text to find exactly "5"
+  .contains(/^5$/)
   // confirm the got the correct element
   .should('have.attr', 'data-note', 'current')
 ```
