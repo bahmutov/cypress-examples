@@ -82,6 +82,28 @@ cy.greeting().should('equal', 'Hello, Joe')
 
 <!-- fiddle-end -->
 
+## [Cypress.Commands.overwrite()](https://on.cypress.io/custom-commands)
+
+You can overwrite an existing Cypress command, either completely replacing it or wrapping with extra code. For example, to always repeat the string when typing, let's overwrite the `cy.type` command:
+
+<!-- fiddle Custom commands / overwrite cy.type command -->
+
+```html
+<input id="type-here" />
+```
+
+```js
+Cypress.Commands.overwrite('type', function (type, $el, text) {
+  // call the original "type" command twice on the jQuery element
+  return type($el, text + text)
+})
+cy.get('#type-here')
+  .type('Hello')
+  .should('have.value', 'HelloHello')
+```
+
+<!-- fiddle-end -->
+
 ## [Cypress.Cookies.debug()](https://on.cypress.io/cookies)
 
 To enable or disable cookie debugging, use `Cypress.Cookies.debug()`.
