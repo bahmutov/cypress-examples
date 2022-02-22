@@ -104,6 +104,10 @@ cy.get('#type-here')
 
 <!-- fiddle-end -->
 
+### Rename and replace the cy.then command
+
+See the recipe [Replace `cy.then` command](../recipes/replace-cy-then-command.md).
+
 ## [Cypress.Cookies.debug()](https://on.cypress.io/cookies)
 
 To enable or disable cookie debugging, use `Cypress.Cookies.debug()`.

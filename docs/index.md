@@ -185,6 +185,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Querying [SVG example](./recipes/svg-example.md)
 - Find and confirm the list of [labels for checked checkboxes](./recipes/labels-for-checkboxes.md)
 - Confirm the input element [trims spaces](./recipes/input-trims-spaces.md)
+- Completely replace `cy.then` command with [`cy.later` command](./recipes/replace-cy-then-command.md)
 
 ### Cypress secrets recipes
 
