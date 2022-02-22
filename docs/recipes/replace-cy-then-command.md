@@ -32,3 +32,5 @@ cy.wrap('Hello')
 ```
 
 <!-- fiddle-end -->
+
+Read the blog post [Replace The cy.then Command](https://glebbahmutov.com/blog/replace-and-remove-cy-then-command/).
