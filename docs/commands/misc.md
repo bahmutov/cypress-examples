@@ -22,6 +22,45 @@ cy.log(`name \`${user.name}\` age \`${user.age}\``)
 
 <!-- fiddle-end -->
 
+### cy.log prints the number of elements
+
+Let's say we want to print to the Command Log the number of elements the previous command has found.
+
+<!-- fiddle .log() / prints the number of elements -->
+
+```html
+<ul id="log-fruits">
+  <li>Apples</li>
+  <li>Grapes</li>
+  <li>Oranges</li>
+  <li>Kiwi</li>
+  <li>Grapefruit</li>
+</ul>
+```
+
+```js skip
+cy.get('#log-fruits li')
+  // you can add assertions to make sure the list is populated
+  .its('length')
+  // prints just the number
+  .then(cy.log)
+  // if you want to add a message, use a callback function
+  .then((n) => cy.log(`found ${n} items`))
+```
+
+Let's say you want to only count the number of fruits with the word "Grape" in them.
+
+```js
+cy.get('#log-fruits li')
+  // filter the list using jQuery :contains selector
+  .filter(':contains("Grape")')
+  .its('length')
+  // if you want to add a message, use a callback function
+  .then((n) => cy.log(`found ${n} fruits with "Grape" in them`))
+```
+
+<!-- fiddle-end -->
+
 ### cy.log binds its arguments
 
 When you call `cy.log(arg)` due to JavaScript rules, the value of the argument `arg` is _bound_ immediately, but the printing happens _asynchronously_ because every declared Cypress command is chained and executes after the previous command has finished. The following test shows both incorrect and correct way of printing the value of an HTML element.
