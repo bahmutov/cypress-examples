@@ -38,7 +38,7 @@ Let's say we want to print to the Command Log the number of elements the previou
 </ul>
 ```
 
-```js skip
+```js
 cy.get('#log-fruits li')
   // you can add assertions to make sure the list is populated
   .its('length')
