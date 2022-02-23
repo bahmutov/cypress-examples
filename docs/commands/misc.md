@@ -46,6 +46,9 @@ cy.get('#log-fruits li')
   .then(cy.log)
   // if you want to add a message, use a callback function
   .then((n) => cy.log(`found ${n} items`))
+  // because cy.log never changes the current subject
+  // we can confirm the found number of elements by adding an assertion
+  .should('equal', 5)
 ```
 
 Let's say you want to only count the number of fruits with the word "Grape" in them.
@@ -57,6 +60,8 @@ cy.get('#log-fruits li')
   .its('length')
   // if you want to add a message, use a callback function
   .then((n) => cy.log(`found ${n} fruits with "Grape" in them`))
+  // confirm the number of elements
+  .should('equal', 2)
 ```
 
 <!-- fiddle-end -->
