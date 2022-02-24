@@ -23,7 +23,7 @@ Let's get several elements at once using [aliases](../commands/aliasing.md) and 
 
 We could use multiple `.then` callbacks to get each value.
 
-```text
+```js skip
 cy.get('#subtotal')
   .invoke('text')
   .then(parseFloat)
