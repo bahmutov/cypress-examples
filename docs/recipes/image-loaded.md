@@ -19,7 +19,6 @@ Here is an image that successfully loads.
 cy.get('#loads')
   .should('be.visible')
   .and('have.prop', 'naturalWidth')
-  .then(cy.log)
   .should('be.greaterThan', 0)
 ```
 
