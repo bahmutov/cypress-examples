@@ -188,6 +188,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Completely replace `cy.then` command with [`cy.later` command](./recipes/replace-cy-then-command.md)
 - Get the [HTML comment DOM node](./recipes/get-html-comment.md)
 - Get the data from `<script type='text/plain'>info</script>` [DOM elements](./recipes/get-text-script.md)
+- Check if [an image loads](./recipes/image-loaded.md)
 
 ### Cypress secrets recipes
 
