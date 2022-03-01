@@ -11,8 +11,8 @@ For more information see [Cypress retry-ability guide](https://on.cypress.io/ret
 <script>
   setTimeout(() => {
     document.getElementById('example').innerHTML = `
-    <button id="inner">Submit</button>
-  `
+      <button id="inner">Submit</button>
+    `
   }, 2000)
   setTimeout(() => {
     document

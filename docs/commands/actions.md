@@ -1313,3 +1313,65 @@ cy.get('.trigger-input-range')
 ```
 
 <!-- fiddle-end -->
+
+### Trigger a click event on a disabled button
+
+<!-- fiddle trigger a click event on a disabled button -->
+
+```html
+<div id="click-disabled">
+  <button id="a-button" disabled>Click me</button>
+  <div id="result"></div>
+</div>
+<script>
+  document
+    .querySelector('#click-disabled #a-button')
+    .addEventListener('click', () => {
+      document.querySelector(
+        '#click-disabled #result',
+      ).innerText = 'Clicked'
+    })
+</script>
+```
+
+We cannot click on a disabled button using `cy.click` command. We can if we remove the "disabled" attribute first.
+
+```js
+cy.get('#click-disabled #a-button')
+  .invoke('removeAttr', 'disabled')
+  .trigger('click')
+cy.contains('#click-disabled #result', 'Clicked')
+```
+
+<!-- fiddle-end -->
+
+## Using jQuery click
+
+<!-- fiddle Using jQuery click -->
+
+```html
+<div id="jquery-click">
+  <button id="a-button">Click me</button>
+  <div id="result"></div>
+</div>
+<script>
+  document
+    .querySelector('#jquery-click #a-button')
+    .addEventListener('click', () => {
+      document.querySelector('#jquery-click #result').innerText =
+        'Clicked'
+    })
+</script>
+```
+
+```js
+cy.get('#jquery-click #a-button').then(($button) => {
+  // bypass all built-in Cypress checks
+  // by using the jQuery click method
+  // https://api.jquery.com/click/
+  $button.click()
+})
+cy.contains('#jquery-click #result', 'Clicked')
+```
+
+<!-- fiddle-end -->
