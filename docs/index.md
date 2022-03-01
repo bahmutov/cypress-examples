@@ -189,6 +189,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Get the [HTML comment DOM node](./recipes/get-html-comment.md)
 - Get the data from `<script type='text/plain'>info</script>` [DOM elements](./recipes/get-text-script.md)
 - Check if [an image loads](./recipes/image-loaded.md)
+- See the [full assertion message](./recipes/see-more-in-assertions.md) without truncated text
 
 ### Cypress secrets recipes
 

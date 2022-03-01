@@ -1426,3 +1426,7 @@ cy.contains('a', 'About').should('have.attributes', {
 ```
 
 <!-- fiddle-end -->
+
+## Assertion message
+
+See how to avoid [message truncation](../recipes/see-more-in-assertions.md)
