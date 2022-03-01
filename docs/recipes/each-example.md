@@ -31,6 +31,37 @@ cy.get('li').each(($li) => {
 
 <!-- fiddle-end -->
 
+## Confirm prices
+
+<!-- fiddle .each / confirm prices -->
+
+Let's say we have a list of prices. We need to confirm that every price is higher than \$1.99
+
+```html
+<ul>
+  <li class="price">$10</li>
+  <li class="price">$2.50</li>
+  <li class="price">$4.66</li>
+  <li class="price">$2.02</li>
+</ul>
+```
+
+```js
+// first, confirm we have our prices
+cy.get('.price')
+  .should('have.length.greaterThan', 2)
+  .each(($price, k) => {
+    // get the text from the jQuery element
+    const priceText = $price.text().trim()
+    // strip '$' and convert to a number
+    const price = Number(priceText.replace(/\$/g, ''))
+    // confirm the price is above the min price
+    expect(price, `item ${k + 1}`).to.be.above(2.0)
+  })
+```
+
+<!-- fiddle-end -->
+
 ## Collect items text
 
 <!-- fiddle .each / collect items text -->
