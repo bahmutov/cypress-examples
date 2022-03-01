@@ -1347,6 +1347,8 @@ cy.contains('#click-disabled #result', 'Clicked')
 
 ## Using jQuery click
 
+In this example, the application removes the button, just as the Test Runner is about to click it, causing the "Element is detached from the DOM" error. We get around the built-in `cy.click` checks using the jQuery method to click on the button.
+
 <!-- fiddle Using jQuery click -->
 
 ```html
@@ -1361,17 +1363,29 @@ cy.contains('#click-disabled #result', 'Clicked')
       document.querySelector('#jquery-click #result').innerText =
         'Clicked'
     })
+  setTimeout(function removeButton() {
+    const button = document.querySelector(
+      '#jquery-click #a-button',
+    )
+    button.parentNode.removeChild(button)
+  }, 1000)
 </script>
 ```
 
 ```js
-cy.get('#jquery-click #a-button').then(($button) => {
-  // bypass all built-in Cypress checks
-  // by using the jQuery click method
-  // https://api.jquery.com/click/
-  $button.click()
-})
+cy.get('#jquery-click #a-button')
+  .wait(1000)
+  // cy.click command has built-in checks
+  // and will throw an error "element detached from DOM"
+  .then(($button) => {
+    // we avoid the checks and the error
+    // by using the jQuery click method
+    // https://api.jquery.com/click/
+    $button.click()
+  })
 cy.contains('#jquery-click #result', 'Clicked')
 ```
+
+Watch the video [Fight Element Detached From DOM Error Using jQuery Click](https://youtu.be/wAjhXohhYjc).
 
 <!-- fiddle-end -->
