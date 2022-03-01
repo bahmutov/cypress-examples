@@ -1372,7 +1372,7 @@ In this example, the application removes the button, just as the Test Runner is 
 </script>
 ```
 
-```js
+```js skip
 cy.get('#jquery-click #a-button')
   .wait(1000)
   // cy.click command has built-in checks
