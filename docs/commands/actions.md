@@ -1326,7 +1326,7 @@ cy.get('.trigger-input-range')
 <script>
   document
     .querySelector('#click-disabled #a-button')
-    .addEventListener('click', () => {
+    .addEventListener('click', function () {
       document.querySelector(
         '#click-disabled #result',
       ).innerText = 'Clicked'
@@ -1357,7 +1357,7 @@ cy.contains('#click-disabled #result', 'Clicked')
 <script>
   document
     .querySelector('#jquery-click #a-button')
-    .addEventListener('click', () => {
+    .addEventListener('click', function () {
       document.querySelector('#jquery-click #result').innerText =
         'Clicked'
     })
