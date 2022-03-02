@@ -38,3 +38,5 @@ cy.wrap(fruits).should('deep.equal', [
 The full error message shows the two arrays now
 
 ![The full arrays in the error message](./pics/assertions/full-message.png)
+
+Watch the video [Increase Chai Truncate Threshold To Show More Information](https://youtu.be/BuSBVc3d99Y)
