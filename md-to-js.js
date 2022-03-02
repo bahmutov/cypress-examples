@@ -43,7 +43,7 @@ markdownFiles.forEach((filename) => {
     ? baseUrl
     : `${baseUrl}/${pagePath}`
   shell.exec(
-    `npx export-fiddle ${filename} --before ${beforeVisitUrl}`,
+    `npx export-fiddles ${filename} --before ${beforeVisitUrl}`,
   )
 })
 
