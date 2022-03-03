@@ -292,6 +292,30 @@ cy.get('ul#links li')
 
 <!-- fiddle-end -->
 
+### Find links without href attribute
+
+<!-- fiddle finds links without href attribute -->
+
+```html
+<ul id="incomplete-links">
+  <li><a href="a">link A</a>, <a>link B</a></li>
+  <li><a>link C</a>, <a href="d">link D</a></li>
+  <li><a href="e">link E</a>, <a href="f">link F</a></li>
+</ul>
+```
+
+Let's find `LI` elements, then inside each find `A` elements without `href` attribute. We can use the jQuery selector `:not` to search for elements without an attribute.
+
+```js
+cy.get('ul#incomplete-links li')
+  .should('have.length', 3)
+  .find('a:not([href])')
+  // only two links are missing "href" attribute
+  .should('have.length', 2)
+```
+
+<!-- fiddle-end -->
+
 ## [.first()](https://on.cypress.io/first)
 
 To get the first DOM element within elements, use the `.first()` command.
