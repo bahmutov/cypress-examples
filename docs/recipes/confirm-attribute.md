@@ -89,3 +89,35 @@ cy.get('li')
 ```
 
 <!-- fiddle-end -->
+
+## Confirm sum of attributes
+
+Imagine that each element in the list has its price stored as a data attribute, and there is a total element with their sum, also stored as a data attribute. Can we extract the attributes, convert them to numbers, and confirm the total is correct?
+
+<!-- fiddle sum of data attributes -->
+
+```html
+<ol id="prices" data-total="220">
+  <li data-price="99">Oranges $0.99</li>
+  <li data-price="101">Mango $1.01</li>
+  <li data-price="20">Potatoes $0.20</li>
+</ol>
+```
+
+```js
+let sum = 0
+cy.get('li[data-price]')
+  .should('have.length', 3)
+  .each(($el) => {
+    sum += Number($el.attr('data-price'))
+  })
+cy.get('#prices')
+  .invoke('attr', 'data-total')
+  .then(Number)
+  .then((total) => {
+    // by now, the sum should have been computed
+    expect(total, 'total').to.equal(sum)
+  })
+```
+
+<!-- fiddle-end -->
