@@ -120,4 +120,6 @@ cy.get('#prices')
   })
 ```
 
+Watch the video [Confirm Total Sum Using Data Attributes And Automatic Waiting](https://youtu.be/51WPx7gvbAU).
+
 <!-- fiddle-end -->
