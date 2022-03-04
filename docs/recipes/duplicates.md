@@ -69,3 +69,5 @@ cy.get('li').should(($list) => {
 ```
 
 <!-- fiddle-end -->
+
+Watch the video [Detect Duplicate Attributes Using Lodash Functions And Should Callback](https://youtu.be/o9zsDXl97L8)
