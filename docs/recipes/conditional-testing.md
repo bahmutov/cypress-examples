@@ -158,6 +158,51 @@ cy.contains('button', 'Click Me')
 
 <!-- fiddle-end -->
 
+## Click a button if not disabled
+
+Let's say that we want to click a button if it not disabled. Otherwise, just print a message to the `console.log`
+
+<!-- fiddle Click a button if it is not disabled -->
+
+```html
+<div>
+  <p>
+    The button might be disabled
+    <button id="btn">Click Me</button>
+  </p>
+</div>
+<script>
+  const btn = document.getElementById('btn')
+  btn.addEventListener('click', function () {
+    alert('Clicked')
+  })
+
+  if (Math.random() < 0.5) {
+    btn.setAttribute('disabled', 'disabled')
+  }
+</script>
+```
+
+```js
+cy.contains('#btn', 'Click Me')
+  // cy.contains has a built-in "existence" assertion
+  // thus by now we know the button is there
+  .then(($btn) => {
+    if ($btn.attr('disabled')) {
+      console.log('Cannot click a disabled button')
+    } else {
+      // spy on the "window.alert"
+      cy.window().then((win) => {
+        cy.stub(win, 'alert').as('alert')
+      })
+      cy.wrap($btn).click()
+      cy.get('@alert').should('have.been.calledOnce')
+    }
+  })
+```
+
+<!-- fiddle-end -->
+
 ## Click a button if a class is present
 
 Sometimes you want to click the button, but only if the element has a class
