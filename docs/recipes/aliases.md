@@ -70,3 +70,38 @@ cy.get('#total')
 <!-- fiddle-end -->
 
 See the above test explained in the video [Use Multiple Aliases To Avoid Pyramid of Doom Callbacks](https://youtu.be/0LLsdI0o9Iw).
+
+## Element is delayed
+
+<!-- fiddle Element creation is delayed -->
+
+```html
+<div id="element-delayed"></div>
+<script>
+  setTimeout(function () {
+    const parent = document.getElementById('element-delayed')
+    parent.innerHTML = '<div id="child">New element</div>'
+  }, 3000)
+</script>
+```
+
+```js skip
+// while we create an alias to a non-existing element
+// it really is an empty alias
+cy.get('#child').should('not.exist').as('newElement')
+cy.get('@newElement').should('not.exist')
+// and this command chain fails with "null" subject
+cy.get('@newElement').should('be.visible')
+```
+
+```js
+// instead, overwrite the alias when the element is created
+cy.get('#child').should('not.exist').as('newElement')
+cy.get('@newElement').should('not.exist')
+// at some point element with id "child" exists
+// and will be saved as the alias, overwriting the null value
+cy.get('#child').as('newElement')
+cy.get('@newElement').should('be.visible')
+```
+
+<!-- fiddle-end -->
