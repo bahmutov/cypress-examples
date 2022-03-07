@@ -938,6 +938,17 @@ Sometimes you need to extract the text and convert it into a number before runni
 </div>
 ```
 
+Without converting, the text from an element is a string
+
+```js
+// get the element and assert it has text "4"
+cy.get('#num-example .messages').should('have.text', '4')
+// equivalent command using cy.contains command
+cy.contains('#num-example .messages', '4')
+```
+
+If we want to compare the element's text like a number, we need to extract the text using jQuery `text` method, then parse it into an integer before the assertion.
+
 ```js
 cy.get('#num-example .messages')
   .invoke('text')
