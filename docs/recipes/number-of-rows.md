@@ -1,5 +1,47 @@
 # Number of rows
 
+## Dynamic table
+
+Let's test a table where the rows appear after a delay. We want to confirm the table is fully loaded by checking the number of rows.
+
+<!-- fiddle Dynamic table -->
+
+```html
+<style>
+  table td {
+    border: 3px solid black;
+  }
+</style>
+<table>
+  <tbody></tbody>
+</table>
+<script>
+  // the first two rows appear after one second
+  // and the remaining rows appear after two seconds
+  setTimeout(function () {
+    document.querySelector('table tbody').innerHTML = `
+      <tr><td>First row</td></tr>
+      <tr><td>Row 2</td></tr>
+    `
+  }, 1000)
+  setTimeout(function () {
+    document.querySelector('table tbody').innerHTML += `
+      <tr><td>Row 3</td></tr>
+      <tr><td>Row 4</td></tr>
+      <tr><td>Row 5</td></tr>
+    `
+  }, 2000)
+</script>
+```
+
+```js
+cy.get('table tbody tr').should('have.length', 5)
+```
+
+<!-- fiddle-end -->
+
+## Match rows with the number
+
 Let's confirm the number of rows in the table matches the number specified in an element.
 
 <!-- fiddle Number of rows -->
