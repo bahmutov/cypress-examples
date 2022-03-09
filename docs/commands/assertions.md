@@ -729,9 +729,60 @@ To confirm the HTML element's tag name, use `have.prop` assertion with property 
 cy.get('#tag-example').should('have.prop', 'nodeName', 'MARQUEE')
 ```
 
+You can also use `match` assertion with HTML element, which invokes jQuery [is()](https://api.jquery.com/is/) method.
+
+```js
+cy.get('#tag-example')
+  // let's see if different selectors match the element
+  .should('match', 'marquee')
+  .and('match', '#tag-example')
+  .and('match', 'marquee#tag-example')
+  // you can even pass your own predicate callback function
+  .and('match', (k, el) => {
+    // return a boolean to pass the "match" assertion
+    return el.innerText.includes('fox')
+  })
+```
+
 <!-- fiddle-end -->
 
 ## Text assertions
+
+### Match a regular expression
+
+<!-- fiddle Implicit Assertions / Text / .should() - match a regular expression -->
+
+To confirm an element has text matching a regular expression, grab its text and use the Chai [match](https://www.chaijs.com/api/bdd/#method_match) assertion. For example, let's confirm the button shows one of the arithmetic operations `+`, `-`, `/`, or `*`:
+
+```html
+<button id="math-op">+</button>
+```
+
+```js
+cy.get('#math-op')
+  .invoke('text')
+  .should('match', /[+-/*]/)
+  // if we get the text from the element and know the exact variants
+  // we can use "oneOf" assertion
+  .and('be.oneOf', ['+', '-', '/', '*'])
+// alternative: use cy.contains command for more robust matching
+cy.contains('#math-op', /[+-/*]/)
+```
+
+You can use jQuery `match` assertion that maps to using jQuery [is()](https://api.jquery.com/is/) function.
+
+```js
+cy.get('#math-op').should('match', (k, el) => {
+  return (
+    el.innerText.includes('+') ||
+    el.innerText.includes('-') ||
+    el.innerText.includes('/') ||
+    el.innerText.includes('*')
+  )
+})
+```
+
+<!-- fiddle-end -->
 
 ### Newlines
 
