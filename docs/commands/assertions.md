@@ -1425,6 +1425,28 @@ cy.wrap(52.9).should('be.closeTo', 50, 3)
 
 <!-- fiddle-end -->
 
+This is especially useful when dealing with dimensions of elements on the page, since no real-world measurement is exact. It always slightly different between the browsers and operating systems.
+
+<!-- fiddle The font size assertion -->
+
+```html
+<div id="font-size-example">This is my message</div>
+<style></style>
+```
+
+```js
+cy.get('#font-size-example')
+  .invoke('css', 'fontSize')
+  .then(cy.log)
+  // the font size returned is in pixels, like "16px"
+  .should('match', /^\d+px$/)
+  .invoke('replace', 'px', '')
+  .then(Number)
+  .should('be.closeTo', 16, 1)
+```
+
+<!-- fiddle-end -->
+
 See [Chai assertion library](https://www.chaijs.com/api/bdd/)
 
 ## Adding assertions
