@@ -699,6 +699,28 @@ cy.get('#rent').type('630.00').should('have.value', '630.00')
 
 <!-- fiddle-end -->
 
+Even if you have a numeric input, its value is still a string.
+
+<!-- fiddle Implicit Assertions / .should() - input elements with numeric value -->
+
+```html
+<input id="count" type="number" value="12" required />
+```
+
+```js
+cy.get('#count').should('have.value', '12')
+// if you want to convert the value to a number
+cy.get('#count').invoke('val').then(Number).should('equal', 12)
+// a good practice is to have a single "should"
+// to make sure the retry-ability works
+cy.get('#count').should(($el) => {
+  const count = Number($el.val())
+  expect(count, 'count').to.equal(12)
+})
+```
+
+<!-- fiddle-end -->
+
 ## Non-input elements
 
 <!-- fiddle Implicit Assertions / .should() - non-input elements contain text -->
