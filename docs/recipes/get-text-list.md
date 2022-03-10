@@ -172,6 +172,19 @@ cy.wrap(items).should('deep.equal', [
 ])
 ```
 
+**Tip:** you can create a flexible OR assertion using `match` and a predicate callback. For example, the next assertion passes if _any_ element gets `true` from the predicate function.
+
+```js
+// verify the list using .should("match", callback) assertion
+// passes if at least for one element the callback returns true
+cy.get('#items li').should('match', (k, li) => {
+  // this predicate function gets called once for each element
+  // "li" is the DOM element
+  // we should return true|false if the text is what we expected to find
+  return li.innerText === 'Nope' || li.innerText === 'Oranges'
+})
+```
+
 <!-- fiddle-end -->
 
 ## Confirm the number of items
