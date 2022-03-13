@@ -1,5 +1,7 @@
 # Click a random element
 
+## Click a single picked list item
+
 Sometimes you might want to pick a random element from selected elements on the page. Make sure the elements are ready before picking - the elements might be added asynchronously.
 
 <!-- fiddle Click a random element -->
@@ -36,6 +38,8 @@ cy.get('#items li')
   // pick a random item from the list
   .then(($li) => {
     const items = $li.toArray()
+    // use Lodash _.sample method to pick
+    // a random element from an array
     return Cypress._.sample(items)
   })
   .then(($li) => {
@@ -49,6 +53,49 @@ cy.get('#items li')
   .click()
 // confirm 1 element got "clicked" class
 cy.get('#items .clicked').should('have.length', 1)
+```
+
+<!-- fiddle-end -->
+
+## Click several checkboxes
+
+Let's say we have multiple checkboxes and we want to pick three of then randomly.
+
+<!-- fiddle Click several checkboxes -->
+
+```html
+<div id="checkboxes">
+  <input type="checkbox" id="apples" />
+  <label for="apples">I ❤️ apples</label><br />
+  <input type="checkbox" id="peaches" />
+  <label for="peaches">I ❤️ peaches</label><br />
+  <input type="checkbox" id="grapes" />
+  <label for="grapes">I ❤️ grapes</label><br />
+  <input type="checkbox" id="mango" />
+  <label for="mango">I ❤️ mango</label><br />
+</div>
+```
+
+```js
+cy.get('#checkboxes input[type=checkbox]')
+  .should('be.visible')
+  .and('have.length', 4)
+  // use Lodash _.sampleSize to pick N
+  // random elements from a jQuery array
+  // while _.sampleSize can pull items from jQuery object
+  // I found the entire test to be reliable
+  // only when converting the jQuery to plain Array first
+  .then(($items) => Cypress._.sampleSize($items.toArray(), 2))
+  .should('have.length', 2)
+  .click({ multiple: true })
+// confirm 2 checkboxes are checked
+// using :checked jQuery selector
+// https://api.jquery.com/checked-selector/
+cy.get('#checkboxes input[type=checkbox]:checked')
+  .should('have.length', 2)
+  // print the checked element IDs
+  .then(($checked) => Cypress._.map($checked, 'id'))
+  .then(cy.log)
 ```
 
 <!-- fiddle-end -->

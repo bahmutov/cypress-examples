@@ -165,7 +165,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Return value from .within() command](./recipes/return-value-from-within.md)
 - [Confirm an attribute of an element](./recipes/confirm-attribute.md)
 - [Update table row with retries](./recipes/table-update.md)
-- [Click a random element](./recipes/click-random-element.md)
+- [Click a single random element](./recipes/click-random-element.md) or multiple checkboxes
 - [Number of rows matches a number in an element](./recipes/number-of-rows.md)
 - [Find elements with subelements](./recipes/find-elements-with-subelements.md)
 - [Confirm the sorted lists](./recipes/sorted-list.md)
