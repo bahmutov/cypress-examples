@@ -383,3 +383,140 @@ cy.wrap([1, 2, 3, 4])
 ```
 
 <!-- fiddle-end -->
+
+## Skip the remaining callbacks yourself
+
+For more complicated behavior, use an outside variable to signal when to skip the remaining items and stop the iteration using `cy.then` and the variable check.
+
+<!-- fiddle Skip the remaining callbacks yourself -->
+
+```html
+<table id="lotto">
+  <thead>
+    <th>Pick This</th>
+    <th>Number</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td><button>Click me</button></td>
+      <td>???</td>
+    </tr>
+  </tbody>
+</table>
+<script>
+  document
+    .querySelector('table tbody')
+    .addEventListener('click', function (event) {
+      if (event.target.nodeName === 'BUTTON') {
+        // set the text in the next cell, but after async delay
+        // to make sure we write a flake-free test that retries
+        setTimeout(function () {
+          const cell =
+            event.target.parentElement.parentElement.children[1]
+          cell.innerText = Math.random().toString().substr(2, 1)
+        }, 1000)
+      }
+    })
+</script>
+```
+
+In the above table, each click on the button reveals the number in the cell next to it. Let's iterate over the buttons until we click a button and it reveals the lucky number "7". The `cy.each` callback is called immediately with N elements, queueing up the commands inside the callback. By using `cy.then` plus `if (stopIteration) { return }` combination we can iterate over the elements, perform Cypress commands and stop early.
+
+```js
+// this variable will be checked and set inside the `.each(callback)`
+let stopIteration = false
+// grab all buttons from the table
+cy.get('#lotto tbody tr button')
+  .should('have.length.greaterThan', 10)
+  .each(($button, k) => {
+    // schedule N cy.then commands right away
+    cy.then(() => {
+      // if some previous iteration found the number 7
+      // no longer perform any more button clicks
+      if (stopIteration) {
+        return
+      }
+      // from the jQuery element, start a new Cypress command chain
+      cy.wrap($button, { log: false })
+        .click()
+        // once the button is clicked,
+        // find the text in the cell next to it
+        .parent() // <TD>
+        .parent() // <TR>
+        .find('td')
+        .eq(1) // <TD> with the number
+        .should(($td) => {
+          // check if the revealed number is 7
+          const text = $td.text()
+          expect(text).to.match(/\d/)
+          if (text === '7') {
+            // tell the next iterations of cy.each(callback)
+            // to return early
+            stopIteration = true
+          }
+        })
+    })
+  })
+```
+
+<!-- fiddle-end -->
