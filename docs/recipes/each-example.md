@@ -184,6 +184,26 @@ cy.takeRunnerPic('each-example')
 
 ![Each example test](./pics/each-example.png)
 
+## Early stop does not change the subject
+
+Even if you stop the iteration early by returning `false`, the original subject is still passed to the next command or assertion.
+
+<!-- fiddle Stop the iteration does not change the subject -->
+
+```js
+const numbers = [1, 2, 3, 4]
+cy.wrap(numbers)
+  .each((number) => {
+    // stop the iteration when we get to the number 2
+    return number === 2 ? false : true
+  })
+  // the same original array is still passed
+  // to the next assertion
+  .should('equal', numbers)
+```
+
+<!-- fiddle-end -->
+
 ## How to read values from elements using `.each`?
 
 <!-- fiddle .each / read numbers from elements -->
