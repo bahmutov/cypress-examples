@@ -28,6 +28,39 @@ cy.get('.connectors-each-ul>li').each(function (
 
 <!-- fiddle-end -->
 
+### Iterate over numbers using cy.each
+
+You can iterate over array elements using `cy.each`
+
+<!-- fiddle each / iterate over numbers -->
+
+```js
+cy.wrap([1, 2, 3, 4]).each((number) => {
+  expect(number).to.be.an('number').and.to.be.gte(1).and.lte(4)
+})
+```
+
+<!-- fiddle-end -->
+
+### cy.each yields the original value
+
+The values returned from the `cy.each(callback)` do not affect the value yielded after the iterations. The original value is yielded to the next command.
+
+<!-- fiddle each / does not change the subject -->
+
+```js
+const numbers = [1, 2, 3, 4]
+cy.wrap(numbers)
+  .each((number) => {
+    return number * 2
+  })
+  // the same array reference is yielded
+  // to the next assertion
+  .should('equal', numbers)
+```
+
+<!-- fiddle-end -->
+
 For more `cy.each` examples, see the [cy.each recipe](../recipes/each-example.md) and [Collect Headings recipe](../recipes/collect-headings.md).
 
 ### Put complex logic into each callback

@@ -303,3 +303,28 @@ cy.get('.price').each(($price, k) => {
 <!-- fiddle-end -->
 
 See also [Collect Headings recipe](./collect-headings.md).
+
+## .each callback can return a promise
+
+You can return a promise from `each(callback)`. Cypress will wait for the promise to resolve before continuing.
+
+<!-- fiddle Returns a promise -->
+
+```js
+cy.wrap([1, 2, 3, 4])
+  .each((number) => {
+    // the returned promise delays each command by 1 second
+    // NOTE: it does not change the yielded value,
+    // the original value is yielded to the next command or assertion
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(number * 2)
+      }, 1000)
+    })
+  })
+  .should('be.an', 'array')
+  // the original array is unchanged
+  .should('deep.equal', [1, 2, 3, 4])
+```
+
+<!-- fiddle-end -->
