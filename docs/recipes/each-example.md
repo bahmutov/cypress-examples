@@ -331,8 +331,10 @@ You can return a promise from `each(callback)`. Cypress will wait for the promis
 <!-- fiddle Returns a promise -->
 
 ```js
+let lastSeen = 0
 cy.wrap([1, 2, 3, 4])
   .each((number) => {
+    lastSeen = number
     // the returned promise delays each command by 1 second
     // NOTE: it does not change the yielded value,
     // the original value is yielded to the next command or assertion
@@ -345,6 +347,39 @@ cy.wrap([1, 2, 3, 4])
   .should('be.an', 'array')
   // the original array is unchanged
   .should('deep.equal', [1, 2, 3, 4])
+  .then(() => {
+    // cy.each went through all numbers
+    expect(lastSeen).to.equal(4)
+  })
+```
+
+<!-- fiddle-end -->
+
+## Cannot stop the iteration when using a Promise
+
+If you delay the execution by returning a Promise from `cy.each(callback)`, its resolved value is ignored, and it does not stop the execution early.
+
+<!-- fiddle Does not stop the execution -->
+
+```js
+let lastSeen = 0
+cy.wrap([1, 2, 3, 4])
+  .each((number) => {
+    lastSeen = number
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        // try to stop early by resolved with false
+        resolve(number === 2 ? false : true)
+      }, 1000)
+    })
+  })
+  .should('be.an', 'array')
+  // the original array is unchanged
+  .should('deep.equal', [1, 2, 3, 4])
+  .then(() => {
+    // cy.each still went through all numbers
+    expect(lastSeen).to.equal(4)
+  })
 ```
 
 <!-- fiddle-end -->
