@@ -76,26 +76,36 @@ Let's say we have multiple checkboxes and we want to pick three of then randomly
 </div>
 ```
 
+First, let's confirm that there are four unchecked checkboxes, none of them checked.
+
 ```js
 cy.get('#checkboxes input[type=checkbox]')
   .should('be.visible')
   .and('have.length', 4)
+  .each(($checkbox) => expect($checkbox).to.not.be.checked)
   // use Lodash _.sampleSize to pick N
   // random elements from a jQuery array
   // while _.sampleSize can pull items from jQuery object
   // I found the entire test to be reliable
   // only when converting the jQuery to plain Array first
-  .then(($items) => Cypress._.sampleSize($items.toArray(), 2))
+  .then(function ($items) {
+    return Cypress._.sampleSize($items.toArray(), 2)
+  })
   .should('have.length', 2)
   .click({ multiple: true })
-// confirm 2 checkboxes are checked
-// using :checked jQuery selector
+```
+
+Let's confirm that 2 checkboxes are checked now using the jQuery [:checked](https://api.jquery.com/checked-selector/) selector.
+
+```js
 // https://api.jquery.com/checked-selector/
 cy.get('#checkboxes input[type=checkbox]:checked')
   .should('have.length', 2)
-  // print the checked element IDs
+  // print the checked element IDs to the Command Log
   .then(($checked) => Cypress._.map($checked, 'id'))
   .then(cy.log)
 ```
 
 <!-- fiddle-end -->
+
+Watch the video [Randomly Pick Two Checkboxes Out Of Four And Click On Them](https://youtu.be/h8NfDFsgdW4).
