@@ -67,6 +67,8 @@ cy.get('.assertion-table')
   .should('be.visible')
 ```
 
+For more examples of using the `match` assertion against jQuery elements and text, see the recipe [Match Assertion](../recipes/match-assertion.md).
+
 Note: find even more examples of matching element's text content in this [FAQ answer](https://on.cypress.io/using-cypress-faq#How-do-I-get-an-element%E2%80%99s-text-contents).
 
 <!-- fiddle-end -->
