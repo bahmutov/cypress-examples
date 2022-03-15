@@ -2,6 +2,8 @@
 
 If the current subject is a jQuery element, the `match` assertion uses [jQuery .is](https://api.jquery.com/is/) method to check if the element matches the selector. If the current subject is text, the `match` assertion checks it against the given regular expression.
 
+Watch the video [Using Should Match Assertion Against Elements Or Text](https://youtu.be/FTjWAeCWpHQ) or continue reading.
+
 ## Match jQuery element selector
 
 <!-- fiddle Match jQuery element selector -->
