@@ -520,3 +520,77 @@ cy.get('#lotto tbody tr button')
 ```
 
 <!-- fiddle-end -->
+
+## Separate Zip codes
+
+Let's imagine that we are writing a delivery application. We might deliver to some zip codes, but not to others. Our application has the list of valid zip codes, and allows us to check if a given zip code is valid or not.
+
+<!-- fiddle Separate zip codes -->
+
+```html
+<input id="zip" placeholder="Enter zip code to check" />
+<div>
+  Is zip code <span id="entered"></span> supported?
+  <span id="supported"></span>
+</div>
+<script>
+  const supported = ['90210', '80810']
+  const supportedEl = document.getElementById('supported')
+  const enteredEl = document.getElementById('entered')
+  const zipEl = document.getElementById('zip')
+  zipEl.addEventListener('focus', (e) => {
+    supportedEl.innerText = ''
+  })
+  zipEl.addEventListener('change', (e) => {
+    const zip = e.target.value
+    enteredEl.innerText = zip
+    e.target.value = ''
+
+    if (supported.includes(zip)) {
+      supportedEl.innerText = '✅'
+    } else {
+      supportedEl.innerText = '👎'
+    }
+  })
+</script>
+```
+
+```js
+const allZips = ['90210', '55555', '02123', '80810']
+// list of zip codes the application delivers to
+const delivers = []
+// list of zip codes the application does not support
+const invalid = []
+cy.wrap(allZips).each((zip) => {
+  cy.get('#zip').type(zip + '{enter}')
+  cy.get('#supported')
+    .invoke('text')
+    .should('be.oneOf', ['✅', '👎'])
+    .then((supported) => {
+      if (supported === '✅') {
+        delivers.push(zip)
+      } else {
+        invalid.push(zip)
+      }
+    })
+    // sleep for one second for clarity
+    .wait(1000, { log: false })
+})
+```
+
+Now that the above code checked the zip codes using the application, let's confirm the lists are correct.
+
+```js
+cy.log('**delivers to**')
+cy.wrap(delivers).should('deep.equal', ['90210', '80810'])
+cy.log('**maybe in the future**')
+  // we use .then callback because the list "delivers"
+  // only is computed by the previous commands, thus it will
+  // be filled by the time the .then(callback) runs
+  .then(() => {
+    const unsupported = Cypress._.difference(allZips, delivers)
+    cy.wrap(invalid).should('deep.equal', unsupported)
+  })
+```
+
+<!-- fiddle-end -->
