@@ -721,9 +721,9 @@ Let's confirm that the title text is one of the three possible titles
 <!-- fiddle contains / regular expression OR -->
 
 ```html
-<div class="title">Cypress Examples Guide</div>
+<div class="my-title">Cypress Examples Guide</div>
 <style>
-  .title {
+  .my-title {
     font-size: x-large;
   }
 </style>
@@ -733,11 +733,11 @@ Let's confirm that the title text is one of the three possible titles
 // we do not know the precise expected title
 // we know it can be one of three possible titles
 cy.contains(
-  '.title',
+  '.my-title',
   /^(Testing Examples|Cypress Examples Guide|Short Feature Tests)$/,
 )
 // you can also get the text and confirm it
-cy.get('.title')
+cy.get('.my-title')
   .invoke('text')
   .should('be.oneOf', [
     'Testing Examples',
