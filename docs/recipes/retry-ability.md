@@ -2,6 +2,39 @@
 
 For more information see [Cypress retry-ability guide](https://on.cypress.io/retry-ability).
 
+## Matching element's text
+
+Imagine the element changes its text after two seconds. We can chain [cy.get](https://on.cypress.io/get) and [cy.invoke](https://on.cypress.io/invoke) commands to get the text and then use the `match` assertion to compare the text against a regular expression.
+
+<!-- fiddle Retry-ability / matching element's text using regular assertion -->
+
+```html
+<div id="example">loading...</div>
+<script>
+  setTimeout(() => {
+    document.getElementById('example').innerText = 'Ready'
+  }, 2000)
+</script>
+```
+
+Notice that `.invoke('text')` can be safely retried until the assertion passes or times out.
+
+```js
+cy.get('#example')
+  .invoke('text')
+  .should('match', /(Ready|Started)/)
+```
+
+Rather than splitting `cy.get` + `cy.invoke` commands, let's have a single command to find the element and match its text using the [cy.contains](https://on.cypress.io/contains) command.
+
+```js
+// equivalent assertion using cy.contains
+// https://on.cypress.io/contains
+cy.contains('#example', /(Ready|Started)/)
+```
+
+<!-- fiddle-end -->
+
 ## Multiple assertions
 
 <!-- fiddle Retry-ability / text appears and becomes red -->
