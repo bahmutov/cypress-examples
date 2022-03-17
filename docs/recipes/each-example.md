@@ -545,12 +545,16 @@ Let's imagine that we are writing a delivery application. We might deliver to so
     const zip = e.target.value
     enteredEl.innerText = zip
     e.target.value = ''
+    supportedEl.innerText = '...'
 
-    if (supported.includes(zip)) {
-      supportedEl.innerText = '✅'
-    } else {
-      supportedEl.innerText = '👎'
-    }
+    // use a small delay before showing the result
+    setTimeout(() => {
+      if (supported.includes(zip)) {
+        supportedEl.innerText = '✅'
+      } else {
+        supportedEl.innerText = '👎'
+      }
+    }, 1000)
   })
 </script>
 ```
@@ -594,3 +598,5 @@ cy.log('**maybe in the future**')
 ```
 
 <!-- fiddle-end -->
+
+Watch the video [Check The List Of Zip Codes](https://youtu.be/rMviL8RiGEk).
