@@ -101,4 +101,6 @@ cy.get('table#sales tbody td:nth-child(4)').then(($cells) => {
 })
 ```
 
+Watch the video [Confirm The Total Sum Shown Under The Table Of Prices](https://youtu.be/M43XVZrZRtU).
+
 <!-- fiddle-end -->
