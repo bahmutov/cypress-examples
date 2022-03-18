@@ -35,6 +35,7 @@ Let's imagine we need to confirm the total price for each row in the table.
     </tr>
   </tbody>
 </table>
+<div id="total">The total price is $12.77 (without any discounts)</div>
 ```
 
 Let's confirm the second row has the correct total.
@@ -70,6 +71,34 @@ cy.get('#sales tbody tr').each(($row) => {
 })
 ```
 
-<!-- fiddle-end -->
-
 See the video [Check The Prices Table Rows](https://youtu.be/DxlqDA7tIOw).
+
+Under the table we see the total amount. Let's parse the totals from the cells and confirm the displayed value is correct. We will sum the prices from the last column (after removing the `$` character and converting to floats). Then we will compare the sum to the total displayed under the table.
+
+```js
+// get the last column with prices
+cy.get('table#sales tbody td:nth-child(4)').then(($cells) => {
+  const totals = $cells
+    .toArray()
+    .map((el) => el.innerText)
+    .map((s) => s.replace('$', ''))
+    .map(parseFloat)
+  const sum = Cypress._.sum(totals)
+  cy.log(`sum from rows ${sum}`)
+  // extract the total shown from the page element
+  // let's parse the text shown in the element
+  // to find the dollar amount
+  cy.get('#total')
+    .invoke('text')
+    .then((s) => s.split(' '))
+    .invoke('find', (s) => s.startsWith('$'))
+    .then((s) => s.replace('$', ''))
+    .then(parseFloat)
+    .should('equal', sum)
+  // alternative: we know the sum, let's just find it
+  // as a substring in the element showing the total
+  cy.contains('#total', '$' + sum)
+})
+```
+
+<!-- fiddle-end -->
