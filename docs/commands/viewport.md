@@ -60,3 +60,49 @@ cy.wait(200)
 ```
 
 <!-- fiddle-end -->
+
+### Viewport and the config viewport values
+
+<!-- fiddle cy.viewport() - set the viewport size and dimension -->
+
+```html
+<p>Some text</p>
+```
+
+```js
+// Cypress.config('viewportWidth') shows the current value
+// cy.viewport() does not change it
+const w = Cypress.config('viewportWidth')
+expect(w, 'initial width').to.be.greaterThan(100)
+cy.log('initial', w) // whatever value, probably 600
+cy.viewport('ipad-2')
+cy.log('still the same', Cypress.config('viewportWidth')) // same value
+cy.viewport('iphone-4').then(() => {
+  expect(
+    Cypress.config('viewportWidth'),
+    'after using viewport',
+  ).to.equal(w)
+})
+```
+
+To know the current viewport, use `cy.viewport(w, h)` and update the `Cypress.config` too using `cy.then` callback to make sure the values are set _after_ the command has changed the viewport.
+
+```js
+cy.viewport(1200, 400)
+  .then(() => {
+    Cypress.config('viewportWidth', 1200)
+    Cypress.config('viewportHeight', 400)
+  })
+  // some time later
+  .then(() => {
+    cy.log('current width', Cypress.config('viewportWidth'))
+  })
+```
+
+You can also get the current resolution from the application's window object.
+
+```js
+cy.window().its('innerWidth').should('equal', 1200)
+```
+
+<!-- fiddle-end -->
