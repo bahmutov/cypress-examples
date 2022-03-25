@@ -37,11 +37,8 @@ jobs:
       - name: Catch stray .only tests 🚦
         run: npm run stop-only
 
-      # we "simulate" Run All Specs button in Test Runner GUI
-      # by concatenating all extracted specs into a single one
-      # to be included in the test run
-      - name: Create Run All Spec 🏗
-        run: cat docs/**/*.js > docs/run-all-specs.js
+      # we do not want to run all specs together
+      # since I believe it to be a really bad practice
 
       # only pass the local folders we built / updated
       #   ./docs and ./public
