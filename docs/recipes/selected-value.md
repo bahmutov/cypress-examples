@@ -102,6 +102,33 @@ cy.get('select').invoke('val').should('equal', '457')
 
 <!-- fiddle-end -->
 
+## Select the last option
+
+Similarly, we can select the last option in two steps: first, find the value of the last `<option>` element, then select it in the `<select>` element.
+
+<!-- fiddle Select the last option -->
+
+```html
+<select>
+  <option value="apl">apples</option>
+  <option value="ora">oranges</option>
+  <option value="ban">bananas</option>
+</select>
+```
+
+```js
+cy.get('select option')
+  .last()
+  .invoke('val')
+  .then((value) => {
+    cy.get('select').select(value)
+  })
+// verify the last option was selected
+cy.get('select').should('have.value', 'ban')
+```
+
+<!-- fiddle-end -->
+
 ## Verify options text
 
 Let's say we want to verify all available options and confirm their text. The options below should include only "BMW", "Mercedes", and "Audi".
