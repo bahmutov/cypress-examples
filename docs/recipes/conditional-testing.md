@@ -269,6 +269,24 @@ cy.getCookie('my-cookie').then(printCookieMaybe)
 
 <!-- fiddle-end -->
 
+## Perform different actions depending on the URL
+
+As always, when getting something from the page, you get its value in the `.then(callback)`
+
+<!-- fiddle Depending on the URL -->
+
+```js
+cy.location('pathname').then((pathname) => {
+  if (pathname.includes('/about/')) {
+    cy.log('At the About page')
+  } else {
+    cy.log('Another page')
+  }
+})
+```
+
+<!-- fiddle-end -->
+
 ## More examples
 
 - [Add / delete list item recipe](./add-list-item.md)
