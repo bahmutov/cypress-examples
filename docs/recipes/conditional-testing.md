@@ -271,7 +271,7 @@ cy.getCookie('my-cookie').then(printCookieMaybe)
 
 ## Perform different actions depending on the URL
 
-As always, when getting something from the page, you get its value in the `.then(callback)`
+As always, when getting something from the page, you get its value in the `.then(callback)`. If you get the current URL using [cy.location](https://on.cypress.io/location) or [cy.url](https://on.cypress.io/url), you can decide what to do next based on its value:
 
 <!-- fiddle Depending on the URL -->
 
