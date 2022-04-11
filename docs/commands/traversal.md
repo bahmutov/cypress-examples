@@ -178,6 +178,41 @@ cy.get('.visible-items li:visible')
 
 <!-- fiddle-end -->
 
+### Using a callback function
+
+You can filter elements using a predicate callback function.
+
+<!-- fiddle filter / using a callback function -->
+
+Let's find all list items with the text "cat" or class "pet".
+
+```html
+<ul id="animals">
+  <li class="pet">Puppy</li>
+  <li>Small cat</li>
+  <li>Large cat</li>
+  <li>Pet tarantula</li>
+  <li class="pet">Hamster</li>
+</ul>
+```
+
+```js
+cy.get('#animals li')
+  .filter((k, el) => {
+    // k is the 0-based index
+    // el is the DOM element
+    return (
+      el.classList.contains('pet') ||
+      el.innerText.includes('cat')
+    )
+  })
+  .should('have.length', 4)
+```
+
+<!-- fiddle-end -->
+
+Find another example in the recipe [Computed style](../recipes/computed-style.md) for example.
+
 ## [.find()](https://on.cypress.io/find)
 
 To get descendant DOM elements of the selector, use the `.find()` command.
