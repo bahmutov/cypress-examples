@@ -173,6 +173,61 @@ cy.get('a.help:not(.external)')
 
 <!-- fiddle-end -->
 
+### Find elements without an attribute
+
+Let's find all anchor links without `HREF` attribute
+
+<!-- fiddle cy.get / find elements without an attribute -->
+
+Some of the anchor links below are missing an `href` attribute. Let's find them
+
+```html
+<div id="links">
+  <a href="article1.html">Article 1</a>
+  <a href="article2.html">Article 2</a>
+  <a>Article 3</a>
+  <a>Article 4</a>
+  <a href="index.html">index</a>
+</div>
+```
+
+```js
+// get all "A" elements
+// without the attribute "href"
+cy.get('#links a:not([href])').should('have.length', 2)
+```
+
+<!-- fiddle-end -->
+
+### Find elements with an attribute having a different value
+
+Let's find all anchor links without `HREF` attribute
+
+<!-- fiddle cy.get / find elements with an attribute having a different value -->
+
+Let's find all anchor links that have the attribute `data-level` other than `primary` or do not have this attribute
+
+```html
+<div id="help-links">
+  <a href="article1.html" data-level="primary">Article 1</a>
+  <a href="article2.html" data-level="secondary">Article 2</a>
+  <a data-level="primary">Article 3</a>
+  <a>Article 4</a>
+  <a href="index.html" data-level="index">index</a>
+</div>
+```
+
+```js
+// get all "A" elements where the attribute "data-level"
+// either does not exist or has a value other than "primary"
+cy.get('#help-links a:not([data-level=primary])').should(
+  'have.length',
+  3,
+)
+```
+
+<!-- fiddle-end -->
+
 ### Find elements without two given classes
 
 <!-- fiddle cy.get / find elements without two given classes -->
