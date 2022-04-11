@@ -192,6 +192,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - See the [full assertion message](./recipes/see-more-in-assertions.md) without truncated text
 - Use the [match assertion](./recipes/match-assertion.md) correctly
 - Find elements with the given [computed style](./recipes/computed-style.md)
+- Check the results of [multiplication](./recipes/check-multiplication.md) shown on the page
 
 ### Cypress secrets recipes
 
