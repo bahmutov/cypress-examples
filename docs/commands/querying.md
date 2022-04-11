@@ -636,6 +636,10 @@ Tip: you can extract multiple values and create assertions using [cypress-should
 
 <!-- fiddle-end -->
 
+### With the given computed style
+
+See the recipe [Computed style](../recipes/computed-style.md).
+
 ## [cy.contains()](https://on.cypress.io/contains)
 
 We can find elements by their content using `cy.contains()`
