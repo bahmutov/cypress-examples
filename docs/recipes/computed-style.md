@@ -34,3 +34,5 @@ cy.get('a')
 ```
 
 <!-- fiddle-end -->
+
+Watch the video [Select Elements By Computed Style](https://youtu.be/WUQpyB-oquE).
