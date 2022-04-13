@@ -214,7 +214,7 @@ cy.get('#animals li')
 
 <!-- fiddle-end -->
 
-Find another example in the recipe [Computed style](../recipes/computed-style.md) for example.
+Watch the video [Use cy.filter For Complex Element Filtering](https://youtu.be/AO9iPIg9yKk). Find another example in the recipe [Computed style](../recipes/computed-style.md) for example.
 
 ## [.find()](https://on.cypress.io/find)
 
