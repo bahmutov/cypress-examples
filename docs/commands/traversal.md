@@ -182,7 +182,7 @@ cy.get('.visible-items li:visible')
 
 You can filter elements using a predicate callback function.
 
-<!-- fiddle filter / using a callback function -->
+<!-- fiddle.only filter / using a callback function -->
 
 Let's find all list items with the text "cat" or class "pet".
 
@@ -198,6 +198,9 @@ Let's find all list items with the text "cat" or class "pet".
 
 ```js
 cy.get('#animals li')
+  // ensure we have all items
+  .should('have.length', 5)
+  // find the items we are interested in
   .filter((k, el) => {
     // k is the 0-based index
     // el is the DOM element
