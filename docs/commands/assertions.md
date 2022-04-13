@@ -937,6 +937,31 @@ cy.get('#parent-element')
 
 <!-- fiddle-end -->
 
+### have.text vs contain
+
+<!-- fiddle Implicit Assertions / Text / .should() - have.text vs contain -->
+
+```html
+<div id="blurb">A quick brown fox jumped</div>
+```
+
+```js
+cy.get('#blurb')
+  // assertions "include.text" and "contain"
+  // are equivalent and match the entire text
+  // or just part of the text
+  .should('include.text', 'brown fox')
+  .and('contain', 'brown fox')
+  // can match the entire text
+  .and('contain', 'A quick brown fox jumped')
+  // "have.text" requires the full text match
+  .and('have.text', 'A quick brown fox jumped')
+  // but "have.text" does not allow partial text match
+  .and('not.have.text', 'brown fox')
+```
+
+<!-- fiddle-end -->
+
 ### Text matching the regular expression
 
 We can use regular expressions with "match" assertions to confirm part of the text.
