@@ -193,6 +193,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Use the [match assertion](./recipes/match-assertion.md) correctly
 - Find elements with the given [computed style](./recipes/computed-style.md)
 - Check the results of [multiplication](./recipes/check-multiplication.md) shown on the page
+- [Parse numbers](./recipes/parse-numbers.md) in the text
 
 ### Cypress secrets recipes
 
