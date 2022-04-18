@@ -194,6 +194,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Find elements with the given [computed style](./recipes/computed-style.md)
 - Check the results of [multiplication](./recipes/check-multiplication.md) shown on the page
 - [Parse numbers](./recipes/parse-numbers.md) in the text
+- Get the value of an [input element](./recipes/input-element-value.md)
 
 ### Cypress secrets recipes
 
