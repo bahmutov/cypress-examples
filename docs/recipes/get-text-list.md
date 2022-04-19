@@ -295,3 +295,34 @@ fruits.forEach((fruit, k) => {
 ```
 
 <!-- fiddle-end -->
+
+## Filter items by text
+
+Let's get all items that contain the words "one" or "two", ignoring the others. We can get all list items, then filter the items by text using the [cy.filter](https://on.cypress.io/filter) command.
+
+<!-- fiddle Filter items by text -->
+
+```html
+<ol>
+  <li>four</li>
+  <li>one</li>
+  <li>one</li>
+  <li>three</li>
+  <li>two</li>
+  <li>one</li>
+  <li>five</li>
+  <li>six</li>
+</ol>
+```
+
+```js
+cy.get('ol li')
+  // check if all items have loaded
+  .should('have.length.greaterThan', 5)
+  .filter((k, el) => {
+    return el.innerText === 'one' || el.innerText === 'two'
+  })
+  .should('have.length', 4)
+```
+
+<!-- fiddle-end -->
