@@ -196,6 +196,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Parse numbers](./recipes/parse-numbers.md) in the text
 - Get the value of an [input element](./recipes/input-element-value.md)
 - Confirm the values entered in the [input elements in a form](./recipes/form-values.md)
+- Combine two jQuery objects into one in the recipe [combine lists](./recipes/combine-lists.md)
 
 ### Cypress secrets recipes
 
