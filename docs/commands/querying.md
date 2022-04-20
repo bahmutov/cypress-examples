@@ -821,7 +821,7 @@ If the HTML element contains duplicate white spaces, using `cy.contains` becomes
 
 If you inspect this element in the browser's console, you will see that the browser returns different strings for `innerHTML` and `innerText` properties - and the browser collapses multiple spaces into one.
 
-```text
+```
 > $0.innerText.length
 > 12
 > $0.innerHTML.length

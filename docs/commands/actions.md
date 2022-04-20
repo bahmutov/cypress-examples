@@ -1105,6 +1105,12 @@ To scroll the window or a scrollable element to a specific position, use the `cy
 <!-- fiddle scrollTo -->
 <!-- fiddle-markup
 <style>
+.square100 {
+  width: 100px;
+  height: 100px;
+  background-color: teal;
+}
+
 #scroll-horizontal,
 #scroll-vertical,
 #scroll-both,
@@ -1159,51 +1165,21 @@ To scroll the window or a scrollable element to a specific position, use the `cy
     <div style="width: 3000px">
       Horizontal Scroll
       <ul>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
       </ul>
     </div>
   </div>
@@ -1212,30 +1188,14 @@ To scroll the window or a scrollable element to a specific position, use the `cy
     <div style='height: 1000px'>
       Vertical Scroll
       <ul>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
-        <li>
-          <img src="https://placehold.it/100x100">
-        </li>
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
+        <li class="square100" />
       </ul>
     </div>
   </div>
@@ -1253,8 +1213,9 @@ To scroll the window or a scrollable element to a specific position, use the `cy
 // if you chain .scrollTo() off of cy, we will
 // scroll the entire window
 cy.scrollTo('bottom')
-
-cy.get('#scrollable-horizontal').scrollTo('right')
+cy.get('#scrollable-horizontal').scrollTo('right', {
+  duration: 1500,
+})
 
 // or you can scroll to a specific coordinate:
 // (x axis, y axis) in pixels
