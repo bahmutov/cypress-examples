@@ -112,6 +112,8 @@ cy.get('.connectors-its-ul>li').should('have.length.gt', 2)
 
 <!-- fiddle-end -->
 
+### Nested properties
+
 Under the hood, `.its` uses Lodash `_.property` method, thus you can grab the nested values using dot notation:
 
 <!-- fiddle its / nested property -->
@@ -142,6 +144,58 @@ cy.wrap(person)
   .its('organizationIds.1.name')
   .should('equal', 'IEEE')
 ```
+
+<!-- fiddle-end -->
+
+### jQuery to DOM element
+
+All Cypress [querying commands](./querying.md) yield a jQuery object. You can get the individual DOM elements in several ways.
+
+<!-- fiddle its / jQuery to DOM element -->
+
+```html
+<ol id="fruits">
+  <li>Apples</li>
+  <li>Pears</li>
+  <li>Bananas</li>
+</ol>
+```
+
+Method 1: use a nested `cy.its` property
+
+```js
+// yields a jQuery object with 3 elements
+cy.get('#fruits li')
+  .should('have.length', 3)
+  // jQuery element access by index [1]
+  // yields a DOM element, and then we access
+  // its property "innerText"
+  .its('1.innerText')
+  .should('equal', 'Pears')
+```
+
+Method 2: use the `cy.eq` and `cy.invoke` commands
+
+```js
+// equivalent to the combination of commands
+cy.get('#fruits li')
+  // yields the jQuery element at index 1
+  .eq(1)
+  // invokes the jQuery method text()
+  .invoke('text')
+  .should('equal', 'Pears')
+```
+
+Method 3: invoke the jQuery `get(index)` method
+
+```js
+// instead of ".its" or ".eq" commands
+// we can call the jQuery method "get(index)"
+// to yield a single jQuery element
+cy.get('#fruits li').invoke('get', 2).invoke('text')
+```
+
+**Note:** invoking the jQuery `get(index)` method should yield a plain DOM element, but Cypress automatically wraps DOM elements in a jQuery object when yielding to the next command or assertion. Thus we use the `cy.invoke('text')` command
 
 <!-- fiddle-end -->
 
