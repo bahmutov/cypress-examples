@@ -1466,7 +1466,17 @@ cy.wrap(person).should('respondTo', 'greeting')
 
 <!-- fiddle Approximate value -->
 
+One way to compare a floating point number is to round it using `Math.round` to the nearest integer.
+
 ```js
+// compare the given number to the closest integer
+cy.wrap(52.9).then(Math.round).should('equal', 53)
+```
+
+Another way is to use the assertion `closeTo`
+
+```js
+// using closeTo assertion
 // expected 32.7 to be close to 32 +/- 1
 expect(32.7).to.be.closeTo(32, 1.0)
 cy.wrap(52.9).should('be.closeTo', 50, 3)
