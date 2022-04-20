@@ -1,4 +1,4 @@
-# @bahmutov/cypress-examples [![cypress-examples](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/count/dis6wg/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/dis6wg/runs)
+# @bahmutov/cypress-examples [![cypress-examples](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/dis6wg/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/dis6wg/runs)
 
 [![ci status][ci image]][ci url] [![prettier status][prettier image]][prettier url] [![deployed status][deployed image]][deployed url] [![scrape](https://github.com/bahmutov/cypress-examples/actions/workflows/scrape.yml/badge.svg?branch=master)](https://github.com/bahmutov/cypress-examples/actions/workflows/scrape.yml) [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-9.5.0-brightgreen)
 
