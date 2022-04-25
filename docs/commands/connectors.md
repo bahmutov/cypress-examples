@@ -112,6 +112,49 @@ cy.get('.connectors-its-ul>li').should('have.length.gt', 2)
 
 <!-- fiddle-end -->
 
+### Retries automatically
+
+The `cy.its` command retries finding the property until the property exists or the command times out. You can control the retry period by setting an explicit `timeout` parameter. For example, when checking a response from the `cy.request` command, the subject cannot change, thus you can safely use `cy.its('property', {timeout: 0})` option.
+
+<!-- fiddle its / retries automatically -->
+
+```html
+<script>
+  setTimeout(function () {
+    window.appCustomField = 42
+  }, 1000)
+</script>
+```
+
+```js
+// the following chain of commands checks the "window" object
+// again and again until the application sets the property "appCustomField"
+// The value of the property is yielded to the assertion
+cy.window().its('appCustomField').should('equal', 42)
+// tip: alternative solution using a single assertion
+// (which cannot have nested paths compared to the cy.its command)
+cy.window().should(
+  'have.property',
+  'appCustomField',
+  42,
+  'property added',
+)
+```
+
+Sometimes we do not need the automatic retries. For example, the result of `cy.request` will never change. To avoid unnecessary retries and waiting, we can set the timeout to zero for the `cy.its` command.
+
+```js
+// We can avoid unnecessary retries when getting the property
+// using the "timeout: 0" option
+cy.request('https://jsonplaceholder.cypress.io/users/1')
+  .its('body', { timeout: 0 })
+  .should('include.keys', 'id', 'name', 'email')
+```
+
+<!-- fiddle-end -->
+
+For more, read the [Cypress retry-ability guide](https://on.cypress.io/retry-ability).
+
 ### Nested properties
 
 Under the hood, `.its` uses Lodash `_.property` method, thus you can grab the nested values using dot notation:
