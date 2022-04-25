@@ -808,6 +808,29 @@ cy.get('#math-op').should('match', (k, el) => {
 
 <!-- fiddle-end -->
 
+### Spaces
+
+Before comparing an element text with a number, trim the spaces (if any), and convert a string into a number.
+
+<!-- fiddle Implicit Assertions / Text / .should() - trim and convert -->
+
+```html
+<!-- Notice the newlines and spaces around the number -->
+<div id="employee-number">
+  1209
+</div>
+```
+
+```js
+cy.get('#employee-number')
+  .invoke('text')
+  .invoke('trim')
+  .then(Number)
+  .should('equal', 1209)
+```
+
+<!-- fiddle-end -->
+
 ### Newlines
 
 If the text contains newline characters, you can trim it before asserting the text contents or use [cy.contains](https://on.cypress.io/contains) or `include.text` assertion.
