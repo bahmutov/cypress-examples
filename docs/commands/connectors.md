@@ -153,7 +153,7 @@ cy.request('https://jsonplaceholder.cypress.io/users/1')
 
 <!-- fiddle-end -->
 
-For more, read the [Cypress retry-ability guide](https://on.cypress.io/retry-ability).
+For more, read the [Cypress retry-ability guide](https://on.cypress.io/retry-ability) and watch [The cy.its Command Examples With Retries And Without](https://youtu.be/2LdVcnYAE7Q).
 
 ### Nested properties
 
