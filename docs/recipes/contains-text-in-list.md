@@ -1,6 +1,6 @@
 # Contains text in a list
 
-Let's take a list and check if it contains a given text. We can write this test in several ways.
+Let's take a list and check if it contains a given text. We can write this test in several ways. Watch the video [Find Text Item Without Flake Using cy.contains Command](https://youtu.be/RyHSIk7nzD0) to see the explanation behind this recipe.
 
 <!-- fiddle Test 1: find items then check their text -->
 
