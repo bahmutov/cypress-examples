@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Find elements with subelements | Cypress examples (v9.6.0)</title>
+    <meta name="description" content="Static site with Cypress examples tested right from the Markdown sources">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <style>.action-focus.focus { border: 5px solid orange; } .hidden { display: none !important; }</style>
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
+    <link rel="preload" href="/cypress-examples/9.6.0/assets/css/0.styles.bf2f5872.css" as="style"><link rel="preload" href="/cypress-examples/9.6.0/assets/js/app.0984c48b.js" as="script"><link rel="preload" href="/cypress-examples/9.6.0/assets/js/3.f0d716cf.js" as="script"><link rel="preload" href="/cypress-examples/9.6.0/assets/js/45.c1011788.js" as="script"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/10.1ff4e75a.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/11.09469d41.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/12.9e852813.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/13.2e768308.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/14.af94da8b.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/15.e35ab30a.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/16.6106b0cf.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/17.ebc73354.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/18.09824f9f.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/19.f416b6af.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/20.645cba4e.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/21.5eef1378.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/22.28e103f9.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/23.43fb3060.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/24.e6f3a219.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/25.5a4d63fc.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/26.f4d9d9ba.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/27.4c310d8f.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/28.1e83855b.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/29.0eb3d4b0.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/30.e8d34b06.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/31.83cc8343.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/32.9ab6afb4.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/33.800c5bb1.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/34.0f57dec4.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/35.a0582993.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/36.6caa5d0b.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/37.1a839347.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/38.f4ab6f3f.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/39.90b5b1c9.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/4.e899a18b.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/40.9aaf626f.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/41.7ea946ed.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/42.62d17cde.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/43.53f66931.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/44.1f5d9605.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/46.c77a3f09.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/47.f9a8e057.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/48.64ad4848.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/49.a21bdd57.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/5.1b0bafbf.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/50.3eea6bf8.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/51.a9731016.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/52.8e39031a.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/53.8a282fcf.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/54.d81cdae1.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/55.b8a6c7e2.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/56.05add3c9.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/57.1e0e50e0.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/58.d6072b42.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/59.8d3de48e.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/6.dc827464.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/60.586505d5.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/61.57f15581.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/62.13561ec5.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/63.81cc08ad.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/64.1f325d35.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/65.c08931d5.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/66.e45c9890.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/67.b95691bb.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/68.3ad5b552.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/69.7126219c.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/7.75862ba2.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/70.4f89dbb6.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/71.adebff57.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/72.a5bc5434.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/73.af15272e.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/74.c8f2ce2f.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/75.af54c382.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/76.0d1b5fec.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/77.edf6b7d3.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/78.6571e85c.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/79.3e4aaf26.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/8.5834f1c5.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/80.355ca430.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/81.2497628b.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/82.a468c676.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/83.b573bcee.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/84.fd2fe584.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/9.e78e4bfb.js"><link rel="prefetch" href="/cypress-examples/9.6.0/assets/js/vendors~docsearch.4c6aa31e.js">
+    <link rel="stylesheet" href="/cypress-examples/9.6.0/assets/css/0.styles.bf2f5872.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/cypress-examples/9.6.0/" class="home-link router-link-active"><!----> <span class="site-name">Cypress examples (v9.6.0)</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/9.6.0/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/9.6.0/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.6.0/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/9.6.0/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/9.6.0/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Find elements with subelements</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/cypress-examples/9.6.0/recipes/find-elements-with-subelements.html#find-labels-or-warnings" class="sidebar-link">Find labels OR warnings</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="find-elements-with-subelements"><a href="#find-elements-with-subelements" class="header-anchor">#</a> Find elements with subelements</h1> <p>Imagine we have a list of elements. Some elements can have <code>&lt;span class=&quot;label&quot;&gt;...&lt;/span&gt;</code> inside. We want to filter the top level list to only have elements that have a label inside.</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>first<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>second<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>third <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>label<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>New!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>fourth <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>label<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>New!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>fifth <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>label<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Advanced!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.label</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #8b8bee<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0.2rem 0.5rem<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="example"><ol id="list"><li>first</li> <li>second</li> <li><p>third <span class="label">New!</span></p></li> <li><p>fourth <span class="label">New!</span></p></li> <li><p>fifth <span class="label">Advanced!</span></p></li></ol> <style>
+  .label {
+    background-color: #8b8bee;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+  }
+</style></div></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// select all list elements</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#list li'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.length'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+  <span class="token comment">// filter the list by inspecting the children elements</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">$elements</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// we can use the Lodash _.filter method to iterate</span>
+    <span class="token comment">// over the DOM elements and filter by a predicate</span>
+    <span class="token keyword">const</span> filtered <span class="token operator">=</span> Cypress<span class="token punctuation">.</span>_<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>$elements<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> el<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.label'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> filtered
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.length'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+  <span class="token comment">// confirm one of the list items</span>
+  <span class="token punctuation">.</span><span class="token function">last</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'include.text'</span><span class="token punctuation">,</span> <span class="token string">'fifth'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">'.label'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.text'</span><span class="token punctuation">,</span> <span class="token string">'Advanced!'</span><span class="token punctuation">)</span>
+<span class="token comment">// we can perform the opposite: only take the elements</span>
+<span class="token comment">// WITHOUT child element with class &quot;badge&quot; inside</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#list li'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">$elements</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+    <span class="token comment">// Lodash _.reject method is the opposite of _.filter</span>
+    Cypress<span class="token punctuation">.</span>_<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>$elements<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+      el<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.label'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.length'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.text'</span><span class="token punctuation">,</span> <span class="token string">'first'</span><span class="token punctuation">)</span>
+</code></pre></div><p>What if we want to use Cypress commands inside the element filter callback? Like <code>cy.contains</code>? Let's find all <code>LI</code> elements that have labels with the text &quot;Advanced&quot; in them.</p> <div class="language-js extra-class"><pre class="language-js"><code>cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'#list li'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.length'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">$elements</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// all found LI elements</span>
+    <span class="token keyword">const</span> filtered <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    Cypress<span class="token punctuation">.</span>_<span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span>$elements<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">li</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// to run a Cypress command against the DOM element</span>
+      <span class="token comment">// wrap it inside Cypress chain</span>
+      cy<span class="token punctuation">.</span><span class="token function">wrap</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">'.label'</span><span class="token punctuation">,</span> <span class="token string">'Advanced'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">$label</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token comment">// there might NOT be such element</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>$label<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// only if there is such label,</span>
+            <span class="token comment">// put the original &quot;li&quot; element</span>
+            <span class="token comment">// into the filtered list</span>
+            filtered<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// yield the filtered list of DOM elements</span>
+    <span class="token comment">// to the next Cypress assertion / command</span>
+    cy<span class="token punctuation">.</span><span class="token function">wrap</span><span class="token punctuation">(</span>filtered<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.length'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// yields [li] array</span>
+  <span class="token punctuation">.</span><span class="token function">its</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">// yields the first LI DOM element from the array</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'include.text'</span><span class="token punctuation">,</span> <span class="token string">'fifth'</span><span class="token punctuation">)</span> <span class="token comment">// confirm we found the right element</span>
+</code></pre></div><p>We can also use the jQuery <code>:has</code> selector to find <code>LI</code> elements with <code>.label</code> elements inside.</p> <div class="language-js extra-class"><pre class="language-js"><code>cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'li:has(.label)'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.length'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">last</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">'Advanced'</span><span class="token punctuation">)</span>
+</code></pre></div><p>We can even use the <code>:has</code> combined with <code>:contains</code> to find all <code>LI</code> elements with <code>.label</code> elements that have the text &quot;New&quot; in them.</p> <div class="language-js extra-class"><pre class="language-js"><code>cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'li:has(.label:contains(&quot;New&quot;))'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.length'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+</code></pre></div> <p>Watch the video &quot;<a href="https://youtu.be/2NpHXkZN1SY" target="_blank" rel="noopener noreferrer">jQuery :has and :contains Selectors in Cypress Tests<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>&quot;.</p> <h2 id="find-labels-or-warnings"><a href="#find-labels-or-warnings" class="header-anchor">#</a> Find labels OR warnings</h2> <p>Imagine that some list elements have plain labels and some have warnings. Can we find the list elements with labels OR warnings using <code>:has</code> selector?</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>first<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>second<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>third <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>badge label<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>New!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>fourth <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>badge label<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>New!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>fifth <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>badge warning<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Deprecated<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.badge</span> <span class="token punctuation">{</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0.2rem 0.5rem<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.label</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #8b8bee<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.warning</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #f99650<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="example"><ol id="list"><li>first</li> <li>second</li> <li><p>third <span class="badge label">New!</span></p></li> <li><p>fourth <span class="badge label">New!</span></p></li> <li><p>fifth <span class="badge warning">Deprecated</span></p></li></ol> <style>
+  .badge {
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+  }
+  .label {
+    background-color: #8b8bee;
+  }
+  .warning {
+    background-color: #f99650;
+  }
+</style></div></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// use jQuery CSS selector :has to find</span>
+<span class="token comment">// all list items with an element with class label or warning inside</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'li:has(.label, .warning)'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.length'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token comment">// alternative: split into two commands</span>
+<span class="token comment">// using the https://on.cypress.io/filter command</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.length'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token string">':has(.label, .warning)'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'have.length'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+</code></pre></div><p>Watch the video <a href="https://youtu.be/_b6Mf8xI5bA" target="_blank" rel="noopener noreferrer">Find Elements With Specific Child Elements Using Cypress jQuery :has Selector<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bahmutov/cypress-examples/edit/master/docs/recipes/find-elements-with-subelements.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/cypress-examples/9.6.0/assets/js/app.0984c48b.js" defer></script><script src="/cypress-examples/9.6.0/assets/js/3.f0d716cf.js" defer></script><script src="/cypress-examples/9.6.0/assets/js/45.c1011788.js" defer></script>
+  </body>
+</html>
