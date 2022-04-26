@@ -807,6 +807,37 @@ cy.get('.my-title')
 
 <!-- fiddle-end -->
 
+### cy.contains with regular expression AND
+
+Let's find a paragraph with words "hello", "world", and "more" in it.
+
+<!-- fiddle contains / regular expression AND -->
+
+```html
+<section id="paragraphs">
+  <p class="first">
+    Some text here
+  </p>
+  <p class="second">
+    Simon says "hello" and then he says "world" and that's it.
+    Nothing more.
+  </p>
+  <p class="third">
+    I need more examples.
+  </p>
+</section>
+```
+
+```js
+// look for a paragraph with the world "hello", "world", and "more"
+// separated by some other characters.
+cy.contains('#paragraphs p', /hello.+world.+more/)
+  // confirm we have found the right paragraph
+  .should('have.class', 'second')
+```
+
+<!-- fiddle-end -->
+
 ### cy.contains with duplicate white spaces
 
 If the HTML element contains duplicate white spaces, using `cy.contains` becomes trickier. The example below has a double space between the `:` and `b` characters.
