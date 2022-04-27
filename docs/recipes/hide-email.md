@@ -15,16 +15,21 @@ Watch the video [Hide The Entered Email In The Form](https://youtu.be/512p4E4fQA
 ```
 
 ```js
+// get the form and limit ourselves to finding elements inside
 cy.get('form').within(() => {
+  // hide the entered email completely
   cy.get('[name=email]')
     .invoke('attr', 'type', 'password')
     .type('my@email.com', { log: false })
   cy.get('[name=password]').type('Secret!', { log: false })
+  // prevent the test form navigation
+  // by attaching a dummy event handlers
   cy.get('button[type=submit]')
     .invoke('click', (e) => e.preventDefault())
     .invoke('click', cy.stub().as('clicked'))
     .click()
 })
+// confirm our click event handler worked
 cy.get('@clicked').should('have.been.calledOnce')
 ```
 
@@ -43,12 +48,16 @@ cy.get('@clicked').should('have.been.calledOnce')
 ```
 
 ```js
+// intercept the form submission network call
+// and return a redirect back to the origin
 cy.intercept('POST', 'submit.php', {
   statusCode: 304,
   headers: {
     location: '/',
   },
 }).as('post')
+// enter the values in the form
+// and submit the form
 cy.get('form').within(() => {
   cy.get('[name=email]')
     .invoke('attr', 'type', 'password')
@@ -56,6 +65,7 @@ cy.get('form').within(() => {
   cy.get('[name=password]').type('Secret!', { log: false })
   cy.get('button[type=submit]').click()
 })
+// confirm the form was sent with expected values
 cy.wait('@post')
   .its('request.body')
   .should('include', encodeURIComponent('my@email.com'))
