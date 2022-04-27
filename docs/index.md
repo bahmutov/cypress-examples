@@ -199,6 +199,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Combine two jQuery objects into one in the recipe [combine lists](./recipes/combine-lists.md)
 - Confirm the phone number after [replacing all `-` characters](./recipes/replace-all.md)
 - Check if [a list contains the given text](./recipes/contains-text-in-list.md)
+- [Hide the entered text and intercept the form submission](./recipes/hide-email.md)
 
 ### Cypress secrets recipes
 
