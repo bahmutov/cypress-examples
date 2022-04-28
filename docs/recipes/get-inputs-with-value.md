@@ -34,3 +34,5 @@ cy.get('#inputs input')
 ```
 
 <!-- fiddle-end -->
+
+Watch the video [Find Input Elements With The Given Value Using cy.filter Command](https://youtu.be/IRsPdCHyBSk).
