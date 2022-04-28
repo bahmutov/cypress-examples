@@ -310,6 +310,10 @@ cy.get('#specific-href a[href="index.html"]')
 
 <!-- fiddle-end -->
 
+### Get input elements with the given value
+
+See the recipe [Get input elements with the given value](../recipes/get-inputs-with-value.md).
+
 ### Escape the attribute
 
 Sometimes an attribute can have a special character like `.` or `:` in it. Please escape the attribute using the `\\` character.
