@@ -133,6 +133,40 @@ cy.contains('#items li:first', 'Grapes')
 
 <!-- fiddle-end -->
 
+## Query the element again
+
+<!-- fiddle Retry-ability / query the element again -->
+
+```html
+<div id="cart">
+  <div>Apples <input type="text" value="10" /></div>
+  <div>Pears <input type="text" value="6" /></div>
+  <div>Grapes <input type="text" value="5" /></div>
+</div>
+```
+
+```js skip
+cy.get('#cart input') // query command
+  .eq(2) // query command
+  .clear() // action command
+  .type('20') // action command
+```
+
+The above test is ok, but if you find it to be flaky, add more assertions and query the element again to ensure you find it even if it re-rendered on the page.
+
+```js
+// merge the cy.get + cy.eq into a single query
+const selector = '#cart input:nth(2)'
+cy.get(selector).clear()
+// query the input again to make sure has been cleared
+cy.get(selector).should('have.value', '')
+// type the new value and check
+cy.get(selector).type('20')
+cy.get(selector).should('have.value', '20')
+```
+
+<!-- fiddle-end -->
+
 ## Using aliases
 
 You can split the Cypress commands if you use an element alias with the [cy.as](https://on.cypress.io/as) command. Cypress should re-query the entire chain, skipping the non-query commands if it notices the aliased element has been detached from the DOM.
