@@ -167,6 +167,8 @@ cy.get(selector).should('have.value', '20')
 
 <!-- fiddle-end -->
 
+Watch the explanation for the above test refactoring in my video [Query Elements With Retry-Ability To Avoid Flake](https://youtu.be/deNl1q1el0E).
+
 ## Using aliases
 
 You can split the Cypress commands if you use an element alias with the [cy.as](https://on.cypress.io/as) command. Cypress should re-query the entire chain, skipping the non-query commands if it notices the aliased element has been detached from the DOM.
