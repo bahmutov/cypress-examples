@@ -6,7 +6,7 @@ Examples of traversing DOM elements in Cypress, for a full reference of commands
 
 To get children of DOM elements, use the `.children()` command.
 
-<!-- fiddle children -->
+<!-- fiddle children / get elements with class active -->
 
 ```html
 <ol class="traversal-breadcrumb breadcrumb">
@@ -20,6 +20,40 @@ To get children of DOM elements, use the `.children()` command.
 cy.get('.traversal-breadcrumb')
   .children('.active')
   .should('contain', 'Data')
+```
+
+<!-- fiddle-end -->
+
+You can get the number of children and check it using `have.length` assertions. Even hidden elements are counted.
+
+<!-- fiddle children / get the number of children -->
+
+```html
+<ol id="fruit-cart">
+  <li>Oranges</li>
+  <li>Grapes</li>
+  <li style="display:none">Apples (sold out)</li>
+</ol>
+```
+
+```js
+// confirm the total number of children
+cy.get('#fruit-cart').children().should('have.length', 3)
+// confirm the number of visible children
+cy.get('#fruit-cart')
+  // use the jQuery pseudo selector ":visible"
+  .children(':visible')
+  .should('have.length', 2)
+// confirm the number of hidden children
+cy.get('#fruit-cart')
+  // use the jQuery pseudo selector ":hidden"
+  .children(':hidden')
+  .should('have.length', 1)
+// get the number of hidden children
+// using "not visible" pseudo selectors
+cy.get('#fruit-cart')
+  .children(':not(:visible)')
+  .should('have.length', 1)
 ```
 
 <!-- fiddle-end -->
