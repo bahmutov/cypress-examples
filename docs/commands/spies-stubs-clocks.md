@@ -904,3 +904,7 @@ cy.get('#tick-div').click().should('have.text', '1489449610')
 ```
 
 <!-- fiddle-end -->
+
+## See also
+
+- Read the blog post [Spy On A Complex Method Call](https://glebbahmutov.com/blog/spy-on-complex-method-call/)
