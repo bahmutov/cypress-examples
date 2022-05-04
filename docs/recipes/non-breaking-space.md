@@ -126,8 +126,19 @@ cy.get('#network-message').should($el => {
 })
 ```
 
+Even better is to use the included Chai-jQuery assertion `have.text`
+
+```js
+// equivalent and and shorter Chai-jQuery assertion
+cy.get('#network-message').should('have.text', message)
+// if you know only part of the expected text
+cy.get('#network-message').should('include.text', message)
+```
+
 <!-- fiddle-end -->
 <!-- prettier-ignore-end -->
+
+Watch the video [A Quick Should Have Text Example With Multiline Text](https://youtu.be/jdXeKtrwJ8A).
 
 ## Filtering using `cy.filter`
 
