@@ -88,6 +88,47 @@ cy.get('[data-testid=testattr]')
 
 <!-- fiddle-end -->
 
+### Be careful with newlines and white space
+
+<!-- prettier-ignore-start -->
+
+<!-- fiddle With whitespace / using should(callback) -->
+
+```html
+<div id="network-message">
+  Warning: this message has multiple spaces
+
+  and empty lines
+</div>
+```
+
+```js
+const message = `
+  Warning: this message has multiple spaces
+
+  and empty lines
+`
+```
+
+```js skip
+// 🚨 INCORRECT, this will fail, demo only
+// the newlines and empty lanes break the comparison
+cy.contains('#network-message', message)
+```
+
+```js
+// ✅ use "should(callback)" function to get the full text
+// and compare it ourselves without whitespace removal
+// as it is done by the cy.contains command
+cy.get('#network-message').should($el => {
+  const text = $el.text()
+  expect(text, 'the original text').to.equal(message)
+})
+```
+
+<!-- fiddle-end -->
+<!-- prettier-ignore-end -->
+
 ## Filtering using `cy.filter`
 
 Just checking how `.filter(:contains)` works
