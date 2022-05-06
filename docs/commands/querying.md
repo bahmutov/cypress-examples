@@ -63,6 +63,52 @@ cy.get('h4,h5,h6').should('have.length.gt', 1)
 
 Cypress querying commands use [jQuery selectors](https://api.jquery.com/category/selectors/) that go beyond the standard CSS selectors. Here are a couple of examples.
 
+#### Disabled elements
+
+<!-- fiddle cy.get / using jQuery is :disabled -->
+
+```html
+<div id="some-buttons">
+  <button id="one">One</button>
+  <button id="two" disabled>Two</button>
+  <button id="three" disabled>Three</button>
+</div>
+```
+
+```js
+// get all disabled buttons
+cy.get('#some-buttons button:disabled').should('have.length', 2)
+// use combination of jQuery :not and :disabled selectors
+cy.get('#some-buttons button:not(:disabled)')
+  .should('have.length', 1)
+  .and('have.text', 'One')
+```
+
+<!-- fiddle-end -->
+
+#### Checked elements
+
+<!-- fiddle cy.get / using jQuery is :checked -->
+
+```html
+<div id="checks">
+  <div>One <input type="checkbox" id="one" /></div>
+  <div>Two <input type="checkbox" id="two" checked /></div>
+  <div>Three <input type="checkbox" id="three" /></div>
+</div>
+```
+
+```js
+// get all checked boxes
+cy.get('#checks input:checked')
+  .should('have.length', 1)
+  .and('have.id', 'two')
+// get all unchecked boxes through jQuery :not and :checked selectors
+cy.get('#checks input:not(:checked)').should('have.length', 2)
+```
+
+<!-- fiddle-end -->
+
 #### Containing other elements by selector
 
 Let's find all paragraphs with bold text inside.
