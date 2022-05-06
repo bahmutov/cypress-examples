@@ -1619,6 +1619,48 @@ cy.contains('a', 'About').should('have.attributes', {
 
 <!-- fiddle-end -->
 
+## Check against undefined
+
+Checking against an `undefined` value:
+
+<!-- fiddle Check against undefined -->
+
+```js
+expect(undefined, 'undefined value').to.be.undefined
+expect(undefined, 'undefined is not null').to.not.be.null
+expect(null, 'null value').to.not.be.undefined
+expect(null, 'null is null').to.be.null
+```
+
+You can also compare the values using `to.equal` assertion
+
+```js
+expect(undefined, 'undefined equals undefined').to.equal(
+  undefined,
+)
+expect(undefined, 'undefined does not equal null').to.not.equal(
+  null,
+)
+expect(null, 'null equals null').to.equal(null)
+```
+
+Similarly, the wrapped undefined value can be confirmed using BDD assertions
+
+```js
+cy.wrap(undefined, 'wrapped undefined')
+  .should('be.undefined')
+  .and('equal', undefined)
+  .and('not.be.null')
+  .and('not.equal', null)
+
+cy.wrap(42, 'wrapped number')
+  .should('not.be.undefined')
+  .and('not.be.null')
+  .and('be.a', 'number')
+```
+
+<!-- fiddle-end -->
+
 ## Assertion message
 
 See how to avoid [message truncation](../recipes/see-more-in-assertions.md)
