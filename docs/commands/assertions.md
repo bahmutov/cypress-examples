@@ -1360,6 +1360,8 @@ cy.wrap([1, 2, 3])
 
 <!-- fiddle-end -->
 
+Watch the video [Validate Each Array Item](https://youtu.be/O4ZBRoZCP-I).
+
 ## Comparing arrays
 
 Whenever you assert arrays and other objects, you probably mean to assert the values inside, and not the references. Thus you need to use the `deep.equal` assertion.
