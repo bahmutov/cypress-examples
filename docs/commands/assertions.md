@@ -1336,11 +1336,35 @@ cy.contains('#data-attributes li', 'third')
 
 **Tip:** you can simplify checking for "data-" attributes by adding your own custom Chai assertion, see the [recipe](../recipes/add-data-assertion.md).
 
+## Confirm it is an array
+
+<!-- fiddle Array assertions / confirm the value is an array -->
+
+```js
+cy.wrap([1, 2, 3]).should('be.an', 'array').and('have.length', 3)
+```
+
+<!-- fiddle-end -->
+
+## Confirm items in an array
+
+<!-- fiddle Array assertions / confirm items in an array -->
+
+```js
+cy.wrap([1, 2, 3])
+  .should('be.an', 'array')
+  .each((k) => {
+    expect(k).to.be.a('number').and.be.within(1, 3)
+  })
+```
+
+<!-- fiddle-end -->
+
 ## Comparing arrays
 
 Whenever you assert arrays and other objects, you probably mean to assert the values inside, and not the references. Thus you need to use the `deep.equal` assertion.
 
-<!-- fiddle Array assertions -->
+<!-- fiddle Array assertions / comparing arrays -->
 
 ```js
 const arr = ['Apples', 'Bananas', 'Grapes']
