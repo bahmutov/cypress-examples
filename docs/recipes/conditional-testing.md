@@ -201,6 +201,18 @@ cy.contains('#btn', 'Click Me')
   })
 ```
 
+You can even use the jQuery helper method [is](https://api.jquery.com/is/) to check if the button is currently disabled.
+
+```js
+cy.contains('#btn', 'Click Me').then(($btn) => {
+  if ($btn.is(':disabled')) {
+    cy.log('Button is disabled')
+  } else {
+    cy.log('Clicking...')
+  }
+})
+```
+
 <!-- fiddle-end -->
 
 ## Click a button if a class is present
