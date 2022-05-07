@@ -201,6 +201,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Check if [a list contains the given text](./recipes/contains-text-in-list.md)
 - [Hide the entered text and intercept the form submission](./recipes/hide-email.md)
 - [Get input elements with the given value](./recipes/get-inputs-with-value.md)
+- [Check number format](./recipes/check-number-format.md)
 
 ### Cypress secrets recipes
 
