@@ -10,7 +10,6 @@
   document
     .getElementById('user-number')
     .addEventListener('input', (e) => {
-      console.log(e.target.value)
       const chars = String(e.target.value)
         .split('')
         .reverse()
