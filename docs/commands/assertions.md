@@ -67,6 +67,21 @@ cy.get('.assertion-table')
   .should('be.visible')
 ```
 
+Typically the assertions have 1, 2, or 3 arguments.
+
+```js
+// 1 argument - the assertion name only like "be.visible"
+cy.contains('th', '1').should('be.visible')
+// 2 arguments - assertion plus its argument
+// for example, the yielded element have the prop "scope" with any value
+cy.contains('th', '1').should('have.prop', 'scope')
+// 3 arguments - assertion, plus 2 arguments
+// for example, the yielded element have the prop "scope" with value "row"
+cy.contains('th', '1').should('have.prop', 'scope', 'row')
+```
+
+The number of arguments an assertion allows depends on the assertion itself.
+
 For more examples of using the `match` assertion against jQuery elements and text, see the recipe [Match Assertion](../recipes/match-assertion.md).
 
 Note: find even more examples of matching element's text content in this [FAQ answer](https://on.cypress.io/using-cypress-faq#How-do-I-get-an-element%E2%80%99s-text-contents).
