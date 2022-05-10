@@ -250,6 +250,42 @@ cy.get('#animals li')
 
 Watch the video [Use cy.filter For Complex Element Filtering](https://youtu.be/AO9iPIg9yKk). Find another example in the recipe [Computed style](../recipes/computed-style.md) for example.
 
+### Skip an element with certain text
+
+<!-- fiddle filter / skip element with text -->
+
+Let's say we want to grab the list of job options from the list below. Notice that one of the entries has the descriptive text and should be skipped.
+
+```html
+<ul id="jobs">
+  <li>(Pick your current job)</li>
+  <li>Teacher</li>
+  <li>Nurse</li>
+  <li>Driver</li>
+</ul>
+```
+
+We can skip the non-job list item in several ways.
+
+```js
+// 1. skip using the cy.filter(callback)
+cy.get('#jobs li')
+  .filter((k, el) => !el.innerText.includes('Pick'))
+  .should('have.length', 3)
+// 2. skip using the cy.filter(callback) using the index
+cy.get('#jobs li')
+  // filter out the very first element
+  .filter((k) => k > 0)
+  .should('have.length', 3)
+// 3. filter using the text and jQuery
+// :not and :contains selectors
+cy.get('#jobs li')
+  .filter(':not(:contains("Pick"))')
+  .should('have.length', 3)
+```
+
+<!-- fiddle-end -->
+
 ## [.find()](https://on.cypress.io/find)
 
 To get descendant DOM elements of the selector, use the `.find()` command.
