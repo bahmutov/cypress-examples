@@ -34,9 +34,14 @@ If you want to construct new DOM elements with proper prototype, you need to use
 ```js
 cy.document().then((doc) => {
   const div = doc.createElement('div')
+  // the constructed DIV is NOT an element
+  // from the spec's own window
+  expect(div, 'spec').to.not.be.instanceof(HTMLDivElement)
   // check the constructed element against the app's iframe
   cy.window().then((win) => {
-    expect(div).to.be.instanceof(win.HTMLDivElement)
+    expect(div, 'app window').to.be.instanceof(
+      win.HTMLDivElement,
+    )
   })
 })
 ```
