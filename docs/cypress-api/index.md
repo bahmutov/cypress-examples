@@ -250,6 +250,15 @@ expect(Cypress.dom.isHidden(hiddenP)).to.be.true
 expect(Cypress.dom.isHidden(visibleP)).to.be.false
 ```
 
+Tip: elements that are hidden have a special "crossed eye" icon next to them in the Command Log.
+
+```js
+cy.get('.dom-p p.hidden').should('not.be.visible')
+cy.get('.dom-p p.visible').should('be.visible')
+```
+
+![Hidden element with the eye icon](./pics/hidden.png)
+
 <!-- fiddle-end -->
 
 ## [Cypress.env()](https://on.cypress.io/env)
