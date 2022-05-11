@@ -202,6 +202,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Hide the entered text and intercept the form submission](./recipes/hide-email.md)
 - [Get input elements with the given value](./recipes/get-inputs-with-value.md)
 - [Check number format](./recipes/check-number-format.md)
+- [Be careful with instanceof checks](./recipes/instanceof.md)
 
 ### Cypress secrets recipes
 
