@@ -46,4 +46,6 @@ cy.document().then((doc) => {
 })
 ```
 
+Watch the video [Correctly Using instanceof Assertion In Cypress Test](https://youtu.be/5VJOpg09w2k).
+
 <!-- fiddle-end -->
