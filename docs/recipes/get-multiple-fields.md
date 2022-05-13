@@ -180,6 +180,8 @@ getFormValues().should('deep.equal', {
 })
 ```
 
+Watch the video [Get Multiple Values From The Page Via Aliases And Test Context Properties](https://youtu.be/0sY1tp0aVNM).
+
 <!-- fiddle-end -->
 
 ## Related
