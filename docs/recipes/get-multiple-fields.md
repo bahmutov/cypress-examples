@@ -130,6 +130,58 @@ cy.getMultipleFields(['#fname', '#lname']).should('deep.equal', {
 
 <!-- fiddle-end -->
 
+## Reusable function with aliases
+
+If we need to get text / values from multiple page elements, we can write separate Cypress chains, saving each value under an alias. Then we can get the multiple values from the test context properties using the `function () { ... }` callback syntax.
+
+<!-- fiddle Multiple fields / aliases -->
+
+```html
+<form>
+  <label for="fname">First name:</label><br />
+  <input type="text" id="fname" name="fname" value="Joe" /><br />
+  <label for="lname">Last name:</label><br />
+  <input type="text" id="lname" name="lname" value="Smith" />
+</form>
+```
+
+```js
+function getFormValues() {
+  return (
+    cy
+      .get('form')
+      .within(() => {
+        cy.get('#fname').invoke('val').as('fname')
+        cy.get('#lname').invoke('val').as('lname')
+      })
+      // by using "function (){...}" callback
+      // we bind the "this" reference to the test context object
+      // where every alias created using "cy.as(<name>)" command
+      // is stored automatically as a property <name>
+      .then(function () {
+        // We can return an object with the values
+        // Tip: use Lodash _.pick function
+        // to pick list of properties from a larger object
+        return Cypress._.pick(this, ['fname', 'lname'])
+      })
+  )
+}
+
+getFormValues().should('deep.equal', {
+  fname: 'Joe',
+  lname: 'Smith',
+})
+// change the input values and confirm
+cy.get('#fname').clear().type('Anna')
+cy.get('#lname').clear().type('Vine')
+getFormValues().should('deep.equal', {
+  fname: 'Anna',
+  lname: 'Vine',
+})
+```
+
+<!-- fiddle-end -->
+
 ## Related
 
 See the recipe [Get form input using label](./form-input-by-label.md)
