@@ -265,20 +265,34 @@ cy.get('#escape-attribute').should(
 
 <!-- fiddle Implicit Assertions / .should() - have.attr matching part of the string -->
 
-If we only know a part of the expected attribute, we can first assert the attribute is present, then use an assertion to match its value.
-
 ```html
 <a id="my-link" href="/some/complex/link-123">My link</a>
 ```
 
+If we want to just check presence of an attribute, we can use the "have.attr" assertion with the attribute name
+
+```js
+cy.get('#my-link').should('have.attr', 'id')
+```
+
+If we know the expected attribute value, we can add it as the third argument to the `should(...)` assertion.
+
+```js
+cy.get('#my-link').should('have.attr', 'id', 'my-link')
+```
+
+If we only know a part of the expected attribute, we can first assert the attribute is present, then use an assertion to match its value.
+
 ```js
 cy.get('#my-link')
   .should('have.attr', 'href')
+  // yields the attribute value
   // check if the href attribute includes given string
   .and('include', 'link-')
-// we can use a regular expression
+// we can also use a regular expression
 cy.get('#my-link')
   .should('have.attr', 'href')
+  // yields the attribute value
   .and('match', /\/link\-\d+/)
 ```
 
