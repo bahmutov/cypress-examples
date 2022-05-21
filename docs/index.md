@@ -203,6 +203,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Get input elements with the given value](./recipes/get-inputs-with-value.md)
 - [Check number format](./recipes/check-number-format.md)
 - [Be careful with instanceof checks](./recipes/instanceof.md)
+- [Empty child elements](./recipes/empty-elements.md) before comparing the text
 
 ### Cypress secrets recipes
 
