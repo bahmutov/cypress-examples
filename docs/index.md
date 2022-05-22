@@ -204,6 +204,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Check number format](./recipes/check-number-format.md)
 - [Be careful with instanceof checks](./recipes/instanceof.md)
 - [Empty child elements](./recipes/empty-elements.md) before comparing the text
+- Get the [own text of an element](./recipes/own-text.md)
 
 ### Cypress secrets recipes
 
