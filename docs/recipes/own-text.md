@@ -45,4 +45,6 @@ cy.get('button#save').should(($el) => {
 })
 ```
 
+Watch the video [Get And Confirm Element's Own Text Without Children Elements](https://youtu.be/yMiJj8qRx1s)
+
 <!-- fiddle-end -->
