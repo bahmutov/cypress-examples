@@ -206,6 +206,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Empty child elements](./recipes/empty-elements.md) before comparing the text
 - Get the [own text of an element](./recipes/own-text.md)
 - Verify the shown price is [within certain dollar range](./recipes/dollar-range.md)
+- [Select value from an `optgroup` element](./recipes/optgroup.md)
 
 ### Cypress secrets recipes
 

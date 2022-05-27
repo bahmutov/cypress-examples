@@ -962,6 +962,8 @@ cy.get('.action-select-multiple')
 
 <!-- fiddle-end -->
 
+See also the recipes [Selected value](../recipes/selected-value.md) and [select from optgroup](../recipes/optgroup.md).
+
 ## [.scrollIntoView()](https://on.cypress.io/scrollintoview)
 
 To scroll an element into view, use the `.scrollintoview()` command.
