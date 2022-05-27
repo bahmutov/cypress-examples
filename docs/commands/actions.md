@@ -950,6 +950,8 @@ cy.get('.action-select')
   .should('have.value', 'fr-apples')
 ```
 
+**Tip:** selecting an option by index lets you pick one of the duplicate options, see the [select from an optgroup](../recipes/optgroup.md) recipe.
+
 Select multiple options by index
 
 ```js
@@ -962,7 +964,7 @@ cy.get('.action-select-multiple')
 
 <!-- fiddle-end -->
 
-See also the recipes [Selected value](../recipes/selected-value.md) and [select from optgroup](../recipes/optgroup.md).
+See also the recipes [Selected value](../recipes/selected-value.md) and [select from an optgroup](../recipes/optgroup.md).
 
 ## [.scrollIntoView()](https://on.cypress.io/scrollintoview)
 
