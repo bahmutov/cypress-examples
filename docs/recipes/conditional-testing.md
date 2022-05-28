@@ -299,6 +299,59 @@ cy.location('pathname').then((pathname) => {
 
 <!-- fiddle-end -->
 
+## Skip the rest of the test if an element exists
+
+<!-- fiddle Skip the rest if an element exists -->
+
+```html
+<output id="app" />
+<script>
+  if (Math.random() < 1.5) {
+    document.getElementById('app').innerHTML = `
+      <div data-dynamic="true">Dynamic</div>
+    `
+  }
+</script>
+```
+
+Our test first checks the element with id "app". If it has _at that moment_ a child with text "Dynamic", then we confirm that element has an attribute "data-dynamic=true". If the `#app` element does not have a child element with text "Dynamic" then we stop the test by not executing any more Cypress commands
+
+```js
+// using the CSS :has selector in combination with
+// jQuery :contains(text) selector to find the element
+cy.get('#app:has(:contains("Dynamic"))')
+  // we don't know if the element exists or not
+  // so we bypass the built-in existence assertion
+  // using the no-operator should(callback)
+  .should(Cypress._.noop)
+  .then(($el) => {
+    if (!$el.length) {
+      cy.log('No element, stopping')
+      // note: the test cannot have any more commands
+      // _after_ this cy.then command if you really
+      // want to stop the test
+      return
+    }
+    // the element exists, let's confirm something about it
+    cy.contains('#app div', 'Dynamic').should(
+      'have.attr',
+      'data-dynamic',
+      'true',
+    )
+    // equivalent assertion without using Cypress chain
+    // and just using jQuery and Chai-jQuery combination
+    // (no retry-ability, immediate assertion)
+    expect($el.find('div'), 'has the attribute').to.have.attr(
+      'data-dynamic',
+      'true',
+    )
+  })
+```
+
+Note: we only skip the rest of the test commands inside the callback. If you want to really stop the test at run-time, see the [cypress-skip-test](https://github.com/cypress-io/cypress-skip-test) plugin.
+
+<!-- fiddle-end -->
+
 ## More examples
 
 - [Add / delete list item recipe](./add-list-item.md)
