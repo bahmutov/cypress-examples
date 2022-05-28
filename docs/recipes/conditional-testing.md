@@ -306,7 +306,8 @@ cy.location('pathname').then((pathname) => {
 ```html
 <output id="app" />
 <script>
-  if (Math.random() < 1.5) {
+  // in half of the cases, the element will be there
+  if (Math.random() < 0.5) {
     document.getElementById('app').innerHTML = `
       <div data-dynamic="true">Dynamic</div>
     `
@@ -317,9 +318,8 @@ cy.location('pathname').then((pathname) => {
 Our test first checks the element with id "app". If it has _at that moment_ a child with text "Dynamic", then we confirm that element has an attribute "data-dynamic=true". If the `#app` element does not have a child element with text "Dynamic" then we stop the test by not executing any more Cypress commands
 
 ```js
-// using the CSS :has selector in combination with
-// jQuery :contains(text) selector to find the element
-cy.get('#app:has(:contains("Dynamic"))')
+// using the CSS :has selector to find the element
+cy.get('#app:has(div)')
   // we don't know if the element exists or not
   // so we bypass the built-in existence assertion
   // using the no-operator should(callback)
@@ -332,6 +332,7 @@ cy.get('#app:has(:contains("Dynamic"))')
       // want to stop the test
       return
     }
+
     // the element exists, let's confirm something about it
     cy.contains('#app div', 'Dynamic').should(
       'have.attr',
