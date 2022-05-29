@@ -208,6 +208,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Verify the shown price is [within certain dollar range](./recipes/dollar-range.md)
 - [Select value from an `optgroup` element](./recipes/optgroup.md)
 - [Click each item](./recipes/click-each-item.md)
+- [Find duplicates](./recipes/find-duplicates.md)
 
 ### Cypress secrets recipes
 
