@@ -207,6 +207,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Get the [own text of an element](./recipes/own-text.md)
 - Verify the shown price is [within certain dollar range](./recipes/dollar-range.md)
 - [Select value from an `optgroup` element](./recipes/optgroup.md)
+- [Click each item](./recipes/click-each-item.md)
 
 ### Cypress secrets recipes
 
