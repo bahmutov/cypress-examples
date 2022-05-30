@@ -17,7 +17,13 @@ Imagine we have a list and there are two items with the same text (the rest are 
 </ul>
 ```
 
-In the list example above, there should be two list items with the text "Kiwi".
+In the list example above, there should be two list items with the text "Kiwi". We cannot use the `cy.contains` command as it returns the first element with the text
+
+```js
+cy.contains('li', 'Kiwi').should('have.length', 1)
+```
+
+We can use the jQuery selector `:contains` instead to find all elements with the given text.
 
 ```js
 cy.get('li:contains(Kiwi)').should('have.length', 2)
