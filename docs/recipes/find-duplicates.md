@@ -45,4 +45,4 @@ cy.get('li:not(:contains("Kiwi"))')
 
 <!-- fiddle-end -->
 
-If we do not know the duplicate value, see the recipe [Checking for duplicates](./duplicates.md)
+You can watch the above recipe derivation in the video [Find Duplicate Text Kiwi And Confirm The Rest Of Elements Are Unique](https://youtu.be/MU08Air76bI). If we do not know the duplicate value, see the recipe [Checking for duplicates](./duplicates.md)
