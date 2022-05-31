@@ -83,4 +83,6 @@ cy.get('ul button')
   })
 ```
 
+To learn more about this refactoring, watch the video [Click Each Item Test Refactoring](https://youtu.be/wRLODxdWyuw).
+
 <!-- fiddle-end -->
