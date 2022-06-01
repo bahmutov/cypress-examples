@@ -18,9 +18,19 @@ This recipe shows how to test the new [HTML Dialog element](https://developer.mo
 ```js
 cy.get('dialog[data-cy=ok-example]')
   .should('be.visible')
+  .and('have.attr', 'open', 'open')
   .contains('button', 'OK')
   .click()
-cy.get('dialog').should('not.be.visible')
+cy.get('dialog')
+  .should('not.be.visible')
+  .and('not.have.attr', 'open')
+```
+
+If you want to open the dialog again from the test, just set the attribute "open" using jQuery method `attr()`.
+
+```js
+cy.get('dialog').invoke('attr', 'open', 'open')
+cy.get('dialog').should('be.visible')
 ```
 
 <!-- fiddle-end -->
