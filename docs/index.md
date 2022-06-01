@@ -209,6 +209,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Select value from an `optgroup` element](./recipes/optgroup.md)
 - [Click each item](./recipes/click-each-item.md)
 - [Find duplicates](./recipes/find-duplicates.md)
+- HTML [Dialog element examples](./recipes/dialog-element.md)
 
 ### Cypress secrets recipes
 
