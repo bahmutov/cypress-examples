@@ -33,6 +33,8 @@ cy.get('dialog').invoke('attr', 'open', 'open')
 cy.get('dialog').should('be.visible')
 ```
 
+Watch the video [Test The HTML Dialog Element Using Cypress](https://youtu.be/E4Thn8FAcWI).
+
 <!-- fiddle-end -->
 
 ## Modal with a form
