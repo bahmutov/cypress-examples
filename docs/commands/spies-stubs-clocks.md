@@ -785,6 +785,30 @@ cy.get('@alert').should('have.been.calledOnceWith', 'Hello Cy')
 
 <!-- fiddle-end -->
 
+### Stub a method and restore
+
+<!-- fiddle cy.stub() / stub a method and restore -->
+
+```js
+const person = {
+  name() {
+    return 'Joe'
+  },
+}
+expect(person.name(), 'before stub').to.equal('Joe')
+// return "Anna" on the first call
+// all calls after that will return "undefined"
+cy.stub(person, 'name').onFirstCall().returns('Anna')
+expect(person.name(), 'first stubbed call').to.equal('Anna')
+expect(person.name(), 'second stubbed call').to.equal(undefined)
+person.name.restore()
+expect(person.name(), 'restored method').to.equal('Joe')
+```
+
+<!-- fiddle-end -->
+
+Note: all Cypress stubs and spies are restored automatically before each test.
+
 ## [cy.clock()](https://on.cypress.io/clock)
 
 To control time in the browser, use the `cy.clock()` command.
