@@ -266,13 +266,25 @@ cy.get('#escape-attribute').should(
 <!-- fiddle Implicit Assertions / .should() - have.attr matching part of the string -->
 
 ```html
-<a id="my-link" href="/some/complex/link-123">My link</a>
+<a id="my-link" href="/some/complex/link-123" title="home page"
+  >My link</a
+>
 ```
 
 If we want to just check presence of an attribute, we can use the "have.attr" assertion with the attribute name
 
 ```js
 cy.get('#my-link').should('have.attr', 'id')
+```
+
+**Note:** the "have.attr" assertion changes the subject yielded to the next command or assertion, unlike most assertions. When confirming the attributes it is useful if we want to confirm something about the attribute value. For example, if we want to check if the element has the attribute and the attribute has specific length, we could chain the assertions:
+
+```js
+// the anchor title should be at least 5 characters
+cy.get('#my-link')
+  .should('have.attr', 'title')
+  .its('length')
+  .should('be.greaterThan', 5)
 ```
 
 If we know the expected attribute value, we can add it as the third argument to the `should(...)` assertion.
