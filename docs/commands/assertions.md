@@ -265,6 +265,8 @@ cy.get('#escape-attribute').should(
 
 <!-- fiddle Implicit Assertions / .should() - have.attr matching part of the string -->
 
+This recipe is available as a video [Use Cypress Have.Attr Assertion](https://youtu.be/8HaNYv5KUxE).
+
 ```html
 <a id="my-link" href="/some/complex/link-123" title="home page"
   >My link</a
