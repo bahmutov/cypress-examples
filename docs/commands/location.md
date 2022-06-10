@@ -99,6 +99,47 @@ cy.location('search').should((search) => {
 
 <!-- fiddle-end -->
 
+### Chained commands
+
+<!-- fiddle cy.location() / chained commands -->
+
+```js
+// mock the cy.location command to set up the rest of the test
+cy.stub(cy, 'location')
+  .withArgs('pathname')
+  .returns(cy.wrap('/api/v1/item/470'))
+```
+
+Let's say our current url is `<host>/api/v1/item/N` and we want to get the number `N` and confirm it is `470`. We can get the pathname and extract the item number.
+
+```js skip
+cy.location('pathname')
+  .should('include', '/item/')
+  .then((pathname) => {
+    const parts = pathname.split('/')
+    return parts[parts.length - 1]
+  })
+  .should('equal', '470')
+```
+
+The actions inside the `.then(callback)` can be written directly through the Cypress commands like `cy.invoke`, each command passing the modified subject to the next.
+
+```js
+cy.location('pathname')
+  .should('include', '/item/')
+  // subject is a string "..."
+  .invoke('split', '/')
+  // subject is string[]
+  .should('not.be.empty')
+  // we can use Lodash _.last
+  // to yield the last element
+  .then(Cypress._.last)
+  // subject is a string
+  .should('equal', '470')
+```
+
+<!-- fiddle-end -->
+
 ## [cy.url()](https://on.cypress.io/url)
 
 To get the current URL string, use the `cy.url()` command.
