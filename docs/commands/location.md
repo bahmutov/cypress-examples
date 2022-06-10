@@ -101,6 +101,8 @@ cy.location('search').should((search) => {
 
 ### Chained commands
 
+You can watch the next test examples in the video [Check Part Of The URL Using Chained Commands](https://youtu.be/ovNH_UJK62s).
+
 <!-- fiddle cy.location() / chained commands -->
 
 ```js
