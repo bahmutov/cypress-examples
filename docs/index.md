@@ -210,6 +210,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Click each item](./recipes/click-each-item.md)
 - [Find duplicates](./recipes/find-duplicates.md)
 - HTML [Dialog element examples](./recipes/dialog-element.md)
+- [Compare two numbers on the page](./recipes/compare-numbers.md)
 
 ### Cypress secrets recipes
 
