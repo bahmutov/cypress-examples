@@ -1707,3 +1707,26 @@ cy.wrap(42, 'wrapped number')
 ## Assertion message
 
 See how to avoid [message truncation](../recipes/see-more-in-assertions.md)
+
+## Use strongest assertion
+
+You can validate the data shown or used by the web application in many ways. I would advise to pick the strongest assertion possible to catch any unexpected changes that might happen.
+
+<!-- fiddle Use strongest assertion -->
+
+```html
+<strong>Phone: </strong>
+<span class="phone">(123) 456-7890</span>
+```
+
+```js
+// the weakest assertion
+cy.get('.phone').invoke('text').should('be.a', 'string')
+// a much stronger assertion
+const phoneFormat = /^\(\d{3}\) \d{3}-\d{4}$/
+cy.contains('.phone', phoneFormat)
+// the strongest is to confirm the exact value
+cy.get('.phone').should('have.text', '(123) 456-7890')
+```
+
+<!-- fiddle-end -->
