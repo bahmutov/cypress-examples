@@ -1708,7 +1708,7 @@ cy.wrap(42, 'wrapped number')
 
 See how to avoid [message truncation](../recipes/see-more-in-assertions.md)
 
-## Use strongest assertion
+## Use the strongest assertion
 
 You can validate the data shown or used by the web application in many ways. I would advise to pick the strongest assertion possible to catch any unexpected changes that might happen.
 
