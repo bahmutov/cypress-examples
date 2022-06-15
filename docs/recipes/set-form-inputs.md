@@ -45,4 +45,6 @@ cy.document()
   })
 ```
 
+Watch the video [Set Multiple Input Fields Inside A Form At Once](https://youtu.be/HAJXZ8Pr50E).
+
 <!-- fiddle-end -->
