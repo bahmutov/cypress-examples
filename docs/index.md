@@ -215,6 +215,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Get input element by its label](recipes/form-input-by-label.md) by writing a custom command
 - Confirm the values entered in the [input elements in a form](./recipes/form-values.md)
 - [Form input validation](./recipes/form-validation.md)
+- Set [multiple form inputs at once](./recipes/set-form-inputs.md)
 
 ### Cypress secrets recipes
 
