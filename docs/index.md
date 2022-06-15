@@ -150,13 +150,11 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Iterate over elements using `.each` command](./recipes/each-example.md)
 - [Non-breaking space](recipes/non-breaking-space.md)
 - [Checking a dynamic property added to the `window` object](./recipes/window-property.md)
-- [Get input element by its label](recipes/form-input-by-label.md) by writing a custom command
 - [Set nested property inside the environment object](recipes/set-env-prop.md) when using [Cypress.env](https://on.cypress.io/env)
 - [Find elements by exact class or text](recipes/find-by-class-or-text.md)
 - [Assert the selected value or multiple values](recipes/selected-value.md) in a `<select>` element
 - [Select an item by id](./recipes/select-value-by-id.md)
 - [Get the inner text of a list of elements](./recipes/get-text-list.md)
-- [Form input validation](./recipes/form-validation.md)
 - [Retry-ability examples](./recipes/retry-ability.md)
   - [Count retries](./recipes/retry-ability.md#count-retries)
 - [Get multiple fields at once](./recipes/get-multiple-fields.md)
@@ -195,7 +193,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Check the results of [multiplication](./recipes/check-multiplication.md) shown on the page
 - [Parse numbers](./recipes/parse-numbers.md) in the text
 - Get the value of an [input element](./recipes/input-element-value.md)
-- Confirm the values entered in the [input elements in a form](./recipes/form-values.md)
 - Combine two jQuery objects into one in the recipe [combine lists](./recipes/combine-lists.md)
 - Confirm the phone number after [replacing all `-` characters](./recipes/replace-all.md)
 - Check if [a list contains the given text](./recipes/contains-text-in-list.md)
@@ -212,6 +209,12 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - HTML [Dialog element examples](./recipes/dialog-element.md)
 - [Compare two numbers on the page](./recipes/compare-numbers.md)
 - Controlling the [window.confirm](./recipes/window-confirm.md) dialog
+
+### Working with forms recipes
+
+- [Get input element by its label](recipes/form-input-by-label.md) by writing a custom command
+- Confirm the values entered in the [input elements in a form](./recipes/form-values.md)
+- [Form input validation](./recipes/form-validation.md)
 
 ### Cypress secrets recipes
 
