@@ -1712,7 +1712,7 @@ See how to avoid [message truncation](../recipes/see-more-in-assertions.md)
 
 You can validate the data shown or used by the web application in many ways. I would advise to pick the strongest assertion possible to catch any unexpected changes that might happen.
 
-<!-- fiddle.only Use strongest assertion -->
+<!-- fiddle Use strongest assertion -->
 
 ```html
 <strong>Phone: </strong>
@@ -1731,5 +1731,7 @@ cy.contains('.phone', phoneFormat)
 // the strongest is to confirm the exact value
 cy.get('.phone').should('have.text', '(123) 456-7890')
 ```
+
+Watch the video [Use Stronger Assertions](https://youtu.be/HkXx79JE2nU).
 
 <!-- fiddle-end -->
