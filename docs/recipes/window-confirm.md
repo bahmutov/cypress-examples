@@ -46,4 +46,6 @@ cy.contains('Ask user').click()
 cy.contains('output', 'No')
 ```
 
+Watch the video [Stub The Window Confirm Popups](https://youtu.be/4nxrivWXYnM).
+
 <!-- fiddle-end -->
