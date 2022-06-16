@@ -209,6 +209,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - HTML [Dialog element examples](./recipes/dialog-element.md)
 - [Compare two numbers on the page](./recipes/compare-numbers.md)
 - Controlling the [window.confirm](./recipes/window-confirm.md) dialog
+- [Change textContent](./recipes/change-text.md)
 
 ### Working with forms recipes
 
