@@ -66,6 +66,29 @@ cy.get('#log-fruits li')
 
 <!-- fiddle-end -->
 
+### cy.log yields the original argument
+
+Because `cy.log` yields `undefined`, Cypress will yield the original argument to the next command or assertion. For example, let's print the element's node name and then confirm its value.
+
+<!-- fiddle .log() / yields the original argument -->
+
+```html
+<button name="log-me">Submit</button>
+```
+
+```js
+cy.get('[name=log-me]')
+  // "have.prop" assertion yields the value
+  // of that HTML prop
+  .should('have.prop', 'nodeName')
+  // prints the nodeName value to the Command Log
+  // and yields it to the next step
+  .then(cy.log)
+  .should('equal', 'BUTTON')
+```
+
+<!-- fiddle-end -->
+
 ### cy.log binds its arguments
 
 When you call `cy.log(arg)` due to JavaScript rules, the value of the argument `arg` is _bound_ immediately, but the printing happens _asynchronously_ because every declared Cypress command is chained and executes after the previous command has finished. The following test shows both incorrect and correct way of printing the value of an HTML element.
