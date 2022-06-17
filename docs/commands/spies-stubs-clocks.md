@@ -722,6 +722,32 @@ expect(cart.init).to.have.been.calledBefore(cart.finalize)
 
 <!-- fiddle-end -->
 
+### Stub window.open
+
+If an application tries to open a second tab by calling `window.open(url, ...)`, you must [prevent it](https://glebbahmutov.com/blog/cypress-second-tab/). Let's stub the method `open` and check the arguments after the call.
+
+<!-- fiddle cy.stub() / stub window.open -->
+
+```html
+<button id="help">Show help</button>
+<script>
+  document
+    .getElementById('help')
+    .addEventListener('click', () => {
+      open('/help', '_blank')
+    })
+</script>
+```
+
+```js
+cy.window().then((win) => cy.stub(win, 'open').as('open'))
+cy.contains('button', 'Show help').click()
+// confirm the call arguments
+cy.get('@open').should('have.been.calledWith', '/help', '_blank')
+```
+
+<!-- fiddle-end -->
+
 ### Stub window.alert
 
 If the application is using `window.alert` to show short messages to the user, you can use `cy.stub` to intercept those calls and avoid blocking the test runner.
