@@ -23,4 +23,6 @@ cy.get('select option')
 cy.get('select').should('have.value', '718')
 ```
 
+Watch the video [Select An Option By Partial Text Match](https://youtu.be/tUWZTHfUkNA).
+
 <!-- fiddle-end -->

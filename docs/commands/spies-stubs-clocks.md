@@ -746,6 +746,8 @@ cy.contains('button', 'Show help').click()
 cy.get('@open').should('have.been.calledWith', '/help', '_blank')
 ```
 
+Watch the video [Stub Window Open Method And Confirm The Call Arguments](https://youtu.be/zPLr_YHZckU).
+
 <!-- fiddle-end -->
 
 ### Stub window.alert
