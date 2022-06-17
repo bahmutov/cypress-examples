@@ -152,8 +152,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Checking a dynamic property added to the `window` object](./recipes/window-property.md)
 - [Set nested property inside the environment object](recipes/set-env-prop.md) when using [Cypress.env](https://on.cypress.io/env)
 - [Find elements by exact class or text](recipes/find-by-class-or-text.md)
-- [Assert the selected value or multiple values](recipes/selected-value.md) in a `<select>` element
-- [Select an item by id](./recipes/select-value-by-id.md)
 - [Get the inner text of a list of elements](./recipes/get-text-list.md)
 - [Retry-ability examples](./recipes/retry-ability.md)
   - [Count retries](./recipes/retry-ability.md#count-retries)
@@ -203,13 +201,19 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Empty child elements](./recipes/empty-elements.md) before comparing the text
 - Get the [own text of an element](./recipes/own-text.md)
 - Verify the shown price is [within certain dollar range](./recipes/dollar-range.md)
-- [Select value from an `optgroup` element](./recipes/optgroup.md)
 - [Click each item](./recipes/click-each-item.md)
 - [Find duplicates](./recipes/find-duplicates.md)
 - HTML [Dialog element examples](./recipes/dialog-element.md)
 - [Compare two numbers on the page](./recipes/compare-numbers.md)
 - Controlling the [window.confirm](./recipes/window-confirm.md) dialog
 - [Change textContent](./recipes/change-text.md)
+
+### Selecting an option recipes
+
+- [Select value from an `optgroup` element](./recipes/optgroup.md)
+- [Select an item by partial text match](./recipes/select-by-index.md)
+- [Assert the selected value or multiple values](recipes/selected-value.md) in a `<select>` element
+- [Select an item by id](./recipes/select-value-by-id.md)
 
 ### Working with forms recipes
 
