@@ -31,7 +31,7 @@ Sometimes you might want to pick a random element from selected elements on the 
 </script>
 ```
 
-```js
+```js skip
 // first, make sure the elements are on the page
 cy.get('#items li')
   .should('have.length.gt', 3)
@@ -53,6 +53,24 @@ cy.get('#items li')
   .click()
 // confirm 1 element got "clicked" class
 cy.get('#items .clicked').should('have.length', 1)
+```
+
+Alternative solution: pick a random index of an element and use [cy.eq](https://on.cypress.io/eq) command.
+
+```js
+// first, make sure the elements are on the page
+cy.get('#items li')
+  .should('have.length.gt', 3)
+  // get the number of elements
+  .its('length')
+  .then((n) => Cypress._.random(0, n - 1))
+  .then((k) => {
+    cy.log(`picked random index ${k}`)
+    // get all elements again and pick one
+    cy.get('#items li').eq(k).click()
+    // confirm the click
+    cy.get('#items .clicked').should('have.length', 1)
+  })
 ```
 
 <!-- fiddle-end -->
