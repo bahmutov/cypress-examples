@@ -73,6 +73,8 @@ cy.get('#items li')
   })
 ```
 
+Watch the video [Click A Random Element](https://youtu.be/CHpIu0HucKw).
+
 <!-- fiddle-end -->
 
 ## Click several checkboxes
