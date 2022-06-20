@@ -33,6 +33,17 @@ cy.get('a')
   .should('have.length', 3)
 ```
 
+**Tip:** instead of using camel-case property name, you can call the `getPropertyValue` method on the object returned by the `window.getComputedStyle` method:
+
+```js skip
+cy.get('selector')
+  .then(($el) => {
+    return window.getComputedStyle(el)
+  })
+  .invoke('getPropertyValue', 'text-decoration')
+// yields the string
+```
+
 <!-- fiddle-end -->
 
 Watch the video [Select Elements By Computed Style](https://youtu.be/WUQpyB-oquE).
