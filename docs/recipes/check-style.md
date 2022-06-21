@@ -33,4 +33,6 @@ cy.get('#contains-example')
   .should('equal', '600')
 ```
 
+Watch the video [Check CSS Text Decoration Property](https://youtu.be/Ij3g0W_oxPE).
+
 <!-- fiddle-end -->
