@@ -208,6 +208,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Controlling the [window.confirm](./recipes/window-confirm.md) dialog
 - [Change textContent](./recipes/change-text.md)
 - [Check element style](./recipes/check-style.md)
+- [Keep it simple](./recipes/keep-it-simple.md)
 
 ### Selecting an option recipes
 
