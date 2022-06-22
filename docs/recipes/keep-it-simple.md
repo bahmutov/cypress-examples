@@ -15,6 +15,8 @@ cy.get('@text').should('match', /cypress/i)
 expect('CYPRESSIO').to.match(/cypressio/i)
 ```
 
+Watch the video [Keep It Simple (When Writing Cypress Assertions)](https://youtu.be/MGl7IAwLTlo).
+
 For more examples, see the [Assertions page](./../commands/assertions.md).
 
 <!-- fiddle-end -->
