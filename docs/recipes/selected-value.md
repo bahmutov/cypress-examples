@@ -102,6 +102,42 @@ cy.get('select').invoke('val').should('equal', '457')
 
 <!-- fiddle-end -->
 
+## Selecting the random option
+
+<!-- fiddle Select the random option -->
+
+Imagine we have a `<select>` element and want to select one of its options randomly.
+
+```html
+<select>
+  <option value="456">apples</option>
+  <option value="457">oranges</option>
+  <option value="458">bananas</option>
+</select>
+```
+
+```js
+// get the number of options available
+cy.get('select option')
+  .its('length')
+  // pick a random number between 0 and n-1
+  // using the Lodash _.random function
+  .then((n) => Cypress._.random(0, n - 1))
+  // print the picked random number
+  .then(cy.log)
+  // and then use the cy.select command
+  // to select it from the element
+  .then((index) => {
+    cy.get('select').select(index)
+  })
+// confirm the selected value
+cy.get('select')
+  .invoke('val')
+  .should('be.oneOf', ['456', '457', '458'])
+```
+
+<!-- fiddle-end -->
+
 ## Select the last option
 
 Similarly, we can select the last option in two steps: first, find the value of the last `<option>` element, then select it in the `<select>` element.
