@@ -733,7 +733,7 @@ If an application tries to open a second tab by calling `window.open(url, ...)`,
 <script>
   document
     .getElementById('help')
-    .addEventListener('click', () => {
+    .addEventListener('click', function () {
       open('/help', '_blank')
     })
 </script>
