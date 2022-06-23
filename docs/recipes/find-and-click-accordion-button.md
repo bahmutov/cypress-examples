@@ -82,4 +82,6 @@ cy.contains('button', "I'm here").should('be.visible').click()
 cy.get('@alert').should('have.been.calledOnceWith', 'Clicked!')
 ```
 
+Watch the video [Find And Click An Accordion With A Button](https://youtu.be/U6oqiu12rfg).
+
 <!-- fiddle-end -->
