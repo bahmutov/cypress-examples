@@ -951,7 +951,7 @@ The `cy.contains` command can find the element even if the text is split across 
 <!-- fiddle contains / needs a single element -->
 
 ```html
-<ul id="fruits">
+<ul id="sell-fruits">
   <li>
     <span class="name">Apples</span>
     <span class="price">$4.00</span>
@@ -960,7 +960,7 @@ The `cy.contains` command can find the element even if the text is split across 
 ```
 
 ```js
-cy.contains('#fruits li', 'Apples $4.00')
+cy.contains('#sell-fruits li', 'Apples $4.00')
 ```
 
 <!-- fiddle-end -->
