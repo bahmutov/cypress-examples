@@ -209,6 +209,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Change textContent](./recipes/change-text.md)
 - [Check element style](./recipes/check-style.md)
 - [Keep it simple](./recipes/keep-it-simple.md)
+- [Find and Click The Accordion With A Button](./recipes/find-and-click-accordion-button.md)
 
 ### Selecting an option recipes
 

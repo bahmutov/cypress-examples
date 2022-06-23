@@ -130,6 +130,8 @@ cy.get('#main-bold p:has(b)').should('have.length', 2)
 
 <!-- fiddle-end -->
 
+For another use of `:has` selector, see the recipe [Find and Click The Accordion With A Button](../recipes/find-and-click-accordion-button.md).
+
 #### :has with :not selector
 
 We can also combine `:has` with `:not` selectors to find all paragraphs without `<b>` elements.
