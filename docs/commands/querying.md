@@ -109,11 +109,11 @@ cy.get('#checks input:not(:checked)').should('have.length', 2)
 
 <!-- fiddle-end -->
 
-#### Containing other elements by selector
+#### :has selector
 
-Let's find all paragraphs with bold text inside.
+We can find elements that contain some other element using the `:has` selector. Let's find all paragraphs with bold text inside.
 
-<!-- fiddle cy.get / with jQuery has selector -->
+<!-- fiddle cy.get / with jQuery :has selector -->
 
 ```html
 <div id="main-bold">
@@ -128,7 +128,22 @@ Let's find all paragraphs with bold text inside.
 cy.get('#main-bold p:has(b)').should('have.length', 2)
 ```
 
+<!-- fiddle-end -->
+
+#### :has with :not selector
+
 We can also combine `:has` with `:not` selectors to find all paragraphs without `<b>` elements.
+
+<!-- fiddle.only cy.get / with jQuery :has and :not selectors -->
+
+```html
+<div id="main-bold">
+  <p>First paragraph</p>
+  <p>Second <b>paragraph</b></p>
+  <p>Third paragraph</p>
+  <p>Fourth <b>paragraph</b></p>
+</div>
+```
 
 ```js
 cy.get('#main-bold p:not(:has(b))')
