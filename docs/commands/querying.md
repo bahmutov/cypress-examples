@@ -134,7 +134,7 @@ cy.get('#main-bold p:has(b)').should('have.length', 2)
 
 We can also combine `:has` with `:not` selectors to find all paragraphs without `<b>` elements.
 
-<!-- fiddle.only cy.get / with jQuery :has and :not selectors -->
+<!-- fiddle cy.get / with jQuery :has and :not selectors -->
 
 ```html
 <div id="main-bold">
@@ -941,6 +941,27 @@ cy.contains('#spaces', 'LEGO:  blocks'.replace(/\s+/g, ' ').trim())
 <!-- fiddle-end -->
 
 <!-- prettier-ignore-end -->
+
+### cy.contains and children elements
+
+The `cy.contains` command can find the element even if the text is split across its children elements.
+
+<!-- fiddle contains / needs a single element -->
+
+```html
+<ul id="fruits">
+  <li>
+    <span class="name">Apples</span>
+    <span class="price">$4.00</span>
+  </li>
+</ul>
+```
+
+```js
+cy.contains('#fruits li', 'Apples $4.00')
+```
+
+<!-- fiddle-end -->
 
 ### Extract part of the text
 
