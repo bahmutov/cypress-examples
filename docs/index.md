@@ -211,6 +211,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Keep it simple](./recipes/keep-it-simple.md)
 - [Find and Click The Accordion With A Button](./recipes/find-and-click-accordion-button.md)
 - [Check meta tags and page title](./recipes/check-meta-tags.md)
+- Confirm the [text from the first element is present in the second element](./recipes/text-in-another-element.md)
 
 ### Selecting an option recipes
 
