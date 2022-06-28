@@ -31,4 +31,6 @@ cy.get('#current-date')
   })
 ```
 
+Watch the video [Confirm The Text From The First Element Is Present In The Second Element](https://youtu.be/eWxrLNmJbE0).
+
 <!-- fiddle-end -->
