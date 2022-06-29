@@ -574,21 +574,30 @@ const greeter = {
 }
 
 const stub = cy.stub(greeter, 'greet')
-stub.callThrough() // if you want non-matched calls to call the real method
+// all non-matched calls should call the real method
+stub.callThrough()
+// all calls with a string argument should get "Hi"
 stub.withArgs(Cypress.sinon.match.string).returns('Hi')
+// all calls with a number argument should raise an error
 stub
   .withArgs(Cypress.sinon.match.number)
   .throws(new Error('Invalid name'))
-
+// let us confirm the stub is working
+// case 1: if we call it with a string argument
+// it returns "Hi"
 expect(greeter.greet('World')).to.equal('Hi')
+// case 2: if we call it with a number argument
+// it raises an error
 // @ts-ignore
 expect(() => greeter.greet(42)).to.throw('Invalid name')
 expect(greeter.greet).to.have.been.calledTwice
 
-// non-matched calls goes the actual method
+// case 3: non-matched calls invoke the actual method
 // @ts-ignore
 expect(greeter.greet()).to.equal('Hello, undefined!')
 ```
+
+Watch the video [Stub A Method Depending On The Call Arguments](https://youtu.be/ILZfNnheFDk).
 
 <!-- fiddle-end -->
 
