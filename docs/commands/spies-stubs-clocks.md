@@ -592,6 +592,8 @@ expect(greeter.greet()).to.equal('Hello, undefined!')
 
 <!-- fiddle-end -->
 
+Read the blog post [Lock Down Sinon Stub](https://glebbahmutov.com/blog/lock-down-sinon-stub/).
+
 ### Stub a property
 
 If we want to temporarily replace an object's property (not a method), we can use `.value`
