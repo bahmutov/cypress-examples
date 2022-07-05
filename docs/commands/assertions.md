@@ -390,12 +390,25 @@ cy.wrap(2, 'Two').should('satisfy', Cypress._.isFinite)
 </table>
 ```
 
+You can use the Chai assertion `include` to check if one string contains another string.
+
+```js
+expect('Hello, World')
+  .to.include('Hello')
+  // "contains" assertion is an alias to "include"
+  .and.to.contain('World')
+```
+
+There is also a Chai assertion `string` that also checks if a string includes another string.
+
 ```js
 // chai assertion "string" checks the presence of substring
 cy.get('#substrings tbody tr:first td:first')
   .invoke('text')
   .then((s) => {
+    // the string "s" contains the substring "Column"
     expect(s).to.string('Column')
+    // the string "s" does not include the substring "Row"
     expect(s).to.not.string('Row')
   })
 ```
