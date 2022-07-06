@@ -1,6 +1,6 @@
 # Getting Text from List of Elements
 
-<!-- fiddle.only Get text list -->
+<!-- fiddle Get text list -->
 
 Imagine we have HTML elements.
 
