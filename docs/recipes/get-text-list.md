@@ -1,6 +1,6 @@
 # Getting Text from List of Elements
 
-<!-- fiddle Get text list -->
+<!-- fiddle.only Get text list -->
 
 Imagine we have HTML elements.
 
@@ -53,6 +53,18 @@ cy.get('.matching')
   .and('deep.equal', ['first', 'third', 'fourth'])
 ```
 
+You can extract the logic to get the text from the list of elements into its own utility function.
+
+```js
+const getTexts = ($el) => {
+  return Cypress._.map($el, 'innerText')
+}
+cy.get('.matching')
+  .should('have.length', 3)
+  .then(getTexts)
+  .should('deep.equal', ['first', 'third', 'fourth'])
+```
+
 <!-- fiddle-end -->
 
 So the final advice to extract text from the list of found elements is to use the Lodash `_.map` method.
@@ -62,6 +74,8 @@ cy.get('.matching').then(($els) =>
   Cypress._.map($els, 'innerText'),
 )
 ```
+
+Find this recipe in the video [Get Text From A List Of Elements](https://youtu.be/T5Aqa1KjIqQ).
 
 ## Array vs jQuery object
 
