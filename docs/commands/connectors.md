@@ -112,6 +112,24 @@ cy.get('.connectors-its-ul>li').should('have.length.gt', 2)
 
 <!-- fiddle-end -->
 
+### Array index
+
+When dealing with a collection, like an Array or a jQuery object, you can pass an index to get a single item.
+
+<!-- fiddle its / array index -->
+
+```js
+cy.wrap(['hello', 'there', 'world'])
+  // index starts with 0, so we will get
+  // the second item in the array
+  .its(2)
+  .should('equal', 'world')
+```
+
+<!-- fiddle-end -->
+
+See also [get the last item](../recipes/last-item.md) recipe.
+
 ### Retries automatically
 
 The `cy.its` command retries finding the property until the property exists or the command times out. You can control the retry period by setting an explicit `timeout` parameter. For example, when checking a response from the `cy.request` command, the subject cannot change, thus you can safely use `cy.its('property', {timeout: 0})` option.
