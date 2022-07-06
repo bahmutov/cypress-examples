@@ -212,6 +212,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Find and Click The Accordion With A Button](./recipes/find-and-click-accordion-button.md)
 - [Check meta tags and page title](./recipes/check-meta-tags.md)
 - Confirm the [text from the first element is present in the second element](./recipes/text-in-another-element.md)
+- Confirm the [input element clears non-number input](./recipes/input-clears-nan.md) within a certain time limit
 
 ### Selecting an option recipes
 
