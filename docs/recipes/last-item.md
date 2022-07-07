@@ -8,9 +8,26 @@ Imagine we have a list of items and want to check the last one. Assume the list 
 const list = [1, 2, 3]
 ```
 
+We could grab the last item using the "traditional" index access
+
+```js
+cy.wrap(list)
+  .then((items) => {
+    return items[items.length - 1]
+  })
+  .should('equal', 3)
+```
+
 We can grab the last item by invoking the Array's `at` method. By passing the `-1` parameter, we get the last item.
 
 ```js
+cy.wrap(list)
+  .then((items) => {
+    return items.at(-1)
+  })
+  .should('equal', 3)
+// better: invoke the "at" method using cy.invoke
+// https://on.cypress.io/invoke
 cy.wrap(list).invoke('at', -1).should('equal', 3)
 // get the second to last item
 cy.wrap(list).invoke('at', -2).should('equal', 2)

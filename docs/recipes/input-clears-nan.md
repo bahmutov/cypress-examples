@@ -34,4 +34,6 @@ cy.get('#count', { timeout: 200 })
   .should('have.value', '123')
 ```
 
+Watch this recipe in the video [The Input Element Clears Invalid Values After 1 Second](https://youtu.be/IVoDbs7hraU).
+
 <!-- fiddle-end -->
