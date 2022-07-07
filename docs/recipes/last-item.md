@@ -40,4 +40,6 @@ Cypress bundles Lodash library. We can use its `_.last` method to get the last i
 cy.wrap(list).then(Cypress._.last).should('equal', 3)
 ```
 
+Watch this recipe in the video [Get The Last Item In An Array](https://youtu.be/lvpLU0EpmGs).
+
 <!-- fiddle-end -->
