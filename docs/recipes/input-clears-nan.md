@@ -17,6 +17,8 @@
 </script>
 ```
 
+Let's confirm the input clears an invalid value after about one second.
+
 ```js
 cy.get('#count')
   .type('Hello{enter}')
