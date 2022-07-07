@@ -36,4 +36,22 @@ cy.get('#count', { timeout: 200 })
 
 Watch this recipe in the video [The Input Element Clears Invalid Values After 1 Second](https://youtu.be/IVoDbs7hraU).
 
+We can also write this test without [cy.wait](https://on.cypress.io/wait) command. We can precisely control the application's clock using the [cy.clock](https://on.cypress.io/clock) and the [cy.tick](https://on.cypress.io/tick) commands.
+
+```js
+// freeze the application's clock
+cy.clock()
+cy.get('#count').clear().type('wrong{enter}')
+// advance the clock instantly by 990ms
+cy.tick(990)
+// the wrong value still is present
+cy.get('#count').should('have.value', 'wrong')
+// cross the 1 second mark by advancing
+// the application's clock another 20ms
+cy.tick(20)
+// and the input immediately is cleared
+// since the application "thinks" that 1010ms have passed
+cy.get('#count', { timeout: 0 }).should('have.value', '')
+```
+
 <!-- fiddle-end -->
