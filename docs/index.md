@@ -214,6 +214,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Confirm the [text from the first element is present in the second element](./recipes/text-in-another-element.md)
 - Confirm the [input element clears non-number input](./recipes/input-clears-nan.md) within a certain time limit
 - Get [the last item of an array](./recipes/last-item.md)
+- [Stub Geolocation](./recipes/stub-geolocation.md) to test error handling
 
 ### Selecting an option recipes
 

@@ -848,6 +848,44 @@ expect(person.name(), 'restored method').to.equal('Joe')
 
 Note: all Cypress stubs and spies are restored automatically before each test.
 
+### Stub and call the argument callback
+
+If the stubbed method expects a callback function to be called, Sinon has a helper for that.
+
+<!-- fiddle Stub and call the argument callback -->
+
+```js
+const fs = {
+  writeFile(onSuccess, onError) {
+    // if writing fails, the app calls "onError"
+    onError(new Error('fs.writeFile failed'))
+  },
+}
+```
+
+Let's stub the `fs.writeFile` method to simulate an error.
+
+```js
+const testError = new Error('A test error')
+cy.stub(fs, 'writeFile')
+  // we "implement" the same principle in our stub
+  // it should call the "onError" function
+  // which is the call's argument at position index 1
+  .callsArgWith(1, testError)
+  .as('writeFile')
+// call the application code
+fs.writeFile(cy.stub().as('onSuccess'), cy.stub().as('onError'))
+// and confirm the expected calls were made
+// first check the positive assertion
+// then the negative one
+cy.get('@onError').should('have.been.calledOnceWith', testError)
+cy.get('@onSuccess').should('not.have.been.called')
+```
+
+<!-- fiddle-end -->
+
+See another example in the recipe [Stub Geolocation](../recipes/stub-geolocation.md).
+
 ## [cy.clock()](https://on.cypress.io/clock)
 
 To control time in the browser, use the `cy.clock()` command.
