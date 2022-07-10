@@ -1,6 +1,14 @@
 # Querying
 
-Examples of querying for DOM elements in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io/api) and read [Selecting Elements: Best Practices Guide](https://on.cypress.io/best-practices#Selecting-Elements)
+Examples of querying for DOM elements in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io/api) and read [Selecting Elements: Best Practices Guide](https://on.cypress.io/best-practices#Selecting-Elements). All Cypress querying commands automatically retry until the elements are found, see the [retry-ability examples](../recipes/retry-ability.md).
+
+```js
+// checks the page until it finds an element with class "title"
+cy.get('.title')
+// all querying commands have a built-in existence assertion
+// the above command is equivalent to:
+cy.get('.title').should('exist')
+```
 
 ## [cy.get()](https://on.cypress.io/get)
 
