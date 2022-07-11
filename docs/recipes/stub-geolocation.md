@@ -52,6 +52,23 @@ cy.get('@getCurrentPosition').should('have.been.calledOnce')
 
 Stubbing a function and calling an argument passed by caller is a common operation, thus Sinon.js has a built-in mechanism for it via `callsArg` and `callsArgWith` methods.
 
+```js skip
+// instead of implementing a function "callsFake"
+cy.stub(
+  win.navigator.geolocation,
+  'getCurrentPosition',
+).callsFake((onSuccess, onError) => {
+  // our stub just calls the "onError" argument
+  onError(error)
+})
+// we can simply say "stub calls the argument at index 1"
+// with the given argument "error"
+cy.stub(
+  win.navigator.geolocation,
+  'getCurrentPosition',
+).callsArgWith(1, error)
+```
+
 <!-- fiddle Test geolocation error via Sinon callsArgWith -->
 
 ```html
