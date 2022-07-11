@@ -1,14 +1,15 @@
 # Stub Geolocation
 
-<!-- fiddle Test geolocation error -->
+Imagine we have an application that tries to fetch the user's geographic location via [Geolocation API getCurrentPosition](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition) method. We want to confirm the application handles the error case correctly.
 
-See the [Geolocation API getCurrentPosition](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition).
+## Sinon.js callsFake
+
+<!-- fiddle Test geolocation error via Sinon callsFake -->
 
 ```html
 <div id="message" />
 <button id="locate">Locate me</button>
 <script>
-  const message = document.getElementById('message')
   document
     .getElementById('locate')
     .addEventListener('click', () => {
@@ -17,6 +18,55 @@ See the [Geolocation API getCurrentPosition](https://developer.mozilla.org/en-US
           // success getting the browser location
         },
         function onError(err) {
+          const message = document.getElementById('message')
+          message.innerText = err.message
+        },
+      )
+    })
+</script>
+```
+
+```js
+// simulate the browser API calling
+// the "onError" callback function
+// passed by the app to geolocation.getCurrentPosition
+const error = new Error('Test geo error')
+cy.window().then((win) => {
+  cy.stub(win.navigator.geolocation, 'getCurrentPosition')
+    .callsFake((onSuccess, onError) => {
+      // our stub just calls the "onError" argument
+      onError(error)
+    })
+    .as('getCurrentPosition')
+})
+cy.get('#locate').click()
+// confirm the application behaves as it should
+cy.contains('#message', error.message)
+// and the stub was actually used
+cy.get('@getCurrentPosition').should('have.been.calledOnce')
+```
+
+<!-- fiddle-end -->
+
+## Sinon.js callsArgWith
+
+Stubbing a function and calling an argument passed by caller is a common operation, thus Sinon.js has a built-in mechanism for it via `callsArg` and `callsArgWith` methods.
+
+<!-- fiddle Test geolocation error via Sinon callsArgWith -->
+
+```html
+<div id="message" />
+<button id="locate">Locate me</button>
+<script>
+  document
+    .getElementById('locate')
+    .addEventListener('click', () => {
+      navigator.geolocation.getCurrentPosition(
+        function onSuccess() {
+          // success getting the browser location
+        },
+        function onError(err) {
+          const message = document.getElementById('message')
           message.innerText = err.message
         },
       )
