@@ -2,6 +2,8 @@
 
 Imagine we have an application that tries to fetch the user's geographic location via [Geolocation API getCurrentPosition](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition) method. We want to confirm the application handles the error case correctly.
 
+Find this recipe shown in the video [Cypress Stub For Geolocation getCurrentPosition Method Using Sinon.js](https://youtu.be/zR6o_tdJKDk).
+
 ## Sinon.js callsFake
 
 <!-- fiddle Test geolocation error via Sinon callsFake -->
