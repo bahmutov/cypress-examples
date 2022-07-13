@@ -828,6 +828,31 @@ cy.get('#tag-example')
 
 ## Text assertions
 
+### Two elements
+
+Let's say we want to confirm that the text is the same in two elements A and B. We don't know the text, so we need to get it from one of the elements.
+
+<!-- fiddle Implicit Assertions / Text / .should() - two elements -->
+
+```html
+<div class="A">Brown fox</div>
+<div class="B">Brown fox</div>
+```
+
+```js
+// cy.get yields a jQuery object
+cy.get('.A')
+  // get the text from jQuery object
+  .invoke('text')
+  // to use the yielded text
+  // use the cy.then command
+  .then((text) => {
+    cy.contains('.B', text)
+  })
+```
+
+<!-- fiddle-end -->
+
 ### Match a regular expression
 
 <!-- fiddle Implicit Assertions / Text / .should() - match a regular expression -->
