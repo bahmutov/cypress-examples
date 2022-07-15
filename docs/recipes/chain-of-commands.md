@@ -26,4 +26,6 @@ cy.log('third')
 
 ![Cypress inserts new commands correctly](./pics/insert.png)
 
+Read the blog post [Cypress Cannot Add Out-Of-Band Commands](https://glebbahmutov.com/blog/cypress-out-of-band/).
+
 <!-- fiddle-end -->
