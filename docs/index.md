@@ -216,6 +216,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Get [the last item of an array](./recipes/last-item.md)
 - [Stub Geolocation](./recipes/stub-geolocation.md) to test error handling
 - Cannot [insert new Cypress commands out-of-band](./recipes/chain-of-commands.md)
+- test [prefers-color-scheme CSS](./recipes/prefers-color-scheme.md)
 
 ### Selecting an option recipes
 
