@@ -433,7 +433,7 @@ cy.wrap(p)
 
 ### Promises are eager
 
-As soon as a promise object is created, it start running. Other Cypress commands are chained first and run one after another. To create a Promise and wrap it after a Cypress commands completes, construct the Promise inside `.than` callback.
+As soon as a promise object is created, it start running. Other Cypress commands are chained first and run one after another. To create a Promise and wrap it after a Cypress commands completes, construct the Promise inside `.then` callback.
 
 <!-- fiddle cy.wrap() / promises are eager -->
 
