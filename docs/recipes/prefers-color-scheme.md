@@ -2,6 +2,8 @@
 
 <!-- fiddle prefers-color-scheme -->
 
+Read the blog post [Emulate Media In Cypress Tests](https://glebbahmutov.com/blog/cypress-emulate-media/).
+
 ```html
 <style>
   @media (prefers-color-scheme: dark) {
