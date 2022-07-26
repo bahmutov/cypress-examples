@@ -71,6 +71,36 @@ cy.get('h4,h5,h6').should('have.length.gt', 1)
 
 Cypress querying commands use [jQuery selectors](https://api.jquery.com/category/selectors/) that go beyond the standard CSS selectors. Here are a couple of examples.
 
+#### :checkbox selector
+
+The [jQuery `:checkbox` selector](https://api.jquery.com/checkbox-selector/) is equivalent to `[type=checkbox]` attribute CSS selector. The jQuery docs advise to use at least the element type like `input:checkbox` to avoid the default `*:checkbox` wildcard.
+
+<!-- fiddle cy.get / using jQuery :checkbox -->
+
+```html
+<div id="checkbox-example">
+  <input type="checkbox" id="typeA" checked />
+</div>
+```
+
+```js
+cy.get('#checkbox-example input:checkbox')
+  .should('be.checked')
+  .and('have.id', 'typeA')
+  .then(($checkbox) => {
+    // the jQuery :checkbox selector returns the same elements
+    // as the [type=checkbox] attribute selector
+    cy.get('#checkbox-example input[type=checkbox]').then(
+      ($el) => {
+        // let's confirm it
+        expect($checkbox[0], 'same DOM element').to.equal($el[0])
+      },
+    )
+  })
+```
+
+<!-- fiddle-end -->
+
 #### Disabled elements
 
 <!-- fiddle cy.get / using jQuery is :disabled -->
