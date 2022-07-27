@@ -2,6 +2,59 @@
 
 For more information see [Cypress retry-ability guide](https://on.cypress.io/retry-ability).
 
+## Element added to the DOM
+
+Let's test a situation where the application inserts a new element to the DOM
+
+<!-- fiddle Retry-ability / element added to the DOM -->
+
+```html
+<div id="app-example"></div>
+<script>
+  setTimeout(() => {
+    document.getElementById('app-example').innerHTML =
+      '<div id="added">Hello</div>'
+  }, 2000)
+</script>
+```
+
+Because Cypress querying commands have the built-in existence check, all we need to do is to ask:
+
+```js
+// cy.get will retry until it finds at least one element
+// matching the selector
+cy.get('#added')
+```
+
+<!-- fiddle-end -->
+
+## Element becomes visible
+
+If an element is already hidden in the DOM and becomes visible, we can retry finding the element by adding a visibility assertion
+
+<!-- fiddle Retry-ability / element becomes visible -->
+
+```html
+<div id="app-example">
+  <div id="loader" style="display:none">Loaded</div>
+</div>
+<script>
+  setTimeout(() => {
+    document.getElementById('loader').style.display = 'block'
+  }, 2000)
+</script>
+```
+
+Because Cypress querying commands have the built-in existence check, all we need to do is to ask:
+
+```js
+// the cy.get command retries until it finds at least one visible element
+// matching the selector
+cy.get('#loader').should('be.visible')
+```
+
+<!-- fiddle-end -->
+
 ## Matching element's text
 
 Imagine the element changes its text after two seconds. We can chain [cy.get](https://on.cypress.io/get) and [cy.invoke](https://on.cypress.io/invoke) commands to get the text and then use the `match` assertion to compare the text against a regular expression.
