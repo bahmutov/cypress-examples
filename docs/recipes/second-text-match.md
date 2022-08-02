@@ -25,4 +25,6 @@ cy.get('li:contains(Apple)')
   .should('have.text', 'Apple pies')
 ```
 
+Find a video explaining this test here [Find Multiple Elements By The Partial Text Match](https://youtu.be/CRTRIaTX3hc)
+
 <!-- fiddle-end -->
