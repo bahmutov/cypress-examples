@@ -1026,7 +1026,28 @@ cy.contains('#my-name', 'My name is')
 
 <!-- fiddle-end -->
 
+### Text with double quotes
+
+Double quotes in the text you are looking for present no problem for the `cy.contains` command.
+
+<!-- fiddle contains / text with double quotes -->
+
+```html
+<div id="with-quotes">My name is "Cypress examples"</div>
+```
+
+```js
+cy.contains('name is "Cypress examples"').should(
+  'have.id',
+  'with-quotes',
+)
+```
+
+<!-- fiddle-end -->
+
 ### Escape text
+
+When using the `cy.contains` command, you need to escape the backslashes `\` characters.
 
 <!-- fiddle contains / escape text -->
 
