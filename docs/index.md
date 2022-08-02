@@ -218,6 +218,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Cannot [insert new Cypress commands out-of-band](./recipes/chain-of-commands.md)
 - Test the [prefers-color-scheme CSS](./recipes/prefers-color-scheme.md)
 - Listen to [Cypress events](./recipes/cy-events.md)
+- Grab the [second matching element by text](./recipes/second-text-match.md)
 
 ### Selecting an option recipes
 
