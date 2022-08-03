@@ -77,6 +77,7 @@ cy.window()
       args.forEach((arg) => {
         // TODO: figure out how to fail the test from such callbacks
         // maybe it is an artifact of our fiddle test load?
+        // this code works in "normal" specs that don't have fiddle
         expect(arg).to.not.contain('error')
       })
       // all is good, call the original log method
