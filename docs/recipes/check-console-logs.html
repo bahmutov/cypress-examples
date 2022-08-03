@@ -1,0 +1,13 @@
+<body>
+  <h1>Check console logs</h1>
+  <script>
+    setTimeout(() => {
+      console.log('started')
+      if (Math.random() < 1) {
+        console.log('Random error')
+      } else {
+        console.log('All is good')
+      }
+    }, 100)
+  </script>
+</body>

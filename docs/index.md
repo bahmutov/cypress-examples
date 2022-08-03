@@ -219,6 +219,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Test the [prefers-color-scheme CSS](./recipes/prefers-color-scheme.md)
 - Listen to [Cypress events](./recipes/cy-events.md)
 - Grab the [second matching element by text](./recipes/second-text-match.md)
+- Check the messages the application logs to the `console` object and [fail if there is an error message](./recipes/check-console-logs.md)
 
 ### Selecting an option recipes
 
