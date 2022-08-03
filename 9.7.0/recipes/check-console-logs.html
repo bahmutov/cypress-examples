@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Check console logs | Cypress examples (v9.7.0)</title>
+    <meta name="description" content="Static site with Cypress examples tested right from the Markdown sources">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <style>.action-focus.focus { border: 5px solid orange; } .hidden { display: none !important; }</style>
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
+    <link rel="preload" href="/cypress-examples/9.7.0/assets/css/0.styles.99096dea.css" as="style"><link rel="preload" href="/cypress-examples/9.7.0/assets/js/app.158802b9.js" as="script"><link rel="preload" href="/cypress-examples/9.7.0/assets/js/3.be46aa5a.js" as="script"><link rel="preload" href="/cypress-examples/9.7.0/assets/js/35.eadf1d38.js" as="script"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/10.57683e8c.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/100.e4e715fd.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/101.a344b0ac.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/102.c121eb00.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/103.d0fe31f5.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/104.5a85d140.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/105.9595ebd2.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/106.c48c7552.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/107.fb040bf9.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/108.9f9eb6c2.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/109.87d273fd.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/11.343438eb.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/110.c06b9edb.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/111.e596a858.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/112.1161551c.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/113.7e426003.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/12.98648426.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/13.22fe2835.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/14.e10a5b65.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/15.05405217.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/16.4978538c.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/17.61d8802d.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/18.4a198296.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/19.f895f879.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/20.fb9562ad.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/21.28310a14.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/22.03c5a8c1.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/23.7e5c5488.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/24.8af9250b.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/25.2cddc1c3.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/26.4a0bb3f6.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/27.c44c148d.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/28.fa380a1a.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/29.f40e7f20.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/30.b3da4007.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/31.23d54926.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/32.47414c5a.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/33.244829ae.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/34.e623ad2d.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/36.9e2fc487.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/37.b509522d.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/38.7669a4ed.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/39.d4ad4080.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/4.1d559bee.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/40.71c01411.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/41.6d55c94f.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/42.558894ff.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/43.f8328142.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/44.ebe44576.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/45.2c5a30fc.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/46.27c204a6.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/47.7907d7f7.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/48.d4864284.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/49.ef70beb7.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/5.e695636a.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/50.03d56642.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/51.84302d20.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/52.93e614ae.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/53.ff0226d1.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/54.84c79f42.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/55.a1286f7e.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/56.6d8c16dc.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/57.44709af7.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/58.ac416309.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/59.b8b6106d.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/6.498ff640.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/60.5b773452.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/61.2999edf3.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/62.b7f5b32a.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/63.9d91ef78.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/64.434f1223.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/65.36df544a.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/66.4976005d.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/67.25eaad2c.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/68.96744215.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/69.ca0ef516.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/7.43cc48a5.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/70.ced80e9e.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/71.9fca2b03.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/72.60d158f9.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/73.bd9be8a4.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/74.317dbe03.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/75.b04580de.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/76.e69f8faa.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/77.2b0a50c9.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/78.4139092a.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/79.c35d3ab2.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/8.4b5fe252.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/80.ff7ddd0c.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/81.59a6a45c.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/82.7d7341c0.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/83.41bed4c9.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/84.572ac8a4.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/85.fa576ff1.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/86.e364845a.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/87.819dfedb.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/88.51ad758d.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/89.81a1bfc3.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/9.4bc18de9.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/90.7981c6d8.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/91.6464f03c.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/92.a598d529.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/93.2a1cc800.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/94.ad21cbbe.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/95.1f128f98.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/96.c2a5458c.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/97.cd80b660.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/98.eecffcb3.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/99.26099ea6.js"><link rel="prefetch" href="/cypress-examples/9.7.0/assets/js/vendors~docsearch.83d4d6ef.js">
+    <link rel="stylesheet" href="/cypress-examples/9.7.0/assets/css/0.styles.99096dea.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/cypress-examples/9.7.0/" class="home-link router-link-active"><!----> <span class="site-name">Cypress examples (v9.7.0)</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/9.7.0/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/9.7.0/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Commands" class="dropdown-title"><span class="title">Commands</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/querying/" class="nav-link">
+  Querying
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/traversal/" class="nav-link">
+  Traversal
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/actions/" class="nav-link">
+  Actions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/window/" class="nav-link">
+  Window
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/viewport/" class="nav-link">
+  Viewport
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/location/" class="nav-link">
+  Location
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/navigation/" class="nav-link">
+  Navigation
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/assertions/" class="nav-link">
+  Assertions
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/misc/" class="nav-link">
+  Misc
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/connectors/" class="nav-link">
+  Connectors
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/aliasing/" class="nav-link">
+  Aliasing
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/waiting/" class="nav-link">
+  Waiting
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/network-requests/" class="nav-link">
+  Network Requests
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/files/" class="nav-link">
+  Files
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/local-storage/" class="nav-link">
+  Local Storage
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/cookies/" class="nav-link">
+  Cookies
+</a></li><li class="dropdown-item"><!----> <a href="/cypress-examples/9.7.0/commands/spies-stubs-clocks/" class="nav-link">
+  Spies, Stubs &amp; Clocks
+</a></li></ul></div></div><div class="nav-item"><a href="/cypress-examples/9.7.0/utilities/" class="nav-link">
+  Utilities
+</a></div><div class="nav-item"><a href="/cypress-examples/9.7.0/cypress-api/" class="nav-link">
+  Cypress API
+</a></div> <a href="https://github.com/bahmutov/cypress-examples" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Check console logs</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/cypress-examples/9.7.0/recipes/check-console-logs.html#check-at-the-end-of-the-test" class="sidebar-link">Check at the end of the test</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/cypress-examples/9.7.0/recipes/check-console-logs.html#check-each-console-log-call-as-it-happens" class="sidebar-link">Check each console.log call as it happens</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="check-console-logs"><a href="#check-console-logs" class="header-anchor">#</a> Check console logs</h1> <p>Imagine we have an application that can <code>console.log</code> an error message. We want to interact with the application and fail the test if there was such a log call.</p> <h2 id="check-at-the-end-of-the-test"><a href="#check-at-the-end-of-the-test" class="header-anchor">#</a> Check at the end of the test</h2> <p>We can spy on the <code>console.log</code> method calls and inspect the calls at the end of the test.</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'started'</span><span class="token punctuation">)</span>
+    <span class="token comment">// change to 1 to see the test fail</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Random error'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'All is good'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="example"><script>
+  setTimeout(() =&gt; {
+    console.log('started')
+    // change to 1 to see the test fail
+    if (Math.random() &lt; 0) {
+      console.log('Random error')
+    } else {
+      console.log('All is good')
+    }
+  }, 100)
+</script></div></div><div class="language-js extra-class"><pre class="language-js"><code>cy<span class="token punctuation">.</span><span class="token function">window</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">its</span><span class="token punctuation">(</span><span class="token string">'console'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">console</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    cy<span class="token punctuation">.</span><span class="token function">spy</span><span class="token punctuation">(</span>console<span class="token punctuation">,</span> <span class="token string">'log'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">as</span><span class="token punctuation">(</span><span class="token string">'log'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// perform some action or give app time to</span>
+<span class="token comment">// do its thing that might log an error message</span>
+cy<span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+<span class="token comment">// check the logs by going through all recorded calls</span>
+cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'@log'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span><span class="token string">'getCalls'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">calls</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// open the DevTools to see the dumped table</span>
+    console<span class="token punctuation">.</span><span class="token function">table</span><span class="token punctuation">(</span>calls<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token comment">// cy.each can work with an array of objects</span>
+  <span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">call</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// inspect each console.log argument</span>
+    call<span class="token punctuation">.</span>args<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">contain</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div> <h2 id="check-each-console-log-call-as-it-happens"><a href="#check-each-console-log-call-as-it-happens" class="header-anchor">#</a> Check each console.log call as it happens</h2> <p>We can take another approach and stub the <code>console.log</code> and inspect the arguments. If there is an error message, we can throw an error and fail the test. If there is no error message, we can call the original log method.</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'started'</span><span class="token punctuation">)</span>
+    <span class="token comment">// change to 1 to see the test fail</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Random error'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'All is good'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="example"><script>
+  setTimeout(() =&gt; {
+    console.log('started')
+    // change to 1 to see the test fail
+    if (Math.random() &lt; 0) {
+      console.log('Random error')
+    } else {
+      console.log('All is good')
+    }
+  }, 100)
+</script></div></div><div class="language-js extra-class"><pre class="language-js"><code>cy<span class="token punctuation">.</span><span class="token function">window</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">its</span><span class="token punctuation">(</span><span class="token string">'console'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">console</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    cy<span class="token punctuation">.</span><span class="token function">stub</span><span class="token punctuation">(</span>console<span class="token punctuation">,</span> <span class="token string">'log'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">callsFake</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      args<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">contain</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token comment">// all is good, call the original log method</span>
+      console<span class="token punctuation">.</span>log<span class="token punctuation">.</span><span class="token function">wrappedMethod</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// perform some action or give app time to</span>
+<span class="token comment">// do its thing that might log an error message</span>
+cy<span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bahmutov/cypress-examples/edit/master/docs/recipes/check-console-logs.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/cypress-examples/9.7.0/assets/js/app.158802b9.js" defer></script><script src="/cypress-examples/9.7.0/assets/js/3.be46aa5a.js" defer></script><script src="/cypress-examples/9.7.0/assets/js/35.eadf1d38.js" defer></script>
+  </body>
+</html>
