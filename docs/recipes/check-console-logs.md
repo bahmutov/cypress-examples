@@ -13,7 +13,7 @@ We can spy on the `console.log` method calls and inspect the calls at the end of
   setTimeout(() => {
     console.log('started')
     // change to 1 to see the test fail
-    if (Math.random() < 1) {
+    if (Math.random() < 0) {
       console.log('Random error')
     } else {
       console.log('All is good')
@@ -75,9 +75,6 @@ cy.window()
   .then((console) => {
     cy.stub(console, 'log').callsFake((...args) => {
       args.forEach((arg) => {
-        // TODO: figure out how to fail the test from such callbacks
-        // maybe it is an artifact of our fiddle test load?
-        // this code works in "normal" specs that don't have fiddle
         expect(arg).to.not.contain('error')
       })
       // all is good, call the original log method
