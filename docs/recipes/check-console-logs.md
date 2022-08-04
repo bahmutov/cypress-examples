@@ -1,6 +1,6 @@
 # Check console logs
 
-Imagine we have an application that can `console.log` an error message. We want to interact with the application and fail the test if there was such a log call.
+Imagine we have an application that can `console.log` an error message. We want to interact with the application and fail the test if there was such a log call. Watch the explanation for the tests below in the video [Fail The Test If The App Calls console.log With The Word Error](https://youtu.be/KE4A1Iupo60).
 
 ## Check at the end of the test
 
