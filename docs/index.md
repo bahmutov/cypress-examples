@@ -220,6 +220,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Listen to [Cypress events](./recipes/cy-events.md)
 - Grab the [second matching element by text](./recipes/second-text-match.md)
 - Check the messages the application logs to the `console` object and [fail if there is an error message](./recipes/check-console-logs.md)
+- Confirm the two elements have [equal attribute value](./recipes/attributes-are-equal.md)
 
 ### Selecting an option recipes
 

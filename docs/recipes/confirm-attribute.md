@@ -123,3 +123,7 @@ cy.get('#prices')
 Watch the video [Confirm Total Sum Using Data Attributes And Automatic Waiting](https://youtu.be/51WPx7gvbAU).
 
 <!-- fiddle-end -->
+
+## See also
+
+- Recipe [Attributes are equal](./attributes-are-equal.md)
