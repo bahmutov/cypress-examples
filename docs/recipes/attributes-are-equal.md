@@ -1,6 +1,6 @@
 # Attributes are equal
 
-Let's confirm the fact that the two elements have equal "data-name" attributes. We don't know the expected value of the attribute, unfortunately, just that both elements have the same non-empty string value.
+Let's confirm the fact that the two elements have equal "data-name" attributes. We don't know the expected value of the attribute, unfortunately, just that both elements have the same non-empty string value. For the explanation, watch the video [Check If Two Elements Have The Same Attribute Value](https://youtu.be/yTQf6vlWiHA).
 
 <!-- fiddle attributes are equal -->
 
