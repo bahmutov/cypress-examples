@@ -199,6 +199,28 @@ cy.wrap(person).should('deep.include', {
 
 <!-- fiddle-end -->
 
+#### `have.prop` assertion
+
+<!-- fiddle Implicit Assertions / .should() - have.prop yields the value -->
+
+```html
+<input id="my-age" value="20" />
+```
+
+```js
+cy.get('#my-age').should('have.prop', 'value', '20')
+// if we don't know the exact value, we can
+// yield its value using the "have.prop" assertion
+// and convert it to a number before checking
+// if the value falls in the given range
+cy.get('#my-age')
+  .should('have.prop', 'value')
+  .then(parseInt)
+  .should('be.within', 10, 30)
+```
+
+<!-- fiddle-end -->
+
 #### `have.attr` assertion
 
 <!-- fiddle Implicit Assertions / .should() - have.attr changes the subject -->
