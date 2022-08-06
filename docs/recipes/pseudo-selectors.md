@@ -2,7 +2,7 @@
 
 These examples are based on the article [Meet the Pseudo Class Selectors](https://css-tricks.com/pseudo-class-selectors/).
 
-### Links
+## Links
 
 <!-- fiddle pseudo-selectors / links -->
 
@@ -30,7 +30,7 @@ cy.get('[data-cy=pseudo-links]')
 
 <!-- fiddle-end -->
 
-### Empty elements
+## Empty elements
 
 Let's find all elements without any content using `:empty` pseudo selector. Notice in the markup below some `<P>` elements have no content.
 
@@ -58,7 +58,7 @@ cy.get('[data-cy=empty-elements]')
 
 <!-- fiddle-end -->
 
-### First letter
+## First letter
 
 <!-- fiddle pseudo-selectors / first letter -->
 
@@ -89,7 +89,7 @@ cy.get('[data-cy=first-letter]')
 
 <!-- fiddle-end -->
 
-### After content CSS selector `::after`
+## After content CSS selector `::after`
 
 <!-- fiddle pseudo-selectors / after selector -->
 
@@ -127,7 +127,7 @@ cy.get('[data-cy=after-example]')
 
 <!-- fiddle-end -->
 
-### Before content CSS selector `::before`
+## Before content CSS selector `::before`
 
 <!-- fiddle pseudo-selectors / before selector -->
 
