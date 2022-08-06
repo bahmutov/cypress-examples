@@ -89,7 +89,45 @@ cy.get('[data-cy=first-letter]')
 
 <!-- fiddle-end -->
 
-### Before selector
+### After content CSS selector `::after`
+
+<!-- fiddle pseudo-selectors / after selector -->
+
+```html
+<style>
+  /* add a word after each paragraph */
+  [data-cy='after-example'] p::after {
+    content: 'Joe Smith';
+    margin-left: 1em;
+  }
+</style>
+<div data-cy="after-example">
+  <p>Write more tests</p>
+</div>
+```
+
+```js
+cy.get('[data-cy=after-example]')
+  .scrollIntoView()
+  .within(() => {
+    // Cypress does not recognize the selector "p::after"
+    // because the jQuery engine does not support them
+    // so we get the content through the computed style
+    // see https://codepen.io/chriscoyier/pen/Pzzawj
+    cy.window().then((win) => {
+      cy.contains('more tests').then(($el) => {
+        const after = win.getComputedStyle($el[0], '::after')
+        const afterContent = after.getPropertyValue('content')
+        // the content is a string, thus we need to quote it
+        expect(afterContent).to.equal('"Joe Smith"')
+      })
+    })
+  })
+```
+
+<!-- fiddle-end -->
+
+### Before content CSS selector `::before`
 
 <!-- fiddle pseudo-selectors / before selector -->
 
