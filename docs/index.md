@@ -221,6 +221,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Grab the [second matching element by text](./recipes/second-text-match.md)
 - Check the messages the application logs to the `console` object and [fail if there is an error message](./recipes/check-console-logs.md)
 - Confirm the two elements have [equal attribute value](./recipes/attributes-are-equal.md)
+- Check the [table has some columns](./recipes/table-column-order.md) in the expected order
 
 ### Selecting an option recipes
 
