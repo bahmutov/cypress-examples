@@ -2,6 +2,8 @@
 
 Imagine we have a table with multiple columns. We don't need to check every column, but we want to confirm that there are three columns "Users", "Items", and "Projects" in that order.
 
+You can watch this recipe at [Confirm The Table Columns Order](https://youtu.be/zOLM8fodASY).
+
 <!-- fiddle Table column order -->
 
 ```html
