@@ -1037,10 +1037,10 @@ Double quotes in the text you are looking for present no problem for the `cy.con
 ```
 
 ```js
-cy.contains('name is "Cypress examples"').should(
-  'have.id',
-  'with-quotes',
-)
+cy.contains('div', 'name is "Cypress examples"')
+  .should('exist')
+  .scrollIntoView()
+  .should('have.id', 'with-quotes')
 ```
 
 <!-- fiddle-end -->
