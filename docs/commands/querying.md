@@ -411,6 +411,36 @@ cy.get('#specific-href a[href="index.html"]')
 
 <!-- fiddle-end -->
 
+### Attribute from a variable
+
+<!-- fiddle cy.get / attribute from a variable -->
+
+```html
+<div id="attribute-value">
+  <div data-product-id="123-04-5678">Chair</div>
+</div>
+```
+
+```js
+const productId = '123-04-5678'
+cy.get('#attribute-value')
+  // use the "productId" variable value
+  // to form the full selector string
+  // via JavaScript template string
+  .find(`[data-product-id="${productId}"]`)
+  .should('have.text', 'Chair')
+```
+
+Alternative: concatenate the variable into a string using JavaScript `+` operator
+
+```js
+cy.get(
+  '#attribute-value [data-product-id="' + productId + '"]',
+).should('have.text', 'Chair')
+```
+
+<!-- fiddle-end -->
+
 ### Get input elements with the given value
 
 See the recipe [Get input elements with the given value](../recipes/get-inputs-with-value.md).
