@@ -20,6 +20,8 @@ cy.get('#user-ssn')
   .should('have.prop', 'value')
   // yields the string value
   .should('match', /^\d\d\d-\d\d-\d\d\d\d$/)
+  // alternate regular expression
+  .and('match', /^\d{3}-\d{2}-\d{4}$/)
 ```
 
 <!-- fiddle-end -->
