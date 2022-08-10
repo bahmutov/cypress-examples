@@ -222,6 +222,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Check the messages the application logs to the `console` object and [fail if there is an error message](./recipes/check-console-logs.md)
 - Confirm the two elements have [equal attribute value](./recipes/attributes-are-equal.md)
 - Check the [table has some columns](./recipes/table-column-order.md) in the expected order
+- [Pick even, odd, or custom index elements](./recipes/filter-elements.md) using jQuery pseudo-classes like `:even`, `:odd`, `eq()`, `gt()`, and `lt()`
 
 ### Selecting an option recipes
 
