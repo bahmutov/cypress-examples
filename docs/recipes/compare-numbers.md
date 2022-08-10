@@ -42,3 +42,7 @@ cy.get('.score')
 Watch video [Compare Two Scores](https://youtu.be/wGeoWxBq3P4).
 
 <!-- fiddle-end -->
+
+## See also
+
+- [Compare attribute](./compare-attribute.md)

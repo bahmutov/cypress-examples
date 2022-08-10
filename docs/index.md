@@ -205,6 +205,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Find duplicates](./recipes/find-duplicates.md)
 - HTML [Dialog element examples](./recipes/dialog-element.md)
 - [Compare two numbers on the page](./recipes/compare-numbers.md)
+- [Compare attribute values](./recipes/compare-attribute.md)
 - Controlling the [window.confirm](./recipes/window-confirm.md) dialog
 - [Change textContent](./recipes/change-text.md)
 - [Check element style](./recipes/check-style.md)
