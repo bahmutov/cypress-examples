@@ -2,6 +2,8 @@
 
 <!-- fiddle Filter elements using jQuery pseudo-classes -->
 
+Watch this recipe explained in the video [Filter Elements Using jQuery Pseudo-Classes](https://youtu.be/ro3RPgNGw4g).
+
 ```html
 <ul>
   <li>Apples</li>
