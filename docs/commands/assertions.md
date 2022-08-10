@@ -221,6 +221,32 @@ cy.get('#my-age')
 
 <!-- fiddle-end -->
 
+#### Input should have text value matching a regular expression
+
+You can use the `have.prop` assertion to grab the text value and yield it to the next assertion.
+
+<!-- fiddle Implicit Assertions / .should() - have text value matching a regular expression -->
+
+```html
+<input id="user-ssn" value="123-45-6789" />
+```
+
+```js
+// it looks best if we know the exact value to check
+cy.get('#user-ssn').should('have.value', '123-45-6789')
+```
+
+If we don't know the exact value to expect, we can grab the `value` property and check if it follows a regular expression.
+
+```js
+cy.get('#user-ssn')
+  .should('have.prop', 'value')
+  // yields the string value
+  .should('match', /^\d\d\d-\d\d-\d\d\d\d$/)
+```
+
+<!-- fiddle-end -->
+
 #### `have.attr` assertion
 
 <!-- fiddle Implicit Assertions / .should() - have.attr changes the subject -->
