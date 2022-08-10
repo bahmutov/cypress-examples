@@ -2,6 +2,8 @@
 
 <!-- fiddle Confirm the attribute is present or not -->
 
+You can watch this recipe explained in the video [Compare Element Attribute Value](https://youtu.be/lj6cIjbPmh8).
+
 ```html
 <button id="member">Is A Member</button>
 <div id="info">User is a member?</div>
