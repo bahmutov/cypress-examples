@@ -17,11 +17,15 @@ If we don't know the exact value to expect, we can grab the `value` property and
 
 ```js
 cy.get('#user-ssn')
+  // you can invoke jQuery "val" method
+  // or use the "have.prop" assertion
   .should('have.prop', 'value')
   // yields the string value
   .should('match', /^\d\d\d-\d\d-\d\d\d\d$/)
   // alternate regular expression
   .and('match', /^\d{3}-\d{2}-\d{4}$/)
 ```
+
+Watch this recipe explained in the video [Input Text Value Matches A Regular Expression](https://youtu.be/88sIuUz6Jh0).
 
 <!-- fiddle-end -->
