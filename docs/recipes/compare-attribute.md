@@ -4,21 +4,22 @@
 
 You can watch this recipe explained in the video [Compare Element Attribute Value](https://youtu.be/lj6cIjbPmh8).
 
+```css
+#member[active] {
+  background-color: pink;
+}
+#info {
+  margin: 1rem 0;
+}
+#info[active]::after {
+  content: 'Yes';
+  margin-left: 1rem;
+}
+```
+
 ```html
 <button id="member">Is A Member</button>
 <div id="info">User is a member?</div>
-<style>
-  #member[active] {
-    background-color: pink;
-  }
-  #info {
-    margin: 1rem 0;
-  }
-  #info[active]::after {
-    content: 'Yes';
-    margin-left: 1rem;
-  }
-</style>
 <script>
   const isMember = Math.random() < 0.5
   if (isMember) {
