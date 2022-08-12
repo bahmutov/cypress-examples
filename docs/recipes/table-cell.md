@@ -2,7 +2,7 @@
 
 <!-- fiddle Table cell -->
 
-Imagine that in this table we want to find the row with the second cell having the exact text "b".
+Imagine that in this table we want to find the row with the second cell having the exact text "b". You can watch a video explaining this recipe at [Find row by the exact table cell text](https://youtu.be/ag8dClTP-kw).
 
 ```css
 table td {
