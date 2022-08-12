@@ -11,7 +11,7 @@ table td {
 }
 ```
 
-```html
+```html hide
 <table>
   <thead>
     <tr>
