@@ -227,6 +227,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Input value matching a regular expression](./recipes/input-value.md)
 - Find the table row with the [exact table cell text](./recipes/table-cell.md)
 - [Select by attribute](./recipes/select-by-attribute.md) examples
+- Select a table [cell by the column heading](./recipes/table-cell-by-column-heading.md)
 
 ### Selecting an option recipes
 
