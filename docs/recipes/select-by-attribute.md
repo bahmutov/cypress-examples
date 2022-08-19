@@ -4,6 +4,8 @@ See [jQuery selectors guide](https://api.jquery.com/category/selectors/)
 
 ## Select by the attribute presence
 
+Watch the explanation for this example in the video [Select DOM Elements With An Attribute Present Or Absent](https://youtu.be/Yyy6plSk5W0).
+
 <!-- fiddle Select by the attribute presence -->
 
 ```html hide
