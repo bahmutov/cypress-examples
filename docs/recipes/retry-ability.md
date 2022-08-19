@@ -251,7 +251,7 @@ You can split the Cypress commands if you use an element alias with the [cy.as](
 
 The following code DOES NOT work. It only retries the last command plus assertion `.first().should('have.text', 'Grapes')`. The element becomes detached from DOM when the application overwrites the entire list, and Cypress throws an error.
 
-```
+```js skip
 // DOES NOT WORK, just for demo
 cy.get('#chain-example')
   .find('#items')

@@ -226,6 +226,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Pick even, odd, or custom index elements](./recipes/filter-elements.md) using jQuery pseudo-classes like `:even`, `:odd`, `eq()`, `gt()`, and `lt()`
 - [Input value matching a regular expression](./recipes/input-value.md)
 - Find the table row with the [exact table cell text](./recipes/table-cell.md)
+- [Select by attribute](./recipes/select-by-attribute.md) examples
 
 ### Selecting an option recipes
 
