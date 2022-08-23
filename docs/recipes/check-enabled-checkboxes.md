@@ -2,6 +2,8 @@
 
 <!-- fiddle Check the enabled checkboxes -->
 
+Watch this example in the video [Check The Enabled Checkboxes](https://youtu.be/YQGGtz00JA8).
+
 ```html
 <ul>
   <li>
@@ -38,9 +40,11 @@ cy.get(':checkbox').not('[disabled]').click({ multiple: true })
 cy.get(':checkbox').not('[disabled]').check()
 ```
 
-**Best:** use the jQuery `:enabled` selector plus the [cy.check](https://on.cypress.io/check) command
+**Best:** use the jQuery [`:enabled`](https://api.jquery.com/enabled-selector/) selector plus the [cy.check](https://on.cypress.io/check) command
 
 ```js
+// use the jQuery :checkbox + :enabled selectors
+// and the cy.check command
 cy.get(':checkbox:enabled').check()
 ```
 
