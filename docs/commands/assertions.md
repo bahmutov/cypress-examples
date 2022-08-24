@@ -827,6 +827,39 @@ cy.get('#count').should(($el) => {
 
 <!-- fiddle-end -->
 
+## Checkboxes
+
+<!-- fiddle Checkbox is checked or not checked -->
+
+```html
+<ul id="checkboxes">
+  <li>
+    <input type="checkbox" name="bike" checked="checked" />
+    <label for="bike">I have a bike</label>
+  </li>
+  <li>
+    <input type="checkbox" name="car" disabled="disabled" />
+    <label for="car">I have a car</label>
+  </li>
+</ul>
+```
+
+```css hide
+li {
+  list-style-type: none;
+}
+```
+
+```js
+cy.get('[name=bike]').should('be.checked')
+cy.get('[name=car]')
+  .should('not.be.checked')
+  // we can also confirm this input checkbox is disabled
+  .and('be.disabled')
+```
+
+<!-- fiddle-end -->
+
 ## Non-input elements
 
 <!-- fiddle Implicit Assertions / .should() - non-input elements contain text -->
