@@ -229,6 +229,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Select by attribute](./recipes/select-by-attribute.md) examples
 - Select a table [cell by the column heading](./recipes/table-cell-by-column-heading.md)
 - Check only the [enabled checkboxes](./recipes/check-enabled-checkboxes.md)
+- Confirm the [input element has a value](./recipes/input-has-value.md)
 
 ### Selecting an option recipes
 
