@@ -53,6 +53,8 @@ cy.contains('table th', 'Col B')
 
 Imagine we have a table with multiple rows and want to find all rows by the certain cell values. We will use the column headings.
 
+You can find this recipe shown in the video [Find Table Rows With The Given Cells By The Column Titles](https://youtu.be/PI5EOTNwKuQ).
+
 <!-- fiddle Find all rows with certain cell values -->
 
 ```html hide
