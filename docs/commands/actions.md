@@ -702,6 +702,33 @@ cy.get('.action-radios [type="radio"]')
 
 **Tip:** Looking to check [indeterminate checkboxes](https://css-tricks.com/indeterminate-checkboxes/)? Check out the example repo [bahmutov/indeterminate-checkboxes](https://github.com/bahmutov/indeterminate-checkboxes).
 
+### The input is already checked
+
+If the input element is already checked, the `.check()` command continues
+
+<!-- fiddle check an already checked input -->
+
+```html
+<div>
+  <input type="checkbox" id="empty" />
+  Unchecked at first
+</div>
+<div>
+  <input type="checkbox" id="filled" checked />
+  Already checked
+</div>
+```
+
+```js
+// checks the input element
+cy.get('#empty').check().should('be.checked')
+// cy.check() does not nothing
+// because the input element is checked already
+cy.get('#filled').check().should('be.checked')
+```
+
+<!-- fiddle-end -->
+
 ### Get checked option
 
 You can get the currently checked option using the jQuery's [:checked selector](https://api.jquery.com/checked-selector/).
