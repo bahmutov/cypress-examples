@@ -1,4 +1,4 @@
-# Find object in an array
+# Find an object in an array
 
 Sometimes we want to confirm an array has an object. If we know all object properties we can use `deep.have` assertion:
 
