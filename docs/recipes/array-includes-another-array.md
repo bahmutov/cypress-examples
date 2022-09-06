@@ -1,5 +1,7 @@
 # Array includes another array
 
+Watch this recipe in the video [Check If An Array Of Strings Includes Another Array](https://youtu.be/1PffgLBGHWs).
+
 <!-- fiddle Array includes another array -->
 
 ```js
@@ -10,10 +12,13 @@ const list = ['China', 'US']
 list.forEach((country) => {
   expect(countries).to.include(country)
 })
-const difference = Cypress._.difference(list, countries)
-expect(difference, 'extra countries').to.be.empty
 ```
 
 We can also approach the problem differently. We can compute the difference between the small list and the large list using Lodash `_.difference` method. If the small list is included in the large list, then the small list should be empty. Otherwise, we get an error with the countries not on the list.
+
+```js
+const difference = Cypress._.difference(list, countries)
+expect(difference, 'extra countries').to.be.empty
+```
 
 <!-- fiddle-end -->
