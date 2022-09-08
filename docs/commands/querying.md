@@ -775,6 +775,36 @@ Tip: you can extract multiple values and create assertions using [cypress-should
 
 See the recipe [Computed style](../recipes/computed-style.md).
 
+### Index of the found element
+
+Imagine we want to find the list item with the class "active", and then see what is the index of the element among its siblings.
+
+<!-- fiddle cy.get / Index of the found element -->
+
+```html
+<ol id="carousel">
+  <li>apples</li>
+  <li>grapes</li>
+  <li class="active">kiwi</li>
+</ol>
+```
+
+```css hide
+li.active {
+  font-weight: bold;
+}
+```
+
+```js
+cy.get('#carousel li.active')
+  // call jQuery index() method
+  // to yield the index of the active LI item
+  .invoke('index')
+  .should('equal', 2)
+```
+
+<!-- fiddle-end -->
+
 ## [cy.contains()](https://on.cypress.io/contains)
 
 We can find elements by their content using `cy.contains()`
