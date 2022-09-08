@@ -87,3 +87,35 @@ cy.wait(1000)
 ```
 
 <!-- fiddle-end -->
+
+## Throw on console.error
+
+If we want to simply throw an error and fail the test as soon as the application calls `console.error` method, we can use `cy.stub(console, 'error').throw('Console error')`
+
+<!-- fiddle Throw an error if application uses console.error -->
+
+```html
+<script>
+  setTimeout(() => {
+    // change to 1 to see the test fail
+    if (Math.random() < 0) {
+      console.error('Something is not right')
+    } else {
+      console.log('All is good')
+    }
+  }, 100)
+</script>
+```
+
+```js
+cy.window()
+  .its('console')
+  .then((console) => {
+    cy.stub(console, 'error').throws('Console error')
+  })
+// perform some action or give app time to
+// do its thing that might log an error message
+cy.wait(1000)
+```
+
+<!-- fiddle-end -->
