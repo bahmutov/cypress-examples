@@ -43,3 +43,35 @@ cy.get('li')
 <!-- fiddle-end -->
 
 ## Select by the attribute value
+
+<!-- fiddle Select by the attribute value -->
+
+```html hide
+<ul>
+  <li data-priority="low">One</li>
+  <li data-priority="medium">Two</li>
+  <li>Three</li>
+  <li data-priority="high">Four</li>
+</ul>
+```
+
+```css hide
+[data-priority='medium'] {
+  font-weight: bolder;
+}
+```
+
+```js
+// find all LI elements that have
+// the "data-priority" attribute with value "medium"
+const priority = 'medium'
+// because the value comes from the variable priority
+// we use JavaScript template string.
+// Tip: to be safe, put the value in double quotes
+cy.get(`li[data-priority="${priority}"]`)
+  .should('have.length', 1)
+  .first()
+  .should('have.text', 'Two')
+```
+
+<!-- fiddle-end -->
