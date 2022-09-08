@@ -1,6 +1,6 @@
 # Second Text Match
 
-Imagine we have multiple elements on the page with the same text, and we want to grab the _second_ element with the given text. The command [cy.contains](https://on.cypress.io/contains) is great, but it gives us the _first_ element. We need the second. We can use the [cy.get](https://on.cypress.io/get) command with jQuery [:contains](https://api.jquery.com/contains-selector/) selector that matches the elements by the partial text. Then we can use the [cy.eq](https://on.cypresss.io/eq) command to pick the element by index.
+Imagine we have multiple elements on the page with the same text, and we want to grab the _second_ element with the given text. The command [cy.contains](https://on.cypress.io/contains) is great, but it gives us the _first_ element. We need the second. We can use the [cy.get](https://on.cypress.io/get) command with jQuery [:contains](https://api.jquery.com/contains-selector/) selector that matches the elements by the partial text. Then we can use the [cy.eq](https://on.cypress.io/eq) command to pick the element by index.
 
 <!-- fiddle The second text match -->
 
