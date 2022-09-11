@@ -411,6 +411,8 @@ cy.get('#specific-href a[href="index.html"]')
 
 <!-- fiddle-end -->
 
+If you want to combine multiple attributes, see the recipe [# Get By Attributes](../recipes/get-by-attributes.md).
+
 ### Attribute from a variable
 
 <!-- fiddle cy.get / attribute from a variable -->
