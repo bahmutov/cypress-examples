@@ -232,6 +232,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Confirm the [input element has a value](./recipes/input-has-value.md)
 - [Array includes another array](./recipes/array-includes-another-array.md)
 - Get the element's text [without text from a child element](./recipes/skip-child.md)
+- Get Elements [By Attribute That Starts With String X](./recipes/get-attribute-starts.md)
 
 ### Selecting an option recipes
 
