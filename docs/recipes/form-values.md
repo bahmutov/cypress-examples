@@ -207,6 +207,20 @@ cy.get('#signup-form')
   })
 ```
 
+Alternative solution: construct the `FormData` object
+
+```js
+cy.get('#signup-form')
+  .then(($form) => new FormData($form[0]))
+  .then(Object.fromEntries)
+  .should('deep.include', {
+    first_name: 'Joe',
+    last_name: 'Smith',
+    city: 'BO',
+    country: 'US',
+  })
+```
+
 <!-- fiddle-end -->
 
 Tip: for better object validation, take a look at [cy-spok](https://github.com/bahmutov/cy-spok) plugin.
