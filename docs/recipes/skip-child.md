@@ -1,6 +1,8 @@
 # Skip Child Element
 
-<!-- fiddle Skip child element -->
+## Remove child elements by selector
+
+<!-- fiddle Remove child elements by selector -->
 
 We need to get the "div#make" element's text, but without the text of the child element "span.picked".
 
@@ -43,3 +45,65 @@ cy.get('#make')
 ```
 
 <!-- fiddle-end -->
+
+## Remove all children elements
+
+<!-- fiddle Remove all children elements -->
+
+```html
+<div id="make">
+  Honda Civic
+  <span class="picked">(3 out of 4)</span>
+</div>
+```
+
+```css hide
+.picked {
+  font-size: smaller;
+  font-weight: lighter;
+}
+```
+
+```js
+cy.get('#make')
+  .invoke('clone')
+  .then(($el) => {
+    // remove all children elements
+    // leaving just the element itself
+    $el.children().remove()
+    return $el.text().trim()
+  })
+  .should('equal', 'Honda Civic')
+```
+
+<!-- fiddle-end -->
+
+## Use a test selector
+
+Instead of removing children elements, a better solution would be to have a test selector for the element we are interested in.
+
+<!-- fiddle Use a test selector -->
+
+```html
+<div id="make">
+  <span class="model">Honda Civic</span>
+  <span class="picked">(3 out of 4)</span>
+</div>
+```
+
+```css hide
+.picked {
+  font-size: smaller;
+  font-weight: lighter;
+}
+```
+
+```js
+cy.contains('#make .model', 'Honda Civic')
+```
+
+<!-- fiddle-end -->
+
+## See also
+
+- [Own text recipe](./own-text.md)
