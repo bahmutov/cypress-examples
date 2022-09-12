@@ -231,6 +231,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Check only the [enabled checkboxes](./recipes/check-enabled-checkboxes.md)
 - Confirm the [input element has a value](./recipes/input-has-value.md)
 - [Array includes another array](./recipes/array-includes-another-array.md)
+- Get the element's text [without text from a child element](./recipes/skip-child.md)
 
 ### Selecting an option recipes
 
