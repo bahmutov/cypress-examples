@@ -781,6 +781,8 @@ See the recipe [Computed style](../recipes/computed-style.md).
 
 Imagine we want to find the list item with the class "active", and then see what is the index of the element among its siblings.
 
+You can watch this example in the video [Get The Index Of An Element Using jQuery Method](https://youtu.be/8UhoGJEe4NY).
+
 <!-- fiddle cy.get / Index of the found element -->
 
 ```html
@@ -803,6 +805,11 @@ cy.get('#carousel li.active')
   // to yield the index of the active LI item
   .invoke('index')
   .should('equal', 2)
+  // if you want to work with the index,
+  // yield it to the next command
+  .then((index) => {
+    cy.log(`index is **${index}**`)
+  })
 ```
 
 <!-- fiddle-end -->
