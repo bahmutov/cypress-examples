@@ -23,4 +23,6 @@ cy.get('#' + Cypress.$.escapeSelector('person:age')).should(
 )
 ```
 
+Watch this example recipe in the video [Escape The Selector](https://youtu.be/oFUuI2jTWjk).
+
 <!-- fiddle-end -->

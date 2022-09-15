@@ -249,6 +249,8 @@ cy.get('.admin\\.user')
 
 <!-- fiddle-end -->
 
+See also the recipe [Escape Selector](../recipes/escape-selector.md).
+
 ### Find elements without a given class
 
 <!-- fiddle cy.get / find elements without a given class -->
