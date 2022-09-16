@@ -1,5 +1,7 @@
 # Skip Child Element
 
+Watch this recipe examples in my video [Remove Child Element Before Comparing The Element's Own Text](https://youtu.be/h5fdNd-SN8k).
+
 ## Remove child elements by selector
 
 <!-- fiddle Remove child elements by selector -->
@@ -99,6 +101,9 @@ Instead of removing children elements, a better solution would be to have a test
 ```
 
 ```js
+// using cy.get() plus assertion combination
+cy.get('#make .model').should('have.text', 'Honda Civic')
+// or even simpler by using cy.contains command
 cy.contains('#make .model', 'Honda Civic')
 ```
 
