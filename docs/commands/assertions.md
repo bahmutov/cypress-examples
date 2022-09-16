@@ -1498,7 +1498,9 @@ cy.contains('#data-attributes li', 'third')
 
 **Tip:** you can simplify checking for "data-" attributes by adding your own custom Chai assertion, see the [recipe](../recipes/add-data-assertion.md).
 
-## Confirm it is an array
+## Array assertions
+
+### Confirm it is an array
 
 <!-- fiddle Array assertions / confirm the value is an array -->
 
@@ -1508,7 +1510,38 @@ cy.wrap([1, 2, 3]).should('be.an', 'array').and('have.length', 3)
 
 <!-- fiddle-end -->
 
-## Confirm items in an array
+### Confirm array has a given value
+
+<!-- fiddle Array assertions / confirm the value is an array -->
+
+```js
+expect([1, 2, 3, 99]).to.include(99).and.not.include(42)
+expect(['hello', 'world']).to.include('world')
+```
+
+Be careful if the array contains objects. By default, JavaScript checks the references, and not values.
+
+```js
+const todos = [{ title: 'write code', completed: true }]
+expect(todos)
+  // the array includes the reference to the same object
+  .to.include(todos[0])
+  // and does not compare by value
+  .and.not.include({ title: 'write code', completed: true })
+```
+
+If you want to compare objects by value, use the "deep.include" assertion.
+
+```js
+expect(todos).to.deep.include({
+  title: 'write code',
+  completed: true,
+})
+```
+
+<!-- fiddle-end -->
+
+### Confirm items in an array
 
 <!-- fiddle Array assertions / confirm items in an array -->
 
@@ -1524,7 +1557,7 @@ cy.wrap([1, 2, 3])
 
 Watch the video [Validate Each Array Item](https://youtu.be/O4ZBRoZCP-I).
 
-## Comparing arrays
+### Comparing arrays
 
 Whenever you assert arrays and other objects, you probably mean to assert the values inside, and not the references. Thus you need to use the `deep.equal` assertion.
 
