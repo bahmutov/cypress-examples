@@ -55,6 +55,32 @@ cy.get('#loader').should('be.visible')
 
 <!-- fiddle-end -->
 
+## Element becomes visible using jQuery :visible selector
+
+You can optimize checking if an element is visible by using the jQuery `:visible` selector
+
+<!-- fiddle Retry-ability / check if an element is visible -->
+
+```html
+<div id="app-example">
+  <div id="loader" style="display:none">Loaded</div>
+</div>
+<script>
+  setTimeout(() => {
+    document.getElementById('loader').style.display = 'block'
+  }, 2000)
+</script>
+```
+
+```js
+// cy.get has a built-in existence assertion
+cy.get('#loader:visible').should('have.text', 'Loaded')
+// or use a single cy.contains command
+cy.contains('#loader:visible', 'Loaded')
+```
+
+<!-- fiddle-end -->
+
 ## Matching element's text
 
 Imagine the element changes its text after two seconds. We can chain [cy.get](https://on.cypress.io/get) and [cy.invoke](https://on.cypress.io/invoke) commands to get the text and then use the `match` assertion to compare the text against a regular expression.
