@@ -234,6 +234,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Get the element's text [without text from a child element](./recipes/skip-child.md)
 - Get Elements [By Attribute That Starts With String X](./recipes/get-attribute-starts.md)
 - How to [escape a selector](./recipes/escape-selector.md)
+- A few examples of [CSS and jQuery selectors](./recipes/selectors.md)
 
 ### Selecting an option recipes
 
