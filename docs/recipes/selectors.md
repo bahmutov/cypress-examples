@@ -1,6 +1,6 @@
 # Selectors
 
-In Cypress you can get (query) elements by CSS and jQuery selectors.
+In Cypress you can get (query) elements by CSS and jQuery selectors. Watch the video [Css And jQuery Selectors In Cypress](https://youtu.be/iQFBKIjAwIM) to see these examples in action.
 
 ## Select by id
 
