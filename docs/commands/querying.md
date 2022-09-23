@@ -1,6 +1,6 @@
 # Querying
 
-Examples of querying for DOM elements in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io/api) and read [Selecting Elements: Best Practices Guide](https://on.cypress.io/best-practices#Selecting-Elements). All Cypress querying commands automatically retry until the elements are found, see the [retry-ability examples](../recipes/retry-ability.md).
+Examples of querying for DOM elements in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io/api) and read [Selecting Elements: Best Practices Guide](https://on.cypress.io/best-practices#Selecting-Elements). All Cypress querying commands automatically retry until the elements are found, see the [retry-ability examples](../recipes/retry-ability.md). Cypress supports both [CSS and jQuery selectors](../recipes/selectors.md).
 
 ```js
 // checks the page until it finds an element with class "title"
