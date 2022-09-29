@@ -142,6 +142,59 @@ cy.location('pathname')
 
 <!-- fiddle-end -->
 
+### Match regular expression
+
+<!-- fiddle cy.location() / match regular expression -->
+
+```js
+// mock the cy.location command to set up the rest of the test
+cy.stub(cy, 'location')
+  .withArgs('pathname')
+  .returns(
+    cy.wrap('/sell/item10001/confirmation', { log: false }),
+  )
+```
+
+Let's say we want to confirm we are on the right page, but we do not control the item ID, but we know it is of the form "item(several digits)"
+
+```js
+// yields a string
+cy.location('pathname')
+  .should('match', /\/sell\/item\d+\/confirmation/)
+  // now let extract the item ID and store it using an alias
+  // we extract the id using a named capture group
+  .invoke('match', /\/sell\/item(?<id>\d+)\/confirmation/)
+  .its('groups.id')
+  // use an assertion to print the extracted ID
+  // to the Cypress Command Log
+  .should('be.a', 'string')
+  .as('itemId')
+// now let's use the alias "itemId"
+// just need "function () { ... }" callback to be able to access "this.itemId"
+cy.log('confirmed the URL').then(function () {
+  cy.log(`the item: ${this.itemId}`)
+})
+```
+
+We can also get the aliased value using `cy.get(alias)` command, which yields the value to the next command or assertion.
+
+```js
+cy.get('@itemId')
+  .should('be.a', 'string')
+  .and('have.length', 5)
+  // convert the string value to a number
+  .then(Number)
+  .then((id) => {
+    expect(id, 'id as a number').to.be.within(1_000, 20_000)
+  })
+```
+
+For more information about aliases, see [Aliasing](./aliasing.md).
+
+To get more information about named capture groups, see [JavaScript.info Capturing groups](https://javascript.info/regexp-groups).
+
+<!-- fiddle-end -->
+
 ## [cy.url()](https://on.cypress.io/url)
 
 To get the current URL string, use the `cy.url()` command.
