@@ -146,6 +146,8 @@ cy.location('pathname')
 
 <!-- fiddle cy.location() / match regular expression -->
 
+You can watch this example explained in the video [Extract A Part Of The Current Url Using A Regular Expression](https://youtu.be/y6fi8hZxcdM).
+
 ```js
 // mock the cy.location command to set up the rest of the test
 cy.stub(cy, 'location')
