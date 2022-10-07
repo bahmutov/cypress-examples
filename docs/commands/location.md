@@ -99,7 +99,36 @@ cy.location('search').should((search) => {
 
 <!-- fiddle-end -->
 
-### Chained commands
+### Fluent chained commands
+
+The above test can also be written using fluent chain of commands. Each command changes the current subject via `cy.then(callback)` parameter or by invoking a method on the current subject via `cy.invoke('method name', ...)` command. Find this example explained in the video [Fluent Cypress Command Chains](https://youtu.be/WjkAVcsZQbM).
+
+<!-- fiddle.skip cy.location() / parsed search via fluent chain -->
+
+```js
+// the full URL includes several search terms
+cy.visit(
+  'https://example.cypress.io/commands/location?search=value&id=1234',
+)
+cy.location('search')
+  .should('include', 'search=')
+  .then((s) => new URLSearchParams(s))
+  .invoke('entries')
+  .then(Array.from)
+  .then(Cypress._.fromPairs)
+  .then((o) => {
+    Cypress._.updateWith(o, 'id', Number)
+  })
+  .then(console.log)
+  .should('deep.equal', {
+    search: 'value',
+    id: 1234,
+  })
+```
+
+<!-- fiddle-end -->
+
+### Another chained commands example
 
 You can watch the next test examples in the video [Check Part Of The URL Using Chained Commands](https://youtu.be/ovNH_UJK62s).
 
@@ -171,8 +200,12 @@ cy.location('pathname')
   // to the Cypress Command Log
   .should('be.a', 'string')
   .as('itemId')
+```
+
+```js
 // now let's use the alias "itemId"
-// just need "function () { ... }" callback to be able to access "this.itemId"
+// just need "function () { ... }" callback to be able
+// to access "this.itemId" value
 cy.log('confirmed the URL').then(function () {
   cy.log(`the item: ${this.itemId}`)
 })
