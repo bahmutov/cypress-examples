@@ -143,8 +143,8 @@ cy.wrap(employee)
 Except for several assertions that DO change the subject:
 
 - `have.property` for objects
-- `have.attr` for DOM elements
-- `have.prop` for DOM elements
+- `have.attr` with 1 argument for DOM elements
+- `have.prop` with 1 argument for DOM elements
 
 as the next tests demonstrate
 
@@ -208,18 +208,24 @@ cy.wrap(person).should('deep.include', {
 ```
 
 ```js
-cy.get('#my-age').should('have.prop', 'value', '20')
+cy.get('#my-age')
+  .should('have.prop', 'value', '20')
+  // yields the original element
+  .and('have.attr', 'id', 'my-age')
 // if we don't know the exact value, we can
 // yield its value using the "have.prop" assertion
 // and convert it to a number before checking
 // if the value falls in the given range
 cy.get('#my-age')
   .should('have.prop', 'value')
+  // yields the value prop
   .then(parseInt)
   .should('be.within', 10, 30)
 ```
 
 <!-- fiddle-end -->
+
+**Note:** the assertion `have.prop <name>` yields the value of the prop "name". Assertion `have.prop <name> <value>` yields the original element.
 
 #### Input should have text value matching a regular expression
 
@@ -325,22 +331,31 @@ If we want to just check presence of an attribute, we can use the "have.attr" as
 
 ```js
 cy.get('#my-link').should('have.attr', 'id')
+// yields the value of the attribute "id"
 ```
 
-**Note:** the "have.attr" assertion changes the subject yielded to the next command or assertion, unlike most assertions. When confirming the attributes it is useful if we want to confirm something about the attribute value. For example, if we want to check if the element has the attribute and the attribute has specific length, we could chain the assertions:
+**Note:** the "have.attr" assertion with one argument changes the subject yielded to the next command or assertion, unlike most assertions. When confirming the attributes it is useful if we want to confirm something about the attribute value. For example, if we want to check if the element has the attribute and the attribute has specific length, we could chain the assertions:
 
 ```js
 // the anchor title should be at least 5 characters
 cy.get('#my-link')
   .should('have.attr', 'title')
+  // yields the value of the attribute "title"
+  .should('be.a', 'string')
   .its('length')
   .should('be.greaterThan', 5)
 ```
 
-If we know the expected attribute value, we can add it as the third argument to the `should(...)` assertion.
+If we know the expected attribute value, we can add it as the third argument to the `should(...)` assertion. In that case, the original element is yielded.
 
 ```js
-cy.get('#my-link').should('have.attr', 'id', 'my-link')
+cy.get('#my-link')
+  .should('have.attr', 'id', 'my-link')
+  // yields the original DOM element
+  .should('satisfy', Cypress.dom.isElement)
+  .and('have.attr', 'title', 'home page')
+  // yields the original DOM element again
+  .should('satisfy', Cypress.dom.isElement)
 ```
 
 If we only know a part of the expected attribute, we can first assert the attribute is present, then use an assertion to match its value.

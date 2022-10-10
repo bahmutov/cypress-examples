@@ -38,12 +38,13 @@ The SVG below comes from [Wikimedia](https://commons.wikimedia.org/wiki/Category
 cy.get('svg')
   .should('have.attr', 'width', '90')
   .and('have.attr', 'height', '90')
+  // yields the original SVG element
   // after confirming its attributes, find
   // the child <path fill="none"> element
   // and confirm its attributes
   .find('path[fill=none]')
   .should('have.attr', 'stroke-linejoin', 'bevel')
-  .wait(1000)
+  .wait(1000) // for clarity
   // change the color of the sibling "path" before it
   .prev()
   .invoke('attr', 'fill', 'red')
