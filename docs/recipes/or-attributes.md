@@ -51,3 +51,29 @@ cy.get('#person1')
 ```
 
 <!-- fiddle-end -->
+
+## OR values retries
+
+<!-- fiddle OR values retries -->
+
+Even when chaining the assertions, they still apply to the same element. Thus even if the expected value of the attribute is set later, the test still finds it correctly.
+
+```html
+<div id="person1" data-name="Bob">first person</div>
+<script>
+  setTimeout(() => {
+    document
+      .getElementById('person1')
+      .setAttribute('data-name', 'Mary')
+  }, 1000)
+</script>
+```
+
+```js
+cy.get('#person1')
+  .should('have.attr', 'data-name')
+  // yields the "data-name" attribute's value
+  .should('be.oneOf', ['Joe', 'Mary'])
+```
+
+<!-- fiddle-end -->
