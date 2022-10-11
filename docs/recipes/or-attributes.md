@@ -1,8 +1,8 @@
 # OR Attributes assertion
 
-Let's confirm that an element we found has an attribute X OR has an attribute Y.
-
 <!-- fiddle OR attributes -->
+
+Let's confirm that an element we found has an attribute X OR has an attribute Y.
 
 ```html
 <div id="person1" data-name="A">first person</div>
@@ -22,6 +22,27 @@ function hasAttribute($el) {
 
 cy.get('#person1').should(hasAttribute)
 cy.get('#person2').should(hasAttribute)
+```
+
+<!-- fiddle-end -->
+
+## OR values
+
+<!-- fiddle OR values -->
+
+Let's say we are looking for an attribute, but it can have multiple values.
+
+```html
+<div id="person1" data-name="Joe">first person</div>
+```
+
+We want to confirm the `data-name` attribute is either "Joe" or "Mary". We can get the attribute's value using `have.attr name` assertion, which yields the value, and then apply the `be.oneOf` assertion.
+
+```js
+cy.get('#person1')
+  .should('have.attr', 'data-name')
+  // yields the "data-name" attribute's value
+  .should('be.oneOf', ['Joe', 'Mary'])
 ```
 
 <!-- fiddle-end -->

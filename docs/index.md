@@ -235,7 +235,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Get Elements [By Attribute That Starts With String X](./recipes/get-attribute-starts.md)
 - How to [escape a selector](./recipes/escape-selector.md)
 - A few examples of [CSS and jQuery selectors](./recipes/selectors.md)
-- Checking if an element has [either of the two attributes](./recipes/or-attributes.md)
+- Checking if an element has [either of the two attributes](./recipes/or-attributes.md) or certain values of the attribute
 
 ### Selecting an option recipes
 
