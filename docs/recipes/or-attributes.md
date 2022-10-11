@@ -13,7 +13,12 @@ We want to confirm the given element either has the `data-name` attribute or has
 
 ```js
 function hasAttribute($el) {
-  if ($el.attr('data-name') || $el.attr('data-job')) {
+  // check the presence of an attribute
+  // using the DOM Element "hasAttribute" method
+  if (
+    $el[0].hasAttribute('data-name') ||
+    $el[0].hasAttribute('data-job')
+  ) {
     // all good, the element has one of the attributes
   } else {
     throw new Error('Missing the attributes')
