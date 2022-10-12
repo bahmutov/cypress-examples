@@ -1,5 +1,7 @@
 # OR Attributes assertion
 
+You can watch the explanation for this recipe in the video [Check One Of Several Attributes Or Its Values](https://youtu.be/qzY8-HI89DM).
+
 ## One of several possible attributes
 
 <!-- fiddle OR attributes -->
