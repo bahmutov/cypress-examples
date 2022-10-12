@@ -1,5 +1,7 @@
 # OR Attributes assertion
 
+## One of several possible attributes
+
 <!-- fiddle OR attributes -->
 
 Let's confirm that an element we found has an attribute X OR has an attribute Y.
@@ -31,7 +33,7 @@ cy.get('#person2').should(hasAttribute)
 
 <!-- fiddle-end -->
 
-## OR values
+## One of several possible values
 
 <!-- fiddle OR values -->
 
@@ -52,7 +54,7 @@ cy.get('#person1')
 
 <!-- fiddle-end -->
 
-## OR values retries
+## One of several possible values with retries
 
 <!-- fiddle OR values retries -->
 
