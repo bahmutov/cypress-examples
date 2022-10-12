@@ -9,6 +9,8 @@ Let's confirm that an element we found has an attribute X OR has an attribute Y.
 ```html
 <div id="person1" data-name="A">first person</div>
 <div id="person2" data-job="B">second person</div>
+<!-- this element lacks the attributes we are looking for -->
+<div id="person3">third person</div>
 ```
 
 We want to confirm the given element either has the `data-name` attribute or has the `data-job` attribute. We can write such non-deterministic logic using `should(callback)` function.
@@ -23,12 +25,14 @@ function hasAttribute($el) {
   ) {
     // all good, the element has one of the attributes
   } else {
-    throw new Error('Missing the attributes')
+    throw new Error('Missing the required attributes')
   }
 }
 
 cy.get('#person1').should(hasAttribute)
 cy.get('#person2').should(hasAttribute)
+// enable to see a failed assertion
+// cy.get('#person3').should(hasAttribute)
 ```
 
 <!-- fiddle-end -->
