@@ -2,6 +2,8 @@
 
 <!-- fiddle Remove the found element -->
 
+Watch this recipe in the video [Remove The Found Element](https://youtu.be/IhGHb7PV3XY).
+
 ```html
 <div id="make">
   Honda Civic
