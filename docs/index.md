@@ -237,6 +237,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - A few examples of [CSS and jQuery selectors](./recipes/selectors.md)
 - Checking if an element has [either of the two attributes](./recipes/or-attributes.md) or certain values of the attribute
 - [Remove elements](./recipes/remove-element.md) using jQuery method `.remove`
+- Stub the `window.print` method [recipe](./recipes/stub-window-print.md)
 
 ### Selecting an option recipes
 

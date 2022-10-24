@@ -1,0 +1,29 @@
+# Stub `window.print`
+
+## App calls the `window.print` method
+
+<!-- fiddle Stub window print -->
+
+```html hide
+<p>
+  Click on the button to print this page
+  <button id="print">🖨</button>
+</p>
+<script>
+  document
+    .getElementById('print')
+    .addEventListener('click', () => {
+      window.print()
+    })
+</script>
+```
+
+```js
+cy.window().then((w) => {
+  cy.stub(w, 'print').as('print')
+})
+cy.get('#print').click()
+cy.get('@print').should('be.calledOnce')
+```
+
+<!-- fiddle-end -->
