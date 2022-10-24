@@ -1,5 +1,7 @@
 # Stub `window.print`
 
+You can find this recipe shown in the video [Stub window.print Method](https://youtu.be/JzJhVEnt22s).
+
 ## App calls the `window.print` method
 
 <!-- fiddle Stub window print -->
