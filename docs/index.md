@@ -238,6 +238,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Checking if an element has [either of the two attributes](./recipes/or-attributes.md) or certain values of the attribute
 - [Remove elements](./recipes/remove-element.md) using jQuery method `.remove`
 - Stub the `window.print` method [recipe](./recipes/stub-window-print.md)
+- Find the next cell [after the active one](./recipes/next-day.md)
 
 ### Selecting an option recipes
 
