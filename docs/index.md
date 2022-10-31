@@ -262,7 +262,8 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 ### Network recipes
 
 - [Request a specific comment](./recipes/request-a-comment.md) using an ID read from the page
-- Simulate [Network errors](./recipes/network-errors.md) recipe.
-- Refactor [Requested resource not found](./recipes/request-not-found.md) code into an utility function.
+- Simulate [Network errors](./recipes/network-errors.md) recipe
+- Refactor [Requested resource not found](./recipes/request-not-found.md) code into an utility function
+- Send synthetic "offline" and "online" [events](./recipes/offline-event.md)
 
 **Tip:** interested in learning more about `cy.intercept`, `cy.request`, and the related commands? Take my [Cypress Network Testing Exercises](https://cypress.tips/courses) course.
