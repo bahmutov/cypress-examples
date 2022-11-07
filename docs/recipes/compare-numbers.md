@@ -94,6 +94,136 @@ Instead of the pyramid of callbacks, each data value is grabbed using a single f
 
 Watch this example in the video [Flatten Cypress Pyramid Of Callbacks Using Aliases](https://youtu.be/0kl1GjchqQc).
 
+## Check the numbers are ready to be compared
+
+What if the page is loading the numbers? At first, each score is showing the text "loading..." - we cannot use `parseInt` until the element has the text matching a number regular expression. No worries, thanks to the built-in [retry-ability](https://on.cypress.io/retry-ability), Cypress will retry getting the text from the element until the assertion `.invoke('text').should('match', /^\d+$/)` passes, and the number can really be converted to an integer.
+
+<!-- fiddle Check the numbers are ready -->
+
+```html hide
+<p>
+  During the tournament, the player A got
+  <span class="score" id="first-score">loading...</span> points,
+  while the player B got
+  <span class="score" id="second-score">loading...</span> points.
+</p>
+<style>
+  .score {
+    font-weight: 700;
+  }
+</style>
+<script>
+  setTimeout(() => {
+    document.getElementById('first-score').innerText = 60
+  }, 350)
+  setTimeout(() => {
+    document.getElementById('second-score').innerText = 81
+  }, 750)
+</script>
+```
+
+Get the first score from the DOM element when it shows a number
+
+```js
+cy.get('.score')
+  .first()
+  .invoke('text')
+  // it is a number
+  .should('match', /^\d+$/)
+  .then(parseInt)
+  .as('scoreA')
+```
+
+Get the second score from the DOM element when it shows a number
+
+```js
+cy.get('.score')
+  .eq(1)
+  .invoke('text')
+  // it is a number
+  .should('match', /^\d+$/)
+  .then(parseInt)
+  .as('scoreB')
+```
+
+Let's compare the numbers stored as aliases.
+
+```js
+cy.then(function () {
+  expect(this.scoreA, 'compare scores').to.be.below(this.scoreB)
+})
+```
+
+<!-- fiddle-end -->
+
+## The entire element is replaced
+
+We should be careful when checking an element - maybe the entire part of the page is replaced and our DOM reference is stale and detached from the DOM. Then we will never "see" the text "loading..." changing into a number, as the example below shows. The entire `<P>` element has its inner HTML replaced with new children elements. We should query from the top of the page and avoid keeping any inner element references.
+
+<!-- fiddle The element is replaced on load -->
+
+```html hide
+<p id="scores">
+  During the tournament, the player A got
+  <span class="score">loading...</span> points, while the player
+  B got <span class="score">loading...</span> points.
+</p>
+<style>
+  .score {
+    font-weight: 700;
+  }
+</style>
+<script>
+  setTimeout(() => {
+    document.getElementById('scores').innerHTML = `
+      During the tournament, the player A got
+      <span class="score">60</span> points,
+      while the player B got
+      <span class="score">81</span> points.
+    `
+  }, 600)
+</script>
+```
+
+Keep querying the top-level page until the first score shows a number. Even if the entire paragraph `<P>` is replaced, the `cy.get` will retry and retry until its assertion callback passes.
+
+```js skip
+cy.get('.score:first')
+  .should(($el) => {
+    expect($el.text()).to.match(/^\d+$/)
+  })
+  .invoke('text')
+  .then(parseInt)
+  .as('scoreA')
+```
+
+**Tip:** the jQuery `:first` selector gives us the first score element.
+
+An even shorter version uses the [cy.contains](https://on.cypress.io/contains) command with a regular expression argument.
+
+```js
+cy.contains('.score', /^\d+$/)
+  .invoke('text')
+  .then(parseInt)
+  .as('scoreA')
+```
+
+Get the second score from the DOM element and it should already be a number.
+
+```js
+cy.get('.score').eq(1).invoke('text').then(parseInt).as('scoreB')
+```
+
+Let's compare the numbers stored as aliases.
+
+```js
+cy.then(function () {
+  expect(this.scoreA, 'compare scores').to.be.below(this.scoreB)
+})
+```
+
+<!-- fiddle-end -->
+
 ## See also
 
 - [Compare attribute](./compare-attribute.md)
