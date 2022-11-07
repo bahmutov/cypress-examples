@@ -92,6 +92,8 @@ cy.then(function () {
 
 Instead of the pyramid of callbacks, each data value is grabbed using a single flat chain with at most one `cy.then(callback)` nesting level.
 
+Watch this example in the video [Flatten Cypress Pyramid Of Callbacks Using Aliases](https://youtu.be/0kl1GjchqQc).
+
 ## See also
 
 - [Compare attribute](./compare-attribute.md)
