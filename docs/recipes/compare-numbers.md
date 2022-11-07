@@ -224,6 +224,88 @@ cy.then(function () {
 
 <!-- fiddle-end -->
 
+## Retry until the data loads, then get it all
+
+This iteration of the same example separates checking the page until the data loads from getting the data. We retry using the `cy.contains` command just like the last time. We then get all elements with the class "score" and use the [cy.spread](https://on.cypress.io/spread) command to get the DOM elements. The DOM elements by this point should both have text with numbers.
+
+<!-- fiddle Using the cy.spread -->
+
+```html hide
+<p id="scores">
+  During the tournament, the player A got
+  <span class="score">loading...</span> points, while the player
+  B got <span class="score">loading...</span> points.
+</p>
+<style>
+  .score {
+    font-weight: 700;
+  }
+</style>
+<script>
+  setTimeout(() => {
+    document.getElementById('scores').innerHTML = `
+      During the tournament, the player A got
+      <span class="score">60</span> points,
+      while the player B got
+      <span class="score">81</span> points.
+    `
+  }, 600)
+</script>
+```
+
+```js
+cy.contains('.score', /^\d+$/)
+cy.get('.score').spread((first, second) => {
+  expect(parseInt(first.innerText)).to.be.below(
+    parseInt(second.innerText),
+  )
+})
+```
+
+<!-- fiddle-end -->
+
+## Use a single should callback
+
+<!-- fiddle Use a single should callback -->
+
+An even shorter solution might use a single `should(callback)` to check both scores - the numerical Chai assertions like `below` typically fail if the values are not numbers.
+
+```html hide
+<p id="scores">
+  During the tournament, the player A got
+  <span class="score">loading...</span> points, while the player
+  B got <span class="score">loading...</span> points.
+</p>
+<style>
+  .score {
+    font-weight: 700;
+  }
+</style>
+<script>
+  setTimeout(() => {
+    document.getElementById('scores').innerHTML = `
+      During the tournament, the player A got
+      <span class="score">60</span> points,
+      while the player B got
+      <span class="score">81</span> points.
+    `
+  }, 600)
+</script>
+```
+
+```js
+cy.get('.score').should(($scores) => {
+  const [first, second] = $scores
+  expect(parseInt(first.innerText)).to.be.below(
+    parseInt(second.innerText),
+  )
+})
+```
+
+<!-- fiddle-end -->
+
+For more `should(callback)` examples, see the [Assertions](../commands/assertions.md) page.
+
 ## See also
 
 - [Compare attribute](./compare-attribute.md)
