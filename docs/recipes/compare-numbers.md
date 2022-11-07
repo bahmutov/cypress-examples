@@ -156,6 +156,8 @@ cy.then(function () {
 
 <!-- fiddle-end -->
 
+Watch this example explained in the video [Confirm The Page Shows A Number Before Converting And Saving As An Alias](https://youtu.be/6PzXHCUD1Yc).
+
 ## The entire element is replaced
 
 We should be careful when checking an element - maybe the entire part of the page is replaced and our DOM reference is stale and detached from the DOM. Then we will never "see" the text "loading..." changing into a number, as the example below shows. The entire `<P>` element has its inner HTML replaced with new children elements. We should query from the top of the page and avoid keeping any inner element references.
