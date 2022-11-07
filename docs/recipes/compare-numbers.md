@@ -226,6 +226,8 @@ cy.then(function () {
 
 <!-- fiddle-end -->
 
+You can watch this example explained in the video [Check The Page Has Finished Updating Before Getting The Values](https://youtu.be/luY5KmvTLRg).
+
 ## Retry until the data loads, then get it all
 
 This iteration of the same example separates checking the page until the data loads from getting the data. We retry using the `cy.contains` command just like the last time. We then get all elements with the class "score" and use the [cy.spread](https://on.cypress.io/spread) command to get the DOM elements. The DOM elements by this point should both have text with numbers.
