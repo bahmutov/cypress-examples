@@ -745,6 +745,34 @@ cy.wrap({ name: 'Joe' }).then((o) => {
 
 <!-- fiddle-end -->
 
+## Existence
+
+In most cases, you do not need to explicitly check if the element exists - if the `cy.get`, `cy.contains`, etc. command finds an element, it exists. If you want to check that the element with a specific selector or text _does not_ exist, then attach the assertion.
+
+<!-- fiddle Element does not exist -->
+
+```html
+<div class="animal">fox</div>
+```
+
+```css hide
+.animal {
+  text-transform: uppercase;
+}
+```
+
+```js
+// the element text is still "fox",
+// the CSS uppercase transformation
+// does not change the cy.contains result
+cy.contains('.animal', 'FOX').should('not.exist')
+// find the element correctly
+// and use the built-in existence assertion
+cy.contains('.animal', 'fox')
+```
+
+<!-- fiddle-end -->
+
 ## Multiple assertions
 
 If you attach multiple assertions to the same command, all assertions must pass at once. For example, here is a test that shows how to correctly check the disappearing element.
