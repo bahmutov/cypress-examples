@@ -306,6 +306,8 @@ cy.get('.score').should(($scores) => {
 })
 ```
 
+Watch the explanation for this solution in the video [Use A Single Get Command With Should Callback To Detect The Loaded Numerical Scores](https://youtu.be/tk8baP3AaH0).
+
 <!-- fiddle-end -->
 
 For more `should(callback)` examples, see the [Assertions](../commands/assertions.md) page.
