@@ -2,6 +2,8 @@
 
 In addition to overwriting regular Cypress commands, we can overwrite the `should` assertion command. For example, we can automatically look up aliased values (since they were already computed by the time we get to execute the `should` command). We could always look up any values that start with `@` character.
 
+📺 You can watch this recipe explained in the video [Overwrite The cy.should Command To Automatically Look Up Aliased Values](https://youtu.be/ljOudeJ7XaA).
+
 <!-- fiddle Overwrite should command -->
 
 ```html
