@@ -230,6 +230,37 @@ cy.get('table#text-example').within(() => {
 
 <!-- fiddle-end -->
 
+### :first
+
+<!-- fiddle cy.get / with jQuery first selector -->
+
+```html
+<div id="labels">
+  <div class="label">34</div>
+  <div class="label">loading...</div>
+</div>
+```
+
+Let's check if the first label has the text "34"
+
+```js
+cy.contains('#labels .label', '34')
+```
+
+Equivalent `cy.get` command can use the `:first` jQuery selector
+
+```js
+cy.get('#labels .label:first').should('have.text', '34')
+```
+
+You can get the second or other elements by index (zero-based) using the jQuery `:eq` selector. For example, to confirm part of the second element's text:
+
+```js
+cy.get('#labels .label:eq(1)').should('include.text', 'load')
+```
+
+<!-- fiddle-end -->
+
 ### Escaping special characters
 
 If the element's selector has special characters like `.` or `:` escape the using `\\` character
