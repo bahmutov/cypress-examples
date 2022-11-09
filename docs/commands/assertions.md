@@ -1013,6 +1013,41 @@ cy.get('#math-op').should('match', (k, el) => {
 
 <!-- fiddle-end -->
 
+### contain.text
+
+<!-- fiddle Implicit Assertions / Text / .should() - contain.text -->
+
+You can check if the merged text from the found elements includes a given string using `contain.text` assertion.
+
+```html
+<div id="labels">
+  <div class="label">34</div>
+  <div class="label">loading...</div>
+</div>
+```
+
+There are two labels, thus the text it checks is "34loading.."
+
+```js
+cy.get('#labels .label').should('contain.text', '34loading')
+```
+
+It will find each string separately.
+
+```js
+cy.get('#labels .label')
+  .should('contain.text', '34')
+  .and('contain.text', 'load')
+```
+
+**Tip:** if you want to consider just the first element, you can use `cy.contains`. With this command, you can use a regular expression.
+
+```js
+cy.contains('#labels .label', /^\d+$/)
+```
+
+<!-- fiddle-end -->
+
 ### Spaces
 
 Before comparing an element text with a number, trim the spaces (if any), and convert a string into a number.
