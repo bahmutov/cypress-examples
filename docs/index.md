@@ -239,6 +239,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Remove elements](./recipes/remove-element.md) using jQuery method `.remove`
 - Stub the `window.print` method [recipe](./recipes/stub-window-print.md)
 - Find the next cell [after the active one](./recipes/next-day.md)
+- Overwrite the `should` command and [automatically look up the aliased values](./recipes/overwrite-should.md)
 
 ### Selecting an option recipes
 
