@@ -48,9 +48,9 @@ cy.wrap({ name: 'Joe' }).should('not.be.empty')
 
 <!-- fiddle-end -->
 
-## jQuery object is never empty
+## jQuery object with length zero is never empty
 
-<!-- fiddle jQuery object is never empty -->
+<!-- fiddle jQuery object with length zero is never empty -->
 
 ```html
 <ul>
@@ -59,13 +59,46 @@ cy.wrap({ name: 'Joe' }).should('not.be.empty')
 </ul>
 ```
 
-Even if there are not DOM elements, the jQuery object is not empty.
+Even if there are not DOM elements found, the jQuery object is not empty.
 
 ```js
 cy.get('li.selected')
   .should('not.be.empty')
   .and('have.length', 0)
 cy.get('li.count').should('not.be.empty').and('have.length', 2)
+```
+
+<!-- fiddle-end -->
+
+## jQuery element
+
+<!-- fiddle jQuery object without children is empty -->
+
+```html
+<ul id="one"></ul>
+<ul id="two">
+  <li>One</li>
+</ul>
+```
+
+A jQuery object without children is empty, but the list of its children ... is not empty 🤣
+
+```js
+cy.get('ul#one')
+  .should('be.empty')
+  .invoke('children')
+  .should('not.be.empty')
+  .and('have.length', 0)
+```
+
+Let's look at the list element with one child.
+
+```js
+cy.get('ul#two')
+  .should('not.be.empty')
+  .invoke('children')
+  .should('not.be.empty')
+  .and('have.length', 1)
 ```
 
 <!-- fiddle-end -->
