@@ -4,6 +4,8 @@ Let's say that in the element's text we have a price that we need to find and ex
 
 <!-- fiddle Find and parse the price -->
 
+Watch explanation for this recipe in the video [How To Unit Test Find And Parse The Price Function That Needs A jQuery Object](https://youtu.be/1iOU9ZPd0pg).
+
 ```js
 function parsePrice($el) {
   const text = $el.text()
