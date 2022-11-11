@@ -394,6 +394,17 @@ cy.get('.first')
 
 <!-- fiddle-end -->
 
+#### should be a NaN
+
+<!-- fiddle Implicit Assertions / .should() - NaN -->
+
+```js
+cy.wrap(NaN).should('be.a.NaN')
+cy.wrap(42).should('not.be.a.NaN')
+```
+
+<!-- fiddle-end -->
+
 ## Explicit Assertions
 
 ### expect
@@ -514,6 +525,17 @@ cy.get('#second li')
     // when this callback runs, both lists will be populated
     expect(firstList).to.include.members(secondList)
   })
+```
+
+<!-- fiddle-end -->
+
+### expect a NaN
+
+<!-- fiddle Explicit Assertions / expect - NaN -->
+
+```js
+expect(NaN, 'not a number').to.be.a.NaN
+expect(42).not.to.be.a.NaN
 ```
 
 <!-- fiddle-end -->
