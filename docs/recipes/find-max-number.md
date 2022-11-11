@@ -4,6 +4,8 @@ If a `cy.then(callback)` yields an element, Cypress automatically wraps it allow
 
 <!-- fiddle Find the longest route -->
 
+You can watch the explanation for this recipe in the video [Find The DOM Element With The Max Number Using Lodash maxBy Function](https://youtu.be/jBVeLoD8A-g),
+
 ```html
 <ul>
   <li class="route">A to B, 10 km</li>
