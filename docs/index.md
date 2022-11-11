@@ -242,6 +242,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Overwrite the `should` command and [automatically look up the aliased values](./recipes/overwrite-should.md)
 - Examples of ["be.empty" assertion](./recipes/empty-assertion.md)
 - Find and [parse the price string](./recipes/parse-price.md)
+- Find an element with [maximum number inside its text](./recipes/find-max-number.md)
 
 ### Selecting an option recipes
 
