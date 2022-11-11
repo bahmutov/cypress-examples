@@ -241,6 +241,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Find the next cell [after the active one](./recipes/next-day.md)
 - Overwrite the `should` command and [automatically look up the aliased values](./recipes/overwrite-should.md)
 - Examples of ["be.empty" assertion](./recipes/empty-assertion.md)
+- Find and [parse the price string](./recipes/parse-price.md)
 
 ### Selecting an option recipes
 
