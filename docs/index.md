@@ -243,6 +243,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Examples of ["be.empty" assertion](./recipes/empty-assertion.md)
 - Find and [parse the price string](./recipes/parse-price.md)
 - Find an element with [maximum number inside its text](./recipes/find-max-number.md)
+- Check if the loaded number [is positive](./recipes/positive-number.md)
 
 ### Selecting an option recipes
 
