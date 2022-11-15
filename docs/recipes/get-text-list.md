@@ -345,6 +345,8 @@ cy.get('ol li')
 
 <!-- fiddle Index of the element with the text -->
 
+Watch the explanation for this example in [Confirm The Index Of The Element With The Given Text](https://youtu.be/0d3SKQ-9WJI).
+
 ```html
 <ul id="fruits">
   <li>Apples</li>
