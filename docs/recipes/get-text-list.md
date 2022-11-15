@@ -340,3 +340,26 @@ cy.get('ol li')
 ```
 
 <!-- fiddle-end -->
+
+## Index of the element with the text
+
+<!-- fiddle Index of the element with the text -->
+
+```html
+<ul id="fruits">
+  <li>Apples</li>
+  <li>Oranges</li>
+  <li>Pears</li>
+  <li>Grapes</li>
+</div>
+```
+
+If we want to find the list element containing the text "Pear", and confirm it is the element at index 2 (the index starts at zero), we can invoke the jQuery method [index](https://api.jquery.com/index/).
+
+```js
+cy.contains('#fruits li', 'Pear')
+  .invoke('index')
+  .should('equal', 2)
+```
+
+<!-- fiddle-end -->
