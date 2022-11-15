@@ -2,7 +2,7 @@
 
 Imagine a page component that initially shows zero, but then loads and shows a number. We want to confirm that number is positive.
 
-<!-- fiddle Positive number -->
+<!-- fiddle.only Positive number -->
 
 ```html
 <div id="app">
@@ -50,6 +50,6 @@ cy.contains('#points', /[1-9]/)
 
 <!-- fiddle-end -->
 
-## See alos
+## See also
 
 - recipe [Compare two numbers](./compare-numbers.md)
