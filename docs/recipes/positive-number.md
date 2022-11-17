@@ -2,7 +2,7 @@
 
 Imagine a page component that initially shows zero, but then loads and shows a number. We want to confirm that number is positive.
 
-<!-- fiddle.only Positive number -->
+<!-- fiddle Positive number -->
 
 ```html
 <div id="app">
