@@ -12,9 +12,17 @@ Here is another example of getting the data from the page while avoiding the "py
 </p>
 ```
 
+```css hide
+span {
+  font-weight: bolder;
+}
+```
+
 We can find each word element one by one, passing the text into the `cy.then(callback)` closure.
 
 ```js skip
+// confirm the words together equal
+// 'a brown fox jumped slow'
 cy.get('#noun')
   .invoke('text')
   .then((noun) => {
