@@ -2,6 +2,8 @@
 
 Here is another example of getting the data from the page while avoiding the "pyramid of doom" of callbacks. Let's say our page has a couple of labels and we want to find them, extract the text, and maybe form the concatenated string, and check that string.
 
+📺 You can watch this recipe explained in the vide [Concatenate The Found Text Using Cypress Aliases](https://youtu.be/zSxJMbmknJA).
+
 <!-- fiddle Concatenate the found labels -->
 
 ```html
