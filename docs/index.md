@@ -244,6 +244,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Find and [parse the price string](./recipes/parse-price.md)
 - Find an element with [maximum number inside its text](./recipes/find-max-number.md)
 - Check if the loaded number [is positive](./recipes/positive-number.md)
+- [Concatenate text extracted from the page](./recipes/concat-labels.md) while avoiding the pyramid of Doom of callbacks
 
 ### Selecting an option recipes
 
