@@ -143,6 +143,8 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 
 ## Recipes
 
+### Miscellaneous recipes
+
 - [Confirm the text changes after the click](./recipes/text-changes.md)
 - [Confirm the counter is incremented after the click](./recipes/counter-increments.md)
 - [Checking the length of the list after adding or deleting an item](./recipes/add-list-item.md)
@@ -272,4 +274,18 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Refactor [Requested resource not found](./recipes/request-not-found.md) code into an utility function
 - Send synthetic "offline" and "online" [events](./recipes/offline-event.md)
 
-**Tip:** interested in learning more about `cy.intercept`, `cy.request`, and the related commands? Take my [Cypress Network Testing Exercises](https://cypress.tips/courses) course.
+## Courses
+
+I have several Cypress courses at [cypress.tips/courses](https://cypress.tips/courses)
+
+- I cover the basics of E2E and Component testing in my free course [Cypress Version 10: Fundamentals](https://cypress.tips/courses)
+- Interested in learning more about `cy.intercept`, `cy.request`, and the related commands? Take my [Cypress Network Testing Exercises](https://cypress.tips/courses) course
+- Need to step up your tests and take advantages of the [many Cypress plugins](https://on.cypress.io/plugins)? Take my course [Cypress Plugins](https://cypress.tips/courses/cypress-plugins) that covers 20+ plugins (I wrote most of them)
+
+## Videos
+
+Some of the examples and the recipes listed here are explained through short videos I post on my [YouTube channel](https://www.youtube.com/glebbahmutov). The playlist [Cypress Tips & Tricks](https://www.youtube.com/playlist?list=PLP9o9QNnQuAYYRpJzDNWpeuOVTwxmIxcI) has 400+ videos!
+
+## The newsletter
+
+Every month I write and send a newsletter [Cypress Tips & Tricks](https://cypresstips.substack.com/) with a few main news and learning resources. You can subscribe, it is absolutely free.
