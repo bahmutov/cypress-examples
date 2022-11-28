@@ -151,7 +151,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [CSS class name examples](./recipes/css-examples.md)
 - [Iterate over elements using `.each` command](./recipes/each-example.md)
 - [Non-breaking space](recipes/non-breaking-space.md)
-- [Checking a dynamic property added to the `window` object](./recipes/window-property.md)
 - [Set nested property inside the environment object](recipes/set-env-prop.md) when using [Cypress.env](https://on.cypress.io/env)
 - [Find elements by exact class or text](recipes/find-by-class-or-text.md)
 - [Get the inner text of a list of elements](./recipes/get-text-list.md)
@@ -208,7 +207,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - HTML [Dialog element examples](./recipes/dialog-element.md)
 - [Compare two numbers on the page](./recipes/compare-numbers.md)
 - [Compare attribute values](./recipes/compare-attribute.md)
-- Controlling the [window.confirm](./recipes/window-confirm.md) dialog
 - [Change textContent](./recipes/change-text.md)
 - [Check element style](./recipes/check-style.md)
 - [Keep it simple](./recipes/keep-it-simple.md)
@@ -239,7 +237,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - A few examples of [CSS and jQuery selectors](./recipes/selectors.md)
 - Checking if an element has [either of the two attributes](./recipes/or-attributes.md) or certain values of the attribute
 - [Remove elements](./recipes/remove-element.md) using jQuery method `.remove`
-- Stub the `window.print` method [recipe](./recipes/stub-window-print.md)
 - Find the next cell [after the active one](./recipes/next-day.md)
 - Overwrite the `should` command and [automatically look up the aliased values](./recipes/overwrite-should.md)
 - Examples of ["be.empty" assertion](./recipes/empty-assertion.md)
@@ -247,6 +244,13 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Find an element with [maximum number inside its text](./recipes/find-max-number.md)
 - Check if the loaded number [is positive](./recipes/positive-number.md)
 - [Concatenate text extracted from the page](./recipes/concat-labels.md) while avoiding the pyramid of Doom of callbacks
+
+### Working with the window object recipes
+
+- [Checking a dynamic property added to the `window` object](./recipes/window-property.md)
+- Controlling the [window.confirm](./recipes/window-confirm.md) dialog
+- Stub the `window.print` method [recipe](./recipes/stub-window-print.md)
+- Stub the `window.open` method [recipe](./recipes/window-open.md)
 
 ### Selecting an option recipes
 
