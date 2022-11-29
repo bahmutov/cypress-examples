@@ -111,3 +111,10 @@ cy.get('@getCurrentPosition').should('have.been.calledOnce')
 ```
 
 <!-- fiddle-end -->
+
+## See also
+
+- [Stub `window.print`](./stub-window-print.md)
+- [Stub `window.open`](./window-open.md)
+- [Stub timezone](./stub-get-timezone-method.md)
+-

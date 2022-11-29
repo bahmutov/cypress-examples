@@ -244,6 +244,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Find an element with [maximum number inside its text](./recipes/find-max-number.md)
 - Check if the loaded number [is positive](./recipes/positive-number.md)
 - [Concatenate text extracted from the page](./recipes/concat-labels.md) while avoiding the pyramid of Doom of callbacks
+- stub the [`Date.prototype.getTimezoneOffset` method](./recipes/stub-get-timezone-method.md)
 
 ### Working with the window object recipes
 
