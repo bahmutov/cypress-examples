@@ -84,3 +84,5 @@ cy.get('#fruits li .price')
 <!-- fiddle-end -->
 
 **Tip:** I used the [chai-sorted](https://www.chaijs.com/plugins/chai-sorted/) plugin to write a clear "be.sorted" assertion.
+
+**Suggestion:** it is much better to have _positive_ labels on the elements you want to select, instead of removing elements that you do not want to have included.
