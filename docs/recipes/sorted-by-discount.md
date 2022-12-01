@@ -69,7 +69,7 @@ cy.get('#fruits li .price')
   .should('be.sorted')
 ```
 
-**Bonus:** if you can remove the elements with old prices, the test would be simpler:
+**Bonus:** if you can remove the elements with old prices, the test would be simpler, as you can watch in the video 📺 [Remove Elements Before Checking The Page](https://youtu.be/DWrC1YvjKvU).
 
 ```js skip
 cy.get('#fruits li .price .old-price')
