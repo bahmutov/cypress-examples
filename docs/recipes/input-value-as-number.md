@@ -23,6 +23,8 @@ cy.get('#glass')
   .and('have.prop', 'valueAsNumber', 0.5)
 ```
 
+📺 Watch this example in the video [Input With Type Number Checking valueAsNumber Prop Example](https://youtu.be/Xymm3phZQRk).
+
 <!-- fiddle-end -->
 
 ## See also
