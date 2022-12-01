@@ -29,3 +29,7 @@ cy.get('#user-ssn')
 Watch this recipe explained in the video [Input Text Value Matches A Regular Expression](https://youtu.be/88sIuUz6Jh0).
 
 <!-- fiddle-end -->
+
+## See also
+
+- [Input value as a number](./input-value-as-number.md)
