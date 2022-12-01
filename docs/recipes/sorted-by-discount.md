@@ -69,6 +69,18 @@ cy.get('#fruits li .price')
   .should('be.sorted')
 ```
 
+**Bonus:** if you can remove the elements with old prices, the test would be simpler:
+
+```js skip
+cy.get('#fruits li .price .old-price')
+  .should('have.length', 2)
+  .invoke('remove')
+cy.get('#fruits li .price')
+  .then(($li) => Cypress._.map($li, 'innerText'))
+  .then(convertPrices)
+  .should('be.sorted')
+```
+
 <!-- fiddle-end -->
 
-**Tip:** you can use the [chai-sorted](https://www.chaijs.com/plugins/chai-sorted/) plugin to write a clear assertion.
+**Tip:** I used the [chai-sorted](https://www.chaijs.com/plugins/chai-sorted/) plugin to write a clear "be.sorted" assertion.
