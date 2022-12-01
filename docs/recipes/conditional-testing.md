@@ -353,6 +353,22 @@ Note: we only skip the rest of the test commands inside the callback. If you wan
 
 <!-- fiddle-end -->
 
+## cypress-if
+
+If you MUST use conditional commands in your tests, check out my [cypress-if](https://github.com/bahmutov/cypress-if) plugin.
+
+```js
+import 'cypress-if'
+
+cy.get('#agreed')
+  .if('not.checked')
+  .click() // IF path
+  .else()
+  .log('The user already agreed') // ELSE path
+```
+
+Read the blog post [Conditional Commands For Cypress](https://glebbahmutov.com/blog/cypress-if/).
+
 ## More examples
 
 - [Add / delete list item recipe](./add-list-item.md)
