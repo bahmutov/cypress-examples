@@ -31,6 +31,23 @@ cy.get('li').each(($li) => {
 
 <!-- fiddle-end -->
 
+## Non-dom values
+
+`cy.each` can iterate over any items from a list / jQuery object
+
+<!-- fiddle .each / even numbers -->
+
+```js
+function isEven(n) {
+  return n % 2 === 0
+}
+cy.wrap([4, 6, 8, 10]).each((n) =>
+  expect(n, 'odd').to.satisfy(isEven),
+)
+```
+
+<!-- fiddle-end -->
+
 ## Confirm prices
 
 <!-- fiddle .each / confirm prices -->
