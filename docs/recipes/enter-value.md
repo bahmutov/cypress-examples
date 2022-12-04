@@ -4,6 +4,8 @@ Imagine we have a form that shows the available money balance. The user can ente
 
 <!-- fiddle Enter value into the form -->
 
+📺 Watch this example explained in the video [Enter The Balance Value Into The Input Field](https://youtu.be/_neipNSNcms).
+
 ```css hide
 table {
   padding: 1rem;
