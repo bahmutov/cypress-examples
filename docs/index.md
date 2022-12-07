@@ -248,6 +248,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - remove optional child elements before [checking sorted prices](./recipes/sorted-by-discount.md)
 - checking a number [input value as a number](./recipes/input-value-as-number.md)
 - read a value from a table cell and [enter it into a field](./recipes/enter-value.md)
+- [paste text into a text area](./recipes/paste-event.md)
 
 ### Working with the window object recipes
 
