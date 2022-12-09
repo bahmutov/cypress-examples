@@ -230,7 +230,7 @@ cy.get('table#text-example').within(() => {
 
 <!-- fiddle-end -->
 
-### :first
+### :first and :last
 
 <!-- fiddle cy.get / with jQuery first selector -->
 
@@ -257,6 +257,25 @@ You can get the second or other elements by index (zero-based) using the jQuery 
 
 ```js
 cy.get('#labels .label:eq(1)').should('include.text', 'load')
+```
+
+<!-- fiddle-end -->
+
+### :last
+
+<!-- fiddle cy.get / with jQuery last selector -->
+
+```html
+<div id="student-names">
+  <div class="label">Joe</div>
+  <div class="label">Anna</div>
+</div>
+```
+
+We can check the last element
+
+```js
+cy.get('#student-names .label:last').should('have.text', 'Anna')
 ```
 
 <!-- fiddle-end -->
