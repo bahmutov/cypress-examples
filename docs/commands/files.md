@@ -108,8 +108,24 @@ To read a file's content, use the `cy.readFile()` command.
 // You can read a file and yield its contents
 // The filePath is relative to your project's root.
 cy.readFile('cypress.json').then((json) => {
-  expect(json).to.be.an('object')
+  expect(json, 'parsed json').to.be.an('object')
 })
+```
+
+JSON files are automatically parsed, so if you want the raw text, you need to convert it back. For example, you can go through a `Cypress.Buffer`
+
+```js
+cy.readFile('cypress.json', null)
+  .invoke('toString')
+  .should('be.a', 'string')
+```
+
+Or by convert the object to a JSON string
+
+```js
+cy.readFile('cypress.json')
+  .then(JSON.stringify)
+  .should('be.a', 'string')
 ```
 
 <!-- fiddle-end -->
