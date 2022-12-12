@@ -4,6 +4,8 @@
 
 Our goal is to pick a random 10 digit number to validate the input field. The number cannot have a leading zero.
 
+📺 Watch this recipe explained in the video [Pick A Random 10-Digit Number Without A Leading Zero](https://youtu.be/wZlT3zu7jfI).
+
 ```html hide
 <input id="number" type="number" />
 <div id="message" />
