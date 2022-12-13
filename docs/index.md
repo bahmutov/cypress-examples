@@ -250,6 +250,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - read a value from a table cell and [enter it into a field](./recipes/enter-value.md)
 - [paste text into a text area](./recipes/paste-event.md)
 - [pick a random 10 digit number](./recipes/pick-random-number.md) that does not have 0 in front
+- collect the values from the [DOM using its structure](./recipes/collect-dom.md)
 
 ### Working with the window object recipes
 
