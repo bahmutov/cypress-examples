@@ -1,5 +1,7 @@
 # Element Hides
 
+📺 Watch the explanation for this recipe in the video [Element Hides Vs Element Is Removed From The DOM](https://youtu.be/rTsnQz5jI5E).
+
 ## Element is removed from the DOM
 
 <!-- fiddle Button goes away after a click -->
