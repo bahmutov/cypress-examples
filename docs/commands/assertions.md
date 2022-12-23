@@ -1610,9 +1610,9 @@ cy.wrap([1, 2, 3]).should('be.an', 'array').and('have.length', 3)
 
 <!-- fiddle-end -->
 
-### Confirm array has a given value
+### Confirm array has a given primitive value
 
-<!-- fiddle Array assertions / confirm the value is an array -->
+<!-- fiddle Array assertions / confirm a primitive value is an array -->
 
 ```js
 expect([1, 2, 3, 99]).to.include(99).and.not.include(42)
@@ -1630,13 +1630,49 @@ expect(todos)
   .and.not.include({ title: 'write code', completed: true })
 ```
 
-If you want to compare objects by value, use the "deep.include" assertion.
+<!-- fiddle-end -->
+
+<!-- fiddle Array assertions / confirm an EXACT object is in an array -->
+
+If you want to find an object in an array and you know the EXACT full object, use the "deep.include" assertion.
 
 ```js
-expect(todos).to.deep.include({
-  title: 'write code',
-  completed: true,
-})
+const p1 = { name: 'p1', id: 1 }
+const p2 = { name: 'p2', id: 2 }
+const p3 = { name: 'p3', id: 3 }
+// if we have a reference to the object we want to find
+// it is the same as finding a primitive value
+expect([p1, p2, p3], 'object references').to.include(p2)
+// check array by value if you know the ENTIRE object
+// for finding objects by value need to use "deep.include" assertion
+expect([p1, p2, p3], 'object value')
+  .to.deep.include({
+    name: 'p3',
+    id: 3,
+  })
+  // and it does not work with partial objects
+  .and.not.deep.include({
+    name: 'p3',
+  })
+```
+
+<!-- fiddle-end -->
+
+<!-- fiddle Array assertions / confirm a partial object is in an array -->
+
+If you want to find an object in an array and you know only some of its properties, use `Cypress._.find` Lodash method.
+
+```js
+const p1 = { name: 'p1', id: 1 }
+const p2 = { name: 'p2', id: 2 }
+const p3 = { name: 'p3', id: 3 }
+// if you know a part of the object, use Lodash _.find helper method
+// that can search by a property or several properties
+// Tip: Lodash is bundled with Cypress under Cypress._
+expect(Cypress._.find([p1, p2, p3], { name: 'p3' }), 'found p3')
+  // check the found object
+  .to.be.an('object')
+  .and.have.property('id', 3)
 ```
 
 <!-- fiddle-end -->
