@@ -335,7 +335,7 @@ expect(Cypress.version).to.be.exist
 
 <!-- fiddle-end -->
 
-Here is an example of parsing Cypress version and confirming it is at least v9.
+Here is an example of parsing Cypress version and confirming it is at least v9. You can watch the explanation in the short video 📺 [Parse Cypress Version String And Confirm The Major Version](https://youtu.be/lA_2SARDS2s).
 
 <!-- fiddle Cypress.version / Parse the Cypress version to confirm the major version -->
 
