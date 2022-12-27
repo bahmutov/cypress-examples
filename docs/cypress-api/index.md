@@ -335,6 +335,21 @@ expect(Cypress.version).to.be.exist
 
 <!-- fiddle-end -->
 
+Here is an example of parsing Cypress version and confirming it is at least v9.
+
+<!-- fiddle Cypress.version / Parse the Cypress version to confirm the major version -->
+
+```js
+console.log(Cypress.version)
+const [major, minor, patch] = Cypress.version
+  .split('.')
+  .map(Number)
+console.log({ major, minor, patch })
+expect(major, '>= v9 requires').to.be.gte(9)
+```
+
+<!-- fiddle-end -->
+
 ## [Cypress.spec](https://on.cypress.io/spec)
 
 `Cypress.spec` returns you the properties of the spec under test.
