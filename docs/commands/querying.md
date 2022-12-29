@@ -866,6 +866,23 @@ cy.get('#carousel li.active')
 
 <!-- fiddle-end -->
 
+### Case-insensitive attribute selectors
+
+🚨 Does not work, see [#25304](https://github.com/cypress-io/cypress/issues/25304)
+
+<!-- fiddle.skip cy.get / Case-insensitive selectors -->
+
+```html
+<button class="btn-PRIMARY">Green</button>
+<button class="btn-primary">Red</button>
+```
+
+```js
+cy.get('button[class=btn-primary i]').should('have.length', 2)
+```
+
+<!-- fiddle-end -->
+
 ## [cy.contains()](https://on.cypress.io/contains)
 
 We can find elements by their content using `cy.contains()`
