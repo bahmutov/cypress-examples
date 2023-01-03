@@ -253,6 +253,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - collect the values from the [DOM using its structure](./recipes/collect-dom.md)
 - element is removed from the DOM vs element hides [recipe](./recipes/element-hides.md)
 - check the parsed [JSON HTML attribute](./recipes/json-data-attribute.md)
+- check the [copyright year](./recipes/copyright-year.md)
 
 ### Working with the window object recipes
 
