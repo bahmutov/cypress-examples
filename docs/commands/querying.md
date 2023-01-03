@@ -868,6 +868,8 @@ cy.get('#carousel li.active')
 
 ### Case-insensitive attribute selectors
 
+Read [CSS case insensitive attribute selector](https://weekendprojects.dev/posts/css-case-insensitive-selector/).
+
 🚨 Does not work, see [#25304](https://github.com/cypress-io/cypress/issues/25304)
 
 <!-- fiddle.skip cy.get / Case-insensitive selectors -->
