@@ -2,7 +2,7 @@
 
 <!-- fiddle Copyright year -->
 
-The application code sets the current year in the copyright message.
+The application code sets the current year in the copyright message. How does the test know the current year to check? Watch the video 📺 [Copyright Year Cypress Test](https://youtu.be/M_AZdsf_bQw) to see this recipe in action.
 
 ```html
 <i id="copyright" />
