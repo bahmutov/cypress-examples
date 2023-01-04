@@ -1,5 +1,7 @@
 # Decimals
 
+Watch the explanation for this recipe in the video [Check The Element Contains A Number That Ends With Two Decimals](https://youtu.be/-IEFhheipzs).
+
 ## Two decimals
 
 Let's confirm the element has text that ends with two decimal numbers.
