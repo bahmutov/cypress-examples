@@ -254,6 +254,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - element is removed from the DOM vs element hides [recipe](./recipes/element-hides.md)
 - check the parsed [JSON HTML attribute](./recipes/json-data-attribute.md)
 - check the [copyright year](./recipes/copyright-year.md)
+- confirm the element's text [ends with two decimals](./recipes/decimals.md)
 
 ### Working with the window object recipes
 
