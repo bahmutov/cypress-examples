@@ -95,6 +95,8 @@ cy.wrap(person).should('have.property', 'name', 'Joe Smith')
 
 <!-- fiddle-end -->
 
+For matching objects in the arguments, see the recipe [Spy called with an object](../recipes/called-with-object.md).
+
 ### Matchers
 
 `cy.spy` and `cy.stub` match call arguments using [Sinon matchers](https://sinonjs.org/releases/latest/matchers/).

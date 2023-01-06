@@ -255,6 +255,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - check the parsed [JSON HTML attribute](./recipes/json-data-attribute.md)
 - check the [copyright year](./recipes/copyright-year.md)
 - confirm the element's text [ends with two decimals](./recipes/decimals.md)
+- confirm the spy was called [with the right object](./recipes/called-with-object.md)
 
 ### Working with the window object recipes
 
