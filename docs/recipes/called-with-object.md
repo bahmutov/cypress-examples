@@ -29,7 +29,7 @@ cy.get('@log').should('be.calledWith', 'Hello', 'world')
 
 ## Exact object
 
-If the method is called with an object, you need to confirm the object separately by yielding it after the match.
+If the method is called with an object, you can do two things: either yield it to the next assertion `deep.equal` or use the Sinon's built-in matching assertion.
 
 <!-- fiddle Exact object -->
 
@@ -47,17 +47,23 @@ cy.window()
   .then((console) => {
     cy.spy(console, 'log').as('log')
   })
+// yield the object to the next assertion
 cy.get('@log')
   .should('be.calledWith', 'User %o', Cypress.sinon.match.object)
   .its('firstCall.args.1')
   .should('deep.equal', { id: 123, name: 'Joe' })
+// use Sinon's built-in object by value match
+cy.get('@log').should('be.calledWith', 'User %o', {
+  id: 123,
+  name: 'Joe',
+})
 ```
 
 <!-- fiddle-end -->
 
 ## Partial object
 
-If we know some properties of the object, we can use `deep.include` assertion
+If we know some properties of the object, we can use `deep.include` assertion on the yielded object.
 
 <!-- fiddle Partial object -->
 
@@ -80,6 +86,15 @@ cy.get('@log')
   .its('firstCall.args.1')
   // imagine we do not know all object fields
   .should('deep.include', { name: 'Joe' })
+```
+
+Alternatively, if we know all the expected field names, we can use Sinon matchers as placeholders:
+
+```js
+cy.get('@log').should('be.calledWith', 'User %o', {
+  id: Cypress.sinon.match.number,
+  name: 'Joe',
+})
 ```
 
 <!-- fiddle-end -->
