@@ -2,6 +2,8 @@
 
 Imagine you are spying on a call using [cy.spy](https://on.cypress.io/spy) command. How do you check if the caller passed the right arguments? If you already read the examples from my [Spies, Stubs & Clocks](../commands/spies-stubs-clocks.md) page, then keep reading.
 
+📺 watch this recipe explained in the video [Check If A Spy Was Called With The Right Object](https://youtu.be/Re4bNOBqes8).
+
 ## Primitive types
 
 If the method is called with primitive arguments like strings, then it is simple to check.
