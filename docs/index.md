@@ -215,7 +215,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Confirm the [text from the first element is present in the second element](./recipes/text-in-another-element.md)
 - Confirm the [input element clears non-number input](./recipes/input-clears-nan.md) within a certain time limit
 - Get [the last item of an array](./recipes/last-item.md)
-- [Stub Geolocation](./recipes/stub-geolocation.md) to test error handling
 - Cannot [insert new Cypress commands out-of-band](./recipes/chain-of-commands.md)
 - Test the [prefers-color-scheme CSS](./recipes/prefers-color-scheme.md)
 - Listen to [Cypress events](./recipes/cy-events.md)
@@ -255,40 +254,44 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - check the parsed [JSON HTML attribute](./recipes/json-data-attribute.md)
 - check the [copyright year](./recipes/copyright-year.md)
 - confirm the element's text [ends with two decimals](./recipes/decimals.md)
-- confirm the spy was called [with the right object](./recipes/called-with-object.md)
 
-### Working with the window object recipes
+### Working with the window object
 
 - [Checking a dynamic property added to the `window` object](./recipes/window-property.md)
 - Controlling the [window.confirm](./recipes/window-confirm.md) dialog
 - Stub the `window.print` method [recipe](./recipes/stub-window-print.md)
 - Stub the `window.open` method [recipe](./recipes/window-open.md)
 
-### Selecting an option recipes
+### Selecting an option
 
 - [Select value from an `optgroup` element](./recipes/optgroup.md)
 - [Select an item by partial text match](./recipes/select-by-index.md)
 - [Assert the selected value or multiple values](recipes/selected-value.md) in a `<select>` element
 - [Select an item by id](./recipes/select-value-by-id.md)
 
-### Working with forms recipes
+### Working with forms
 
 - [Get input element by its label](recipes/form-input-by-label.md) by writing a custom command
 - Confirm the values entered in the [input elements in a form](./recipes/form-values.md)
 - [Form input validation](./recipes/form-validation.md)
 - Set [multiple form inputs at once](./recipes/set-form-inputs.md)
 
-### Cypress secrets recipes
+### Cypress secrets
 
 - [Conditional testing](./recipes/conditional-testing.md)
 - Avoid "Mixing async and sync code" by controlling the [value the code yields](./recipes/yield-value.md)
 
-### Network recipes
+### Working with network
 
 - [Request a specific comment](./recipes/request-a-comment.md) using an ID read from the page
 - Simulate [Network errors](./recipes/network-errors.md) recipe
 - Refactor [Requested resource not found](./recipes/request-not-found.md) code into an utility function
 - Send synthetic "offline" and "online" [events](./recipes/offline-event.md)
+
+## Spies and stubs
+
+- confirm the spy was called [with the right object](./recipes/called-with-object.md)
+- [Stub Geolocation](./recipes/stub-geolocation.md) to test error handling
 
 ## Courses
 
