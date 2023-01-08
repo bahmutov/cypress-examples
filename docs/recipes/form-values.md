@@ -223,4 +223,9 @@ cy.get('#signup-form')
 
 <!-- fiddle-end -->
 
-Tip: for better object validation, take a look at [cy-spok](https://github.com/bahmutov/cy-spok) plugin.
+**Tip:** for better object validation, take a look at [cy-spok](https://github.com/bahmutov/cy-spok) plugin.
+
+## See also
+
+- [jQuery form serializeArray method](./form-serialize-array.md)
+- [Form validation](./form-validation.md) recipe
