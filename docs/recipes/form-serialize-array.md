@@ -1,8 +1,10 @@
 # jQuery form serializeArray method
 
-jQuery includes [form `serializeArray` method](https://api.jquery.com/serializeArray/).
+jQuery includes [form `serializeArray` method](https://api.jquery.com/serializeArray/) you can use to get all input element's values at once.
 
 <!-- fiddle form serializeArray example -->
+
+📺 Watch the explanation for this recipe in the video [jQuery Form Serialize Array Method](https://youtu.be/Z0OUl4l5YvU).
 
 ```html
 <form>
