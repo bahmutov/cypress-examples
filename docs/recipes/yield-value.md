@@ -17,7 +17,7 @@ cy.get('#person')
   .invoke('text')
   .then((text) => {
     cy.log('text', text)
-    return text.split(' ')[1]
+    cy.wrap(text.split(' ')[1])
   })
   .should('equal', 'Smith')
 ```
@@ -70,7 +70,7 @@ cy.get('#person')
 ```js
 cy.get('#person')
   .invoke('text')
-  .then(cy.log)
+  .should('be.a', 'string')
   .then((text) => {
     return text.split(' ')[1]
   })
@@ -82,7 +82,7 @@ cy.get('#person')
 ```js
 cy.get('#person')
   .invoke('text')
-  .then(cy.log)
+  .should('be.a', 'string')
   .invoke('split', ' ')
   .its(1)
   .should('equal', 'Smith')
