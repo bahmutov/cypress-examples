@@ -5,6 +5,7 @@ const {
 
 module.exports = (on, config) => {
   on('file:preprocessor', mdPreprocessor)
-  registerBookScreenshots(on, config)
+  // https://github.com/bahmutov/cypress-book/issues/82
+  // registerBookScreenshots(on, config)
   return config
 }

@@ -194,7 +194,7 @@ cy.get('@console')
   .should('have.been.calledOnce')
   .invoke('resetHistory')
 
-cy.takeRunnerPic('each-example')
+cy.takeRunnerPic('each-example.png')
 ```
 
 <!-- fiddle-end -->

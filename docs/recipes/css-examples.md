@@ -36,7 +36,6 @@ cy.get('#accordion').then(($el) => {
 })
 cy.get('#accordion')
   .should('have.prop', 'className')
-  .then(cy.log)
   .should('equal', 'c-accordion c-accordion-active collapsed')
 ```
 
@@ -88,7 +87,7 @@ Imagine the classes are dynamic, and we do not know the exact class name, just h
 cy.get('#accordion')
   .should('have.prop', 'classList')
   .then(Array.from)
-  .then(cy.log)
+  .then(console.log)
   .invoke('some', (s) => s.startsWith('c-accordion'))
   .should('be.true')
 ```
