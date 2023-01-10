@@ -9,7 +9,7 @@ To set the viewport size and dimension, use the `cy.viewport()` command.
 <!-- fiddle.export cy.viewport() - set the viewport size and dimension -->
 
 ```js
-const viewportWidths = ['macbook-15', 'macbook-13', 'macbook-11', 'ipad-2', 'ipad-mini', 'iphone-6+', 'iphone-6', 'iphone-5', 'iphone-4', 'iphone-3'];
+const deviceViewports = ['macbook-15', 'macbook-13', 'macbook-11', 'ipad-2', 'ipad-mini', 'iphone-6+', 'iphone-6', 'iphone-5', 'iphone-4', 'iphone-3'];
 
 cy.get('.navbar').should('be.visible');
 cy.viewport(320, 480);
@@ -25,7 +25,7 @@ cy.get('.nav-item').find('a').should('be.visible');
 cy.viewport(2999, 2999);
 
 // Test viewport at different preset widths
-viewportWidths.forEach((width) => {
+deviceViewports.forEach((width) => {
   cy.viewport(width);
   cy.wait(200);
 });
