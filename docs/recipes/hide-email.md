@@ -25,8 +25,11 @@ cy.get('form').within(() => {
   // prevent the test form navigation
   // by attaching a dummy event handlers
   cy.get('button[type=submit]')
-    .invoke('click', (e) => e.preventDefault())
-    .invoke('click', cy.stub().as('clicked'))
+    // cannot use cy.invoke, as it retries
+    .then(($btn) => {
+      $btn.click((e) => e.preventDefault())
+      $btn.click(cy.stub().as('clicked'))
+    })
     .click()
 })
 // confirm our click event handler worked
