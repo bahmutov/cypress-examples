@@ -22,12 +22,12 @@ jobs:
 
       # we need our scraping config, thus check out code
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
 
       - name: Install dependencies 📦
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v3
         with:
           # just perform install
           runTests: false
@@ -40,7 +40,7 @@ jobs:
         run: echo "Cypress version is ${{ steps.cypress.outputs.version }}"
 
       - name: Export Markdown specs 🖨
-        run: node ./md-to-js https://glebbahmutov.com/cypress-examples/${{ steps.cypress.outputs.version }}
+        run: node ./md-to-js https://glebbahmutov.com/cypress-examples
 
       - name: Catch stray .only tests 🚦
         run: npm run stop-only
@@ -56,7 +56,7 @@ jobs:
         run: cat docs/**/*.js > docs/run-all-specs.js
 
       - name: Test deployed site 🧪💨
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v3
         with:
           # we have already installed all dependencies above
           install: false
@@ -70,17 +70,3 @@ jobs:
 
       - name: Delete run all specs file 🗑
         run: rm docs/run-all-specs.js
-
-      # by including "cypress.json" with bare settings
-      # users who install this package from NPM can run the specs
-      # using
-      #   npm i -D @bahmutov/cypress-examples
-      #   npx cypress open --project node_modules/\@bahmutov/cypress-examples
-      - name: Include cypress-npm.json 🏗
-        run: cp cypress-npm.json cypress.json
-
-      - name: Semantic Release 🚀
-        uses: cycjimmy/semantic-release-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
