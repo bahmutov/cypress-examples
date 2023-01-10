@@ -1870,15 +1870,14 @@ This is especially useful when dealing with dimensions of elements on the page, 
 
 ```html
 <div id="font-size-example">This is my message</div>
-<style></style>
 ```
 
 ```js
 cy.get('#font-size-example')
   .invoke('css', 'fontSize')
-  .then(cy.log)
+  .should('be.a', 'string')
   // the font size returned is in pixels, like "16px"
-  .should('match', /^\d+px$/)
+  .and('match', /^\d+px$/)
   .invoke('replace', 'px', '')
   .then(Number)
   .should('be.closeTo', 16, 1)
