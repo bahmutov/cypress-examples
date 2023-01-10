@@ -4,9 +4,9 @@ name: scrape
 on:
   # allow running the scraper manually
   workflow_dispatch:
-  # and scrape every Friday
+  # and scrape weekly
   schedule:
-    - cron: '0 0 * * FRI'
+    - cron: '0 0 * * TUE'
 
 jobs:
   scrape:
