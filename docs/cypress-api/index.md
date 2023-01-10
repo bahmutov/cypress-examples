@@ -159,7 +159,7 @@ Cypress.Cookies.defaults({
 
 <!-- fiddle-end -->
 
-## [Cypress.Server.default()](https://on.cypress.io/cypress-server)
+## `Cypress.Server.default()` (deprecated)
 
 To change the default configuration for cy.server, use `Cypress.Server.defaults()`.
 

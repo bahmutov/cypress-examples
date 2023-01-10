@@ -2,7 +2,7 @@
 
 Examples of handling AJAX or XHR requests in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io/api)
 
-## [cy.server()](https://on.cypress.io/server)
+## `cy.server()` (deprecated)
 
 _Deprecated_ in Cypress v6
 
@@ -239,7 +239,7 @@ cy.request({
 
 Watch the explanation in the video [Handle 404 Status Code In cy.request Command](https://youtu.be/Ck5MutpVOQo), and check out the recipe [Requested resource not found](../recipes/request-not-found.md).
 
-## [cy.route()](https://on.cypress.io/route)
+## `cy.route()` (deprecated)
 
 _Deprecated_ in Cypress v6
 
