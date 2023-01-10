@@ -32,7 +32,7 @@ cy.contains('table th', 'Col B')
   // use jQuery index() method to return
   // the index of the found element among its siblings
   .invoke('index')
-  .then(cy.log)
+  .should('be.a', 'number')
   .then((columnIndex) => {
     // find the table row with text "Val A"
     cy.contains('tbody tr', 'Val A')

@@ -5,14 +5,18 @@ Many people have a problem with the [cy.then](https://on.cypress.io/then) comman
 <!-- fiddle Rename and replace the cy.then command -->
 
 ```js
-// find and save the reference to the original cy.then command
-// by inspecting the internals of the Cypress.Commands object
-const thenCommand = Cypress.Commands._commands.then.fn
-
 // if anyone tries to use cy.then in the spec code or in a plugin
 // we will get an error
-Cypress.Commands.overwrite('then', function (then, subject, cb) {
-  throw new Error('Using cy.then command is disallowed')
+Cypress.Commands.overwrite('then', function (
+  then,
+  subject,
+  cb,
+  allowUse,
+) {
+  if (!allowUse) {
+    throw new Error('Using cy.then command is disallowed')
+  }
+  return then(subject, cb)
 })
 
 Cypress.Commands.add(
@@ -21,12 +25,12 @@ Cypress.Commands.add(
   (subject, cb) => {
     // cy.later behaves just like cy.then
     // which we implement by calling the original cy.then command
-    return thenCommand(subject, cb)
+    return cy.now('then', subject, cb, true)
   },
 )
 
 cy.wrap('Hello')
-  .later(cy.log)
+  .should('be.a', 'string')
   .later((x) => x + x)
   .should('equal', 'HelloHello')
 ```

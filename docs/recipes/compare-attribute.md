@@ -38,7 +38,7 @@ You can watch this recipe explained in the video [Compare Element Attribute Valu
 cy.get('#member')
   .invoke('attr', 'active')
   .then(Boolean)
-  .then(cy.log)
+  .should('be.a', 'boolean')
   .then((isActive) => {
     if (isActive) {
       cy.get('#info').should('have.attr', 'active')

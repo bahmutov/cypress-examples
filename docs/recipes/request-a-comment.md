@@ -22,7 +22,6 @@ cy.get('[data-cy=comment-number]')
   .then(parseInt)
   .should('be.a', 'number')
   .and('be.greaterThan', 0)
-  .then((n) => cy.log(`comment number: **${n}**`))
   .then((n) => {
     // cy.request automatically fails if the resource is missing
     // https://on.cypress.io/request

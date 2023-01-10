@@ -40,7 +40,7 @@ cy.get('table thead th')
   .then((list) => list.filter((s) => target.includes(s)))
   // show the items of interest
   // in the Cypress Command Log
-  .then(cy.log)
+  .should('be.an', 'array')
   // confirm each column title we need is present
   // and they are in the expected order
   .should('deep.equal', target)
