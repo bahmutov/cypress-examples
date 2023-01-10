@@ -2,7 +2,7 @@
 
 Examples of handling AJAX or XHR requests in Cypress, for a full reference of commands, go to [docs.cypress.io](https://on.cypress.io/api)
 
-## `cy.server()` (deprecated)
+## `cy.server()` (removed)
 
 _Deprecated_ in Cypress v6
 
@@ -239,7 +239,7 @@ cy.request({
 
 Watch the explanation in the video [Handle 404 Status Code In cy.request Command](https://youtu.be/Ck5MutpVOQo), and check out the recipe [Requested resource not found](../recipes/request-not-found.md).
 
-## `cy.route()` (deprecated)
+## `cy.route()` (removed)
 
 _Deprecated_ in Cypress v6
 
@@ -689,4 +689,5 @@ cy.should(() => {
 
 ## See also
 
-See how to simulate network errors in the [Network errors](../recipes/network-errors.md) recipe.
+- See how to simulate network errors in the [Network errors](../recipes/network-errors.md) recipe.
+- Learn how to use network commands in my 🎓 course [Cypress Network Testing Exercises](https://cypress.tips/courses/network-testing).
