@@ -7,7 +7,7 @@ jobs:
     steps:
       # https://github.com/actions/checkout
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # only install dependencies using
       # https://github.com/cypress-io/github-action
@@ -32,7 +32,7 @@ jobs:
 
       # will create new JS files inside ./docs
       - name: Export Markdown specs 🖨
-        run: node ./md-to-js http://localhost:5000/cypress-examples/${{ steps.cypress.outputs.version }}
+        run: node ./md-to-js http://localhost:5000/cypress-examples/
 
       - name: Catch stray .only tests 🚦
         run: npm run stop-only
@@ -57,7 +57,7 @@ jobs:
     needs: install
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Download built folders ⏬
         uses: actions/download-artifact@v2
@@ -87,7 +87,7 @@ jobs:
     steps:
       # https://github.com/actions/checkout
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Download built folders ⏬
         uses: actions/download-artifact@v2
@@ -139,7 +139,7 @@ jobs:
     steps:
       # https://github.com/actions/checkout
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Download built folders ⏬
         uses: actions/download-artifact@v2
@@ -171,7 +171,7 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Download built folders ⏬
         uses: actions/download-artifact@v2
@@ -192,11 +192,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public/cypress-examples/${{ steps.cypress.outputs.version }}
-          destination_dir: ${{ steps.cypress.outputs.version }}
-
-      - name: Export page redirects ↗️
-        run: node ./md-to-redirects https://glebbahmutov.com/cypress-examples/${{ steps.cypress.outputs.version }}
+          publish_dir: ./public/cypress-examples
 
       # deploy the redirect pages that point every top level
       # HTML page the Cypress Test Runner might load to the corresponding
@@ -205,7 +201,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # make sure to preserve the existing files
-          keep_files: true
           publish_dir: ./redirects
           destination_dir: .

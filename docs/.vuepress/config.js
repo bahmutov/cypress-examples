@@ -4,8 +4,8 @@ const { findCypressVersion } = require('../../src/utils')
 const path = require('path')
 
 const cypressVersion = findCypressVersion()
-const base = `/cypress-examples/${cypressVersion}/`
-const dest = path.join('public', 'cypress-examples', cypressVersion)
+const base = `/cypress-examples/`
+const dest = path.join('public', 'cypress-examples')
 console.log('output folder: %s', dest)
 const title = `Cypress examples (v${cypressVersion})`
 
