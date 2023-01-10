@@ -289,7 +289,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Refactor [Requested resource not found](./recipes/request-not-found.md) code into an utility function
 - Send synthetic "offline" and "online" [events](./recipes/offline-event.md)
 
-## Spies and stubs
+### Spies and stubs
 
 - confirm the spy was called [with the right object](./recipes/called-with-object.md)
 - [Stub Geolocation](./recipes/stub-geolocation.md) to test error handling
