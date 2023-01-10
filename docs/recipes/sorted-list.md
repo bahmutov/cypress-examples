@@ -53,14 +53,13 @@ cy.get('.price')
   .then(($prices) =>
     Cypress._.map($prices, (el) => el.innerText),
   )
-  // because cy.log returns nothing, the original list continues
-  .then((list) => cy.log(list.slice(0, 3).join(', ')))
+  .should('be.an', 'array')
   // only the first word is the price
   .then((list) => list.map((text) => text.split(' ')[0]))
   .then((list) => list.map((str) => str.replace(/[^0-9.]/g, '')))
-  .then((list) => cy.log(list.slice(0, 3).join(', ')))
+  .should('be.an', 'array')
   .then((list) => list.map(parseFloat))
-  .then((list) => cy.log(list.slice(0, 3).join(', ')))
+  .should('be.an', 'array')
   .then((list) => {
     // confirm the list is sorted by sorting it using Lodash
     // and comparing the original and sorted lists

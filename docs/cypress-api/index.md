@@ -128,11 +128,13 @@ cy.setCookie('fakeCookie', '123ABC')
 
 <!-- fiddle-end -->
 
-## [Cypress.Cookies.preserveOnce()](https://on.cypress.io/cookies)
+## `Cypress.Cookies.preserveOnce()` (deprecated)
+
+`Deprecated`, use [cypress-v10-preserve-cookie](https://github.com/bahmutov/cypress-v10-preserve-cookie).
 
 To preserve cookies by its key, use `Cypress.Cookies.preserveOnce()`.
 
-<!-- fiddle preserveOnce -->
+<!-- fiddle.skip preserveOnce -->
 
 ```js
 cy.getCookie('fakeCookie').should('not.be.ok')
@@ -145,11 +147,13 @@ Cypress.Cookies.preserveOnce('lastCookie')
 
 <!-- fiddle-end -->
 
-## [Cypress.Cookies.default()](https://on.cypress.io/cookies)
+## `Cypress.Cookies.default()` (deprecated)
+
+`Deprecated`, use [cypress-v10-preserve-cookie](https://github.com/bahmutov/cypress-v10-preserve-cookie).
 
 To set defaults for all cookies, use `Cypress.Cookies.default()`.
 
-<!-- fiddle cookies defaults -->
+<!-- fiddle.skip cookies defaults -->
 
 ```js
 Cypress.Cookies.defaults({

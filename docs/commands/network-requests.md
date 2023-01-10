@@ -8,7 +8,7 @@ _Deprecated_ in Cypress v6
 
 To control the behavior of network requests and responses, use the `cy.server()` command.
 
-<!-- fiddle cy.server() - control behavior of network requests and responses -->
+<!-- fiddle.skip cy.server() - control behavior of network requests and responses -->
 
 ```js
 // https://on.cypress.io/server
@@ -245,7 +245,7 @@ _Deprecated_ in Cypress v6
 
 To route responses to matching requests, use the `cy.route()` command.
 
-<!-- fiddle cy.route() - route responses to matching requests -->
+<!-- fiddle.skip cy.route() - route responses to matching requests -->
 <!-- fiddle-markup
 <style>
 .network-route-btn,

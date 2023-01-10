@@ -32,22 +32,26 @@ To load a fixture, use the `cy.fixture()` command.
 ```js
 // Instead of writing a response inline you can
 // use a fixture file's content.
+cy.fixture('example.json').then((comment) => {
+  cy.intercept('GET', 'comments/*', comment).as('getComment')
+})
+```
 
-cy.server()
-cy.fixture('example.json').as('comment')
-cy.route('GET', 'comments/*', '@comment').as('getComment')
+We have code that gets a comment when the button is clicked in `scripts.js`
 
-// we have code that gets a comment when
-// the button is clicked in scripts.js
+```js
 cy.get('.fixture-btn').click()
 
 cy.wait('@getComment')
-  .its('responseBody')
+  .its('response.body')
   .should('have.property', 'name')
   .and('include', 'Using fixtures to represent data')
+```
 
-// you can also just write the fixture in the route
-cy.route('GET', 'comments', 'fixture:example.json').as(
+You can also just write the fixture in the route
+
+```js
+cy.intercept('GET', 'comments', { fixture: 'example.json' }).as(
   'getComment',
 )
 
@@ -56,20 +60,7 @@ cy.route('GET', 'comments', 'fixture:example.json').as(
 cy.get('.fixture-btn').click()
 
 cy.wait('@getComment')
-  .its('responseBody')
-  .should('have.property', 'name')
-  .and('include', 'Using fixtures to represent data')
-
-// or write fx to represent fixture
-// by default it assumes it's .json
-cy.route('GET', 'comments', 'fx:example').as('getComment')
-
-// we have code that gets a comment when
-// the button is clicked in scripts.js
-cy.get('.fixture-btn').click()
-
-cy.wait('@getComment')
-  .its('responseBody')
+  .its('response.body')
   .should('have.property', 'name')
   .and('include', 'Using fixtures to represent data')
 ```
@@ -107,7 +98,7 @@ To read a file's content, use the `cy.readFile()` command.
 ```js
 // You can read a file and yield its contents
 // The filePath is relative to your project's root.
-cy.readFile('cypress.json').then((json) => {
+cy.readFile('cypress/fixtures/example.json').then((json) => {
   expect(json, 'parsed json').to.be.an('object')
 })
 ```
@@ -115,7 +106,7 @@ cy.readFile('cypress.json').then((json) => {
 JSON files are automatically parsed, so if you want the raw text, you need to convert it back. For example, you can go through a `Cypress.Buffer`
 
 ```js
-cy.readFile('cypress.json', null)
+cy.readFile('cypress/fixtures/example.json', null)
   .invoke('toString')
   .should('be.a', 'string')
 ```
@@ -123,7 +114,7 @@ cy.readFile('cypress.json', null)
 Or by convert the object to a JSON string
 
 ```js
-cy.readFile('cypress.json')
+cy.readFile('cypress/fixtures/example.json')
   .then(JSON.stringify)
   .should('be.a', 'string')
 ```

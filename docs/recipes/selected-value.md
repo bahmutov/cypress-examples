@@ -124,7 +124,7 @@ cy.get('select option')
   // using the Lodash _.random function
   .then((n) => Cypress._.random(0, n - 1))
   // print the picked random number
-  .then(cy.log)
+  .should('be.a', 'number')
   // and then use the cy.select command
   // to select it from the element
   .then((index) => {

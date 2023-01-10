@@ -41,8 +41,8 @@ cy.wrap(
 )
 cy.get('.text')
   .then(($el) => window.getComputedStyle($el[0]).backgroundColor)
-  .then(cy.log)
-  .should('equal', 'rgb(255, 255, 0)') // yellow!
+  .should('be.a', 'string')
+  .and('equal', 'rgb(255, 255, 0)') // yellow!
   .wait(1000)
 cy.log('**back to the light color scheme**').then(() =>
   Cypress.automation('remote:debugger:protocol', {
@@ -60,8 +60,8 @@ cy.log('**back to the light color scheme**').then(() =>
 )
 cy.get('.text')
   .then(($el) => window.getComputedStyle($el[0]).backgroundColor)
-  .then(cy.log)
-  .should('equal', 'rgb(255, 255, 255)') // white!
+  .should('be.a', 'string')
+  .and('equal', 'rgb(255, 255, 255)') // white!
 ```
 
 See [`prefers-color-scheme` documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) and the [Chrome DevTools protocol Emulation](https://chromedevtools.github.io/devtools-protocol/tot/Emulation/).

@@ -15,7 +15,7 @@ jobs:
       #   ~/.npm
       #   ~/.cache/Cypress
       - name: Install 📦
-        uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v5
         with:
           runTests: false
 
@@ -65,7 +65,7 @@ jobs:
           name: built
 
       - name: Install 📦
-        uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v5
         with:
           runTests: false
 
@@ -97,7 +97,7 @@ jobs:
       # download cached ~/.npm and ~/.cache/Cypress
       # and install node_modules
       - name: Cypress tests 🧪
-        uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v5
         # run all tests straight from Markdown files
         # using Cypress GH action
         # https://github.com/cypress-io/github-action
@@ -147,7 +147,7 @@ jobs:
           name: built
 
       - name: Test built site 🧪
-        uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v5
         with:
           start: npm run serve
           config-file: cypress-dist.json
@@ -179,7 +179,7 @@ jobs:
           name: built
 
       - name: Install 📦
-        uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v5
         with:
           runTests: false
 

@@ -27,7 +27,7 @@ jobs:
           persist-credentials: false
 
       - name: Install dependencies 📦
-        uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v5
         with:
           # just perform install
           runTests: false
@@ -56,7 +56,7 @@ jobs:
         run: cat docs/**/*.js > docs/run-all-specs.js
 
       - name: Test deployed site 🧪💨
-        uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v5
         with:
           # we have already installed all dependencies above
           install: false

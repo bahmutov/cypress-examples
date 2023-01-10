@@ -29,7 +29,9 @@ Cypress.Commands.overwrite('should', (should, ...args) => {
     if (typeof a === 'string' && a[0] === '@') {
       const key = a.slice(1)
       if (key in aliases) {
-        return aliases[key].subject
+        return aliases[key].subjectChain[0]
+      } else {
+        return a
       }
     }
     return a
