@@ -17,8 +17,8 @@ Imagine you need to confirm a number shown on the page. The DOM element always h
 // get the element and grab its text using ".text()" jQuery method
 cy.get('#people')
   .invoke('text')
-  // tip: use cy.log to print the extracted text
-  .then(cy.log)
+  // tip: use an assertion to print the extracted text
+  .should('be.a', 'string')
   // convert text to integer
   .then(parseInt)
   // tip: make sure the conversion is successful
@@ -52,8 +52,8 @@ cy.get('#group')
     const end = s.indexOf(')', start)
     return s.slice(start + 1, end)
   })
-  // tip: use cy.log to print the extracted text
-  .then(cy.log)
+  // tip: use an assertion to print the extracted text
+  .should('be.a', 'string')
   .then(parseInt)
   // tip: make sure the conversion is successful
   .should('be.a', 'number')
@@ -85,8 +85,8 @@ cy.get('#price b')
     const end = s.indexOf(')', start)
     return s.slice(start + 2, end)
   })
-  // tip: use cy.log to print the extracted text
-  .then(cy.log)
+  // tip: use an assertion to print the extracted text
+  .should('be.a', 'string')
   // convert the "75.15" to a float number
   .then(parseFloat)
   // tip: make sure the conversion is successful
@@ -105,14 +105,13 @@ cy.get('#price')
   // to find the price text inside a longer text
   // (?<price>...) is a named capture group
   .invoke('match', /\(\$\s(?<price>\d+\.\d+)\)/)
-  .then(cy.log)
   // make sure the parsing was successful
   .should('be.an', 'array')
   // from the result, grab the "groups.price" field
   // note: the cy.its command automatically retries
   // and would fail if the "price" capture group is not found
   .its('groups.price')
-  .then(cy.log)
+  .should('be.a', 'string')
   .then(parseFloat)
   // compare the converted number to the estimate
   // which is $74 +/- $2

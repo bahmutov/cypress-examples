@@ -42,10 +42,17 @@ Let's say we want to print to the Command Log the number of elements the previou
 cy.get('#log-fruits li')
   // you can add assertions to make sure the list is populated
   .its('length')
-  // prints just the number
-  .then(cy.log)
+  // prints just the number,
+  // must be careful to yield the value to the next command
+  .then((x) => {
+    cy.log(x)
+    cy.wrap(x, { log: false })
+  })
   // if you want to add a message, use a callback function
-  .then((n) => cy.log(`found ${n} items`))
+  .then((n) => {
+    cy.log(`found ${n} items`)
+    cy.wrap(n, { log: false })
+  })
   // because cy.log never changes the current subject
   // we can confirm the found number of elements by adding an assertion
   .should('equal', 5)
@@ -59,18 +66,21 @@ cy.get('#log-fruits li')
   .filter(':contains("Grape")')
   .its('length')
   // if you want to add a message, use a callback function
-  .then((n) => cy.log(`found ${n} fruits with "Grape" in them`))
+  .then((n) => {
+    cy.log(`found ${n} fruits with "Grape" in them`)
+    cy.wrap(n, { log: false })
+  })
   // confirm the number of elements
   .should('equal', 2)
 ```
 
 <!-- fiddle-end -->
 
-### cy.log yields the original argument
+### cy.log does not yield the original argument
 
-Because `cy.log` yields `undefined`, Cypress will yield the original argument to the next command or assertion. For example, let's print the element's node name and then confirm its value.
+Because `cy.log` yields `null`, Cypress will NOT yield the original argument to the next command or assertion. Thus you need to wrap the original value.
 
-<!-- fiddle .log() / yields the original argument -->
+<!-- fiddle .log() / does not yield the original argument -->
 
 ```html
 <button name="log-me">Submit</button>
@@ -82,9 +92,9 @@ cy.get('[name=log-me]')
   // of that HTML prop
   .should('have.prop', 'nodeName')
   // prints the nodeName value to the Command Log
-  // and yields it to the next step
+  // and yields NULL to the next step
   .then(cy.log)
-  .should('equal', 'BUTTON')
+  .should('equal', null)
 ```
 
 <!-- fiddle-end -->
@@ -227,9 +237,9 @@ cy.exec('echo Jane Lane')
   .should('contain', 'Jane Lane')
 
 if (Cypress.platform === 'win32') {
-  cy.exec('print cypress.json').its('stderr').should('be.empty')
+  cy.exec('print renovate.json').its('stderr').should('be.empty')
 } else {
-  cy.exec('cat cypress.json').its('stderr').should('be.empty')
+  cy.exec('cat renovate.json').its('stderr').should('be.empty')
 
   cy.exec('pwd').its('code').should('eq', 0)
 }
