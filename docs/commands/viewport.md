@@ -9,32 +9,43 @@ To set the viewport size and dimension, use the `cy.viewport()` command.
 <!-- fiddle.export cy.viewport() - set the viewport size and dimension -->
 
 ```js
-const deviceViewports = ['macbook-15', 'macbook-13', 'macbook-11', 'ipad-2', 'ipad-mini', 'iphone-6+', 'iphone-6', 'iphone-5', 'iphone-4', 'iphone-3'];
+const deviceViewports = [
+  'macbook-15',
+  'macbook-13',
+  'macbook-11',
+  'ipad-2',
+  'ipad-mini',
+  'iphone-6+',
+  'iphone-6',
+  'iphone-5',
+  'iphone-4',
+  'iphone-3',
+]
 
-cy.get('.navbar').should('be.visible');
-cy.viewport(320, 480);
+cy.get('.navbar').should('be.visible')
+cy.viewport(320, 480)
 
 // the navbar should have collapse since our screen is smaller
-cy.get('#navbar').should('not.exist');
+cy.get('#navbar').should('not.exist')
 
 // instead we have the "hamburger" icon
-cy.get('.sidebar-button').should('be.visible').click();
-cy.get('.nav-item').find('a').should('be.visible');
+cy.get('.sidebar-button').should('be.visible').click()
+cy.get('.nav-item').find('a').should('be.visible')
 
 // lets see what our app looks like on a super large screen
-cy.viewport(2999, 2999);
+cy.viewport(2999, 2999)
 
 // Test viewport at different preset widths
-deviceViewports.forEach((width) => {
-  cy.viewport(width);
-  cy.wait(200);
-});
+deviceViewports.forEach((resolution) => {
+  cy.viewport(resolution)
+  cy.wait(200)
+})
 
 // Test viewport in portrait and landscape orientations
-cy.viewport('ipad-2', 'portrait');
-cy.wait(200);
-cy.viewport('iphone-4', 'landscape');
-cy.wait(200);
+cy.viewport('ipad-2', 'portrait')
+cy.wait(200)
+cy.viewport('iphone-4', 'landscape')
+cy.wait(200)
 
 // The viewport will be reset back to the default dimensions
 // in between tests (the default can be set in cypress.json)
