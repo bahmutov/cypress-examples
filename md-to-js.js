@@ -51,4 +51,6 @@ console.log(
   'You can run these specs against %s with command',
   baseUrl,
 )
-console.log('npx cypress open --config-file cypress-dist.json')
+console.log(
+  'npx cypress open --config-file cypress-dist.config.js',
+)

@@ -60,7 +60,7 @@ jobs:
         with:
           # we have already installed all dependencies above
           install: false
-          config-file: cypress-dist.json
+          config-file: cypress-dist.config.js
           record: true
           tag: deployed
         env:

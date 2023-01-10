@@ -6,8 +6,8 @@
   "scripts": {
     "test": "cypress run",
     "cy:open": "cypress open",
-    "cy:open:exported": "cypress open --config-file cypress-dist.json",
-    "cy:run:exported": "cypress run --config-file cypress-dist.json",
+    "cy:open:exported": "cypress open --config-file cypress-dist.config.js",
+    "cy:run:exported": "cypress run --config-file cypress-dist.config.js",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "check:links": "find . -type f -name '*.md' ! -path './node_modules/*' | xargs -L1 npx markdown-link-check --quiet",

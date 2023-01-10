@@ -150,7 +150,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           start: npm run serve
-          config-file: cypress-dist.json
+          config-file: cypress-dist.config.js
           record: true
           parallel: true
           # use a custom CI build id to put the JavaScript spec results into a separate run
