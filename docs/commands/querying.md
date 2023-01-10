@@ -317,11 +317,9 @@ In the HTML below all links have the class "help", but some links have the class
 ```js
 cy.get('a.help:not(.external)')
   .should('have.length', 2)
-  .within(() => {
-    // confirm the two found elements
-    cy.root().eq(0).should('have.text', 'Article 2')
-    cy.root().eq(1).should('have.text', 'index')
-  })
+  // confirm the two found elements
+  .then(($el) => Cypress._.map($el, 'innerText'))
+  .should('deep.equal', ['Article 2', 'index'])
 ```
 
 <!-- fiddle-end -->
@@ -1394,9 +1392,9 @@ cy.get('picture').within(() => {
 
 ### Within works with multiple elements
 
-The parent command can yield multiple elements.
+The command `cy.within` requires the parent subject to be a single element.
 
-<!-- fiddle .within / multiple elements -->
+<!-- fiddle.skip .within / multiple elements -->
 
 ```html
 <ul id="fruits">
@@ -1406,19 +1404,13 @@ The parent command can yield multiple elements.
 ```
 
 ```js
-cy.get('#fruits li').within(() => {
-  cy.root().should('have.length', 2) // there are 2 LI items
-  cy.contains('a', 'Apples').should(
-    'have.attr',
-    'href',
-    '/apples',
-  )
-  cy.contains('a', 'Oranges').should(
-    'have.attr',
-    'href',
-    '/oranges',
-  )
-})
+cy.get('#fruits li')
+  .should('have.length', 2) // there are 2 LI items
+  // 🚨 NOT GOING TO WORK
+  // "Your subject contained 2 elements"
+  .within(() => {
+    // Nope, not going to get here
+  })
 ```
 
 <!-- fiddle-end -->
