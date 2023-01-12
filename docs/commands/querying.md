@@ -1214,6 +1214,50 @@ cy.get('#escape-text-example')
 
 <!-- fiddle-end -->
 
+Imagine the HTML text has double white space. Then `cy.contains` struggles.
+
+<!-- prettier-ignore-start -->
+
+<!-- fiddle contains / escape multiple spaces -->
+
+```html
+<div data-testid="product-name">
+  Garmin Instinct 2 Solar, (GRAPHITE)  (010-02627-10)
+</div>
+```
+
+```js
+const selector = '[data-testid=product-name]'
+const text =
+  'Garmin Instinct 2 Solar, (GRAPHITE)  (010-02627-10)'
+cy.get(selector).should('contain.text', text)
+```
+
+```js
+// the entire text does not match
+cy.contains(selector, text).should('not.exist')
+```
+
+```js
+// but pieces of the long text can be found correctly
+cy.contains(selector, 'Garmin Instinct 2 Solar')
+cy.contains(selector, '(GRAPHITE)')
+cy.contains(selector, '(010-02627-10)')
+// it is the double spaces that pose a problem
+cy.contains(selector, ')  (').should('not.exist')
+// if we remove the double space, it works
+cy.contains(selector, ') (')
+```
+
+**Suggestion:** clean up the text before searching by replacing multiple spaces with a single " " character.
+
+```js
+cy.contains(selector, text.replaceAll(/\s+/g, ' '))
+```
+
+<!-- fiddle-end -->
+<!-- prettier-ignore-end -->
+
 ## [.within](https://on.cypress.io/within)
 
 We can find elements within a specific DOM element `.within()`
