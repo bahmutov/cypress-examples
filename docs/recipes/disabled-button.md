@@ -4,6 +4,8 @@
 
 Command `cy.click` automatically waits for the element to be enabled before clicking.
 
+📺 Watch this example in the video [A Cypress Example With Disabled Button And Has Text jQuery Selectors](https://youtu.be/GYW4vIehd6Y).
+
 ```html
 <div>
   <label>My button</label>

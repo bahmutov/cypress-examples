@@ -234,6 +234,8 @@ cy.get('table#text-example').within(() => {
 
 <!-- fiddle cy.get / with jQuery has and contains -->
 
+📺 Watch this example in the video [A Cypress Example With Disabled Button And Has Text jQuery Selectors](https://youtu.be/GYW4vIehd6Y).
+
 ```html
 <div>
   <label>My button</label>
