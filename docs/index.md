@@ -254,6 +254,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - check the parsed [JSON HTML attribute](./recipes/json-data-attribute.md)
 - check the [copyright year](./recipes/copyright-year.md)
 - confirm the element's text [ends with two decimals](./recipes/decimals.md)
+- waiting for the button to be [enabled before clicking](./recipes/disabled-button.md)
 
 ### Working with the window object
 
