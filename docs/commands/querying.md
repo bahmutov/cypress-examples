@@ -196,7 +196,7 @@ cy.get('#main-bold p:not(:has(b))')
 
 <!-- fiddle-end -->
 
-#### Containing text
+#### Find text with :contains selector
 
 <!-- fiddle cy.get / with jQuery text selector -->
 
@@ -226,6 +226,30 @@ cy.get('table#text-example').within(() => {
     .should('have.length', 1)
     .and('have.text', 'Different')
 })
+```
+
+<!-- fiddle-end -->
+
+#### Combine :has and :contains selectors
+
+<!-- fiddle cy.get / with jQuery has and contains -->
+
+```html
+<div>
+  <label>My button</label>
+  <button disabled>Click</button>
+</div>
+```
+
+Let's get the button by finding the `DIV` element that has a `LABEL` element inside with the text "My button".
+
+```js
+// the DIV has LABEL with the text "My button"
+// and then get the child "BUTTON" element
+cy.get('div:has( label:contains("My button") ) button')
+  // and confirm we found the right button element
+  .should('have.text', 'Click')
+  .and('be.disabled')
 ```
 
 <!-- fiddle-end -->
