@@ -256,6 +256,43 @@ cy.get('div:has( label:contains("My button") ) button')
 
 <!-- fiddle-end -->
 
+#### Multiple :has clauses
+
+<!-- fiddle cy.get / with multiple jQuery has clauses -->
+
+Let's pretend we want to find all `DIV` elements having a `LABEL` and `BUTTON` elements inside.
+
+```html
+<div>Does not have children</div>
+<div>Has a label <label>Champ</label></div>
+<div>
+  <label>My button</label>
+  <button disabled>Click</button>
+</div>
+<div>
+  <label>My other button</label>
+  <button disabled>Press</button>
+</div>
+<div>
+  <button>Finish</button>
+</div>
+```
+
+```js
+// find all DIV elements with a LABEL element inside
+cy.get('div:has(label)').should('have.length', 3)
+// find all DIV elements with a LABEL and a BUTTON inside
+cy.get('div:has(label):has(button)').should('have.length', 2)
+// find all DIV elements with a LABEL or a BUTTON inside
+cy.get('div:has(label, button)')
+  .should('have.length', 4)
+  // confirm the last element in the found list
+  .last()
+  .contains('button', 'Finish')
+```
+
+<!-- fiddle-end -->
+
 ### :first and :last
 
 <!-- fiddle cy.get / with jQuery first selector -->
