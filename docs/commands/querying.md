@@ -262,6 +262,8 @@ cy.get('div:has( label:contains("My button") ) button')
 
 Let's pretend we want to find all `DIV` elements having a `LABEL` and `BUTTON` elements inside.
 
+📺 Watch this example explained in the video [Multiple :has Selector Clauses](https://youtu.be/9WByK1QvGs4).
+
 ```html
 <div>Does not have children</div>
 <div>Has a label <label>Champ</label></div>
