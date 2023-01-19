@@ -884,7 +884,7 @@ cy.get('table#people tbody td:nth-child(2)').should(($cells) => {
 })
 ```
 
-Tip: you can extract multiple values and create assertions using [cypress-should-really](https://github.com/bahmutov/cypress-should-really) helpers.
+**Tip:** you can extract multiple values and create assertions using [cypress-should-really](https://github.com/bahmutov/cypress-should-really) or [cypress-map](https://github.com/bahmutov/cypress-map) helpers.
 
 <!-- fiddle-end -->
 
