@@ -2,6 +2,8 @@
 
 <!-- fiddle Animated SVG loader -->
 
+📺 Watch this recipe in the video [SVG Loader Example](https://youtu.be/Abv7m9H_15Y).
+
 ```html hide
 <div class="loader">
   <svg
@@ -39,7 +41,7 @@
     document.querySelector('.loader').innerHTML = `
       <span>Loaded!</span>
     `
-  }, 1500)
+  }, 2500)
 </script>
 ```
 
