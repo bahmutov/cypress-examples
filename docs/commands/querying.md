@@ -884,6 +884,16 @@ cy.get('table#people tbody td:nth-child(2)').should(($cells) => {
 })
 ```
 
+You can even map each element to a number before confirming the entire array.
+
+```js
+// get the second column of cells
+cy.get('table#people tbody td:nth-child(2)').should(($cells) => {
+  const values = Cypress._.map($cells, 'innerText').map(Number)
+  expect(values).to.deep.equal([20, 30, 28, 22])
+})
+```
+
 **Tip:** you can extract multiple values and create assertions using [cypress-should-really](https://github.com/bahmutov/cypress-should-really) or [cypress-map](https://github.com/bahmutov/cypress-map) helpers.
 
 <!-- fiddle-end -->
