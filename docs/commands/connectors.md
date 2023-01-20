@@ -264,7 +264,7 @@ cy.get('#fruits li').invoke('get', 2).invoke('text')
 
 To invoke a function on a current subject, use the `.invoke()` command.
 
-<!-- fiddle invoke -->
+<!-- fiddle invoke / jQuery method -->
 
 ```html
 <div class="connectors-div">This is a div</div>
@@ -283,6 +283,56 @@ cy.get('.connectors-div')
 ```
 
 <!-- fiddle-end -->
+
+### Invoke asynchronous method
+
+If the method returns a Promise, `cy.invoke` automatically waits for it. **But** if you need the resolved value, you need to use `cy.then` to invoke the method instead 🤯
+
+<!-- fiddle invoke / asynchronous method -->
+
+```html
+<div class="connectors-div">This is a div</div>
+<script>
+  // application adds its instance to the "window"
+  window.app = {
+    fetchName() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve('My App')
+        }, 1000)
+      })
+    },
+  }
+</script>
+```
+
+```js
+// wait for the "app.fetchName" to finish
+cy.window().its('app').invoke('fetchName')
+```
+
+If we want to confirm the resolved value, have to call the method ourselves
+
+```js
+cy.window()
+  .its('app')
+  .then((app) => app.fetchName())
+  .should('equal', 'My App')
+```
+
+Or we can insert an truthy assertion and get the resolved value later
+
+```js
+cy.window()
+  .its('app')
+  .invoke('fetchName')
+  .should('be.ok')
+  .then((s) => expect(s).to.equal('My App'))
+```
+
+<!-- fiddle-end -->
+
+**Tip:** use [cypress-map](https://github.com/bahmutov/cypress-map) plugin which has `cy.invokeOnce` method that waits for asynchronous methods by default and yields the resolved value.
 
 ## [.spread()](https://on.cypress.io/spread)
 
