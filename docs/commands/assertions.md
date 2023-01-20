@@ -767,6 +767,34 @@ cy.wrap({ name: 'Joe' }).then((o) => {
 
 <!-- fiddle-end -->
 
+## Truthy assertion
+
+The most "forgiving" assertion - as long as there is something truthy, `be.ok` assertion will pass.
+
+<!-- fiddle Truthy assertion -->
+
+```js
+// explicit assertions
+expect(42, 'a number').to.be.ok
+expect({}, 'an object').to.be.ok
+// implicit assertions
+cy.wrap(console.log).should('be.ok')
+cy.wrap([1, 2, 3]).should('be.ok')
+cy.wrap('kids').should('be.ok')
+```
+
+Undefined, null, zero, empty strings, and false values are not ok.
+
+```js
+cy.wrap(undefined).should('not.be.ok')
+cy.wrap(null).should('not.be.ok')
+cy.wrap(0).should('not.be.ok')
+cy.wrap(false).should('not.be.ok')
+cy.wrap('').should('not.be.ok')
+```
+
+<!-- fiddle-end -->
+
 ## Existence
 
 In most cases, you do not need to explicitly check if the element exists - if the `cy.get`, `cy.contains`, etc. command finds an element, it exists. If you want to check that the element with a specific selector or text _does not_ exist, then attach the assertion.
