@@ -8,6 +8,7 @@ module.exports = defineConfig({
   e2e: {
     supportFile: false,
     specPattern: 'docs/**/*.js',
+    testIsolation: false,
     retries: {
       runMode: 2,
     },
