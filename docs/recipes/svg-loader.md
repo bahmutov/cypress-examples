@@ -59,6 +59,8 @@ cy.contains('.loader', 'Loaded')
 
 Imagine we want to know when the SVG animation finishes. From the spec code we can listen to the `endEvent` event on the `animateTransform` element. By using a `cy.spy` and its assertion `have.called` we can automatically wait in our test.
 
+📺 Watch this recipe in the video [Wait For SVG Animate Transform End Event](https://youtu.be/vgP8X9ybc3E)
+
 <!-- fiddle SVG loader finishes its animation -->
 
 ```html hide
