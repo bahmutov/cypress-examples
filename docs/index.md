@@ -161,7 +161,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Wait for data](./recipes/wait-for-data.md) to be set
 - [Return value from .within() command](./recipes/return-value-from-within.md)
 - [Confirm an attribute of an element](./recipes/confirm-attribute.md)
-- [Update table row with retries](./recipes/table-update.md)
 - [Click a single random element](./recipes/click-random-element.md) or multiple checkboxes
 - [Number of rows matches a number in an element](./recipes/number-of-rows.md)
 - [Find elements with subelements](./recipes/find-elements-with-subelements.md)
@@ -178,7 +177,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Type characters one by one into separate input elements](./recipes/type-one-by-one.md)
 - [Sibling elements](./recipes/sibling-element.md) using `.next` and CSS selector `+`
 - [Collect headings from the page](./recipes/collect-headings.md) and save as a JSON file
-- [Table with prices](./recipes/table-with-prices.md) confirms the prices in every table row.
 - Querying [SVG example](./recipes/svg-example.md)
 - [SVG Loader goes away example](./recipes/svg-loader.md)
 - Find and confirm the list of [labels for checked checkboxes](./recipes/labels-for-checkboxes.md)
@@ -222,12 +220,9 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Grab the [second matching element by text](./recipes/second-text-match.md)
 - Check the messages the application logs to the `console` object and [fail if there is an error message](./recipes/check-console-logs.md)
 - Confirm the two elements have [equal attribute value](./recipes/attributes-are-equal.md)
-- Check the [table has some columns](./recipes/table-column-order.md) in the expected order
 - [Pick even, odd, or custom index elements](./recipes/filter-elements.md) using jQuery pseudo-classes like `:even`, `:odd`, `eq()`, `gt()`, and `lt()`
 - [Input value matching a regular expression](./recipes/input-value.md)
-- Find the table row with the [exact table cell text](./recipes/table-cell.md)
 - [Select by attribute](./recipes/select-by-attribute.md) examples
-- Select a table [cell by the column heading](./recipes/table-cell-by-column-heading.md)
 - Check only the [enabled checkboxes](./recipes/check-enabled-checkboxes.md)
 - Confirm the [input element has a value](./recipes/input-has-value.md)
 - [Array includes another array](./recipes/array-includes-another-array.md)
@@ -247,7 +242,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - stub the [`Date.prototype.getTimezoneOffset` method](./recipes/stub-get-timezone-method.md)
 - remove optional child elements before [checking sorted prices](./recipes/sorted-by-discount.md)
 - checking a number [input value as a number](./recipes/input-value-as-number.md)
-- read a value from a table cell and [enter it into a field](./recipes/enter-value.md)
 - [paste text into a text area](./recipes/paste-event.md)
 - [pick a random 10 digit number](./recipes/pick-random-number.md) that does not have 0 in front
 - collect the values from the [DOM using its structure](./recipes/collect-dom.md)
@@ -295,6 +289,18 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 
 - confirm the spy was called [with the right object](./recipes/called-with-object.md)
 - [Stub Geolocation](./recipes/stub-geolocation.md) to test error handling
+
+### Testing tables
+
+- [Confirm the column index](./recipes/table-cell-index.md)
+- [Update table row with retries](./recipes/table-update.md)
+- [Table with prices](./recipes/table-with-prices.md) confirms the prices in every table row.
+- Check the [table has some columns](./recipes/table-column-order.md) in the expected order
+- Find the table row with the [exact table cell text](./recipes/table-cell.md)
+- Select a table [cell by the column heading](./recipes/table-cell-by-column-heading.md)
+- read a value from a table cell and [enter it into a field](./recipes/enter-value.md)
+
+📝 Read the blog post [Test HTML Tables Using cy.table Query Command](https://glebbahmutov.com/blog/cy-table/).
 
 ## Courses
 
