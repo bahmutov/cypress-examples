@@ -937,6 +937,15 @@ cy.get('#carousel li.active')
   })
 ```
 
+Let's find the `LI` element by text and confirm its index:
+
+```js
+cy.contains('#carousel li', 'kiwi')
+  .should('have.class', 'active')
+  .invoke('index')
+  .should('equal', 2)
+```
+
 <!-- fiddle-end -->
 
 ### Case-insensitive attribute selectors
