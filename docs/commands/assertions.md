@@ -920,6 +920,27 @@ cy.get('#count').should(($el) => {
 
 <!-- fiddle-end -->
 
+### Element has focus
+
+Let's confirm that the element still has the focus 2 seconds after typing into it.
+
+<!-- fiddle Element has focus -->
+
+```html
+<input id="your-name" /> <input id="your-occupation" />
+```
+
+```js
+cy.get('input#your-name')
+  .type('Joe')
+  .wait(2000)
+  .should('have.focus')
+// the other input element should not have focus
+cy.get('#your-occupation').should('not.have.focus')
+```
+
+<!-- fiddle-end -->
+
 ## Checkboxes
 
 <!-- fiddle Checkbox is checked or not checked -->
