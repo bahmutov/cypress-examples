@@ -941,6 +941,8 @@ cy.get('#your-occupation').should('not.have.focus')
 
 <!-- fiddle-end -->
 
+See how to confirm the cursor position in [Text Area Cursor recipe](../recipes/text-area-cursor.md).
+
 ## Checkboxes
 
 <!-- fiddle Checkbox is checked or not checked -->
