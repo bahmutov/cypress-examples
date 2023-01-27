@@ -126,6 +126,9 @@ jobs:
 
   test-js:
     runs-on: ubuntu-20.04
+    # temporarily skip testing JavaScript
+    # https://github.com/bahmutov/cypress-examples/issues/137
+    if: ${{ false }}
     needs: deploy
     strategy:
       # when one test fails, DO NOT cancel the other
