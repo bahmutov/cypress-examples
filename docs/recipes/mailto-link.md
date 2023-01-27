@@ -2,6 +2,8 @@
 
 <!-- fiddle Test HREF mailto link -->
 
+📺 Watch this recipe explained in the video [Test Mailto HREF Anchor Links](https://youtu.be/MQMRIjXwep8).
+
 ```html
 <a
   id="send"
@@ -31,7 +33,19 @@ We cannot click on the link, since in most cases it will launch an external appl
 
 ```js skip
 // 🚨 DOES NOT WORK, THE TEST WILL HANG
-cy.get('a#send').click()
+cy.get('a#send')
+```
+
+**Tip:** You can the browser from opening the email client by registering from the test itself a "click" event handler.
+
+```js
+// we can click, but it does nothing
+cy.get('a#send')
+  .invoke('on', 'click', (e) => {
+    console.log('stop the default browser behavior')
+    e.preventDefault()
+  })
+  .click()
 ```
 
 Instead, trust the operating system and the email standards. If the `mailto` link is correct, the browser and your email program should work with it. The test can confirm the `<A>` HREF attribute is present, parse the attribute value, and confirm each parameter of the email to send has the expected value.
