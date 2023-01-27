@@ -1430,6 +1430,31 @@ cy.contains('#or-match', /^(Joe|Mary)$/)
 
 <!-- fiddle-end -->
 
+### One of the elements has the text
+
+Imagine one of several elements should have the text we are looking for. We just don't know precisely which element does. I would recommend using the combined CSS selector `selector 1, selector 2, selector 3` which returns the combined list of all those selectors.
+
+<!-- fiddle Implicit Assertions / Text / .should() - one of the elements has the text -->
+
+```html
+<div id="nav-1">Joe</div>
+<div id="profile">
+  <span data-cy="username">Joseph<span>
+</div>
+```
+
+```js
+// finds the first element with the text "Joe"
+cy.contains('#nav-1, #profile', 'Joe').should('have.id', 'nav-1')
+// same selector finds the second element with the text "Joseph"
+cy.contains('#nav-1, #profile', 'Joseph').should(
+  'have.id',
+  'profile',
+)
+```
+
+<!-- fiddle-end -->
+
 ### Text should not present
 
 <!-- fiddle Implicit Assertions / Text / .should() - text should not be present -->
