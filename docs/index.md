@@ -258,6 +258,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Controlling the [window.confirm](./recipes/window-confirm.md) dialog
 - Stub the `window.print` method [recipe](./recipes/stub-window-print.md)
 - Stub the `window.open` method [recipe](./recipes/window-open.md)
+- Testing the `mailto` [HREF anchor links](./recipes/mailto-link.md)
 
 ### Selecting an option
 
