@@ -254,3 +254,78 @@ cy.then((second) => {
 ```
 
 <!-- fiddle-end -->
+
+### static vs query type
+
+Cypress v12 has introduced [chains of queries](https://glebbahmutov.com/blog/cypress-v12/) that are automatically retried. This has affected the behavior of the `.as` command. Imagine we have the following HTML snippet and the test confirming the text on the button.
+
+<!-- fiddle Static vs query type / query alias type -->
+
+```html
+<button id="click">
+  Loading...
+</button>
+<script>
+  setTimeout(() => {
+    document.getElementById('click').innerText = 'Profile'
+  }, 1000)
+</script>
+```
+
+```js
+cy.get('#click').invoke('text').invoke('trim').as('caption')
+```
+
+Let's get the alias `caption` and confirm it becomes "Profile".
+
+```js
+cy.get('@caption').should('equal', 'Profile')
+```
+
+This means the aliased value _changes_. The last code line is really equivalent to:
+
+```js skip
+// The last line that uses the alias
+cy.get('@caption').should('equal', 'Profile')
+// is equivalent to this code with the alias
+// replaced by the query commands leading to the ".as(...)"
+cy.get('#click')
+  .invoke('text')
+  .invoke('trim')
+  .should('equal', 'Profile')
+```
+
+<!-- fiddle-end -->
+
+This behavior is different from the aliases before Cypress v12. If you want to save the aliased value once and never re-evaluate it again, use the parameter `type: static`.
+
+<!-- fiddle Static vs query type / static alias type -->
+
+```html
+<button id="click">
+  Loading...
+</button>
+<script>
+  setTimeout(() => {
+    document.getElementById('click').innerText = 'Profile'
+  }, 1000)
+</script>
+```
+
+```js
+cy.get('#click')
+  .invoke('text')
+  .invoke('trim')
+  .as('caption', { type: 'static' })
+```
+
+Let's wait 1.5 seconds and confirm the alias _still_ remains "Loading...", while the button has already changed its text
+
+```js
+// the button has changed its text
+cy.contains('#click', 'Profile')
+// but the aliased value remains the same
+cy.get('@caption').should('equal', 'Loading...')
+```
+
+<!-- fiddle-end -->
