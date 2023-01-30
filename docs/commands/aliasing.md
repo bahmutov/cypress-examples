@@ -259,6 +259,8 @@ cy.then((second) => {
 
 Cypress v12 has introduced [chains of queries](https://glebbahmutov.com/blog/cypress-v12/) that are automatically retried. This has affected the behavior of the `.as` command. Imagine we have the following HTML snippet and the test confirming the text on the button.
 
+📺 Watch this example explained in the video [Cypress cy.as Alias Types: Query vs Static](https://youtu.be/JBlliSOWrtI).
+
 <!-- fiddle Static vs query type / query alias type -->
 
 ```html
