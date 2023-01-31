@@ -327,7 +327,7 @@ Let's wait 1.5 seconds and confirm the alias _still_ remains "Loading...", while
 // the button has changed its text
 cy.contains('#click', 'Profile')
 // but the aliased value remains the same
-cy.get('@caption').should('equal', 'Loading...')
+cy.get('@caption').should('equal', 'Loading...2')
 ```
 
 <!-- fiddle-end -->
