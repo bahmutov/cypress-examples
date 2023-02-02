@@ -461,6 +461,47 @@ cy.get('.connectors-list>li').then(function ($lis) {
 
 If the `cy.then(callback)` function returns a Promise, Cypress automatically yields the resolved value to the next command or assertion. If that promise is rejected, then the test fails.
 
+<!-- fiddle then / waits for the promise to resolve -->
+
+```js
+cy.wrap(1000)
+  .then((ms) => {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve('done'), 1000)
+    })
+  })
+  // yields the resolved value
+  // after 1 second
+  .should('equal', 'done')
+```
+
+<!-- fiddle-end -->
+
+### Use async syntax
+
+Here is the truth. The following `async` and `return new Promise` are equivalent, so you can use `async` callbacks with `cy.then`
+
+<!-- fiddle then / async callback -->
+
+```js
+async function delay(ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve('done'), ms)
+  })
+}
+
+cy.wrap(1000)
+  .then(async (ms) => {
+    await delay(500)
+    return await delay(1000)
+  })
+  // yields the resolved value
+  // after 1.5 second
+  .should('equal', 'done')
+```
+
+<!-- fiddle-end -->
+
 ### Return a value
 
 If the callback function returns a value, it is yielded to the next callback, just like in a Promise callback.
@@ -501,6 +542,17 @@ cy.wrap(1)
   })
 ```
 
+This is very useful when logging the current subject to the DevTools using `console.log`
+
+```js
+cy.wrap('Hello')
+  // passes the subject to console.log
+  // which returns undefined
+  .then(console.log)
+  // yields the original subject
+  .should('equal', 'Hello')
+```
+
 <!-- fiddle-end -->
 
 ### Cypress commands inside the callback
@@ -524,5 +576,110 @@ cy.wrap(1)
     expect(num).to.equal(2)
   })
 ```
+
+<!-- fiddle-end -->
+
+### Callback should return a promise
+
+⚠️ There is one big warning that you should be aware when using Promises in JavaScript (not just with Cypress). Because [promises are eager](https://glebbahmutov.com/blog/difference-between-promise-and-task/), then start running immediately when created. Let's take the following utility functions.
+
+<!-- fiddle then / promises are eager -->
+
+```js
+async function delay(ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve('done'), ms)
+  })
+}
+
+async function printWithDelay(message, ms) {
+  console.log('before: %s', message)
+  await delay(ms)
+  console.log(message)
+  return message
+}
+```
+
+What do you think you will see in the DevTools Console when the following test runs?
+
+```js
+cy.wrap('Promise me').then(console.log).wait(2000)
+cy.wrap(printWithDelay('Yup', 1000)).then(console.log)
+```
+
+You will see
+
+```
+before: Yup
+Promise me
+Yup
+Yup
+```
+
+The order is strange. The `before: Yup` is printed _before_ Cypress even queues its commands and starts running them. We call `printWithDelay('Yup', 1000)` and this immediately executes. Thus you see
+
+```
+before: Yup
+```
+
+Then the `cy.wrap('Promise me').then(console.log)` executes and prints
+
+```
+before: Yup
+Promise me
+```
+
+Then Cypress command at this point is executing `cy.wait(2000)`. At some point the `setTimeout` inside `delay` fires, and `printWithDelay` prints
+
+```
+before: Yup
+Promise me
+Yup
+```
+
+Notice how `cy.wrap` correctly takes already resolved promise and yields its return value to the last `.then(console.log)` printing the last `Yup`.
+
+⚠️ The lesson here is: do not put promises into the Cypress commands, put callbacks that return a promise. Then the async functions will run in order with the normal Cypress commands.
+
+<!-- fiddle-end -->
+
+### Start command chain with a promise
+
+<!-- fiddle then / start with a promise -->
+
+If you want to wait for a promise _at the start of the test_, use `cy.then(callback)`
+
+```js
+async function delay(ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve('done'), ms)
+  })
+}
+
+async function printWithDelay(message, ms) {
+  console.log('before: %s', message)
+  await delay(ms)
+  console.log(message)
+  return message
+}
+
+cy.wrap('test start').then(console.log)
+cy.then(() => printWithDelay('first cy.then', 1000)).then(() =>
+  console.log('second cy.then'),
+)
+```
+
+This prints the log messages as expected, here I am including the timestamps
+
+```
+11:23:16.573 test start
+11:23:16.574 before: first cy.then
+11:23:17.575 first cy.then
+11:23:17.576 second cy.then
+```
+
+The `printWithDelay` starts _after_ the command chain `cy.wrap('test start').then(console.log)` finishes.
+
+**Tip:** you can place your async code into `beforeEach` hook. The test runner automatically waits for the hooks to finish before starting the tests.
 
 <!-- fiddle-end -->
