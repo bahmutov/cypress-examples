@@ -429,7 +429,11 @@ cy.wait(['@first', '@second', '@third']).spread(
 
 ## [.then()](https://on.cypress.io/then)
 
-<!-- fiddle then -->
+The `cy.then` command is a very interesting and controversial topic. In my opinion, it is a very powerful and useful command, but it should [have been called something else](https://glebbahmutov.com/blog/replace-and-remove-cy-then-command/), like `cy.later`. Anyway, here is how you can use `cy.then` in your specs.
+
+### Synchronous callback
+
+<!-- fiddle then / pass the current subject to the callback -->
 
 ```html
 <ul class="connectors-list">
@@ -451,7 +455,17 @@ cy.get('.connectors-list>li').then(function ($lis) {
 })
 ```
 
+<!-- fiddle-end -->
+
+### Use promises
+
+If the `cy.then(callback)` function returns a Promise, Cypress automatically yields the resolved value to the next command or assertion. If that promise is rejected, then the test fails.
+
+### Return a value
+
 If the callback function returns a value, it is yielded to the next callback, just like in a Promise callback.
+
+<!-- fiddle then / return new subject -->
 
 ```js
 cy.log('**Return value**')
@@ -466,7 +480,13 @@ cy.wrap(1)
   })
 ```
 
+<!-- fiddle-end -->
+
+### Keep the current subject
+
 But unlike a Promise, if `undefined` is returned, then the original value passed into the `.then(cb)` is yielded to the next callback.
+
+<!-- fiddle then / keep the current subject -->
 
 ```js
 cy.log('**Returning undefined**')
@@ -481,7 +501,13 @@ cy.wrap(1)
   })
 ```
 
+<!-- fiddle-end -->
+
+### Cypress commands inside the callback
+
 If there are Cypress commands in the `.then(cb)` callback, then the value yielded by the last command will be passed to the next callback.
+
+<!-- fiddle then / commands inside the callback -->
 
 ```js
 cy.log('**Returning wrapped value**')
