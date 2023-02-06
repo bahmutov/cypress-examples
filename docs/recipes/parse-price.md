@@ -1,5 +1,7 @@
 # Parse price
 
+## Utility function
+
 Let's say that in the element's text we have a price that we need to find and extract as a number. The price could be simple `$1.99` or could have `-` sign in front of it `discount coupon -$2.12 applied`.
 
 <!-- fiddle Find and parse the price -->
