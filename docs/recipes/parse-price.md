@@ -64,7 +64,7 @@ cy.wrap(Cypress.$('<p>Final price $10.99</p>'))
   .invoke('text')
   .invoke('match', /(?<price>-?\$\d+\.\d{2})/)
   .its('groups.price')
-  .invoke('slice', 1)
+  .invoke('replace', '$', '')
   .then(parseFloat)
   .should('equal', 10.99)
 ```
