@@ -50,3 +50,23 @@ cy.wrap(Cypress.$('<p>$20.1</p>'))
 ```
 
 <!-- fiddle-end -->
+
+## Fluent chain
+
+You can rewrite the above command to be a fluent chain of queries (except for `cy.then` step).
+
+<!-- fiddle Parse price using fluent programming -->
+
+```js
+cy.wrap(Cypress.$('<p>Final price $10.99</p>'))
+  .invoke('text')
+  .invoke('match', /(?<price>-?\$\d+\.\d{2})/)
+  .its('groups.price')
+  .invoke('slice', 1)
+  .then(parseFloat)
+  .should('equal', 10.99)
+```
+
+**Tip:** instead of `cy.then(parseFloat)` use `cy.apply(parseFloat)` from [cypress-map](https://github.com/bahmutov/cypress-map) to preserve retry-ability of the entire query chain.
+
+<!-- fiddle-end -->
