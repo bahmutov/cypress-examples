@@ -70,3 +70,35 @@ cy.wrap(Cypress.$('<p>Final price $10.99</p>'))
 **Tip:** instead of `cy.then(parseFloat)` use `cy.apply(parseFloat)` from [cypress-map](https://github.com/bahmutov/cypress-map) to preserve retry-ability of the entire query chain.
 
 <!-- fiddle-end -->
+
+## Reusable query
+
+<!-- fiddle Parse price using reusable query -->
+
+Let's move our utility function into `parsePrice` query that we can call on demand.
+
+```js
+Cypress.Commands.addQuery('parsePrice', () => {
+  return (subject) => {
+    const text = subject.text()
+    const matched = text.match(/(?<price>-?\$\d+\.\d{2})/)
+    const priceText = Cypress._.get(matched, 'groups.price')
+    if (!priceText) {
+      return NaN
+    }
+    return parseFloat(priceText.replace('$', ''))
+  }
+})
+```
+
+Compared to `cy.then(parsePrice)`, the query approach can retry parsing the price while the element is updated.
+
+```js
+const $el = Cypress.$('<p>Final price --</p>')
+setTimeout(() => {
+  $el.text('Final price $10.99')
+}, 1000)
+cy.wrap($el).parsePrice().should('equal', 10.99)
+```
+
+<!-- fiddle-end -->
