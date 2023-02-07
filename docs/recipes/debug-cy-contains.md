@@ -18,7 +18,7 @@
 </div>
 ```
 
-Let's fetch the user ID and then find the required element. We know it should have text "John Doe"
+Let's fetch the user ID and then find the required element. We know it should have text "John Doe", but for some reason, the next test fails to find anything ☹️
 
 ```js skip
 const username = 'John  Doe'
@@ -34,12 +34,12 @@ cy.get('span').should('have.attr', 'data-user-id')
 })
 ```
 
-
+There could be several problems, let's debug it.
 
 ## How to debug failing `cy.contains` command
 
 - check if the selector has been [properly escaped](./escape-selector.md)
-- try finding the elements by selector from the DevTools console `$$(..selector..)`.
+- try finding the elements by selector from the DevTools console using regular browser commands `$$(..selector..)`.
   - ⚠️ make sure to switch the context to "Your project"
   - does it find a single element or multiple elements?
 - check if you are inside [cy.within](https://on.cypress.io/within) context, which limits your queries to part of the DOM
