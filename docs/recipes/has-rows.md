@@ -1,5 +1,7 @@
 # Table rows having cells with the given attribute
 
+📺 Watch this recipe in [Complex Find Table Rows Example](https://youtu.be/v4EwXbtb6Fo).
+
 ## Plain Cypress commands
 
 <!-- fiddle Plain Cypress commands -->
