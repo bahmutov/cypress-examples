@@ -50,6 +50,7 @@
     "common-tags": "1.8.0",
     "cypress": "12.5.0",
     "cypress-book": "1.5.0",
+    "cypress-map": "^1.12.3",
     "cypress-markdown-preprocessor": "1.7.1",
     "dependency-version-badge": "1.2.0",
     "globby": "11.0.1",
