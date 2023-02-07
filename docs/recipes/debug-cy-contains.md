@@ -39,11 +39,12 @@ There could be several problems, let's debug it.
 ## How to debug failing `cy.contains` command
 
 - check if the selector has been [properly escaped](./escape-selector.md)
-- try finding the elements by selector from the DevTools console using regular browser commands `$$(..selector..)`.
+- try finding the elements by selector from the DevTools console using regular browser commands `$$(..selector..)`
   - ⚠️ make sure to switch the context to "Your project"
   - does it find a single element or multiple elements?
 - check if you are inside [cy.within](https://on.cypress.io/within) context, which limits your queries to part of the DOM
 - check the HTML text on the page for multiple whitespace characters. They might cause problems for `cy.contains`
+- check if the HTML text is in the right case. Sometimes the text in the DOM is one case, and the displayed case is controlled by the CSS
 
 **Tip:** You can refactor code to avoid making queries from inside `cy.within` or temporarily escape it
 
