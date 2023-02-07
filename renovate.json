@@ -10,6 +10,7 @@
       "packagePatterns": ["*"],
       "excludePackagePatterns": [
         "cypress",
+        "cypress-map",
         "cypress-markdown-preprocessor",
         "start-server-and-test"
       ],

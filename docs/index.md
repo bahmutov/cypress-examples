@@ -306,6 +306,8 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 
 📝 Read the blog post [Test HTML Tables Using cy.table Query Command](https://glebbahmutov.com/blog/cy-table/).
 
+Some of the recipes use [cypress-map](https://github.com/bahmutov/cypress-map) queries to show a better solution to the same exercise.
+
 ## Courses
 
 I have several Cypress courses at [cypress.tips/courses](https://cypress.tips/courses)

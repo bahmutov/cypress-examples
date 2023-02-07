@@ -1,5 +1,8 @@
 /// <reference types="cypress" />
 
+// https://github.com/bahmutov/cypress-map
+require('cypress-map')
+// https://www.chaijs.com/plugins/chai-sorted/
 chai.use(require('chai-sorted'))
 
 // a little utility command for taking the screenshot of the entire runner
