@@ -300,6 +300,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Table with prices](./recipes/table-with-prices.md) confirms the prices in every table row.
 - Check the [table has some columns](./recipes/table-column-order.md) in the expected order
 - Find the table row with the [exact table cell text](./recipes/table-cell.md)
+- Find the table row [having cells with an attribute](./recipes/has-rows.md)
 - Select a table [cell by the column heading](./recipes/table-cell-by-column-heading.md)
 - read a value from a table cell and [enter it into a field](./recipes/enter-value.md)
 
