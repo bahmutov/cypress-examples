@@ -1,5 +1,7 @@
 # Visible elements
 
+📺 Watch this recipe explained at [How To Check Visibility Of Many Elements](https://youtu.be/puCZGCeUb5k).
+
 ## At least one is visible
 
 The built-in `.should('be.visible')` assertion passes if _any_ of the elements are visible.
