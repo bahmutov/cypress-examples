@@ -2,6 +2,56 @@
 
 Imagine we have a form with an input element and a label. We want to find the input element by label and yield it to further assertions and commands. Let's write a custom command.
 
+## Via parent
+
+If there is a common parent for every label and input pair, we can find the parent element and then find the input.
+
+<!-- fiddle Get by label / via parent form-group -->
+
+```html
+<form method="POST" id="signup-form" class="signup-form">
+  <div class="form-row">
+    <div class="form-group">
+      <label for="first_name">First name</label>
+      <input
+        type="text"
+        class="form-input"
+        name="first_name"
+        id="first_name"
+        value="Joe"
+      />
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last name</label>
+      <input
+        type="text"
+        class="form-input"
+        name="last_name"
+        id="last_name"
+        value="Smith"
+      />
+    </div>
+  </div>
+</form>
+```
+
+Find all ".form-group" elements that have inside a label element with the given text
+
+```js
+cy.get('.form-group:has(label:contains("First name"))')
+  .find('input')
+  .should('have.value', 'Joe')
+  .and('id', 'first_name')
+```
+
+We can grab all form groups with the label inside
+
+```js
+cy.get('.form-group:has(label)').should('have.length', 2)
+```
+
+<!-- fiddle-end -->
+
 ## Reusable function
 
 <!-- fiddle Get by label / using a function -->
