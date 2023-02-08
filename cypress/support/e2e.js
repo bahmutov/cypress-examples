@@ -4,6 +4,8 @@
 require('cypress-map')
 // https://www.chaijs.com/plugins/chai-sorted/
 chai.use(require('chai-sorted'))
+// https://www.chaijs.com/plugins/chai-each/
+chai.use(require('chai-each'))
 
 // a little utility command for taking the screenshot of the entire runner
 // to be used only in the recipes that are NOT distributed as JavaScript specs
