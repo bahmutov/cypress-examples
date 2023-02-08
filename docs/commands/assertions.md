@@ -1641,14 +1641,15 @@ We can check if an element has a particular "data-x" attribute present, and its 
 cy.contains('#data-attributes li', 'first')
   // "data" object converts names to camel case
   .should('have.data', 'testId', 'first')
-  // the assertion yields the value of the data attribute
-  .should('equal', 'first')
+  // the assertion yields the original element
+  .should('match', 'li')
+  .and('have.text', 'first')
 
 cy.contains('#data-attributes li', 'second')
   // first assertion confirms there is such "data-x" property
   .should('have.data', 'e2e')
-  // and yields the value that we assert in the next assertion
-  .should('equal', 'second')
+  // and yields the jQuery object to the next assertion
+  .should('have.text', 'second')
 
 // multiple "data-" properties need multiple commands
 cy.contains('#data-attributes li', 'third').should(

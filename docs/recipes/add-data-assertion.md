@@ -16,9 +16,10 @@ cy.contains('#data-attributes li', 'first')
   // use the built-in Chai-jQuery "have.data" assertion
   // https://www.chaijs.com/plugins/chai-jquery/
   .should('have.data', 'testId', 'first')
-  // unfortunately, we can no longer work with the element
-  // since the assertion yields the value of the data attribute
-  .should('equal', 'first')
+  // because the assertion is "complete" and checked the value
+  // the yielded value is the original element
+  .should('have.text', 'first')
+  .and('match', 'li')
 ```
 
 We can add our own assertion to verify the "data-test-id" attribute (with optional value), and yield the original element to keep chaining commands to it.
