@@ -252,7 +252,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - waiting for the button to be [enabled before clicking](./recipes/disabled-button.md)
 - confirm the [cursor position in the text area](./recipes/text-area-cursor.md)
 - verify the phone number string using a [strict regular expression](./recipes/phone-number.md)
-- debug a [failing cy.get and cy.contains commands](./recipes/debug-cy-get-contains.md)
+- debug [failing cy.get and cy.contains commands](./recipes/debug-cy-get-contains.md)
 - check that [each element is visible](./recipes/all-elements-are-visible.md)
 
 ### Working with the window object
