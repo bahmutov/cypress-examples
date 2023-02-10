@@ -32,20 +32,11 @@ The test code fragment fails to find the element, even though it exists.
 
 ```js skip
 // 🚨 DOES NOT WORK
-let id
-cy.get('[data-cy=info]')
-  .within(() => {
-    // grab the attribute value
-    cy.get('span')
-      .should('have.attr', 'data-user-id')
-      .should('be.a', 'string')
-      .then((s) => {
-        id = s
-      })
-  })
-  .then(() => {
-    // use the "id" only after it has been extracted
-    // cy.get('#' + Cypress.$.escapeSelector(id))
+cy.get('[data-cy=info] span')
+  // grab the attribute value
+  .should('have.attr', 'data-user-id')
+  .should('be.a', 'string')
+  .then((id) => {
     cy.get('#' + id)
   })
 ```
@@ -56,23 +47,13 @@ The problem is the selector having `#` character. We need to scape special chara
 
 ```js
 // ✅ CORRECT TEST
-let id
-cy.get('[data-cy=info]')
-  .within(() => {
-    // grab the attribute value
-    cy.get('span')
-      .should('have.attr', 'data-user-id')
-      .should('be.a', 'string')
-      .then((s) => {
-        id = s
-      })
-  })
-  .then(() => {
-    // use the "id" only after it has been extracted
-    cy.get('#' + Cypress.$.escapeSelector(id)).should(
-      'have.text',
-      'John Doe',
-    )
+cy.get('[data-cy=info] span')
+  // grab the attribute value
+  .should('have.attr', 'data-user-id')
+  .then(Cypress.$.escapeSelector)
+  .should('be.a', 'string')
+  .then((id) => {
+    cy.get('#' + id).should('have.text', 'John Doe')
   })
 ```
 
