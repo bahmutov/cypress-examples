@@ -1,5 +1,7 @@
 # Debug cy.get and cy.contains commands
 
+📝 Read the blog post [Debug Cypress Commands cy.get And cy.contains](https://glebbahmutov.com/blog/debug-cy-get-and-contains/)
+
 If the `cy.get` and `cy.contains` command fail to find an element, and you think "it is right there, why don't you see it?!!" this recipe is for you. There could be several problems, and this recipe tries to cover the ones I see most often. First a bit of summary advice on how to debug a failing `cy.get`, `cy.find`, and `cy.contains` commands:
 
 - check if the selector has been [properly escaped](./escape-selector.md)
@@ -7,6 +9,7 @@ If the `cy.get` and `cy.contains` command fail to find an element, and you think
   - ⚠️ make sure to switch the context to "Your project"
   - does it find a single element or multiple elements?
 - check if you are inside [cy.within](https://on.cypress.io/within) context, which limits your queries to part of the DOM
+- check if there are unexpected elements matching the selector
 - check the HTML text on the page for multiple whitespace characters. They might cause problems for `cy.contains`
 - check if the HTML text is in the right case. Sometimes the text in the DOM is one case, and the displayed case is controlled by the CSS
 
@@ -79,7 +82,7 @@ cy.get('[data-cy=info] span')
 </div>
 ```
 
-Let's fetch the user ID and then find the required element. We know it should have text "John Doe", but for some reason, the next test fails to find anything ☹️
+Let's fetch the user ID and then find the required element. We know get the valid escaped string id, but for some reason, the next test fails to find anything ☹️
 
 ```js skip
 // 🚨 DOES NOT WORK
@@ -87,6 +90,7 @@ cy.get('[data-cy=info]').within(() => {
   // grab the attribute value
   cy.get('span')
     .should('have.attr', 'data-user-id')
+    .then(Cypress.$.escapeSelector)
     .should('be.a', 'string')
     .then((id) => {
       cy.get('#' + id)
@@ -106,9 +110,12 @@ cy.get('[data-cy=info]').within(() => {
   // grab the attribute value
   cy.get('span')
     .should('have.attr', 'data-user-id')
+    .then(Cypress.$.escapeSelector)
     .should('be.a', 'string')
     .then((id) => {
-      cy.root().parent().find('#user1')
+      cy.root()
+        .parent()
+        .find('#' + id)
     })
 })
 ```
@@ -121,18 +128,21 @@ cy.get('[data-cy=info]').within(() => {
   // grab the attribute value
   cy.get('span')
     .should('have.attr', 'data-user-id')
+    .then(Cypress.$.escapeSelector)
     .should('be.a', 'string')
     .as('id')
 })
 // get the saved value from the alias
 cy.get('@id').then((id) => {
-  cy.root().parent().find('#user1')
+  cy.root()
+    .parent()
+    .find('#' + id)
 })
 ```
 
 <!-- fiddle-end -->
 
-## Multiple values
+## Multiple elements matching the selector
 
 ### The problem
 
@@ -162,7 +172,7 @@ We want to match what we see and take a special care to avoid hidden elements on
 ```js
 // ✅ CORRECT TEST
 cy.get('.person:visible').should('have.text', 'Mary Sue')
-// alternative, use `cy.filter separate step
+// alternative solution using `cy.filter separate step
 cy.get('.person')
   .filter(':visible')
   .should('have.text', 'Mary Sue')
@@ -210,12 +220,12 @@ We need to replace multiple whitespace characters with a single one.
 ```js
 // ✅ CORRECT TEST
 const username = 'John  Doe'
-cy.contains('#user1', username.replace(/\s+/, ' '))
+cy.contains('#user1', username.replace(/\s+/g, ' '))
 ```
 
 **Note:** the assertion "have.text" will work with the original text, since it automatically collapses the whitespace.
 
-```js
+```js skip
 cy.get('#user1').should('have.text', username)
 // extract the text and match the regular expression
   .invoke('text')
