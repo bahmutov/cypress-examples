@@ -4,7 +4,7 @@
 
 The SVG below comes from [Wikimedia](https://commons.wikimedia.org/wiki/Category:SVG_logos).
 
-```html
+```html hide
 <!--
   Author: Yves Baelde
   Aspect ratio  1/1
