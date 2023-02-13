@@ -1122,6 +1122,11 @@ cy.contains(
   '.my-title',
   /^(Testing Examples|Cypress Examples Guide|Short Feature Tests)$/,
 )
+```
+
+Perhaps a simpler test extracts the text from the element by invoking the jQuery `text` method and checks if it equals one of the allowed strings. With [Cypress v12 queries](https://glebbahmutov.com/blog/cypress-v12/), the entire chain `cy.get().invoke().should()` is retried.
+
+```js
 // you can also get the text and confirm it
 cy.get('.my-title')
   .invoke('text')
@@ -1131,6 +1136,35 @@ cy.get('.my-title')
     'Short Feature Tests',
   ])
 ```
+
+We can also use the `.should('match', regular expression)` to check the text
+
+```js
+// you can also get the text and confirm it
+cy.get('.my-title')
+  .invoke('text')
+  .should('match', /example/i)
+```
+
+**Tip:** be careful with "OR" assertions, as they might relax the tests too much. For example, when adding a new item, the text might be "New item added". When editing an existing test the text might be "Item updated". It is tempting to match one of two variants:
+
+```js skip
+.should('be.oneOf', ['New item added', 'Item updated'])
+```
+
+What if the application code accidentally shows "Item updated" when adding a new item? The test will still pass just fine. This is why I would argue that the test should know _exactly_ what to expect. For example, the test code might have a variable "updated" to control which test it is:
+
+```js skip
+function checkText(updated) {
+  if (updated) {
+    cy.contains('.my-title', 'Item updated')
+  } else {
+    cy.contains('.my-title', 'New item added')
+  }
+}
+```
+
+The test is much stricter and simpler to read.
 
 <!-- fiddle-end -->
 
