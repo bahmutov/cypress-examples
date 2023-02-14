@@ -49,16 +49,32 @@ cy.window()
   .then((console) => {
     cy.spy(console, 'log').as('log')
   })
+```
+
+We have set up the spy to be ready when the application calls `console.log`. We now need to confirm the log method was called with 2 arguments. The first argument is a primitive string `User %o`. That is easy to do:
+
+```js
+cy.get('@log').should('be.calledWith', 'User %o')
+```
+
+How do we confirm the second argument? [Sinon-Chai](https://www.chaijs.com/plugins/sinon-chai/) library `calledWith` uses `deep.equal` comparison by default, thus we can simply pass the object.
+
+```js
+// use Sinon-Chai built-in object by value match
+cy.get('@log').should('be.calledWith', 'User %o', {
+  id: 123,
+  name: 'Joe',
+})
+```
+
+We can also confirm the call using placeholder `Cypress.sinon.match.object` and yield the argument to run more "assertions" using chained commands.
+
+```js
 // yield the object to the next assertion
 cy.get('@log')
   .should('be.calledWith', 'User %o', Cypress.sinon.match.object)
   .its('firstCall.args.1')
   .should('deep.equal', { id: 123, name: 'Joe' })
-// use Sinon's built-in object by value match
-cy.get('@log').should('be.calledWith', 'User %o', {
-  id: 123,
-  name: 'Joe',
-})
 ```
 
 <!-- fiddle-end -->
