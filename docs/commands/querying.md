@@ -262,6 +262,16 @@ cy.get('#uploads button:contains("Select File")')
   .should('have.id', 'up4')
 ```
 
+When you yield a list of elements, it is simple to get a particular one by its zero-based index with [cy.eq](https://on.cypress.io/eq) command.
+
+```js
+cy.get('#uploads button:contains("Select File")')
+  .should('have.length', 4)
+  .eq(1)
+  // finds the 2nd button
+  .should('have.id', 'up2')
+```
+
 **Note:** `cy.contains` supports regular expressions, while jQuery `:contains(text)` does not.
 
 <!-- fiddle-end -->
