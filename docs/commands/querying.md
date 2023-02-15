@@ -71,7 +71,7 @@ cy.get('h4,h5,h6').should('have.length.gt', 1)
 
 Cypress querying commands use [jQuery selectors](https://api.jquery.com/category/selectors/) that go beyond the standard CSS selectors. Here are a couple of examples.
 
-#### :checkbox selector
+### :checkbox selector
 
 The [jQuery `:checkbox` selector](https://api.jquery.com/checkbox-selector/) is equivalent to `[type=checkbox]` attribute CSS selector. The jQuery docs advise to use at least the element type like `input:checkbox` to avoid the default `*:checkbox` wildcard.
 
@@ -101,7 +101,7 @@ cy.get('#checkbox-example input:checkbox')
 
 <!-- fiddle-end -->
 
-#### Disabled elements
+### Disabled elements
 
 <!-- fiddle cy.get / using jQuery is :disabled -->
 
@@ -124,7 +124,7 @@ cy.get('#some-buttons button:not(:disabled)')
 
 <!-- fiddle-end -->
 
-#### Checked elements
+### Checked elements
 
 <!-- fiddle cy.get / using jQuery is :checked -->
 
@@ -147,7 +147,7 @@ cy.get('#checks input:not(:checked)').should('have.length', 2)
 
 <!-- fiddle-end -->
 
-#### :has selector
+### :has selector
 
 We can find elements that contain some other element using the `:has` selector. Let's find all paragraphs with bold text inside.
 
@@ -170,7 +170,7 @@ cy.get('#main-bold p:has(b)').should('have.length', 2)
 
 For another use of `:has` selector, see the recipe [Find and Click The Accordion With A Button](../recipes/find-and-click-accordion-button.md).
 
-#### :has with :not selector
+### :has with :not selector
 
 We can also combine `:has` with `:not` selectors to find all paragraphs without `<b>` elements.
 
@@ -196,11 +196,11 @@ cy.get('#main-bold p:not(:has(b))')
 
 <!-- fiddle-end -->
 
-#### Find text with :contains selector
+### Find text with :contains selector
 
 <!-- fiddle cy.get / with jQuery text selector -->
 
-`cy.get` uses [jQuery selectors](https://api.jquery.com/category/selectors/), thus you can immediately use them to find elements by text (or without given text). Use `:contains(text)` to find elements with the given text string and `:not(:contains(text))` to get elements without the text.
+`cy.get` uses [jQuery selectors](https://api.jquery.com/category/selectors/), thus you can immediately use them to find elements by text (or without given text). Use `:contains(text)` to find _multiple_ elements with the given text string and use `:not(:contains(text))` to get elements without the text.
 
 ```html
 <table id="text-example">
@@ -230,7 +230,43 @@ cy.get('table#text-example').within(() => {
 
 <!-- fiddle-end -->
 
-#### Combine :has and :contains selectors
+### jQuery :contains vs cy.contains
+
+Cypress command `cy.contains` returns the _first_ element with the matching text or regular expression. The command `cy.get(':contains("text...")')` returns _multiple_ elements with the text.
+
+<!-- fiddle cy.get / jQuery :contains vs cy.contains -->
+
+```html
+<div id="uploads">
+  <button id="up1">Select File</button>
+  <button id="up2">Select File</button>
+  <button id="up3">Select File</button>
+  <button id="up4">Select File</button>
+</div>
+```
+
+With `cy.contains` we get the first matching button
+
+```js
+cy.contains('#uploads button', 'Select File')
+  .should('have.length', 1)
+  .and('have.id', 'up1')
+```
+
+With `cy.get` + jQuery `:contains(text)` we can get all the buttons.
+
+```js
+cy.get('#uploads button:contains("Select File")')
+  .should('have.length', 4)
+  .last()
+  .should('have.id', 'up4')
+```
+
+**Note:** `cy.contains` supports regular expressions, while jQuery `:contains(text)` does not.
+
+<!-- fiddle-end -->
+
+### Combine :has and :contains selectors
 
 <!-- fiddle cy.get / with jQuery has and contains -->
 
@@ -256,7 +292,7 @@ cy.get('div:has( label:contains("My button") ) button')
 
 <!-- fiddle-end -->
 
-#### Multiple :has clauses
+### Multiple :has clauses
 
 <!-- fiddle cy.get / with multiple jQuery has clauses -->
 
