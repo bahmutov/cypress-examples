@@ -1306,7 +1306,7 @@ cy.get('.trigger-input-range')
 
 <!-- fiddle-end -->
 
-📺 Recommended: watch the video [Testing React Input With Type Range By Dispatching Events](https://youtu.be/G2GXHg4Ck00).
+📺 Recommended: watch the videos [Testing React Input With Type Range By Dispatching Events](https://youtu.be/G2GXHg4Ck00) and [Trigger React Slider OnChange Event](https://youtu.be/IrWZvaFraTQ).
 
 ### Trigger a click event on a disabled button
 
