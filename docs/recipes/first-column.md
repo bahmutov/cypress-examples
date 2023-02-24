@@ -122,4 +122,15 @@ cy.get('table')
   .should('deep.equal', ['Apple', 'Pear'])
 ```
 
+We can also find all `TD` elements immediately preceded `TH` by using the [adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) which in our case is `th+td`.
+
+```js
+cy.log('**using cypress-map**')
+cy.get('table')
+  .should('have.id', 'fruit')
+  .find('tbody')
+  .invoke('find', 'tr th+td')
+  .should('have.length', 2)
+```
+
 <!-- fiddle-end -->
