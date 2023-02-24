@@ -305,6 +305,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Find the table row [having cells with an attribute](./recipes/has-rows.md)
 - Select a table [cell by the column heading](./recipes/table-cell-by-column-heading.md)
 - read a value from a table cell and [enter it into a field](./recipes/enter-value.md)
+- pick the [first table column of the second table](./recipes/first-column.md)
 
 📝 Read the blog post [Test HTML Tables Using cy.table Query Command](https://glebbahmutov.com/blog/cy-table/).
 
