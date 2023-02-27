@@ -4,6 +4,8 @@
 
 <!-- fiddle First column of the second table -->
 
+📺 Watch this recipe explained in [Find The Cells In The First Column Of The Second Table](https://youtu.be/edrZDaopi3U).
+
 ```html hide
 <table id="people" class="table table-bordered">
   <thead>
