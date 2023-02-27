@@ -9,6 +9,13 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Print Node version 🖨️
+        run: node -v
+
       # only install dependencies using
       # https://github.com/cypress-io/github-action
       # will restore / create folders
