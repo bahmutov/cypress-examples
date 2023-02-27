@@ -98,7 +98,9 @@ cy.get('table')
 
 <!-- fiddle Second column skipping the TH cell -->
 
-Sometimes the table row starts with `TH` element followed by `TD` elements, breaking the `td:nth-child(1)` selector.
+Sometimes the table row starts with `TH` element followed by `TD` elements, making the `td:nth-child(2)` selector not so obvious.
+
+📺 Watch this example explained in [Adjacent Sibling CSS Selector Combinator](https://youtu.be/HVfHr8sC0jo).
 
 ```html hide
 <table id="fruit" class="table table-bordered">
@@ -151,6 +153,16 @@ cy.get('table')
   .should('deep.equal', ['Apple', 'Pear'])
 ```
 
+Even though the `TH` is the first column, we can use `TD:nth-child(2)` selector to find the fruit name cells:
+
+```js
+cy.log('**using nth-child(2)**')
+cy.get('table')
+  .should('have.id', 'fruit')
+  .find('tbody tr td:nth-child(2)')
+  .should('have.length', 2)
+```
+
 We can also find all `TD` elements immediately preceded `TH` by using the [adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) which in our case is `th+td`.
 
 ```js
@@ -158,7 +170,7 @@ cy.log('**using cypress-map**')
 cy.get('table')
   .should('have.id', 'fruit')
   .find('tbody')
-  .invoke('find', 'tr th+td')
+  .find('tr th+td')
   .should('have.length', 2)
 ```
 
