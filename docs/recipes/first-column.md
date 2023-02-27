@@ -4,6 +4,8 @@
 
 <!-- fiddle First column of the second table -->
 
+📺 Watch this recipe explained in [Find The Cells In The First Column Of The Second Table](https://youtu.be/edrZDaopi3U).
+
 ```html hide
 <table id="people" class="table table-bordered">
   <thead>
@@ -41,7 +43,9 @@
 
 By default, `cy.get` starts its search from the root of the element.
 
-```js
+```js hide
+// 🚨 INCORRECT
+cy.log('**using cy.get**')
 cy.get('table')
   .should('have.length', 2)
   .eq(1)
@@ -53,7 +57,8 @@ cy.get('table')
 
 We can use `cy.within` to force `cy.get` to pick elements only from its parent subject.
 
-```js
+```js hide
+cy.log('**using cy.within**')
 cy.get('table')
   .should('have.length', 2)
   .eq(1)
@@ -61,6 +66,30 @@ cy.get('table')
   .within(() => {
     cy.get('tr td:nth-child(1)').should('have.length', 2)
   })
+```
+
+If we use [cy.find](https://on.cypress.io/find) command, we limit our query to the parent element.
+
+```js hide
+cy.log('**using cy.find**')
+cy.get('table')
+  .should('have.length', 2)
+  .eq(1)
+  .should('have.id', 'fruit')
+  .find('tr td:nth-child(1)')
+  .should('have.length', 2)
+```
+
+We can even invoke the jQuery method `$.find` on the current subject to find the cells in the first column.
+
+```js hide
+cy.log('**invoke $.find**')
+cy.get('table')
+  .should('have.length', 2)
+  .eq(1)
+  .should('have.id', 'fruit')
+  .invoke('find', 'tr td:nth-child(1)')
+  .should('have.length', 2)
 ```
 
 <!-- fiddle-end -->
