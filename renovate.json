@@ -12,7 +12,8 @@
         "cypress",
         "cypress-map",
         "cypress-markdown-preprocessor",
-        "start-server-and-test"
+        "start-server-and-test",
+        "vuepress"
       ],
       "enabled": false
     }
