@@ -66,6 +66,13 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Print Node version 🖨️
+        run: node -v
+
       - name: Download built folders ⏬
         uses: actions/download-artifact@v2
         with:
@@ -95,6 +102,13 @@ jobs:
       # https://github.com/actions/checkout
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Print Node version 🖨️
+        run: node -v
 
       - name: Download built folders ⏬
         uses: actions/download-artifact@v2
@@ -151,6 +165,13 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Print Node version 🖨️
+        run: node -v
+
       - name: Download built folders ⏬
         uses: actions/download-artifact@v2
         with:
@@ -182,6 +203,13 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Print Node version 🖨️
+        run: node -v
 
       - name: Download built folders ⏬
         uses: actions/download-artifact@v2
