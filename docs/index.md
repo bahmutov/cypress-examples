@@ -308,6 +308,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Form input validation](./recipes/form-validation.md)
 - Set [multiple form inputs at once](./recipes/set-form-inputs.md)
 - [jQuery form serializeArray method](./recipes/form-serialize-array.md)
+- [Map input fields to values](./recipes/map-input-values.md)
 
 ### Cypress secrets
 
