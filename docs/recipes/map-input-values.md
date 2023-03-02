@@ -1,6 +1,6 @@
 # Map input values
 
-Let's grab all input fields and see if we can confirm their values.
+Let's grab all input fields and see if we can confirm their values. 📺 Watch this recipe explained in the video [Map Input Elements Values](https://youtu.be/OmVzv6pJN6I).
 
 <!-- fiddle Map input values -->
 
