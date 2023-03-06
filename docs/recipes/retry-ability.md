@@ -254,6 +254,8 @@ All assertions attached to the querying command should pass with the same subjec
 
 <!-- fiddle Retry-ability / element becomes visible then loads text -->
 
+📺 Watch this example explained in the video [Element Becomes Visible And Then Loads Text](https://youtu.be/MWY8gYdvyho).
+
 ```html hide
 <div id="app-example">
   <div id="loader" style="display:none">Loaded</div>
