@@ -247,3 +247,49 @@ cy.get(selector).should('have.value', '20')
 <!-- fiddle-end -->
 
 Watch the explanation for the above test refactoring in my video [Query Elements With Retry-Ability To Avoid Flake](https://youtu.be/deNl1q1el0E).
+
+## Element appears then loads text
+
+All assertions attached to the querying command should pass with the same subject.
+
+<!-- fiddle Retry-ability / element becomes visible then loads text -->
+
+```html hide
+<div id="app-example">
+  <div id="loader" style="display:none">Loaded</div>
+</div>
+<script>
+  setTimeout(() => {
+    document.getElementById('loader').style.display = 'block'
+  }, 2000)
+  setTimeout(() => {
+    document.getElementById('loader').innerText =
+      'Username is Joe'
+  }, 4050)
+</script>
+```
+
+Notice that the element becomes visible after 2 seconds, well within the default command timeout of 4 seconds. But it gets the expected text slightly _after_ 4 seconds. Both assertions must pass together, thus the following test fails.
+
+```js skip
+cy.get('#loader')
+  .should('be.visible')
+  .and('have.text', 'Username is Joe')
+```
+
+One solution is to increase the timeout in `cy.get` command
+
+```js skip
+cy.get('#loader', { timeout: 5_000 })
+  .should('be.visible')
+  .and('have.text', 'Username is Joe')
+```
+
+**Alternative:** split the assertions by inserting another `cy.get` element command to "restart" the timeout clock.
+
+```js
+cy.get('#loader').should('be.visible')
+cy.get('#loader').should('have.text', 'Username is Joe')
+```
+
+<!-- fiddle-end -->
