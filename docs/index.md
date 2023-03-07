@@ -285,6 +285,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - verify the phone number string using a [strict regular expression](./recipes/phone-number.md)
 - debug [failing cy.get and cy.contains commands](./recipes/debug-cy-get-contains.md)
 - check that [each element is visible](./recipes/all-elements-are-visible.md)
+- checking the [enabled status of multiple elements](./recipes/enabled-elements.md)
 
 ### Working with the window object
 
