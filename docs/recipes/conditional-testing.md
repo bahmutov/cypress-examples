@@ -183,7 +183,16 @@ Let's say that we want to click a button if it not disabled. Otherwise, just pri
 </script>
 ```
 
-```js
+Let's prepare a stub around `window.alert` method.
+
+```js hide
+// spy on the "window.alert"
+cy.window().then((win) => {
+  cy.stub(win, 'alert').as('alert')
+})
+```
+
+```js hide
 cy.contains('#btn', 'Click Me')
   // cy.contains has a built-in "existence" assertion
   // thus by now we know the button is there
@@ -191,12 +200,11 @@ cy.contains('#btn', 'Click Me')
     if ($btn.attr('disabled')) {
       console.log('Cannot click a disabled button')
     } else {
-      // spy on the "window.alert"
-      cy.window().then((win) => {
-        cy.stub(win, 'alert').as('alert')
-      })
       cy.wrap($btn).click()
-      cy.get('@alert').should('have.been.calledOnce')
+      cy.get('@alert')
+        .should('have.been.calledOnce')
+        // we can immediately reset the stub call history
+        .invoke('resetHistory')
     }
   })
 ```
@@ -208,7 +216,21 @@ cy.contains('#btn', 'Click Me').then(($btn) => {
   if ($btn.is(':disabled')) {
     cy.log('Button is disabled')
   } else {
+    cy.log('Can click it')
+  }
+})
+```
+
+jQuery has `:enabled` check too which you can use. It is the opposite of `:disabled` check.
+
+```js
+cy.contains('#btn', 'Click Me').then(($btn) => {
+  if ($btn.is(':enabled')) {
     cy.log('Clicking...')
+    cy.wrap($btn).click()
+    cy.get('@alert').should('have.been.calledOnce')
+  } else {
+    cy.log('Button is disabled')
   }
 })
 ```
