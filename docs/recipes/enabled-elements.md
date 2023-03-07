@@ -2,6 +2,8 @@
 
 ## Get all enabled buttons
 
+📺 Watch this recipe in the video [Enabled Elements](https://youtu.be/wouotQxvhA4).
+
 <!-- fiddle Get all enabled buttons -->
 
 ```html
