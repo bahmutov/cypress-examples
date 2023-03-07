@@ -55,7 +55,9 @@ If you are using [cypress-map](https://github.com/bahmutov/cypress-map), which y
 // returns the inverse of the boolean value
 const not = Cypress._.negate(Cypress._.identity)
 cy.get('button')
+  // cy.map and cy.print are from cypress-map plugin
   .map('disabled')
+  .print('disabled %o')
   .map(not)
   .should('deep.equal', [true, false, false, true, true, true])
 ```
