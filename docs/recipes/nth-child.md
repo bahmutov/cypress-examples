@@ -274,7 +274,51 @@ cy.get('li:nth-child(-n + 2)')
 
 <!-- fiddle-end -->
 
-## Elements from K to J
+## Select last N elements
+
+<!-- fiddle Last N elements -->
+
+```html hide
+<p>NBA players with most championships:</p>
+<ul>
+  <li>Bill Russell</li>
+  <li>Sam Jones</li>
+  <li>Tom Heinsohn</li>
+  <li>K. C. Jones</li>
+  <li>Satch Sanders</li>
+  <li>John Havlicek</li>
+  <li>Jim Loscutoff</li>
+  <li>Frank Ramsey</li>
+  <li>Robert Horry</li>
+</ul>
+```
+
+```css hide
+p {
+  font-weight: bold;
+}
+
+li:nth-child(-n + 3) {
+  border: 2px solid orange;
+  margin-bottom: 1px;
+}
+
+li:nth-child(even) {
+  background-color: lightyellow;
+}
+```
+
+Select the last 2 elements using `:nth-last-child` selector
+
+```js
+cy.get('li:nth-last-child(-n + 2)')
+  .map('innerText')
+  .should('deep.equal', ['Frank Ramsey', 'Robert Horry'])
+```
+
+<!-- fiddle-end -->
+
+## Select elements from K to J
 
 <!-- fiddle Elements from K to J -->
 
@@ -321,17 +365,48 @@ cy.get('li:nth-child(n + 4):nth-child(-n + 6)')
   ])
 ```
 
-The same query could be written differently. Select 3 elements starting with the element at index 4.
+<!-- fiddle-end -->
 
-```js skip
-cy.get('li:nth-child(n + 4):nth-child(3)')
-  .should('have.length', 3)
-  .map('innerText')
-  .should('deep.equal', [
-    'K. C. Jones',
-    'Satch Sanders',
-    'John Havlicek',
-  ])
+## Elements after index K
+
+<!-- fiddle Elements after index K -->
+
+```html hide
+<p>NBA players with most championships:</p>
+<ul>
+  <li>Bill Russell</li>
+  <li>Sam Jones</li>
+  <li>Tom Heinsohn</li>
+  <li>K. C. Jones</li>
+  <li>Satch Sanders</li>
+  <li>John Havlicek</li>
+  <li>Jim Loscutoff</li>
+  <li>Frank Ramsey</li>
+  <li>Robert Horry</li>
+</ul>
+```
+
+```css hide
+p {
+  font-weight: bold;
+}
+
+li:nth-child(-n + 3) {
+  border: 2px solid orange;
+  margin-bottom: 1px;
+}
+
+li:nth-child(even) {
+  background-color: lightyellow;
+}
+```
+
+Select all elements starting with index 5
+
+```js
+cy.get('li:nth-child(n + 5)')
+  .should('have.length', 5)
+  .contains(':first', 'Satch Sanders')
 ```
 
 <!-- fiddle-end -->
