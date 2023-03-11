@@ -286,6 +286,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - debug [failing cy.get and cy.contains commands](./recipes/debug-cy-get-contains.md)
 - check that [each element is visible](./recipes/all-elements-are-visible.md)
 - checking the [enabled status of multiple elements](./recipes/enabled-elements.md)
+- CSS selector [nth-child examples](./recipes/nth-child.md)
 
 ### Working with the window object
 
