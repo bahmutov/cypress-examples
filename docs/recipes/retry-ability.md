@@ -295,3 +295,46 @@ cy.get('#loader').should('have.text', 'Username is Joe')
 ```
 
 <!-- fiddle-end -->
+
+## Fun: call function using retry-ability
+
+Usually we have data subject passing through Cypress queries and functions until the assertions pass. For example, the subject could be an object and its property value:
+
+<!-- fiddle Call a function using retries -->
+
+```js
+// use max 10 but for demos use something larger like 50
+// to show off retries
+const getRandomN = () => Cypress._.random(10, false)
+const o = {}
+const i = setInterval(() => (o.n = getRandomN()), 0)
+
+cy.log('**subject is an object**')
+cy.wrap(o) // subject is an object {n: ...}
+  .its('n') // subject is a number
+  .should('equal', 7)
+```
+
+We can flip it around and wrap the function `getRandomN` itself as Cypress command chain subject. It will sit there doing nothing until we call it. **Tip:** you can invoke any function using `Function.prototype.call` or `Function.prototype.apply` methods.
+
+```js
+cy.log('**subject is a function**')
+cy.wrap(getRandomN) // subject is function "getRandomN"
+  .invoke('call') // subject is a number
+  .should('equal', 7)
+```
+
+The above chain of Cypress queries retries calling `getRandomN.call` as quickly as it can until the assertion passes.
+
+😒 Unfortunately, `cy.invoke` query command does not yield the resolved value from asynchronous functions, so you cannot write retry-able asynchronous chains, like you can do using [cypress-recurse](https://github.com/bahmutov/cypress-recurse) plugin.
+
+```js skip
+// 🚨 DOES NOT WORK
+cy.wrap(fetch)
+  .invoke('call', null, '/get-n')
+  .invoke('json')
+  .its('n')
+  .should('equal', 7)
+```
+
+<!-- fiddle-end -->
