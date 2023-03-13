@@ -288,6 +288,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - check that [each element is visible](./recipes/all-elements-are-visible.md)
 - checking the [enabled status of multiple elements](./recipes/enabled-elements.md)
 - CSS selector [nth-child examples](./recipes/nth-child.md)
+- clear the input field without [race condition with the app](./recipes/clear-input-flake.md)
 
 ### Working with the window object
 

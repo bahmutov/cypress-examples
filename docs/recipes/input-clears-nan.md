@@ -55,3 +55,7 @@ cy.get('#count', { timeout: 0 }).should('have.value', '')
 ```
 
 <!-- fiddle-end -->
+
+## See also
+
+- [Clear Input Field Flake](./clear-input-flake.md)
