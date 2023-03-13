@@ -1,5 +1,7 @@
 # Clear Input Field Flake
 
+📺 Watch the explanation for this recipe at [Clear Input Element Flake](https://youtu.be/NO6Joky4hHE).
+
 <!-- fiddle Clear input field -->
 
 ```html
