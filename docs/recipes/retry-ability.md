@@ -300,7 +300,7 @@ cy.get('#loader').should('have.text', 'Username is Joe')
 
 Usually we have data subject passing through Cypress queries and functions until the assertions pass. For example, the subject could be an object and its property value:
 
-<!-- fiddle Call a function using retries -->
+<!-- fiddle Retry-ability / Call a function using retries -->
 
 ```js
 // use max 10 but for demos use something larger like 50
@@ -333,6 +333,45 @@ The above chain of Cypress queries retries calling `getRandomN.call` as quickly 
 cy.wrap(fetch)
   .invoke('call', null, '/get-n')
   .invoke('json')
+  .its('n')
+  .should('equal', 7)
+```
+
+<!-- fiddle-end -->
+
+## More fun: invoke an asynchronous function with retry-ability
+
+If you look at the above example, maybe you think it is impossible to make `cy.invoke` wait for the resolved value. Do not worry, life finds a way. Here is super hacky way to retry fetching data from an external endpoint using `fetch`, `cy.invoke`, and built-in retries
+
+<!-- start fastify-example before running this test -->
+<!-- fiddle.skip Retry-ability / Keep fetching until the server returns 7 -->
+
+First, I will add a query named `nsync` to implement polling.
+
+```js hide
+Cypress.Commands.addQuery('nsync', () => {
+  let value
+  return (subject) => {
+    if (typeof subject === 'object' && 'then' in subject) {
+      subject.then((x) => (value = x))
+      const result = value
+      value = undefined
+      return result
+    } else {
+      return subject
+    }
+  }
+})
+```
+
+After each asynchronous function call, like `fetch` or `res.json`, add `nsync()` query to "synchronize" it.
+
+```js
+cy.wrap(fetch)
+  .invoke('call', null, 'http://localhost:4200/random-digit')
+  .nsync()
+  .invoke('json')
+  .nsync()
   .its('n')
   .should('equal', 7)
 ```
