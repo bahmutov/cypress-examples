@@ -298,6 +298,8 @@ cy.get('#loader').should('have.text', 'Username is Joe')
 
 ## Fun: call function using retry-ability
 
+📺 Watch the explanation for these recipes in [Fun With Cypress Query Commands And Asynchronous Functions](https://youtu.be/L2ZEJgOMGeA).
+
 Usually we have data subject passing through Cypress queries and functions until the assertions pass. For example, the subject could be an object and its property value:
 
 <!-- fiddle Retry-ability / Call a function using retries -->
