@@ -368,7 +368,9 @@ After each asynchronous function call, like `fetch` or `res.json`, add `nsync()`
 
 ```js
 cy.wrap(fetch)
-  .invoke('call', null, 'http://localhost:4200/random-digit')
+  .invoke('call', null, 'http://localhost:4200/random-digit', {
+    headers: { 'x-delay': 100 },
+  })
   .nsync()
   .invoke('json')
   .nsync()
