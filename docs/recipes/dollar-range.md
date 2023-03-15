@@ -77,4 +77,28 @@ function includePrice(min$, max$) {
 cy.get('#shipping').should(includePrice(10, 15))
 ```
 
+You can also write the above test using (mostly) Cypress v12 queries in a single chain, finished by a single `be.within` assertion to confirm the extracted number is between min and max numbers.
+
+```js
+// named capture group that matches "$" + dollar + cents text
+const priceRe = /\$(?<price>\d+\.\d{2})/
+cy.contains('#shipping', priceRe) // yields jQuery
+  .invoke('text') // yields text
+  .invoke('match', priceRe) // yields match
+  .its('groups.price') // yields text
+  .then(Number) // yields a number
+  .should('be.within', 10, 15) // number is between X and Y
+```
+
+Only the `cy.then(Number)` breaks the retries, but you can replace it with [cypress-map](https://github.com/bahmutov/cypress-map) `cy.apply` query.
+
+```js
+cy.contains('#shipping', priceRe)
+  .invoke('text')
+  .invoke('match', priceRe)
+  .its('groups.price')
+  .apply(Number) // cy.apply from cypress-map
+  .should('be.within', 10, 15)
+```
+
 <!-- fiddle-end -->

@@ -1410,6 +1410,33 @@ cy.get('#num-example .messages').should(($el) => {
 
 <!-- fiddle-end -->
 
+### Number within range
+
+Very useful approach to confirm a number is within certain range or between limits A and B.
+
+<!-- fiddle Implicit Assertions / Text / .should() - number within range -->
+
+```html
+<div id="shipping">
+  Ground shipping for $11.79, up to 2 kg.
+</div>
+```
+
+```js
+// named capture group that matches "$" + dollar + cents text
+const priceRe = /\$(?<price>\d+\.\d{2})/
+cy.contains('#shipping', priceRe) // yields jQuery
+  .invoke('text') // yields text
+  .invoke('match', priceRe) // yields match
+  .its('groups.price') // yields text
+  .then(Number) // yields a number
+  .should('be.within', 10, 15) // number is between X and Y
+```
+
+See [Dollar range](../recipes/dollar-range.md) recipe.
+
+<!-- fiddle-end -->
+
 ### OR match using regular expression
 
 If you want to confirm the text matches one string or another, use a regular expression
