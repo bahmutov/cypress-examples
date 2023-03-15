@@ -296,6 +296,39 @@ cy.get('#loader').should('have.text', 'Username is Joe')
 
 <!-- fiddle-end -->
 
+## Item is added to the local storage
+
+<!-- fiddle Retry-ability / Item is added to the local storage -->
+
+Let's confirm the application sets the `productId` in the `localStorage` object. Unfortunately, we do not know when the application is going to set it, only that it will be within a couple of seconds after clicking the button "Save".
+
+```html
+<button id="save">💾 Save</button>
+<script>
+  document
+    .getElementById('save')
+    .addEventListener('click', () => {
+      setTimeout(() => {
+        window.localStorage.setItem('productId', '1234abc')
+      }, 1500)
+    })
+</script>
+```
+
+```js
+cy.contains('button', 'Save').click()
+cy.window() // query
+  .its('localStorage') // query
+  .invoke('getItem', 'productId') // query
+  .should('exist') // assertion
+  .then(console.log) // command
+  .should('match', /^\d{4}/) // assertion
+```
+
+By inserting an assertion `should('exist')` after queries, we retry checking the local storage until the item is found. Then we can use other commands, like `cy.then(console.log)` that do not retry.
+
+<!-- fiddle-end -->
+
 ## Fun: call function using retry-ability
 
 📺 Watch the explanation for these recipes in [Fun With Cypress Query Commands And Asynchronous Functions](https://youtu.be/L2ZEJgOMGeA).
