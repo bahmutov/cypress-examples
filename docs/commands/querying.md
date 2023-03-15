@@ -168,7 +168,7 @@ cy.get('#main-bold p:has(b)').should('have.length', 2)
 
 <!-- fiddle-end -->
 
-For another use of `:has` selector, see the recipe [Find and Click The Accordion With A Button](../recipes/find-and-click-accordion-button.md).
+For another use of `:has` selector, see the recipes [Find and Click The Accordion With A Button](../recipes/find-and-click-accordion-button.md) and [List item with text tag](../recipes/list-item-with-text-tag.md).
 
 ### :has with :not selector
 
