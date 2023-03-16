@@ -2,6 +2,8 @@
 
 <!-- fiddle List item has span with text -->
 
+📺 Watch this recipe explained in the video [Learn :has and :contains CSS Selectors](https://youtu.be/Pxw7smb1Vyw).
+
 ```html
 <ul>
   <li>Apples</li>
