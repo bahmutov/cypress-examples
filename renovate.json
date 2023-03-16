@@ -1,7 +1,7 @@
 {
   "extends": ["config:base"],
   "automerge": true,
-  "schedule": ["before 2am every Thursday"],
+  "schedule": ["every weekend"],
   "updateNotScheduled": true,
   "timezone": "America/New_York",
   "masterIssue": true,
