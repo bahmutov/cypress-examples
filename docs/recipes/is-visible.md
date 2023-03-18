@@ -2,6 +2,8 @@
 
 In every example, the button appears on the page only after 1.5 seconds. How would the test confirm the button becomes visible?
 
+📺 Watch this recipe explained in the video [Three Ways Of Checking If Element Becomes Visible](https://youtu.be/je3EtXY807M).
+
 ## Assertion be.visible
 
 You can use the built-in [Chai-jQuery assertion](https://github.com/chaijs/chai-jquery) `be.visible`
