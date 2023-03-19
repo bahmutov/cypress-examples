@@ -2,6 +2,8 @@
 
 <!-- fiddle Multiple elements with attributes -->
 
+📺 Watch this recipe in video [Get And Set Multiple Elements Attributes](https://youtu.be/TbpGqsmUiBk).
+
 ```html
 <ul>
   <li data-product-id="a11">Apples</li>
