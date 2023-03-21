@@ -292,6 +292,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [List item with text tag](./recipes/list-item-with-text-tag.md) recipe shows `:has` and `:contains` selectors
 - get and set the [attribute value for multiple elements](./recipes/element-attributes.md) using jQuery `attr` and HTML DOM `getAttribute` methos
 - checking element's [visibility in 3 different ways](./recipes/is-visible.md)
+- checking the input element is a [password input](./recipes/password-is-hidden.md)
 
 ### Working with the window object
 
