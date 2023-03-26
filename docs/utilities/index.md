@@ -151,6 +151,8 @@ matching = Cypress.minimatch(
 expect(matching, 'comments').to.be.false
 ```
 
+See also: [Minimatch unit tests](../recipes/minimatch-unit-tests.md) recipe.
+
 <!-- fiddle-end -->
 
 ## [Cypress.Promise](https://on.cypress.io/promise)

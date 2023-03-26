@@ -154,6 +154,7 @@ Utilities give you access to methods from other commonly used libraries.
 - [Blob](./utilities/index.md#cypress-blob)
 - [minimatch](./utilities/index.md#cypress-minimatch)
 - [Promise](./utilities/index.md#cypress-promise)
+- [Minimatch unit tests](./recipes/minimatch-unit-tests.md)
 
 ## Cypress API
 
