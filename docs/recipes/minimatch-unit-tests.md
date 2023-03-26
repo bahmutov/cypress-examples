@@ -2,6 +2,8 @@
 
 Using Cypress Command Log to see the commands and their arguments is so convenient during debugging, I am using them to even run unit tests.
 
+📺 Watch this recipe explained in the video [Minimatch Unit Tests Inside Cypress](https://youtu.be/xQ5HRmzxEkQ).
+
 <!-- fiddle Minimatch example -->
 
 For example, we can use built-in Chai assertions to see them in the Command Log
