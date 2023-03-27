@@ -295,6 +295,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - checking element's [visibility in 3 different ways](./recipes/is-visible.md)
 - checking the input element is a [password input](./recipes/password-is-hidden.md)
 - confirm the text [CSS color](./recipes/color.md)
+- combine [negative with positive assertions](./recipes/negative-assertions.md)
 
 ### Working with the window object
 
