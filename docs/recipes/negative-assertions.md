@@ -1,6 +1,6 @@
 # Negative Assertions
 
-## First example
+## First example (bad)
 
 In this example, the test finishes too quickly. It does not wait for the "Loading..." text to go away, it simply checks if _right now_ the error message does not exist. There is not error message yet, because the application is still loading.
 
@@ -23,7 +23,7 @@ cy.get('#error').should('not.exist')
 
 <!-- fiddle-end -->
 
-## Second example
+## Second example (slightly better)
 
 Let's confirm first a change in the application, like the "Loading..." text going away.
 
@@ -50,7 +50,7 @@ cy.get('#error').should('not.exist')
 
 We still have a problem: what if the "Loading..." text does not appear immediately? Then both negative assertions would pass even before the application renders or loads anything meaningful.
 
-## Third example
+## Third example (better)
 
 Let's put a positive assertion in first to confirm the Loading text appears. Then we can confirm the Loading text goes away, and only then we can check if the error does not exist.
 
@@ -77,7 +77,7 @@ cy.get('#error').should('not.exist')
 
 <!-- fiddle-end -->
 
-## Positive example
+## Positive example (the best)
 
 Finally, let's make every change in our application detected. For example, we could check if the component showing that the data has loaded appears before checking the error does not exist.
 
