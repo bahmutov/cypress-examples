@@ -294,6 +294,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - get and set the [attribute value for multiple elements](./recipes/element-attributes.md) using jQuery `attr` and HTML DOM `getAttribute` methos
 - checking element's [visibility in 3 different ways](./recipes/is-visible.md)
 - checking the input element is a [password input](./recipes/password-is-hidden.md)
+- confirm the text [CSS color](./recipes/color.md)
 
 ### Working with the window object
 
