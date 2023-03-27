@@ -9,7 +9,7 @@ In this example, the test finishes too quickly. It does not wait for the "Loadin
 ```html hide
 <div id="app1">Loading...</div>
 <script>
-  setTimeout(() => {
+  setTimeout(function () {
     const el = document.getElementById('app1')
     el.innerText = 'Loaded'
   }, 1500)
@@ -30,10 +30,10 @@ Let's confirm first a change in the application, like the "Loading..." text goin
 <!-- fiddle Second example -->
 
 ```html hide
-<div id="app1">Loading...</div>
+<div id="app2">Loading...</div>
 <script>
-  setTimeout(() => {
-    const el = document.getElementById('app1')
+  setTimeout(function () {
+    const el = document.getElementById('app2')
     el.innerText = 'Loaded'
   }, 1500)
 </script>
@@ -57,10 +57,10 @@ Let's put a positive assertion in first to confirm the Loading text appears. The
 <!-- fiddle Third example -->
 
 ```html hide
-<div id="app1">Loading...</div>
+<div id="app3">Loading...</div>
 <script>
-  setTimeout(() => {
-    const el = document.getElementById('app1')
+  setTimeout(function () {
+    const el = document.getElementById('app3')
     el.innerText = 'Loaded'
   }, 1500)
 </script>
@@ -84,10 +84,10 @@ Finally, let's make every change in our application detected. For example, we co
 <!-- fiddle Positive example -->
 
 ```html hide
-<div id="app1">Loading...</div>
+<div id="app4">Loading...</div>
 <script>
-  setTimeout(() => {
-    const el = document.getElementById('app1')
+  setTimeout(function () {
+    const el = document.getElementById('app4')
     el.innerHTML =
       '<div id="timing" data-duration="2 seconds" /><div>Loaded</div>'
   }, 1500)
