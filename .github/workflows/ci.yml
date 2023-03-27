@@ -74,7 +74,7 @@ jobs:
         run: node -v
 
       - name: Download built folders ⏬
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: built
 
@@ -111,7 +111,7 @@ jobs:
         run: node -v
 
       - name: Download built folders ⏬
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: built
 
@@ -173,7 +173,7 @@ jobs:
         run: node -v
 
       - name: Download built folders ⏬
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: built
 
@@ -212,7 +212,7 @@ jobs:
         run: node -v
 
       - name: Download built folders ⏬
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: built
 
