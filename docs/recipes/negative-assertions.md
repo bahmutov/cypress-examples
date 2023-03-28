@@ -1,5 +1,66 @@
 # Negative Assertions
 
+## The basics
+
+Cypress has built-in [retry-ability](./retry-ability.md) in most of its commands. If an assertion does not pass, Cypress keeps retrying. If an assertion is _positive_ then it is usually easy to reason.
+
+<!-- fiddle The basics -->
+
+For example, the page does not show the "Loaded" text initially. We want to check if the page shows "Loaded", thus we check if the _positive_ change happens on the page.
+
+```html
+<div id="basics">starting...</div>
+<script>
+  // the text appears after a delay
+  setTimeout(function () {
+    const el = document.getElementById('basics')
+    el.innerText = 'Loaded'
+  }, 1500)
+</script>
+```
+
+```js
+// cy.contains has a built-in "exists" assertion
+cy.contains('#basics', 'Loaded')
+```
+
+<!-- fiddle-end -->
+
+## A negative assertion
+
+<!-- fiddle A negative assertion -->
+
+A negative assertion checks if something is not there. If the element is present, then Cypress retries until the negative assertion passes.
+
+```html
+<div id="basics">starting...</div>
+<script>
+  // the text appears after a delay
+  setTimeout(function () {
+    const el = document.getElementById('basics')
+    el.innerText = 'Loaded'
+  }, 1500)
+</script>
+```
+
+Let's use a negative assertion to confirm the text "starting..." goes away.
+
+```js
+cy.contains('#basics', 'starting').should('not.exist')
+```
+
+<!-- fiddle-end -->
+
+A problem with negative assertions is timing. Often such assertions pass _too early_ when the application has not finished loading or updating. For example, I often see the test code like this that probably would happily be passing, while the application is broken:
+
+```js
+cy.get('button').click()
+cy.location('pathname').should('equal', '/new-url')
+cy.contains('#error').should('not.exist')
+```
+
+Guess what - the error element is not there when the page _just_ starts loading, right. The test finishes, while the application loads its data, and then "boom!" it shows an error. But our test has completed already. In the next couple of examples, I will explain how to solve this problem.
+
 ## First example (bad)
 
 In this example, the test finishes too quickly. It does not wait for the "Loading..." text to go away, it simply checks if _right now_ the error message does not exist. There is not error message yet, because the application is still loading.
@@ -19,6 +80,12 @@ In this example, the test finishes too quickly. It does not wait for the "Loadin
 ```js
 // negative assertion
 cy.get('#error').should('not.exist')
+```
+
+Here is the application code that might "break" the test and cause it to pass for the wrong reason:
+
+```html skip
+<div>About to load...</div>
 ```
 
 <!-- fiddle-end -->
@@ -44,6 +111,23 @@ Let's confirm first a change in the application, like the "Loading..." text goin
 cy.contains('Loading...').should('not.exist')
 // negative assertion
 cy.get('#error').should('not.exist')
+```
+
+Here is the application code that might show an error, yet the test would pass.
+
+```html skip
+<div id="app2b">Loading...</div>
+<script>
+  setTimeout(function () {
+    const el = document.getElementById('app2b')
+    el.innerText = '...'
+  }, 1500)
+  // the error is displayed after a short delay
+  setTimeout(function () {
+    const el = document.getElementById('app2b')
+    el.innerText = 'Error'
+  }, 1550)
+</script>
 ```
 
 <!-- fiddle-end -->
@@ -73,6 +157,23 @@ cy.contains('Loading...')
 cy.contains('Loading...').should('not.exist')
 // negative assertion
 cy.get('#error').should('not.exist')
+```
+
+Again, if the application is showing an error after a short delay after the loading element goes away, our test will be green, yet the user would see an error.
+
+```html skip
+<div id="app2b">Loading...</div>
+<script>
+  setTimeout(function () {
+    const el = document.getElementById('app2b')
+    el.innerText = '...'
+  }, 1500)
+  // the error is displayed after a short delay
+  setTimeout(function () {
+    const el = document.getElementById('app2b')
+    el.innerText = 'Error'
+  }, 1550)
+</script>
 ```
 
 <!-- fiddle-end -->
