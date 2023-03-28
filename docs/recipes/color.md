@@ -1,5 +1,7 @@
 # Color
 
+📺 Watch this recipe explained in [Check CSS Color Using jQuery-Chai Assertion "have.css"](https://youtu.be/A54BmxosAzI).
+
 ## Confirmed the declared CSS color
 
 <!-- fiddle CSS color -->
