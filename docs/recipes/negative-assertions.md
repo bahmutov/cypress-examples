@@ -1,5 +1,7 @@
 # Negative Assertions
 
+📺 Watch the explanation for this video in [Negative Assertions](https://youtu.be/KRhpi2whppA).
+
 ## The basics
 
 Cypress has built-in [retry-ability](./retry-ability.md) in most of its commands. If an assertion does not pass, Cypress keeps retrying. If an assertion is _positive_ then it is usually easy to reason.
