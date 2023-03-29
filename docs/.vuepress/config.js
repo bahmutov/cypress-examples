@@ -19,14 +19,14 @@ export default defineUserConfig({
   base,
   dest,
   head: [
-    [
-      'link',
-      {
-        rel: 'stylesheet',
-        href:
-          'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css',
-      },
-    ],
+    // [
+    //   'link',
+    //   {
+    //     rel: 'stylesheet',
+    //     href:
+    //       'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css',
+    //   },
+    // ],
     [
       'style',
       {},
@@ -42,16 +42,16 @@ export default defineUserConfig({
         crossorigin: 'anonymous',
       },
     ],
-    [
-      'script',
-      {
-        src:
-          'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js',
-        integrity:
-          'sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx',
-        crossorigin: 'anonymous',
-      },
-    ],
+    // [
+    //   'script',
+    //   {
+    //     src:
+    //       'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js',
+    //     integrity:
+    //       'sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx',
+    //     crossorigin: 'anonymous',
+    //   },
+    // ],
   ],
   plugins: [],
   themeConfig: {
