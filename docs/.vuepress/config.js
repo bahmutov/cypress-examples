@@ -1,3 +1,5 @@
+import { defineUserConfig } from 'vuepress'
+
 let _highlight
 
 const { findCypressVersion } = require('../../src/utils')
@@ -10,7 +12,7 @@ const dest = '/public/cypress-examples'
 console.log('output folder: %s', dest)
 const title = `Cypress examples (v${cypressVersion})`
 
-module.exports = {
+export default defineUserConfig({
   title,
   description:
     'Static site with Cypress examples tested right from the Markdown sources',
@@ -156,4 +158,4 @@ module.exports = {
       }
     },
   },
-}
+})
