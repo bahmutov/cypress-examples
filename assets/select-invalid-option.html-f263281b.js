@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-89420680","path":"/recipes/select-invalid-option.html","title":"How To Select And Invalid Option","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1680199227000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/select-invalid-option.md"}');export{e as data};

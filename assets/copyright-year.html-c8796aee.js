@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-4dd0659a","path":"/recipes/copyright-year.html","title":"Copyright Year","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1680199227000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/copyright-year.md"}');export{e as data};
