@@ -1,4 +1,5 @@
 import { defineUserConfig } from 'vuepress'
+import { defaultTheme } from '@vuepress/theme-default'
 
 let _highlight
 
@@ -54,16 +55,16 @@ export default defineUserConfig({
     // ],
   ],
   plugins: [],
-  themeConfig: {
+  theme: defaultTheme({
     // point pages back at the GitHub documents
     repo: 'bahmutov/cypress-examples',
     docsDir: 'docs',
     editLinks: true,
     editLinkText: 'Help us improve this page!',
-    nav: [
+    navbar: [
       {
         text: 'Commands',
-        items: [
+        children: [
           { text: 'Querying', link: '/commands/querying/' },
           {
             text: 'Traversal',
@@ -129,7 +130,7 @@ export default defineUserConfig({
       indexName: 'cypress-examples',
       appId: '48DTXR75RW',
     },
-  },
+  }),
   markdown: {
     extendMarkdown(md) {
       if (!_highlight) {

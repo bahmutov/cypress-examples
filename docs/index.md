@@ -358,13 +358,14 @@ Some of the recipes use [cypress-map](https://github.com/bahmutov/cypress-map) q
 
 I have several Cypress courses at [cypress.tips/courses](https://cypress.tips/courses)
 
-- I cover the basics of E2E and Component testing in my free course [Cypress Version 10: Fundamentals](https://cypress.tips/courses)
+- I cover the very basics of E2E and Component testing in my free course [Cypress Version 10: Fundamentals](https://cypress.tips/courses)
+- You can fully learn E2E and React Component testing in my hands-on course [Testing The Swag Store](https://cypress.tips/courses/swag-store)
 - Interested in learning more about `cy.intercept`, `cy.request`, and the related commands? Take my [Cypress Network Testing Exercises](https://cypress.tips/courses) course
 - Need to step up your tests and take advantages of the [many Cypress plugins](https://on.cypress.io/plugins)? Take my course [Cypress Plugins](https://cypress.tips/courses/cypress-plugins) that covers 20+ plugins (I wrote most of them)
 
 ## Videos
 
-Some of the examples and the recipes listed here are explained through short videos I post on my [YouTube channel](https://www.youtube.com/glebbahmutov). The playlist [Cypress Tips & Tricks](https://www.youtube.com/playlist?list=PLP9o9QNnQuAYYRpJzDNWpeuOVTwxmIxcI) has 400+ videos!
+Some of the examples and the recipes listed here are explained through short videos I post on my [YouTube channel](https://www.youtube.com/glebbahmutov). The playlist [Cypress Tips & Tricks](https://www.youtube.com/playlist?list=PLP9o9QNnQuAYYRpJzDNWpeuOVTwxmIxcI) has 600+ videos! You can search them all from my page [cypress.tips/search](https://cypress.tips/search).
 
 ## The newsletter
 
