@@ -2,6 +2,8 @@
 
 Imagine your application responds to the user selection an option from a `<select>` element. You handle the valid options, but how would you test handling of the invalid option by the `default` switch case?
 
+📺 Watch this recipe explained in [Select Invalid Option](https://youtu.be/X0uiViQoAO0).
+
 <!-- fiddle Select invalid option -->
 
 ```html hide
@@ -24,7 +26,7 @@ Imagine your application responds to the user selection an option from a `<selec
         case 'z to a':
           console.log('sorting by name Z to A')
           break
-        case 'low to high"':
+        case 'low to high':
           console.log('sorting by price from lowest')
           break
         case 'high to low':
