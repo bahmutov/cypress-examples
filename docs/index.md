@@ -311,6 +311,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Select an item by partial text match](./recipes/select-by-index.md)
 - [Assert the selected value or multiple values](recipes/selected-value.md) in a `<select>` element
 - [Select an item by id](./recipes/select-value-by-id.md)
+- [Select an invalid option](./recipes/select-invalid-option.md) to reach the error-handling case
 
 ### Working with forms
 
