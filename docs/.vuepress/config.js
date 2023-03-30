@@ -1,29 +1,34 @@
+import { defineUserConfig } from 'vuepress'
+import { defaultTheme } from '@vuepress/theme-default'
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
+
 let _highlight
 
 const { findCypressVersion } = require('../../src/utils')
-const path = require('path')
+// const path = require('path')
 
 const cypressVersion = findCypressVersion()
 const base = `/cypress-examples/`
-const dest = path.join('public', 'cypress-examples')
+// const dest = path.join('public', 'cypress-examples')
+const dest = 'public/cypress-examples'
 console.log('output folder: %s', dest)
 const title = `Cypress examples (v${cypressVersion})`
 
-module.exports = {
+export default defineUserConfig({
   title,
   description:
     'Static site with Cypress examples tested right from the Markdown sources',
   base,
   dest,
   head: [
-    [
-      'link',
-      {
-        rel: 'stylesheet',
-        href:
-          'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css',
-      },
-    ],
+    // [
+    //   'link',
+    //   {
+    //     rel: 'stylesheet',
+    //     href:
+    //       'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css',
+    //   },
+    // ],
     [
       'style',
       {},
@@ -39,28 +44,35 @@ module.exports = {
         crossorigin: 'anonymous',
       },
     ],
-    [
-      'script',
-      {
-        src:
-          'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js',
-        integrity:
-          'sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx',
-        crossorigin: 'anonymous',
-      },
-    ],
+    // [
+    //   'script',
+    //   {
+    //     src:
+    //       'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js',
+    //     integrity:
+    //       'sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx',
+    //     crossorigin: 'anonymous',
+    //   },
+    // ],
   ],
-  plugins: [],
-  themeConfig: {
+  plugins: [
+    docsearchPlugin({
+      // DANGER 🧨💀: ONLY USE ALGOLIA PUBLIC SEARCH-ONLY API KEY
+      apiKey: 'd2cc2084df39806bdefb04f60f16e856',
+      indexName: 'cypress-examples',
+      appId: '48DTXR75RW',
+    }),
+  ],
+  theme: defaultTheme({
     // point pages back at the GitHub documents
     repo: 'bahmutov/cypress-examples',
     docsDir: 'docs',
     editLinks: true,
     editLinkText: 'Help us improve this page!',
-    nav: [
+    navbar: [
       {
         text: 'Commands',
-        items: [
+        children: [
           { text: 'Querying', link: '/commands/querying/' },
           {
             text: 'Traversal',
@@ -120,13 +132,7 @@ module.exports = {
       { text: 'Cypress API', link: '/cypress-api/' },
     ],
     sidebar: 'auto',
-    algolia: {
-      // DANGER 🧨💀: ONLY USE ALGOLIA PUBLIC SEARCH-ONLY API KEY
-      apiKey: 'd2cc2084df39806bdefb04f60f16e856',
-      indexName: 'cypress-examples',
-      appId: '48DTXR75RW',
-    },
-  },
+  }),
   markdown: {
     extendMarkdown(md) {
       if (!_highlight) {
@@ -155,4 +161,4 @@ module.exports = {
       }
     },
   },
-}
+})

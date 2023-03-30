@@ -14,3 +14,5 @@ redirects
 people.json
 person.json
 out.json
+docs/.vuepress/.cache/
+docs/.vuepress/.temp/

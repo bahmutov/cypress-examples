@@ -46,6 +46,7 @@
   },
   "homepage": "https://github.com/bahmutov/cypress-examples#readme",
   "devDependencies": {
+    "@vuepress/plugin-docsearch": "^2.0.0-beta.61",
     "chai-each": "^0.0.1",
     "chai-sorted": "^0.2.0",
     "common-tags": "1.8.0",
@@ -65,7 +66,7 @@
     "shelljs": "0.8.4",
     "start-server-and-test": "2.0.0",
     "stop-only": "^3.3.1",
-    "vuepress": "1.9.9",
+    "vuepress": "2.0.0-beta.61",
     "vuepress-plugin-clean-urls": "1.1.2"
   },
   "husky": {
