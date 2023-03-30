@@ -1,5 +1,6 @@
 import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from '@vuepress/theme-default'
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 
 let _highlight
 
@@ -54,7 +55,14 @@ export default defineUserConfig({
     //   },
     // ],
   ],
-  plugins: [],
+  plugins: [
+    docsearchPlugin({
+      // DANGER 🧨💀: ONLY USE ALGOLIA PUBLIC SEARCH-ONLY API KEY
+      apiKey: 'd2cc2084df39806bdefb04f60f16e856',
+      indexName: 'cypress-examples',
+      appId: '48DTXR75RW',
+    }),
+  ],
   theme: defaultTheme({
     // point pages back at the GitHub documents
     repo: 'bahmutov/cypress-examples',
@@ -124,12 +132,6 @@ export default defineUserConfig({
       { text: 'Cypress API', link: '/cypress-api/' },
     ],
     sidebar: 'auto',
-    algolia: {
-      // DANGER 🧨💀: ONLY USE ALGOLIA PUBLIC SEARCH-ONLY API KEY
-      apiKey: 'd2cc2084df39806bdefb04f60f16e856',
-      indexName: 'cypress-examples',
-      appId: '48DTXR75RW',
-    },
   }),
   markdown: {
     extendMarkdown(md) {
