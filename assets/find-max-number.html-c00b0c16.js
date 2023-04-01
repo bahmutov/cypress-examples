@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-34c43a54","path":"/recipes/find-max-number.html","title":"Find the max number","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1680341936000,"contributors":[{"name":"renovate[bot]","email":"29139614+renovate[bot]@users.noreply.github.com","commits":1}]},"filePathRelative":"recipes/find-max-number.md"}');export{e as data};
