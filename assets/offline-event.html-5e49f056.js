@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-61cf7fe8","path":"/recipes/offline-event.html","title":"Offline event","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1680625182000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/offline-event.md"}');export{e as data};
