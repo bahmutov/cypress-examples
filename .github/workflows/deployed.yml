@@ -34,7 +34,7 @@ jobs:
 
       - name: Set Cypress version 🎁
         id: cypress
-        run: echo "::set-output name=version::$(node ./src/print-cypress-version)"
+        run: echo "version=$(node ./src/print-cypress-version)" >> $GITHUB_OUTPUT
 
       - name: Print Cypress version 🖨
         run: echo "Cypress version is ${{ steps.cypress.outputs.version }}"
