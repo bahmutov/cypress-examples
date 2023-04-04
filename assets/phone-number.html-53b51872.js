@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-5d7bad8e","path":"/recipes/phone-number.html","title":"Phone number","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1680341936000,"contributors":[{"name":"renovate[bot]","email":"29139614+renovate[bot]@users.noreply.github.com","commits":1}]},"filePathRelative":"recipes/phone-number.md"}');export{e as data};
