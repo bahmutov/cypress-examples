@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5c7e78c6","path":"/recipes/check-number-format.html","title":"Check number format","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1680608250000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/check-number-format.md"}');export{e as data};
