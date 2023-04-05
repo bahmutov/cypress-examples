@@ -395,16 +395,21 @@ Read the blog post [Conditional Commands For Cypress](https://glebbahmutov.com/b
 
 You can implement advanced "run Cypress commands until this condition becomes true" flows using my plugin [cypress-recurse](https://github.com/bahmutov/cypress-recurse). For example, let's test a loading element that might never change its text. We still don't want to fail the test, but we want to log a message if so.
 
-<!-- fiddle.only Loading element text -->
+<!-- fiddle Loading element text -->
 
 ```html hide
 <div id="loader">Loading ...</div>
 <script>
   if (Math.random() < 0.5) {
+    const delay = 500 + Math.round(3000 * Math.random())
     setTimeout(() => {
       document.getElementById('loader').innerText =
-        'Matches found: ' + String(Math.random()).slice(2, 3)
-    }, 3500)
+        'Matches found: ' +
+        String(Math.random()).slice(2, 3) +
+        ' took ' +
+        delay +
+        'ms'
+    }, delay)
   }
 </script>
 ```
@@ -419,9 +424,13 @@ cy.recurse(
   {
     timeout: 5_000,
     doNotFail: true,
+    yield: 'value',
     log: 'Loaded',
+    // pause between attempts
+    delay: 500,
   },
 ).then((text) => {
+  // conditional testing depending on the text
   if (text.includes('Loading')) {
     cy.log('Never finished loading')
   } else {
@@ -431,6 +440,8 @@ cy.recurse(
 ```
 
 <!-- fiddle-end -->
+
+Related blog post [Cypress Needs Soft Assertions](https://glebbahmutov.com/blog/cypress-soft-assertions/).
 
 ## More examples
 
