@@ -391,6 +391,47 @@ cy.get('#agreed')
 
 Read the blog post [Conditional Commands For Cypress](https://glebbahmutov.com/blog/cypress-if/).
 
+## cypress-recurse
+
+You can implement advanced "run Cypress commands until this condition becomes true" flows using my plugin [cypress-recurse](https://github.com/bahmutov/cypress-recurse). For example, let's test a loading element that might never change its text. We still don't want to fail the test, but we want to log a message if so.
+
+<!-- fiddle.only Loading element text -->
+
+```html hide
+<div id="loader">Loading ...</div>
+<script>
+  if (Math.random() < 0.5) {
+    setTimeout(() => {
+      document.getElementById('loader').innerText =
+        'Matches found: ' + String(Math.random()).slice(2, 3)
+    }, 3500)
+  }
+</script>
+```
+
+We do not know if the loading finishes quickly or slowly. Thus we want to keep checking, and as soon as it goes away, we want to confirm that `Matches found: <number>` is shown. But if the loading text does not go away in 5 seconds, no big deal. We will just log a message.
+
+```js
+// cy.recurse comes from cypress-recurse plugin
+cy.recurse(
+  () => cy.get('#loader').invoke('text'),
+  (text) => !text.includes('Loading'),
+  {
+    timeout: 5_000,
+    doNotFail: true,
+    log: 'Loaded',
+  },
+).then((text) => {
+  if (text.includes('Loading')) {
+    cy.log('Never finished loading')
+  } else {
+    cy.contains('#loader', /Matches found: \d/)
+  }
+})
+```
+
+<!-- fiddle-end -->
+
 ## More examples
 
 - [Add / delete list item recipe](./add-list-item.md)
