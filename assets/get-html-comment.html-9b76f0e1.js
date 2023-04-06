@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-6273a7c2","path":"/recipes/get-html-comment.html","title":"Get HTML comment","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1680807205000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/get-html-comment.md"}');export{e as data};
