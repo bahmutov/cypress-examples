@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-47d86d6c","path":"/recipes/cy-events.html","title":"Cy events","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1680739108000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/cy-events.md"}');export{e as data};
