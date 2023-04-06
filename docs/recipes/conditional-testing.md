@@ -395,7 +395,7 @@ Read the blog post [Conditional Commands For Cypress](https://glebbahmutov.com/b
 
 You can implement advanced "run Cypress commands until this condition becomes true" flows using my plugin [cypress-recurse](https://github.com/bahmutov/cypress-recurse). For example, let's test a loading element that might never change its text. We still don't want to fail the test, but we want to log a message if so.
 
-<!-- fiddle Loading element text -->
+<!-- fiddle cypress-recurse / Loading element text -->
 
 ```html hide
 <div id="loader">Loading ...</div>
@@ -432,7 +432,7 @@ cy.recurse(
 ).then((text) => {
   // conditional testing depending on the text
   if (text.includes('Loading')) {
-    cy.log('Never finished loading')
+    cy.log('Never showed matches')
   } else {
     cy.contains('#loader', /Matches found: \d/)
   }
@@ -441,7 +441,57 @@ cy.recurse(
 
 <!-- fiddle-end -->
 
-Related blog post [Cypress Needs Soft Assertions](https://glebbahmutov.com/blog/cypress-soft-assertions/).
+Related blog posts [Cypress Needs Soft Assertions](https://glebbahmutov.com/blog/cypress-soft-assertions/) and [Negative Assertions And Missing States](https://glebbahmutov.com/blog/negative-assertions-and-missing-states/).
+
+### A better loading test
+
+The above example mixes up loading and error states. A much better application would set something observable to notify us when it finishes loading, even if it does not change the "Loading ..." text. For example, let's set a class when finishing loading in all cases.
+
+<!-- fiddle cypress-recurse / Loading element text refactored -->
+
+```html hide
+<style>
+  .loaded {
+    color: green;
+    font-weight: bold;
+  }
+</style>
+<div id="loader">Loading ...</div>
+<script>
+  const delay = 500 + Math.round(3000 * Math.random())
+  setTimeout(() => {
+    const el = document.getElementById('loader')
+    // always set CSS class name when finished loading
+    el.classList.add('loaded')
+    if (Math.random() < 0.5) {
+      el.innerText =
+        'Matches found: ' +
+        String(Math.random()).slice(2, 3) +
+        ' took ' +
+        delay +
+        'ms'
+    }
+  }, delay)
+</script>
+```
+
+Now the test is _much_ simpler to write and is as fast as possible.
+
+```js
+cy.get('#loader')
+  .should('have.class', 'loaded')
+  .invoke('text')
+  .then((text) => {
+    // conditional testing depending on the text
+    if (text.includes('Loading')) {
+      cy.log('Never showed matches')
+    } else {
+      cy.contains('#loader', /Matches found: \d/)
+    }
+  })
+```
+
+<!-- fiddle-end -->
 
 ## More examples
 
