@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-f0f69db0","path":"/recipes/contains-text-in-list.html","title":"Contains text in a list","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1680807205000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/contains-text-in-list.md"}');export{t as data};
