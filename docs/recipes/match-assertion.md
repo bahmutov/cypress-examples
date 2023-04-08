@@ -42,3 +42,12 @@ cy.get('#fruit')
 ```
 
 <!-- fiddle-end -->
+
+## Match url using regular expression
+
+I love matching URL using a regular expression. For example, if we are redirected to the item's URL at `/product/p<id>`, then we can strictly confirm it using [cy.location](https://on.cypress.io/location) command
+
+```js
+// the current page looks like /product/p1234
+cy.location('pathname').should('match', \/product\/p\d+$/)
+```
