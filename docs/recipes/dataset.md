@@ -4,6 +4,8 @@ You can store non-html information in the element `data-*` attributes and access
 
 ## Convert dataset to a plain object
 
+📺 Watch this recipe explained at [Confirm All HTML data- Attributes At Once By Using The dataset Property](https://youtu.be/t8BSY2czges).
+
 <!-- fiddle Using data attributes -->
 
 ```html
