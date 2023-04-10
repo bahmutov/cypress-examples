@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-5544b31b","path":"/recipes/see-more-in-assertions.html","title":"See more in assertions","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1681146677000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/see-more-in-assertions.md"}');export{e as data};
