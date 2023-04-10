@@ -69,7 +69,47 @@ cy.get('article#electric-cars')
 
 ## Query commands
 
-Converting a browser object like `DOMStringMap` to a plain object using `JSON.parse(JSON.stringify(x))` is pretty common. If we use `cy.then(JSON.stringify).then(JSON.parse)` commands we are breaking retries because `cy.then` is not a query command.
+Converting a browser object like `DOMStringMap` to a plain object using `JSON.parse(JSON.stringify(x))` is pretty common. If we use `cy.then(JSON.stringify).then(JSON.parse)` commands we are breaking retries because `cy.then` is not a query command. I suggest using my plugin [cypress-map](https://github.com/bahmutov/cypress-map) and its query commands to convert `DOMStringMap` to a plain JavaScript object.
+
+<!-- fiddle Convert dataset with retries -->
+
+In the example below, one of the data attributes is set after a delay.
+
+```html
+<article
+  id="electric-cars"
+  data-columns="3"
+  data-index-number="loading..."
+  data-parent="cars"
+>
+  All about electric cards
+</article>
+<script>
+  // force the tests to retry by adding "data-index-number" attribute
+  // after some delay
+  setTimeout(() => {
+    document
+      .getElementById('electric-cars')
+      .setAttribute('data-index-number', '12314')
+  }, 1500)
+</script>
+```
+
+We can keep querying the DOM and converting to a plain object until the assertion passes.
+
+```js
+cy.get('article')
+  .should('have.prop', 'dataset')
+  // "cy.toPlainObject" comes from cypress-map
+  .toPlainObject()
+  .should('deep.equal', {
+    columns: '3',
+    indexNumber: '12314',
+    parent: 'cars',
+  })
+```
+
+<!-- fiddle-end -->
 
 ## See also
 
