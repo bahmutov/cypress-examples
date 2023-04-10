@@ -95,19 +95,27 @@ In the example below, one of the data attributes is set after a delay.
 </script>
 ```
 
-We can keep querying the DOM and converting to a plain object until the assertion passes.
+We can keep querying the DOM and converting to a plain object until the assertion passes. Query commands `cy.toPlainObject`, `cy.map`, and `cy.print` are from [cypress-map](https://github.com/bahmutov/cypress-map) plugin.
 
 ```js
 cy.get('article')
   .should('have.prop', 'dataset')
   // "cy.toPlainObject" comes from cypress-map
   .toPlainObject()
+  // convert the property "columns" to a number
+  // leaving the rest of the properties unchanged
+  .map({
+    columns: Number,
+  })
+  .print('dataset %o')
   .should('deep.equal', {
-    columns: '3',
+    columns: 3,
     indexNumber: '12314',
     parent: 'cars',
   })
 ```
+
+We can even map some property values to convert them before the assertion. For example, we can convert the number of columns from the string "3" to the number 3. Again, `cy.map` from `cypress-map` is our friend here:
 
 <!-- fiddle-end -->
 
