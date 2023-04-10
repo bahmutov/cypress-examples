@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-07e1ca7f","path":"/recipes/minimatch-unit-tests.html","title":"Minimatch unit tests","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1681137230000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/minimatch-unit-tests.md"}');export{t as data};
