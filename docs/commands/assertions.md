@@ -795,6 +795,32 @@ cy.wrap('').should('not.be.ok')
 
 <!-- fiddle-end -->
 
+## Satisfy a predicate function
+
+Chai assertion `satisfy` checks the value against a predicate function that returns a boolean value.
+
+<!-- fiddle Satisfy a predicate -->
+
+```html
+<div id="my-greeting">Hello</div>
+```
+
+```js
+// my predicate functions
+const isEven = (n) => n % 2 === 0
+const hasHello = ($el) => $el.text() === 'Hello'
+
+// explicit assertions
+expect(42).to.satisfy(isEven)
+// implicit assertions
+cy.wrap(101).should('not.satisfy', isEven)
+cy.get('#my-greeting')
+  .should('satisfy', Cypress.dom.isVisible)
+  .and('satisfy', hasHello)
+```
+
+<!-- fiddle-end -->
+
 ## Existence
 
 In most cases, you do not need to explicitly check if the element exists - if the `cy.get`, `cy.contains`, etc. command finds an element, it exists. If you want to check that the element with a specific selector or text _does not_ exist, then attach the assertion.
