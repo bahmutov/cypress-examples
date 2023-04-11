@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-79786d06","path":"/recipes/get-attribute-starts.html","title":"Get By Attribute That Starts With String X","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1681213495000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/get-attribute-starts.md"}');export{t as data};
