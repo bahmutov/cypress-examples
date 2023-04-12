@@ -33,6 +33,14 @@ cy.wrap({ name: { first: 'Joe' } })
   .should('equal', 'Joe')
 ```
 
+The assertion is similar to the [cy.its](https://on.cypress.io/its) + `should('equal', value)` combination.
+
+```js
+cy.wrap({ name: { first: 'Joe' } })
+  .its('name.first')
+  .should('equal', 'Joe')
+```
+
 <!-- fiddle-end -->
 
 ## own property
