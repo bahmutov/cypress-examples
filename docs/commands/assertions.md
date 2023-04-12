@@ -821,6 +821,8 @@ cy.get('#my-greeting')
 
 <!-- fiddle-end -->
 
+You might notice that `should('satisfy', callback)` is very similar to the powerful `should(callback)` assertion. Thus I usually prefer just the `should(callback)`. Only when the predicate is simple and has a good name, then I write `should('satisfy', named callback function)`.
+
 ## Existence
 
 In most cases, you do not need to explicitly check if the element exists - if the `cy.get`, `cy.contains`, etc. command finds an element, it exists. If you want to check that the element with a specific selector or text _does not_ exist, then attach the assertion.
@@ -2152,3 +2154,7 @@ cy.get('.phone').should('have.text', '(123) 456-7890')
 Watch the video [Use Stronger Assertions](https://youtu.be/HkXx79JE2nU).
 
 <!-- fiddle-end -->
+
+## See also
+
+- [Lesser known Chai assertions](../recipes/lesser-known-chai-assertions.md) recipe
