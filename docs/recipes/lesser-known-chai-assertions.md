@@ -98,11 +98,37 @@ expect(1).to.satisfy(function (num) {
 })
 // you can add a string message after the predicate
 cy.wrap(1).should('satisfy', (num) => num > 0, 'positive')
+// you can flip the assertion and check
+// if the predicate is NOT satisfied
 cy.wrap(1).should(
   'not.satisfy',
   (num) => num < 0,
   'not negative',
 )
+```
+
+It is convenient to use explicit `should('satisfy', predicate)` because you can add a nice log message.
+
+```html
+<ul id="people">
+  <li>Joe</li>
+  <li>John</li>
+  <li>Anna</li>
+  <li>Mary</li>
+</ul>
+```
+
+```js
+const isEven = (n) => n % 2 === 0
+cy.log('**should callback**')
+cy.get('#people li').should(($li) => {
+  expect($li.length % 2 === 0, 'even number of elements').to.be
+    .true
+})
+cy.log('**should satisfy with a message**')
+cy.get('#people li')
+  .its('length')
+  .should('satisfy', isEven, 'even number of people in the list')
 ```
 
 <!-- fiddle-end -->
