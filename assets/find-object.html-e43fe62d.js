@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-4740f9ee","path":"/recipes/find-object.html","title":"Find an object in an array","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1681261157000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/find-object.md"}');export{e as data};
