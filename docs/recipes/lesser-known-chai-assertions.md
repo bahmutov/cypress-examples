@@ -79,3 +79,148 @@ cy.wrap({ name: 'Joe', age: 20 })
 ```
 
 <!-- fiddle-end -->
+
+## Should satisfy
+
+<!-- fiddle Satisfy -->
+
+```js
+expect(1).to.satisfy(function (num) {
+  return num > 0
+})
+// you can add a string message after the predicate
+cy.wrap(1).should('satisfy', (num) => num > 0, 'positive')
+cy.wrap(1).should(
+  'not.satisfy',
+  (num) => num < 0,
+  'not negative',
+)
+```
+
+<!-- fiddle-end -->
+
+## Members
+
+<!-- fiddle Array members -->
+
+Checks if the subject array has the same items as the given array, the order does not matter.
+
+```js
+cy.wrap([1, 2, 3]).should('have.members', [3, 2, 1])
+```
+
+If you want to check the order, use `ordered`
+
+```js
+cy.wrap([1, 2, 3]).should('have.ordered.members', [1, 2, 3])
+```
+
+<!-- fiddle-end -->
+
+## Extensible
+
+Checks if new properties can be added to the object
+
+<!-- fiddle Extensible -->
+
+```js
+// A plain object is extensible
+cy.wrap({ name: 'Joe' }).should('be.extensible')
+// A sealed object is not extensible
+cy.wrap(Object.seal({ name: 'Joe' })).should('not.be.extensible')
+```
+
+<!-- fiddle-end -->
+
+## Sealed
+
+Checks if the object is sealed (no new properties, but existing properties can be assigned new values)
+
+<!-- fiddle Sealed -->
+
+```js
+// A plain object is not sealed
+cy.wrap({ name: 'Joe' }).should('not.be.sealed')
+// A sealed object is sealed
+cy.wrap(Object.seal({ name: 'Joe' })).should('be.sealed')
+```
+
+<!-- fiddle-end -->
+
+## Frozen
+
+Checks if the object is frozen and nothing can be changed about it.
+
+<!-- fiddle Frozen -->
+
+```js
+// A plain object is not frozen
+cy.wrap({ name: 'Joe' }).should('not.be.frozen')
+// A frozen object
+cy.wrap(Object.freeze({ name: 'Joe' }))
+  .should('be.frozen')
+  // frozen objects are also sealed
+  .and('be.sealed')
+```
+
+<!-- fiddle-end -->
+
+## Finite
+
+The object is a number that is neither a `NaN` nor `Infinity`
+
+<!-- fiddle Finite -->
+
+```js
+cy.wrap(NaN).should('not.be.finite')
+cy.wrap(Infinity).should('not.be.finite')
+cy.wrap(42).should('be.finite')
+```
+
+**Tip:** Lodash bundled with Cypress includes predicates checking numbers
+
+```js
+cy.wrap(NaN).should(
+  'not.satisfy',
+  Cypress._.isFinite,
+  '_.isFinite',
+)
+cy.wrap(Infinity).should(
+  'not.satisfy',
+  Cypress._.isFinite,
+  '_.isFinite',
+)
+cy.wrap(42).should('satisfy', Cypress._.isFinite, '_.isFinite')
+```
+
+<!-- fiddle-end -->
+
+## Custom type tag
+
+<!-- fiddle Custom type tag -->
+
+checking built-in types
+
+```js
+expect('foo').to.be.a('string')
+expect({ a: 1 }).to.be.an('object')
+expect(null).to.be.a('null')
+expect(undefined).to.be.an('undefined')
+expect(new Error()).to.be.an('error')
+expect(Promise.resolve()).to.be.a('promise')
+expect(new Float32Array()).to.be.a('float32array')
+expect(Symbol()).to.be.a('symbol')
+```
+
+If we have our own custom types, we can confirm them
+
+```js
+const myObj = {
+  [Symbol.toStringTag]: 'myCustomType',
+}
+cy.wrap(myObj)
+  .should('not.be.an', 'object')
+  .and('to.be.a', 'myCustomType')
+```
+
+<!-- fiddle-end -->

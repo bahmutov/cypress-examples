@@ -819,9 +819,15 @@ cy.get('#my-greeting')
   .and('satisfy', hasHello)
 ```
 
+You can add a string message to the assertion _after_ the predicate function.
+
+```js
+cy.wrap(102).should('satisfy', isEven, 'id is even')
+```
+
 <!-- fiddle-end -->
 
-You might notice that `should('satisfy', callback)` is very similar to the powerful `should(callback)` assertion. Thus I usually prefer just the `should(callback)`. Only when the predicate is simple and has a good name, then I write `should('satisfy', named callback function)`.
+You might notice that `should('satisfy', callback)` is very similar to the powerful `should(callback)` assertion. Thus I usually prefer just the `should(callback)`. Only when the predicate is simple and has a good name, then I write `should('satisfy', named callback function)`. I can also use `should('not.satisfy', predicate)` to confirm the subject does not pass the predicate.
 
 ## Existence
 
