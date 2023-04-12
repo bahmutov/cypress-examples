@@ -297,6 +297,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - confirm the text [CSS color](./recipes/color.md)
 - combine [negative with positive assertions](./recipes/negative-assertions.md)
 - accessing `data-*` properties via the [HTML `dataset` property](./recipes/dataset.md)
+- lesser known [Chai assertions](./recipes/lesser-known-chai-assertions.md)
 
 ### Working with the window object
 
