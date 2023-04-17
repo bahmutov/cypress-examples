@@ -90,6 +90,8 @@ cy.wrap({ name: 'Joe', age: 20 })
 
 ## Should satisfy
 
+📺 You can watch the explanation for `should satisfy` assertion in the video [Lesser Known Chai Assertions Like Satisfy A Predicate](https://youtu.be/ODkNYjf1hbs).
+
 <!-- fiddle Satisfy -->
 
 ```js
