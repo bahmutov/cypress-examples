@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-47d86d6c","path":"/recipes/cy-events.html","title":"Cy events","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1681544471000,"contributors":[{"name":"renovate[bot]","email":"29139614+renovate[bot]@users.noreply.github.com","commits":1}]},"filePathRelative":"recipes/cy-events.md"}');export{e as data};
