@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-9bfcf56c","path":"/recipes/chain-of-commands.html","title":"Chain of commands","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682000234000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/chain-of-commands.md"}');export{a as data};
