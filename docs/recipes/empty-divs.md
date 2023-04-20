@@ -1,5 +1,7 @@
 # Empty elements
 
+📺 You can watch this recipe explained in the video [Empty And Non-empty Elements On The Page](https://youtu.be/bwMFsmWM4fM)
+
 ## No children
 
 Let's use CSS selector `:empty` to find empty `DIV` elements
