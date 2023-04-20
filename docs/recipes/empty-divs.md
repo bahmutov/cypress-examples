@@ -1,8 +1,10 @@
 # Empty elements
 
+## No children
+
 Let's use CSS selector `:empty` to find empty `DIV` elements
 
-<!-- fiddle Empty elements -->
+<!-- fiddle Empty elements without children or text -->
 
 ```html
 <div>First</div>
@@ -13,6 +15,12 @@ Let's use CSS selector `:empty` to find empty `DIV` elements
 <div></div>
 ```
 
+We have 6 HTML elements.
+
+```js
+cy.get('*').should('have.length', 6)
+```
+
 ```js
 cy.get(':empty').should('have.length', 2)
 ```
@@ -21,6 +29,41 @@ Let's find non-empty `DIV` elements
 
 ```js
 cy.get(':not(:empty)').should('have.length', 4)
+```
+
+<!-- fiddle-end -->
+
+## Empty child
+
+Even if there is a single empty child element, the element is _not_ empty. For example, in the HTML below, the parent `DIV` in the `<div><span></span></div>` is NOT empty, while the `SPAN` is empty.
+
+<!-- fiddle Empty child element -->
+
+```html
+<div>First</div>
+<div>Second</div>
+<div><span></span></div>
+<div>Third</div>
+<div>Fourth</div>
+<div></div>
+```
+
+We have 7 elements.
+
+```js
+cy.get('*').should('have.length', 7)
+```
+
+The `SPAN` and the last `DIV` elements are empty
+
+```js
+cy.get(':empty').should('have.length', 2)
+```
+
+All other elements are not empty
+
+```js
+cy.get(':not(:empty)').should('have.length', 5)
 ```
 
 <!-- fiddle-end -->

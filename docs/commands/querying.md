@@ -391,6 +391,32 @@ cy.get('#student-names .label:last').should('have.text', 'Anna')
 
 <!-- fiddle-end -->
 
+### Wildcard selector
+
+You can grab all elements using the wildcard `*` selector
+
+<!-- fiddle cy.get / wildcard selector -->
+
+```html
+<ul id="the-names">
+  <li class="label">Joe</li>
+  <li class="label">Anna</li>
+</ul>
+```
+
+Let's confirm all HTML elements by checking their `nodeName` properties
+
+```js
+cy.get('*')
+  .should('have.length', 3)
+  // cy.map comes from the cypress-map plugin
+  // https://github.com/bahmutov/cypress-map
+  .map('nodeName')
+  .should('deep.equal', ['UL', 'LI', 'LI'])
+```
+
+<!-- fiddle-end -->
+
 ### Escaping special characters
 
 If the element's selector has special characters like `.` or `:` escape the using `\\` character
