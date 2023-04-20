@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-7098139a","path":"/recipes/form-validation.html","title":"Form validation","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682001575000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/form-validation.md"}');export{a as data};
