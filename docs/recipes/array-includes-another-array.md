@@ -14,6 +14,15 @@ list.forEach((country) => {
 })
 ```
 
+We can use [lesser known Chai assertions](./lesser-known-chai-assertions.md) to check if the big list includes all items from the smaller list.
+
+```js
+expect(
+  countries,
+  'all countries are included',
+).to.include.members(list)
+```
+
 We can also approach the problem differently. We can compute the difference between the small list and the large list using Lodash `_.difference` method. If the small list is included in the large list, then the small list should be empty. Otherwise, we get an error with the countries not on the list.
 
 ```js
