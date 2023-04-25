@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-11b0cf47","path":"/recipes/stub-called-with-match.html","title":"Stub called with the match","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682389869000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/stub-called-with-match.md"}');export{t as data};

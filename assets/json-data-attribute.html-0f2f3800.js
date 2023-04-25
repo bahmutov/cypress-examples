@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-609dccfe","path":"/recipes/json-data-attribute.html","title":"Json Data Attribute","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682014072000,"contributors":[{"name":"renovate[bot]","email":"29139614+renovate[bot]@users.noreply.github.com","commits":1}]},"filePathRelative":"recipes/json-data-attribute.md"}');export{t as data};
