@@ -1059,7 +1059,56 @@ cy.get('#tag-example')
 
 ## Text assertions
 
-### Two elements
+### Include or have text
+
+<!-- fiddle Text / include or have text -->
+
+Let's check if the element's text is exactly the string "Hello, World!"
+
+```html
+<div id="greeting">Hello, World!</div>
+```
+
+```js
+cy.get('#greeting').should('have.text', 'Hello, World!')
+```
+
+We can also check if the element's text includes a string
+
+```js
+cy.get('#greeting').should('include.text', 'Hello')
+```
+
+<!-- fiddle-end -->
+
+### Multiple elements
+
+If you query has multiple elements, then the text is the concatenation of all texts, because under the hood the text assertions call `jQuery.text()` method.
+
+<!-- fiddle Text / multiple elements -->
+
+```html
+<ul id="greetings">
+  <li>Hello</li>
+  <li>Hi</li>
+  <li>Aloha</li>
+</ul>
+```
+
+```js
+cy.get('#greetings li')
+  .should('include.text', 'Hello')
+  .and('include.text', 'Hi')
+  .and('include.text', 'Aloha')
+  .and('have.text', 'HelloHiAloha')
+  // let's check the jQuery text() method
+  .invoke('text')
+  .should('equal', 'HelloHiAloha')
+```
+
+<!-- fiddle-end -->
+
+### Compare text between two elements
 
 Let's say we want to confirm that the text is the same in two elements A and B. We don't know the text, so we need to get it from one of the elements.
 
