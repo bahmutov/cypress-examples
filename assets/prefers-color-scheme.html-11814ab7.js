@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-ed14b186","path":"/recipes/prefers-color-scheme.html","title":"prefers-color-scheme","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682389869000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/prefers-color-scheme.md"}');export{e as data};

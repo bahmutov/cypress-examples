@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-59c5a324","path":"/recipes/table-update.html","title":"Table update","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682425195000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/table-update.md"}');export{e as data};
