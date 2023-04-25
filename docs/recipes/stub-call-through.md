@@ -233,3 +233,5 @@ expect(doubler.double(3)).to.equal(42)
 ```
 
 <!-- fiddle-end -->
+
+**Note:** while stubbing with the predicate match might be broken, the assertion `calledWithMatch` is working, see the recipe [Stub called with the match](./stub-called-with-match.md).

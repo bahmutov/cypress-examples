@@ -118,3 +118,7 @@ cy.get('@log').should('be.calledWith', 'User %o', {
 <!-- fiddle-end -->
 
 **Tip:** try using [cy-spok](https://github.com/bahmutov/cy-spok) plugin for such assertions.
+
+## See also
+
+- [Stub called with the match](./stub-called-with-match.md)

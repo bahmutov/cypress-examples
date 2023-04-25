@@ -340,6 +340,8 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 
 - confirm the spy was called [with the right object](./recipes/called-with-object.md)
 - [Stub Geolocation](./recipes/stub-geolocation.md) to test error handling
+- [Stub called with the match](./recipes/stub-called-with-match.md)
+- [Stub calls depending on the arguments](./recipes/stub-call-through.md)
 
 ### Testing tables
 
