@@ -298,6 +298,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - combine [negative with positive assertions](./recipes/negative-assertions.md)
 - accessing `data-*` properties via the [HTML `dataset` property](./recipes/dataset.md)
 - lesser known [Chai assertions](./recipes/lesser-known-chai-assertions.md)
+- compute SHA-256 from [element's HTML](./recipes/sha-256.md)
 
 ### Working with the window object
 
