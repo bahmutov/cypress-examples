@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-76725c35","path":"/recipes/array-includes-another-array.html","title":"Array includes another array","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682464000000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/array-includes-another-array.md"}');export{a as data};
