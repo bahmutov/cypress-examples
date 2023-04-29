@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-4740f9ee","path":"/recipes/find-object.html","title":"Find an object in an array","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682742358000,"contributors":[{"name":"renovate[bot]","email":"29139614+renovate[bot]@users.noreply.github.com","commits":1}]},"filePathRelative":"recipes/find-object.md"}');export{e as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3254c612","path":"/recipes/change-text.html","title":"Change textContent","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682742358000,"contributors":[{"name":"renovate[bot]","email":"29139614+renovate[bot]@users.noreply.github.com","commits":1}]},"filePathRelative":"recipes/change-text.md"}');export{e as data};

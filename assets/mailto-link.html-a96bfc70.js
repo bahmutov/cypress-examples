@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5e2910b2","path":"/recipes/mailto-link.html","title":"Mailto HREF link","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682742358000,"contributors":[{"name":"renovate[bot]","email":"29139614+renovate[bot]@users.noreply.github.com","commits":1}]},"filePathRelative":"recipes/mailto-link.md"}');export{e as data};

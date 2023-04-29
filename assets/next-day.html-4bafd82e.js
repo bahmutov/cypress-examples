@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-e09631d8","path":"/recipes/next-day.html","title":"Select Next Day","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682742358000,"contributors":[{"name":"renovate[bot]","email":"29139614+renovate[bot]@users.noreply.github.com","commits":1}]},"filePathRelative":"recipes/next-day.md"}');export{e as data};
