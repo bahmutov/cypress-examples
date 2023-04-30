@@ -1,0 +1,4552 @@
+[
+  {
+    "title": "Actions type",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions focus",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions blur",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions clear",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions submit",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions click a single button",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions click on a canvas",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions click on multiple elements",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions click on disabled element",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions click waits for element to be visible",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions click after assertion",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions dblclick",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions rightclick",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions check",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions check an already checked input",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions checked selector for radio input",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions checked selector for checkbox elements",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions uncheck",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions select",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions scrollIntoView",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions scrollTo",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions trigger",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Actions trigger a click event on a disabled button",
+    "filename": "docs/commands/actions.md",
+    "created": "2023-02-16T19:33:37.722Z",
+    "modified": "2023-02-16T19:33:37.723Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/actions.html"
+  },
+  {
+    "title": "Aliasing .as() - alias a DOM element for later use",
+    "filename": "docs/commands/aliasing.md",
+    "created": "2023-02-02T15:44:44.078Z",
+    "modified": "2023-02-02T15:44:44.079Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/aliasing.html"
+  },
+  {
+    "title": "Aliasing .as() - query the alias",
+    "filename": "docs/commands/aliasing.md",
+    "created": "2023-02-02T15:44:44.078Z",
+    "modified": "2023-02-02T15:44:44.079Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/aliasing.html"
+  },
+  {
+    "title": "Aliasing .as() - alias a route for later use",
+    "filename": "docs/commands/aliasing.md",
+    "created": "2023-02-02T15:44:44.078Z",
+    "modified": "2023-02-02T15:44:44.079Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/aliasing.html"
+  },
+  {
+    "title": "Aliasing .as() - alias a value for later use",
+    "filename": "docs/commands/aliasing.md",
+    "created": "2023-02-02T15:44:44.078Z",
+    "modified": "2023-02-02T15:44:44.079Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/aliasing.html"
+  },
+  {
+    "title": "Aliasing .as() - alias is saved in the test context",
+    "filename": "docs/commands/aliasing.md",
+    "created": "2023-02-02T15:44:44.078Z",
+    "modified": "2023-02-02T15:44:44.079Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/aliasing.html"
+  },
+  {
+    "title": "Aliasing Static vs query type query alias type",
+    "filename": "docs/commands/aliasing.md",
+    "created": "2023-02-02T15:44:44.078Z",
+    "modified": "2023-02-02T15:44:44.079Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/aliasing.html"
+  },
+  {
+    "title": "Aliasing Static vs query type static alias type",
+    "filename": "docs/commands/aliasing.md",
+    "created": "2023-02-02T15:44:44.078Z",
+    "modified": "2023-02-02T15:44:44.079Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/aliasing.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - make an assertion about the current subject",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .and() - chain multiple assertions together",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - keeps the original subject",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - have.property changes the subject",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - multiple properties",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - have.prop yields the value",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - have text value matching a regular expression",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - have.attr changes the subject",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - have.attr with a dot",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - have.attr matching part of the string",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - have.prop changes the subject",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - NaN",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - input elements have value",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - input elements with numeric value",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - non-input elements contain text",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - HTML element tag",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - two elements",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - match a regular expression",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - contain.text",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - trim and convert",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - text with newlines",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - html entities",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - visible non-empty text",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - partial text match",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - have.text vs contain",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - text matching the regular expression",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - match number",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - convert text to number",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - number within range",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - OR match",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - one of the elements has the text",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions Text .should() - text should not be present",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - visibility of multiple elements",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - elements becoming invisible",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - placeholder attribute",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - disabled element",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Implicit Assertions .should() - data attributes",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Explicit Assertions expect - make an assertion about a specified subject",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Explicit Assertions expect - assert a substring",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Explicit Assertions expect - compare two lists",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Explicit Assertions expect - NaN",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Explicit Assertions assert - assert shape of an object",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Should(cb) pass your own callback function to should()",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Should(cb) finds element by class name regex",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Should(cb) can throw any error",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Should(cb) matches unknown text between two elements",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Should(cb) retries the should callback until assertions pass",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Should(cb) retries in vain",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Truthy assertion",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Satisfy a predicate",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Element does not exist",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Multiple assertions split the command",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Element has focus",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Checkbox is checked or not checked",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Text include or have text",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Text multiple elements",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Array assertions confirm the value is an array",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Array assertions confirm a primitive value is an array",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Array assertions confirm an EXACT object is in an array",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Array assertions confirm a partial object is in an array",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Array assertions confirm items in an array",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Array assertions comparing arrays",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Objects has a property",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Objects multiple properties",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Objects partial match",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Objects Multiple variants",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Objects has a method",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Approximate value",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions The font size assertion",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Adding assertions multiple assertions",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Adding assertions adding custom assertion",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Check against undefined",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Assertions Use strongest assertion",
+    "filename": "docs/commands/assertions.md",
+    "created": "2023-04-25T12:19:56.512Z",
+    "modified": "2023-04-25T12:19:56.512Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
+    "title": "Connectors each print each element",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors each iterate over numbers",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors each does not change the subject",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors each use cy commands inside the callback",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors its number of elements",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors its array index",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors its retries automatically",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors its nested property",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors its jQuery to DOM element",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors invoke jQuery method",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors invoke asynchronous method",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors spread an array",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors spread DOM elements",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors spread network intercepts",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors then pass the current subject to the callback",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors then waits for the promise to resolve",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors then async callback",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors then return new subject",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors then keep the current subject",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors then commands inside the callback",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors then promises are eager",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Connectors then start with a promise",
+    "filename": "docs/commands/connectors.md",
+    "created": "2023-02-02T16:26:07.931Z",
+    "modified": "2023-02-02T16:26:07.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
+    "title": "Cookies cy.getCookie() - get a browser cookie",
+    "filename": "docs/commands/cookies.md",
+    "created": "2022-04-12T13:01:35.596Z",
+    "modified": "2022-04-12T13:01:35.597Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/cookies.html"
+  },
+  {
+    "title": "Cookies cy.getCookies() - get browser cookies",
+    "filename": "docs/commands/cookies.md",
+    "created": "2022-04-12T13:01:35.596Z",
+    "modified": "2022-04-12T13:01:35.597Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/cookies.html"
+  },
+  {
+    "title": "Cookies cy.setCookie() - set a browser cookie",
+    "filename": "docs/commands/cookies.md",
+    "created": "2022-04-12T13:01:35.596Z",
+    "modified": "2022-04-12T13:01:35.597Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/cookies.html"
+  },
+  {
+    "title": "Cookies cy.clearCookie() - clear a browser cookie",
+    "filename": "docs/commands/cookies.md",
+    "created": "2022-04-12T13:01:35.596Z",
+    "modified": "2022-04-12T13:01:35.597Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/cookies.html"
+  },
+  {
+    "title": "Cookies cy.clearCookies() - clear browser cookies",
+    "filename": "docs/commands/cookies.md",
+    "created": "2022-04-12T13:01:35.596Z",
+    "modified": "2022-04-12T13:01:35.597Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/cookies.html"
+  },
+  {
+    "title": "Files cy.fixture() - load a fixture",
+    "filename": "docs/commands/files.md",
+    "created": "2023-01-10T15:41:40.736Z",
+    "modified": "2023-01-10T15:41:40.736Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/files.html"
+  },
+  {
+    "title": "Files cy.fixture() or require - load a fixture",
+    "filename": "docs/commands/files.md",
+    "created": "2023-01-10T15:41:40.736Z",
+    "modified": "2023-01-10T15:41:40.736Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/files.html"
+  },
+  {
+    "title": "Files cy.readFile() - read file contents",
+    "filename": "docs/commands/files.md",
+    "created": "2023-01-10T15:41:40.736Z",
+    "modified": "2023-01-10T15:41:40.736Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/files.html"
+  },
+  {
+    "title": "Files cy.writeFile() - write to a file",
+    "filename": "docs/commands/files.md",
+    "created": "2023-01-10T15:41:40.736Z",
+    "modified": "2023-01-10T15:41:40.736Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/files.html"
+  },
+  {
+    "title": "Files cy.writeFile() - write combined JSON object",
+    "filename": "docs/commands/files.md",
+    "created": "2023-01-10T15:41:40.736Z",
+    "modified": "2023-01-10T15:41:40.736Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/files.html"
+  },
+  {
+    "title": "Files cy.writeFile() - write combined JSON array",
+    "filename": "docs/commands/files.md",
+    "created": "2023-01-10T15:41:40.736Z",
+    "modified": "2023-01-10T15:41:40.736Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/files.html"
+  },
+  {
+    "title": "Local Storage access the localStorage",
+    "filename": "docs/commands/local-storage.md",
+    "created": "2022-04-12T13:01:35.600Z",
+    "modified": "2022-04-12T13:01:35.600Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/local-storage.html"
+  },
+  {
+    "title": "Local Storage cy.clearLocalStorage() - clear all data in local storage",
+    "filename": "docs/commands/local-storage.md",
+    "created": "2022-04-12T13:01:35.600Z",
+    "modified": "2022-04-12T13:01:35.600Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/local-storage.html"
+  },
+  {
+    "title": "Location cy.hash() - get the current URL hash",
+    "filename": "docs/commands/location.md",
+    "created": "2022-10-07T20:00:39.626Z",
+    "modified": "2022-10-07T20:00:39.626Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/location.html"
+  },
+  {
+    "title": "Location cy.location() get the current location object",
+    "filename": "docs/commands/location.md",
+    "created": "2022-10-07T20:00:39.626Z",
+    "modified": "2022-10-07T20:00:39.626Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/location.html"
+  },
+  {
+    "title": "Location cy.location() get part of the URL",
+    "filename": "docs/commands/location.md",
+    "created": "2022-10-07T20:00:39.626Z",
+    "modified": "2022-10-07T20:00:39.626Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/location.html"
+  },
+  {
+    "title": "Location cy.location() parsed search",
+    "filename": "docs/commands/location.md",
+    "created": "2022-10-07T20:00:39.626Z",
+    "modified": "2022-10-07T20:00:39.626Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/location.html"
+  },
+  {
+    "title": "Location cy.location() parsed search via fluent chain",
+    "filename": "docs/commands/location.md",
+    "created": "2022-10-07T20:00:39.626Z",
+    "modified": "2022-10-07T20:00:39.626Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/location.html"
+  },
+  {
+    "title": "Location cy.location() chained commands",
+    "filename": "docs/commands/location.md",
+    "created": "2022-10-07T20:00:39.626Z",
+    "modified": "2022-10-07T20:00:39.626Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/location.html"
+  },
+  {
+    "title": "Location cy.location() match regular expression",
+    "filename": "docs/commands/location.md",
+    "created": "2022-10-07T20:00:39.626Z",
+    "modified": "2022-10-07T20:00:39.626Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/location.html"
+  },
+  {
+    "title": "Location cy.url() - get the current URL string",
+    "filename": "docs/commands/location.md",
+    "created": "2022-10-07T20:00:39.626Z",
+    "modified": "2022-10-07T20:00:39.626Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/location.html"
+  },
+  {
+    "title": "Misc .log() prints a string",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc .log() prints the number of elements",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc .log() does not yield the original argument",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc .log() binds the primitive value",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc .log() prints an object",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc .end() - end the command chain",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc cy.exec() - execute a system command",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc cy.focused() - get the DOM element that has focus",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc Cypress.Screenshot cy.screenshot() - take a screenshot",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc Cypress.Screenshot Cypress.Screenshot.defaults() - change default config of screenshots",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc cy.wrap() wrap an object",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc cy.wrap() invoke a method",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc cy.wrap() DOM object",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc cy.wrap() waits on a promise automatically",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc cy.wrap() using Cypress.Promise",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Misc cy.wrap() promises are eager",
+    "filename": "docs/commands/misc.md",
+    "created": "2023-01-10T15:41:40.737Z",
+    "modified": "2023-01-10T15:41:40.737Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/misc.html"
+  },
+  {
+    "title": "Navigation cy.go",
+    "filename": "docs/commands/navigation.md",
+    "created": "2022-04-12T13:01:35.607Z",
+    "modified": "2022-04-12T13:01:35.607Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/navigation.html"
+  },
+  {
+    "title": "Navigation cy.reload",
+    "filename": "docs/commands/navigation.md",
+    "created": "2022-04-12T13:01:35.607Z",
+    "modified": "2022-04-12T13:01:35.607Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/navigation.html"
+  },
+  {
+    "title": "Navigation cy.visit",
+    "filename": "docs/commands/navigation.md",
+    "created": "2022-04-12T13:01:35.607Z",
+    "modified": "2022-04-12T13:01:35.607Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/navigation.html"
+  },
+  {
+    "title": "Network Requests cy.server() - control behavior of network requests and responses",
+    "filename": "docs/commands/network-requests.md",
+    "created": "2023-01-10T16:01:03.247Z",
+    "modified": "2023-01-10T16:01:03.247Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/network-requests.html"
+  },
+  {
+    "title": "Network Requests cy.request() - make an XHR request",
+    "filename": "docs/commands/network-requests.md",
+    "created": "2023-01-10T16:01:03.247Z",
+    "modified": "2023-01-10T16:01:03.247Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/network-requests.html"
+  },
+  {
+    "title": "Network Requests cy.request() - confirm the response header",
+    "filename": "docs/commands/network-requests.md",
+    "created": "2023-01-10T16:01:03.247Z",
+    "modified": "2023-01-10T16:01:03.247Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/network-requests.html"
+  },
+  {
+    "title": "Network Requests cy.request() - with query parameters",
+    "filename": "docs/commands/network-requests.md",
+    "created": "2023-01-10T16:01:03.247Z",
+    "modified": "2023-01-10T16:01:03.247Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/network-requests.html"
+  },
+  {
+    "title": "Network Requests cy.request() - pass result to the second request",
+    "filename": "docs/commands/network-requests.md",
+    "created": "2023-01-10T16:01:03.247Z",
+    "modified": "2023-01-10T16:01:03.247Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/network-requests.html"
+  },
+  {
+    "title": "Network Requests cy.request() - save response in the shared test context",
+    "filename": "docs/commands/network-requests.md",
+    "created": "2023-01-10T16:01:03.247Z",
+    "modified": "2023-01-10T16:01:03.247Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/network-requests.html"
+  },
+  {
+    "title": "Network Requests cy.request() - handle an error response",
+    "filename": "docs/commands/network-requests.md",
+    "created": "2023-01-10T16:01:03.247Z",
+    "modified": "2023-01-10T16:01:03.247Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/network-requests.html"
+  },
+  {
+    "title": "Network Requests cy.route() - route responses to matching requests",
+    "filename": "docs/commands/network-requests.md",
+    "created": "2023-01-10T16:01:03.247Z",
+    "modified": "2023-01-10T16:01:03.247Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/network-requests.html"
+  },
+  {
+    "title": "Network Requests cy.intercept()",
+    "filename": "docs/commands/network-requests.md",
+    "created": "2023-01-10T16:01:03.247Z",
+    "modified": "2023-01-10T16:01:03.247Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/network-requests.html"
+  },
+  {
+    "title": "Network Requests cy.intercept() duration",
+    "filename": "docs/commands/network-requests.md",
+    "created": "2023-01-10T16:01:03.247Z",
+    "modified": "2023-01-10T16:01:03.247Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/network-requests.html"
+  },
+  {
+    "title": "Network Requests cy.intercept() number",
+    "filename": "docs/commands/network-requests.md",
+    "created": "2023-01-10T16:01:03.247Z",
+    "modified": "2023-01-10T16:01:03.247Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/network-requests.html"
+  },
+  {
+    "title": "Querying cy.get button",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get headings",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get using jQuery :checkbox",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get using jQuery is :disabled",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get using jQuery is :checked",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get with jQuery :has selector",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get with jQuery :has and :not selectors",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get with jQuery text selector",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get jQuery :contains vs cy.contains",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get with jQuery has and contains",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get with multiple jQuery has clauses",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get with jQuery first selector",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get with jQuery last selector",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get wildcard selector",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get escape special characters",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get find elements without a given class",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get find elements without an attribute",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get find elements with an attribute having a different value",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get find elements without two given classes",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get elements with an attribute",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get anchor links with specific href",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get attribute from a variable",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get escape special characters in attribute",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get attribute prefix",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get attribute suffix",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get attribute contains text",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get having attribute disabled",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get combine attributes",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get by data attribute",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get by partial data attribute",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get AND selector",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get Table column",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get Index of the found element",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get Case-insensitive selectors",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying contains returns an element",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying contains selector and text",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying contains regular expression",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying contains regular expression with whitespace",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying contains regular expression OR",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying contains regular expression AND",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying contains duplicate white spaces",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying contains needs a single element",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying contains extract part of the text",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying contains text with double quotes",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying contains escape text",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying contains escape multiple spaces",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying .within form example",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying .within yields the original element",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying .within yields the original element even after cy.wrap",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying .within escape",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying .within picture example",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying .within multiple elements",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying root example",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying Selecting Elements",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.get vs .find",
+    "filename": "docs/commands/querying.md",
+    "created": "2023-04-20T12:15:24.982Z",
+    "modified": "2023-04-20T12:15:24.982Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.spy() wrap a method in a spy",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.spy() retries until assertions pass",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.spy() returned value",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.spy() resolved values",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.spy() call the method spy and have this correctly set",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.spy and cy.stub checking arguments",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.spy and cy.stub match call arguments using Sinon matchers",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.spy and cy.stub call count",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.spy and cy.stub reset history",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() replace a method with a stub",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() returns different values",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() returns different dynamic values",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() save under an alias",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() restore",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() restore from an alias",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() matches depending on arguments",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() property",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() method is inside application",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() call the original method",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() check the order of calls",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() stub window.open",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() stub window.alert",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() stub window.prompt",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks cy.stub() stub a method and restore",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks Stub and call the argument callback",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks clock set the application clock",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks clock does not change the spec clock",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Spies, Stubs & Clocks tick",
+    "filename": "docs/commands/spies-stubs-clocks.md",
+    "created": "2023-04-04T16:02:18.695Z",
+    "modified": "2023-04-04T16:02:18.695Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html"
+  },
+  {
+    "title": "Traversal children get elements with class active",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal children get the number of children",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal closest",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal eq",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal filter by class",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal filter elements with an attribute",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal filter visible elements",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal filter using a callback function",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal filter skip element with text",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal find",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal find returns list items",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal finds elements in each parent element",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal finds elements with href attribute for every LI",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal finds links without href attribute",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal first",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal :first CSS selector",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal last",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal .next() get next sibling DOM element",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal .next() get next sibling DOM element matching the selector",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal .nextAll() - get all next sibling DOM elements",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal .nextUntil() - get next sibling DOM elements until the matching selector",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal .not() remove DOM elements from set of DOM elements",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal .not() find incomplete items",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal .parent() - get parent DOM element from DOM elements",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal .parents() - get parent DOM elements from DOM elements",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal .parentsUntil() - get parent DOM elements from DOM elements until el",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal .prev() - get previous sibling DOM element",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal .prevAll() - get all previous sibling DOM elements",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal .prevUntil() - get all previous sibling DOM elements until el",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Traversal .siblings() - get all sibling DOM elements",
+    "filename": "docs/commands/traversal.md",
+    "created": "2022-05-10T12:10:05.681Z",
+    "modified": "2022-05-10T12:10:05.681Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/traversal.html"
+  },
+  {
+    "title": "Viewport cy.viewport() - set the viewport size and dimension",
+    "filename": "docs/commands/viewport.md",
+    "created": "2023-01-10T15:59:46.071Z",
+    "modified": "2023-01-10T15:59:46.071Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/viewport.html"
+  },
+  {
+    "title": "Viewport cy.viewport() - set the viewport size and dimension",
+    "filename": "docs/commands/viewport.md",
+    "created": "2023-01-10T15:59:46.071Z",
+    "modified": "2023-01-10T15:59:46.071Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/viewport.html"
+  },
+  {
+    "title": "Waiting cy.wait() wait for a specific amount of time",
+    "filename": "docs/commands/waiting.md",
+    "created": "2023-01-10T15:41:40.740Z",
+    "modified": "2023-01-10T15:41:40.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/waiting.html"
+  },
+  {
+    "title": "Waiting cy.wait() wait keeps the subject",
+    "filename": "docs/commands/waiting.md",
+    "created": "2023-01-10T15:41:40.740Z",
+    "modified": "2023-01-10T15:41:40.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/waiting.html"
+  },
+  {
+    "title": "Waiting cy.wait() waiting for specific route",
+    "filename": "docs/commands/waiting.md",
+    "created": "2023-01-10T15:41:40.740Z",
+    "modified": "2023-01-10T15:41:40.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/waiting.html"
+  },
+  {
+    "title": "Waiting cy.wrap a promise",
+    "filename": "docs/commands/waiting.md",
+    "created": "2023-01-10T15:41:40.740Z",
+    "modified": "2023-01-10T15:41:40.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/waiting.html"
+  },
+  {
+    "title": "Window window access a built-in property",
+    "filename": "docs/commands/window.md",
+    "created": "2022-04-12T13:01:35.636Z",
+    "modified": "2022-04-12T13:01:35.636Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/window.html"
+  },
+  {
+    "title": "Window window call a method",
+    "filename": "docs/commands/window.md",
+    "created": "2022-04-12T13:01:35.636Z",
+    "modified": "2022-04-12T13:01:35.636Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/window.html"
+  },
+  {
+    "title": "Window document",
+    "filename": "docs/commands/window.md",
+    "created": "2022-04-12T13:01:35.636Z",
+    "modified": "2022-04-12T13:01:35.636Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/window.html"
+  },
+  {
+    "title": "Window title",
+    "filename": "docs/commands/window.md",
+    "created": "2022-04-12T13:01:35.636Z",
+    "modified": "2022-04-12T13:01:35.636Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/window.html"
+  },
+  {
+    "title": "Cypress API Custom commands add command",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Custom commands yield a value",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Custom commands calling other commands",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Custom commands overwrite cy.type command",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API debug",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API preserveOnce",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API cookies defaults",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Cypress.arch Get the architecture name",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Cypress.config",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Cypress.dom.isHidden",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Cypress.env",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Cypress.platform Get underlying OS name",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Cypress.platform",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Cypress.version Get current version of Cypress being run",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Cypress.version Parse the Cypress version to confirm the major version",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Cypress.spec Get current spec information",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Cypress.spec Multiple specs",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Cypress.currentTest Get the current test information",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Cypress API Cypress.testingType",
+    "filename": "docs/cypress-api/index.md",
+    "created": "2023-01-10T15:41:40.741Z",
+    "modified": "2023-01-10T15:41:40.741Z",
+    "url": "https://glebbahmutov.com/cypress-examples/cypress-api/index.html"
+  },
+  {
+    "title": "Add A Custom Data Assertion Check data test id",
+    "filename": "docs/recipes/add-data-assertion.md",
+    "created": "2023-02-08T16:15:15.226Z",
+    "modified": "2023-02-08T16:15:15.226Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/add-data-assertion.html"
+  },
+  {
+    "title": "Add list item \"Adds an item\"",
+    "filename": "docs/recipes/add-list-item.md",
+    "created": "2022-04-12T13:01:35.651Z",
+    "modified": "2022-04-12T13:01:35.651Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/add-list-item.html"
+  },
+  {
+    "title": "Add list item \"Delete list item\"",
+    "filename": "docs/recipes/add-list-item.md",
+    "created": "2022-04-12T13:01:35.651Z",
+    "modified": "2022-04-12T13:01:35.651Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/add-list-item.html"
+  },
+  {
+    "title": "Multiple aliases Multiple aliases",
+    "filename": "docs/recipes/aliases.md",
+    "created": "2022-04-12T13:01:35.653Z",
+    "modified": "2022-04-12T13:01:35.654Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/aliases.html"
+  },
+  {
+    "title": "Multiple aliases Element creation is delayed",
+    "filename": "docs/recipes/aliases.md",
+    "created": "2022-04-12T13:01:35.653Z",
+    "modified": "2022-04-12T13:01:35.654Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/aliases.html"
+  },
+  {
+    "title": "Visible elements Any elements are visible",
+    "filename": "docs/recipes/all-elements-are-visible.md",
+    "created": "2023-02-08T15:58:26.575Z",
+    "modified": "2023-02-08T15:58:26.575Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/all-elements-are-visible.html"
+  },
+  {
+    "title": "Visible elements All elements should be visible",
+    "filename": "docs/recipes/all-elements-are-visible.md",
+    "created": "2023-02-08T15:58:26.575Z",
+    "modified": "2023-02-08T15:58:26.575Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/all-elements-are-visible.html"
+  },
+  {
+    "title": "Visible elements All elements become visible using cypress-map",
+    "filename": "docs/recipes/all-elements-are-visible.md",
+    "created": "2023-02-08T15:58:26.575Z",
+    "modified": "2023-02-08T15:58:26.575Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/all-elements-are-visible.html"
+  },
+  {
+    "title": "Visible elements All elements become visible with chai-each",
+    "filename": "docs/recipes/all-elements-are-visible.md",
+    "created": "2023-02-08T15:58:26.575Z",
+    "modified": "2023-02-08T15:58:26.575Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/all-elements-are-visible.html"
+  },
+  {
+    "title": "Array includes another array Array includes another array",
+    "filename": "docs/recipes/array-includes-another-array.md",
+    "created": "2023-04-20T14:17:16.319Z",
+    "modified": "2023-04-20T14:19:11.662Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/array-includes-another-array.html"
+  },
+  {
+    "title": "Attributes are equal attributes are equal",
+    "filename": "docs/recipes/attributes-are-equal.md",
+    "created": "2022-08-05T12:47:38.994Z",
+    "modified": "2022-08-05T12:47:38.994Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/attributes-are-equal.html"
+  },
+  {
+    "title": "Spy called with an object Primitive types",
+    "filename": "docs/recipes/called-with-object.md",
+    "created": "2023-04-25T02:31:10.530Z",
+    "modified": "2023-04-25T02:31:10.530Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/called-with-object.html"
+  },
+  {
+    "title": "Spy called with an object Exact object",
+    "filename": "docs/recipes/called-with-object.md",
+    "created": "2023-04-25T02:31:10.530Z",
+    "modified": "2023-04-25T02:31:10.530Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/called-with-object.html"
+  },
+  {
+    "title": "Spy called with an object Partial object",
+    "filename": "docs/recipes/called-with-object.md",
+    "created": "2023-04-25T02:31:10.530Z",
+    "modified": "2023-04-25T02:31:10.530Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/called-with-object.html"
+  },
+  {
+    "title": "Chain of commands Cannot add commands out of band",
+    "filename": "docs/recipes/chain-of-commands.md",
+    "created": "2022-07-15T14:59:41.800Z",
+    "modified": "2022-07-15T14:59:41.800Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/chain-of-commands.html"
+  },
+  {
+    "title": "Change textContent Change textContent",
+    "filename": "docs/recipes/change-text.md",
+    "created": "2022-06-16T11:50:04.411Z",
+    "modified": "2022-06-16T11:50:04.411Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/change-text.html"
+  },
+  {
+    "title": "Check console logs Check at the end of the test",
+    "filename": "docs/recipes/check-console-logs.md",
+    "created": "2022-09-08T11:53:02.017Z",
+    "modified": "2022-09-08T11:53:02.017Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-console-logs.html"
+  },
+  {
+    "title": "Check console logs Immediately throw an error if console.log is called with an error",
+    "filename": "docs/recipes/check-console-logs.md",
+    "created": "2022-09-08T11:53:02.017Z",
+    "modified": "2022-09-08T11:53:02.017Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-console-logs.html"
+  },
+  {
+    "title": "Check console logs Throw an error if application uses console.error",
+    "filename": "docs/recipes/check-console-logs.md",
+    "created": "2022-09-08T11:53:02.017Z",
+    "modified": "2022-09-08T11:53:02.017Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-console-logs.html"
+  },
+  {
+    "title": "Check enabled checkboxes Check the enabled checkboxes",
+    "filename": "docs/recipes/check-enabled-checkboxes.md",
+    "created": "2023-03-07T14:22:55.878Z",
+    "modified": "2023-03-07T14:22:55.878Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-enabled-checkboxes.html"
+  },
+  {
+    "title": "Check multiplication Multiplication",
+    "filename": "docs/recipes/check-multiplication.md",
+    "created": "2022-04-12T13:01:35.655Z",
+    "modified": "2022-04-12T13:01:35.655Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-multiplication.html"
+  },
+  {
+    "title": "Check number format Check number format",
+    "filename": "docs/recipes/check-number-format.md",
+    "created": "2022-05-07T21:50:05.329Z",
+    "modified": "2022-05-07T21:50:05.329Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-number-format.html"
+  },
+  {
+    "title": "Check style Check style",
+    "filename": "docs/recipes/check-style.md",
+    "created": "2022-06-21T18:38:14.259Z",
+    "modified": "2022-06-21T18:38:14.259Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-style.html"
+  },
+  {
+    "title": "Clear Input Field Flake Clear input field",
+    "filename": "docs/recipes/clear-input-flake.md",
+    "created": "2023-03-13T18:15:25.150Z",
+    "modified": "2023-03-13T18:15:25.150Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/clear-input-flake.html"
+  },
+  {
+    "title": "Click Each Item Click each item",
+    "filename": "docs/recipes/click-each-item.md",
+    "created": "2022-05-31T13:31:56.508Z",
+    "modified": "2022-05-31T13:31:56.509Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/click-each-item.html"
+  },
+  {
+    "title": "Click a random element Click a random element",
+    "filename": "docs/recipes/click-random-element.md",
+    "created": "2022-06-20T13:56:58.072Z",
+    "modified": "2022-06-20T13:56:58.073Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/click-random-element.html"
+  },
+  {
+    "title": "Click a random element Click several checkboxes",
+    "filename": "docs/recipes/click-random-element.md",
+    "created": "2022-06-20T13:56:58.072Z",
+    "modified": "2022-06-20T13:56:58.073Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/click-random-element.html"
+  },
+  {
+    "title": "Collect Dom Values Example Collect DOM values",
+    "filename": "docs/recipes/collect-dom.md",
+    "created": "2022-12-13T00:29:47.136Z",
+    "modified": "2022-12-13T00:29:47.136Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/collect-dom.html"
+  },
+  {
+    "title": "Collect Headings Collect headings",
+    "filename": "docs/recipes/collect-headings.md",
+    "created": "2022-04-12T13:01:35.661Z",
+    "modified": "2022-04-12T13:01:35.661Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/collect-headings.html"
+  },
+  {
+    "title": "Color CSS color",
+    "filename": "docs/recipes/color.md",
+    "created": "2023-03-28T16:53:14.753Z",
+    "modified": "2023-03-28T16:53:14.754Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/color.html"
+  },
+  {
+    "title": "Color Parent declares CSS color",
+    "filename": "docs/recipes/color.md",
+    "created": "2023-03-28T16:53:14.753Z",
+    "modified": "2023-03-28T16:53:14.754Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/color.html"
+  },
+  {
+    "title": "Color Style class with color",
+    "filename": "docs/recipes/color.md",
+    "created": "2023-03-28T16:53:14.753Z",
+    "modified": "2023-03-28T16:53:14.754Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/color.html"
+  },
+  {
+    "title": "Combine lists Combine lists",
+    "filename": "docs/recipes/combine-lists.md",
+    "created": "2022-04-19T15:13:37.009Z",
+    "modified": "2022-04-19T15:13:37.009Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/combine-lists.html"
+  },
+  {
+    "title": "Compare attribute Confirm the attribute is present or not",
+    "filename": "docs/recipes/compare-attribute.md",
+    "created": "2023-01-10T15:41:40.742Z",
+    "modified": "2023-01-10T15:41:40.742Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/compare-attribute.html"
+  },
+  {
+    "title": "Compare numbers Compare numbers",
+    "filename": "docs/recipes/compare-numbers.md",
+    "created": "2022-11-08T16:33:15.237Z",
+    "modified": "2022-11-08T16:33:15.237Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/compare-numbers.html"
+  },
+  {
+    "title": "Compare numbers Compare multiple numbers",
+    "filename": "docs/recipes/compare-numbers.md",
+    "created": "2022-11-08T16:33:15.237Z",
+    "modified": "2022-11-08T16:33:15.237Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/compare-numbers.html"
+  },
+  {
+    "title": "Compare numbers Check the numbers are ready",
+    "filename": "docs/recipes/compare-numbers.md",
+    "created": "2022-11-08T16:33:15.237Z",
+    "modified": "2022-11-08T16:33:15.237Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/compare-numbers.html"
+  },
+  {
+    "title": "Compare numbers The element is replaced on load",
+    "filename": "docs/recipes/compare-numbers.md",
+    "created": "2022-11-08T16:33:15.237Z",
+    "modified": "2022-11-08T16:33:15.237Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/compare-numbers.html"
+  },
+  {
+    "title": "Compare numbers Using the cy.spread",
+    "filename": "docs/recipes/compare-numbers.md",
+    "created": "2022-11-08T16:33:15.237Z",
+    "modified": "2022-11-08T16:33:15.237Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/compare-numbers.html"
+  },
+  {
+    "title": "Compare numbers Use a single should callback",
+    "filename": "docs/recipes/compare-numbers.md",
+    "created": "2022-11-08T16:33:15.237Z",
+    "modified": "2022-11-08T16:33:15.237Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/compare-numbers.html"
+  },
+  {
+    "title": "Computed style Red anchors",
+    "filename": "docs/recipes/computed-style.md",
+    "created": "2022-06-20T14:13:34.146Z",
+    "modified": "2022-06-20T14:13:34.147Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/computed-style.html"
+  },
+  {
+    "title": "Concatenate the found labels Concatenate the found labels",
+    "filename": "docs/recipes/concat-labels.md",
+    "created": "2022-11-17T18:58:17.702Z",
+    "modified": "2022-11-17T18:58:17.702Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/concat-labels.html"
+  },
+  {
+    "title": "Conditional testing Toggle first solution",
+    "filename": "docs/recipes/conditional-testing.md",
+    "created": "2023-04-06T18:53:26.565Z",
+    "modified": "2023-04-06T18:53:26.565Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
+  },
+  {
+    "title": "Conditional testing Toggle second solution",
+    "filename": "docs/recipes/conditional-testing.md",
+    "created": "2023-04-06T18:53:26.565Z",
+    "modified": "2023-04-06T18:53:26.565Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
+  },
+  {
+    "title": "Conditional testing Does not exist or is invisible",
+    "filename": "docs/recipes/conditional-testing.md",
+    "created": "2023-04-06T18:53:26.565Z",
+    "modified": "2023-04-06T18:53:26.565Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
+  },
+  {
+    "title": "Conditional testing Click a button if present",
+    "filename": "docs/recipes/conditional-testing.md",
+    "created": "2023-04-06T18:53:26.565Z",
+    "modified": "2023-04-06T18:53:26.565Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
+  },
+  {
+    "title": "Conditional testing Click a button if it is not disabled",
+    "filename": "docs/recipes/conditional-testing.md",
+    "created": "2023-04-06T18:53:26.565Z",
+    "modified": "2023-04-06T18:53:26.565Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
+  },
+  {
+    "title": "Conditional testing Click a button if a class is present",
+    "filename": "docs/recipes/conditional-testing.md",
+    "created": "2023-04-06T18:53:26.565Z",
+    "modified": "2023-04-06T18:53:26.565Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
+  },
+  {
+    "title": "Conditional testing Print the cookie if it exists",
+    "filename": "docs/recipes/conditional-testing.md",
+    "created": "2023-04-06T18:53:26.565Z",
+    "modified": "2023-04-06T18:53:26.565Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
+  },
+  {
+    "title": "Conditional testing Depending on the URL",
+    "filename": "docs/recipes/conditional-testing.md",
+    "created": "2023-04-06T18:53:26.565Z",
+    "modified": "2023-04-06T18:53:26.565Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
+  },
+  {
+    "title": "Conditional testing Skip the rest if an element exists",
+    "filename": "docs/recipes/conditional-testing.md",
+    "created": "2023-04-06T18:53:26.565Z",
+    "modified": "2023-04-06T18:53:26.565Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
+  },
+  {
+    "title": "Conditional testing cypress-recurse Loading element text",
+    "filename": "docs/recipes/conditional-testing.md",
+    "created": "2023-04-06T18:53:26.565Z",
+    "modified": "2023-04-06T18:53:26.565Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
+  },
+  {
+    "title": "Conditional testing cypress-recurse Loading element text refactored",
+    "filename": "docs/recipes/conditional-testing.md",
+    "created": "2023-04-06T18:53:26.565Z",
+    "modified": "2023-04-06T18:53:26.565Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
+  },
+  {
+    "title": "Confirm attribute invoke jQuery attr method",
+    "filename": "docs/recipes/confirm-attribute.md",
+    "created": "2022-08-05T12:38:47.266Z",
+    "modified": "2022-08-05T12:38:47.266Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/confirm-attribute.html"
+  },
+  {
+    "title": "Confirm attribute Confirm part of the attribute value",
+    "filename": "docs/recipes/confirm-attribute.md",
+    "created": "2022-08-05T12:38:47.266Z",
+    "modified": "2022-08-05T12:38:47.266Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/confirm-attribute.html"
+  },
+  {
+    "title": "Confirm attribute confirm multiple attributes",
+    "filename": "docs/recipes/confirm-attribute.md",
+    "created": "2022-08-05T12:38:47.266Z",
+    "modified": "2022-08-05T12:38:47.266Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/confirm-attribute.html"
+  },
+  {
+    "title": "Confirm attribute sum of data attributes",
+    "filename": "docs/recipes/confirm-attribute.md",
+    "created": "2022-08-05T12:38:47.266Z",
+    "modified": "2022-08-05T12:38:47.266Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/confirm-attribute.html"
+  },
+  {
+    "title": "Contains text in a list Test 1: find items then check their text",
+    "filename": "docs/recipes/contains-text-in-list.md",
+    "created": "2022-04-25T13:37:38.328Z",
+    "modified": "2022-04-25T13:37:38.329Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/contains-text-in-list.html"
+  },
+  {
+    "title": "Contains text in a list Test 2: find text in the dynamic items",
+    "filename": "docs/recipes/contains-text-in-list.md",
+    "created": "2022-04-25T13:37:38.328Z",
+    "modified": "2022-04-25T13:37:38.329Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/contains-text-in-list.html"
+  },
+  {
+    "title": "Copyright Year Copyright year",
+    "filename": "docs/recipes/copyright-year.md",
+    "created": "2023-01-03T16:09:56.840Z",
+    "modified": "2023-01-03T16:09:56.840Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/copyright-year.html"
+  },
+  {
+    "title": "Counter increments Counter increments",
+    "filename": "docs/recipes/counter-increments.md",
+    "created": "2022-04-12T13:01:35.672Z",
+    "modified": "2022-04-12T13:01:35.672Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/counter-increments.html"
+  },
+  {
+    "title": "Create Long Text Create long text",
+    "filename": "docs/recipes/create-long-text.md",
+    "created": "2022-04-12T13:01:35.677Z",
+    "modified": "2022-04-12T13:01:35.677Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/create-long-text.html"
+  },
+  {
+    "title": "CSS classes Class names",
+    "filename": "docs/recipes/css-examples.md",
+    "created": "2023-01-10T15:41:40.742Z",
+    "modified": "2023-01-10T15:41:40.743Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/css-examples.html"
+  },
+  {
+    "title": "CSS classes Class list",
+    "filename": "docs/recipes/css-examples.md",
+    "created": "2023-01-10T15:41:40.742Z",
+    "modified": "2023-01-10T15:41:40.743Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/css-examples.html"
+  },
+  {
+    "title": "CSS classes Class name matching a rule",
+    "filename": "docs/recipes/css-examples.md",
+    "created": "2023-01-10T15:41:40.742Z",
+    "modified": "2023-01-10T15:41:40.743Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/css-examples.html"
+  },
+  {
+    "title": "Cy events Command start",
+    "filename": "docs/recipes/cy-events.md",
+    "created": "2022-07-26T19:05:09.521Z",
+    "modified": "2022-07-26T19:05:09.521Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/cy-events.html"
+  },
+  {
+    "title": "Dataset HTML attributes Using data attributes",
+    "filename": "docs/recipes/dataset.md",
+    "created": "2023-04-10T19:17:46.197Z",
+    "modified": "2023-04-10T19:17:46.198Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/dataset.html"
+  },
+  {
+    "title": "Dataset HTML attributes Convert dataset with retries",
+    "filename": "docs/recipes/dataset.md",
+    "created": "2023-04-10T19:17:46.197Z",
+    "modified": "2023-04-10T19:17:46.198Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/dataset.html"
+  },
+  {
+    "title": "Debug cy.get and cy.contains commands The selector should be escaped",
+    "filename": "docs/recipes/debug-cy-get-contains.md",
+    "created": "2023-02-10T15:53:53.910Z",
+    "modified": "2023-02-10T15:53:53.910Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/debug-cy-get-contains.html"
+  },
+  {
+    "title": "Debug cy.get and cy.contains commands Accidental cy.within context",
+    "filename": "docs/recipes/debug-cy-get-contains.md",
+    "created": "2023-02-10T15:53:53.910Z",
+    "modified": "2023-02-10T15:53:53.910Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/debug-cy-get-contains.html"
+  },
+  {
+    "title": "Debug cy.get and cy.contains commands Multiple values matching the selector",
+    "filename": "docs/recipes/debug-cy-get-contains.md",
+    "created": "2023-02-10T15:53:53.910Z",
+    "modified": "2023-02-10T15:53:53.910Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/debug-cy-get-contains.html"
+  },
+  {
+    "title": "Debug cy.get and cy.contains commands HTML Whitespace",
+    "filename": "docs/recipes/debug-cy-get-contains.md",
+    "created": "2023-02-10T15:53:53.910Z",
+    "modified": "2023-02-10T15:53:53.910Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/debug-cy-get-contains.html"
+  },
+  {
+    "title": "Debug cy.get and cy.contains commands CSS text transform",
+    "filename": "docs/recipes/debug-cy-get-contains.md",
+    "created": "2023-02-10T15:53:53.910Z",
+    "modified": "2023-02-10T15:53:53.910Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/debug-cy-get-contains.html"
+  },
+  {
+    "title": "Decimals Two decimals",
+    "filename": "docs/recipes/decimals.md",
+    "created": "2023-01-04T14:55:40.104Z",
+    "modified": "2023-01-04T14:55:40.104Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/decimals.html"
+  },
+  {
+    "title": "Decimals Optional last zero",
+    "filename": "docs/recipes/decimals.md",
+    "created": "2023-01-04T14:55:40.104Z",
+    "modified": "2023-01-04T14:55:40.104Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/decimals.html"
+  },
+  {
+    "title": "Dialog HTML Element Modeless OK dialog",
+    "filename": "docs/recipes/dialog-element.md",
+    "created": "2022-06-01T13:06:45.836Z",
+    "modified": "2022-06-01T13:06:45.837Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/dialog-element.html"
+  },
+  {
+    "title": "Dialog HTML Element Modal with a form",
+    "filename": "docs/recipes/dialog-element.md",
+    "created": "2022-06-01T13:06:45.836Z",
+    "modified": "2022-06-01T13:06:45.837Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/dialog-element.html"
+  },
+  {
+    "title": "Disabled button Button becomes enabled",
+    "filename": "docs/recipes/disabled-button.md",
+    "created": "2023-01-17T17:07:15.359Z",
+    "modified": "2023-01-17T17:07:15.360Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/disabled-button.html"
+  },
+  {
+    "title": "Dollar range The exact price text",
+    "filename": "docs/recipes/dollar-range.md",
+    "created": "2023-03-15T17:22:45.535Z",
+    "modified": "2023-03-15T17:22:45.536Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/dollar-range.html"
+  },
+  {
+    "title": "Dollar range Includes the dollar amount text",
+    "filename": "docs/recipes/dollar-range.md",
+    "created": "2023-03-15T17:22:45.535Z",
+    "modified": "2023-03-15T17:22:45.536Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/dollar-range.html"
+  },
+  {
+    "title": "Checking for duplicates List does not have duplicates",
+    "filename": "docs/recipes/duplicates.md",
+    "created": "2022-05-29T17:02:18.243Z",
+    "modified": "2022-05-29T17:02:18.243Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/duplicates.html"
+  },
+  {
+    "title": "Checking for duplicates Items do not have duplicate attributes",
+    "filename": "docs/recipes/duplicates.md",
+    "created": "2022-05-29T17:02:18.243Z",
+    "modified": "2022-05-29T17:02:18.243Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/duplicates.html"
+  },
+  {
+    "title": "`cy.each` examples .each confirm each item",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "`cy.each` examples .each even numbers",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "`cy.each` examples .each confirm prices",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "`cy.each` examples .each collect items text",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "`cy.each` examples .each count items by text",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "`cy.each` examples .each stop iteration by returning false",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "`cy.each` examples .each read numbers from elements",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "`cy.each` examples .each read numbers using a custom command",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "`cy.each` examples .each matches using a regular expression",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "`cy.each` examples Stop the iteration does not change the subject",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "`cy.each` examples Returns a promise",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "`cy.each` examples Does not stop the execution",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "`cy.each` examples Skip the remaining callbacks yourself",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "`cy.each` examples Separate zip codes",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2023-01-10T15:41:40.743Z",
+    "modified": "2023-01-10T15:41:40.744Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
+    "title": "Element Attributes Multiple elements with attributes",
+    "filename": "docs/recipes/element-attributes.md",
+    "created": "2023-03-19T21:15:25.428Z",
+    "modified": "2023-03-19T21:15:25.428Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/element-attributes.html"
+  },
+  {
+    "title": "Element Hides Button goes away after a click",
+    "filename": "docs/recipes/element-hides.md",
+    "created": "2022-12-16T14:31:30.876Z",
+    "modified": "2022-12-16T14:31:30.877Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/element-hides.html"
+  },
+  {
+    "title": "Element Hides Button hides after a click",
+    "filename": "docs/recipes/element-hides.md",
+    "created": "2022-12-16T14:31:30.876Z",
+    "modified": "2022-12-16T14:31:30.877Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/element-hides.html"
+  },
+  {
+    "title": "Empty assertion Empty string",
+    "filename": "docs/recipes/empty-assertion.md",
+    "created": "2022-11-10T14:15:02.434Z",
+    "modified": "2022-11-10T14:15:02.434Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/empty-assertion.html"
+  },
+  {
+    "title": "Empty assertion Empty array",
+    "filename": "docs/recipes/empty-assertion.md",
+    "created": "2022-11-10T14:15:02.434Z",
+    "modified": "2022-11-10T14:15:02.434Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/empty-assertion.html"
+  },
+  {
+    "title": "Empty assertion Empty object",
+    "filename": "docs/recipes/empty-assertion.md",
+    "created": "2022-11-10T14:15:02.434Z",
+    "modified": "2022-11-10T14:15:02.434Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/empty-assertion.html"
+  },
+  {
+    "title": "Empty assertion jQuery object with length zero is never empty",
+    "filename": "docs/recipes/empty-assertion.md",
+    "created": "2022-11-10T14:15:02.434Z",
+    "modified": "2022-11-10T14:15:02.434Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/empty-assertion.html"
+  },
+  {
+    "title": "Empty assertion jQuery object without children is empty",
+    "filename": "docs/recipes/empty-assertion.md",
+    "created": "2022-11-10T14:15:02.434Z",
+    "modified": "2022-11-10T14:15:02.434Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/empty-assertion.html"
+  },
+  {
+    "title": "Empty elements Empty elements without children or text",
+    "filename": "docs/recipes/empty-divs.md",
+    "created": "2023-04-20T14:39:36.442Z",
+    "modified": "2023-04-20T14:39:36.443Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/empty-divs.html"
+  },
+  {
+    "title": "Empty elements Empty child element",
+    "filename": "docs/recipes/empty-divs.md",
+    "created": "2023-04-20T14:39:36.442Z",
+    "modified": "2023-04-20T14:39:36.443Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/empty-divs.html"
+  },
+  {
+    "title": "Empty elements before comparing text Empty elements",
+    "filename": "docs/recipes/empty-elements.md",
+    "created": "2022-05-21T11:53:26.090Z",
+    "modified": "2022-05-21T11:53:26.090Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/empty-elements.html"
+  },
+  {
+    "title": "Enabled elements Get all enabled buttons",
+    "filename": "docs/recipes/enabled-elements.md",
+    "created": "2023-03-07T16:51:51.045Z",
+    "modified": "2023-03-07T16:51:51.045Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/enabled-elements.html"
+  },
+  {
+    "title": "Enter value into the form Enter value into the form",
+    "filename": "docs/recipes/enter-value.md",
+    "created": "2022-12-04T17:34:29.470Z",
+    "modified": "2022-12-04T17:34:29.470Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/enter-value.html"
+  },
+  {
+    "title": "Escape Selector Escape selector",
+    "filename": "docs/recipes/escape-selector.md",
+    "created": "2022-09-15T17:14:24.033Z",
+    "modified": "2022-09-15T17:14:24.033Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/escape-selector.html"
+  },
+  {
+    "title": "Filter elements Filter elements using jQuery pseudo-classes",
+    "filename": "docs/recipes/filter-elements.md",
+    "created": "2022-08-10T13:12:25.080Z",
+    "modified": "2022-08-10T13:12:25.080Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/filter-elements.html"
+  },
+  {
+    "title": "Find and click the accordion with a button Find and click the accordion with a button",
+    "filename": "docs/recipes/find-and-click-accordion-button.md",
+    "created": "2022-06-23T14:09:19.172Z",
+    "modified": "2022-06-23T14:09:19.173Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/find-and-click-accordion-button.html"
+  },
+  {
+    "title": "Find elements by class and text Filter by class",
+    "filename": "docs/recipes/find-by-class-or-text.md",
+    "created": "2022-04-12T13:01:35.690Z",
+    "modified": "2022-04-12T13:01:35.690Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/find-by-class-or-text.html"
+  },
+  {
+    "title": "Find elements by class and text Exact class and text",
+    "filename": "docs/recipes/find-by-class-or-text.md",
+    "created": "2022-04-12T13:01:35.690Z",
+    "modified": "2022-04-12T13:01:35.690Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/find-by-class-or-text.html"
+  },
+  {
+    "title": "Find elements by class and text Multiple elements with text",
+    "filename": "docs/recipes/find-by-class-or-text.md",
+    "created": "2022-04-12T13:01:35.690Z",
+    "modified": "2022-04-12T13:01:35.690Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/find-by-class-or-text.html"
+  },
+  {
+    "title": "Find elements by class and text Filter using cy.not",
+    "filename": "docs/recipes/find-by-class-or-text.md",
+    "created": "2022-04-12T13:01:35.690Z",
+    "modified": "2022-04-12T13:01:35.690Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/find-by-class-or-text.html"
+  },
+  {
+    "title": "Find elements by class and text Filter out by the parent selector",
+    "filename": "docs/recipes/find-by-class-or-text.md",
+    "created": "2022-04-12T13:01:35.690Z",
+    "modified": "2022-04-12T13:01:35.690Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/find-by-class-or-text.html"
+  },
+  {
+    "title": "Find duplicates Find known duplicate value",
+    "filename": "docs/recipes/find-duplicates.md",
+    "created": "2022-05-30T14:31:58.916Z",
+    "modified": "2022-05-30T14:31:58.916Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/find-duplicates.html"
+  },
+  {
+    "title": "Find elements with subelements Find elements with labels inside",
+    "filename": "docs/recipes/find-elements-with-subelements.md",
+    "created": "2022-04-12T13:01:35.692Z",
+    "modified": "2022-04-12T13:01:35.692Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/find-elements-with-subelements.html"
+  },
+  {
+    "title": "Find elements with subelements Find list items with labels or warnings",
+    "filename": "docs/recipes/find-elements-with-subelements.md",
+    "created": "2022-04-12T13:01:35.692Z",
+    "modified": "2022-04-12T13:01:35.692Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/find-elements-with-subelements.html"
+  },
+  {
+    "title": "Find the max number Find the longest route",
+    "filename": "docs/recipes/find-max-number.md",
+    "created": "2022-11-11T19:46:33.076Z",
+    "modified": "2022-11-11T19:46:33.076Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/find-max-number.html"
+  },
+  {
+    "title": "Find an object in an array Find an object with the given property",
+    "filename": "docs/recipes/find-object.md",
+    "created": "2022-09-06T14:08:51.105Z",
+    "modified": "2022-09-06T14:08:51.105Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/find-object.html"
+  },
+  {
+    "title": "First table column First column of the second table",
+    "filename": "docs/recipes/first-column.md",
+    "created": "2023-02-27T16:26:31.178Z",
+    "modified": "2023-02-27T16:26:31.179Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/first-column.html"
+  },
+  {
+    "title": "First table column Second column skipping the TH cell",
+    "filename": "docs/recipes/first-column.md",
+    "created": "2023-02-27T16:26:31.178Z",
+    "modified": "2023-02-27T16:26:31.179Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/first-column.html"
+  },
+  {
+    "title": "Get form input using label Get by label via parent form-group",
+    "filename": "docs/recipes/form-input-by-label.md",
+    "created": "2023-02-08T16:24:11.364Z",
+    "modified": "2023-02-08T16:24:11.364Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/form-input-by-label.html"
+  },
+  {
+    "title": "Get form input using label Get by label using a function",
+    "filename": "docs/recipes/form-input-by-label.md",
+    "created": "2023-02-08T16:24:11.364Z",
+    "modified": "2023-02-08T16:24:11.364Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/form-input-by-label.html"
+  },
+  {
+    "title": "Get form input using label Get by label using a simple custom command",
+    "filename": "docs/recipes/form-input-by-label.md",
+    "created": "2023-02-08T16:24:11.364Z",
+    "modified": "2023-02-08T16:24:11.364Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/form-input-by-label.html"
+  },
+  {
+    "title": "Get form input using label Get by label using a simple custom command FAILS",
+    "filename": "docs/recipes/form-input-by-label.md",
+    "created": "2023-02-08T16:24:11.364Z",
+    "modified": "2023-02-08T16:24:11.364Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/form-input-by-label.html"
+  },
+  {
+    "title": "Get form input using label Get by label using a complex custom command",
+    "filename": "docs/recipes/form-input-by-label.md",
+    "created": "2023-02-08T16:24:11.364Z",
+    "modified": "2023-02-08T16:24:11.364Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/form-input-by-label.html"
+  },
+  {
+    "title": "Get form input using label Get by label using a complex custom command with hydration",
+    "filename": "docs/recipes/form-input-by-label.md",
+    "created": "2023-02-08T16:24:11.364Z",
+    "modified": "2023-02-08T16:24:11.364Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/form-input-by-label.html"
+  },
+  {
+    "title": "jQuery form serializeArray method form serializeArray example",
+    "filename": "docs/recipes/form-serialize-array.md",
+    "created": "2023-01-09T23:58:51.436Z",
+    "modified": "2023-01-09T23:58:51.436Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/form-serialize-array.html"
+  },
+  {
+    "title": "Form validation \"Form validation\"",
+    "filename": "docs/recipes/form-validation.md",
+    "created": "2022-04-12T13:01:35.696Z",
+    "modified": "2022-04-12T13:01:35.697Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/form-validation.html"
+  },
+  {
+    "title": "Form values form values",
+    "filename": "docs/recipes/form-values.md",
+    "created": "2023-01-08T18:17:39.753Z",
+    "modified": "2023-01-08T18:17:39.754Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/form-values.html"
+  },
+  {
+    "title": "Get By Attribute That Starts With String X Get labels that start with today or tomorrow",
+    "filename": "docs/recipes/get-attribute-starts.md",
+    "created": "2022-09-12T19:40:15.090Z",
+    "modified": "2022-09-12T19:40:15.090Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-attribute-starts.html"
+  },
+  {
+    "title": "Get By Attributes Two attributes",
+    "filename": "docs/recipes/get-by-attributes.md",
+    "created": "2022-09-11T16:23:09.791Z",
+    "modified": "2022-09-11T16:23:09.791Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-by-attributes.html"
+  },
+  {
+    "title": "Get HTML comment Get HTML comment",
+    "filename": "docs/recipes/get-html-comment.md",
+    "created": "2022-04-12T13:01:35.699Z",
+    "modified": "2022-04-12T13:01:35.699Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-html-comment.html"
+  },
+  {
+    "title": "Get input elements with the given value Get input elements with the given value",
+    "filename": "docs/recipes/get-inputs-with-value.md",
+    "created": "2022-04-28T12:19:07.788Z",
+    "modified": "2022-04-28T12:19:07.788Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-inputs-with-value.html"
+  },
+  {
+    "title": "Get multiple fields Multiple fields explicit test",
+    "filename": "docs/recipes/get-multiple-fields.md",
+    "created": "2022-05-13T14:39:05.039Z",
+    "modified": "2022-05-13T14:39:05.039Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-multiple-fields.html"
+  },
+  {
+    "title": "Get multiple fields Multiple fields reusable function",
+    "filename": "docs/recipes/get-multiple-fields.md",
+    "created": "2022-05-13T14:39:05.039Z",
+    "modified": "2022-05-13T14:39:05.039Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-multiple-fields.html"
+  },
+  {
+    "title": "Get multiple fields Multiple fields custom command",
+    "filename": "docs/recipes/get-multiple-fields.md",
+    "created": "2022-05-13T14:39:05.039Z",
+    "modified": "2022-05-13T14:39:05.039Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-multiple-fields.html"
+  },
+  {
+    "title": "Get multiple fields Multiple fields aliases",
+    "filename": "docs/recipes/get-multiple-fields.md",
+    "created": "2022-05-13T14:39:05.039Z",
+    "modified": "2022-05-13T14:39:05.039Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-multiple-fields.html"
+  },
+  {
+    "title": "Getting Text from List of Elements Get text list",
+    "filename": "docs/recipes/get-text-list.md",
+    "created": "2022-11-15T15:57:20.740Z",
+    "modified": "2022-11-15T15:57:20.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-list.html"
+  },
+  {
+    "title": "Getting Text from List of Elements Array becomes jQuery",
+    "filename": "docs/recipes/get-text-list.md",
+    "created": "2022-11-15T15:57:20.740Z",
+    "modified": "2022-11-15T15:57:20.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-list.html"
+  },
+  {
+    "title": "Getting Text from List of Elements Prints the text to the Cypress Command Log",
+    "filename": "docs/recipes/get-text-list.md",
+    "created": "2022-11-15T15:57:20.740Z",
+    "modified": "2022-11-15T15:57:20.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-list.html"
+  },
+  {
+    "title": "Getting Text from List of Elements Collect the items first, then print",
+    "filename": "docs/recipes/get-text-list.md",
+    "created": "2022-11-15T15:57:20.740Z",
+    "modified": "2022-11-15T15:57:20.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-list.html"
+  },
+  {
+    "title": "Getting Text from List of Elements Collect the items first, then assert the list",
+    "filename": "docs/recipes/get-text-list.md",
+    "created": "2022-11-15T15:57:20.740Z",
+    "modified": "2022-11-15T15:57:20.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-list.html"
+  },
+  {
+    "title": "Getting Text from List of Elements Confirm the number of items",
+    "filename": "docs/recipes/get-text-list.md",
+    "created": "2022-11-15T15:57:20.740Z",
+    "modified": "2022-11-15T15:57:20.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-list.html"
+  },
+  {
+    "title": "Getting Text from List of Elements Confirm the number of items with parsing",
+    "filename": "docs/recipes/get-text-list.md",
+    "created": "2022-11-15T15:57:20.740Z",
+    "modified": "2022-11-15T15:57:20.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-list.html"
+  },
+  {
+    "title": "Getting Text from List of Elements text at index k",
+    "filename": "docs/recipes/get-text-list.md",
+    "created": "2022-11-15T15:57:20.740Z",
+    "modified": "2022-11-15T15:57:20.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-list.html"
+  },
+  {
+    "title": "Getting Text from List of Elements Filter items by text",
+    "filename": "docs/recipes/get-text-list.md",
+    "created": "2022-11-15T15:57:20.740Z",
+    "modified": "2022-11-15T15:57:20.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-list.html"
+  },
+  {
+    "title": "Getting Text from List of Elements Index of the element with the text",
+    "filename": "docs/recipes/get-text-list.md",
+    "created": "2022-11-15T15:57:20.740Z",
+    "modified": "2022-11-15T15:57:20.740Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-list.html"
+  },
+  {
+    "title": "Get text script Get text script",
+    "filename": "docs/recipes/get-text-script.md",
+    "created": "2022-04-12T13:01:35.706Z",
+    "modified": "2022-04-12T13:01:35.706Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-script.html"
+  },
+  {
+    "title": "Table rows having cells with the given attribute Plain Cypress commands",
+    "filename": "docs/recipes/has-rows.md",
+    "created": "2023-02-07T16:38:33.251Z",
+    "modified": "2023-02-07T16:38:33.251Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/has-rows.html"
+  },
+  {
+    "title": "Table rows having cells with the given attribute Cypress-map queries",
+    "filename": "docs/recipes/has-rows.md",
+    "created": "2023-02-07T16:38:33.251Z",
+    "modified": "2023-02-07T16:38:33.251Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/has-rows.html"
+  },
+  {
+    "title": "Hide the entered email Hide the entered email Prevent the default action on the form",
+    "filename": "docs/recipes/hide-email.md",
+    "created": "2023-01-10T15:41:40.744Z",
+    "modified": "2023-01-10T15:41:40.745Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/hide-email.html"
+  },
+  {
+    "title": "Hide the entered email Hide the entered email Intercept the network call",
+    "filename": "docs/recipes/hide-email.md",
+    "created": "2023-01-10T15:41:40.744Z",
+    "modified": "2023-01-10T15:41:40.745Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/hide-email.html"
+  },
+  {
+    "title": "Image Has Loaded Image has loaded",
+    "filename": "docs/recipes/image-loaded.md",
+    "created": "2022-04-12T13:01:35.711Z",
+    "modified": "2022-04-12T13:01:35.711Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/image-loaded.html"
+  },
+  {
+    "title": "Input Element Clears NaN Value Input clears NaN value",
+    "filename": "docs/recipes/input-clears-nan.md",
+    "created": "2023-03-13T17:59:32.834Z",
+    "modified": "2023-03-13T17:59:32.834Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-clears-nan.html"
+  },
+  {
+    "title": "Input element value Element text",
+    "filename": "docs/recipes/input-element-value.md",
+    "created": "2022-04-18T19:06:17.491Z",
+    "modified": "2022-04-18T19:06:17.491Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-element-value.html"
+  },
+  {
+    "title": "Input element value A text input element value",
+    "filename": "docs/recipes/input-element-value.md",
+    "created": "2022-04-18T19:06:17.491Z",
+    "modified": "2022-04-18T19:06:17.491Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-element-value.html"
+  },
+  {
+    "title": "Input element value A number input element value",
+    "filename": "docs/recipes/input-element-value.md",
+    "created": "2022-04-18T19:06:17.491Z",
+    "modified": "2022-04-18T19:06:17.491Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-element-value.html"
+  },
+  {
+    "title": "Input element value Nested element",
+    "filename": "docs/recipes/input-element-value.md",
+    "created": "2022-04-18T19:06:17.491Z",
+    "modified": "2022-04-18T19:06:17.491Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-element-value.html"
+  },
+  {
+    "title": "Input has value Input element has some value",
+    "filename": "docs/recipes/input-has-value.md",
+    "created": "2022-08-31T21:27:12.085Z",
+    "modified": "2022-08-31T21:27:12.085Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-has-value.html"
+  },
+  {
+    "title": "Input Element Trims Spaces Input trims spaces",
+    "filename": "docs/recipes/input-trims-spaces.md",
+    "created": "2022-04-12T13:01:35.713Z",
+    "modified": "2022-04-12T13:01:35.714Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-trims-spaces.html"
+  },
+  {
+    "title": "Input valueAsNumber example valueAsNumber",
+    "filename": "docs/recipes/input-value-as-number.md",
+    "created": "2022-12-01T12:34:52.506Z",
+    "modified": "2022-12-01T12:34:52.506Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-value-as-number.html"
+  },
+  {
+    "title": "Input value The text input value matching a regular expression",
+    "filename": "docs/recipes/input-value.md",
+    "created": "2022-12-01T02:38:47.390Z",
+    "modified": "2022-12-01T02:38:47.390Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-value.html"
+  },
+  {
+    "title": "Be very careful with instanceof assertion instanceof example",
+    "filename": "docs/recipes/instanceof.md",
+    "created": "2022-05-13T13:46:51.422Z",
+    "modified": "2022-05-13T13:46:51.422Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/instanceof.html"
+  },
+  {
+    "title": "Element Is Visible element should be visible",
+    "filename": "docs/recipes/is-visible.md",
+    "created": "2023-03-18T23:22:37.203Z",
+    "modified": "2023-03-18T23:22:37.203Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/is-visible.html"
+  },
+  {
+    "title": "Element Is Visible element should satisfy the assertion callback",
+    "filename": "docs/recipes/is-visible.md",
+    "created": "2023-03-18T23:22:37.203Z",
+    "modified": "2023-03-18T23:22:37.203Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/is-visible.html"
+  },
+  {
+    "title": "Element Is Visible element should satisfy visibility predicate",
+    "filename": "docs/recipes/is-visible.md",
+    "created": "2023-03-18T23:22:37.203Z",
+    "modified": "2023-03-18T23:22:37.203Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/is-visible.html"
+  },
+  {
+    "title": "Element Is Visible click waits for the element to become visible",
+    "filename": "docs/recipes/is-visible.md",
+    "created": "2023-03-18T23:22:37.203Z",
+    "modified": "2023-03-18T23:22:37.203Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/is-visible.html"
+  },
+  {
+    "title": "Json Data Attribute Get Json Data Attribute",
+    "filename": "docs/recipes/json-data-attribute.md",
+    "created": "2022-12-19T22:03:36.749Z",
+    "modified": "2022-12-19T22:03:36.749Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/json-data-attribute.html"
+  },
+  {
+    "title": "Keep it simple Keep it simple",
+    "filename": "docs/recipes/keep-it-simple.md",
+    "created": "2022-06-22T19:35:32.662Z",
+    "modified": "2022-06-22T19:35:32.662Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/keep-it-simple.html"
+  },
+  {
+    "title": "Labels for Checkboxes Labels for checkboxes",
+    "filename": "docs/recipes/labels-for-checkboxes.md",
+    "created": "2022-04-12T13:01:35.717Z",
+    "modified": "2022-04-12T13:01:35.717Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/labels-for-checkboxes.html"
+  },
+  {
+    "title": "Last item in an array Last item",
+    "filename": "docs/recipes/last-item.md",
+    "created": "2022-07-07T13:24:57.395Z",
+    "modified": "2022-07-07T13:24:57.396Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/last-item.html"
+  },
+  {
+    "title": "Lesser Known Chai Assertions Nested property",
+    "filename": "docs/recipes/lesser-known-chai-assertions.md",
+    "created": "2023-04-17T21:29:45.620Z",
+    "modified": "2023-04-17T21:29:45.620Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/lesser-known-chai-assertions.html"
+  },
+  {
+    "title": "Lesser Known Chai Assertions Own property",
+    "filename": "docs/recipes/lesser-known-chai-assertions.md",
+    "created": "2023-04-17T21:29:45.620Z",
+    "modified": "2023-04-17T21:29:45.620Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/lesser-known-chai-assertions.html"
+  },
+  {
+    "title": "Lesser Known Chai Assertions Satisfy",
+    "filename": "docs/recipes/lesser-known-chai-assertions.md",
+    "created": "2023-04-17T21:29:45.620Z",
+    "modified": "2023-04-17T21:29:45.620Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/lesser-known-chai-assertions.html"
+  },
+  {
+    "title": "Lesser Known Chai Assertions Array members",
+    "filename": "docs/recipes/lesser-known-chai-assertions.md",
+    "created": "2023-04-17T21:29:45.620Z",
+    "modified": "2023-04-17T21:29:45.620Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/lesser-known-chai-assertions.html"
+  },
+  {
+    "title": "Lesser Known Chai Assertions Extensible",
+    "filename": "docs/recipes/lesser-known-chai-assertions.md",
+    "created": "2023-04-17T21:29:45.620Z",
+    "modified": "2023-04-17T21:29:45.620Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/lesser-known-chai-assertions.html"
+  },
+  {
+    "title": "Lesser Known Chai Assertions Sealed",
+    "filename": "docs/recipes/lesser-known-chai-assertions.md",
+    "created": "2023-04-17T21:29:45.620Z",
+    "modified": "2023-04-17T21:29:45.620Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/lesser-known-chai-assertions.html"
+  },
+  {
+    "title": "Lesser Known Chai Assertions Frozen",
+    "filename": "docs/recipes/lesser-known-chai-assertions.md",
+    "created": "2023-04-17T21:29:45.620Z",
+    "modified": "2023-04-17T21:29:45.620Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/lesser-known-chai-assertions.html"
+  },
+  {
+    "title": "Lesser Known Chai Assertions Finite",
+    "filename": "docs/recipes/lesser-known-chai-assertions.md",
+    "created": "2023-04-17T21:29:45.620Z",
+    "modified": "2023-04-17T21:29:45.620Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/lesser-known-chai-assertions.html"
+  },
+  {
+    "title": "Lesser Known Chai Assertions Custom type tag",
+    "filename": "docs/recipes/lesser-known-chai-assertions.md",
+    "created": "2023-04-17T21:29:45.620Z",
+    "modified": "2023-04-17T21:29:45.620Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/lesser-known-chai-assertions.html"
+  },
+  {
+    "title": "List item with text tag List item has span with text",
+    "filename": "docs/recipes/list-item-with-text-tag.md",
+    "created": "2023-03-16T13:49:22.284Z",
+    "modified": "2023-03-16T13:49:22.284Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/list-item-with-text-tag.html"
+  },
+  {
+    "title": "Mailto HREF link Test HREF mailto link",
+    "filename": "docs/recipes/mailto-link.md",
+    "created": "2023-01-27T18:57:47.319Z",
+    "modified": "2023-01-27T18:57:47.319Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/mailto-link.html"
+  },
+  {
+    "title": "Map input values Map input values",
+    "filename": "docs/recipes/map-input-values.md",
+    "created": "2023-03-02T16:32:17.965Z",
+    "modified": "2023-03-02T16:32:17.965Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/map-input-values.html"
+  },
+  {
+    "title": "Match assertion Match jQuery element selector",
+    "filename": "docs/recipes/match-assertion.md",
+    "created": "2023-04-08T13:08:19.519Z",
+    "modified": "2023-04-08T13:08:19.519Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/match-assertion.html"
+  },
+  {
+    "title": "Match assertion Match text using regular expression",
+    "filename": "docs/recipes/match-assertion.md",
+    "created": "2023-04-08T13:08:19.519Z",
+    "modified": "2023-04-08T13:08:19.519Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/match-assertion.html"
+  },
+  {
+    "title": "Minimatch unit tests Minimatch example",
+    "filename": "docs/recipes/minimatch-unit-tests.md",
+    "created": "2023-03-26T15:19:59.427Z",
+    "modified": "2023-03-26T15:19:59.428Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/minimatch-unit-tests.html"
+  },
+  {
+    "title": "Negative Assertions The basics",
+    "filename": "docs/recipes/negative-assertions.md",
+    "created": "2023-03-28T17:14:58.946Z",
+    "modified": "2023-03-28T17:14:58.947Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/negative-assertions.html"
+  },
+  {
+    "title": "Negative Assertions A negative assertion",
+    "filename": "docs/recipes/negative-assertions.md",
+    "created": "2023-03-28T17:14:58.946Z",
+    "modified": "2023-03-28T17:14:58.947Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/negative-assertions.html"
+  },
+  {
+    "title": "Negative Assertions First example",
+    "filename": "docs/recipes/negative-assertions.md",
+    "created": "2023-03-28T17:14:58.946Z",
+    "modified": "2023-03-28T17:14:58.947Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/negative-assertions.html"
+  },
+  {
+    "title": "Negative Assertions Second example",
+    "filename": "docs/recipes/negative-assertions.md",
+    "created": "2023-03-28T17:14:58.946Z",
+    "modified": "2023-03-28T17:14:58.947Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/negative-assertions.html"
+  },
+  {
+    "title": "Negative Assertions Third example",
+    "filename": "docs/recipes/negative-assertions.md",
+    "created": "2023-03-28T17:14:58.946Z",
+    "modified": "2023-03-28T17:14:58.947Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/negative-assertions.html"
+  },
+  {
+    "title": "Negative Assertions Positive example",
+    "filename": "docs/recipes/negative-assertions.md",
+    "created": "2023-03-28T17:14:58.946Z",
+    "modified": "2023-03-28T17:14:58.947Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/negative-assertions.html"
+  },
+  {
+    "title": "Network Errors cy.intercept() simulates a network error",
+    "filename": "docs/recipes/network-errors.md",
+    "created": "2022-04-12T13:01:35.725Z",
+    "modified": "2022-04-12T13:01:35.725Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/network-errors.html"
+  },
+  {
+    "title": "Select Next Day Next day after active",
+    "filename": "docs/recipes/next-day.md",
+    "created": "2022-10-30T20:02:03.559Z",
+    "modified": "2022-10-30T20:02:03.559Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/next-day.html"
+  },
+  {
+    "title": "Non-breaking space Without whitespace",
+    "filename": "docs/recipes/non-breaking-space.md",
+    "created": "2022-05-04T19:37:53.320Z",
+    "modified": "2022-05-04T19:37:53.320Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/non-breaking-space.html"
+  },
+  {
+    "title": "Non-breaking space With whitespace cy.contains works",
+    "filename": "docs/recipes/non-breaking-space.md",
+    "created": "2022-05-04T19:37:53.320Z",
+    "modified": "2022-05-04T19:37:53.320Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/non-breaking-space.html"
+  },
+  {
+    "title": "Non-breaking space With whitespace use Unicode in .filter",
+    "filename": "docs/recipes/non-breaking-space.md",
+    "created": "2022-05-04T19:37:53.320Z",
+    "modified": "2022-05-04T19:37:53.320Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/non-breaking-space.html"
+  },
+  {
+    "title": "Non-breaking space With whitespace use Unicode in .should have.text",
+    "filename": "docs/recipes/non-breaking-space.md",
+    "created": "2022-05-04T19:37:53.320Z",
+    "modified": "2022-05-04T19:37:53.320Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/non-breaking-space.html"
+  },
+  {
+    "title": "Non-breaking space With whitespace using should(callback)",
+    "filename": "docs/recipes/non-breaking-space.md",
+    "created": "2022-05-04T19:37:53.320Z",
+    "modified": "2022-05-04T19:37:53.320Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/non-breaking-space.html"
+  },
+  {
+    "title": "Non-breaking space .filter :contains",
+    "filename": "docs/recipes/non-breaking-space.md",
+    "created": "2022-05-04T19:37:53.320Z",
+    "modified": "2022-05-04T19:37:53.320Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/non-breaking-space.html"
+  },
+  {
+    "title": "nth-child CSS selector examples Individual elements",
+    "filename": "docs/recipes/nth-child.md",
+    "created": "2023-03-11T14:18:59.415Z",
+    "modified": "2023-03-11T14:18:59.415Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/nth-child.html"
+  },
+  {
+    "title": "nth-child CSS selector examples Even and odd elements",
+    "filename": "docs/recipes/nth-child.md",
+    "created": "2023-03-11T14:18:59.415Z",
+    "modified": "2023-03-11T14:18:59.415Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/nth-child.html"
+  },
+  {
+    "title": "nth-child CSS selector examples Nth examples",
+    "filename": "docs/recipes/nth-child.md",
+    "created": "2023-03-11T14:18:59.415Z",
+    "modified": "2023-03-11T14:18:59.415Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/nth-child.html"
+  },
+  {
+    "title": "nth-child CSS selector examples First N elements",
+    "filename": "docs/recipes/nth-child.md",
+    "created": "2023-03-11T14:18:59.415Z",
+    "modified": "2023-03-11T14:18:59.415Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/nth-child.html"
+  },
+  {
+    "title": "nth-child CSS selector examples Last N elements",
+    "filename": "docs/recipes/nth-child.md",
+    "created": "2023-03-11T14:18:59.415Z",
+    "modified": "2023-03-11T14:18:59.415Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/nth-child.html"
+  },
+  {
+    "title": "nth-child CSS selector examples Elements from K to J",
+    "filename": "docs/recipes/nth-child.md",
+    "created": "2023-03-11T14:18:59.415Z",
+    "modified": "2023-03-11T14:18:59.415Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/nth-child.html"
+  },
+  {
+    "title": "nth-child CSS selector examples Elements after index K",
+    "filename": "docs/recipes/nth-child.md",
+    "created": "2023-03-11T14:18:59.415Z",
+    "modified": "2023-03-11T14:18:59.415Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/nth-child.html"
+  },
+  {
+    "title": "Number of rows Dynamic table",
+    "filename": "docs/recipes/number-of-rows.md",
+    "created": "2022-04-12T13:01:35.731Z",
+    "modified": "2022-04-12T13:01:35.731Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/number-of-rows.html"
+  },
+  {
+    "title": "Number of rows Number of rows",
+    "filename": "docs/recipes/number-of-rows.md",
+    "created": "2022-04-12T13:01:35.731Z",
+    "modified": "2022-04-12T13:01:35.731Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/number-of-rows.html"
+  },
+  {
+    "title": "Offline event Offline and online window events",
+    "filename": "docs/recipes/offline-event.md",
+    "created": "2022-10-31T18:24:14.056Z",
+    "modified": "2022-10-31T18:24:14.056Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/offline-event.html"
+  },
+  {
+    "title": "Select from an optgroup Select from an optgroup",
+    "filename": "docs/recipes/optgroup.md",
+    "created": "2022-05-31T18:34:37.825Z",
+    "modified": "2022-05-31T18:34:37.826Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/optgroup.html"
+  },
+  {
+    "title": "Select from an optgroup Select in the presence of duplicates",
+    "filename": "docs/recipes/optgroup.md",
+    "created": "2022-05-31T18:34:37.825Z",
+    "modified": "2022-05-31T18:34:37.826Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/optgroup.html"
+  },
+  {
+    "title": "OR Attributes assertion OR attributes",
+    "filename": "docs/recipes/or-attributes.md",
+    "created": "2022-10-12T15:31:00.324Z",
+    "modified": "2022-10-12T15:31:00.324Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/or-attributes.html"
+  },
+  {
+    "title": "OR Attributes assertion OR values",
+    "filename": "docs/recipes/or-attributes.md",
+    "created": "2022-10-12T15:31:00.324Z",
+    "modified": "2022-10-12T15:31:00.324Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/or-attributes.html"
+  },
+  {
+    "title": "OR Attributes assertion OR values retries",
+    "filename": "docs/recipes/or-attributes.md",
+    "created": "2022-10-12T15:31:00.324Z",
+    "modified": "2022-10-12T15:31:00.324Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/or-attributes.html"
+  },
+  {
+    "title": "Overlapping elements Overlapping elements",
+    "filename": "docs/recipes/overlapping-elements.md",
+    "created": "2022-04-12T13:01:35.733Z",
+    "modified": "2022-04-12T13:01:35.733Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/overlapping-elements.html"
+  },
+  {
+    "title": "Convenient access to aliases values by overwriting the should command Overwrite should command",
+    "filename": "docs/recipes/overwrite-should.md",
+    "created": "2023-01-10T15:41:40.745Z",
+    "modified": "2023-01-10T15:41:40.745Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/overwrite-should.html"
+  },
+  {
+    "title": "Own text Own text of an element",
+    "filename": "docs/recipes/own-text.md",
+    "created": "2022-09-12T18:02:25.528Z",
+    "modified": "2022-09-12T18:02:25.528Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/own-text.html"
+  },
+  {
+    "title": "Parse numbers Using parseInt to convert text to an integer",
+    "filename": "docs/recipes/parse-numbers.md",
+    "created": "2023-01-10T15:41:40.746Z",
+    "modified": "2023-01-10T15:41:40.746Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/parse-numbers.html"
+  },
+  {
+    "title": "Parse numbers Trim the text first",
+    "filename": "docs/recipes/parse-numbers.md",
+    "created": "2023-01-10T15:41:40.746Z",
+    "modified": "2023-01-10T15:41:40.746Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/parse-numbers.html"
+  },
+  {
+    "title": "Parse numbers Use parseFloat",
+    "filename": "docs/recipes/parse-numbers.md",
+    "created": "2023-01-10T15:41:40.746Z",
+    "modified": "2023-01-10T15:41:40.746Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/parse-numbers.html"
+  },
+  {
+    "title": "Parse price Find and parse the price",
+    "filename": "docs/recipes/parse-price.md",
+    "created": "2023-02-06T20:06:25.581Z",
+    "modified": "2023-02-06T20:06:25.582Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/parse-price.html"
+  },
+  {
+    "title": "Parse price Parse price using fluent programming",
+    "filename": "docs/recipes/parse-price.md",
+    "created": "2023-02-06T20:06:25.581Z",
+    "modified": "2023-02-06T20:06:25.582Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/parse-price.html"
+  },
+  {
+    "title": "Parse price Parse price using reusable query",
+    "filename": "docs/recipes/parse-price.md",
+    "created": "2023-02-06T20:06:25.581Z",
+    "modified": "2023-02-06T20:06:25.582Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/parse-price.html"
+  },
+  {
+    "title": "Password Is Hidden Password input is hidden",
+    "filename": "docs/recipes/password-is-hidden.md",
+    "created": "2023-03-21T21:29:01.814Z",
+    "modified": "2023-03-21T21:29:01.814Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/password-is-hidden.html"
+  },
+  {
+    "title": "Paste event paste into a text area",
+    "filename": "docs/recipes/paste-event.md",
+    "created": "2022-12-07T01:20:04.931Z",
+    "modified": "2022-12-07T01:20:04.931Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/paste-event.html"
+  },
+  {
+    "title": "Phone number Phone number",
+    "filename": "docs/recipes/phone-number.md",
+    "created": "2023-02-03T22:23:17.819Z",
+    "modified": "2023-02-03T22:23:17.819Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/phone-number.html"
+  },
+  {
+    "title": "Pick A Random Number Pick a random 10 digit number",
+    "filename": "docs/recipes/pick-random-number.md",
+    "created": "2022-12-12T18:23:51.880Z",
+    "modified": "2022-12-12T18:23:51.880Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/pick-random-number.html"
+  },
+  {
+    "title": "Positive number Positive number",
+    "filename": "docs/recipes/positive-number.md",
+    "created": "2022-11-17T16:58:22.782Z",
+    "modified": "2022-11-17T16:58:22.782Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/positive-number.html"
+  },
+  {
+    "title": "prefers-color-scheme prefers-color-scheme",
+    "filename": "docs/recipes/prefers-color-scheme.md",
+    "created": "2023-01-10T15:41:40.747Z",
+    "modified": "2023-01-10T15:41:40.747Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/prefers-color-scheme.html"
+  },
+  {
+    "title": "Pseudo CSS selectors pseudo-selectors links",
+    "filename": "docs/recipes/pseudo-selectors.md",
+    "created": "2022-08-06T15:23:14.190Z",
+    "modified": "2022-08-06T15:23:14.190Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/pseudo-selectors.html"
+  },
+  {
+    "title": "Pseudo CSS selectors pseudo-selectors empty elements",
+    "filename": "docs/recipes/pseudo-selectors.md",
+    "created": "2022-08-06T15:23:14.190Z",
+    "modified": "2022-08-06T15:23:14.190Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/pseudo-selectors.html"
+  },
+  {
+    "title": "Pseudo CSS selectors pseudo-selectors first letter",
+    "filename": "docs/recipes/pseudo-selectors.md",
+    "created": "2022-08-06T15:23:14.190Z",
+    "modified": "2022-08-06T15:23:14.190Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/pseudo-selectors.html"
+  },
+  {
+    "title": "Pseudo CSS selectors pseudo-selectors after selector",
+    "filename": "docs/recipes/pseudo-selectors.md",
+    "created": "2022-08-06T15:23:14.190Z",
+    "modified": "2022-08-06T15:23:14.190Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/pseudo-selectors.html"
+  },
+  {
+    "title": "Pseudo CSS selectors pseudo-selectors before selector",
+    "filename": "docs/recipes/pseudo-selectors.md",
+    "created": "2022-08-06T15:23:14.190Z",
+    "modified": "2022-08-06T15:23:14.190Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/pseudo-selectors.html"
+  },
+  {
+    "title": "Remove Element Remove the found element",
+    "filename": "docs/recipes/remove-element.md",
+    "created": "2022-10-17T14:09:12.788Z",
+    "modified": "2022-10-17T14:09:12.789Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/remove-element.html"
+  },
+  {
+    "title": "Replace all Replace all",
+    "filename": "docs/recipes/replace-all.md",
+    "created": "2022-04-22T16:45:18.575Z",
+    "modified": "2022-04-22T16:45:18.576Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/replace-all.html"
+  },
+  {
+    "title": "Replace cy.then command Rename and replace the cy.then command",
+    "filename": "docs/recipes/replace-cy-then-command.md",
+    "created": "2023-01-10T15:41:40.747Z",
+    "modified": "2023-01-10T15:41:40.747Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/replace-cy-then-command.html"
+  },
+  {
+    "title": "Request a specific comment Request a specific comment",
+    "filename": "docs/recipes/request-a-comment.md",
+    "created": "2023-01-10T15:41:40.748Z",
+    "modified": "2023-01-10T15:41:40.748Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/request-a-comment.html"
+  },
+  {
+    "title": "Requested resource not found cy.request() - handle an error response",
+    "filename": "docs/recipes/request-not-found.md",
+    "created": "2022-04-12T13:01:35.783Z",
+    "modified": "2022-04-12T13:01:35.784Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/request-not-found.html"
+  },
+  {
+    "title": "Retry-ability Retry-ability element added to the DOM",
+    "filename": "docs/recipes/retry-ability.md",
+    "created": "2023-03-15T12:11:40.372Z",
+    "modified": "2023-03-15T12:11:40.373Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/retry-ability.html"
+  },
+  {
+    "title": "Retry-ability Retry-ability element becomes visible",
+    "filename": "docs/recipes/retry-ability.md",
+    "created": "2023-03-15T12:11:40.372Z",
+    "modified": "2023-03-15T12:11:40.373Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/retry-ability.html"
+  },
+  {
+    "title": "Retry-ability Retry-ability check if an element is visible",
+    "filename": "docs/recipes/retry-ability.md",
+    "created": "2023-03-15T12:11:40.372Z",
+    "modified": "2023-03-15T12:11:40.373Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/retry-ability.html"
+  },
+  {
+    "title": "Retry-ability Retry-ability matching element's text using regular assertion",
+    "filename": "docs/recipes/retry-ability.md",
+    "created": "2023-03-15T12:11:40.372Z",
+    "modified": "2023-03-15T12:11:40.373Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/retry-ability.html"
+  },
+  {
+    "title": "Retry-ability Retry-ability text appears and becomes red",
+    "filename": "docs/recipes/retry-ability.md",
+    "created": "2023-03-15T12:11:40.372Z",
+    "modified": "2023-03-15T12:11:40.373Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/retry-ability.html"
+  },
+  {
+    "title": "Retry-ability Retry-ability count retries",
+    "filename": "docs/recipes/retry-ability.md",
+    "created": "2023-03-15T12:11:40.372Z",
+    "modified": "2023-03-15T12:11:40.373Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/retry-ability.html"
+  },
+  {
+    "title": "Retry-ability Retry-ability merging queries",
+    "filename": "docs/recipes/retry-ability.md",
+    "created": "2023-03-15T12:11:40.372Z",
+    "modified": "2023-03-15T12:11:40.373Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/retry-ability.html"
+  },
+  {
+    "title": "Retry-ability Retry-ability query the element again",
+    "filename": "docs/recipes/retry-ability.md",
+    "created": "2023-03-15T12:11:40.372Z",
+    "modified": "2023-03-15T12:11:40.373Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/retry-ability.html"
+  },
+  {
+    "title": "Retry-ability Retry-ability element becomes visible then loads text",
+    "filename": "docs/recipes/retry-ability.md",
+    "created": "2023-03-15T12:11:40.372Z",
+    "modified": "2023-03-15T12:11:40.373Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/retry-ability.html"
+  },
+  {
+    "title": "Retry-ability Retry-ability Item is added to the local storage",
+    "filename": "docs/recipes/retry-ability.md",
+    "created": "2023-03-15T12:11:40.372Z",
+    "modified": "2023-03-15T12:11:40.373Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/retry-ability.html"
+  },
+  {
+    "title": "Retry-ability Retry-ability Call a function using retries",
+    "filename": "docs/recipes/retry-ability.md",
+    "created": "2023-03-15T12:11:40.372Z",
+    "modified": "2023-03-15T12:11:40.373Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/retry-ability.html"
+  },
+  {
+    "title": "Retry-ability Retry-ability Keep fetching until the server returns 7",
+    "filename": "docs/recipes/retry-ability.md",
+    "created": "2023-03-15T12:11:40.372Z",
+    "modified": "2023-03-15T12:11:40.373Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/retry-ability.html"
+  },
+  {
+    "title": "Return value from a custom command that uses .within return value from .within",
+    "filename": "docs/recipes/return-value-from-within.md",
+    "created": "2022-04-12T13:01:35.787Z",
+    "modified": "2022-04-12T13:01:35.788Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/return-value-from-within.html"
+  },
+  {
+    "title": "Search part of the list Find the index yourself",
+    "filename": "docs/recipes/search-part-of-the-list.md",
+    "created": "2023-01-26T15:22:07.136Z",
+    "modified": "2023-01-26T15:22:07.137Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/search-part-of-the-list.html"
+  },
+  {
+    "title": "Search part of the list Use cy.nextUntil",
+    "filename": "docs/recipes/search-part-of-the-list.md",
+    "created": "2023-01-26T15:22:07.136Z",
+    "modified": "2023-01-26T15:22:07.137Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/search-part-of-the-list.html"
+  },
+  {
+    "title": "Search part of the list jQuery index and slice",
+    "filename": "docs/recipes/search-part-of-the-list.md",
+    "created": "2023-01-26T15:22:07.136Z",
+    "modified": "2023-01-26T15:22:07.137Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/search-part-of-the-list.html"
+  },
+  {
+    "title": "Second Text Match The second text match",
+    "filename": "docs/recipes/second-text-match.md",
+    "created": "2022-09-08T12:00:18.571Z",
+    "modified": "2022-09-08T12:00:18.571Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/second-text-match.html"
+  },
+  {
+    "title": "See more in assertions Normal vs extended assertion text",
+    "filename": "docs/recipes/see-more-in-assertions.md",
+    "created": "2022-04-12T13:01:35.795Z",
+    "modified": "2022-04-12T13:01:35.795Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/see-more-in-assertions.html"
+  },
+  {
+    "title": "Select by attribute Select by the attribute presence",
+    "filename": "docs/recipes/select-by-attribute.md",
+    "created": "2022-09-08T14:19:27.208Z",
+    "modified": "2022-09-08T14:19:27.208Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/select-by-attribute.html"
+  },
+  {
+    "title": "Select by attribute Select by the attribute value",
+    "filename": "docs/recipes/select-by-attribute.md",
+    "created": "2022-09-08T14:19:27.208Z",
+    "modified": "2022-09-08T14:19:27.208Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/select-by-attribute.html"
+  },
+  {
+    "title": "Select value by partial text via its index Select value by partial text via its index",
+    "filename": "docs/recipes/select-by-index.md",
+    "created": "2022-06-17T11:59:15.919Z",
+    "modified": "2022-06-17T11:59:15.920Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/select-by-index.html"
+  },
+  {
+    "title": "How To Select And Invalid Option Select invalid option",
+    "filename": "docs/recipes/select-invalid-option.md",
+    "created": "2023-03-30T18:00:29.456Z",
+    "modified": "2023-03-30T18:00:29.457Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/select-invalid-option.html"
+  },
+  {
+    "title": "Select value by test id fiddle at line 5",
+    "filename": "docs/recipes/select-value-by-id.md",
+    "created": "2022-04-12T13:01:35.796Z",
+    "modified": "2022-04-12T13:01:35.797Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/select-value-by-id.html"
+  },
+  {
+    "title": "Selected value Selected value",
+    "filename": "docs/recipes/selected-value.md",
+    "created": "2023-01-10T15:41:40.749Z",
+    "modified": "2023-01-10T15:41:40.749Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/selected-value.html"
+  },
+  {
+    "title": "Selected value Selected multiple values",
+    "filename": "docs/recipes/selected-value.md",
+    "created": "2023-01-10T15:41:40.749Z",
+    "modified": "2023-01-10T15:41:40.749Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/selected-value.html"
+  },
+  {
+    "title": "Selected value Select by index",
+    "filename": "docs/recipes/selected-value.md",
+    "created": "2023-01-10T15:41:40.749Z",
+    "modified": "2023-01-10T15:41:40.749Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/selected-value.html"
+  },
+  {
+    "title": "Selected value Select the random option",
+    "filename": "docs/recipes/selected-value.md",
+    "created": "2023-01-10T15:41:40.749Z",
+    "modified": "2023-01-10T15:41:40.749Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/selected-value.html"
+  },
+  {
+    "title": "Selected value Select the last option",
+    "filename": "docs/recipes/selected-value.md",
+    "created": "2023-01-10T15:41:40.749Z",
+    "modified": "2023-01-10T15:41:40.749Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/selected-value.html"
+  },
+  {
+    "title": "Selected value Confirm options text",
+    "filename": "docs/recipes/selected-value.md",
+    "created": "2023-01-10T15:41:40.749Z",
+    "modified": "2023-01-10T15:41:40.749Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/selected-value.html"
+  },
+  {
+    "title": "Selected value Get selected option text",
+    "filename": "docs/recipes/selected-value.md",
+    "created": "2023-01-10T15:41:40.749Z",
+    "modified": "2023-01-10T15:41:40.749Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/selected-value.html"
+  },
+  {
+    "title": "Selectors Select an element by id",
+    "filename": "docs/recipes/selectors.md",
+    "created": "2022-09-23T13:23:37.742Z",
+    "modified": "2022-09-23T13:23:37.742Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/selectors.html"
+  },
+  {
+    "title": "Selectors Select elements with both classes",
+    "filename": "docs/recipes/selectors.md",
+    "created": "2022-09-23T13:23:37.742Z",
+    "modified": "2022-09-23T13:23:37.742Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/selectors.html"
+  },
+  {
+    "title": "Selectors Select elements by combination of classes and attributes",
+    "filename": "docs/recipes/selectors.md",
+    "created": "2022-09-23T13:23:37.742Z",
+    "modified": "2022-09-23T13:23:37.742Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/selectors.html"
+  },
+  {
+    "title": "Selectors Select elements by hierarchy",
+    "filename": "docs/recipes/selectors.md",
+    "created": "2022-09-23T13:23:37.742Z",
+    "modified": "2022-09-23T13:23:37.742Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/selectors.html"
+  },
+  {
+    "title": "Selectors Select visible or hidden elements using jQuery",
+    "filename": "docs/recipes/selectors.md",
+    "created": "2022-09-23T13:23:37.742Z",
+    "modified": "2022-09-23T13:23:37.742Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/selectors.html"
+  },
+  {
+    "title": "Setting a property in a complex environment object Set one env property",
+    "filename": "docs/recipes/set-env-prop.md",
+    "created": "2022-04-12T13:01:35.803Z",
+    "modified": "2022-04-12T13:01:35.804Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/set-env-prop.html"
+  },
+  {
+    "title": "Set Form Inputs Set form inputs",
+    "filename": "docs/recipes/set-form-inputs.md",
+    "created": "2022-06-15T15:05:46.471Z",
+    "modified": "2022-06-15T15:05:46.471Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/set-form-inputs.html"
+  },
+  {
+    "title": "Compute SHA256 from HTML Compute SHA-256 digest",
+    "filename": "docs/recipes/sha-256.md",
+    "created": "2023-04-28T13:56:23.344Z",
+    "modified": "2023-04-28T13:56:23.344Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sha-256.html"
+  },
+  {
+    "title": "Compute SHA256 from HTML Avoid using SHA only",
+    "filename": "docs/recipes/sha-256.md",
+    "created": "2023-04-28T13:56:23.344Z",
+    "modified": "2023-04-28T13:56:23.344Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sha-256.html"
+  },
+  {
+    "title": "Compute SHA256 from HTML Use positive assertion",
+    "filename": "docs/recipes/sha-256.md",
+    "created": "2023-04-28T13:56:23.344Z",
+    "modified": "2023-04-28T13:56:23.344Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sha-256.html"
+  },
+  {
+    "title": "Sibling element Sibling element",
+    "filename": "docs/recipes/sibling-element.md",
+    "created": "2022-04-12T13:01:35.806Z",
+    "modified": "2022-04-12T13:01:35.807Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sibling-element.html"
+  },
+  {
+    "title": "Sibling element Multiple elements",
+    "filename": "docs/recipes/sibling-element.md",
+    "created": "2022-04-12T13:01:35.806Z",
+    "modified": "2022-04-12T13:01:35.807Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sibling-element.html"
+  },
+  {
+    "title": "Skip Child Element Remove child elements by selector",
+    "filename": "docs/recipes/skip-child.md",
+    "created": "2022-09-16T12:49:22.284Z",
+    "modified": "2022-09-16T12:49:22.285Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/skip-child.html"
+  },
+  {
+    "title": "Skip Child Element Remove all children elements",
+    "filename": "docs/recipes/skip-child.md",
+    "created": "2022-09-16T12:49:22.284Z",
+    "modified": "2022-09-16T12:49:22.285Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/skip-child.html"
+  },
+  {
+    "title": "Skip Child Element Use a test selector",
+    "filename": "docs/recipes/skip-child.md",
+    "created": "2022-09-16T12:49:22.284Z",
+    "modified": "2022-09-16T12:49:22.285Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/skip-child.html"
+  },
+  {
+    "title": "Sorted by discount price Prices are sorted",
+    "filename": "docs/recipes/sorted-by-discount.md",
+    "created": "2022-12-01T12:47:00.376Z",
+    "modified": "2022-12-01T12:47:00.376Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sorted-by-discount.html"
+  },
+  {
+    "title": "Confirm the sorted list Confirm the static list is sorted",
+    "filename": "docs/recipes/sorted-list.md",
+    "created": "2023-01-10T15:41:40.750Z",
+    "modified": "2023-01-10T15:41:40.750Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sorted-list.html"
+  },
+  {
+    "title": "Confirm the sorted list Confirm the table is sorted",
+    "filename": "docs/recipes/sorted-list.md",
+    "created": "2023-01-10T15:41:40.750Z",
+    "modified": "2023-01-10T15:41:40.750Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sorted-list.html"
+  },
+  {
+    "title": "Stub calls depending on the arguments stub all calls",
+    "filename": "docs/recipes/stub-call-through.md",
+    "created": "2023-04-25T02:31:10.530Z",
+    "modified": "2023-04-25T02:31:10.531Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-call-through.html"
+  },
+  {
+    "title": "Stub calls depending on the arguments stub calls by order",
+    "filename": "docs/recipes/stub-call-through.md",
+    "created": "2023-04-25T02:31:10.530Z",
+    "modified": "2023-04-25T02:31:10.531Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-call-through.html"
+  },
+  {
+    "title": "Stub calls depending on the arguments stub calls by order plus callThrough",
+    "filename": "docs/recipes/stub-call-through.md",
+    "created": "2023-04-25T02:31:10.530Z",
+    "modified": "2023-04-25T02:31:10.531Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-call-through.html"
+  },
+  {
+    "title": "Stub calls depending on the arguments stub calls by the argument value",
+    "filename": "docs/recipes/stub-call-through.md",
+    "created": "2023-04-25T02:31:10.530Z",
+    "modified": "2023-04-25T02:31:10.531Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-call-through.html"
+  },
+  {
+    "title": "Stub calls depending on the arguments stub calls by the argument type",
+    "filename": "docs/recipes/stub-call-through.md",
+    "created": "2023-04-25T02:31:10.530Z",
+    "modified": "2023-04-25T02:31:10.531Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-call-through.html"
+  },
+  {
+    "title": "Stub calls depending on the arguments stub calls where argument matches your predicate",
+    "filename": "docs/recipes/stub-call-through.md",
+    "created": "2023-04-25T02:31:10.530Z",
+    "modified": "2023-04-25T02:31:10.531Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-call-through.html"
+  },
+  {
+    "title": "Stub called with the match dataLayer.push",
+    "filename": "docs/recipes/stub-called-with-match.md",
+    "created": "2023-04-25T02:31:10.531Z",
+    "modified": "2023-04-25T02:31:10.531Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-called-with-match.html"
+  },
+  {
+    "title": "Stub Geolocation Test geolocation error via Sinon callsFake",
+    "filename": "docs/recipes/stub-geolocation.md",
+    "created": "2022-11-29T12:46:40.143Z",
+    "modified": "2022-11-29T12:46:40.143Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-geolocation.html"
+  },
+  {
+    "title": "Stub Geolocation Test geolocation error via Sinon callsArgWith",
+    "filename": "docs/recipes/stub-geolocation.md",
+    "created": "2022-11-29T12:46:40.143Z",
+    "modified": "2022-11-29T12:46:40.143Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-geolocation.html"
+  },
+  {
+    "title": "Stub Get TimeZone Offset Method Stub getTimezoneOffset",
+    "filename": "docs/recipes/stub-get-timezone-method.md",
+    "created": "2022-11-29T12:46:40.143Z",
+    "modified": "2022-11-29T12:46:40.143Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-get-timezone-method.html"
+  },
+  {
+    "title": "Stub `window.print` Stub window print",
+    "filename": "docs/recipes/stub-window-print.md",
+    "created": "2022-10-24T19:47:28.591Z",
+    "modified": "2022-10-24T19:47:28.592Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-window-print.html"
+  },
+  {
+    "title": "Stub `window.print` Print is the onclick button attribute",
+    "filename": "docs/recipes/stub-window-print.md",
+    "created": "2022-10-24T19:47:28.591Z",
+    "modified": "2022-10-24T19:47:28.592Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-window-print.html"
+  },
+  {
+    "title": "SVG Example Select elements in SVG",
+    "filename": "docs/recipes/svg-example.md",
+    "created": "2023-02-12T01:38:08.469Z",
+    "modified": "2023-02-12T01:38:08.469Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/svg-example.html"
+  },
+  {
+    "title": "SVG Loader Animated SVG loader",
+    "filename": "docs/recipes/svg-loader.md",
+    "created": "2023-01-21T20:01:41.341Z",
+    "modified": "2023-01-21T20:01:41.342Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/svg-loader.html"
+  },
+  {
+    "title": "SVG Loader SVG loader finishes its animation",
+    "filename": "docs/recipes/svg-loader.md",
+    "created": "2023-01-21T20:01:41.341Z",
+    "modified": "2023-01-21T20:01:41.342Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/svg-loader.html"
+  },
+  {
+    "title": "Find table cell by the column heading Find the cell by the column heading and row text",
+    "filename": "docs/recipes/table-cell-by-column-heading.md",
+    "created": "2023-01-10T15:41:40.751Z",
+    "modified": "2023-01-10T15:41:40.751Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/table-cell-by-column-heading.html"
+  },
+  {
+    "title": "Find table cell by the column heading Find all rows with certain cell values",
+    "filename": "docs/recipes/table-cell-by-column-heading.md",
+    "created": "2023-01-10T15:41:40.751Z",
+    "modified": "2023-01-10T15:41:40.751Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/table-cell-by-column-heading.html"
+  },
+  {
+    "title": "Table cell index Confirm the cell index",
+    "filename": "docs/recipes/table-cell-index.md",
+    "created": "2023-01-23T15:46:34.512Z",
+    "modified": "2023-01-23T15:46:34.513Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/table-cell-index.html"
+  },
+  {
+    "title": "Find row by the exact table cell text Find row using cell text",
+    "filename": "docs/recipes/table-cell.md",
+    "created": "2022-11-30T14:27:21.920Z",
+    "modified": "2022-11-30T14:27:21.920Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/table-cell.html"
+  },
+  {
+    "title": "Find row by the exact table cell text Find row using cell text from a variable",
+    "filename": "docs/recipes/table-cell.md",
+    "created": "2022-11-30T14:27:21.920Z",
+    "modified": "2022-11-30T14:27:21.920Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/table-cell.html"
+  },
+  {
+    "title": "Table column order Order of all columns",
+    "filename": "docs/recipes/table-column-order.md",
+    "created": "2023-02-03T12:35:35.599Z",
+    "modified": "2023-02-03T12:35:35.599Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/table-column-order.html"
+  },
+  {
+    "title": "Table column order Order of some columns",
+    "filename": "docs/recipes/table-column-order.md",
+    "created": "2023-02-03T12:35:35.599Z",
+    "modified": "2023-02-03T12:35:35.599Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/table-column-order.html"
+  },
+  {
+    "title": "Table update Table update",
+    "filename": "docs/recipes/table-update.md",
+    "created": "2022-04-12T13:01:35.813Z",
+    "modified": "2022-04-12T13:01:35.813Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/table-update.html"
+  },
+  {
+    "title": "Table with prices Sales table",
+    "filename": "docs/recipes/table-with-prices.md",
+    "created": "2022-04-12T13:01:35.816Z",
+    "modified": "2022-04-12T13:01:35.817Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/table-with-prices.html"
+  },
+  {
+    "title": "Text area cursor Text area cursor position",
+    "filename": "docs/recipes/text-area-cursor.md",
+    "created": "2023-01-25T13:43:42.137Z",
+    "modified": "2023-01-25T13:43:42.137Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/text-area-cursor.html"
+  },
+  {
+    "title": "Text changes Text changes",
+    "filename": "docs/recipes/text-changes.md",
+    "created": "2022-04-12T13:01:35.820Z",
+    "modified": "2022-04-12T13:01:35.820Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/text-changes.html"
+  },
+  {
+    "title": "Text is present in another element Text is present in another element",
+    "filename": "docs/recipes/text-in-another-element.md",
+    "created": "2022-06-28T13:35:21.389Z",
+    "modified": "2022-06-28T13:35:21.389Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/text-in-another-element.html"
+  },
+  {
+    "title": "Type Characters One By One Type 6 characters",
+    "filename": "docs/recipes/type-one-by-one.md",
+    "created": "2022-04-12T13:01:35.822Z",
+    "modified": "2022-04-12T13:01:35.822Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/type-one-by-one.html"
+  },
+  {
+    "title": "Wait for data using the cy.should callback",
+    "filename": "docs/recipes/wait-for-data.md",
+    "created": "2022-04-12T13:01:35.825Z",
+    "modified": "2022-04-12T13:01:35.825Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/wait-for-data.html"
+  },
+  {
+    "title": "Wait for data using the cy.wrap",
+    "filename": "docs/recipes/wait-for-data.md",
+    "created": "2022-04-12T13:01:35.825Z",
+    "modified": "2022-04-12T13:01:35.825Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/wait-for-data.html"
+  },
+  {
+    "title": "Window confirm popup Window confirm popup",
+    "filename": "docs/recipes/window-confirm.md",
+    "created": "2022-06-15T11:58:17.338Z",
+    "modified": "2022-06-15T11:58:17.339Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/window-confirm.html"
+  },
+  {
+    "title": "Window open Stub window open",
+    "filename": "docs/recipes/window-open.md",
+    "created": "2022-11-28T21:32:15.464Z",
+    "modified": "2022-11-28T21:32:15.464Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/window-open.html"
+  },
+  {
+    "title": "Window open Observe the returned object",
+    "filename": "docs/recipes/window-open.md",
+    "created": "2022-11-28T21:32:15.464Z",
+    "modified": "2022-11-28T21:32:15.464Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/window-open.html"
+  },
+  {
+    "title": "Window property Property is set after delay",
+    "filename": "docs/recipes/window-property.md",
+    "created": "2022-04-12T13:01:35.830Z",
+    "modified": "2022-04-12T13:01:35.830Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/window-property.html"
+  },
+  {
+    "title": "Yield value Yield value",
+    "filename": "docs/recipes/yield-value.md",
+    "created": "2023-01-10T15:41:40.752Z",
+    "modified": "2023-01-10T15:41:40.752Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/yield-value.html"
+  },
+  {
+    "title": "Utilities lodash",
+    "filename": "docs/utilities/index.md",
+    "created": "2023-03-26T14:48:47.252Z",
+    "modified": "2023-03-26T14:48:47.253Z",
+    "url": "https://glebbahmutov.com/cypress-examples/utilities/index.html"
+  },
+  {
+    "title": "Utilities jQuery",
+    "filename": "docs/utilities/index.md",
+    "created": "2023-03-26T14:48:47.252Z",
+    "modified": "2023-03-26T14:48:47.253Z",
+    "url": "https://glebbahmutov.com/cypress-examples/utilities/index.html"
+  },
+  {
+    "title": "Utilities blob",
+    "filename": "docs/utilities/index.md",
+    "created": "2023-03-26T14:48:47.252Z",
+    "modified": "2023-03-26T14:48:47.253Z",
+    "url": "https://glebbahmutov.com/cypress-examples/utilities/index.html"
+  },
+  {
+    "title": "Utilities minimatch",
+    "filename": "docs/utilities/index.md",
+    "created": "2023-03-26T14:48:47.252Z",
+    "modified": "2023-03-26T14:48:47.253Z",
+    "url": "https://glebbahmutov.com/cypress-examples/utilities/index.html"
+  },
+  {
+    "title": "Utilities promise",
+    "filename": "docs/utilities/index.md",
+    "created": "2023-03-26T14:48:47.252Z",
+    "modified": "2023-03-26T14:48:47.253Z",
+    "url": "https://glebbahmutov.com/cypress-examples/utilities/index.html"
+  }
+]
