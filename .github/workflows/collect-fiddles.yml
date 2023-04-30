@@ -1,0 +1,32 @@
+# Collect all examples into a JSON file
+name: collect fiddles
+on:
+  # allow running the scraper manually
+  workflow_dispatch:
+  # and several times a day
+  schedule:
+    - cron: '0 0,4,8,12,16,20 * * *'
+
+jobs:
+  collect:
+    runs-on: ubuntu-20.04
+    env:
+      # we do not need to install Cypress to run this test
+      CYPRESS_INSTALL_BINARY: 0
+    steps:
+      # we need our scraping config, thus check out code
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install dependencies 📦
+        uses: bahmutov/npm-install@v1
+
+      - name: Collect examples
+        run: export:examples
+
+      - name: Commit changed JSON file 💾
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updated fiddles.json
+          branch: master
+          file_pattern: fiddles.json
