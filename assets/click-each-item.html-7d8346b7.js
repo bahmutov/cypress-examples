@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-160f0a62","path":"/recipes/click-each-item.html","title":"Click Each Item","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682885081000,"contributors":[{"name":"renovate[bot]","email":"29139614+renovate[bot]@users.noreply.github.com","commits":1}]},"filePathRelative":"recipes/click-each-item.md"}');export{e as data};

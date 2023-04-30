@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-4981ff50","path":"/recipes/filter-elements.html","title":"Filter elements","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682885081000,"contributors":[{"name":"renovate[bot]","email":"29139614+renovate[bot]@users.noreply.github.com","commits":1}]},"filePathRelative":"recipes/filter-elements.md"}');export{e as data};

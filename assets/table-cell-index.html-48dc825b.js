@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-3b07de50","path":"/recipes/table-cell-index.html","title":"Table cell index","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682885081000,"contributors":[{"name":"renovate[bot]","email":"29139614+renovate[bot]@users.noreply.github.com","commits":1}]},"filePathRelative":"recipes/table-cell-index.md"}');export{e as data};
