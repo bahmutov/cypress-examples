@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-50c49121","path":"/recipes/counter-increments.html","title":"Counter increments","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682885081000,"contributors":[{"name":"renovate[bot]","email":"29139614+renovate[bot]@users.noreply.github.com","commits":1}]},"filePathRelative":"recipes/counter-increments.md"}');export{e as data};

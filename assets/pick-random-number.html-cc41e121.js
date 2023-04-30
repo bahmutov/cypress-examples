@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-15f36ccf","path":"/recipes/pick-random-number.html","title":"Pick A Random Number","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682885081000,"contributors":[{"name":"renovate[bot]","email":"29139614+renovate[bot]@users.noreply.github.com","commits":1}]},"filePathRelative":"recipes/pick-random-number.md"}');export{e as data};
