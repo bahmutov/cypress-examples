@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-c4809c74","path":"/recipes/list-item-with-text-tag.html","title":"List item with text tag","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1678974560000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/list-item-with-text-tag.md"}');export{t as data};

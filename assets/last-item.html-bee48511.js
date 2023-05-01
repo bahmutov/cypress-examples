@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-b7fad7dc","path":"/recipes/last-item.html","title":"Last item in an array","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1657200295000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":3}]},"filePathRelative":"recipes/last-item.md"}');export{t as data};

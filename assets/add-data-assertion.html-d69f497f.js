@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-ccbfba2a","path":"/recipes/add-data-assertion.html","title":"Add A Custom Data Assertion","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1675872913000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/add-data-assertion.md"}');export{a as data};
