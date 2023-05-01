@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-284a3e2a","path":"/recipes/overlapping-elements.html","title":"Overlapping elements","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682942998000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/overlapping-elements.md"}');export{e as data};

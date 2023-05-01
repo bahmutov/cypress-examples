@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-4d2cd0cf","path":"/recipes/sorted-by-discount.html","title":"Sorted by discount price","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1682942998000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/sorted-by-discount.md"}');export{e as data};
