@@ -22,7 +22,7 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: Collect examples
-        run: export:examples
+        run: npm run export:examples
 
       - name: Commit changed JSON file 💾
         uses: stefanzweifel/git-auto-commit-action@v4
