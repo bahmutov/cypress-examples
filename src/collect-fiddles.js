@@ -7,8 +7,8 @@ const fs = require('fs')
 
 const baseUrl = 'https://glebbahmutov.com/cypress-examples'
 
-function collectExamples() {
-  const fiddles = collectFiddlesIn('docs/**/*.md')
+async function collectExamples() {
+  const fiddles = await collectFiddlesIn('docs/**/*.md')
   console.log('%d Cypress examples', fiddles.length)
   // transform filename to URL
   const pages = fiddles.map((fiddle) => {
@@ -32,4 +32,7 @@ function collectExamples() {
   console.log('wrote fiddles.json')
 }
 
-collectExamples()
+collectExamples().catch((e) => {
+  console.error(e)
+  process.exit(1)
+})
