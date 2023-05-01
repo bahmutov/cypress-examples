@@ -17,6 +17,9 @@ jobs:
       # we need our scraping config, thus check out code
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+        with:
+          # check out all commits to get accurate created date
+          fetch-depth: 0
 
       - name: Install dependencies 📦
         uses: bahmutov/npm-install@v1
