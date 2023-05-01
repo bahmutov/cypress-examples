@@ -18,6 +18,9 @@ function collectExamples() {
       fiddle.filename
         .replace(/^docs\//, '')
         .replace(/\.md$/, '.html')
+        // if URL ends with "/index.html"
+        // omit the "index.html" filename
+        .replace(/\/index\.html$/, '/')
     return {
       ...fiddle,
       url,
