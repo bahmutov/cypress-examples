@@ -194,9 +194,7 @@ To submit a form, use the `cy.submit()` command.
     <label for="couponCode1" val="HALFOFF">Coupon Code</label>
     <input type="text" class="form-control" id="couponCode1" />
   </div>
-  <button type="submit" class="btn btn-primary">
-    Submit
-  </button>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <script>
   $('.action-form').on('submit', function (e) {

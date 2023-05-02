@@ -24,7 +24,7 @@ cy.get('#phone')
 
 Watch the video [Clean Up A Phone Number From An Input Element Before Checking It](https://youtu.be/xoGDeWYovn8).
 
-What if the user could enter the phone number using `-`, ``, and `(` characters? You can call `replaceAll` several times.
+What if the user could enter the phone number using `-`, ``, and `(`characters? You can call`replaceAll` several times.
 
 ```js
 // clear the input element and type the same

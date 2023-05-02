@@ -7,9 +7,7 @@
 <!-- fiddle Get all enabled buttons -->
 
 ```html
-<button>
-  one
-</button>
+<button>one</button>
 <button disabled="disabled">two</button>
 <button disabled="disabled">three</button>
 <button>four</button>

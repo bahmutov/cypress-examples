@@ -264,9 +264,7 @@ Cypress v12 has introduced [chains of queries](https://glebbahmutov.com/blog/cyp
 <!-- fiddle Static vs query type / query alias type -->
 
 ```html
-<button id="click">
-  Loading...
-</button>
+<button id="click">Loading...</button>
 <script>
   setTimeout(() => {
     document.getElementById('click').innerText = 'Profile'
@@ -304,9 +302,7 @@ This behavior is different from the aliases before Cypress v12. If you want to s
 <!-- fiddle Static vs query type / static alias type -->
 
 ```html
-<button id="click">
-  Loading...
-</button>
+<button id="click">Loading...</button>
 <script>
   setTimeout(() => {
     document.getElementById('click').innerText = 'Profile'

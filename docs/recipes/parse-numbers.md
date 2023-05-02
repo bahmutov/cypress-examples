@@ -36,9 +36,7 @@ Sometimes the number is mixed with other text. You need to trim the text to get 
 <!-- fiddle Trim the text first -->
 
 ```html
-<div id="group">
-  Several (56) people were present.
-</div>
+<div id="group">Several (56) people were present.</div>
 ```
 
 ```js

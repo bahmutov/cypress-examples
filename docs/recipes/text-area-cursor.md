@@ -33,8 +33,9 @@ function prevLine(me) {
 // confirm the row and column of the current cursor in the given text area
 cy.get('textarea#essay').then(($textArea) => {
   const ta = $textArea[0]
-  const row = ta.value.substr(0, ta.selectionStart).split('\n')
-    .length
+  const row = ta.value
+    .substr(0, ta.selectionStart)
+    .split('\n').length
   expect(row, 'row').to.equal(2)
   const col = ta.selectionStart - prevLine(ta)
   expect(col, 'column').to.equal(3)

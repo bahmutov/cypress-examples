@@ -7,17 +7,15 @@ Many people have a problem with the [cy.then](https://on.cypress.io/then) comman
 ```js
 // if anyone tries to use cy.then in the spec code or in a plugin
 // we will get an error
-Cypress.Commands.overwrite('then', function (
-  then,
-  subject,
-  cb,
-  allowUse,
-) {
-  if (!allowUse) {
-    throw new Error('Using cy.then command is disallowed')
-  }
-  return then(subject, cb)
-})
+Cypress.Commands.overwrite(
+  'then',
+  function (then, subject, cb, allowUse) {
+    if (!allowUse) {
+      throw new Error('Using cy.then command is disallowed')
+    }
+    return then(subject, cb)
+  },
+)
 
 Cypress.Commands.add(
   'later',

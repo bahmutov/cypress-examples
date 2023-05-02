@@ -147,8 +147,7 @@ cy.request('https://jsonplaceholder.cypress.io/users?_limit=1')
       {
         userId: user.id,
         title: 'Cypress Test Runner',
-        body:
-          'Fast, easy and reliable testing for anything that runs in a browser.',
+        body: 'Fast, easy and reliable testing for anything that runs in a browser.',
       },
     )
   })
@@ -198,8 +197,7 @@ cy.request('https://jsonplaceholder.cypress.io/users?_limit=1')
       {
         userId: this.user.id,
         title: 'Cypress Test Runner',
-        body:
-          'Fast, easy and reliable testing for anything that runs in a browser.',
+        body: 'Fast, easy and reliable testing for anything that runs in a browser.',
       },
     )
       .its('body')
@@ -291,8 +289,7 @@ To route responses to matching requests, use the `cy.route()` command.
         data: {
           name: 'Using POST in cy.route()',
           email: 'hello@cypress.io',
-          body:
-            'You can change the method used for cy.route() to be GET, POST, PUT, PATCH, or DELETE',
+          body: 'You can change the method used for cy.route() to be GET, POST, PUT, PATCH, or DELETE',
         },
       }).then(function () {
         $('.network-route-post-comment').text('POST successful!')
@@ -306,8 +303,7 @@ To route responses to matching requests, use the `cy.route()` command.
         data: {
           name: 'Using PUT in cy.route()',
           email: 'hello@cypress.io',
-          body:
-            'You can change the method used for cy.route() to be GET, POST, PUT, PATCH, or DELETE',
+          body: 'You can change the method used for cy.route() to be GET, POST, PUT, PATCH, or DELETE',
         },
         statusCode: {
           404(data) {
@@ -447,8 +443,7 @@ To route responses to matching requests, use the `cy.intercept()` command.
         data: {
           name: 'Using POST in cy.intercept()',
           email: 'hello@cypress.io',
-          body:
-            'You can change the method used for cy.intercept() to be GET, POST, PUT, PATCH, or DELETE',
+          body: 'You can change the method used for cy.intercept() to be GET, POST, PUT, PATCH, or DELETE',
         },
       }).then(function () {
         $('.network-post-comment').text('POST successful!')
@@ -462,8 +457,7 @@ To route responses to matching requests, use the `cy.intercept()` command.
         data: {
           name: 'Using PUT in cy.route()',
           email: 'hello@cypress.io',
-          body:
-            'You can change the method used for cy.route() to be GET, POST, PUT, PATCH, or DELETE',
+          body: 'You can change the method used for cy.route() to be GET, POST, PUT, PATCH, or DELETE',
         },
         statusCode: {
           404(data) {
