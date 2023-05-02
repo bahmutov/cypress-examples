@@ -378,9 +378,7 @@ cy.get('#my-link')
 <!-- fiddle Implicit Assertions / .should() - have.prop changes the subject -->
 
 ```html
-<div class="first second">
-  Test div
-</div>
+<div class="first second">Test div</div>
 ```
 
 ```js
@@ -1212,9 +1210,7 @@ Before comparing an element text with a number, trim the spaces (if any), and co
 
 ```html
 <!-- Notice the newlines and spaces around the number -->
-<div id="employee-number">
-  1209
-</div>
+<div id="employee-number">1209</div>
 ```
 
 ```js
@@ -1236,9 +1232,7 @@ If the text contains newline characters, you can trim it before asserting the te
 To better show how assertions wait for the application to be ready, this element adds "there!" after a delay.
 
 ```html
-<div id="newlines-example">
-  hello
-</div>
+<div id="newlines-example">hello</div>
 <script>
   setTimeout(function () {
     document.getElementById('newlines-example').innerText +=
@@ -1419,9 +1413,7 @@ Imagine we want to validate the date inside an element. The date should have the
 <!-- fiddle Implicit Assertions / Text / .should() - match number -->
 
 ```html
-<div id="date-string">
-  Feb 14, 2022
-</div>
+<div id="date-string">Feb 14, 2022</div>
 ```
 
 ```js
@@ -1500,9 +1492,7 @@ Very useful approach to confirm a number is within certain range or between limi
 <!-- fiddle Implicit Assertions / Text / .should() - number within range -->
 
 ```html
-<div id="shipping">
-  Ground shipping for $11.79, up to 2 kg.
-</div>
+<div id="shipping">Ground shipping for $11.79, up to 2 kg.</div>
 ```
 
 ```js

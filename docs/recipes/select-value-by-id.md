@@ -8,9 +8,9 @@ If we have a `<select>` element with individual options with `data-testid` attri
 <select data-testid="select-example">
   <option data-testid="pick-apples" value="270">Apples</option>
   <option data-testid="pick-oranges" value="381">Oranges</option>
-  <option data-testid="pick-watermelon" value="889"
-    >Watermelon</option
-  >
+  <option data-testid="pick-watermelon" value="889">
+    Watermelon
+  </option>
 </select>
 ```
 

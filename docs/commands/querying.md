@@ -1248,16 +1248,12 @@ Let's find a paragraph with words "hello", "world", and "more" in it.
 
 ```html
 <section id="paragraphs">
-  <p class="first">
-    Some text here
-  </p>
+  <p class="first">Some text here</p>
   <p class="second">
     Simon says "hello" and then he says "world" and that's it.
     Nothing more.
   </p>
-  <p class="third">
-    I need more examples.
-  </p>
+  <p class="third">I need more examples.</p>
 </section>
 ```
 

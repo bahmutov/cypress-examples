@@ -895,9 +895,7 @@ To control time in the browser, use the `cy.clock()` command.
 <!-- fiddle clock / set the application clock -->
 
 ```html
-<div id="clock-div">
-  Click for current time!
-</div>
+<div id="clock-div">Click for current time!</div>
 <script>
   $('#clock-div').on('click', function (e) {
     let $div = $(e.currentTarget)
@@ -983,9 +981,7 @@ To move time in the browser, use the `cy.tick()` command.
 <!-- fiddle tick -->
 
 ```html
-<div id="tick-div">
-  Click for current time!
-</div>
+<div id="tick-div">Click for current time!</div>
 <script>
   $('#tick-div').on('click', function (e) {
     let $div = $(e.currentTarget)

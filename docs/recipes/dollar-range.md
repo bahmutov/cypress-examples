@@ -4,7 +4,7 @@
 
 <!-- fiddle The exact price text -->
 
-Imagine we want to confirm that the displayed price is within certain range, for example between $10 and $20. We need to grab the text of the element, remove the `$` character, convert the text to a number, then assert it is within the range. We could add a custom assertion, or simply construct a callback function to be passed as the `should(callback)` argument to ensure the command plus assertion retries.
+Imagine we want to confirm that the displayed price is within certain range, for example between $10 and $20. We need to grab the text of the element, remove the `$`character, convert the text to a number, then assert it is within the range. We could add a custom assertion, or simply construct a callback function to be passed as the`should(callback)` argument to ensure the command plus assertion retries.
 
 ```html
 <div id="price">$99.99</div>
@@ -47,9 +47,7 @@ Let's say the element has some text, including a dollar amount. We want to confi
 <!-- fiddle Includes the dollar amount text -->
 
 ```html
-<div id="shipping">
-  Ground shipping for $11.79, up to 2 kg.
-</div>
+<div id="shipping">Ground shipping for $11.79, up to 2 kg.</div>
 ```
 
 ```js
