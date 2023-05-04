@@ -2,6 +2,8 @@
 
 You can use [cy.wrap](https://on.cypress.io/wrap) command to wait for promises to resolve before continuing Cypress test.
 
+📺 Watch this recipe explained in [Use cy.wrap Command To Wrap Promises In Your Cypress Tests](https://youtu.be/V24_8oGXwy8).
+
 ## A single promise
 
 <!-- fiddle Wrap a single promise -->
