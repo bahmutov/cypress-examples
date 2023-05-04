@@ -421,6 +421,8 @@ const p = new Promise((resolve) => {
 cy.wrap(p).should('equal', 'Hello')
 ```
 
+See recipe [Wrap promises](../recipes/wrap-promises.md).
+
 <!-- fiddle-end -->
 
 ### Cypress.Promise
