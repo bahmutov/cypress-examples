@@ -3864,6 +3864,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/window-property.html"
   },
   {
+    "title": "Wrap promises Wrap a single promise",
+    "filename": "docs/recipes/wrap-promises.md",
+    "created": "2023-05-04T16:13:30.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/wrap-promises.html"
+  },
+  {
+    "title": "Wrap promises Multiple promises",
+    "filename": "docs/recipes/wrap-promises.md",
+    "created": "2023-05-04T16:13:30.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/wrap-promises.html"
+  },
+  {
     "title": "Yield value Yield value",
     "filename": "docs/recipes/yield-value.md",
     "created": "2022-01-06T17:42:43.000Z",
