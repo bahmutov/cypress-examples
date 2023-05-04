@@ -70,3 +70,5 @@ cy.wrap(['foo', 'bar', 'baz'])
 ```
 
 <!-- fiddle-end -->
+
+**👍 Highly recommended:** read the blog post [The Zen Of Cypress Data Setup](https://glebbahmutov.com/blog/setup-cypress-data/).
