@@ -282,6 +282,49 @@ cy.get('@log').should('be.calledOnceWith', 'first click')
 
 <!-- fiddle-end -->
 
+## Count elements if they exist
+
+Let's confirm the number of elements is even, if they exist. If the elements do not exist, do nothing.
+
+<!-- fiddle Count elements if they exist -->
+
+```html
+<ul id="people">
+  <li>Joe</li>
+  <li>Anna</li>
+</ul>
+```
+
+First, let's have a list of elements that do exist.
+
+```js
+const isEven = (n) => n % 2 === 0
+
+cy.get('#people li')
+  .should(Cypress._.noop)
+  .its('length')
+  .then((n) => {
+    if (n) {
+      expect(n).to.satisfy(isEven)
+    }
+  })
+```
+
+The same code works if the elements are not found.
+
+```js
+cy.get('#invalid-selector li')
+  .should(Cypress._.noop)
+  .its('length')
+  .then((n) => {
+    if (n) {
+      expect(n).to.satisfy(isEven)
+    }
+  })
+```
+
+<!-- fiddle-end -->
+
 ## Use a cookie if present
 
 Getting a cookie using [cy.getCookie](https://on.cypress.io/getcookie) command does not retry, thus you can simply work with the yielded value.
