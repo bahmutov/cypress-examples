@@ -52,6 +52,29 @@ cy.get('[name=firstName]').should('have.value', 'Anna')
 
 <!-- fiddle-end -->
 
+## A textarea
+
+<!-- fiddle Checking textarea value -->
+
+```html
+<textarea
+  id="quote"
+  placeholder="Enter your favorite quote"
+></textarea>
+```
+
+```js
+const quote =
+  'It was the best of times, it was the worst of times'
+cy.get('#quote')
+  // initially the textarea is empty
+  .should('have.value', '')
+  .type(quote)
+  .should('have.value', quote)
+```
+
+<!-- fiddle-end -->
+
 ## A number input
 
 <!-- fiddle A number input element value -->
