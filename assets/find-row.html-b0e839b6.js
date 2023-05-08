@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-974988e0","path":"/recipes/find-row.html","title":"Find Row","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1683547012000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/find-row.md"}');export{e as data};
