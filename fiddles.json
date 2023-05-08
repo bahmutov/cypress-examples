@@ -2646,6 +2646,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/find-object.html"
   },
   {
+    "title": "Find Row Find table row with an index",
+    "filename": "docs/recipes/find-row.md",
+    "created": "2023-05-08T11:40:45.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/find-row.html"
+  },
+  {
     "title": "First table column First column of the second table",
     "filename": "docs/recipes/first-column.md",
     "created": "2023-02-24T21:05:51.000Z",
