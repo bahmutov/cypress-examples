@@ -4,6 +4,8 @@
 
 Let's find the table row with text "Charles" and print its index.
 
+📺 You can watch this recipe explained in the video [Find The Table Row With The Given Text And Print Its Index](https://youtu.be/NIM068CdnbU).
+
 ```html hide
 <table class="table table-bordered people">
   <thead>
