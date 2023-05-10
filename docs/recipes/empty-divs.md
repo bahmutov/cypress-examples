@@ -69,3 +69,27 @@ cy.get(':not(:empty)').should('have.length', 5)
 ```
 
 <!-- fiddle-end -->
+
+## Empty element assertion
+
+An element without children can checked in two ways:
+
+<!-- fiddle Confirm an element is empty -->
+
+```html
+<div id="me"></div>
+```
+
+```js
+cy.get('#me')
+  // an element without children
+  .should('be.empty')
+  // also matches CSS selector ":empty"
+  .and('match', ':empty')
+```
+
+<!-- fiddle-end -->
+
+## See also
+
+- [Empty assertions](./empty-assertion.md)
