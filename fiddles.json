@@ -2550,6 +2550,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/empty-divs.html"
   },
   {
+    "title": "Empty elements Confirm an element is empty",
+    "filename": "docs/recipes/empty-divs.md",
+    "created": "2023-03-12T14:39:42.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/empty-divs.html"
+  },
+  {
     "title": "Empty elements before comparing text Empty elements",
     "filename": "docs/recipes/empty-elements.md",
     "created": "2022-05-21T11:53:25.000Z",
@@ -2854,6 +2860,12 @@
     "filename": "docs/recipes/hide-email.md",
     "created": "2022-04-27T15:37:29.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/hide-email.html"
+  },
+  {
+    "title": "Hide Input Fields Before Taking A Screenshot Hide input fields",
+    "filename": "docs/recipes/hide-input-fields.md",
+    "created": "2023-05-10T13:57:02.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/hide-input-fields.html"
   },
   {
     "title": "Image Has Loaded Image has loaded",
