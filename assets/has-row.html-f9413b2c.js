@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-7932e2b5","path":"/recipes/has-row.html","title":"Table Has Row","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1684151135000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/has-row.md"}');export{e as data};
