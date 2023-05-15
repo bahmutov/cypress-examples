@@ -358,6 +358,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - read a value from a table cell and [enter it into a field](./recipes/enter-value.md)
 - pick the [first table column of the second table](./recipes/first-column.md)
 - find the [table row index with the given text](./recipes/find-row.md)
+- [Table has row with randomly picked id](./recipes/has-row.md)
 
 📝 Read the blog post [Test HTML Tables Using cy.table Query Command](https://glebbahmutov.com/blog/cy-table/).
 
