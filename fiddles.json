@@ -2838,6 +2838,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-script.html"
   },
   {
+    "title": "Table Has Row Table has row with randomly picked id",
+    "filename": "docs/recipes/has-row.md",
+    "created": "2023-05-15T11:45:35.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/has-row.html"
+  },
+  {
     "title": "Table rows having cells with the given attribute Plain Cypress commands",
     "filename": "docs/recipes/has-rows.md",
     "created": "2023-02-07T13:13:03.000Z",
