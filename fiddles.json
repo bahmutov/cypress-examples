@@ -3078,6 +3078,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/match-assertion.html"
   },
   {
+    "title": "Menu Page Object Menu page object",
+    "filename": "docs/recipes/menu-page-object.md",
+    "created": "2023-05-22T22:41:38.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/menu-page-object.html"
+  },
+  {
     "title": "Minimatch unit tests Minimatch example",
     "filename": "docs/recipes/minimatch-unit-tests.md",
     "created": "2023-03-26T14:48:45.000Z",
