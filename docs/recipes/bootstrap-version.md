@@ -13,6 +13,8 @@ Imagine we are upgrading from Bootstrap v4 to Bootstrap v5. Some pages might be 
 </button>
 ```
 
+For example, the Bootstrap v5 has removed the button class `btn-block`, thus we cannot use it to select the "Save" button above.
+
 ```js
 cy.window()
   .its('bootstrap.Button.VERSION')
