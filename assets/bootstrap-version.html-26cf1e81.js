@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3ae68c3a","path":"/recipes/bootstrap-version.html","title":"Bootstrap Version","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1684797556000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":3}]},"filePathRelative":"recipes/bootstrap-version.md"}');export{e as data};
