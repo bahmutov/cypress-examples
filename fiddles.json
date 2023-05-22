@@ -1974,6 +1974,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/attributes-are-equal.html"
   },
   {
+    "title": "Bootstrap Version Bootstrap 4 or 5",
+    "filename": "docs/recipes/bootstrap-version.md",
+    "created": "2023-05-22T23:02:56.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/bootstrap-version.html"
+  },
+  {
     "title": "Spy called with an object Primitive types",
     "filename": "docs/recipes/called-with-object.md",
     "created": "2023-01-06T15:48:46.000Z",
