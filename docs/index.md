@@ -301,6 +301,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - compute SHA-256 from [element's HTML](./recipes/sha-256.md)
 - [wrap and wait for promises to resolve](./recipes/wrap-promises.md)
 - using [Menu page object](./recipes/menu-page-object.md)
+- use different selectors depending on the [Bootstrap version](./recipes/bootstrap-version.md)
 
 ### Working with the window object
 
