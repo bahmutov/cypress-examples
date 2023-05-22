@@ -28,4 +28,6 @@ cy.window()
   })
 ```
 
+**Note:** a better strategy would be to use HTML attributes that do not change and do not depend on the styling library. See [Cypress best practices for selecting elements guide](https://on.cypress.io/best-practices#Selecting-Elements).
+
 <!-- fiddle-end -->
