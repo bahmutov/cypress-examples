@@ -300,6 +300,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - lesser known [Chai assertions](./recipes/lesser-known-chai-assertions.md)
 - compute SHA-256 from [element's HTML](./recipes/sha-256.md)
 - [wrap and wait for promises to resolve](./recipes/wrap-promises.md)
+- using [Menu page object](./recipes/menu-page-object.md)
 
 ### Working with the window object
 
