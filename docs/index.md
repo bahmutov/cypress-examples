@@ -302,6 +302,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [wrap and wait for promises to resolve](./recipes/wrap-promises.md)
 - using [Menu page object](./recipes/menu-page-object.md)
 - use different selectors depending on the [Bootstrap version](./recipes/bootstrap-version.md)
+- confirm the same text on the page in [two or more places](./recipes/same-text.md)
 
 ### Working with the window object
 
