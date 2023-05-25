@@ -3792,6 +3792,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-window-print.html"
   },
   {
+    "title": "Sum Of Numbers Sum of numbers",
+    "filename": "docs/recipes/sum-of-numbers.md",
+    "created": "2023-05-25T19:14:40.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sum-of-numbers.html"
+  },
+  {
     "title": "SVG Example Select elements in SVG",
     "filename": "docs/recipes/svg-example.md",
     "created": "2022-02-15T21:03:38.000Z",
