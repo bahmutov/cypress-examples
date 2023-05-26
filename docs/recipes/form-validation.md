@@ -42,10 +42,12 @@ cy.get('#item:invalid')
 // let's fill both fields, but if we enter the
 // incorrect quantity, it will have its own error message
 cy.get('#item').type('Push pin')
+cy.log('**numeric input field**')
 cy.get('#quantity').type('1000') // too many 📌!
 cy.get('#quantity:invalid')
   .invoke('prop', 'validationMessage')
   .should('eq', 'Value must be less than or equal to 5.')
+cy.get('#quantity').should('match', ':invalid')
 // retrieve the validity object
 // https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
 cy.get('#quantity:invalid')
@@ -71,6 +73,10 @@ cy.get('#form-validation').then(
 )
 // there are no invalid input elements
 cy.get('#form-validation :invalid').should('not.exist')
+// the quantity input is valid
+cy.get('#quantity')
+  .should('match', ':valid')
+  .and('not.match', ':invalid')
 ```
 
 <!-- fiddle.end -->
