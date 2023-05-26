@@ -4,6 +4,8 @@
 
 When the user changes what they see in this example ("all posts", drafts, or just the published posts), the page shows the post count. The total number of drafts plus published posts should equal to the total number of all posts.
 
+📺 Watch this recipe explained in the video [Simplify Sum Of Numbers Example To Avoid Callback Pyramid Of Doom ](https://youtu.be/6iQZhtXSag8)
+
 ```html hide
 <form>
   <input
