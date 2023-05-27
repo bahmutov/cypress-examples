@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-9d735b00","path":"/recipes/sum-of-numbers.html","title":"Sum Of Numbers","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1685115891000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/sum-of-numbers.md"}');export{e as data};
