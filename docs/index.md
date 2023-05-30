@@ -304,6 +304,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - use different selectors depending on the [Bootstrap version](./recipes/bootstrap-version.md)
 - confirm the same text on the page in [two or more places](./recipes/same-text.md)
 - get the [sum of numbers](./recipes/sum-of-numbers.md) avoiding pyramid of Doom
+- build-in [existence assertion](./recipes/existence-assertion.md)
 
 ### Working with the window object
 
