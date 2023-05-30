@@ -1,5 +1,7 @@
 # Built-in Existence Assertion
 
+📺 Watch this recipe explained in the video [Built-in Existence Assertion](https://youtu.be/hLHYacIUO9I).
+
 Cypress [querying commands](../commands/querying.md) have a built-in existence assertion. The following commands are equivalent:
 
 ```js
