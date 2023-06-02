@@ -4,6 +4,8 @@
 
 <!-- fiddle Find the cell by the column heading and row text -->
 
+Let's take this table as an example
+
 ```html hide
 <table>
   <thead>
@@ -25,12 +27,22 @@
 </table>
 ```
 
+Let's find the column with the header "Col B" and confirm it has index 1 (because indices start at zero)
+
+```js
+cy.contains('table th', 'Col B')
+  // use jQuery index() method to return
+  // the index of the found element among its siblings
+  .invoke('index')
+  .should('equal', 1)
+```
+
+Let's confirm that the cell with text "Val A" is in the column "Col B". First, we will find the column's index, then we will grab the cell at that index and confirm it has text "Val A".
+
 ```js
 // let's find the table row with some text (in any cell)
 // then in that row find the cell from the "Col B" column
 cy.contains('table th', 'Col B')
-  // use jQuery index() method to return
-  // the index of the found element among its siblings
   .invoke('index')
   .should('be.a', 'number')
   .then((columnIndex) => {
@@ -44,6 +56,17 @@ cy.contains('table th', 'Col B')
       .should('have.text', 'Val B')
       // change CSS using jQuery css() method
       .invoke('css', 'color', 'blue')
+  })
+```
+
+We can use a shortcut notation to get the child at index K. When using `nth-child` CSS selector, the index starts at 1.
+
+```js
+cy.contains('table th', 'Col B')
+  .invoke('index')
+  .should('be.a', 'number')
+  .then((K) => {
+    cy.contains(`tbody tr td:nth-child(${K + 1})`, 'Val B')
   })
 ```
 
@@ -186,3 +209,7 @@ cy.get('table thead').then(($thead) => {
 ```
 
 <!-- fiddle-end -->
+
+## See also
+
+- [Table cell index](./table-cell-index.md)

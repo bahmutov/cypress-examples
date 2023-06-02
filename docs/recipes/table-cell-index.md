@@ -21,10 +21,22 @@
 </table>
 ```
 
-Invoke the jQuery `.index()` method to confirm the "Age" column is 3rd in this table.
+Invoke the jQuery `.index()` method to confirm the "Age" column is 3rd in this table. Index starts at zero.
 
 ```js
 cy.contains('th', 'Age').invoke('index').should('equal', 2)
 ```
 
+Find a cell by text and confirm its index.
+
+```js
+cy.contains('tbody td', 'Jill')
+  .invoke('index')
+  .should('equal', 0)
+```
+
 <!-- fiddle-end -->
+
+## See also
+
+- [Find table cell by the column heading](./table-cell-by-column-heading.md)
