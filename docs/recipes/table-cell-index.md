@@ -2,12 +2,14 @@
 
 <!-- fiddle Confirm the cell index -->
 
+📺 Watch this recipe explained in the video [Find Table Column Index](https://youtu.be/QkwYEQmf-VI).
+
 ```html
-<table>
+<table class="as-table table table-bordered">
   <thead>
     <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
+      <th>First Name</th>
+      <th>Last Name</th>
       <th>Age</th>
     </tr>
   </thead>
