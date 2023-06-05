@@ -2262,6 +2262,36 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/confirm-attribute.html"
   },
   {
+    "title": "cy.contains and regular expressions Ignore case",
+    "filename": "docs/recipes/contains-regular-expression.md",
+    "created": "2023-06-05T10:40:09.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/contains-regular-expression.html"
+  },
+  {
+    "title": "cy.contains and regular expressions Use a regular expression to ignore case",
+    "filename": "docs/recipes/contains-regular-expression.md",
+    "created": "2023-06-05T10:40:09.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/contains-regular-expression.html"
+  },
+  {
+    "title": "cy.contains and regular expressions Find element that starts with hello",
+    "filename": "docs/recipes/contains-regular-expression.md",
+    "created": "2023-06-05T10:40:09.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/contains-regular-expression.html"
+  },
+  {
+    "title": "cy.contains and regular expressions Find element that ends with world",
+    "filename": "docs/recipes/contains-regular-expression.md",
+    "created": "2023-06-05T10:40:09.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/contains-regular-expression.html"
+  },
+  {
+    "title": "cy.contains and regular expressions Construct the regular expression from a string value",
+    "filename": "docs/recipes/contains-regular-expression.md",
+    "created": "2023-06-05T10:40:09.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/contains-regular-expression.html"
+  },
+  {
     "title": "Contains text in a list Test 1: find items then check their text",
     "filename": "docs/recipes/contains-text-in-list.md",
     "created": "2022-04-25T13:19:26.000Z",
