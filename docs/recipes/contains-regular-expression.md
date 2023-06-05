@@ -1,5 +1,7 @@
 # cy.contains and regular expressions
 
+📺 Watch this recipe explained in the video [cy.contains And Regular Expressions Examples](https://youtu.be/nDXAaWdj6tw).
+
 For more `cy.contains` examples, see [Querying commands](../commands/querying.md).
 
 ## Ignore case
