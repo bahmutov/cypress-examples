@@ -1094,6 +1094,8 @@ cy.get('.query-button')
 
 <!-- fiddle-end -->
 
+See also: [Contains text in a list](../recipes/contains-text-in-list.md), [Debug cy.get and cy.contains commands](../recipes/debug-cy-get-contains.md), [cy.contains and regular expressions](../recipes/contains-regular-expression.md).
+
 ### cy.contains with selector and text
 
 You can give the element selector to match. The text can be anywhere in the element or its children.
