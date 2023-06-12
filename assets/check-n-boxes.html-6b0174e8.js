@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-d39ee0f2","path":"/recipes/check-n-boxes.html","title":"Check The First N Checkboxes","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1686591327000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/check-n-boxes.md"}');export{e as data};
