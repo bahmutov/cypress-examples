@@ -1,5 +1,7 @@
 # Check The First N Checkboxes
 
+📺 Watch this recipe explained in the video [Check N Checkboxes](https://youtu.be/6vw47x6Nqc0).
+
 <!-- fiddle Check the first N checkboxes -->
 
 ```html
