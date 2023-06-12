@@ -2,6 +2,8 @@
 
 <!-- fiddle Store values using Should assertion callback -->
 
+📺 you can watch this recipe in action in [Store Values Using Should Callback Function](https://youtu.be/_rlsKq6YscQ).
+
 ```html hide
 <button id="start">Start</button>
 <output id="output">Waiting</output>
