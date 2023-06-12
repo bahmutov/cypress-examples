@@ -306,6 +306,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - get the [sum of numbers](./recipes/sum-of-numbers.md) avoiding pyramid of Doom
 - build-in [existence assertion](./recipes/existence-assertion.md)
 - [cy.contains and regular expressions](./recipes/contains-regular-expression.md)
+- check the [first N checkboxes](./recipes/check-n-boxes.md)
 
 ### Working with the window object
 
