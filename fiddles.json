@@ -2040,6 +2040,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/check-multiplication.html"
   },
   {
+    "title": "Check The First N Checkboxes Check the first N checkboxes",
+    "filename": "docs/recipes/check-n-boxes.md",
+    "created": "2023-06-12T17:21:46.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-n-boxes.html"
+  },
+  {
     "title": "Check number format Check number format",
     "filename": "docs/recipes/check-number-format.md",
     "created": "2022-05-07T21:42:51.000Z",
