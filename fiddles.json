@@ -2622,6 +2622,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/escape-selector.html"
   },
   {
+    "title": "Event Triggered Once Each click logs a message",
+    "filename": "docs/recipes/event-sent-once.md",
+    "created": "2023-06-13T13:39:42.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/event-sent-once.html"
+  },
+  {
+    "title": "Event Triggered Once Only the first click logs a message",
+    "filename": "docs/recipes/event-sent-once.md",
+    "created": "2023-06-13T13:39:42.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/event-sent-once.html"
+  },
+  {
     "title": "Built-in Existence Assertion Empty jQuery element",
     "filename": "docs/recipes/existence-assertion.md",
     "created": "2023-05-30T12:55:33.000Z",
