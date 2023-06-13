@@ -1,5 +1,7 @@
 # Event Triggered Once
 
+📺 You can watch this recipe explained in the video [Spying On The Console Log Method](https://youtu.be/ZslHKPtwIhA).
+
 ## Click events
 
 <!-- fiddle Each click logs a message -->
