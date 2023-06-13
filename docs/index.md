@@ -308,6 +308,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [cy.contains and regular expressions](./recipes/contains-regular-expression.md)
 - check the [first N checkboxes](./recipes/check-n-boxes.md)
 - store intermediate values using [should callback](./recipes/store-values-using-should.md)
+- confirm the event handler was [triggered just once](./recipes/event-sent-once.md)
 
 ### Working with the window object
 
