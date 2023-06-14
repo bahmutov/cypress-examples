@@ -2316,6 +2316,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/copyright-year.html"
   },
   {
+    "title": "Count Each Number Count each number",
+    "filename": "docs/recipes/count-each-number.md",
+    "created": "2023-06-14T12:12:17.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/count-each-number.html"
+  },
+  {
     "title": "Counter increments Counter increments",
     "filename": "docs/recipes/counter-increments.md",
     "created": "2022-01-04T11:51:26.000Z",
