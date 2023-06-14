@@ -2214,6 +2214,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
   },
   {
+    "title": "Conditional testing Count elements if they exist after delay",
+    "filename": "docs/recipes/conditional-testing.md",
+    "created": "2021-01-15T17:43:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
+  },
+  {
     "title": "Conditional testing Print the cookie if it exists",
     "filename": "docs/recipes/conditional-testing.md",
     "created": "2021-01-15T17:43:22.000Z",
