@@ -327,6 +327,8 @@ cy.get('#invalid-selector li')
 
 ## Count elements if they exist after delay
 
+📺 Watch this recipe explained in the video [Conditional Count Elements After They Have Been Loaded](https://youtu.be/87yWwGk40Ok).
+
 <!-- fiddle Count elements if they exist after delay -->
 
 ```html hide
@@ -383,6 +385,8 @@ cy.get('#people[data-loaded=true]')
 ```
 
 <!-- fiddle-end -->
+
+For more, read the blog post [Negative Assertions And Missing States](https://glebbahmutov.com/blog/negative-assertions-and-missing-states/).
 
 ## Use a cookie if present
 
