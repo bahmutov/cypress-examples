@@ -45,8 +45,8 @@ Can we iterate over the rows, clicking the "Load" buttons, and summing up the re
 let clicked = 0
 let count = 0
 // let's iterate over all buttons in the first column
-cy.get('table tbody td:nth-child(1) button')
-  .each(($button, k) => {
+cy.get('table tbody td:nth-child(1) button').each(
+  ($button, k) => {
     // wrap the jQuery button object and click on it
     cy.wrap($button).click()
     // the same row "k" should now have a cell with a number
@@ -62,14 +62,25 @@ cy.get('table tbody td:nth-child(1) button')
         clicked += 1
         count += n
       })
-  })
-  // we MUST access the updated "clicked" and "count" values
-  // in another cy.then callback so the values are computed
-  // by the time this cy.then callback executes
-  .then(() => {
-    expect(count, 'count').to.equal(18)
-    cy.get('table tbody tr').should('have.length', clicked)
-  })
+  },
+)
+```
+
+We cannot simply use the `count` and `clicked` values yet. The following test code is **incorrect** and will not work
+
+```js skip
+// 🚨 WILL NOT WORK
+cy.log(`count is ${count}`)
+expect(count).to.equal(18)
+```
+
+We MUST access the updated "clicked" and "count" values in another cy.then callback so the values are computed by the time this cy.then callback executes
+
+```js
+cy.then(() => {
+  expect(count, 'count').to.equal(18)
+  cy.get('table tbody tr').should('have.length', clicked)
+})
 ```
 
 **Tip:** read the blog post [Visualize Cypress Command Queue](https://glebbahmutov.com/blog/visualize-cypress-command-queue/) to understand how to use the local variables with Cypress commands.
