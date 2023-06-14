@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-022c3045","path":"/recipes/count-each-number.html","title":"Count Each Number","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1686744909000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/count-each-number.md"}');export{e as data};
