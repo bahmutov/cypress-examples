@@ -45,8 +45,10 @@ Can we iterate over the rows, clicking the "Load" buttons, and summing up the re
 let clicked = 0
 let count = 0
 // let's iterate over all buttons in the first column
-cy.get('table tbody td:nth-child(1) button').each(
-  ($button, k) => {
+cy.get('table tbody td:nth-child(1) button')
+  // cy.each callback receives a jQuery object
+  // plus its index starting with zero
+  .each(($button, k) => {
     // wrap the jQuery button object and click on it
     cy.wrap($button).click()
     // the same row "k" should now have a cell with a number
@@ -62,8 +64,7 @@ cy.get('table tbody td:nth-child(1) button').each(
         clicked += 1
         count += n
       })
-  },
-)
+  })
 ```
 
 We cannot simply use the `count` and `clicked` values yet. The following test code is **incorrect** and will not work
