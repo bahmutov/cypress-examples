@@ -309,6 +309,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - check the [first N checkboxes](./recipes/check-n-boxes.md)
 - store intermediate values using [should callback](./recipes/store-values-using-should.md)
 - confirm the event handler was [triggered just once](./recipes/event-sent-once.md)
+- count [each number](./recipes/count-each-number.md) after clicking a button
 
 ### Working with the window object
 
