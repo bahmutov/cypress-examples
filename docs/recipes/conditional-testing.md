@@ -325,6 +325,65 @@ cy.get('#invalid-selector li')
 
 <!-- fiddle-end -->
 
+## Count elements if they exist after delay
+
+<!-- fiddle Count elements if they exist after delay -->
+
+```html hide
+<ul id="people"></ul>
+<script>
+  setTimeout(() => {
+    const list = document.getElementById('people')
+    if (Math.random() < 0.5) {
+      list.innerHTML = `
+        <li>Joe</li>
+        <li>Anna</li>
+      `
+    }
+    list.setAttribute('data-loaded', 'true')
+  }, 900)
+</script>
+```
+
+The list above is initialized after a delay of almost one second. The list might be empty or it might have list items. How do we get the number of list items _if they exist_? The following code will NOT work. Yes, it handles the elements no existing, but the length will _always_ be zero, since we are checking the elements before the list has a chance to appear in the DOM:
+
+```js skip
+// 🚨 INCORRECT, the number of elements will always be zero
+cy.get('#people li')
+  .should(Cypress._.noop)
+  .its('length')
+  .should('be.oneOf', [0, 2])
+```
+
+We could always wait one second and check the elements. This is slow but works when the list items are added or not.
+
+```js skip
+// ⚠️ WORKS BUT HAS A BUILT-IN DELAY
+cy.wait(1000)
+cy.get('#people li')
+  .should(Cypress._.noop)
+  .its('length')
+  .should('be.oneOf', [0, 2])
+```
+
+A much better solution is to first retry until the data is loaded, then use conditional testing to get the elements if they exist. We know the data has been loaded when the element `#people` gets the attribute `data-loaded=true`. This attribute is set in all cases, even if there will be no list items inserted.
+
+```js
+// ✅ RECOMMENDED
+// the top-level CY.GET command uses built-in existence assertion
+// to retry until the attribute is set and the element is found
+cy.get('#people[data-loaded=true]')
+  // the LI elements might be there or not
+  // so we disable the built-in existence assertion
+  // using the "noop" should callback
+  .find('li')
+  .should(Cypress._.noop)
+  .its('length')
+  .should('be.oneOf', [0, 2])
+```
+
+<!-- fiddle-end -->
+
 ## Use a cookie if present
 
 Getting a cookie using [cy.getCookie](https://on.cypress.io/getcookie) command does not retry, thus you can simply work with the yielded value.
