@@ -3012,6 +3012,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/input-value.html"
   },
   {
+    "title": "Input value Find by static value attribute",
+    "filename": "docs/recipes/input-value.md",
+    "created": "2022-08-10T13:15:51.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-value.html"
+  },
+  {
     "title": "Be very careful with instanceof assertion instanceof example",
     "filename": "docs/recipes/instanceof.md",
     "created": "2022-05-11T17:51:51.000Z",
