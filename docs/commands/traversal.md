@@ -248,7 +248,7 @@ cy.get('#animals li')
 
 <!-- fiddle-end -->
 
-Watch the video [Use cy.filter For Complex Element Filtering](https://youtu.be/AO9iPIg9yKk). Find another example in the recipe [Computed style](../recipes/computed-style.md) for example.
+Watch the video [Use cy.filter For Complex Element Filtering](https://youtu.be/AO9iPIg9yKk). Find another example in the recipe [Computed style](../recipes/computed-style.md) for example. Learn how to find input elements by their current value in the recipe [Input value](../recipes/input-value.md).
 
 ### Skip an element with certain text
 
