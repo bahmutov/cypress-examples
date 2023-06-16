@@ -32,7 +32,7 @@ Watch this recipe explained in the video [Input Text Value Matches A Regular Exp
 
 ## Find by value
 
-You can find input elements by their value declared as an attribute
+You can find input elements by their value declared as an attribute. 📺 Watch this example explained in the video [Find Input By Value](https://youtu.be/DHtWLKueA3o).
 
 <!-- fiddle Find by static value attribute -->
 
