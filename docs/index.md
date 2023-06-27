@@ -311,6 +311,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - confirm the event handler was [triggered just once](./recipes/event-sent-once.md)
 - count [each number](./recipes/count-each-number.md) after clicking a button
 - checking [element overflow](./recipes/overflow.md)
+- confirm [each element text](./recipes/each-text.md) starts with the given string
 
 ### Working with the window object
 
