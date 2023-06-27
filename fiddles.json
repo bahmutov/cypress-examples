@@ -3342,6 +3342,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/or-attributes.html"
   },
   {
+    "title": "Overflow Button with overflowing text",
+    "filename": "docs/recipes/overflow.md",
+    "created": "2023-06-26T22:04:34.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/overflow.html"
+  },
+  {
     "title": "Overlapping elements Overlapping elements",
     "filename": "docs/recipes/overlapping-elements.md",
     "created": "2021-09-11T07:21:21.000Z",
