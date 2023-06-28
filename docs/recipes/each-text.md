@@ -33,9 +33,9 @@ After slight delay, the results should show several states. Each state name shou
 ```js
 cy.get('#search-results li')
   .should('exist')
-  .each((li) => {
+  .each((li, k) => {
     const name = li.text()
-    expect(name, name).to.match(/^mi/i)
+    expect(name, `state ${k + 1}`).to.match(/^mi/i)
   })
 ```
 
