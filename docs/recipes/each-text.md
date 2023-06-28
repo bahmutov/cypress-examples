@@ -1,5 +1,7 @@
 # Each Text Content
 
+📺 Find this recipe explained in the video [The Text Of Each Element Starts With The Given String](https://youtu.be/BWuWf8mqe3k).
+
 <!-- fiddle Search results start with MI -->
 
 ```html hide
