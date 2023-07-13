@@ -3888,6 +3888,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/sum-of-numbers.html"
   },
   {
+    "title": "Sum Of Prices Sum Of Prices",
+    "filename": "docs/recipes/sum-prices.md",
+    "created": "2023-07-13T16:27:39.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sum-prices.html"
+  },
+  {
     "title": "SVG Example Select elements in SVG",
     "filename": "docs/recipes/svg-example.md",
     "created": "2022-02-15T21:03:38.000Z",
