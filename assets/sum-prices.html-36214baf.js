@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-685f11ca","path":"/recipes/sum-prices.html","title":"Sum Of Prices","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1689604997000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/sum-prices.md"}');export{e as data};
