@@ -2,6 +2,8 @@
 
 Let's pretend we have a table, and we want to sum prices shown in the California cells only. These cells start with "CA". How can we write a little utility function to do it for us? How do we return the sum?
 
+📺 Watch this recipe explained in the video [Filter And Parse Table Cells To Confirm The Sum Of Prices](https://youtu.be/x9fTpOwp600).
+
 <!-- fiddle Sum Of Prices -->
 
 ```html hide
