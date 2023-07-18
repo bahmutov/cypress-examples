@@ -1510,7 +1510,7 @@ See [Dollar range](../recipes/dollar-range.md) recipe.
 
 <!-- fiddle-end -->
 
-### OR match using regular expression
+### OR match using a regular expression
 
 If you want to confirm the text matches one string or another, use a regular expression
 
@@ -1531,6 +1531,8 @@ cy.contains('#or-match', /^(Joe|Mary)$/)
 <!-- fiddle-end -->
 
 ### OR text match using `oneOf` assertion
+
+📺 Watch this example in the video [Compare Text In An Element Against Several Possible Values Using oneOf Assertion](https://youtu.be/B6LqwUHXCcg).
 
 <!-- fiddle Implicit Assertions / Text / .should() - OR match using oneOf -->
 
