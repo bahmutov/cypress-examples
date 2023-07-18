@@ -1530,6 +1530,22 @@ cy.contains('#or-match', /^(Joe|Mary)$/)
 
 <!-- fiddle-end -->
 
+### OR text match using `oneOf` assertion
+
+<!-- fiddle Implicit Assertions / Text / .should() - OR match using oneOf -->
+
+```html
+<div id="guest-name">Joe</div>
+```
+
+```js
+cy.get('#guest-name')
+  .invoke('text')
+  .should('be.oneOf', ['Mary', 'Joe'])
+```
+
+<!-- fiddle-end -->
+
 ### One of the elements has the text
 
 Imagine one of several elements should have the text we are looking for. We just don't know precisely which element does. I would recommend using the combined CSS selector `selector 1, selector 2, selector 3` which returns the combined list of all those selectors.
