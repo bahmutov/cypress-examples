@@ -684,6 +684,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
   },
   {
+    "title": "Connectors invoke a method with several arguments",
+    "filename": "docs/commands/connectors.md",
+    "created": "2020-04-13T15:07:03.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/connectors.html"
+  },
+  {
     "title": "Connectors invoke asynchronous method",
     "filename": "docs/commands/connectors.md",
     "created": "2020-04-13T15:07:03.000Z",
@@ -3484,6 +3490,12 @@
     "filename": "docs/recipes/remove-element.md",
     "created": "2022-10-17T13:55:01.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/remove-element.html"
+  },
+  {
+    "title": "Remove numbers Remove numbers",
+    "filename": "docs/recipes/remove-numbers.md",
+    "created": "2023-07-18T17:23:38.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/remove-numbers.html"
   },
   {
     "title": "Replace all Replace all",
