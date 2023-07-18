@@ -284,6 +284,25 @@ cy.get('.connectors-div')
 
 <!-- fiddle-end -->
 
+### Invoke a method with several arguments
+
+<!-- fiddle invoke / a method with several arguments -->
+
+Let's "clean up" the text in this formatted phone number before confirming the right number to call.
+
+```html
+<div data-cy="phone">(123) 456-7890</div>
+```
+
+```js
+cy.get('[data-cy=phone]')
+  .then(($el) => $el.text())
+  .invoke('replace', /\D/g, '')
+  .should('eq', '1234567890')
+```
+
+<!-- fiddle-end -->
+
 ### Invoke asynchronous method
 
 If the method returns a Promise, `cy.invoke` automatically waits for it. **But** if you need the resolved value, you need to use `cy.then` to invoke the method instead 🤯
