@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-553b2075","path":"/recipes/remove-numbers.html","title":"Remove numbers","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1689867295000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/remove-numbers.md"}');export{e as data};
