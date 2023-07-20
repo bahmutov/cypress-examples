@@ -658,7 +658,7 @@ cy.get('[attr\\.aria-label="Attribute example"]')
 
 ### Attribute prefix
 
-Let's get the element with ID starting with "local-example" prefix
+Let's get the element with ID starting with "local-example" prefix. The `id` is just an attribute, so we can use `id^=value` "id starts with the value" CSS selector:
 
 <!-- fiddle cy.get / attribute prefix -->
 
@@ -677,7 +677,7 @@ cy.get('[id^=local-example]').should('have.text', 'first')
 
 ### Attribute suffix
 
-Let's get the element with ID ending with "example-AF9" string
+Let's get the element with ID ending with "example-AF9" string. Again, we treat `id` field as a plain attribute and use the CSS selector `id$=value` "id ends with the value".
 
 <!-- fiddle cy.get / attribute suffix -->
 
