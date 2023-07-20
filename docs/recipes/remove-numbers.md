@@ -2,6 +2,8 @@
 
 Imagine we have a list of strings, but there are extra characters that we want to remove from each string. We can iterate over the list and call `String.prototype.replace` and use a regular expression. The iteration and invocation in this solution is done using the `cy.mapInvoke` query command from the [cypress-map](https://github.com/bahmutov/cypress-map) plugin.
 
+📺 You can watch this recipe explained in [Remove Numbers From Strings](https://youtu.be/OXiEJDjozQo).
+
 <!-- fiddle Remove numbers -->
 
 ```html
