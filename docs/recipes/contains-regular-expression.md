@@ -89,3 +89,43 @@ cy.contains(regex).should('have.id', 'greeting')
 ```
 
 <!-- fiddle-end -->
+
+## Escape the text
+
+When building a regular expression, you should take care to escape any special characters.
+
+<!-- fiddle Escape the text when building the regular expression -->
+
+```html
+<div id="rate">45 $/day</div>
+```
+
+Let's say we want to find the element with a number followed by the `$/day` text. Simply constructing the regular expression will not work, since the `$` character has special meaning in regular expressions.
+
+```js skip
+// 🚨 DOES NOT WORK
+// The "$" in the regular expression causes problems
+const suffix = '$/day'
+const regex = new RegExp(suffix)
+cy.contains(regex).should('have.id', 'rate')
+```
+
+```js
+// ✅ Escape the $ character when building a regular expression
+const suffix = '\\$/day'
+const regex = new RegExp(suffix)
+cy.contains(regex).should('have.id', 'rate')
+```
+
+If we don't know which characters the text might have, we might want to escape them all using the Lodash `_.escapeRegExp` function. Since Lodash is bundled with Cypress, nothing to install.
+
+```js
+// ✅ Escape all special Regexp characters
+// using _.escapeRegExp
+cy.contains(new RegExp(Cypress._.escapeRegExp('$/day'))).should(
+  'have.id',
+  'rate',
+)
+```
+
+<!-- fiddle-end -->
