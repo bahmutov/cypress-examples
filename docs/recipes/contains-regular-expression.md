@@ -94,6 +94,8 @@ cy.contains(regex).should('have.id', 'greeting')
 
 When building a regular expression, you should take care to escape any special characters.
 
+📺 Watch this example explained in the video [Escape Regular Expression Text When Using cy.contains Command](https://youtu.be/hMzqiSUVGwA).
+
 <!-- fiddle Escape the text when building the regular expression -->
 
 ```html
