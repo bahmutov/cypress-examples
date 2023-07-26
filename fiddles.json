@@ -3072,6 +3072,54 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/is-visible.html"
   },
   {
+    "title": "Iterate Over Elements jQuery cy.each callback has jQuery objects",
+    "filename": "docs/recipes/iterate.md",
+    "created": "2023-07-26T14:49:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/iterate.html"
+  },
+  {
+    "title": "Iterate Over Elements jQuery $.each callback has DOM elements",
+    "filename": "docs/recipes/iterate.md",
+    "created": "2023-07-26T14:49:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/iterate.html"
+  },
+  {
+    "title": "Iterate Over Elements cypress-map cy.map callback has DOM elements",
+    "filename": "docs/recipes/iterate.md",
+    "created": "2023-07-26T14:49:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/iterate.html"
+  },
+  {
+    "title": "Iterate Over Elements cypress-map cy.map can access the DOM element properties and methods",
+    "filename": "docs/recipes/iterate.md",
+    "created": "2023-07-26T14:49:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/iterate.html"
+  },
+  {
+    "title": "Iterate Over Elements cypress-map cy.map calls DOM methods",
+    "filename": "docs/recipes/iterate.md",
+    "created": "2023-07-26T14:49:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/iterate.html"
+  },
+  {
+    "title": "Iterate Over Elements cypress-map cy.mapInvoke calls DOM methods",
+    "filename": "docs/recipes/iterate.md",
+    "created": "2023-07-26T14:49:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/iterate.html"
+  },
+  {
+    "title": "Iterate Over Elements cypress-map cy.map to jQuery methods",
+    "filename": "docs/recipes/iterate.md",
+    "created": "2023-07-26T14:49:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/iterate.html"
+  },
+  {
+    "title": "Iterate Over Elements cypress-map cy.map to jQuery array to cy.mapInvoke",
+    "filename": "docs/recipes/iterate.md",
+    "created": "2023-07-26T14:49:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/iterate.html"
+  },
+  {
     "title": "Json Data Attribute Get Json Data Attribute",
     "filename": "docs/recipes/json-data-attribute.md",
     "created": "2022-12-19T22:00:18.000Z",
