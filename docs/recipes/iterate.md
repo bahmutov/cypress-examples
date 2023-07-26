@@ -28,6 +28,8 @@ Unfortunately, `cy.each` does not change the current subject, so we cannot easil
 
 ## using $.each
 
+We can change the current subject by using jQuery `$.each` to iterate over objects, and by putting the iteration inside `cy.then` command.
+
 <!-- fiddle jQuery $.each callback has DOM elements -->
 
 ```html
@@ -43,6 +45,54 @@ cy.get('#fruits li').then(($el) => {
     expect(el, 'is DOM element').to.satisfy(Cypress._.isElement)
   })
 })
+```
+
+<!-- fiddle-end -->
+
+Unfortunately, `cy.then` is not a retry-able query command, which might cause unexpected flake if the application is still refreshing the DOM elements.
+
+## using cy.invoke and $.each
+
+<!-- fiddle cy.invoke and jQuery $.each callback -->
+
+```html
+<ul id="fruits">
+  <li>Kiwi</li>
+  <li>Grapes</li>
+</ul>
+```
+
+```js
+cy.get('#fruits li').invoke('each', (k, el) => {
+  expect(el, 'is DOM element').to.satisfy(Cypress._.isElement)
+})
+```
+
+<!-- fiddle-end -->
+
+The [cy.invoke](https://on.cypress.io/invoke) is a query command, thus it will retry.
+
+## using cy.invoke and $.map
+
+We can change the current subject in the chain of commands but using jQuery `$.map` method, instead of `$.each`. Unfortunately, the subject is _still_ a jQuery object, only instead of DOM elements, it now holds whatever the `$.map(callback)` returns.
+
+<!-- fiddle cy.invoke and jQuery $.map callback -->
+
+```html
+<ul id="fruits">
+  <li>Kiwi</li>
+  <li>Grapes</li>
+</ul>
+```
+
+```js
+cy.get('#fruits li')
+  .invoke('map', (k, el) => {
+    return el.innerText
+  })
+  // convert jQuery object to an array
+  .invoke('toArray')
+  .should('deep.equal', ['Kiwi', 'Grapes'])
 ```
 
 <!-- fiddle-end -->
