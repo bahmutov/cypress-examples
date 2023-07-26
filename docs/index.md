@@ -314,6 +314,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - confirm [each element text](./recipes/each-text.md) starts with the given string
 - find all table cells that start with "CA" and parse and [sum prices](./recipes/sum-prices.md).
 - [remove digits and whitespace](./recipes/remove-numbers.md) from each element's text
+- [iterate](./recipes/iterate.md) over DOM elements using Cypress and `cypress-map` commands
 
 ### Working with the window object
 
