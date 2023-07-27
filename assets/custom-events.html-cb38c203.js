@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-18442267","path":"/recipes/custom-events.html","title":"Custom Events","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1690478569000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/custom-events.md"}');export{e as data};

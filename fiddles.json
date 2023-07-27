@@ -2376,6 +2376,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/css-examples.html"
   },
   {
+    "title": "Custom Events Dispatch custom events",
+    "filename": "docs/recipes/custom-events.md",
+    "created": "2023-07-27T17:10:49.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/custom-events.html"
+  },
+  {
     "title": "Cy events Command start",
     "filename": "docs/recipes/cy-events.md",
     "created": "2022-07-26T19:05:08.000Z",
@@ -3079,6 +3085,18 @@
   },
   {
     "title": "Iterate Over Elements jQuery $.each callback has DOM elements",
+    "filename": "docs/recipes/iterate.md",
+    "created": "2023-07-26T14:49:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/iterate.html"
+  },
+  {
+    "title": "Iterate Over Elements cy.invoke and jQuery $.each callback",
+    "filename": "docs/recipes/iterate.md",
+    "created": "2023-07-26T14:49:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/iterate.html"
+  },
+  {
+    "title": "Iterate Over Elements cy.invoke and jQuery $.map callback",
     "filename": "docs/recipes/iterate.md",
     "created": "2023-07-26T14:49:22.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/iterate.html"
