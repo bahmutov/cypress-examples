@@ -1,5 +1,7 @@
 # Custom Events
 
+See this example explained in 📺 [Dispatch Custom HTML Events From Cypress Tests](https://youtu.be/qCqzS3LtSeI).
+
 <!-- fiddle Dispatch custom events -->
 
 ```html hide
