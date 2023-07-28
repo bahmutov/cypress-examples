@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-262d64b5","path":"/recipes/sorted-attributes.html","title":"Sorted Attributes","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1690553630000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/sorted-attributes.md"}');export{t as data};
