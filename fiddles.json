@@ -3876,6 +3876,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/skip-child.html"
   },
   {
+    "title": "Sorted Attributes Dynamic list with attributes",
+    "filename": "docs/recipes/sorted-attributes.md",
+    "created": "2023-07-28T14:13:50.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sorted-attributes.html"
+  },
+  {
     "title": "Sorted by discount price Prices are sorted",
     "filename": "docs/recipes/sorted-by-discount.md",
     "created": "2022-11-30T22:24:51.000Z",
