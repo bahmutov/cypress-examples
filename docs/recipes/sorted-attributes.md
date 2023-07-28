@@ -1,5 +1,7 @@
 # Sorted Attributes
 
+📺 Watch this recipe explained in the video [Confirm Sorted Attributes](https://youtu.be/sVb5MU2AkqE).
+
 <!-- fiddle Dynamic list with attributes -->
 
 Let's take a dynamically populated list of items.
