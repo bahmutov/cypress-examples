@@ -3306,6 +3306,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/next-day.html"
   },
   {
+    "title": "No Extra Messages Appear Extra messages can appear",
+    "filename": "docs/recipes/no-extras.md",
+    "created": "2023-07-29T18:59:13.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/no-extras.html"
+  },
+  {
+    "title": "No Extra Messages Appear Use short timeout to catch any extra elements",
+    "filename": "docs/recipes/no-extras.md",
+    "created": "2023-07-29T18:59:13.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/no-extras.html"
+  },
+  {
     "title": "Non-breaking space Without whitespace",
     "filename": "docs/recipes/non-breaking-space.md",
     "created": "2020-12-21T22:00:36.000Z",
