@@ -317,6 +317,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [remove digits and whitespace](./recipes/remove-numbers.md) from each element's text
 - [iterate](./recipes/iterate.md) over DOM elements using Cypress and `cypress-map` commands
 - dispatch [custom events](./recipes/custom-events.md)
+- catch any [extra elements](./recipes/no-extras.md) appearing between the expected states
 
 ### Working with the window object
 
