@@ -1,5 +1,7 @@
 # No Extra Messages Appear
 
+📝 This recipe is explained in the blog post [Shrink The Time Gap](https://glebbahmutov.com/blog/shrink-the-time-gap/).
+
 ## Extra messages can appear
 
 <!-- fiddle Extra messages can appear -->
