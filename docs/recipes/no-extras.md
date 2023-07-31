@@ -1,6 +1,6 @@
 # No Extra Messages Appear
 
-📝 This recipe is explained in the blog post [Shrink The Time Gap](https://glebbahmutov.com/blog/shrink-the-time-gap/).
+📝 This recipe is explained in the blog post [Shrink The Time Gap](https://glebbahmutov.com/blog/shrink-the-time-gap/) and in the video 📺 [Shrink The Time Gap](https://youtu.be/4tiwHmi3pdk).
 
 ## Extra messages can appear
 
