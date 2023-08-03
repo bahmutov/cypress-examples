@@ -1,5 +1,7 @@
 # Prepare To Spy
 
+📺 Watch these examples explained in the video [Prepare To Spy On A Method Added Dynamically](https://youtu.be/my1s6US7KKY).
+
 ## Wait for the property to exist
 
 We can automatically wait for a new `window` property to be added before spying on it. For example, let's spy on the `window.logEvent` method _after_ the application sets it up.
