@@ -3540,6 +3540,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/prefers-color-scheme.html"
   },
   {
+    "title": "Prepare To Spy Wait for the method to exist",
+    "filename": "docs/recipes/prepare-to-spy.md",
+    "created": "2023-08-03T16:02:42.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/prepare-to-spy.html"
+  },
+  {
+    "title": "Prepare To Spy Prepare to spy",
+    "filename": "docs/recipes/prepare-to-spy.md",
+    "created": "2023-08-03T16:02:42.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/prepare-to-spy.html"
+  },
+  {
     "title": "Pseudo CSS selectors pseudo-selectors links",
     "filename": "docs/recipes/pseudo-selectors.md",
     "created": "2021-11-16T17:00:10.000Z",
