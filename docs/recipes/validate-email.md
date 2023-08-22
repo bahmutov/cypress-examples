@@ -1,5 +1,7 @@
 # Validate An Email
 
+📺 Watch this recipe explained in [Validate Email Format Using Built-in Browser Input Element](https://youtu.be/iRJJqijuFYI)
+
 Using the browser's `input` DOM element we can validate a string to check if it is a valid email expression or not.
 
 <!-- fiddle validate an email -->
@@ -16,3 +18,5 @@ expect(input.checkValidity(), 'second string is not an email').to
 ```
 
 <!-- fiddle-end -->
+
+**Note:** using a regular expression to validate an email is [tricky](https://emailregex.com/)
