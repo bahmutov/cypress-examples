@@ -318,6 +318,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [iterate](./recipes/iterate.md) over DOM elements using Cypress and `cypress-map` commands
 - dispatch [custom events](./recipes/custom-events.md)
 - catch any [extra elements](./recipes/no-extras.md) appearing between the expected states
+- [validate email](./recipes/validate-email.md) using an input element
 
 ### Working with the window object
 
