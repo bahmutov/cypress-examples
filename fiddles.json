@@ -4110,6 +4110,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/type-one-by-one.html"
   },
   {
+    "title": "Validate An Email validate an email",
+    "filename": "docs/recipes/validate-email.md",
+    "created": "2023-08-22T13:36:31.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/validate-email.html"
+  },
+  {
     "title": "Wait for data using the cy.should callback",
     "filename": "docs/recipes/wait-for-data.md",
     "created": "2021-04-14T22:46:26.000Z",
