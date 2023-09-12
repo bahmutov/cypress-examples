@@ -113,6 +113,37 @@ cy.get('#fruits li')
 
 <!-- fiddle-end -->
 
+## Print number of elements
+
+Let's say the list with three elements appears after a delay
+
+<!-- fiddle Print number of elements using cypress-map -->
+
+We can print the number of elements using query `cy.print` from [cypress-map](https://github.com/bahmutov/cypress-map) plugin.
+
+```html
+<ul id="fruits"></ul>
+<script>
+  setTimeout(function () {
+    document.querySelector('ul#fruits').innerHTML = `
+      <li>Apples</li>
+      <li>Pears</li>
+      <li>Kiwi</li>
+    `
+  }, 1000)
+</script>
+```
+
+```js
+cy.get('#fruits li')
+  .its('length')
+  .print('found %d elements')
+  // the number is passed to the assertion
+  .should('equal', 3)
+```
+
+<!-- fiddle-end -->
+
 ## Several possible numbers
 
 If the list can have two possible lengths, we can query its `length` property and add an assertion to it. In the example below the list can have either 3 or 5 items.
