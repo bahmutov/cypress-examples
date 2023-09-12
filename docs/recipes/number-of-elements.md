@@ -83,7 +83,7 @@ cy.get('#fruits li', { timeout: 6500 }).should('have.length', 3)
 
 <!-- fiddle-end -->
 
-## Dynamic list
+## Print number of elements
 
 Let's say the list with three elements appears after a delay
 
@@ -108,6 +108,86 @@ Let's confirm we have three fruits and then print the number of elements. By def
 cy.get('#fruits li')
   .should('have.length', 3)
   .its('length')
+  .then((n) => cy.log(`found ${n} elements`))
+```
+
+<!-- fiddle-end -->
+
+## Several possible numbers
+
+If the list can have two possible lengths, we can query its `length` property and add an assertion to it. In the example below the list can have either 3 or 5 items.
+
+<!-- fiddle Several possible numbers -->
+
+```html
+<ul id="fruits"></ul>
+<script>
+  setTimeout(function () {
+    if (Math.random() < 0.5) {
+      document.querySelector('ul#fruits').innerHTML = `
+        <li>Apples</li>
+        <li>Pears</li>
+        <li>Kiwi</li>
+      `
+    } else {
+      document.querySelector('ul#fruits').innerHTML = `
+        <li>Apples</li>
+        <li>Pears</li>
+        <li>Kiwi</li>
+        <li>Grapes</li>
+        <li>Bananas</li>
+      `
+    }
+  }, 1000)
+</script>
+```
+
+The chain `cy.get(...).its(...).should(...)` retries if the assertion does not pass.
+
+```js
+cy.get('#fruits li')
+  .its('length')
+  .should('be.oneOf', [3, 5])
+  .then((n) => cy.log(`found ${n} elements`))
+```
+
+<!-- fiddle-end -->
+
+## Range of possible values
+
+If the number of items can be between two limits, then we can use another assertion
+
+<!-- fiddle Range of possible numbers -->
+
+```html
+<ul id="fruits"></ul>
+<script>
+  setTimeout(function () {
+    if (Math.random() < 0.5) {
+      document.querySelector('ul#fruits').innerHTML = `
+        <li>Apples</li>
+        <li>Pears</li>
+        <li>Kiwi</li>
+      `
+    } else {
+      document.querySelector('ul#fruits').innerHTML = `
+        <li>Apples</li>
+        <li>Pears</li>
+        <li>Kiwi</li>
+        <li>Grapes</li>
+        <li>Bananas</li>
+      `
+    }
+  }, 1000)
+</script>
+```
+
+Let's use `within` Chai assertion.
+
+```js
+cy.get('#fruits li')
+  .its('length')
+  .should('be.within', 3, 5)
   .then((n) => cy.log(`found ${n} elements`))
 ```
 
