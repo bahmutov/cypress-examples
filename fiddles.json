@@ -3396,6 +3396,60 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/nth-child.html"
   },
   {
+    "title": "Number Of Elements Static list",
+    "filename": "docs/recipes/number-of-elements.md",
+    "created": "2023-09-12T12:42:04.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/number-of-elements.html"
+  },
+  {
+    "title": "Number Of Elements Dynamic list",
+    "filename": "docs/recipes/number-of-elements.md",
+    "created": "2023-09-12T12:42:04.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/number-of-elements.html"
+  },
+  {
+    "title": "Number Of Elements Slow list",
+    "filename": "docs/recipes/number-of-elements.md",
+    "created": "2023-09-12T12:42:04.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/number-of-elements.html"
+  },
+  {
+    "title": "Number Of Elements Print number of elements",
+    "filename": "docs/recipes/number-of-elements.md",
+    "created": "2023-09-12T12:42:04.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/number-of-elements.html"
+  },
+  {
+    "title": "Number Of Elements Print number of elements using cypress-map",
+    "filename": "docs/recipes/number-of-elements.md",
+    "created": "2023-09-12T12:42:04.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/number-of-elements.html"
+  },
+  {
+    "title": "Number Of Elements Confirm the first element",
+    "filename": "docs/recipes/number-of-elements.md",
+    "created": "2023-09-12T12:42:04.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/number-of-elements.html"
+  },
+  {
+    "title": "Number Of Elements Several possible numbers",
+    "filename": "docs/recipes/number-of-elements.md",
+    "created": "2023-09-12T12:42:04.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/number-of-elements.html"
+  },
+  {
+    "title": "Number Of Elements Range of possible numbers",
+    "filename": "docs/recipes/number-of-elements.md",
+    "created": "2023-09-12T12:42:04.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/number-of-elements.html"
+  },
+  {
+    "title": "Number Of Elements Number of elements follows a rule",
+    "filename": "docs/recipes/number-of-elements.md",
+    "created": "2023-09-12T12:42:04.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/number-of-elements.html"
+  },
+  {
     "title": "Number of rows Dynamic table",
     "filename": "docs/recipes/number-of-rows.md",
     "created": "2021-07-14T12:20:24.000Z",
