@@ -2,6 +2,8 @@
 
 Imagine you want to confirm the number of list items. The best test syntax depends on how the elements are loaded: are they present already or load dynamically? Do you know the exact number or are there several possible answers? Can the number of elements be zero? The following examples show every scenario.
 
+📺 watch video [Confirm The Number Of Elements In Different Scenarios](https://youtu.be/uKpJZbEc6HY)
+
 ## Static list
 
 Let's start with the simplest case: the static list with a known number of elements to expect.
@@ -140,6 +142,34 @@ cy.get('#fruits li')
   .print('found %d elements')
   // the number is passed to the assertion
   .should('equal', 3)
+```
+
+<!-- fiddle-end -->
+
+## Confirm the first element
+
+Let's confirm the first element's text. We first confirm the list loads 3 elements and then get the first element and confirm its text.
+
+<!-- fiddle Confirm the first element -->
+
+```html
+<ul id="fruits"></ul>
+<script>
+  setTimeout(function () {
+    document.querySelector('ul#fruits').innerHTML = `
+      <li>Apples</li>
+      <li>Pears</li>
+      <li>Kiwi</li>
+    `
+  }, 1000)
+</script>
+```
+
+```js
+cy.get('#fruits li')
+  .should('have.length', 3)
+  .first()
+  .should('have.text', 'Apples')
 ```
 
 <!-- fiddle-end -->
