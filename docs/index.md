@@ -319,6 +319,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - dispatch [custom events](./recipes/custom-events.md)
 - catch any [extra elements](./recipes/no-extras.md) appearing between the expected states
 - [validate email](./recipes/validate-email.md) using an input element
+- check the [number of elements](./recipes/number-of-elements.md) various scenarios
 
 ### Working with the window object
 

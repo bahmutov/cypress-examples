@@ -88,3 +88,7 @@ cy.get('[data-cy=rowsN]')
 ```
 
 <!-- fiddle-end -->
+
+## See also
+
+- [Number of elements](./number-of-elements.md)
