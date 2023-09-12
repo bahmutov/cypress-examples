@@ -193,6 +193,58 @@ cy.get('#fruits li')
 
 <!-- fiddle-end -->
 
+## Number of elements follows a rule
+
+Let's say we only now that the number of loaded elements should be divisible by 3
+
+<!-- fiddle Number of elements follows a rule -->
+
+```html hide
+<ul id="fruits"></ul>
+<script>
+  setTimeout(function () {
+    if (Math.random() < 0.5) {
+      document.querySelector('ul#fruits').innerHTML = `
+        <li>Apples</li>
+        <li>Pears</li>
+        <li>Kiwi</li>
+      `
+    } else {
+      document.querySelector('ul#fruits').innerHTML = `
+        <li>Apples</li>
+        <li>Pears</li>
+        <li>Kiwi</li>
+        <li>Grapes</li>
+        <li>Bananas</li>
+        <li>Plums</li>
+      `
+    }
+  }, 1000)
+</script>
+```
+
+We want to make sure the number of elements is divisible by 3.
+
+```js
+cy.get('#fruits li')
+  .its('length')
+  // the predicate function should return a boolean result
+  .should('satisfy', (n) => n % 3 === 0)
+  .then((n) => cy.log(`found ${n} elements`))
+```
+
+**Tip:** you could also write a custom assertion function that can use Chai or any assertions
+
+```js
+cy.get('#fruits li')
+  .its('length')
+  .should((n) => {
+    expect(n % 3 === 0, `${n} elements`).to.be.true
+  })
+```
+
+<!-- fiddle-end -->
+
 ## See also
 
 - [Number of rows](./number-of-rows.md)
