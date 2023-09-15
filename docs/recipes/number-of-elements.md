@@ -306,6 +306,60 @@ cy.get('#fruits li')
 
 <!-- fiddle-end -->
 
+## There could be zero or N elements
+
+Now imagine the list on the page is created from the data sent by the server. The server could send an empty list. How do we validate the page if there could be either zero or three elements? We need something observable on the page to let the test "know" that the data has been loaded and now it is safe to grab the elements.
+
+<!-- fiddle There could be zero or 3 elements -->
+
+```html hide
+<ul id="fruits"></ul>
+<script>
+  setTimeout(function () {
+    if (Math.random() < 0.5) {
+      document.querySelector('ul#fruits').innerHTML = `
+        <li>Apples</li>
+        <li>Pears</li>
+        <li>Kiwi</li>
+      `
+    }
+    // in all cases, set an attribute
+    // to signal the data has been loaded
+    document
+      .querySelector('ul#fruits')
+      .setAttribute('data-loaded', 'true')
+  }, 1000)
+</script>
+```
+
+Our test first waits for the data to load by checking the attribute
+
+```js
+cy.get('ul#fruits')
+  .should('have.attr', 'data-loaded', 'true')
+  // find LI elements, but allow them NOT to exist
+  .find('li')
+  .should(Cypress._.noop)
+  .its('length')
+  .should('be.oneOf', [0, 3])
+```
+
+We can also check the jQuery object's length using `should('satisfy', ...)` or `should(callback)` assertions. Just make sure to check after the `.should('have.attr', 'data-loaded', 'true')` passed.
+
+```js
+// using "satisfy" assertion
+cy.get('ul#fruits li').should(
+  'satisfy',
+  ($li) => $li.length === 0 || $li.length === 3,
+)
+// using "should(callback)" assertion
+cy.get('ul#fruits li').should(($li) => {
+  expect($li.length, 'number of elements').to.be.oneOf([0, 3])
+})
+```
+
+<!-- fiddle-end -->
+
 ## See also
 
 - [Number of rows](./number-of-rows.md)
