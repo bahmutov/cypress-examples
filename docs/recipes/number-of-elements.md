@@ -115,7 +115,7 @@ cy.get('#fruits li')
 
 <!-- fiddle-end -->
 
-## Print number of elements
+## Print number of elements using cypress-map
 
 Let's say the list with three elements appears after a delay
 
@@ -307,6 +307,8 @@ cy.get('#fruits li')
 <!-- fiddle-end -->
 
 ## There could be zero or N elements
+
+📺 Watch this example explained in video [Zero Or Three Elements After Loading The Data](https://youtu.be/qL5R0C-0_-Y).
 
 Now imagine the list on the page is created from the data sent by the server. The server could send an empty list. How do we validate the page if there could be either zero or three elements? We need something observable on the page to let the test "know" that the data has been loaded and now it is safe to grab the elements.
 
