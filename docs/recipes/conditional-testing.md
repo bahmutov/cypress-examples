@@ -602,3 +602,4 @@ cy.get('#loader')
 ## More examples
 
 - [Add / delete list item recipe](./add-list-item.md)
+- [Number of elements](./number-of-elements.md)

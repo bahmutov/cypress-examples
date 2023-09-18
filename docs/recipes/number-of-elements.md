@@ -360,6 +360,96 @@ cy.get('ul#fruits li').should(($li) => {
 
 <!-- fiddle-end -->
 
+## N elements or nothing found message
+
+Imagine the page loads elements or shows "Nothing found" message. Can we confirm that one or the other happens?
+
+<!-- fiddle N elements or nothing found message -->
+
+```html hide
+<ul id="fruits"></ul>
+<script>
+  setTimeout(function () {
+    if (Math.random() < 0.5) {
+      document.querySelector('ul#fruits').innerHTML = `
+        <li>Apples</li>
+        <li>Pears</li>
+        <li>Kiwi</li>
+      `
+    } else {
+      document.querySelector('ul#fruits').innerText =
+        'Nothing found'
+    }
+  }, 1000)
+</script>
+```
+
+Find the `<ul id="fruits">` element with either `LI` elements inside or text "Nothing found".
+
+```js
+cy.get('ul#fruits li, ul#fruits:contains("Nothing found")')
+```
+
+If we want to confirm the number of `LI` elements, then we need more [conditional logic](./conditional-testing.md).
+
+```js
+// find LI elements inside the fruits element
+// OR text "Nothing found"
+cy.get('ul#fruits li, ul#fruits:contains("Nothing found")').then(
+  ($el) => {
+    if ($el.is('ul#fruits li')) {
+      // we found "LI" elements inside the fruits list
+      expect($el).to.have.length(3)
+    }
+  },
+)
+```
+
+<!-- fiddle-end -->
+
+## N elements or nothing found element
+
+The previous example searched for exact text match "Nothing found". To make this more generic and avoid hard-coding the text, we can use a specific "Nothing found" data attribute instead.
+
+<!-- fiddle N elements or nothing found element -->
+
+```html hide
+<ul id="fruits"></ul>
+<script>
+  setTimeout(function () {
+    if (Math.random() < 0.5) {
+      document.querySelector('ul#fruits').innerHTML = `
+        <li>Apples</li>
+        <li>Pears</li>
+        <li>Kiwi</li>
+      `
+    } else {
+      document.querySelector('ul#fruits').innerHTML =
+        '<div data-cy="zero-state">Nothing there...</div>'
+    }
+  }, 1000)
+</script>
+```
+
+Find the `<ul id="fruits">` element with either `LI` elements inside or the "zero state" element. Let's confirm the number of LI elements and zero state message if found.
+
+```js
+cy.get('ul#fruits li, ul#fruits [data-cy=zero-state]').then(
+  ($el) => {
+    if ($el.is('li')) {
+      // we found "LI" elements inside the fruits list
+      expect($el).to.have.length(3)
+    } else {
+      // found zero state element, let's confirm its text
+      expect($el).to.include.text('Nothing there')
+    }
+  },
+)
+```
+
+<!-- fiddle-end -->
+
 ## See also
 
 - [Number of rows](./number-of-rows.md)
+- 📝 blog post [Shrink The Time Gap](https://glebbahmutov.com/blog/shrink-the-time-gap/)
