@@ -366,6 +366,8 @@ cy.get('ul#fruits li').should(($li) => {
 
 Imagine the page loads elements or shows "Nothing found" message. Can we confirm that one or the other happens?
 
+📺 This example is explained in the video [Check N Items Or That Nothing Was Found](https://youtu.be/ZJcJNwli10I).
+
 <!-- fiddle N elements or nothing found message -->
 
 ```html hide
@@ -386,7 +388,7 @@ Imagine the page loads elements or shows "Nothing found" message. Can we confirm
 </script>
 ```
 
-Find the `<ul id="fruits">` element with either `LI` elements inside or text "Nothing found".
+Find the `<ul id="fruits">` element with either `LI` elements inside or text "Nothing found" using jQuery selector `:contains`.
 
 ```js
 cy.get('ul#fruits li, ul#fruits:contains("Nothing found")')
