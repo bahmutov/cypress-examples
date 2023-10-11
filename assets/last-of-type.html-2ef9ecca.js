@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-aec61906","path":"/recipes/last-of-type.html","title":"Last of type CSS selector","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1697039328000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/last-of-type.md"}');export{e as data};

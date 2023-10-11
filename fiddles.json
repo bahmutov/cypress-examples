@@ -3162,6 +3162,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/last-item.html"
   },
   {
+    "title": "Last of type CSS selector Last of type",
+    "filename": "docs/recipes/last-of-type.md",
+    "created": "2023-10-11T15:48:48.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/last-of-type.html"
+  },
+  {
     "title": "Lesser Known Chai Assertions Nested property",
     "filename": "docs/recipes/lesser-known-chai-assertions.md",
     "created": "2023-04-12T00:59:17.000Z",
