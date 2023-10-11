@@ -2,6 +2,8 @@
 
 See [:last-of-type](https://developer.mozilla.org/en-US/docs/Web/CSS/:last-of-type) documentation and examples.
 
+📺 Watch this recipe explained in the video [last-of-type And first-of-type CSS Selectors Examples](https://youtu.be/6KmpQjBduY8).
+
 <!-- fiddle Last of type -->
 
 ```html
