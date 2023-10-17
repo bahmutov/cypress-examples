@@ -321,6 +321,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [validate email](./recipes/validate-email.md) using an input element
 - check the [number of elements](./recipes/number-of-elements.md) various scenarios
 - CSS selectors `:last-of-type` and `:first-of-type` [example](./recipes/last-of-type.md)
+- [cy.within does not retry](./recipes/within-does-not-retry.md)
 
 ### Working with the window object
 
