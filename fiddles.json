@@ -4230,6 +4230,24 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/window-property.html"
   },
   {
+    "title": "cy.within Command Does Not Retry cy.contains retries and finds the elements within the parent",
+    "filename": "docs/recipes/within-does-not-retry.md",
+    "created": "2023-10-17T16:33:01.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/within-does-not-retry.html"
+  },
+  {
+    "title": "cy.within Command Does Not Retry cy.contains fails from the stale parent inside cy.within",
+    "filename": "docs/recipes/within-does-not-retry.md",
+    "created": "2023-10-17T16:33:01.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/within-does-not-retry.html"
+  },
+  {
+    "title": "cy.within Command Does Not Retry Split cy.within",
+    "filename": "docs/recipes/within-does-not-retry.md",
+    "created": "2023-10-17T16:33:01.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/within-does-not-retry.html"
+  },
+  {
     "title": "Wrap promises Wrap a single promise",
     "filename": "docs/recipes/wrap-promises.md",
     "created": "2023-05-04T16:13:30.000Z",
