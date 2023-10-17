@@ -1,5 +1,7 @@
 # cy.within Command Does Not Retry
 
+📺 Watch this recipe explained in the video [Cy Within Command Does Not Retry](https://youtu.be/Emvz1PDRl3M).
+
 ## Inner elements are replaced
 
 <!-- fiddle cy.contains retries and finds the elements within the parent -->
