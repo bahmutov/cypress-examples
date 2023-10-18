@@ -527,6 +527,8 @@ cy.get('#second li')
 
 <!-- fiddle-end -->
 
+**Tip:** check out more list comparison examples in [Compare Two Lists](../recipes/compare-lists.md) recipe.
+
 ### expect a NaN
 
 <!-- fiddle Explicit Assertions / expect - NaN -->
