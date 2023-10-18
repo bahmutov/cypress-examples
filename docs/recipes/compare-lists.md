@@ -1,5 +1,7 @@
 # Compare Two Lists
 
+📺 You can watch these examples explained in the video [Compare Two Lists Of Elements Examples](https://youtu.be/8IXrq9BEWSg).
+
 ## Same items
 
 Let's confirm that these two lists have identical items. I will use `cy.map` child command from [cypress-map](https://github.com/bahmutov/cypress-map) to write elegant code.
