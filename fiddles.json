@@ -2136,6 +2136,24 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/compare-attribute.html"
   },
   {
+    "title": "Compare Two Lists Lists have the same elements",
+    "filename": "docs/recipes/compare-lists.md",
+    "created": "2023-10-18T12:32:54.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/compare-lists.html"
+  },
+  {
+    "title": "Compare Two Lists Lists have the same elements in different order",
+    "filename": "docs/recipes/compare-lists.md",
+    "created": "2023-10-18T12:32:54.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/compare-lists.html"
+  },
+  {
+    "title": "Compare Two Lists List subset",
+    "filename": "docs/recipes/compare-lists.md",
+    "created": "2023-10-18T12:32:54.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/compare-lists.html"
+  },
+  {
     "title": "Compare numbers Compare numbers",
     "filename": "docs/recipes/compare-numbers.md",
     "created": "2022-06-14T10:55:05.000Z",
