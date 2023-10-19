@@ -2694,6 +2694,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/event-sent-once.html"
   },
   {
+    "title": "Every Element Has HREF Link Confirm every element with data attribute has a href link",
+    "filename": "docs/recipes/every-element-has-href.md",
+    "created": "2023-10-19T13:36:49.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/every-element-has-href.html"
+  },
+  {
     "title": "Built-in Existence Assertion Empty jQuery element",
     "filename": "docs/recipes/existence-assertion.md",
     "created": "2023-05-30T12:55:33.000Z",
