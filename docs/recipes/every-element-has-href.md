@@ -1,5 +1,7 @@
 # Every Element Has HREF Link
 
+📺 Watch this recipe explained in the video [Confirm That Every Element With A Data Attribute Has The HREF Attribute Too](https://youtu.be/sppI7xabyoA).
+
 <!-- fiddle Confirm every element with data attribute has a href link -->
 
 The following list has elements with different `data-` attributes. They all have `href` attributes, let's confirm it. Then let's confirm the reverse: elements without `data-` attributes have no `href`.
