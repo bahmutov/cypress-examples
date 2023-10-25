@@ -1,5 +1,7 @@
 # Use cy.within To Limit The DOM Search
 
+📺 Watch this recipe explained in the video [Find The Right Item Using The cy.within Command Or The Parent Selector](https://youtu.be/YpbkEBE42QI).
+
 <!-- fiddle Limit the DOM search -->
 
 Notice that we have the same item "Apples" in both lists. How do we confirm the "Apples" in the second list of all products?
