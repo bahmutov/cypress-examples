@@ -323,6 +323,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - CSS selectors `:last-of-type` and `:first-of-type` [example](./recipes/last-of-type.md)
 - [cy.within does not retry](./recipes/within-does-not-retry.md)
 - confirm that elements with a [`data-` attribute also have the `href` attribute](./recipes/every-element-has-href.md)
+- [Use cy.within To Limit The DOM Search](./recipes/use-within.md)
 
 ### Working with the window object
 
