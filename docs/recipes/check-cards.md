@@ -9,6 +9,8 @@ Let's refactor this code to make it:
 - simpler
 - correct
 
+📺 You can watch the refactoring in the video [Check Cards Test Refactoring](https://youtu.be/lWWzQFt-0BI).
+
 ## Step 1 initial code
 
 <!-- fiddle Check cards: initial code -->
