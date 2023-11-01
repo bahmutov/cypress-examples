@@ -2022,6 +2022,30 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/change-text.html"
   },
   {
+    "title": "Check Cards Check cards: initial code",
+    "filename": "docs/recipes/check-cards.md",
+    "created": "2023-11-01T14:14:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-cards.html"
+  },
+  {
+    "title": "Check Cards Check cards: shorter code",
+    "filename": "docs/recipes/check-cards.md",
+    "created": "2023-11-01T14:14:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-cards.html"
+  },
+  {
+    "title": "Check Cards Check cards: use precise selectors",
+    "filename": "docs/recipes/check-cards.md",
+    "created": "2023-11-01T14:14:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-cards.html"
+  },
+  {
+    "title": "Check Cards Check cards: go from data to UI",
+    "filename": "docs/recipes/check-cards.md",
+    "created": "2023-11-01T14:14:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-cards.html"
+  },
+  {
     "title": "Check console logs Check at the end of the test",
     "filename": "docs/recipes/check-console-logs.md",
     "created": "2022-08-03T14:07:33.000Z",
