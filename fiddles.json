@@ -1266,12 +1266,6 @@
     "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
   },
   {
-    "title": "Querying cy.get Case-insensitive selectors",
-    "filename": "docs/commands/querying.md",
-    "created": "2020-04-11T18:04:43.000Z",
-    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
-  },
-  {
     "title": "Querying contains returns an element",
     "filename": "docs/commands/querying.md",
     "created": "2020-04-11T18:04:43.000Z",
@@ -2008,6 +2002,18 @@
     "filename": "docs/recipes/called-with-object.md",
     "created": "2023-01-06T15:48:46.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/called-with-object.html"
+  },
+  {
+    "title": "Case-insensitive attribute selectors Case-insensitive selectors",
+    "filename": "docs/recipes/case-insensitive-query.md",
+    "created": "2023-11-13T16:27:09.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/case-insensitive-query.html"
+  },
+  {
+    "title": "Case-insensitive attribute selectors Dynamic dom and retrying",
+    "filename": "docs/recipes/case-insensitive-query.md",
+    "created": "2023-11-13T16:27:09.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/case-insensitive-query.html"
   },
   {
     "title": "Chain of commands Cannot add commands out of band",
