@@ -4,7 +4,7 @@ Read [CSS case insensitive attribute selector](https://weekendprojects.dev/posts
 
 ## Static DOM
 
-<!-- fiddle cy.get / Case-insensitive selectors -->
+<!-- fiddle Case-insensitive selectors -->
 
 ```html
 <button class="btn-PRIMARY">Green</button>
