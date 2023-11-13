@@ -325,6 +325,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - confirm that elements with a [`data-` attribute also have the `href` attribute](./recipes/every-element-has-href.md)
 - [Use cy.within To Limit The DOM Search](./recipes/use-within.md)
 - [Check the cards refactoring](./recipes/check-cards.md)
+- [Case-insensitive query recipe](./recipes/case-insensitive-query.md)
 
 ### Working with the window object
 
