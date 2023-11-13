@@ -1022,22 +1022,7 @@ cy.contains('#carousel li', 'kiwi')
 
 ### Case-insensitive attribute selectors
 
-Read [CSS case insensitive attribute selector](https://weekendprojects.dev/posts/css-case-insensitive-selector/).
-
-🚨 Does not work, see [#25304](https://github.com/cypress-io/cypress/issues/25304)
-
-<!-- fiddle.skip cy.get / Case-insensitive selectors -->
-
-```html
-<button class="btn-PRIMARY">Green</button>
-<button class="btn-primary">Red</button>
-```
-
-```js
-cy.get('button[class=btn-primary i]').should('have.length', 2)
-```
-
-<!-- fiddle-end -->
+See the [Case-insensitive query recipe](../recipes/case-insensitive-query.md)
 
 ## [cy.contains()](https://on.cypress.io/contains)
 
