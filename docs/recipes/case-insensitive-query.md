@@ -2,6 +2,8 @@
 
 Read [CSS case insensitive attribute selector](https://weekendprojects.dev/posts/css-case-insensitive-selector/).
 
+📺 Watch the solution in the video [Case-Insensitive Query With Retries](https://youtu.be/XQ6GQSmF5_I).
+
 ## Static DOM
 
 <!-- fiddle Case-insensitive selectors -->
