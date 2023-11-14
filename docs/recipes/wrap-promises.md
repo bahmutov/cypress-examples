@@ -75,6 +75,8 @@ cy.wrap(['foo', 'bar', 'baz'])
 
 ## Use the returned selector to click
 
+📺 Watch this example explained in the video [Wrap Asynchronous Function](https://youtu.be/28Q9aJFpgwQ).
+
 Let's say we want to get the element selector to find and then click. Let's say the user wants to do something like this:
 
 ```js
