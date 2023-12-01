@@ -2994,6 +2994,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-script.html"
   },
   {
+    "title": "Handle Telephone Links Confirm the telephone protocol URL",
+    "filename": "docs/recipes/handle-telephone-link.md",
+    "created": "2023-12-01T17:39:57.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/handle-telephone-link.html"
+  },
+  {
     "title": "Table Has Row Table has row with randomly picked id",
     "filename": "docs/recipes/has-row.md",
     "created": "2023-05-15T11:45:35.000Z",
