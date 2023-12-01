@@ -2,6 +2,8 @@
 
 <!-- fiddle Confirm the telephone protocol URL -->
 
+📺 Watch this recipe explained in the video [Handle Telephone And Other Custom Protocol Links In Cypress Tests](https://youtu.be/iktuHW7tyiY).
+
 ```html
 <a id="call" href="">Call ☎️</a>
 ```
@@ -20,6 +22,8 @@
     })
 </script>
 ```
+
+Our test can register the current browser as a handler for `tel:...` links using the `navigator.registerProtocolHandler` method call. Then opening the link will simply change the app's HREF to the phone number, while the test can continue.
 
 ```js
 cy.window()
