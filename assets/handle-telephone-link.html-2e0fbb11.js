@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-a8af7858","path":"/recipes/handle-telephone-link.html","title":"Handle Telephone Links","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1701452514000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/handle-telephone-link.md"}');export{e as data};
