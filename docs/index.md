@@ -326,6 +326,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Use cy.within To Limit The DOM Search](./recipes/use-within.md)
 - [Check the cards refactoring](./recipes/check-cards.md)
 - [Case-insensitive query recipe](./recipes/case-insensitive-query.md)
+- [Handle telephone links](./recipes/handle-telephone-link.md) like `tel:+1...`
 
 ### Working with the window object
 
