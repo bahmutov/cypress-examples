@@ -4,6 +4,9 @@
 
 ```html
 <a id="call" href="">Call ☎️</a>
+```
+
+```html hide
 <script>
   const numberToCall = '+1 222-333-4567'
   document
@@ -27,6 +30,7 @@ cy.get('a#call').click()
 cy.window()
   .its('navigator.href')
   .should('equal', 'tel:+12223334567')
+cy.contains('a#call', '+1 222-333-4567')
 ```
 
 <!-- fiddle-end -->
