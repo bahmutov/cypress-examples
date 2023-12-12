@@ -84,3 +84,56 @@ cy.get('#name')
 ```
 
 <!-- fiddle-end -->
+
+## Parse RGB with retries
+
+<!-- fiddle Parse RGB with retries -->
+
+```html hide
+<style>
+  .information {
+    color: red;
+  }
+</style>
+<div id="information">Joe</div>
+<script>
+  const el = document.getElementById('information')
+  el.addEventListener('click', () => {
+    setTimeout(() => {
+      el.classList.add('information')
+    }, 1500)
+  })
+</script>
+```
+
+Using query commands from [cypress-map](https://github.com/bahmutov/cypress-map) to write a retryable chain that queries the element's color, parses it into RGB array of numbers, and confirms the numbers.
+
+**Tip:** using [named capturing groups](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group)
+
+**Note:** we cannot extract the color using an assertion `should('have.css', 'color')` because it will break retrying the entire chain.
+
+```js
+cy.get('#information').click()
+cy.get('#information')
+  .invoke('css', 'color')
+  .invoke(
+    'match',
+    /^rgb\((?<red>\d+)\, (?<green>\d+)\, (?<blue>\d+)\)$/,
+  )
+  .print()
+  .its('groups')
+  // transform each string into a number
+  .map({
+    red: Number,
+    green: Number,
+    blue: Number,
+  })
+  .print()
+  .should('deep.equal', {
+    red: 255,
+    green: 0,
+    blue: 0,
+  })
+```
+
+<!-- fiddle-end -->
