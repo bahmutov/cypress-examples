@@ -2154,6 +2154,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/color.html"
   },
   {
+    "title": "Color Parse RGB with retries",
+    "filename": "docs/recipes/color.md",
+    "created": "2023-03-27T13:56:23.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/color.html"
+  },
+  {
     "title": "Combine lists Combine lists",
     "filename": "docs/recipes/combine-lists.md",
     "created": "2022-04-19T15:13:35.000Z",
