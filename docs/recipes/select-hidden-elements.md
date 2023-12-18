@@ -1,5 +1,7 @@
 # Select Hidden Or Visible Elements
 
+📺 Watch this recipe explained in the video [Select Hidden Or Visible Elements](https://youtu.be/Tm3y2Lw2Jic).
+
 ## Select hidden elements
 
 <!-- fiddle Select hidden elements -->
