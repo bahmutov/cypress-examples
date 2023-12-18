@@ -327,6 +327,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Check the cards refactoring](./recipes/check-cards.md)
 - [Case-insensitive query recipe](./recipes/case-insensitive-query.md)
 - [Handle telephone links](./recipes/handle-telephone-link.md) like `tel:+1...`
+- [Select hidden or visible elements](./recipes/select-hidden-elements.md)
 
 ### Working with the window object
 
