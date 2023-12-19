@@ -87,6 +87,8 @@ cy.get('#name')
 
 ## Parse RGB with retries
 
+📺 Watch this example explained in the video [Parse RGB Color With Retries](https://youtu.be/Cn3Xx4w0OeQ).
+
 <!-- fiddle Parse RGB with retries -->
 
 ```html hide
