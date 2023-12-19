@@ -336,6 +336,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Stub the `window.print` method [recipe](./recipes/stub-window-print.md)
 - Stub the `window.open` method [recipe](./recipes/window-open.md)
 - Testing the `mailto` [HREF anchor links](./recipes/mailto-link.md)
+- [Element with ID property](./recipes/element-with-id.md) is automatically linked to the `window` object
 
 ### Selecting an option
 
