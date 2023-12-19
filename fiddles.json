@@ -2646,6 +2646,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/element-hides.html"
   },
   {
+    "title": "Element With ID Element with ID is a window property",
+    "filename": "docs/recipes/element-with-id.md",
+    "created": "2023-12-19T17:24:05.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/element-with-id.html"
+  },
+  {
     "title": "Empty assertion Empty string",
     "filename": "docs/recipes/empty-assertion.md",
     "created": "2022-11-10T14:02:52.000Z",
