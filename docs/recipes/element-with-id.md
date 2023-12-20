@@ -1,5 +1,7 @@
 # Element With ID
 
+📺 Watch this recipe in the video [DOM Element With ID Becomes Property Of The Window Object](https://youtu.be/mdNuuKl2dpw).
+
 <!-- fiddle Element with ID is a window property -->
 
 If a DOM element has an `id=<name>` property, the element is automatically linked to the `window` object as its `name` property. Cypress tests run in the browser, thus we can confirm it by comparing the queried element reference to the `window[name]` reference.
