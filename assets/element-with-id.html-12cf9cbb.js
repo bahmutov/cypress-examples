@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-cbf8e72a","path":"/recipes/element-with-id.html","title":"Element With ID","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1703093805000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/element-with-id.md"}');export{e as data};
