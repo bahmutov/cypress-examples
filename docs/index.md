@@ -328,6 +328,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Case-insensitive query recipe](./recipes/case-insensitive-query.md)
 - [Handle telephone links](./recipes/handle-telephone-link.md) like `tel:+1...`
 - [Select hidden or visible elements](./recipes/select-hidden-elements.md)
+- [Loading element inside an element](./recipes/loader-inside.md) and the accidentally passing test
 
 ### Working with the window object
 
