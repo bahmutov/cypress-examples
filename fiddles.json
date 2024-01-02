@@ -3300,6 +3300,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/list-item-with-text-tag.html"
   },
   {
+    "title": "Loader Inside An Element Loader inside an element",
+    "filename": "docs/recipes/loader-inside.md",
+    "created": "2024-01-02T19:11:57.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/loader-inside.html"
+  },
+  {
     "title": "Mailto HREF link Test HREF mailto link",
     "filename": "docs/recipes/mailto-link.md",
     "created": "2023-01-27T18:29:02.000Z",
