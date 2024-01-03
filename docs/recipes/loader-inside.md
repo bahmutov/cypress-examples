@@ -6,6 +6,8 @@ The test passes, but it might fail on CI. Even when it passes, it passes acciden
 
 **Solution:** always check if the page has finished loading before checking the elements and its contents. You should also use more positive assertions rather than negative assertions.
 
+**Learn more** by reading the blog posts [Negative Assertions And Missing States](https://glebbahmutov.com/blog/negative-assertions-and-missing-states/) and [Be Careful With Negative Assertions](https://glebbahmutov.com/blog/negative-assertions/).
+
 ```js skip
 // 🚨 BAD PRACTICE
 cy.get('#el').should('not.be.empty')
