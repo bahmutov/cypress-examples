@@ -39,8 +39,15 @@ cy.contains('#el', 'text X')
 ```
 
 ```js
-cy.log('checking') // .wait(0, { log: false })
+cy.log('checking')
+```
+
+The following commands might pass locally but fail on CI because of the race condition between the app and the test
+
+```js skip
 cy.get('#person').should('be.visible').and('not.be.empty')
 ```
+
+![Failure on CI](./pics/fail-on-ci.png)
 
 <!-- fiddle-end -->
