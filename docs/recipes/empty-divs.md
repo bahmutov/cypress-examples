@@ -90,6 +90,62 @@ cy.get('#me')
 
 <!-- fiddle-end -->
 
+## Whitespace with self-closing child
+
+<!-- fiddle Whitespace with self-closing child -->
+
+Notice that even though the parent element has no children (the child element is removed), it is still _not empty_.
+
+```html
+<div id="parent"><div id="child" /></div>
+```
+
+```js app
+document.getElementById('child').remove()
+```
+
+```js
+cy.get('#parent').should('not.be.empty')
+```
+
+The removed child element leaves empty space inside the parent HTML element.
+
+![Empty element still has whitespace](./pics/empty.png)
+
+Instead of checking completely empty element we can check its properties:
+
+```js
+cy.get('#parent').should('have.prop', 'childElementCount', 0)
+cy.get('#parent').should('have.prop', 'innerText', '')
+```
+
+<!-- fiddle-end -->
+
+## Whitespace with closing tag child
+
+<!-- fiddle Whitespace with closing tag child -->
+
+This child element has the explicit closing tag `<div id="child"></div>`
+
+```html
+<div id="parent"><div id="child"></div></div>
+```
+
+```js app
+document.getElementById('child').remove()
+```
+
+Removing this element leaves _no whitespace_ in the parent element.
+
+```js
+cy.get('#parent')
+  .should('be.empty')
+  .and('have.prop', 'childElementCount', 0)
+  .and('have.prop', 'innerText', '')
+```
+
+<!-- fiddle-end -->
+
 ## See also
 
 - [Empty assertions](./empty-assertion.md)
