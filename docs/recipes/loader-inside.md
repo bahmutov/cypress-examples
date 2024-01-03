@@ -17,9 +17,7 @@ cy.contains('#el', 'text X')
 ```
 
 ```html
-<div id="person">
-  <div id="loading" />
-</div>
+<div id="person"><div id="loading"></div></div>
 ```
 
 ```css hide
@@ -49,5 +47,12 @@ cy.get('#person').should('be.visible').and('not.be.empty')
 ```
 
 ![Failure on CI](./pics/fail-on-ci.png)
+
+Instead, let's confirm the loader goes away and the element is empty.
+
+```js
+cy.get('#loading').should('not.exist')
+cy.get('#person').should('not.be.visible').and('be.empty')
+```
 
 <!-- fiddle-end -->
