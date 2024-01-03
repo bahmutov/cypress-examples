@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-4ea269f4","path":"/recipes/loader-inside.html","title":"Loader Inside An Element","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1704247411000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":4}]},"filePathRelative":"recipes/loader-inside.md"}');export{e as data};
