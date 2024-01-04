@@ -320,6 +320,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - catch any [extra elements](./recipes/no-extras.md) appearing between the expected states
 - [validate email](./recipes/validate-email.md) using an input element
 - check the [number of elements](./recipes/number-of-elements.md) various scenarios
+- check the [number of children](./recipes/number-of-children.md)
 - CSS selectors `:last-of-type` and `:first-of-type` [example](./recipes/last-of-type.md)
 - [cy.within does not retry](./recipes/within-does-not-retry.md)
 - confirm that elements with a [`data-` attribute also have the `href` attribute](./recipes/every-element-has-href.md)

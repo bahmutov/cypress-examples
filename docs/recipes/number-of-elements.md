@@ -456,4 +456,5 @@ cy.get('ul#fruits li, ul#fruits [data-cy=zero-state]').then(
 ## See also
 
 - [Number of rows](./number-of-rows.md)
+- [Number of children](./number-of-children.md)
 - 📝 blog post [Shrink The Time Gap](https://glebbahmutov.com/blog/shrink-the-time-gap/)
