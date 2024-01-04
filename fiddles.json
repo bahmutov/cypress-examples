@@ -3066,6 +3066,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/image-loaded.html"
   },
   {
+    "title": "Image Has Loaded Check multiple images",
+    "filename": "docs/recipes/image-loaded.md",
+    "created": "2022-02-28T21:09:49.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/image-loaded.html"
+  },
+  {
     "title": "Input Element Clears NaN Value Input clears NaN value",
     "filename": "docs/recipes/input-clears-nan.md",
     "created": "2022-07-06T18:15:55.000Z",
