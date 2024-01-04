@@ -22,15 +22,21 @@ cy.get('#loads')
   .should('be.visible')
   .and('have.prop', 'naturalWidth')
   .should('be.greaterThan', 0)
+// Alternative: use cy.invoke to get the image property
+cy.get('#loads')
+  .invoke('prop', 'naturalWidth')
+  .should('be.greaterThan', 0)
 ```
 
 <!-- fiddle-end -->
 
-Watch the video [Check If An Image Loads](https://youtu.be/R79ai463xIM).
+📺 Watch the video [Check If An Image Loads](https://youtu.be/R79ai463xIM).
 
 ## Multiple images
 
 Let's verify that all images load. We want to go through the images and report all images that do not load.
+
+📺 Watch this example in the video [Image Has Loaded](https://youtu.be/uJF2tnxN1dk).
 
 <!-- fiddle Check multiple images -->
 
