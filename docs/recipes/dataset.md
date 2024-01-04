@@ -119,6 +119,31 @@ We can even map some property values to convert them before the assertion. For e
 
 <!-- fiddle-end -->
 
+## List of elements
+
+Let's confirm the data attributes from a list of elements. For example, let's confirm the `data-product-id` for every list element.
+
+<!-- fiddle List of elements -->
+
+```html
+<ul class="a-list" data-list-type="products">
+  <li data-product-id="001">Product A</li>
+  <li data-product-id="002">Product B</li>
+  <li data-product-id="003">Product C</li>
+</ul>
+```
+
+```js
+cy.get('.a-list')
+  .should('have.attr', 'data-list-type', 'products')
+  .children('li')
+  // cy.map comes from cypress-map plugin
+  .map('dataset.productId')
+  .should('deep.equal', ['001', '002', '003'])
+```
+
+<!-- fiddle-end -->
+
 ## See also
 
 - [Using data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)
