@@ -2454,6 +2454,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/dataset.html"
   },
   {
+    "title": "Dataset HTML attributes List of elements",
+    "filename": "docs/recipes/dataset.md",
+    "created": "2023-04-10T14:19:29.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/dataset.html"
+  },
+  {
     "title": "Debug cy.get and cy.contains commands The selector should be escaped",
     "filename": "docs/recipes/debug-cy-get-contains.md",
     "created": "2023-02-10T01:12:17.000Z",
@@ -3061,6 +3067,12 @@
   },
   {
     "title": "Image Has Loaded Image has loaded",
+    "filename": "docs/recipes/image-loaded.md",
+    "created": "2022-02-28T21:09:49.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/image-loaded.html"
+  },
+  {
+    "title": "Image Has Loaded Check multiple images",
     "filename": "docs/recipes/image-loaded.md",
     "created": "2022-02-28T21:09:49.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/image-loaded.html"
