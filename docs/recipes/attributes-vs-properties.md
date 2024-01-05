@@ -4,6 +4,8 @@ Sometimes I use `cy.get('...').should('have.attr', '...')` and sometimes I use `
 
 What is the difference?
 
+📺 Watch this recipe explained in the video [Attributes Vs Properties](https://youtu.be/48fmryvaTNE).
+
 An HTML element on the page has _attributes_ which are always string values:
 
 <!-- fiddle Attributes vs properties -->
