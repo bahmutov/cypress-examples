@@ -193,7 +193,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Wait for data](./recipes/wait-for-data.md) to be set
 - [Return value from .within() command](./recipes/return-value-from-within.md)
 - [Confirm an attribute of an element](./recipes/confirm-attribute.md)
-- [Click a single random element](./recipes/click-random-element.md) or multiple checkboxes
 - [Number of rows matches a number in an element](./recipes/number-of-rows.md)
 - [Find elements with subelements](./recipes/find-elements-with-subelements.md)
 - [Confirm the sorted lists](./recipes/sorted-list.md)
@@ -212,7 +211,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Collect headings from the page](./recipes/collect-headings.md) and save as a JSON file
 - Querying [SVG example](./recipes/svg-example.md)
 - [SVG Loader goes away example](./recipes/svg-loader.md)
-- Find and confirm the list of [labels for checked checkboxes](./recipes/labels-for-checkboxes.md)
 - Confirm the input element [trims spaces](./recipes/input-trims-spaces.md)
 - Completely replace `cy.then` command with [`cy.later` command](./recipes/replace-cy-then-command.md)
 - Get the [HTML comment DOM node](./recipes/get-html-comment.md)
@@ -257,7 +255,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Pick even, odd, or custom index elements](./recipes/filter-elements.md) using jQuery pseudo-classes like `:even`, `:odd`, `eq()`, `gt()`, and `lt()`
 - [Input value matching a regular expression](./recipes/input-value.md)
 - [Select by attribute](./recipes/select-by-attribute.md) examples
-- Check only the [enabled checkboxes](./recipes/check-enabled-checkboxes.md)
 - Confirm the [input element has a value](./recipes/input-has-value.md)
 - [Array includes another array](./recipes/array-includes-another-array.md)
 - Get the element's text [without text from a child element](./recipes/skip-child.md)
@@ -307,7 +304,6 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - get the [sum of numbers](./recipes/sum-of-numbers.md) avoiding pyramid of Doom
 - build-in [existence assertion](./recipes/existence-assertion.md)
 - [cy.contains and regular expressions](./recipes/contains-regular-expression.md)
-- check the [first N checkboxes](./recipes/check-n-boxes.md)
 - store intermediate values using [should callback](./recipes/store-values-using-should.md)
 - confirm the event handler was [triggered just once](./recipes/event-sent-once.md)
 - count [each number](./recipes/count-each-number.md) after clicking a button
@@ -348,6 +344,13 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Assert the selected value or multiple values](recipes/selected-value.md) in a `<select>` element
 - [Select an item by id](./recipes/select-value-by-id.md)
 - [Select an invalid option](./recipes/select-invalid-option.md) to reach the error-handling case
+
+### Testing checkboxes
+
+- [Click a single random element](./recipes/click-random-element.md) or multiple checkboxes
+- Find and confirm the list of [labels for checked checkboxes](./recipes/labels-for-checkboxes.md)
+- Check only the [enabled checkboxes](./recipes/check-enabled-checkboxes.md)
+- check the [first N checkboxes](./recipes/check-n-boxes.md)
 
 ### Working with forms
 
