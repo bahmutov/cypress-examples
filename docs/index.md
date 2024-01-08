@@ -351,6 +351,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Find and confirm the list of [labels for checked checkboxes](./recipes/labels-for-checkboxes.md)
 - Check only the [enabled checkboxes](./recipes/check-enabled-checkboxes.md)
 - check the [first N checkboxes](./recipes/check-n-boxes.md)
+- check and verify [all checkboxes](./recipes/check-all.md)
 
 ### Working with forms
 
