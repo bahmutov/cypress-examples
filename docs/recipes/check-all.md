@@ -18,15 +18,31 @@
 </form>
 ```
 
+Let's confirm there are two unchecked boxes and one checked one.
+
+```js
+cy.get(':checkbox:checked').should('have.length', 1)
+cy.get(':checkbox:not(:checked)').should('have.length', 2)
+```
+
 If some of the checkboxes are checked, the assertion `be.checked` passes.
 
 ```js
 cy.get(':checkbox').should('have.length', 3).and('be.checked')
 ```
 
-Let's check all checkboxes. If the checkbox is checked already, `cy.check` continues.
+Let's check all checkboxes. We can go through the boxes one by one
 
 ```js
+cy.get(':checkbox').each(($check) => {
+  cy.wrap($check).check()
+})
+```
+
+Or we can just do `.check()` on all of them. If the checkbox is checked already, `cy.check` continues.
+
+```js
+cy.log('**check all at once**')
 cy.get(':checkbox').check()
 // Let's confirm _each_ checkbox is checked.
 cy.get(':checkbox').each(($check, k) => {
