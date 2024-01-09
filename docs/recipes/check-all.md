@@ -1,5 +1,7 @@
 # Check All Checkboxes
 
+📺 Watch this recipe explained in the video [Check All Boxes](https://youtu.be/s7qFSFa4eT8).
+
 <!-- fiddle Check all checkboxes -->
 
 ```html
