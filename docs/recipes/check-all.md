@@ -61,4 +61,12 @@ cy.get(':checkbox')
   .should('deep.equal', ['orange', 'apple', 'banana'])
 ```
 
+Let's uncheck all boxes
+
+```js
+cy.get(':checkbox').uncheck()
+// confirm all boxes are unchecked
+cy.get(':checkbox').should('not.be.checked')
+```
+
 <!-- fiddle-end -->
