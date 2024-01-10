@@ -1,5 +1,7 @@
 # Check All Checkboxes
 
+## Test and check boxes
+
 📺 Watch this recipe explained in the video [Check All Boxes](https://youtu.be/s7qFSFa4eT8).
 
 <!-- fiddle Check all checkboxes -->
@@ -69,6 +71,57 @@ Let's uncheck all boxes
 cy.get(':checkbox').uncheck()
 // confirm all boxes are unchecked
 cy.get(':checkbox').should('not.be.checked')
+```
+
+<!-- fiddle-end -->
+
+## Checkboxes with confirmations
+
+Imagine that the application asks the user to confirm before checking the box. You click on the "Apple" checkbox and it pops the window `confirm` dialog with the question "Turn apple on?". Let's confirm the the `confirm` is asked correctly.
+
+<!-- fiddle Check boxes with confirmation popups -->
+
+```html hide
+<form id="fruit">
+  <input type="checkbox" value="orange" id="orange" />
+  <label for="orange">Orange</label>
+  <input
+    type="checkbox"
+    value="apple"
+    id="apple"
+    checked="checked"
+  />
+  <label for="apple">Apple</label>
+  <input type="checkbox" value="banana" id="banana" />
+  <label for="banana">Banana</label>
+</form>
+<script>
+  Cypress.$(':checkbox').on('change', (e) => {
+    if (e.target.checked) {
+      if (!confirm(`Turn ${e.target.value} on?`)) {
+        e.target.checked = false
+      }
+    }
+  })
+</script>
+```
+
+```js
+// stub the "confirm" method to always return true
+cy.window().then((window) => {
+  cy.stub(window, 'confirm').returns(true).as('confirm')
+})
+// check each unchecked box one by one
+cy.get(':checkbox:not(:checked)').each(($box) => {
+  cy.wrap($box).check()
+  // confirm the "window.confirm" stub was called
+  // with the expected message
+  const value = $box.attr('value')
+  cy.get('@confirm').should(
+    'have.been.calledWith',
+    `Turn ${value} on?`,
+  )
+})
 ```
 
 <!-- fiddle-end -->
