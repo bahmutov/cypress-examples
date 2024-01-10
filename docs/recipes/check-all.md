@@ -79,6 +79,8 @@ cy.get(':checkbox').should('not.be.checked')
 
 Imagine that the application asks the user to confirm before checking the box. You click on the "Apple" checkbox and it pops the window `confirm` dialog with the question "Turn apple on?". Let's confirm the the `confirm` is asked correctly.
 
+📺 Watch this recipe in the video [Checkboxes With Confirmation](https://youtu.be/ir3pNnyGVM4).
+
 <!-- fiddle Check boxes with confirmation popups -->
 
 ```html hide
