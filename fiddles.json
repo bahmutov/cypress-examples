@@ -1932,6 +1932,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/add-list-item.html"
   },
   {
+    "title": "Add To jQuery Subject Expand the jQuery object with new elements",
+    "filename": "docs/recipes/add-to-jquery-subject.md",
+    "created": "2024-01-11T16:35:15.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/add-to-jquery-subject.html"
+  },
+  {
     "title": "Multiple aliases Multiple aliases",
     "filename": "docs/recipes/aliases.md",
     "created": "2021-12-31T19:59:02.000Z",
