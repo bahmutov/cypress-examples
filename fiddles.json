@@ -3792,6 +3792,24 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/pseudo-selectors.html"
   },
   {
+    "title": "Query Multiple Elements Use a single should callback that queries the page",
+    "filename": "docs/recipes/query-multiple-elements.md",
+    "created": "2024-01-11T19:26:31.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/query-multiple-elements.html"
+  },
+  {
+    "title": "Query Multiple Elements Waiting for each number to load",
+    "filename": "docs/recipes/query-multiple-elements.md",
+    "created": "2024-01-11T19:26:31.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/query-multiple-elements.html"
+  },
+  {
+    "title": "Query Multiple Elements Using getInOrder and a should callback",
+    "filename": "docs/recipes/query-multiple-elements.md",
+    "created": "2024-01-11T19:26:31.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/query-multiple-elements.html"
+  },
+  {
     "title": "Remove Element Remove the found element",
     "filename": "docs/recipes/remove-element.md",
     "created": "2022-10-17T13:55:01.000Z",
