@@ -327,6 +327,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Select hidden or visible elements](./recipes/select-hidden-elements.md)
 - [Loading element inside an element](./recipes/loader-inside.md) and the accidentally passing test
 - [Attributes vs Properties](./recipes/attributes-vs-properties.md)
+- [Add elements to jQuery subject](./recipes/add-to-jquery-subject.md)
 
 ### Working with the window object
 

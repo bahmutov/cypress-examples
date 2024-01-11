@@ -1,5 +1,7 @@
 # Multiple aliases
 
+## Remove pyramid of callbacks
+
 Let's get several elements at once using [aliases](../commands/aliasing.md) and `this` properties.
 
 <!-- fiddle Multiple aliases -->
