@@ -4350,6 +4350,36 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/type-one-by-one.html"
   },
   {
+    "title": "Use Sanity Assertions Compare two static numbers",
+    "filename": "docs/recipes/use-sanity-assertions.md",
+    "created": "2024-01-12T19:00:54.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/use-sanity-assertions.html"
+  },
+  {
+    "title": "Use Sanity Assertions Handle NaN",
+    "filename": "docs/recipes/use-sanity-assertions.md",
+    "created": "2024-01-12T19:00:54.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/use-sanity-assertions.html"
+  },
+  {
+    "title": "Use Sanity Assertions Compare two dynamic numbers",
+    "filename": "docs/recipes/use-sanity-assertions.md",
+    "created": "2024-01-12T19:00:54.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/use-sanity-assertions.html"
+  },
+  {
+    "title": "Use Sanity Assertions Beware of negative assertions",
+    "filename": "docs/recipes/use-sanity-assertions.md",
+    "created": "2024-01-12T19:00:54.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/use-sanity-assertions.html"
+  },
+  {
+    "title": "Use Sanity Assertions Check known numbers",
+    "filename": "docs/recipes/use-sanity-assertions.md",
+    "created": "2024-01-12T19:00:54.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/use-sanity-assertions.html"
+  },
+  {
     "title": "Use cy.within To Limit The DOM Search Limit the DOM search",
     "filename": "docs/recipes/use-within.md",
     "created": "2023-10-25T14:53:16.000Z",
