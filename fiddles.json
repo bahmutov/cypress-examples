@@ -4356,6 +4356,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/use-sanity-assertions.html"
   },
   {
+    "title": "Use Sanity Assertions Handle NaN",
+    "filename": "docs/recipes/use-sanity-assertions.md",
+    "created": "2024-01-12T19:00:54.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/use-sanity-assertions.html"
+  },
+  {
     "title": "Use Sanity Assertions Compare two dynamic numbers",
     "filename": "docs/recipes/use-sanity-assertions.md",
     "created": "2024-01-12T19:00:54.000Z",
