@@ -37,6 +37,68 @@ cy.get('#received')
 
 Great. Get an element, grab its text, convert to a number, then use [cy.contains](https://on.cypress.io/contains) to find the other matching number. Notice that we did not check anything in the test above, except the existence of the elements `#received` and `#spent` using the built-in existence assertion in the [cy.get](https://on.cypress.io/get) and [cy.contains](https://on.cypress.io/contains) commands. This can cause problems.
 
+## Handle NaN
+
+When converting text to a number, it is not enough to check using `should be a number` assertion. If the text cannot be converted to a number, we get a `NaN` value, which _is a number_. We need to either explicitly check against `NaN` or use an arithmetic assertion like `greaterThan(...)` or `within(...)`.
+
+<!-- fiddle Handle NaN -->
+
+```css hide
+.dollars::before {
+  content: '$';
+  margin-right: 2px;
+}
+.dollars {
+  width: 6rem;
+  text-align: right;
+}
+```
+
+```html hide
+<div>Received <span id="received" class="dollars">--</span></div>
+<div>Spent <span id="spent" class="dollars">NaN</span></div>
+```
+
+```js
+// 🚨 DOES NOT WORK
+// passes accidentally with "NaN" value
+cy.get('#received')
+  .invoke('text')
+  .then(Number)
+  .should('be.a', 'Number')
+  .then((received) => {
+    cy.contains('#spent', String(received))
+  })
+```
+
+```js skip
+// ✅ Check if the subject is a number
+// and is not a NaN
+cy.get('#received')
+  .invoke('text')
+  .then(Number)
+  .should('be.a', 'Number')
+  .and('not.be.a.NaN')
+  .then((received) => {
+    cy.contains('#spent', String(received))
+  })
+```
+
+```js skip
+// ✅ Make the sanity check more precise
+// "within" assertion confirms the subject
+// is a number and is within min and max
+cy.get('#received')
+  .invoke('text')
+  .then(Number)
+  .should('be.within', 0, 1000)
+  .then((received) => {
+    cy.contains('#spent', String(received))
+  })
+```
+
+<!-- fiddle-end -->
+
 ## Dynamic data
 
 Imagine the same application is loading the two numbers after a delay. Initial the app shows `--` and later switches this text to the actual values.
