@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-57ea42b9","path":"/recipes/add-to-jquery-subject.html","title":"Add To jQuery Subject","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1705072652000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/add-to-jquery-subject.md"}');export{e as data};
