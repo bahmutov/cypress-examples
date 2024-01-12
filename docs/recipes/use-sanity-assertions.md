@@ -2,6 +2,8 @@
 
 Imagine we need to confirm that the two numbers shown on the page match. There are multiple ways we could write this test.
 
+📺 Watch this recipe explained in the video [Use Sanity Assertions](https://youtu.be/Tv0turO2ywA).
+
 ## Compare two numbers
 
 <!-- fiddle Compare two static numbers -->
