@@ -1,20 +1,23 @@
 # Add To jQuery Subject
 
-If we find elements on the page using a query like `cy.get`, we can add more elements by invoking the [add](https://api.jquery.com/add/) method.
+📺 Watch this video explained in the video [Select DOM Elements Using CSS OR Selector](https://youtu.be/Pn-nGTHiCds).
+
+If we find elements on the page using a query like `cy.get`, we can add more elements by invoking the [$.add](https://api.jquery.com/add/) jQuery method.
 
 <!-- fiddle Expand the jQuery object with new elements -->
 
+```css hide
+.dollars::before {
+  content: '$';
+  margin-right: 2px;
+}
+.dollars {
+  width: 6rem;
+  text-align: right;
+}
+```
+
 ```html
-<style>
-  .dollars::before {
-    content: '$';
-    margin-right: 2px;
-  }
-  .dollars {
-    width: 6rem;
-    text-align: right;
-  }
-</style>
 <div>
   Subtotal <span id="subtotal" class="dollars">20.15</span>
 </div>
