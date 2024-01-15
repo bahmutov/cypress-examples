@@ -270,11 +270,12 @@ Notice how the attribute value is quoted by Cypress, yet the value inside has a 
 
 ```js
 // select the option ourselves by setting its attribute
-cy.get(
-  `#my-data option[value=${Cypress.$.escapeSelector(
-    'present"',
-  )}]`,
-).invoke('attr', 'selected', 'selected')
+const escaped = Cypress.$.escapeSelector('present"')
+cy.get(`#my-data option[value=${escaped}]`).invoke(
+  'attr',
+  'selected',
+  'selected',
+)
 // check the selected value
 cy.get('#my-data option:selected').should(
   'have.text',
