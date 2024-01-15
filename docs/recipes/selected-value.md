@@ -232,3 +232,55 @@ cy.get('select#name option:selected').should(
 ```
 
 <!-- fiddle-end -->
+
+## Escape value to select
+
+Imagine that the option values come from an external source we cannot control. The values might have characters like double quotes `"` that will make selecting the value difficult. In the example below, the value we want is `present"`. Can we select it?
+
+<!-- fiddle Escape value to select -->
+
+```html
+<select class="select" name="my-data" id="my-data">
+  <option value=""></option>
+  <option value="empty">empty</option>
+  <option value='present"'>First column</option>
+  <option value="main_column">main_column</option>
+  <option value="mesto">mesto</option>
+  <option value="akce">akce</option>
+</select>
+```
+
+Initially the first option is selected
+
+```js
+cy.get('#my-data option:selected').should('have.value', '')
+```
+
+![Option with a troublesome value we want to select](./pics/select.png)
+
+Let's select the option with the value that has `"` character. We cannot use the standard `cy.select` command since it does not escape the value / text:
+
+```js skip
+// 🚨 DOES NOT WORK
+// Syntax error, unrecognized expression: option[value="present""]
+cy.get('#my-data').select('present"')
+```
+
+Notice how the attribute value is quoted by Cypress, yet the value inside has a quote, breaking the string. We need to form the selector ourselves and select the option. We can escape all invalid characters in the text using the `Cypress.$.escapeSelector` function. Then we can mark the option as selected by setting the attribute `selected`.
+
+```js
+// select the option ourselves by setting its attribute
+cy.get(
+  `#my-data option[value=${Cypress.$.escapeSelector(
+    'present"',
+  )}]`,
+).invoke('attr', 'selected', 'selected')
+// check the selected value
+cy.get('#my-data option:selected').should(
+  'have.text',
+  'First column',
+)
+cy.get('#my-data').should('have.value', 'present"')
+```
+
+<!-- fiddle-end -->
