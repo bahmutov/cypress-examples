@@ -329,6 +329,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Attributes vs Properties](./recipes/attributes-vs-properties.md)
 - [add elements to jQuery subject](./recipes/add-to-jquery-subject.md)
 - [query multiple elements in order](./recipes/query-multiple-elements.md)
+- using the [input labels property](./recipes/confirm-labels.md)
 
 ### Working with the window object
 
