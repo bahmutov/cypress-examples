@@ -61,6 +61,16 @@ Imagine the application developers are condition A/B experiments to see which "A
 </script>
 ```
 
+At the start, both dialogs are present in the document.
+
+```js
+cy.get('dialog')
+  .should('have.length', 2)
+  .each(($dialog, k) => {
+    expect($dialog, `dialog ${k + 1}`).to.not.be.visible
+  })
+```
+
 ```js
 cy.get('button#continue').click()
 // to make the demo clear, delay by 1 second
@@ -75,11 +85,11 @@ cy.get('dialog#accept1:visible, dialog#accept2:visible').then(
       cy.log('**dialog 1**')
       cy.get('#accept1box').check()
       cy.get('button#accept1close').click()
-      cy.get('#dialog#accept1').should('not.exist')
+      cy.get('dialog#accept1').should('not.be.visible')
     } else {
       cy.log('**dialog 2**')
       cy.get('button#accept2close').click()
-      cy.get('#dialog#accept2').should('not.exist')
+      cy.get('dialog#accept2').should('not.be.visible')
     }
   },
 )
