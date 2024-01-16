@@ -4,6 +4,8 @@
 
 Imagine the application developers are condition A/B experiments to see which "Accept terms and conditions" [HTML Dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) works best.
 
+📺 Watch this recipe explained in the video [Conditional Accept](https://youtu.be/lyiGPnJ2-3g).
+
 <!-- fiddle Accept one of the two dialogs -->
 
 ```html hide
@@ -87,8 +89,12 @@ cy.get('dialog#accept1:visible, dialog#accept2:visible').then(
     if ($dialog.is('#accept1')) {
       // deal with the first dialog
       cy.log('**dialog 1**')
-      cy.get('#accept1box').check()
-      cy.get('button#accept1close').click()
+      // we can limit our commands to the dialog
+      // by using cy.within command
+      cy.get('dialog#accept1').within(() => {
+        cy.get('#accept1box').check()
+        cy.get('button#accept1close').click()
+      })
       cy.get('dialog#accept1').should('not.be.visible')
     } else {
       // deal with the second dialog
