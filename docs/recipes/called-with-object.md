@@ -14,7 +14,7 @@ If the method is called with primitive arguments like strings, then it is simple
 <script>
   setTimeout(() => {
     console.log('Hello', 'world')
-  }, 10)
+  }, 100)
 </script>
 ```
 
@@ -39,7 +39,7 @@ If the method is called with an object, you can do two things: either yield it t
 <script>
   setTimeout(() => {
     console.log('User %o', { id: 123, name: 'Joe' })
-  }, 10)
+  }, 100)
 </script>
 ```
 
@@ -89,7 +89,7 @@ If we know some properties of the object, we can use `deep.include` assertion on
 <script>
   setTimeout(() => {
     console.log('User %o', { id: 123, name: 'Joe' })
-  }, 10)
+  }, 100)
 </script>
 ```
 
