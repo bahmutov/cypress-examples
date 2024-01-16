@@ -2370,6 +2370,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/confirm-attribute.html"
   },
   {
+    "title": "Confirm Labels Confirm one input has a label",
+    "filename": "docs/recipes/confirm-labels.md",
+    "created": "2024-01-16T20:19:31.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/confirm-labels.html"
+  },
+  {
+    "title": "Confirm Labels Confirm each input has a label",
+    "filename": "docs/recipes/confirm-labels.md",
+    "created": "2024-01-16T20:19:31.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/confirm-labels.html"
+  },
+  {
     "title": "cy.contains and regular expressions Ignore case",
     "filename": "docs/recipes/contains-regular-expression.md",
     "created": "2023-06-05T10:40:09.000Z",
