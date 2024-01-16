@@ -71,22 +71,27 @@ cy.get('dialog')
   })
 ```
 
+Let's see how we can accept the terms and conditions, no matter which of the two dialogs opens.
+
 ```js
 cy.get('button#continue').click()
 // to make the demo clear, delay by 1 second
 cy.wait(1000, { log: false })
-// get the visible dialog
+// get the visible dialog using OR CSS selector
+// with jQuery ":visible" additional selector
 cy.get('dialog#accept1:visible, dialog#accept2:visible').then(
   ($dialog) => {
     expect($dialog, 'one element only').to.have.length(1)
     // we know the dialog is one of the two possible dialogs
     // use https://api.jquery.com/is/ to determine which flow to use
     if ($dialog.is('#accept1')) {
+      // deal with the first dialog
       cy.log('**dialog 1**')
       cy.get('#accept1box').check()
       cy.get('button#accept1close').click()
       cy.get('dialog#accept1').should('not.be.visible')
     } else {
+      // deal with the second dialog
       cy.log('**dialog 2**')
       cy.get('button#accept2close').click()
       cy.get('dialog#accept2').should('not.be.visible')
