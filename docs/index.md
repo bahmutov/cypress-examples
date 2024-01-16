@@ -368,6 +368,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 ### Cypress secrets
 
 - [Conditional testing](./recipes/conditional-testing.md)
+- [Conditional accept](./recipes/conditional-accept.md)
 - Avoid "Mixing async and sync code" by controlling the [value the code yields](./recipes/yield-value.md)
 - [use sanity assertions](./recipes/use-sanity-assertions.md)
 
