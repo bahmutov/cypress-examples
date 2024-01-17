@@ -38,11 +38,23 @@ Let's go through every `input` element and confirm it has a corresponding label.
 <label for="mango">I ❤️ mango</label><br />
 ```
 
+We can confirm that each input element has a matching label by going through the inputs, taking the id attribute, and looking for the label element with the matching `for=...` attribute.
+
+```js
+cy.log('**query the attribute**')
+cy.get('input').each(($input) => {
+  const id = $input.attr('id')
+  cy.get(`label[for="${id}"]`)
+})
+```
+
+Alternative: use the `labels` property of the `input` element.
+
 ```js
 cy.get('input').each(($input) => {
   const element = $input[0]
   expect(element).to.have.property('labels')
-  expect(element.labels).to.not.be.empty
+  expect(element.labels.length).to.be.greaterThan(0)
 })
 ```
 
