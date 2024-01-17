@@ -2,6 +2,8 @@
 
 Can you confirm that the subtotal + tax + tip is equal to the total displayed on the page? What if the page is loading dynamically? Elements might be added after a delay. An element might show `--` before showing the real number?
 
+📺 Watch this recipe explained in the video [Query Multiple Elements In Order](https://youtu.be/3BjwoG1dW7o).
+
 ## Use a single should callback
 
 <!-- fiddle Use a single should callback that queries the page -->
