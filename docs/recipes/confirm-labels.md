@@ -2,6 +2,8 @@
 
 HTML `<input>` elements have `labels` property with the linked `<label>` elements for that input (if any). The labels are kept inside a `NodeList`. Let's see how we can use the labels in our tests.
 
+📺 Watch this recipe explained in the video [Confirm Input Labels Using DOM Element Property](https://youtu.be/MvPd_NR11hU).
+
 ## Confirm a single label
 
 <!-- fiddle Confirm one input has a label -->
@@ -51,6 +53,7 @@ cy.get('input').each(($input) => {
 Alternative: use the `labels` property of the `input` element.
 
 ```js
+cy.log('**use labels property**')
 cy.get('input').each(($input) => {
   const element = $input[0]
   expect(element).to.have.property('labels')
