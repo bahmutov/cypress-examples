@@ -372,6 +372,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Conditional accept](./recipes/conditional-accept.md)
 - Avoid "Mixing async and sync code" by controlling the [value the code yields](./recipes/yield-value.md)
 - [use sanity assertions](./recipes/use-sanity-assertions.md)
+- wait for the element [to be stable](./recipes/element-is-stable.md)
 
 ### Working with network
 
