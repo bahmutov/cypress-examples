@@ -80,3 +80,29 @@ If we click on the command, we see the details in the DevTools console
 ![stableText command](./pics/stable-command.png)
 
 <!-- fiddle-end -->
+
+## Using cy.stable command
+
+My plugin [cypress-map](https://github.com/bahmutov/cypress-map) includes the `cy.stable` child query command.
+
+<!-- fiddle cy.stable / text does not change -->
+
+```html
+<div id="message">--</div>
+<script>
+  setTimeout(() => {
+    document.getElementById('message').innerText = 'loading...'
+  }, 1000)
+  setTimeout(() => {
+    document.getElementById('message').innerText = 'Hello'
+  }, 2000)
+</script>
+```
+
+```js
+cy.get('#message')
+  .stable('text', 1500)
+  .should('have.text', 'Hello')
+```
+
+<!-- fiddle-end -->
