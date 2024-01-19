@@ -2700,6 +2700,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/element-is-stable.html"
   },
   {
+    "title": "Element Is Stable cy.stable text does not change",
+    "filename": "docs/recipes/element-is-stable.md",
+    "created": "2024-01-18T00:03:12.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/element-is-stable.html"
+  },
+  {
     "title": "Element With ID Element with ID is a window property",
     "filename": "docs/recipes/element-with-id.md",
     "created": "2023-12-19T17:24:05.000Z",
