@@ -77,6 +77,48 @@ Watch the video [Click A Random Element](https://youtu.be/CHpIu0HucKw).
 
 <!-- fiddle-end -->
 
+## Using the cy.sample command
+
+Alternatively, we can use the `cy.sample` command from [cypress-map](https://github.com/bahmutov/cypress-map). That will make it very simple to sample a collection of elements.
+
+<!-- fiddle Using the cy.sample command -->
+
+```css
+.clicked {
+  font-weight: bold;
+}
+```
+
+```html
+<ul id="items"></ul>
+<script>
+  setTimeout(() => {
+    // add elements to the list
+    const list = document.getElementById('items')
+    list.innerHTML = `
+      <li class="an-item">One</li>
+      <li class="an-item">Two</li>
+      <li class="an-item">Three</li>
+      <li class="an-item">Four</li>
+      <li class="an-item">Five</li>
+    `
+    list.addEventListener('click', (e) => {
+      e.target.classList.add('clicked')
+    })
+  }, 1000)
+</script>
+```
+
+Let's use the `cy.sample` child query command.
+
+```js
+cy.get('#items li').sample().click()
+// confirm the click
+cy.get('#items .clicked').should('have.length', 1)
+```
+
+<!-- fiddle-end -->
+
 ## Click several checkboxes
 
 Let's say we have multiple checkboxes and we want to pick three of then randomly.
