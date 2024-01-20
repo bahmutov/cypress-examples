@@ -2142,6 +2142,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/click-random-element.html"
   },
   {
+    "title": "Click a random element Using the cy.sample command",
+    "filename": "docs/recipes/click-random-element.md",
+    "created": "2021-07-13T12:31:47.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/click-random-element.html"
+  },
+  {
     "title": "Click a random element Click several checkboxes",
     "filename": "docs/recipes/click-random-element.md",
     "created": "2021-07-13T12:31:47.000Z",
