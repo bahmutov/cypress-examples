@@ -2,6 +2,8 @@
 
 Sometimes the element changes and we want to continue testing it once it stabilizes. Let's see how we can write such tests.
 
+📺 Watch this recipe explained in the video [Element's Text Becomes Stable](https://youtu.be/GrRUnQ2r7Wk).
+
 ## The text does not change for N milliseconds
 
 <!-- fiddle Element text does not change -->
@@ -30,6 +32,10 @@ Cypress.Commands.addQuery('stableText', (ms = 1000) => {
   let started = null
   let initialText = null
   let initialAt = null
+  // return a function that receives an element
+  // from the previous command and can check its text
+  // if it not stable yet, just throw an error
+  // to force the parent command to retry
   return ($el) => {
     if (initialText === null) {
       started = +new Date()
