@@ -116,6 +116,8 @@ cy.get('#shipping')
 
 Here is another example that has flake due to the outer element being replaced. The test clicks a button inside the element, and the entire element is replaced.
 
+📺 watch this example explained in the video [Split The cy.within Block](https://youtu.be/0axmFrUzNc0).
+
 <!-- fiddle Split the cy.within block -->
 
 ```html hide
