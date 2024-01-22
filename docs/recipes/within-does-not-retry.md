@@ -74,7 +74,7 @@ The `cy.get('#shipping').within()` locks the commands inside to search a _stale_
 
 To solve the problem with the parent element and `cy.within`, first confirm the application has finished rendering. Then use `cy.within` to work with the contents inside a stable element.
 
-<!-- fiddle Split cy.within -->
+<!-- fiddle Retry before the cy.within -->
 
 ```html hide
 <div id="main">
@@ -108,6 +108,74 @@ cy.get('#shipping')
   .within(() => {
     cy.contains('#cost', '$2.99')
   })
+```
+
+<!-- fiddle-end -->
+
+## Outer element is replaced after a click
+
+Here is another example that has flake due to the outer element being replaced. The test clicks a button inside the element, and the entire element is replaced.
+
+<!-- fiddle Split the cy.within block -->
+
+```html hide
+<div id="main">
+  <div id="shipping">
+    <button id="load">Load shipping info</button>
+  </div>
+</div>
+<script>
+  document
+    .getElementById('load')
+    .addEventListener('click', () => {
+      setTimeout(() => {
+        document.getElementById('main').innerHTML = `
+          <div id="shipping">
+            <div class="shipped">Shipped 1 day ago</div>
+          </div>
+        `
+      }, 1000)
+    })
+</script>
+```
+
+First, let's try putting everything into a single `cy.within` block. The code below will time out and fail, even though you can see the "Shipped 1 day ago" text appearing.
+
+```js skip
+// 🚨 DOES NOT WORK
+// since it never "sees" the new "#shipping" element
+cy.get('#shipping')
+  .should('be.visible')
+  .within(() => {
+    cy.contains('button', 'Load shipping').click()
+    cy.contains('.shipped', 'Shipped')
+  })
+```
+
+The problem is the `.should('be.visible')` assertion that "fixes" the element to the initial reference due to the bug [#25134](https://github.com/cypress-io/cypress/issues/25134). It does not allow `cy.get` to retry finding the new `#shipping` element that the application put into the document.
+
+**Solution 1:** remove the `be.visible` assertion. Then `cy.get` + `cy.within` can retry (I know, I know, the docs say `cy.within` does not retry, but seems its parent queries _do retry_ in practice).
+
+```js skip
+// solution 1: remove the assertion
+// to let cy.get + cy.within to retry
+cy.get('#shipping').within(() => {
+  cy.contains('button', 'Load shipping').click()
+  cy.contains('.shipped', 'Shipped')
+})
+```
+
+**Solution 2:** split the `cy.within` to the commands before the action and after.
+
+```js
+// solution 2: split the cy.within block
+cy.get('#shipping')
+  .should('be.visible')
+  .within(() => {
+    cy.contains('button', 'Load shipping').click()
+  })
+// assert the shipped message in a separate query
+cy.get('#shipping').contains('.shipped', 'Shipped')
 ```
 
 <!-- fiddle-end -->
