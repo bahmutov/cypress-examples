@@ -4092,6 +4092,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/selected-value.html"
   },
   {
+    "title": "Selected value Check the element before changing the attribute",
+    "filename": "docs/recipes/selected-value.md",
+    "created": "2021-01-12T18:29:27.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/selected-value.html"
+  },
+  {
     "title": "Selectors Select an element by id",
     "filename": "docs/recipes/selectors.md",
     "created": "2022-09-23T12:51:33.000Z",
