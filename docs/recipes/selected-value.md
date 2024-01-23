@@ -271,11 +271,60 @@ Notice how the attribute value is quoted by Cypress, yet the value inside has a 
 ```js
 // select the option ourselves by setting its attribute
 const escaped = Cypress.$.escapeSelector('present"')
-cy.get(`#my-data option[value=${escaped}]`).invoke(
+cy.get(`#my-data option[value="${escaped}"]`).invoke(
   'attr',
   'selected',
   'selected',
 )
+// check the selected value
+cy.get('#my-data option:selected').should(
+  'have.text',
+  'First column',
+)
+cy.get('#my-data').should('have.value', 'present"')
+```
+
+<!-- fiddle-end -->
+
+## Select when the element becomes actionable
+
+<!-- fiddle Check the element before changing the attribute -->
+
+```html hide
+<select class="select" name="my-data" id="my-data" disabled>
+  <option value=""></option>
+  <option value="empty">empty</option>
+  <option value='present"' disabled>First column</option>
+  <option value="main_column">main_column</option>
+  <option value="mesto">mesto</option>
+  <option value="akce">akce</option>
+</select>
+<script>
+  setTimeout(() => {
+    document
+      .getElementById('my-data')
+      .removeAttribute('disabled')
+  }, 1000)
+  setTimeout(() => {
+    document
+      .querySelector('#my-data option[value=present\\"]')
+      .removeAttribute('disabled')
+  }, 2000)
+</script>
+```
+
+We need to ensure both the `<select>` element and the `<option>` we want to pick are enabled. If we don't then our test does not do what the human user can do. We can attach assertion to the queries.
+
+```js
+// select the option ourselves by setting its attribute
+const escaped = Cypress.$.escapeSelector('present"')
+// wait until the select element becomes actionable
+cy.get('#my-data')
+  .should('be.visible')
+  .and('be.enabled')
+  .find(`option[value="${escaped}"]`)
+  .should('be.enabled')
+  .invoke('attr', 'selected', 'selected')
 // check the selected value
 cy.get('#my-data option:selected').should(
   'have.text',
