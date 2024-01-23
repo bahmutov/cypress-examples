@@ -237,6 +237,8 @@ cy.get('select#name option:selected').should(
 
 Imagine that the option values come from an external source we cannot control. The values might have characters like double quotes `"` that will make selecting the value difficult. In the example below, the value we want is `present"`. Can we select it?
 
+📺 Watch this example explained in the video [Select An Option Manually By Setting An Attribute](https://youtu.be/sxCZKuAdTGY).
+
 <!-- fiddle Escape value to select -->
 
 ```html
