@@ -183,7 +183,9 @@ cy.get('#nested [name=info] [name=firstName]').should(
 
 ## Checkbox
 
-Checkbox elements also have a value
+Checkbox elements also have a value.
+
+📺 Watch the checkbox value explained in the video [Checkbox Input Element Value](https://youtu.be/15F5cK4V-vo).
 
 ### Default checkbox value
 
