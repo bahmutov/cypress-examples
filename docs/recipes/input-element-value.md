@@ -1,5 +1,7 @@
 # Input element value
 
+📺 Watch this recipe explained in [Input Element Value](https://youtu.be/1gmudzqQWFg).
+
 ## Regular HTML elements with text
 
 To get the text of an element, you invoke the `text()` method provided by jQuery.
@@ -126,6 +128,20 @@ cy.get('[name=quantity]')
   .should((valueAsString) => {
     expect(Number(valueAsString)).to.be.within(40, 50)
   })
+```
+
+We don't have to convert the string value to a number ourselves. Numeric input elements have the `valueAsNumber` property which we can get using `have.prop` assertion or via `prop('valueAsNumber')` call
+
+```js
+// yield the property "valueAsNumber"
+cy.get('[name=quantity]')
+  .should('have.prop', 'valueAsNumber')
+  // yields the value
+  .should('be.within', 40, 50)
+// yield the property "valueAsNumber"
+cy.get('[name=quantity]')
+  .invoke('prop', 'valueAsNumber')
+  .should('be.closeTo', 40, 3)
 ```
 
 <!-- fiddle-end -->
