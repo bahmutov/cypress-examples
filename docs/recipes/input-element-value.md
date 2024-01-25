@@ -118,6 +118,16 @@ cy.get('[name=quantity]').should('have.value', '42')
 cy.get('[name=quantity]').should('have.value', 42)
 ```
 
+You can confirm the value is between two limits by using a `should(callback)`
+
+```js
+cy.get('[name=quantity]')
+  .invoke('val')
+  .should((valueAsString) => {
+    expect(Number(valueAsString)).to.be.within(40, 50)
+  })
+```
+
 <!-- fiddle-end -->
 
 ## Nested element
