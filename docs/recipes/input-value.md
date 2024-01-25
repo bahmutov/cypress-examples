@@ -1,5 +1,7 @@
 # Input value
 
+## Value matching a regular expression
+
 You can use the `have.prop` assertion to grab the text value and yield it to the next assertion.
 
 <!-- fiddle The text input value matching a regular expression -->

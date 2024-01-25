@@ -1,5 +1,7 @@
 # Input element value
 
+## Regular HTML elements with text
+
 To get the text of an element, you invoke the `text()` method provided by jQuery.
 
 <!-- fiddle Element text -->
@@ -144,5 +146,82 @@ cy.get('#nested [name=info] [name=firstName]').should(
   'Joe',
 )
 ```
+
+<!-- fiddle-end -->
+
+## Checkbox
+
+Checkbox elements also have a value
+
+### Default checkbox value
+
+<!-- fiddle Default checkbox value -->
+
+```html
+<label for="accept-terms">Accept terms</label>
+<input type="checkbox" id="accept-terms" />
+```
+
+```js
+// by default the checkbox has value "on"
+// even if unchecked
+cy.get('#accept-terms')
+  .should('have.value', 'on')
+  .and('not.be.checked')
+  .check()
+  .should('have.value', 'on')
+  .and('be.checked')
+```
+
+<!-- fiddle-end -->
+
+### Custom checkbox value
+
+<!-- fiddle Custom checkbox value -->
+
+```html
+<label for="accept-terms">Accept terms</label>
+<input type="checkbox" id="accept-terms" value="accepted" />
+```
+
+```js
+cy.get('#accept-terms')
+  .should('have.value', 'accepted')
+  .and('not.be.checked')
+  .check()
+  .should('have.value', 'accepted')
+  .and('be.checked')
+```
+
+<!-- fiddle-end -->
+
+## Input value is set
+
+Let's confirm that the text input element has the empty initial value and then sets some value. Maybe the application is loading the previously entered values, and there is a delay between the input appearing and the values set.
+
+<!-- fiddle Input value is set after a delay -->
+
+```html hide
+<input id="account-name" type="text" />
+<script>
+  setTimeout(() => {
+    document.getElementById('account-name').value =
+      'Default bank'
+  }, 1000)
+</script>
+```
+
+Let's confirm that the input element gets some value.
+
+```js
+// initially the value is empty
+cy.get('#account-name').should('have.value', '')
+// at some point it will be a non-empty string
+// both cy.get and cy.invoke are queries and retry
+// until the assertion "not.equal" passes
+cy.get('#account-name').invoke('val').should('not.equal', '')
+```
+
+**Tip:** if you are loading the input element's value, please disable the element and enable it after the value has been loaded. Otherwise, the user might be tempted to enter new value just to lose their work.
 
 <!-- fiddle-end -->
