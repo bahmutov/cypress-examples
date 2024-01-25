@@ -18,6 +18,12 @@ cy.get('#name')
   .should('equal', 'Joe Smith')
 ```
 
+You can also use [Chai-jQuery](https://www.chaijs.com/plugins/chai-jquery/) assertion `have.text` to confirm the element's text content.
+
+```js
+cy.get('#name').should('have.text', 'Joe Smith')
+```
+
 <!-- fiddle-end -->
 
 ## A text input
