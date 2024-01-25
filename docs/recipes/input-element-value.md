@@ -225,3 +225,35 @@ cy.get('#account-name').invoke('val').should('not.equal', '')
 **Tip:** if you are loading the input element's value, please disable the element and enable it after the value has been loaded. Otherwise, the user might be tempted to enter new value just to lose their work.
 
 <!-- fiddle-end -->
+
+## Input value is set and is stable
+
+Imagine the input element shows several values before showing the "final" value that you want. Maybe it is flashing "loading..." initially. To check if the element's value goes unchanged for N milliseconds, use the `cy.stable` command from the [cypress-map](https://github.com/bahmutov/cypress-map) plugin.
+
+<!-- fiddle Input value is set and is stable -->
+
+```html hide
+<input id="account-name" type="text" value="..." />
+<script>
+  setTimeout(() => {
+    document.getElementById('account-name').value = 'loading...'
+  }, 500)
+
+  setTimeout(() => {
+    document.getElementById('account-name').value =
+      'Default bank'
+  }, 1000)
+</script>
+```
+
+```js
+cy.get('#account-name').stable('value')
+// let's confirm the value, we can set timeout to zero
+// because the element's value has been set for some time
+cy.get('#account-name', { timeout: 0 }).should(
+  'have.value',
+  'Default bank',
+)
+```
+
+<!-- fiddle-end -->
