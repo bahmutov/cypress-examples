@@ -3174,6 +3174,24 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/input-element-value.html"
   },
   {
+    "title": "Input element value Default checkbox value",
+    "filename": "docs/recipes/input-element-value.md",
+    "created": "2022-04-18T19:06:16.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-element-value.html"
+  },
+  {
+    "title": "Input element value Custom checkbox value",
+    "filename": "docs/recipes/input-element-value.md",
+    "created": "2022-04-18T19:06:16.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-element-value.html"
+  },
+  {
+    "title": "Input element value Input value is set after a delay",
+    "filename": "docs/recipes/input-element-value.md",
+    "created": "2022-04-18T19:06:16.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-element-value.html"
+  },
+  {
     "title": "Input has value Input element has some value",
     "filename": "docs/recipes/input-has-value.md",
     "created": "2022-08-31T21:27:10.000Z",
