@@ -2154,6 +2154,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/click-random-element.html"
   },
   {
+    "title": "Click a random element Removed class from sampled elements",
+    "filename": "docs/recipes/click-random-element.md",
+    "created": "2021-07-13T12:31:47.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/click-random-element.html"
+  },
+  {
     "title": "Collect Dom Values Example Collect DOM values",
     "filename": "docs/recipes/collect-dom.md",
     "created": "2022-12-13T00:29:45.000Z",
