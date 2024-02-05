@@ -178,6 +178,8 @@ Watch the video [Randomly Pick Two Checkboxes Out Of Four And Click On Them](htt
 
 Imagine all elements initially are hidden using class name "secret". We want to pick two random elements and reveal them.
 
+📺 Watch this example in the video [Remove Class From Sampled Elements](https://youtu.be/zB2LYB0yFwQ).
+
 ```css hide
 #names li {
   color: black;
