@@ -171,3 +171,43 @@ cy.get('#checkboxes input[type=checkbox]:checked')
 <!-- fiddle-end -->
 
 Watch the video [Randomly Pick Two Checkboxes Out Of Four And Click On Them](https://youtu.be/h8NfDFsgdW4).
+
+## Remove class from sampled elements
+
+<!-- fiddle Removed class from sampled elements -->
+
+Imagine all elements initially are hidden using class name "secret". We want to pick two random elements and reveal them.
+
+```css hide
+#names li {
+  color: black;
+  margin-bottom: 5px;
+}
+#names li.secret {
+  background-color: black;
+}
+```
+
+```html
+<h1>Secret names</h1>
+<ul id="names">
+  <li class="secret">Joe</li>
+  <li class="secret">Mervin</li>
+  <li class="secret">Anna</li>
+  <li class="secret">Spock</li>
+</ul>
+```
+
+Let's find all elements, then use `cy.sample` command from [cypress-map](https://github.com/bahmutov/cypress-map) to grab two random elements. Then we can invoke the jQuery method `removeClass` to show the names.
+
+```js
+cy.get('#names li')
+  // cy.sample commands comes from the cypress-map
+  .sample(2)
+  .invoke('removeClass', 'secret')
+// verify the the result
+cy.get('#names li:not(.secret)').should('have.length', 2)
+cy.get('#names li.secret').should('have.length', 2)
+```
+
+<!-- fiddle-end -->
