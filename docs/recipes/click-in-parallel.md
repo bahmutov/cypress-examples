@@ -24,7 +24,6 @@ Since the `click` causes the text "Finished", the test simply times out waiting 
   document
     .getElementById('doit')
     .addEventListener('click', () => {
-      console.log('onclick')
       setTimeout(() => {
         document.getElementById('output').innerText = 'Finished'
       }, 1000)
@@ -51,3 +50,37 @@ cy.document()
 <!-- fiddle-end -->
 
 **Note:** running jQuery `trigger('click')` command bypasses all Cypress actionability checks and runs immediately, without queueing up.
+
+## Using window properties
+
+The same test can be rewritten using window properties instead of `document.getElementById('doit')` method calls. Since every element with `id=xyz` is automatically a property of the window object `window.xyz`, we can write:
+
+<!-- fiddle Click in parallel using window properties -->
+
+```html hide
+<div id="output" />
+<button id="doit">Do it</button>
+<script>
+  window.doit.addEventListener('click', () => {
+    setTimeout(() => {
+      window.output.innerText = 'Finished'
+    }, 1000)
+  })
+</script>
+```
+
+Both the application code and the test code can use `window.xyz` method to access the DOM elements.
+
+```js
+// ✅ the right solution to waiting
+// while clicking on the button
+cy.window()
+  .its('doit')
+  .then(($btn) => {
+    cy.contains('Finished')
+    // immediately click on the button
+    $btn.trigger('click')
+  })
+```
+
+<!-- fiddle-end -->
