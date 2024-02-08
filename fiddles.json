@@ -2136,6 +2136,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/click-each-item.html"
   },
   {
+    "title": "Click in Parallel With The Cypress Command Click in parallel",
+    "filename": "docs/recipes/click-in-parallel.md",
+    "created": "2024-02-07T21:56:35.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/click-in-parallel.html"
+  },
+  {
+    "title": "Click in Parallel With The Cypress Command Click in parallel using window properties",
+    "filename": "docs/recipes/click-in-parallel.md",
+    "created": "2024-02-07T21:56:35.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/click-in-parallel.html"
+  },
+  {
     "title": "Click a random element Click a random element",
     "filename": "docs/recipes/click-random-element.md",
     "created": "2021-07-13T12:31:47.000Z",
