@@ -15,6 +15,8 @@ cy.contains('button', 'Do it').click()
 
 Since the `click` causes the text "Finished", the test simply times out waiting for the `cy.contains('Finished')` to pass. No one is there to click... Here are a couple of workarounds.
 
+📺 Watch this recipe explained at [Click In Parallel](https://youtu.be/SC6p0LTRg9Y).
+
 <!-- fiddle Click in parallel -->
 
 ```html hide
