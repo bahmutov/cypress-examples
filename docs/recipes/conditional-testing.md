@@ -237,6 +237,45 @@ cy.contains('#btn', 'Click Me').then(($btn) => {
 
 <!-- fiddle-end -->
 
+If you want, you can invoke the `$.is(':enabled')` method to check
+
+<!-- fiddle Invoke is enabled -->
+
+```html hide
+<div>
+  <p>
+    The button might be disabled
+    <button id="btn">Click Me</button>
+  </p>
+</div>
+<script>
+  const btn = document.getElementById('btn')
+  btn.addEventListener('click', function () {
+    btn.innerText = 'Clicked'
+  })
+
+  if (Math.random() < 0.5) {
+    btn.setAttribute('disabled', 'disabled')
+  }
+</script>
+```
+
+```js
+cy.contains('#btn', 'Click Me')
+  .invoke('is', ':enabled')
+  .then((enabled) => {
+    if (enabled) {
+      cy.contains('#btn', 'Click Me')
+        .click()
+        .should('have.text', 'Clicked')
+    } else {
+      cy.log('**not clicking**')
+    }
+  })
+```
+
+<!-- fiddle-end -->
+
 ## Click a button if a class is present
 
 Sometimes you want to click the button, but only if the element has a class
