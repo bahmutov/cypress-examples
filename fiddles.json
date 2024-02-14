@@ -2322,6 +2322,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
   },
   {
+    "title": "Conditional testing Invoke is enabled",
+    "filename": "docs/recipes/conditional-testing.md",
+    "created": "2021-01-15T17:43:22.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-testing.html"
+  },
+  {
     "title": "Conditional testing Click a button if a class is present",
     "filename": "docs/recipes/conditional-testing.md",
     "created": "2021-01-15T17:43:22.000Z",
