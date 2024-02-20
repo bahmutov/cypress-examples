@@ -237,7 +237,7 @@ cy.contains('#btn', 'Click Me').then(($btn) => {
 
 <!-- fiddle-end -->
 
-If you want, you can invoke the `$.is(':enabled')` method to check
+If you want, you can invoke the `$.is(':enabled')` method to check. 📺 Watch this recipe explained in the video [Check If A Button Is Enabled Before Clicking](https://youtu.be/F5uoYgCenFg).
 
 <!-- fiddle Invoke is enabled -->
 
