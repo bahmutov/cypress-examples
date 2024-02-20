@@ -54,7 +54,7 @@
     "chai-each": "^0.0.1",
     "chai-sorted": "^0.2.0",
     "common-tags": "1.8.0",
-    "cypress": "13.6.3",
+    "cypress": "13.6.5",
     "cypress-book": "1.5.0",
     "cypress-map": "^1.27.0",
     "cypress-markdown-preprocessor": "1.10.3",
