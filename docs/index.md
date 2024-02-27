@@ -330,6 +330,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [add elements to jQuery subject](./recipes/add-to-jquery-subject.md)
 - [query multiple elements in order](./recipes/query-multiple-elements.md)
 - using the [input labels property](./recipes/confirm-labels.md)
+- confirm the [element is detached](./recipes/element-detaches.md)
 
 ### Working with the window object
 
