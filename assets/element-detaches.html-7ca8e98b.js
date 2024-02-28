@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-a82ff2b8","path":"/recipes/element-detaches.html","title":"Element Detaches","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1709072343000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/element-detaches.md"}');export{e as data};
