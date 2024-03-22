@@ -71,7 +71,7 @@
     "shelljs": "0.8.4",
     "start-server-and-test": "2.0.3",
     "stop-only": "^3.3.1",
-    "vuepress": "2.0.0-beta.61",
+    "vuepress": "2.0.0-rc.9",
     "vuepress-plugin-clean-urls": "1.1.2"
   },
   "husky": {
