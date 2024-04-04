@@ -4428,6 +4428,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/table-column-order.html"
   },
   {
+    "title": "Get Table Cell Using Row and Column Indices Get the cell element using row and column",
+    "filename": "docs/recipes/table-row-and-column.md",
+    "created": "2024-04-04T19:17:45.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/table-row-and-column.html"
+  },
+  {
+    "title": "Get Table Cell Using Row and Column Indices Get the cell using a custom query",
+    "filename": "docs/recipes/table-row-and-column.md",
+    "created": "2024-04-04T19:17:45.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/table-row-and-column.html"
+  },
+  {
     "title": "Table update Table update",
     "filename": "docs/recipes/table-update.md",
     "created": "2021-04-19T20:43:38.000Z",
