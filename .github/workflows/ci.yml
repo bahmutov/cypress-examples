@@ -14,7 +14,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Print Node version 🖨️
         run: node -v
@@ -71,7 +71,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Print Node version 🖨️
         run: node -v
@@ -85,6 +85,9 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           runTests: false
+
+      - name: Check just the room md 🦷
+        run: npx markdown-link-check ./docs/index.md
 
       - name: Check links ⚓️
         run: npm run check:links
@@ -108,7 +111,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Print Node version 🖨️
         run: node -v
@@ -170,7 +173,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Print Node version 🖨️
         run: node -v
@@ -209,7 +212,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Print Node version 🖨️
         run: node -v
