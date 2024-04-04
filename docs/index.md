@@ -366,6 +366,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [jQuery form serializeArray method](./recipes/form-serialize-array.md)
 - [Map input fields to values](./recipes/map-input-values.md)
 - [Hide Input Fields Before Taking A Screenshot](./recipes/hide-input-fields.md)
+- confirm the [required attributes](./recipes/required-attributes.md)
 
 ### Cypress secrets
 
