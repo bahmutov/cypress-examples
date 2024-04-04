@@ -394,6 +394,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 
 ### Testing tables
 
+- get the table cell using [row and column indices](./recipes/table-row-and-column.md)
 - [Confirm the column index](./recipes/table-cell-index.md)
 - [Update table row with retries](./recipes/table-update.md)
 - [Table with prices](./recipes/table-with-prices.md) confirms the prices in every table row.
