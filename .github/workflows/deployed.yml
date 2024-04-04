@@ -22,12 +22,12 @@ jobs:
 
       # we need our scraping config, thus check out code
       - name: Checkout 🛎️
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           persist-credentials: false
 
       - name: Install dependencies 📦
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           # just perform install
           runTests: false
@@ -56,7 +56,7 @@ jobs:
         run: cat docs/**/*.js > docs/run-all-specs.js
 
       - name: Test deployed site 🧪💨
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           # we have already installed all dependencies above
           install: false
