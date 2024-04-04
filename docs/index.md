@@ -426,4 +426,4 @@ Some of the examples and the recipes listed here are explained through short vid
 
 ## The newsletter
 
-Every month I write and send a newsletter [Cypress Tips & Tricks](https://cypresstips.substack.com/) with a few main news and learning resources. You can subscribe, it is absolutely free.
+Every month I write and send a newsletter <a href="https://cypresstips.substack.com/">Cypress Tips & Tricks</a> with a few main news and learning resources. You can subscribe, it is absolutely free.
