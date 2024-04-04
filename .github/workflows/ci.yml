@@ -55,7 +55,7 @@ jobs:
       # TIP: we want to avoid uploading node_modules since it is SLOW
       # https://glebbahmutov.com/blog/parallel-cypress-tests-gh-action/
       - name: Save built folders 🆙
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: built
           path: |
@@ -77,7 +77,7 @@ jobs:
         run: node -v
 
       - name: Download built folders ⏬
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: built
 
@@ -87,7 +87,7 @@ jobs:
           runTests: false
 
       - name: Check just the room md 🦷
-        run: npx markdown-link-check ./docs/index.md
+        run: npx markdown-link-check --verbose ./docs/index.md
 
       - name: Check links ⚓️
         run: npm run check:links
@@ -117,7 +117,7 @@ jobs:
         run: node -v
 
       - name: Download built folders ⏬
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: built
 
@@ -179,7 +179,7 @@ jobs:
         run: node -v
 
       - name: Download built folders ⏬
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: built
 
@@ -218,7 +218,7 @@ jobs:
         run: node -v
 
       - name: Download built folders ⏬
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: built
 
