@@ -87,7 +87,7 @@ jobs:
           runTests: false
 
       - name: Check just the room md 🦷
-        run: npx markdown-link-check --verbose ./docs/index.md
+        run: npx markdown-link-check --config ./links-check-config.json --verbose ./docs/index.md
 
       - name: Check links ⚓️
         run: npm run check:links

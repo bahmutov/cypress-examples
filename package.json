@@ -13,7 +13,7 @@
     "precopy:fiddles": "npm run export:examples",
     "copy:fiddles": "cp fiddles.json public/cypress-examples",
     "postdocs:build": "npm run copy:fiddles",
-    "check:links": "find . -type f -name '*.md' ! -path './node_modules/*' | xargs -L1 npx markdown-link-check --quiet",
+    "check:links": "find . -type f -name '*.md' ! -path './node_modules/*' | xargs -L1 npx markdown-link-check --config ./links-check-config.json --quiet",
     "format": "prettier --write 'docs/**/*.md'",
     "format:extracted": "prettier --write 'docs/**/*.js' '!docs/.vuepress/**/*.js'",
     "stop-only": "stop-only --folder docs --skip docs/.vuepress",
