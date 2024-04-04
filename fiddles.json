@@ -3942,6 +3942,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/request-not-found.html"
   },
   {
+    "title": "Required Attributes required attributes",
+    "filename": "docs/recipes/required-attributes.md",
+    "created": "2024-04-04T18:11:57.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/required-attributes.html"
+  },
+  {
     "title": "Retry-ability Retry-ability element added to the DOM",
     "filename": "docs/recipes/retry-ability.md",
     "created": "2021-03-23T12:43:42.000Z",

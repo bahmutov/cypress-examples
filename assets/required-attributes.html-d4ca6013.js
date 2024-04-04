@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-0eb0e652","path":"/recipes/required-attributes.html","title":"Required Attributes","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1712254317000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/required-attributes.md"}');export{e as data};
