@@ -28,7 +28,8 @@ jobs:
         run: npm run export:examples
 
       - name: Commit changed JSON file 💾
-        uses: stefanzweifel/git-auto-commit-action@v4
+        # https://github.com/stefanzweifel/git-auto-commit-action
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Updated fiddles.json
           branch: master
