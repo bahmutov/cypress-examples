@@ -1,5 +1,7 @@
 # Required Attributes
 
+📺 Watch this recipe explained in the video [Required Input Attributes](https://youtu.be/9PA6NGuTW3g).
+
 ## Find inputs with required attribute
 
 Imagine a form with multiple input fields. Some of them are optional, some are required. Let's confirm that a certain list of input fields has elements with the `required` attribute.
