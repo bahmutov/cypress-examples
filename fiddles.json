@@ -2994,6 +2994,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/form-serialize-array.html"
   },
   {
+    "title": "Form Submit Button Fill the required inputs before submit",
+    "filename": "docs/recipes/form-submit-button.md",
+    "created": "2024-04-05T16:19:45.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/form-submit-button.html"
+  },
+  {
     "title": "Form validation \"Form validation\"",
     "filename": "docs/recipes/form-validation.md",
     "created": "2021-02-04T02:38:52.000Z",
