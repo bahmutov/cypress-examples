@@ -367,6 +367,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Map input fields to values](./recipes/map-input-values.md)
 - [Hide Input Fields Before Taking A Screenshot](./recipes/hide-input-fields.md)
 - confirm the [required attributes](./recipes/required-attributes.md)
+- entering only the [required form fields](./recipes/form-submit-button.md)
 
 ### Cypress secrets
 
