@@ -16,8 +16,10 @@ The following code block will cause an error "mixing up async and sync code"
 cy.get('#person')
   .invoke('text')
   .then((text) => {
+    // INCORRECT: mixing a Cypress command
+    // and a return value
     cy.log('text', text)
-    cy.wrap(text.split(' ')[1])
+    return text.split(' ')[1]
   })
   .should('equal', 'Smith')
 ```
@@ -32,6 +34,8 @@ Printing using `cy.log` can unexpectedly cause an error, because you do not assu
 cy.get('#person')
   .invoke('text')
   .then((text) => {
+    // INCORRECT: mixing a Cypress command
+    // and a return value
     cy.wrap('Anna')
     return text.split(' ')[1]
   })
