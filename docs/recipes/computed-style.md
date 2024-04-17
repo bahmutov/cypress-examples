@@ -38,7 +38,7 @@ cy.get('a')
 ```js skip
 cy.get('selector')
   .then(($el) => {
-    return window.getComputedStyle(el)
+    return window.getComputedStyle($el[0])
   })
   .invoke('getPropertyValue', 'text-decoration')
 // yields the string
