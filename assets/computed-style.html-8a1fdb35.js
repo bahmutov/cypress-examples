@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-b0362cf6","path":"/recipes/computed-style.html","title":"Computed style","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1713383535000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":4}]},"filePathRelative":"recipes/computed-style.md"}');export{e as data};
