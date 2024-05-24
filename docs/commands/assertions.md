@@ -1268,8 +1268,12 @@ cy.contains('#newlines-example', 'hello, there!')
 
 <!-- fiddle Implicit Assertions / Text / .should() - html entities -->
 
+Plus apostrophes, single quotes, and back ticks.
+
 ```html
 <span id="y-value">&radic;y</span>
+<div id="instrument">Tom&apos;s fiddle</div>
+<div id="restaurant">Joe`s Pizza</div>
 ```
 
 ```js
@@ -1282,7 +1286,14 @@ cy.get('#y-value')
   .and('contain', '√y')
 ```
 
-Unfortunately, there is no standard built-in JavaScript method for converting HTML entities like `&radic;` into the browser text. Thus the test can encode it itself to use in the assertion.
+Unfortunately, there is no standard built-in JavaScript method for converting HTML entities like `&radic;` into the browser text.
+
+```js skip
+// 🚨 WILL NOT WORK
+cy.contains('#y-valid', '√y')
+```
+
+Thus the test can encode it itself to use in the assertion.
 
 ```js
 // a utility for converting HTML entities into text
@@ -1291,7 +1302,15 @@ const encode = (s) => {
   p.innerHTML = s // encodes
   return p.innerText
 }
+// ✅ WORKS
 cy.get('#y-value').should('have.text', encode('&radic;y'))
+// apostrophe &apos; encoded as a single quote "'"
+cy.contains('#instrument', "Tom's fiddle")
+// backtick
+cy.contains('#restaurant', 'Joe`s Pizza').should(
+  'include.text',
+  'Joe`s',
+)
 ```
 
 <!-- fiddle-end -->
