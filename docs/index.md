@@ -188,6 +188,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Get the inner text of a list of elements](./recipes/get-text-list.md)
 - [Retry-ability examples](./recipes/retry-ability.md)
   - [Count retries](./recipes/retry-ability.md#count-retries)
+  - [cy.then Callback With Retries Inside](./recipes/then-with-retry-inside.md)
 - [Get multiple fields at once](./recipes/get-multiple-fields.md)
 - [Find an object in the array](./recipes/find-object.md)
 - [Wait for data](./recipes/wait-for-data.md) to be set
