@@ -2,6 +2,8 @@
 
 The [cy.then](https://on.cypress.io/then) command does not retry its callback function, but the code inside the callback can still use normal Cypress commands with retries. Here is an example.
 
+📺 Watch this recipe explained in the video [cy.then Callback With Retries Inside](https://youtu.be/eQJyz2UEMvY)
+
 <!-- fiddle Cy.then with retries callback -->
 
 ```css hide
