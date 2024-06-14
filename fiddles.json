@@ -4038,6 +4038,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/return-value-from-within.html"
   },
   {
+    "title": "Root Element Attributes Root element attributes",
+    "filename": "docs/recipes/root-attributes.md",
+    "created": "2024-06-14T17:21:39.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/root-attributes.html"
+  },
+  {
     "title": "Same Text Two text elements",
     "filename": "docs/recipes/same-text.md",
     "created": "2023-05-25T13:58:25.000Z",
