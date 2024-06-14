@@ -1656,6 +1656,8 @@ cy.get('.query-ul').within(() => {
 })
 ```
 
+Check the recipe [Root Element Attributes](../recipes/root-attributes.md)
+
 <!-- fiddle-end -->
 
 ## [Best Practices: Selecting elements](https://on.cypress.io/best-practices#Selecting-Elements)
