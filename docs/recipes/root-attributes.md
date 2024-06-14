@@ -1,6 +1,6 @@
 # Root Element Attributes
 
-An example showing the [cy.root](https://on.cypress.io/root) in action.
+An example showing the [cy.root](https://on.cypress.io/root) in action. 📺 Watch this example explained in the video [cy.root Command Example](https://youtu.be/XlXQm2sybQQ)
 
 <!-- fiddle Root element attributes -->
 
