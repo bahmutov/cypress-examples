@@ -148,7 +148,9 @@ You can shorten the above code snippet using [cypress-map](https://github.com/ba
 
 ```js
 cy.get('[data-cy=after-example] p')
-  .apply(($el) => window.getComputedStyle($el[0], '::after'))
+  // from jQuery object, get the actual element
+  // and call "window.getComputedStyle(element, '::after')"
+  .applyToFirstRight(window.getComputedStyle, '::after')
   .invoke('getPropertyValue', 'content')
   .should('equal', '"Joe Smith"')
 ```
