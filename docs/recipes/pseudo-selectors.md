@@ -127,6 +127,34 @@ cy.get('[data-cy=after-example]')
 
 <!-- fiddle-end -->
 
+### Checking the `::after` content using `cypress-map`
+
+You can shorten the above code snippet using [cypress-map](https://github.com/bahmutov/cypress-map) queries
+
+<!-- fiddle pseudo-selectors / after selector using cypress-map -->
+
+```html
+<style>
+  /* add a word after each paragraph */
+  [data-cy='after-example'] p::after {
+    content: 'Joe Smith';
+    margin-left: 1em;
+  }
+</style>
+<div data-cy="after-example">
+  <p>Write more tests</p>
+</div>
+```
+
+```js
+cy.get('[data-cy=after-example] p')
+  .apply(($el) => window.getComputedStyle($el[0], '::after'))
+  .invoke('getPropertyValue', 'content')
+  .should('equal', '"Joe Smith"')
+```
+
+<!-- fiddle-end -->
+
 ## Before content CSS selector `::before`
 
 <!-- fiddle pseudo-selectors / before selector -->
