@@ -157,6 +157,54 @@ cy.get('[data-cy=after-example] p')
 
 <!-- fiddle-end -->
 
+### Checking if `::after` exists or not
+
+<!-- fiddle pseudo-selectors / check if after pseudo element exists or not -->
+
+```html hide
+<style>
+  /* add a word after each paragraph */
+  [data-cy='after-example'] p::after {
+    margin-left: 1em;
+  }
+  [data-cy='after-example'] p.displayed::after {
+    content: 'Joe and Amy';
+  }
+</style>
+<div data-cy="after-example">
+  <p>Write more tests</p>
+  <button id="add-after">Click me</button>
+</div>
+<script>
+  document
+    .getElementById('add-after')
+    .addEventListener('click', () => {
+      setTimeout(() => {
+        const el = document.querySelector(
+          "[data-cy='after-example'] p",
+        )
+        el.classList.add('displayed')
+      }, 1000)
+    })
+</script>
+```
+
+```js
+cy.log('**no ::after at first**')
+cy.get('[data-cy=after-example] p')
+  .applyToFirstRight(window.getComputedStyle, '::after')
+  .invoke('getPropertyValue', 'content')
+  .should('equal', 'none')
+cy.contains('button', 'Click me').click()
+cy.log('**new ::after content after some time**')
+cy.get('[data-cy=after-example] p')
+  .applyToFirstRight(window.getComputedStyle, '::after')
+  .invoke('getPropertyValue', 'content')
+  .should('equal', '"Joe and Amy"')
+```
+
+<!-- fiddle-end -->
+
 ## Before content CSS selector `::before`
 
 <!-- fiddle pseudo-selectors / before selector -->
