@@ -3888,6 +3888,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/pseudo-selectors.html"
   },
   {
+    "title": "Pseudo CSS selectors pseudo-selectors after selector using cypress-map",
+    "filename": "docs/recipes/pseudo-selectors.md",
+    "created": "2021-11-16T17:00:10.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/pseudo-selectors.html"
+  },
+  {
     "title": "Pseudo CSS selectors pseudo-selectors before selector",
     "filename": "docs/recipes/pseudo-selectors.md",
     "created": "2021-11-16T17:00:10.000Z",
@@ -4036,6 +4042,12 @@
     "filename": "docs/recipes/return-value-from-within.md",
     "created": "2021-04-15T19:48:24.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/return-value-from-within.html"
+  },
+  {
+    "title": "Root Element Attributes Root element attributes",
+    "filename": "docs/recipes/root-attributes.md",
+    "created": "2024-06-14T17:21:39.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/root-attributes.html"
   },
   {
     "title": "Same Text Two text elements",
