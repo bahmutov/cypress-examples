@@ -111,6 +111,8 @@ cy.get('img')
 
 ## Check multiple images using `cy.each`
 
+📺 Watch this example in the video [Check If All Images Have Loaded Using cy.each Command](https://youtu.be/f9o1WgmY3Jw)
+
 <!-- fiddle Check multiple images using cy.each -->
 
 I like using [cy.each](https://on.cypress.io/each) command when checking multiple images. A single assertion against the prop `naturalWidth` can be chained with above zero assertion.
