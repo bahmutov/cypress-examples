@@ -108,3 +108,35 @@ cy.get('img')
 ```
 
 <!-- fiddle-end -->
+
+## Check multiple images using `cy.each`
+
+<!-- fiddle Check multiple images using cy.each -->
+
+I like using [cy.each](https://on.cypress.io/each) command when checking multiple images. A single assertion against the prop `naturalWidth` can be chained with above zero assertion.
+
+```html hide
+<img
+  src="https://glebbahmutov.com/images/warming-stripes.png"
+  width="400"
+  height="50"
+  alt="Warming stripes 1"
+/>
+<br />
+<img
+  src="https://glebbahmutov.com/images/warming-stripes.png"
+  width="400"
+  height="50"
+  alt="Warming stripes 2"
+/>
+```
+
+```js
+cy.get('img').each(($el, k) => {
+  expect($el, `image ${k + 1}`)
+    .to.have.prop('naturalWidth')
+    .be.greaterThan(0)
+})
+```
+
+<!-- fiddle-end -->
