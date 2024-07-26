@@ -1974,6 +1974,30 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/all-elements-are-visible.html"
   },
   {
+    "title": "Get All Intercepted Network Calls Wait for each call",
+    "filename": "docs/recipes/all-network-calls.md",
+    "created": "2024-07-26T19:31:59.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/all-network-calls.html"
+  },
+  {
+    "title": "Get All Intercepted Network Calls Get all intercepts",
+    "filename": "docs/recipes/all-network-calls.md",
+    "created": "2024-07-26T19:31:59.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/all-network-calls.html"
+  },
+  {
+    "title": "Get All Intercepted Network Calls Flexible assertions",
+    "filename": "docs/recipes/all-network-calls.md",
+    "created": "2024-07-26T19:31:59.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/all-network-calls.html"
+  },
+  {
+    "title": "Get All Intercepted Network Calls Check all interceptions",
+    "filename": "docs/recipes/all-network-calls.md",
+    "created": "2024-07-26T19:31:59.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/all-network-calls.html"
+  },
+  {
     "title": "Array includes another array Array includes another array",
     "filename": "docs/recipes/array-includes-another-array.md",
     "created": "2022-09-06T14:08:49.000Z",
