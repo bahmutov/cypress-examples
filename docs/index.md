@@ -386,6 +386,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Simulate [Network errors](./recipes/network-errors.md) recipe
 - Refactor [Requested resource not found](./recipes/request-not-found.md) code into an utility function
 - Send synthetic "offline" and "online" [events](./recipes/offline-event.md)
+- Intercept [all network calls](./recipes/all-network-calls.md)
 
 ### Spies and stubs
 

@@ -684,4 +684,5 @@ cy.should(() => {
 ## See also
 
 - See how to simulate network errors in the [Network errors](../recipes/network-errors.md) recipe.
+- Intercept [all network calls](../recipes/all-network-calls.md).
 - Learn how to use network commands in my 🎓 course [Cypress Network Testing Exercises](https://cypress.tips/courses/network-testing).
