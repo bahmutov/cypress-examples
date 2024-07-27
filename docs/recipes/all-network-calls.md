@@ -2,6 +2,8 @@
 
 Cypress has built-in syntax for getting all intercepted network alls for an alias. This recipe shows it in action. For more, see my course [Cypress Network Testing Exercises](https://cypress.tips/courses/network-testing).
 
+📝 You can read more about `alias.all` syntax in my blog post [Get All Intercepted Network Calls In Cypress](https://glebbahmutov.com/blog/get-all-network-calls/). 🎓 You can also practice solving network testing problems in my course [Cypress Network Testing Exercises](https://cypress.tips/courses/network-testing).
+
 ## Wait for each call separately
 
 Imagine the application makes 3 calls. How do you confirm it? You can spy on the network call, then use [cy.wait](https://on.cypress.io/wait) three times.
