@@ -128,6 +128,34 @@ cy.location('search')
 
 <!-- fiddle-end -->
 
+### Elegant queries from cypress-map
+
+The above test can be written even more elegantly using query commands from the [cypress-map](https://github.com/bahmutov/cypress-map) plugin.
+
+<!-- fiddle.skip cy.location() / parsed search using cypress-map queries -->
+
+```js
+// the full URL includes several search terms
+cy.visit(
+  'https://example.cypress.io/commands/location?search=value&id=1234',
+)
+cy.location('search')
+  .should('include', 'search=')
+  // .make, toPlainObject, .map
+  // come from the cypress-map plugin
+  .make(URLSearchParams)
+  .toPlainObject('entries')
+  .map({
+    id: Number,
+  })
+  .should('deep.equal', {
+    search: 'value',
+    id: 1234,
+  })
+```
+
+<!-- fiddle-end -->
+
 ### Another chained commands example
 
 You can watch the next test examples in the video [Check Part Of The URL Using Chained Commands](https://youtu.be/ovNH_UJK62s).
