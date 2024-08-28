@@ -74,3 +74,4 @@ cy.wrap(popup).should(
 
 - 📝 blog post [Stub window.open](https://glebbahmutov.com/blog/stub-window-open/)
 - [Stub `window.print`](./stub-window-print.md) recipe
+- [Testing the `window.close` method](./window-close.md)
