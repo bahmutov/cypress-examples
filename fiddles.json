@@ -870,6 +870,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/commands/location.html"
   },
   {
+    "title": "Location cy.location() parsed search using cypress-map queries",
+    "filename": "docs/commands/location.md",
+    "created": "2020-04-30T18:13:16.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/location.html"
+  },
+  {
     "title": "Location cy.location() chained commands",
     "filename": "docs/commands/location.md",
     "created": "2020-04-30T18:13:16.000Z",
@@ -4606,6 +4612,12 @@
     "filename": "docs/recipes/wait-for-data.md",
     "created": "2021-04-14T22:46:26.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/wait-for-data.html"
+  },
+  {
+    "title": "Window close Testing the window.close method call",
+    "filename": "docs/recipes/window-close.md",
+    "created": "2024-08-28T21:20:37.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/window-close.html"
   },
   {
     "title": "Window confirm popup Window confirm popup",
