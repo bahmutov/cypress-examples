@@ -4614,6 +4614,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/wait-for-data.html"
   },
   {
+    "title": "Window close Testing the window.close method call",
+    "filename": "docs/recipes/window-close.md",
+    "created": "2024-08-28T21:20:37.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/window-close.html"
+  },
+  {
     "title": "Window confirm popup Window confirm popup",
     "filename": "docs/recipes/window-confirm.md",
     "created": "2022-06-15T11:01:47.000Z",
