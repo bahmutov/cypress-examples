@@ -2,6 +2,8 @@
 
 <!-- fiddle Testing the window.close method call -->
 
+📺 Watch this recipe explained in the video [Testing window.close Method From Cypress](https://youtu.be/sdYs0AKx7ng).
+
 ```html hide
 <div>Action saved, you can close this window</div>
 <button id="closeit">Close</button>
