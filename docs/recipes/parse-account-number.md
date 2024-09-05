@@ -64,15 +64,21 @@ Let's make sure the test retries getting all `div` elements if there is no accou
 ```html hide
 <div>
   <h1 data-testid="title">Confirmation</h1>
-  <div></div>
+  <div>
+    Welcome newUser. Your Account Number is ... It's unique to
+    you. Use it whenever you need to confirm your membership.
+  </div>
 </div>
 <script>
   const div = document.querySelector(
     'h1[data-testid=title] + div',
   )
   setTimeout(() => {
-    div.innerText =
-      "Welcome newUser. Your Account Number is 056256265. It's unique to you. Use it whenever you need to confirm your membership."
+    console.log(div.innerText)
+    div.innerText = div.innerText.replace(
+      '...',
+      '05625' + '6265',
+    )
   }, 1000)
 </script>
 ```
@@ -104,15 +110,21 @@ We can find just a single element that has text matching a regular expression us
 ```html hide
 <div>
   <h1 data-testid="title">Confirmation</h1>
-  <div></div>
+  <div>
+    Welcome newUser. Your Account Number is ... It's unique to
+    you. Use it whenever you need to confirm your membership.
+  </div>
 </div>
 <script>
   const div = document.querySelector(
     'h1[data-testid=title] + div',
   )
   setTimeout(() => {
-    div.innerText =
-      "Welcome newUser. Your Account Number is 056256265. It's unique to you. Use it whenever you need to confirm your membership."
+    console.log(div.innerText)
+    div.innerText = div.innerText.replace(
+      '...',
+      '05625' + '6265',
+    )
   }, 1000)
 </script>
 ```
@@ -135,32 +147,45 @@ cy.contains('div', /[0-9]+/)
 
 Let's simplify the test by removing all temporary variables and using a chain of [retry-able](./retry-ability.md) commands.
 
-<!-- fiddle.only Find a single element -->
+<!-- fiddle Fluent chain of retry-able commands -->
 
 ```html hide
 <div>
   <h1 data-testid="title">Confirmation</h1>
-  <div></div>
+  <div>
+    Welcome newUser. Your Account Number is ... It's unique to
+    you. Use it whenever you need to confirm your membership.
+  </div>
 </div>
 <script>
   const div = document.querySelector(
     'h1[data-testid=title] + div',
   )
   setTimeout(() => {
-    div.innerText =
-      "Welcome newUser. Your Account Number is 056256265. It's unique to you. Use it whenever you need to confirm your membership."
+    console.log(div.innerText)
+    div.innerText = div.innerText.replace(
+      '...',
+      '05625' + '6265',
+    )
   }, 1000)
 </script>
 ```
 
 ```js
-cy.contains('div', /[0-9]+/)
+// use named capture group expression
+const accountRegex = /(?<account>[0-9]{9})/
+cy.contains('div', accountRegex)
   .invoke('text')
-  .should((fullText) => {
-    var pattern = /[0-9]+/g
-    var number = fullText.match(pattern)
-    expect(number[0], 'account').to.equal('056256265')
-  })
+  // the current subject is a string
+  // and we invoke its method "match"
+  // passing the regular expression
+  .invoke('match', accountRegex)
+  // if the expression matches
+  // then it yields an object
+  // and we can get the matched value by name
+  .its('groups.account')
+  // and use an implicit assertion against the subject
+  .should('equal', '056256265')
 ```
 
 <!-- fiddle-end -->

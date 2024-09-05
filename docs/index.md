@@ -222,6 +222,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Find elements with the given [computed style](./recipes/computed-style.md)
 - Check the results of [multiplication](./recipes/check-multiplication.md) shown on the page
 - [Parse numbers](./recipes/parse-numbers.md) in the text
+- [Parse account number](./recipes/parse-account-number.md) with retries
 - Get the value of an [input element](./recipes/input-element-value.md)
 - Combine two jQuery objects into one in the recipe [combine lists](./recipes/combine-lists.md)
 - Confirm the phone number after [replacing all `-` characters](./recipes/replace-all.md)
