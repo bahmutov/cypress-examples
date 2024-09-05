@@ -133,12 +133,18 @@ I like using [cy.each](https://on.cypress.io/each) command when checking multipl
 />
 ```
 
+**Important:** `cy.each` does not retry. If the images take a little bit longer to load, you need to ensure using other queries or assertions.
+
 ```js
-cy.get('img').each(($el, k) => {
-  expect($el, `image ${k + 1}`)
-    .to.have.prop('naturalWidth')
-    .be.greaterThan(0)
-})
+cy.get('img')
+  .should('have.length', 2)
+  // at least one image should be visible
+  .and('be.visible')
+  .each(($el, k) => {
+    expect($el, `image ${k + 1}`)
+      .to.have.prop('naturalWidth')
+      .be.greaterThan(0)
+  })
 ```
 
 <!-- fiddle-end -->
