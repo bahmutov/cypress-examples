@@ -1,6 +1,6 @@
 # Parse Account Number
 
-Recently I saw a question on [/r/Cypress](https://www.reddit.com/r/Cypress): How do I `cy.get` a 9-digit number? The application displays something like this after a delay:
+Recently I saw a question on [/r/Cypress](https://www.reddit.com/r/Cypress/): How do I `cy.get` a 9-digit number? The application displays something like this after a delay:
 
 ```
 Confirmation
