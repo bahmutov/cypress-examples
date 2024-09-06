@@ -222,4 +222,22 @@ Or if we need the account number text:
 cy.get('#acc').invoke('text').should('equal', '056256265')
 ```
 
+If you do not know the expected account number, you could use a regular expression
+
+```js
+cy.contains('#acc', /[0-9]{9}/)
+```
+
+You can confirm the initial text "..." disappears and the account pattern is present instead
+
+```js
+cy.get('#acc')
+  .should('not.have.text', '...')
+  .invoke('text')
+  .should('match', /^[0-9]{9}$/)
+  .then((account) => {
+    cy.log(`account ${account}`)
+  })
+```
+
 <!-- fiddle-end -->
