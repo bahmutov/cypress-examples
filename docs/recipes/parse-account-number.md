@@ -74,7 +74,6 @@ Let's make sure the test retries getting all `div` elements if there is no accou
     'h1[data-testid=title] + div',
   )
   setTimeout(() => {
-    console.log(div.innerText)
     div.innerText = div.innerText.replace(
       '...',
       '05625' + '6265',
@@ -120,7 +119,6 @@ We can find just a single element that has text matching a regular expression us
     'h1[data-testid=title] + div',
   )
   setTimeout(() => {
-    console.log(div.innerText)
     div.innerText = div.innerText.replace(
       '...',
       '05625' + '6265',
@@ -162,7 +160,6 @@ Let's simplify the test by removing all temporary variables and using a chain of
     'h1[data-testid=title] + div',
   )
   setTimeout(() => {
-    console.log(div.innerText)
     div.innerText = div.innerText.replace(
       '...',
       '05625' + '6265',
@@ -186,6 +183,43 @@ cy.contains('div', accountRegex)
   .its('groups.account')
   // and use an implicit assertion against the subject
   .should('equal', '056256265')
+```
+
+<!-- fiddle-end -->
+
+## Recommended
+
+If I could modify the application code, I would give the account number its own element. That would make selecting the element much simpler and would eliminate the regular expression.
+
+<!-- fiddle Recommended markup -->
+
+```html hide
+<div>
+  <h1 data-testid="title">Confirmation</h1>
+  <div>
+    Welcome newUser. Your Account Number is
+    <span id="acc">...</span> It's unique to you. Use it whenever
+    you need to confirm your membership.
+  </div>
+</div>
+<script>
+  const el = document.querySelector('#acc')
+  setTimeout(() => {
+    el.innerText = '05625' + '6265'
+  }, 1000)
+</script>
+```
+
+Our solution could be a single `cy.contains` command.
+
+```js
+cy.contains('#acc', '056256265')
+```
+
+Or if we need the account number text:
+
+```js
+cy.get('#acc').invoke('text').should('equal', '056256265')
 ```
 
 <!-- fiddle-end -->
