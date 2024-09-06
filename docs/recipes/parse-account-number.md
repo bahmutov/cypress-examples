@@ -12,6 +12,8 @@ Your Account Number is 056256265.
 It's unique to you. Use it whenever you need to confirm your membership.
 ```
 
+📺 Watch this recipe explained in the video [Parse The Account Number Explained](https://youtu.be/qdBM08WBU_Q)
+
 ## The user code
 
 The user tried to get the number using the following code:
