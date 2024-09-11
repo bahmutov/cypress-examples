@@ -4440,6 +4440,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-get-timezone-method.html"
   },
   {
+    "title": "Stub `window.open` Return synthetic window object",
+    "filename": "docs/recipes/stub-window-open.md",
+    "created": "2024-09-11T13:41:40.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-window-open.html"
+  },
+  {
+    "title": "Stub `window.open` App sets the location after a delay",
+    "filename": "docs/recipes/stub-window-open.md",
+    "created": "2024-09-11T13:41:40.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-window-open.html"
+  },
+  {
     "title": "Stub `window.print` Stub window print",
     "filename": "docs/recipes/stub-window-print.md",
     "created": "2022-10-24T19:34:22.000Z",
