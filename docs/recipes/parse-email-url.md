@@ -11,6 +11,8 @@ In the example below the email body has a link we want to test. We need to
 
 **Tip:** I have covered stubbing `window.open` in the [Stub `window.open`](./stub-window-open.md) and [Window open](./window-open.md) recipes.
 
+📝 Read the blog post [Parse Email Url](https://glebbahmutov.com/blog/parse-email-url/)
+
 ## A single command chain
 
 <!-- fiddle Email window popup -->
