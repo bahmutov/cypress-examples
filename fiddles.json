@@ -3846,6 +3846,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/parse-account-number.html"
   },
   {
+    "title": "Parse Email URL Email window popup",
+    "filename": "docs/recipes/parse-email-url.md",
+    "created": "2024-09-11T14:29:20.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/parse-email-url.html"
+  },
+  {
+    "title": "Parse Email URL Parse email URL using helpers",
+    "filename": "docs/recipes/parse-email-url.md",
+    "created": "2024-09-11T14:29:20.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/parse-email-url.html"
+  },
+  {
     "title": "Parse numbers Using parseInt to convert text to an integer",
     "filename": "docs/recipes/parse-numbers.md",
     "created": "2022-04-14T13:17:37.000Z",
@@ -4438,6 +4450,18 @@
     "filename": "docs/recipes/stub-get-timezone-method.md",
     "created": "2022-11-29T12:46:38.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-get-timezone-method.html"
+  },
+  {
+    "title": "Stub `window.open` Return synthetic window object",
+    "filename": "docs/recipes/stub-window-open.md",
+    "created": "2024-09-11T13:41:40.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-window-open.html"
+  },
+  {
+    "title": "Stub `window.open` App sets the location after a delay",
+    "filename": "docs/recipes/stub-window-open.md",
+    "created": "2024-09-11T13:41:40.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-window-open.html"
   },
   {
     "title": "Stub `window.print` Stub window print",
