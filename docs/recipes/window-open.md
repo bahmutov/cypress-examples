@@ -70,6 +70,8 @@ cy.wrap(popup).should(
 
 <!-- fiddle-end -->
 
+**Tip:** a similar recipe is shown in the [Stub `window.open`](./stub-window-open.md)
+
 ## See also
 
 - 📝 blog post [Stub window.open](https://glebbahmutov.com/blog/stub-window-open/)

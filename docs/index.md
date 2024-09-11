@@ -344,6 +344,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Testing the `mailto` [HREF anchor links](./recipes/mailto-link.md)
 - [Element with ID property](./recipes/element-with-id.md) is automatically linked to the `window` object
 - Testing the [`window.close` method](./recipes/window-close.md)
+- Stub the `window.open` method redux [recipe](./recipes/stub-window-open.md)
 
 ### Selecting an option
 
