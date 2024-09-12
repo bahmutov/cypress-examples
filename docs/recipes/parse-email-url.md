@@ -61,7 +61,7 @@ cy.contains('button', 'Share link').click()
 
 Confirm the `window.open` was called with a string as the first argument
 
-```js
+```js skip
 cy.get('@open')
   .should('have.been.calledOnceWith', Cypress.sinon.match.string)
   .its('firstCall.args.0')
@@ -92,6 +92,18 @@ cy.get('@open')
   .invoke('split', '/')
   .at(-1)
   .should('equal', 'GLEB10OFF')
+```
+
+**Tip:** thanks to [Dominik Kratz](https://www.linkedin.com/in/dominik-kratz/) for suggesting simply parsing URL using the [URL.parse](https://developer.mozilla.org/en-US/docs/Web/API/URL/parse_static) static method. You would need a `URL.parse` polyfill if using an older browser to run tests.
+
+```js skip
+cy.get('@open')
+  .should('have.been.calledOnceWith', Cypress.sinon.match.string)
+  .its('firstCall.args.0')
+  .then(URL.parse)
+  .its('searchParams')
+  .invoke('get', 'body')
+  .should('include', 'GLEB10OFF')
 ```
 
 <!-- fiddle-end -->
