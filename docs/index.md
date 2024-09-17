@@ -335,6 +335,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - confirm the [element is detached](./recipes/element-detaches.md)
 - [root element attributes](./recipes/root-attributes.md)
 - [Parse Email URL](./recipes/parse-email-url.md)
+- [Find All Buttons Without `data-cy` attribute](./recipes/find-buttons-without-data-cy.md)
 
 ### Working with the window object
 
