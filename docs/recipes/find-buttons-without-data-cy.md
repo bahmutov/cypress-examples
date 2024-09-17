@@ -8,6 +8,15 @@
 <button id="click3">Reload</button>
 ```
 
+We can list all buttons that have the `data-cy` attribute.
+
+```js
+cy.get('button[data-cy]')
+  // only a single "Click me" button has "data-cy"
+  .map('innerText')
+  .should('deep.equal', ['Click me'])
+```
+
 Let's find all buttons on the page that _do not have_ the `data-cy` attribute. Maybe these buttons are not covered by the E2E tests.
 
 ```js
