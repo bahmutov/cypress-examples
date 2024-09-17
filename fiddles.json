@@ -2904,6 +2904,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/find-and-click-accordion-button.html"
   },
   {
+    "title": "Find All Buttons Without `data-cy` attribute Find all buttons without data-cy attribute",
+    "filename": "docs/recipes/find-buttons-without-data-cy.md",
+    "created": "2024-09-17T13:01:01.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/find-buttons-without-data-cy.html"
+  },
+  {
     "title": "Find elements by class and text Filter by class",
     "filename": "docs/recipes/find-by-class-or-text.md",
     "created": "2021-01-05T14:53:22.000Z",
