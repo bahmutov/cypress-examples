@@ -487,6 +487,8 @@ cy.get('#links a:not([href])').should('have.length', 2)
 
 <!-- fiddle-end -->
 
+See also recipe [Find All Buttons Without `data-cy` attribute](../recipes/find-buttons-without-data-cy.md)
+
 ### Find elements with an attribute having a different value
 
 Let's find all anchor links without `HREF` attribute
