@@ -1,5 +1,7 @@
 # Find All Buttons Without `data-cy` attribute
 
+📺 Watch this recipe explained in the video [Find Elements Without An Attribute](https://youtu.be/52KW-t2wWaE).
+
 <!-- fiddle Find all buttons without data-cy attribute -->
 
 ```html
