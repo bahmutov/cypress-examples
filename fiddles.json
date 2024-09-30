@@ -3432,6 +3432,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/last-of-type.html"
   },
   {
+    "title": "Layout Shift Detect layout shift",
+    "filename": "docs/recipes/layout-shift.md",
+    "created": "2024-09-30T16:04:40.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/layout-shift.html"
+  },
+  {
     "title": "Lesser Known Chai Assertions Nested property",
     "filename": "docs/recipes/lesser-known-chai-assertions.md",
     "created": "2023-04-12T00:59:17.000Z",
