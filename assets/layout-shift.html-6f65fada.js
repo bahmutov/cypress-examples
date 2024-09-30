@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-5b8bdf52","path":"/recipes/layout-shift.html","title":"Layout Shift","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1727712280000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/layout-shift.md"}');export{t as data};
