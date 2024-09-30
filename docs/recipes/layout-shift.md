@@ -1,5 +1,7 @@
 # Layout Shift
 
+📺 Watch this recipe explained in the video [Test Layout Shift](https://youtu.be/5OTqNxJyhxo).
+
 <!-- fiddle Detect layout shift -->
 
 ```html hide
