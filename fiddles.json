@@ -4146,6 +4146,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/root-attributes.html"
   },
   {
+    "title": "Same Height Same height as strings (fails)",
+    "filename": "docs/recipes/same-height.md",
+    "created": "2024-10-19T18:30:08.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/same-height.html"
+  },
+  {
+    "title": "Same Height Same height as numbers",
+    "filename": "docs/recipes/same-height.md",
+    "created": "2024-10-19T18:30:08.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/same-height.html"
+  },
+  {
     "title": "Same Text Two text elements",
     "filename": "docs/recipes/same-text.md",
     "created": "2023-05-25T13:58:25.000Z",
