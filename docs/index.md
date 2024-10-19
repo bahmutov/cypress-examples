@@ -337,6 +337,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Parse Email URL](./recipes/parse-email-url.md)
 - [Find All Buttons Without `data-cy` attribute](./recipes/find-buttons-without-data-cy.md)
 - Detect [layout shift](./recipes/layout-shift.md)
+- Confirm the element's [height does not change](./recipes/same-height.md)
 
 ### Working with the window object
 
