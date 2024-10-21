@@ -338,6 +338,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Find All Buttons Without `data-cy` attribute](./recipes/find-buttons-without-data-cy.md)
 - Detect [layout shift](./recipes/layout-shift.md)
 - Confirm the element's [height does not change](./recipes/same-height.md)
+- Confirm the element is [vertically centered](./recipes/vertical-center.md)
 
 ### Working with the window object
 
