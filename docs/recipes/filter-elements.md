@@ -99,4 +99,16 @@ cy.get('li')
   .and('include.text', 'Pears')
 ```
 
+We can write custom filtering logic by passing a callback to `cy.filter(callback)` command. For example, let's only select elements with the text starting with the letter "k".
+
+```js
+cy.get('li')
+  // cy.filter(callback) where the callback
+  // receives the index and the element reference
+  .filter((k, el) => {
+    return el.innerText.toLowerCase()[0] === 'k'
+  })
+  .should('have.text', 'Kiwi')
+```
+
 <!-- fiddle.end -->

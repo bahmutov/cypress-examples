@@ -202,4 +202,22 @@ cy.get('div')
   .and('have.class', 'target')
 ```
 
+You can simplify the logic above using [cy.filter](https://on.cypress.io/filter) query command with callback function argument. Instead of `cy.then + cy.filter`, simply use the `cy.filter(callback)`:
+
+```js
+// filter elements using cy.filter
+cy.get('div')
+  .should('have.length.gt', 1)
+  .filter((k, el) => {
+    // if the found element is inside <UL> element
+    // then reject it by returning false
+    const $ul = Cypress.$(el).closest('ul')
+    return $ul.length === 0
+  })
+  // finds only the elements outside the <UL> element
+  .should('have.length', 2)
+  // check by confirming the class on each found element
+  .and('have.class', 'target')
+```
+
 <!-- fiddle-end -->
