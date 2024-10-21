@@ -4680,6 +4680,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/validate-email.html"
   },
   {
+    "title": "Vertical Center Vertical center",
+    "filename": "docs/recipes/vertical-center.md",
+    "created": "2024-10-21T12:26:34.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/vertical-center.html"
+  },
+  {
     "title": "Wait for data using the cy.should callback",
     "filename": "docs/recipes/wait-for-data.md",
     "created": "2021-04-14T22:46:26.000Z",
