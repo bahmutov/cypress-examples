@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-a9c0e720","path":"/recipes/vertical-center.html","title":"Vertical Center","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1729513594000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/vertical-center.md"}');export{e as data};
