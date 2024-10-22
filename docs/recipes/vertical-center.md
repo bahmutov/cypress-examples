@@ -2,6 +2,8 @@
 
 Let's confirm that the element is centered vertically in its parent element.
 
+📺 Watch this recipe explained in the video [Vertical Center](https://youtu.be/YCyOxdBfYQM).
+
 <!-- fiddle Vertical center -->
 
 ```html hide
