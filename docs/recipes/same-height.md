@@ -2,6 +2,8 @@
 
 Imagine the element's height changes based on CSS. This might look annoying, since it shifts the entire layout by a few pixels. Let's write a test that ensures that adding a CSS class does not change the computed height of an element.
 
+📺 Watch this recipe explained in the video [Same Height](https://youtu.be/TQyDJuwLJGs).
+
 ## Compare heights as strings
 
 🚨 This approach mostly _does not work_, since the computed height is a floating-point and might differ. For example, the height might change from 31.998px to 31.99802589416504px which is imperceivable to the human eye, yet causes the test to fail.
