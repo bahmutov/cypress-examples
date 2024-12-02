@@ -1,6 +1,6 @@
 # Cy events
 
-Cypress test runner fires events you can subscribe to. For example, we can listen to the command start and finish events. See the full [Cypress Catalog of Events](https://on.cypress.io/catalog-of-events) for more.
+Cypress test runner fires events you can subscribe to. For example, we can listen to the command start and finish events. See the full [Cypress Catalog of Events](https://docs.cypress.io/api/cypress-api/catalog-of-events) for more.
 
 <!-- fiddle Command start -->
 
