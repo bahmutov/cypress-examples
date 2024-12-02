@@ -145,6 +145,7 @@ Except for several assertions that DO change the subject:
 - `have.property` for objects
 - `have.attr` with 1 argument for DOM elements
 - `have.prop` with 1 argument for DOM elements
+- `not.have...` assertions change the property to `undefined`
 
 as the next tests demonstrate
 
@@ -175,6 +176,34 @@ cy.wrap(employee) // full object
   .and('have.key', 'name') // still employee.person
   // still employee.person because have.key does not change the subject
   .should('equal', employee.person)
+```
+
+The next block shows how the `not.have...` assertion change the current subject to `undefined`
+
+```js
+cy.wrap(employee)
+  .should('not.have.property', 'age')
+  // there is no more subject
+  .should('be.undefined')
+```
+
+<!-- fiddle-end -->
+
+#### `not.include.property`
+
+**Note:** the assertion `not.include.property` changes the current subject to `undefined`
+
+<!-- fiddle Not include property -->
+
+```js
+cy.wrap({
+  foo: 'bar',
+})
+  .should('include.property', 'foo')
+  // the same object is the subject
+  .and('not.include.property', 'baz')
+  // there is no more subject
+  .should('be.undefined')
 ```
 
 <!-- fiddle-end -->
