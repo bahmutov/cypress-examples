@@ -408,6 +408,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
   },
   {
+    "title": "Assertions Not include property",
+    "filename": "docs/commands/assertions.md",
+    "created": "2020-04-26T14:17:38.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/assertions.html"
+  },
+  {
     "title": "Assertions Explicit Assertions expect - make an assertion about a specified subject",
     "filename": "docs/commands/assertions.md",
     "created": "2020-04-26T14:17:38.000Z",
