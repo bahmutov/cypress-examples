@@ -57,7 +57,7 @@
     "common-tags": "1.8.0",
     "cypress": "13.15.0",
     "cypress-book": "1.5.0",
-    "cypress-map": "1.41.0",
+    "cypress-map": "1.43.0",
     "cypress-markdown-preprocessor": "1.10.18",
     "cypress-recurse": "^1.31.2",
     "dependency-version-badge": "1.2.0",
