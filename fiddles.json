@@ -4362,6 +4362,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/sha-256.html"
   },
   {
+    "title": "Should read assertion Should read",
+    "filename": "docs/recipes/should-read.md",
+    "created": "2024-12-12T15:35:10.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/should-read.html"
+  },
+  {
     "title": "Sibling element Sibling element",
     "filename": "docs/recipes/sibling-element.md",
     "created": "2022-01-07T20:13:12.000Z",
