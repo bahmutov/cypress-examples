@@ -339,6 +339,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Detect [layout shift](./recipes/layout-shift.md)
 - Confirm the element's [height does not change](./recipes/same-height.md)
 - Confirm the element is [vertically centered](./recipes/vertical-center.md)
+- check text using the custom [should read assertion](./recipes/should-read.md)
 
 ### Working with the window object
 
