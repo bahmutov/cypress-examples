@@ -119,7 +119,52 @@ cy.readFile('cypress/fixtures/example.json')
   .should('be.a', 'string')
 ```
 
+You can assert that the file does not exist
+
+```js
+// file does not exist
+cy.readFile('cypress/fixtures/file-not-found.json')
+  .should('not.exist')
+  // yields null
+  .should('be.null')
+```
+
+If you are not sure if the file exists or not, disable the built-in existence assertion and check the yielded value
+
+```js
+// file exists
+cy.readFile('cypress/fixtures/example.json')
+  .should(Cypress._.noop)
+  .then((jsonMaybe) => {
+    expect(jsonMaybe, 'file exists').to.be.an('object')
+  })
+// file does not exist
+cy.readFile('cypress/fixtures/file-not-found.json')
+  // disable the built-in existence assertion
+  .should(Cypress._.noop)
+  .then((jsonMaybe) => {
+    expect(jsonMaybe, 'file does not exist').to.be.null
+  })
+```
+
 <!-- fiddle-end -->
+
+**Tip:** using a no-op assertion to disable the built-in command assertion is very common in Cypress
+
+```js
+// element might exist or not
+cy.get('selector')
+  .should(Cypress._.noop)
+  .then(($elMaybe) => {
+    // check the jQuery object yourself
+  })
+// file exists or not
+cy.readFile('file path')
+  .should(Cypress._.noop)
+  .then((fileContentsMaybe) => {
+    // check the argument yourself
+  })
+```
 
 ## [cy.writeFile()](https://on.cypress.io/writefile)
 
