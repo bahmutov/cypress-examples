@@ -4,6 +4,7 @@ module.exports = defineConfig({
   fixturesFolder: 'cypress/fixtures',
   viewportHeight: 1000,
   viewportWidth: 600,
+  defaultBrowser: 'electron',
   env: {
     'cypress-fiddle': {
       stylesheets: [

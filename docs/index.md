@@ -424,9 +424,15 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 
 Some of the recipes use [cypress-map](https://github.com/bahmutov/cypress-map) queries to show a better solution to the same exercise.
 
+## 99 Cypress.Tips
+
+Recipes showing lessons from [99 Cypress.io Tips](https://filiphric.com/course/99-cypress-tips) course.
+
+- [01: Use Should With A Callback](./recipes/99-cypress-tips/01-use-should-with-a-callback.md)
+
 ## Courses
 
-I have several Cypress courses at [cypress.tips/courses](https://cypress.tips/courses)
+I have written several Cypress courses at [cypress.tips/courses](https://cypress.tips/courses)
 
 - I cover the very basics of E2E and Component testing in my free course [Cypress Version 10: Fundamentals](https://cypress.tips/courses)
 - You can fully learn E2E and React Component testing in my hands-on course [Testing The Swag Store](https://cypress.tips/courses/swag-store)
