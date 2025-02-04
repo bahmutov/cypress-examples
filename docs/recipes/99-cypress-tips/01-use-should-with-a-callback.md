@@ -1,6 +1,6 @@
 # 01: Use Should With A Callback
 
-These examples show the test behavior from the lesson "Use .should() with a callback" in the course [99 Cypress.io Tips](https://filiphric.com/course/99-cypress-tips).
+These examples show the test behavior from the lesson "Use .should() with a callback" in the course [99 Cypress.io Tips](https://filiphric.com/course/99-cypress-tips). 📺 Watch this recipe explained in the video [Lesson 1 From "99 Cypress.io Tips" Course](https://youtu.be/BdTbpmyNKW4).
 
 ## Separate queries
 
