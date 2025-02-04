@@ -4834,5 +4834,41 @@
     "filename": "docs/utilities/index.md",
     "created": "2020-04-12T23:24:14.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/utilities/"
+  },
+  {
+    "title": "01: Use Should With A Callback Separate queries",
+    "filename": "docs/recipes/99-cypress-tips/01-use-should-with-a-callback.md",
+    "created": "2025-02-04T16:25:08.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/99-cypress-tips/01-use-should-with-a-callback.html"
+  },
+  {
+    "title": "01: Use Should With A Callback Combined cy.then callback",
+    "filename": "docs/recipes/99-cypress-tips/01-use-should-with-a-callback.md",
+    "created": "2025-02-04T16:25:08.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/99-cypress-tips/01-use-should-with-a-callback.html"
+  },
+  {
+    "title": "01: Use Should With A Callback 3 cards appear at once and cy.then works",
+    "filename": "docs/recipes/99-cypress-tips/01-use-should-with-a-callback.md",
+    "created": "2025-02-04T16:25:08.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/99-cypress-tips/01-use-should-with-a-callback.html"
+  },
+  {
+    "title": "01: Use Should With A Callback 3 cards appear one by one and cy.then fails",
+    "filename": "docs/recipes/99-cypress-tips/01-use-should-with-a-callback.md",
+    "created": "2025-02-04T16:25:08.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/99-cypress-tips/01-use-should-with-a-callback.html"
+  },
+  {
+    "title": "01: Use Should With A Callback 3 cards appear one by one plus cy.should callback",
+    "filename": "docs/recipes/99-cypress-tips/01-use-should-with-a-callback.md",
+    "created": "2025-02-04T16:25:08.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/99-cypress-tips/01-use-should-with-a-callback.html"
+  },
+  {
+    "title": "01: Use Should With A Callback 3 cards appear one by one checked by \"should read\" assertion",
+    "filename": "docs/recipes/99-cypress-tips/01-use-should-with-a-callback.md",
+    "created": "2025-02-04T16:25:08.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/99-cypress-tips/01-use-should-with-a-callback.html"
   }
 ]
