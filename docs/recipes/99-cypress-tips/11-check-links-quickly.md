@@ -1,5 +1,7 @@
 ## 11: Check Links Quickly
 
+📺 Watch this recipe explained in the video [Lesson 11: Check Multiple Links Quickly](https://youtu.be/1yPuK57Eqho).
+
 <!-- fiddle Check all links using cy.request -->
 
 ```html
