@@ -429,6 +429,7 @@ Some of the recipes use [cypress-map](https://github.com/bahmutov/cypress-map) q
 Recipes showing lessons from [99 Cypress.io Tips](https://filiphric.com/course/99-cypress-tips) course.
 
 - [01: Use Should With A Callback](./recipes/99-cypress-tips/01-use-should-with-a-callback.md)
+- [11: Check Links Quickly](./recipes/99-cypress-tips/11-check-links-quickly.md)
 
 ## Courses
 
