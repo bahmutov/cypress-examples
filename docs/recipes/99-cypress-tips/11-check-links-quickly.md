@@ -18,6 +18,7 @@
 
 ```js
 cy.get('#links-to-check a')
+  // cy.map comes from the cypress-map plugin
   .map('href')
   .each((url) => cy.request(url))
 ```
@@ -27,6 +28,7 @@ cy.get('#links-to-check a')
 ```js
 cy.log('**unary example**')
 cy.get('#links-to-check a')
+  // cy.map comes from the cypress-map plugin
   .map('href')
   .each(Cypress._.unary(cy.request))
 ```
