@@ -4870,5 +4870,11 @@
     "filename": "docs/recipes/99-cypress-tips/01-use-should-with-a-callback.md",
     "created": "2025-02-04T16:25:08.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/99-cypress-tips/01-use-should-with-a-callback.html"
+  },
+  {
+    "title": "Check all links using cy.request",
+    "filename": "docs/recipes/99-cypress-tips/11-check-links-quickly.md",
+    "created": "2025-02-06T17:59:50.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/99-cypress-tips/11-check-links-quickly.html"
   }
 ]
