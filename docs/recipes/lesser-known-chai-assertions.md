@@ -4,6 +4,8 @@ See [Chai BDD page](https://www.chaijs.com/api/bdd/) and [Cypress assertions](..
 
 ## nested property
 
+📺 you can watch this assertion explained in my video [Chai Nested Property Assertion In Cypress](https://youtu.be/R1u73hgA1_Q).
+
 <!-- fiddle Nested property -->
 
 ```js
