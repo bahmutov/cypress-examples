@@ -18,10 +18,10 @@ expect({ a: { b: ['x', 'y'] } }).to.nested.include({
 Or using the current subject
 
 ```js
-cy.wrap({ name: { first: 'Joe' } }).should(
-  'have.nested.property',
-  'name.first',
-)
+cy.wrap({ name: { first: 'Joe' } })
+  .should('have.nested.property', 'name.first')
+  // yields the nested property value
+  .should('equal', 'Joe')
 ```
 
 You can even provide an expected value of the nested property.
@@ -39,6 +39,31 @@ The assertion is similar to the [cy.its](https://on.cypress.io/its) + `should('e
 cy.wrap({ name: { first: 'Joe' } })
   .its('name.first')
   .should('equal', 'Joe')
+```
+
+The assertion works well with arrays
+
+```js
+cy.wrap([
+  { sum: 42 },
+  { sum: 101 },
+  { sum: { errors: ['Invalid operation'] } },
+]).should(
+  'have.nested.property',
+  '[2].sum.errors.[0]',
+  'Invalid operation',
+)
+// Note: you can omit the dot before the array index
+// and even omit the "[ ]" brackets
+cy.wrap([
+  { sum: 42 },
+  { sum: 101 },
+  { sum: { errors: ['Invalid operation'] } },
+]).should(
+  'have.nested.property',
+  '2.sum.errors.0',
+  'Invalid operation',
+)
 ```
 
 <!-- fiddle-end -->
