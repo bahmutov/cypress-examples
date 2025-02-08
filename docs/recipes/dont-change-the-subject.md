@@ -1,5 +1,7 @@
 # Don't Change The Subject
 
+📺 You can watch this recipe explained in the video [The Possess Assertion From cypress-map Plugin](https://youtu.be/HHxkL-BPyjA)
+
 <!-- fiddle Checking the request object -->
 
 Imagine we are checking the server response. There are properties at different nesting levels. We want to check:
