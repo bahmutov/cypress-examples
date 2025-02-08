@@ -2640,6 +2640,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/dollar-range.html"
   },
   {
+    "title": "Don't Change The Subject Checking the request object",
+    "filename": "docs/recipes/dont-change-the-subject.md",
+    "created": "2025-02-08T00:18:38.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/dont-change-the-subject.html"
+  },
+  {
     "title": "Checking for duplicates List does not have duplicates",
     "filename": "docs/recipes/duplicates.md",
     "created": "2021-12-17T21:55:19.000Z",
