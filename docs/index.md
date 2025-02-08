@@ -340,6 +340,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - Confirm the element's [height does not change](./recipes/same-height.md)
 - Confirm the element is [vertically centered](./recipes/vertical-center.md)
 - check text using the custom [should read assertion](./recipes/should-read.md)
+- [Don't Change The Subject](./recipes/dont-change-the-subject.md) shows how to use the `possess` assertion from the [cypress-map](https://github.com/bahmutov/cypress-map) plugin.
 
 ### Working with the window object
 
