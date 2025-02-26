@@ -242,3 +242,7 @@ cy.get('[data-cy=before-example]')
 ```
 
 <!-- fiddle-end -->
+
+## See also
+
+- [User-invalid CSS Form Validation](./user-invalid-form-validation.md)

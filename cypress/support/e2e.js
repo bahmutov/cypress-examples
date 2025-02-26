@@ -11,6 +11,9 @@ chai.use(require('chai-each'))
 // https://github.com/bahmutov/cypress-recurse
 require('cypress-recurse/commands')
 
+// https://github.com/dmtrKovalenko/cypress-real-events
+require('cypress-real-events')
+
 // a little utility command for taking the screenshot of the entire runner
 // to be used only in the recipes that are NOT distributed as JavaScript specs
 // since this requires the support file

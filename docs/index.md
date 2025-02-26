@@ -380,6 +380,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Hide Input Fields Before Taking A Screenshot](./recipes/hide-input-fields.md)
 - confirm the [required attributes](./recipes/required-attributes.md)
 - entering only the [required form fields](./recipes/form-submit-button.md)
+- [User-invalid CSS Form Validation](./recipes/user-invalid-form-validation.md)
 
 ### Cypress secrets
 
