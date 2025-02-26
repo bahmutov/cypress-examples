@@ -1,4 +1,4 @@
-# How To Select And Invalid Option
+# How To Select An Invalid Option
 
 Imagine your application responds to the user selection an option from a `<select>` element. You handle the valid options, but how would you test handling of the invalid option by the `default` switch case?
 
