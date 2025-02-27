@@ -4242,7 +4242,7 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/select-hidden-elements.html"
   },
   {
-    "title": "How To Select And Invalid Option Select invalid option",
+    "title": "How To Select An Invalid Option Select invalid option",
     "filename": "docs/recipes/select-invalid-option.md",
     "created": "2023-03-30T17:45:08.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/select-invalid-option.html"
@@ -4690,6 +4690,12 @@
     "filename": "docs/recipes/use-within.md",
     "created": "2023-10-25T14:53:16.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/use-within.html"
+  },
+  {
+    "title": "User-invalid CSS Form Validation User-invalid pseudo selector for form validation",
+    "filename": "docs/recipes/user-invalid-form-validation.md",
+    "created": "2025-02-26T21:27:36.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/user-invalid-form-validation.html"
   },
   {
     "title": "Validate An Email validate an email",
