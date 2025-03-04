@@ -25,7 +25,7 @@ input:user-invalid + span::before {
 }
 ```
 
-Confirm the browser supports `:user-invalid` CSS selector
+Confirm the browser supports `:user-invalid` CSS selector, but first ensure the browser has full support for it.
 
 ```js hide
 if (Cypress.browser.family !== 'chromium') {
@@ -39,7 +39,7 @@ if (version < 119) {
 }
 ```
 
-Enter partial email into the field with `type=email` attribute:
+Enter partial email into the field with `type=email` attribute using `cy.realType` native events from the [cypress-real-events](https://github.com/dmtrKovalenko/cypress-real-events) plugin.
 
 ```js
 // we start without any error styles
