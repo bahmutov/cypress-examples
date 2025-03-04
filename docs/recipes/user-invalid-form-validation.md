@@ -4,7 +4,9 @@
 
 Testing the [`:user-invalid`](https://developer.mozilla.org/en-US/docs/Web/CSS/:user-invalid) CSS selector.
 
-**Note:** this test requires Chrome >= v118
+**Note:** this test requires Chrome >= v119
+
+📺 Watch this recipe explained in the video [Test CSS Property :user-invalid Using Cypress E2E Test](https://youtu.be/BWkNZ3qQ7C8).
 
 ```html
 <form>
@@ -34,7 +36,7 @@ if (Cypress.browser.family !== 'chromium') {
 }
 const version = parseInt(Cypress.browser.majorVersion)
 if (version < 119) {
-  cy.log('‼️ this test requires Chrome >= v118')
+  cy.log('‼️ this test requires Chrome >= v119')
   return
 }
 ```
