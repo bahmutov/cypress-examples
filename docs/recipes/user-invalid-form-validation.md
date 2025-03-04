@@ -29,11 +29,12 @@ Confirm the browser supports `:user-invalid` CSS selector
 
 ```js hide
 if (Cypress.browser.family !== 'chromium') {
+  cy.log('‼️ this test requires a Chromium browser')
   return
 }
 const version = parseInt(Cypress.browser.majorVersion)
 if (version < 119) {
-  // this test requires Chrome >= v118
+  cy.log('‼️ this test requires Chrome >= v118')
   return
 }
 ```
