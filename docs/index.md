@@ -449,3 +449,9 @@ Some of the examples and the recipes listed here are explained through short vid
 ## The newsletter
 
 Every month I write and send a newsletter [Cypress Tips & Tricks](https://cypresstips.substack.com/) with a few main news and learning resources. You can subscribe, it is absolutely free.
+
+## Small print
+
+Copyright © 2025 Gleb Bahmutov
+
+License: private code. Absolutely no permission to copy the source code or train AI models without explicit prior authorization.
