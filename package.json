@@ -45,7 +45,7 @@
     "cypress-example"
   ],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
-  "license": "ISC",
+  "license": "private",
   "bugs": {
     "url": "https://github.com/bahmutov/cypress-examples/issues"
   },
