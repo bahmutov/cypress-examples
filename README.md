@@ -64,6 +64,12 @@ You can also export all Markdown files into JavaScript, run them locally, and ru
 npm run run:exported
 ```
 
+## Small print
+
+Copyright © 2025 Gleb Bahmutov
+
+License: private code. Absolutely no permission to copy the source code or train AI models without explicit prior authorization.
+
 [ci image]: https://github.com/bahmutov/cypress-examples/workflows/ci/badge.svg?branch=master
 [ci url]: https://github.com/bahmutov/cypress-examples/actions?query=workflow%3Aci
 [prettier image]: https://github.com/bahmutov/cypress-examples/workflows/prettier/badge.svg?branch=master
