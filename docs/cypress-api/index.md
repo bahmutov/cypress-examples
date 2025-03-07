@@ -64,6 +64,8 @@ cy.wrap(21).triple().should('equal', 63)
 
 <!-- fiddle-end -->
 
+You can control how logging is done inside the custom command. You can even have a custom command with [multiple DOM snapshots](../recipes/custom-command-with-snapshots.md).
+
 ### Calling other custom commands
 
 You can call other custom commands from inside a custom command.
@@ -254,7 +256,7 @@ expect(Cypress.dom.isHidden(hiddenP)).to.be.true
 expect(Cypress.dom.isHidden(visibleP)).to.be.false
 ```
 
-Tip: elements that are hidden have a special "crossed eye" icon next to them in the Command Log.
+**Tip:** elements that are hidden have a special "crossed eye" icon next to them in the Command Log.
 
 ```js
 cy.get('.dom-p p.hidden').should('not.be.visible')

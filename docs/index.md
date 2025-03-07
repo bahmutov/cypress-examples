@@ -390,6 +390,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [use sanity assertions](./recipes/use-sanity-assertions.md)
 - wait for the element [to be stable](./recipes/element-is-stable.md)
 - [click in parallel](./recipes/click-in-parallel.md) to a Cypress command
+- write a custom command with [multiple DOM snapshots](./recipes/custom-command-with-snapshots.md)
 
 ### Working with network
 
