@@ -2538,6 +2538,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/css-examples.html"
   },
   {
+    "title": "Custom Command With Snapshots Custom command with snapshots",
+    "filename": "docs/recipes/custom-command-with-snapshots.md",
+    "created": "2025-03-07T23:24:16.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/custom-command-with-snapshots.html"
+  },
+  {
     "title": "Custom Events Dispatch custom events",
     "filename": "docs/recipes/custom-events.md",
     "created": "2023-07-27T17:10:49.000Z",
