@@ -10,7 +10,7 @@ on:
 
 jobs:
   scrape:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       # we need our scraping config, thus check out code
       - name: Checkout 🛎️

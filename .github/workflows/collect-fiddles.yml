@@ -9,7 +9,7 @@ on:
 
 jobs:
   collect:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       # we do not need to install Cypress to run this test
       CYPRESS_INSTALL_BINARY: 0
