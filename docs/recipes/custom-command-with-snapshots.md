@@ -41,6 +41,7 @@ Let's try it out.
 ```js
 cy.contains('#output', 'Some text')
 cy.replaceText2('Hello', 'Goodbye')
+cy.contains('#output', 'Goodbye')
 ```
 
 Great, if you pin the "replaceText2" command, you should see multiple DOM snapshot selector. Clicking on the "text 1" label restores the DOM after the element "#output" receives the text label "Hello".
