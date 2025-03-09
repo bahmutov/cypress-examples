@@ -1,5 +1,7 @@
 # Custom Command With Snapshots
 
+📺 Watch this recipe explained in the video [Cypress Custom Commands With Multiple DOM Snapshots](https://youtu.be/TxCB1QDw6qY).
+
 <!-- fiddle Custom command with snapshots -->
 
 ```html
