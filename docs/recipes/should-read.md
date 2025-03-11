@@ -35,7 +35,12 @@ cy.get('li').should('read', [
 ])
 ```
 
-The assertion ensures there is the exact number of elements and the text inside each element is the same as the given string.
+The assertion ensures there is the exact number of elements and the text inside each element is the same as the given string. It will fail if the numbers are different
+
+```js skip
+// 🚨 fails on purpose, since there are 3 LI elements
+cy.get('li').should('read', ['Write code', 'Add tests'])
+```
 
 With `should read`, you can use either exact text matches or match against regular expressions. For example, if we do not know the precise fine amount, we could use:
 
