@@ -2,6 +2,8 @@
 
 This assertion comes from the [cypress-map](https://github.com/bahmutov/cypress-map) plugin. It is useful for checking the text content of list of elements against strings or regular expressions.
 
+📺 Watch this recipe explained in the video [Custom Should Read Assertion From Cypress-map Plugin](https://youtu.be/AzJx-8VD6yI).
+
 <!-- fiddle Should read -->
 
 ```html
