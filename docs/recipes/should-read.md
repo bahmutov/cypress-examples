@@ -18,13 +18,14 @@ Let's confirm the exact text of the first LI element:
 cy.get('li').first().should('have.text', 'Write code')
 ```
 
-We can confirm partial text using `cy.contains`
+We can confirm _partial_ text match using `cy.contains` or `include.text` assertion:
 
 ```js
 cy.contains('li', 'Add').should('have.text', 'Add tests')
+cy.get('li').first().should('include.text', 'Write c')
 ```
 
-To confirm multiple _exact_ text matches, you can use the `should read` custom assertion from the `cypress-map` plugin
+To confirm multiple _exact_ text matches, you can use the `should read` custom assertion from the `cypress-map` plugin:
 
 ```js
 cy.get('li').should('read', [
@@ -34,7 +35,9 @@ cy.get('li').should('read', [
 ])
 ```
 
-You can use either exact text matches or match against regular expressions. For example, if we do not know the precise fine amount, we could use:
+The assertion ensures there is the exact number of elements and the text inside each element is the same as the given string.
+
+With `should read`, you can use either exact text matches or match against regular expressions. For example, if we do not know the precise fine amount, we could use:
 
 ```js
 cy.get('li').should('read', [
