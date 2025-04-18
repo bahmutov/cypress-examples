@@ -2160,6 +2160,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/check-style.html"
   },
   {
+    "title": "Checking Multiple Elements Cy.elements example",
+    "filename": "docs/recipes/checking-multiple-elements.md",
+    "created": "2025-04-18T14:10:08.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/checking-multiple-elements.html"
+  },
+  {
     "title": "Clear Input Field Flake Clear input field",
     "filename": "docs/recipes/clear-input-flake.md",
     "created": "2023-03-13T17:59:31.000Z",
