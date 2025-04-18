@@ -204,3 +204,7 @@ cy.getInOrder('#subtotal', '#tax', '#tip', '#total')
 **Note:** I am using `should(callback)` and not [cy.spread(callback)](https://on.cypress.io/spread) command, because I want to the query chain to retry if the numbers do not add up. The `cy.spread` command does not retry, so if the numbers are not immediately available, the test would fail.
 
 <!-- fiddle-end -->
+
+## See also
+
+- [Checking multiple elements](./checking-multiple-elements.md)
