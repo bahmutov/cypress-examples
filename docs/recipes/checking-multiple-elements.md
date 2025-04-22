@@ -2,6 +2,8 @@
 
 Imagine that we have a list of items, each item has multiple parts to check. For example, here is a Task list with the title, priority, and status fields. We often need to find the list of elements and check the specific fields inside each element.
 
+📺 Watch this recipe explained in the video [Introducing The cy.elements Query Command From Cypress-map Plugin](https://youtu.be/4mFZMQpzBIU).
+
 <!-- fiddle Cy.elements example -->
 
 ```html
