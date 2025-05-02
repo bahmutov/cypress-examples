@@ -1,5 +1,7 @@
 # Scroll Examples
 
+Using the [cy.scrollTo](https://on.cypress.io/scrollto) command.
+
 ## Scroll horizontally
 
 <!-- fiddle Horizontal scroll -->
@@ -24,7 +26,7 @@
 
 ```css hide
 #scrollable-horizontal {
-  height: 250px;
+  height: 200px;
   width: 400px;
   overflow: auto;
 }
@@ -35,7 +37,6 @@
   background-color: teal;
 }
 
-#scroll-horizontal,
 #scrollable-horizontal {
   background-color: #ddd;
   border: 1px solid #777;
@@ -75,8 +76,52 @@
 }
 ```
 
-```js
+Initially, the scrollable container starts at the left edge
 
+```js
+cy.get('#scrollable-horizontal').should(
+  'have.prop',
+  'scrollLeft',
+  0,
+)
+```
+
+Some of the blocks are visible, some are hidden by the overflow.
+
+```js
+cy.get('#scrollable-horizontal')
+  .contains('li', '1')
+  .should('be.visible')
+cy.get('#scrollable-horizontal')
+  .contains('li', '4')
+  .should('not.be.visible')
+```
+
+Scroll the container by 300 pixels to the right. I like adding `duration` parameter to make the scroll visible
+
+```js
+cy.get('#scrollable-horizontal').scrollTo('300px', {
+  duration: 700,
+})
+```
+
+Confirm the element has been scrolled and stays scrolled. ⚠️ Sometimes framework "resets" the scroll, so give our app some time to "think" and then check.
+
+```js
+cy.wait(100)
+  .get('#scrollable-horizontal')
+  .should('have.prop', 'scrollLeft', 300)
+```
+
+Confirm the first block is now hidden and the 4th block is visible.
+
+```js
+cy.get('#scrollable-horizontal')
+  .contains('li', '1')
+  .should('not.be.visible')
+cy.get('#scrollable-horizontal')
+  .contains('li', '4')
+  .should('be.visible')
 ```
 
 <!-- fiddle-end -->
