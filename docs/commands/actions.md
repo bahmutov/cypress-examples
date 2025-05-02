@@ -1265,6 +1265,8 @@ cy.get('#scrollable-both').scrollTo('center', { duration: 2000 })
 
 <!-- fiddle-end -->
 
+See [scroll examples](../recipes/scroll-examples.md)
+
 ## [.trigger()](https://on.cypress.io/trigger)
 
 To trigger an event on a DOM element, use the `.trigger()` command.
