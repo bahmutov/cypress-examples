@@ -4,6 +4,8 @@ Using the [cy.scrollTo](https://on.cypress.io/scrollto) command.
 
 ## Scroll horizontally
 
+📺 Watch this recipe explained in the video [Cypress Horizontal Scroll Example](https://youtu.be/EwQYiZLSuHg).
+
 <!-- fiddle Horizontal scroll -->
 
 ```html hide
@@ -100,7 +102,9 @@ cy.get('#scrollable-horizontal')
 Scroll the container by 300 pixels to the right. I like adding `duration` parameter to make the scroll visible
 
 ```js
-cy.get('#scrollable-horizontal').scrollTo('300px', {
+// we can give the X pixel amount either as a number
+// or as a string: 300 or "300px"
+cy.get('#scrollable-horizontal').scrollTo(300, {
   duration: 700,
 })
 ```
