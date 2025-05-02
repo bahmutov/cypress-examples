@@ -4194,6 +4194,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/same-text.html"
   },
   {
+    "title": "Scroll Examples Horizontal scroll",
+    "filename": "docs/recipes/scroll-examples.md",
+    "created": "2025-05-02T13:03:42.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/scroll-examples.html"
+  },
+  {
     "title": "Search part of the list Find the index yourself",
     "filename": "docs/recipes/search-part-of-the-list.md",
     "created": "2021-11-05T12:45:56.000Z",
