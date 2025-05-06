@@ -409,6 +409,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Stub called with the match](./recipes/stub-called-with-match.md)
 - [Stub calls depending on the arguments](./recipes/stub-call-through.md)
 - [Prepare to spy](./recipes/prepare-to-spy.md)
+- [Spy On Constructor Function](./recipes/spy-on-constructor.md)
 
 ### Testing tables
 
