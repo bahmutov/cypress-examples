@@ -1,5 +1,7 @@
 # Spy On Constructor Function
 
+📺 Watch this recipe explained in the video [Spy On Constructor Function](https://youtu.be/By-qJs2UNxk).
+
 <!-- fiddle Spy on constructor function -->
 
 ```js
