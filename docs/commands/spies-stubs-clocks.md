@@ -1008,5 +1008,6 @@ cy.get('#tick-div').click().should('have.text', '1489449610')
 
 - Recipe [Stub calls depending on the arguments](../recipes/stub-call-through.md)
 - Recipe [Spy On Constructor Function](../recipes/spy-on-constructor.md)
+- Recipe [Stub The Constructor Function](../recipes/stub-constructor.md)
 - Read the blog post [Spy On A Complex Method Call](https://glebbahmutov.com/blog/spy-on-complex-method-call/)
 - Read the blog post [Sinon Edge Cases](https://glebbahmutov.com/blog/sinon-edge/)
