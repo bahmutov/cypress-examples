@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-19a44439","path":"/recipes/spy-on-constructor.html","title":"Spy On Constructor Function","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1746560476000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/spy-on-constructor.md"}');export{t as data};
