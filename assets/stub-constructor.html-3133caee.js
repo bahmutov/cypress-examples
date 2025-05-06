@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-eb9eb3ca","path":"/recipes/stub-constructor.html","title":"Stub The Constructor Function","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1746572517000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/stub-constructor.md"}');export{t as data};
