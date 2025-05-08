@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-07a07064","path":"/recipes/jquery-contains.html","title":"jQuery :contains and custom pseudo-selectors","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1746722478000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/jquery-contains.md"}');export{e as data};

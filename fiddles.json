@@ -3426,6 +3426,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/iterate.html"
   },
   {
+    "title": "jQuery :contains and custom pseudo-selectors jQuery contains and icontains pseudo-selectors",
+    "filename": "docs/recipes/jquery-contains.md",
+    "created": "2025-05-08T16:41:18.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/jquery-contains.html"
+  },
+  {
     "title": "Json Data Attribute Get Json Data Attribute",
     "filename": "docs/recipes/json-data-attribute.md",
     "created": "2022-12-19T22:00:18.000Z",
