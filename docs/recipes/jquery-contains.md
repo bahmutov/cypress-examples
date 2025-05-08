@@ -1,6 +1,6 @@
 # jQuery :contains and custom pseudo-selectors
 
-You can select multiple elements using partial text match and jQuery `:contains` pseudo-selector. You can even make your own new pseudo-selectors.
+You can select multiple elements using partial text match and jQuery [`:contains`](https://api.jquery.com/contains-selector/) pseudo-selector. You can even make your own new pseudo-selectors.
 
 <!-- fiddle jQuery contains and icontains pseudo-selectors -->
 
