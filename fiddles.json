@@ -2136,6 +2136,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/check-enabled-checkboxes.html"
   },
   {
+    "title": "Check Link Attributes Checking several links",
+    "filename": "docs/recipes/check-link-attributes.md",
+    "created": "2025-05-12T16:19:42.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-link-attributes.html"
+  },
+  {
     "title": "Check multiplication Multiplication",
     "filename": "docs/recipes/check-multiplication.md",
     "created": "2022-04-11T14:16:12.000Z",
