@@ -343,6 +343,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Don't Change The Subject](./recipes/dont-change-the-subject.md) shows how to use the `possess` assertion from the [cypress-map](https://github.com/bahmutov/cypress-map) plugin.
 - [checking multiple elements](./recipes/checking-multiple-elements.md) using `cy.elements` command from the [cypress-map](https://github.com/bahmutov/cypress-map) plugin
 - [scrolling examples](./recipes/scroll-examples.md)
+- check multiple [link attributes](./recipes/check-link-attributes.md)
 
 ### Working with the window object
 
