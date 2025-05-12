@@ -30,23 +30,18 @@ Imagine our HTML document contains multiple `<link>` elements. We want to valida
 
 ```js
 cy.get('link[rel]').each(($link) => {
+  const html = $link[0].outerHTML
   const href = $link.attr('href')
   const rel = $link.attr('rel')
 
-  expect(rel, `rel value for ${href}`).to.be.oneOf([
-    'preconnect',
-    'prefetch',
-  ])
-  expect($link, `cross origin for ${href}`).to.have.attr(
-    'crossorigin',
-    'anonymous',
-  )
+  expect(rel, html).to.be.oneOf(['preconnect', 'prefetch'])
+  expect($link, html).to.have.attr('crossorigin', 'anonymous')
 
   // check if the link URL is well-formed
   try {
     const url = new URL(href)
   } catch (error) {
-    throw new Error(`Link has invalid href ${href}`)
+    throw new Error(`Link has invalid href ${html}`)
   }
 })
 ```
