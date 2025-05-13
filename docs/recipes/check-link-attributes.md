@@ -1,5 +1,7 @@
 # Check Link Attributes
 
+📺 Watch this recipe explained in the video [Checking HEAD link elements](https://youtu.be/219EnPj5CbM).
+
 <!-- fiddle Checking several links -->
 
 Imagine our HTML document contains multiple `<link>` elements. We want to validate the attributes for each link.
