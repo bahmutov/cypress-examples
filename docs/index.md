@@ -258,6 +258,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Input value matching a regular expression](./recipes/input-value.md)
 - [Select by attribute](./recipes/select-by-attribute.md) examples
 - Confirm the [input element has a value](./recipes/input-has-value.md)
+- [Array includes a primitive value](./recipes/array-includes-a-primitive-value.md)
 - [Array includes another array](./recipes/array-includes-another-array.md)
 - Get the element's text [without text from a child element](./recipes/skip-child.md)
 - Get Elements [By Attribute That Starts With String X](./recipes/get-attribute-starts.md)
