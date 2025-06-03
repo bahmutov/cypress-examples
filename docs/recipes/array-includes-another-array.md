@@ -31,3 +31,7 @@ expect(difference, 'extra countries').to.be.empty
 ```
 
 <!-- fiddle-end -->
+
+## See also
+
+- [Array includes a primitive value](./array-includes-a-primitive-value.md)

@@ -57,3 +57,8 @@ cy.wrap(person)
 ```
 
 <!-- fiddle-end -->
+
+## See also
+
+- [Array includes a primitive value](./array-includes-a-primitive-value.md)
+- [Array includes another array](./array-includes-another-array.md)
