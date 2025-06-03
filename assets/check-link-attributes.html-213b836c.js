@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-1bdb7617","path":"/recipes/check-link-attributes.html","title":"Check Link Attributes","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1747066782000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/check-link-attributes.md"}');export{t as data};
