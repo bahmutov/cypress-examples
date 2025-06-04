@@ -71,11 +71,14 @@ The test stubs all `/analytics` requests and should confirm one of the has `even
 ```js
 cy.intercept('POST', '/analytics', {}).as('analytics')
 cy.get('@analytics.all')
+  // cy.map query comes from the cypress-map plugin
   .map('request.body.eventId')
   .should('include', 'cart_empty')
 ```
 
 <!-- fiddle-end -->
+
+**Note:** `cy.map` query operator comes from the [cypress-map](https://github.com/bahmutov/cypress-map) plugin.
 
 ## Checking network requests with array flattening
 
