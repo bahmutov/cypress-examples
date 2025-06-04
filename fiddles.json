@@ -2016,6 +2016,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/array-includes-a-primitive-value.html"
   },
   {
+    "title": "Array Includes A Primitive Value Checking network requests",
+    "filename": "docs/recipes/array-includes-a-primitive-value.md",
+    "created": "2025-06-03T19:50:05.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/array-includes-a-primitive-value.html"
+  },
+  {
+    "title": "Array Includes A Primitive Value Checking network requests with flattening",
+    "filename": "docs/recipes/array-includes-a-primitive-value.md",
+    "created": "2025-06-03T19:50:05.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/array-includes-a-primitive-value.html"
+  },
+  {
     "title": "Array includes another array Array includes another array",
     "filename": "docs/recipes/array-includes-another-array.md",
     "created": "2022-09-06T14:08:49.000Z",
