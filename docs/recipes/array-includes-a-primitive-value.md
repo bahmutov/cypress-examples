@@ -1,5 +1,7 @@
 # Array Includes A Primitive Value
 
+📺 Watch these examples explained in the video [Array Includes A Primitive Value And Checking Multiple Network Calls](https://youtu.be/LIbzpPCmGAk).
+
 ## Checking an array
 
 <!-- fiddle Checking array -->
