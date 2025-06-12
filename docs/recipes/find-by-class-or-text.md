@@ -56,7 +56,9 @@ cy.contains('[class="day old"]', 'third B')
 
 ## Selecting by exact text
 
-If you want to select using the exact text, use a regular expression
+📺 Watch this example explained in the video [Find One Element With Exact Text Match](https://youtu.be/uc0W4UtZd2A).
+
+If you want to select using the exact text, use a regular expression or `.findOne` helper.
 
 <!-- fiddle Exact class and text -->
 
