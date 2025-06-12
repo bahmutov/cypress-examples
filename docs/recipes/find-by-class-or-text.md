@@ -74,11 +74,34 @@ We want to select ".day" with the exact text "8" from the HTML below.
 </ul>
 ```
 
+Using [cy.contains](https://on.cypress.io/contains) query is problematic, since it uses partial text match.
+
 ```js
+const textToFind = '8'
 // using a string "8" finds the first element containing it
-cy.contains('[class=day]', '8').should('have.text', '28')
+cy.contains('.day', textToFind).should('have.text', '28')
+```
+
+If we want an exact match, we need to construct a regular expression from our string value.
+
+```js
 // using regular expression finds the exact text match
-cy.contains('[class=day]', /^8$/).should('have.text', '8')
+cy.contains('.day', /^8$/).should('have.text', textToFind)
+// construct a regular expression from the exact string value
+cy.contains('.day', new RegExp(`^${textToFind}$`)).should(
+  'have.text',
+  textToFind,
+)
+```
+
+We can find a single element using precise text using `cy.findOne` query from the [cypress-map](https://github.com/bahmutov/cypress-map) plugin.
+
+```js
+cy.get('.day')
+  .findOne(textToFind)
+  // same as
+  // .findOne((el) => el.innerText === textToFind)
+  .should('have.text', textToFind)
 ```
 
 <!-- fiddle-end -->
