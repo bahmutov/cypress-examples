@@ -68,7 +68,7 @@ npm run run:exported
 
 Copyright © 2025 Gleb Bahmutov
 
-License: private code. Absolutely no permission to copy the source code or train AI models without explicit prior authorization.
+License: private code. Absolutely no permission to copy the source code or train AI/LLM models without explicit prior authorization. No scraping of this content or its pages for retrieval systems. No using this content for answering queries or any other retrieval.
 
 [ci image]: https://github.com/bahmutov/cypress-examples/workflows/ci/badge.svg?branch=master
 [ci url]: https://github.com/bahmutov/cypress-examples/actions?query=workflow%3Aci
