@@ -4704,6 +4704,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/text-changes.html"
   },
   {
+    "title": "Text changes Text changes using a static alias",
+    "filename": "docs/recipes/text-changes.md",
+    "created": "2021-11-08T18:30:20.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/text-changes.html"
+  },
+  {
     "title": "Text is present in another element Text is present in another element",
     "filename": "docs/recipes/text-in-another-element.md",
     "created": "2022-06-28T13:22:15.000Z",
