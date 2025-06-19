@@ -1,8 +1,14 @@
 # Contains text in a list
 
-Let's take a list and check if it contains a given text. We can write this test in several ways. Watch the video [Find Text Item Without Flake Using cy.contains Command](https://youtu.be/RyHSIk7nzD0) to see the explanation behind this recipe.
+Let's take a list and check if it contains a given text string. We can write this test in several ways.
+
+📺 Watch the video [Find Text Item Without Flake Using cy.contains Command](https://youtu.be/RyHSIk7nzD0) to see the explanation behind this recipe.
+
+## Query the items first
 
 <!-- fiddle Test 1: find items then check their text -->
+
+Confirm that the list includes the item with the text "three"
 
 ```html
 <ul id="list">
@@ -26,6 +32,8 @@ cy.get('#list')
 ```
 
 <!-- fiddle-end -->
+
+## Dynamic list
 
 What if the list is dynamic? The added items will NOT be seen by the `.then` command unfortunately, since Cypress retries the last command only, see the [retry-ability guide](https://on.cypress.io/retry-ability).
 
@@ -73,6 +81,39 @@ const items = ['three', 'four', 'one']
 items.forEach((item) => {
   cy.contains('#list li', item)
 })
+```
+
+<!-- fiddle-end -->
+
+## Using cypress-map
+
+If we are using [cypress-map](https://github.com/bahmutov/cypress-map) plugin, we have additional queries that make writing the test much simpler. Let's find the string "three" on the page.
+
+<!-- fiddle Test 3: find text in the dynamic items using cypress-map queries -->
+
+```html
+<ul id="list">
+  <li>one</li>
+  <li>two</li>
+</ul>
+<script>
+  setTimeout(function () {
+    const list = document.getElementById('list')
+    list.innerHTML += `
+      <li>three</li>
+      <li>four</li>
+      <li>five</li>
+    `
+  }, 1000)
+</script>
+```
+
+We can query the DOM, then map each element to its text contents using the query `cy.map`. This produces a "live" list of strings, which updates if the DOM changes.
+
+```js
+// a chain of query commands
+// which retries until the assertion passes
+cy.get('#list li').map('innerText').should('include', 'three')
 ```
 
 <!-- fiddle-end -->
