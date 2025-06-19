@@ -2526,6 +2526,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/contains-text-in-list.html"
   },
   {
+    "title": "Contains text in a list Test 3: find text in the dynamic items using cypress-map queries",
+    "filename": "docs/recipes/contains-text-in-list.md",
+    "created": "2022-04-25T13:19:26.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/contains-text-in-list.html"
+  },
+  {
     "title": "Copyright Year Copyright year",
     "filename": "docs/recipes/copyright-year.md",
     "created": "2023-01-03T02:29:53.000Z",
@@ -2779,6 +2785,12 @@
   },
   {
     "title": "Each Text Content Search results start with MI",
+    "filename": "docs/recipes/each-text.md",
+    "created": "2023-06-27T20:29:11.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-text.html"
+  },
+  {
+    "title": "Each Text Content Search results start with MI using cypress-map queries",
     "filename": "docs/recipes/each-text.md",
     "created": "2023-06-27T20:29:11.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/each-text.html"

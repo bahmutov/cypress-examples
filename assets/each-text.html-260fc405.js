@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-42e6cfe3","path":"/recipes/each-text.html","title":"Each Text Content","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1687963321000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":3}]},"filePathRelative":"recipes/each-text.md"}');export{e as data};
