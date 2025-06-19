@@ -67,6 +67,7 @@ export default defineUserConfig({
     // point pages back at the GitHub documents
     repo: 'bahmutov/cypress-examples',
     docsDir: 'docs',
+    docsBranch: 'master',
     editLinks: true,
     editLinkText: 'Help us improve this page!',
     navbar: [
