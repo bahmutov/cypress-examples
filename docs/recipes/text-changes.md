@@ -85,6 +85,8 @@ cy.get('@originalText').then((text) => {
 })
 ```
 
+📺 watch this example explained in the video [Text Changes And The Static Alias](https://youtu.be/KkkMrzBi0mY).
+
 <!-- fiddle-end -->
 
 See also [Counter increments](./counter-increments.md)
