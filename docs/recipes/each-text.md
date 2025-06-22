@@ -93,6 +93,8 @@ cy.get('#search-results li')
 
 ## Using cypress-map queries and chai-each assertion
 
+📺 Watch this recipe explained in the video [Chai-each Plugin Example](https://youtu.be/rE6izEjeRxA).
+
 We can refactor the above solution using [chai-each](https://www.chaijs.com/plugins/chai-each/) assertion library.
 
 <!-- fiddle Search results start with MI using chai-each assertion -->
