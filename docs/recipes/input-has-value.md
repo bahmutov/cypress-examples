@@ -51,6 +51,8 @@ cy.get('#dynamic')
 
 ## Partial value match
 
+📺 Watch this recipe explained in the video [Partial Value Match](https://youtu.be/y3A6FjHOm3U).
+
 Let's say we know just a part of the value. Here is how we can confirm it:
 
 <!-- fiddle Partial value match -->
