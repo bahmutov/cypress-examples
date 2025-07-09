@@ -3354,6 +3354,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/input-has-value.html"
   },
   {
+    "title": "Input has value Partial value match",
+    "filename": "docs/recipes/input-has-value.md",
+    "created": "2022-08-31T21:27:10.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/input-has-value.html"
+  },
+  {
     "title": "Input Element Trims Spaces Input trims spaces",
     "filename": "docs/recipes/input-trims-spaces.md",
     "created": "2022-02-21T18:50:26.000Z",
