@@ -80,7 +80,7 @@ cy.get('#from-zip')
   .and('contain', fromZip)
 ```
 
-How do we confirm the know portion of the input element's value? By using the [cy.invoke](https://on.cypress.io/invoke) query followed by any "normal" Chai assertion.
+How do we confirm the know portion of the input element's value? By using the [cy.invoke](https://on.cypress.io/invoke) query followed by any "normal" Chai assertion against the string subject.
 
 ```js hide
 // the known value to confirm
