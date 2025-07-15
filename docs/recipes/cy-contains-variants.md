@@ -73,4 +73,15 @@ cy.get('#names li')
   .should('be.true')
 ```
 
+We can also write the above check in a different way to confirm that only a _single_ element includes the given text
+
+```js
+// confirm there is only 1 element
+// that includes the given string
+cy.get('#names li')
+  .map('innerText')
+  .invoke('filter', (s) => s.includes(text))
+  .should('have.length', 1)
+```
+
 <!-- fiddle-end -->
