@@ -345,6 +345,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [checking multiple elements](./recipes/checking-multiple-elements.md) using `cy.elements` command from the [cypress-map](https://github.com/bahmutov/cypress-map) plugin
 - [scrolling examples](./recipes/scroll-examples.md)
 - check multiple [link attributes](./recipes/check-link-attributes.md)
+- [cy.contains variants](./recipes/cy-contains-variants.md)
 
 ### Working with the window object
 
