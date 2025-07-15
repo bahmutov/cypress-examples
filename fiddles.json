@@ -2586,6 +2586,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/custom-events.html"
   },
   {
+    "title": "cy.contains Variants Separate the existence from the text check",
+    "filename": "docs/recipes/cy-contains-variants.md",
+    "created": "2025-07-15T19:03:41.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/cy-contains-variants.html"
+  },
+  {
     "title": "Cy events Command start",
     "filename": "docs/recipes/cy-events.md",
     "created": "2022-07-26T19:05:08.000Z",
