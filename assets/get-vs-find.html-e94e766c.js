@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-62bee62c","path":"/recipes/get-vs-find.html","title":"cy.get Vs cy.find","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1754399770000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/get-vs-find.md"}');export{e as data};

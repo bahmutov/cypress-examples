@@ -1398,12 +1398,6 @@
     "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
   },
   {
-    "title": "Querying cy.get vs .find",
-    "filename": "docs/commands/querying.md",
-    "created": "2020-04-11T18:04:43.000Z",
-    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
-  },
-  {
     "title": "Spies, Stubs & Clocks cy.spy() wrap a method in a spy",
     "filename": "docs/commands/spies-stubs-clocks.md",
     "created": "2020-04-22T12:47:20.000Z",
@@ -3232,6 +3226,12 @@
     "filename": "docs/recipes/get-text-script.md",
     "created": "2022-02-23T12:59:29.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/get-text-script.html"
+  },
+  {
+    "title": "cy.get Vs cy.find cy.get vs .find",
+    "filename": "docs/recipes/get-vs-find.md",
+    "created": "2025-08-05T13:16:10.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/get-vs-find.html"
   },
   {
     "title": "Handle Telephone Links Confirm the telephone protocol URL",
