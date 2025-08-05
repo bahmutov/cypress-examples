@@ -13,18 +13,29 @@ The [cy.get](https://on.cypress.io/get) command always starts its search from th
 </section>
 ```
 
+First, let's see what the `cy.get` does in the middle of the command chain:
+
 ```js
 cy.get('#comparison')
   .get('div')
   // finds the DIV .test-title outside the #parent
   // and the DIV .feature inside
-  .should('have.class', 'test-title')
+  .should('have.length', 2)
+  // one DIV is _outside_ the #comparison element
+  .and('have.class', 'test-title')
+  // the other DIV is inside the #comparison element
   .and('have.class', 'feature')
+```
+
+We probably meant to search _inside_ the parent element with ID "comparison", so we should use the `cy.find` child command.
+
+```js
 cy.get('#comparison')
   .find('div')
   // the search is limited to the tree at #comparison element
   .should('have.length', 1)
   .and('have.class', 'feature')
+  .and('have.text', 'Both are querying commands')
 ```
 
 <!-- fiddle-end -->
