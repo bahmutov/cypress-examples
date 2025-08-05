@@ -4,6 +4,8 @@
 
 The [cy.get](https://on.cypress.io/get) command always starts its search from the `document` element, or, if used inside `.within`, from the [cy.root](https://on.cypress.io/root) element. The [.find](https://on.cypress.io/find) command starts the search from the current subject.
 
+📺 Watch this recipe explained in my video [The Difference Between cy.get And cy.find Commands](https://youtu.be/OLctp9x5R1g).
+
 <!-- fiddle cy.get vs .find -->
 
 ```html
