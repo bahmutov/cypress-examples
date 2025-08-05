@@ -13,7 +13,6 @@ Commands drive your tests in the browser like a real user would. They let you pe
 - [within](./commands/querying.md#within)
 - [root](./commands/querying.md#cy-root)
 - [Best Practices: Selecting elements](./commands/querying.md#best-practices-selecting-elements)
-- [`cy.get` vs `.find`](./commands/querying.md#cy-get-vs-find)
 - [Pseudo class selectors](./commands/querying.md#pseudo-class-selectors)
 
 ### [Traversal](./commands/traversal.md)
@@ -346,6 +345,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [scrolling examples](./recipes/scroll-examples.md)
 - check multiple [link attributes](./recipes/check-link-attributes.md)
 - [cy.contains variants](./recipes/cy-contains-variants.md)
+- [cy.get Vs cy.find](./recipes/get-vs-find.md)
 
 ### Working with the window object
 
