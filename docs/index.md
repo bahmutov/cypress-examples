@@ -346,6 +346,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - check multiple [link attributes](./recipes/check-link-attributes.md)
 - [cy.contains variants](./recipes/cy-contains-variants.md)
 - [cy.get Vs cy.find](./recipes/get-vs-find.md)
+- checking [text variants](./recipes/text-variants.md)
 
 ### Working with the window object
 
