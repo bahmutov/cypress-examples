@@ -6,6 +6,11 @@ const {
 module.exports = (on, config) => {
   on('file:preprocessor', mdPreprocessor)
 
+  on('before:run', (details) => {
+    console.log('before:run')
+    console.log(details)
+  })
+
   on('after:spec', (spec, results) => {
     console.log('after:spec')
     console.log(spec)
