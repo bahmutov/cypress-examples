@@ -4728,6 +4728,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/text-in-another-element.html"
   },
   {
+    "title": "Text Variants Text variants",
+    "filename": "docs/recipes/text-variants.md",
+    "created": "2025-08-11T15:06:52.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/text-variants.html"
+  },
+  {
     "title": "cy.then Callback With Retries Inside Cy.then with retries callback",
     "filename": "docs/recipes/then-with-retry-inside.md",
     "created": "2024-06-03T23:46:30.000Z",
