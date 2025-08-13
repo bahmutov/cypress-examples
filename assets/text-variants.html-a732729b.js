@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-11830bce","path":"/recipes/text-variants.html","title":"Text Variants","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1755091971000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/text-variants.md"}');export{t as data};
