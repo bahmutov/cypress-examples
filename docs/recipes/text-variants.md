@@ -1,5 +1,7 @@
 # Text Variants
 
+📺 Watch this recipe explained in the video [Text Variants](https://youtu.be/Jy0gYyo1IMc).
+
 <!-- fiddle Text variants -->
 
 ```html hide
