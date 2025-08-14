@@ -643,3 +643,4 @@ cy.get('#loader')
 - [Conditional accept](./conditional-accept.md) recipe
 - [Add / delete list item recipe](./add-list-item.md)
 - [Number of elements](./number-of-elements.md)
+- [Conditional summary](./conditional-summary.md)
