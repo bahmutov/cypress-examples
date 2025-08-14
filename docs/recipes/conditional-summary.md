@@ -2,6 +2,8 @@
 
 How do you test an UI element without controlling its precise state? For example, imagine the page loading a details element. Sometimes the details element is initially opened, sometimes it is closed.
 
+📺 Watch this recipe explained in the video [Conditional Details](https://youtu.be/7B5EENRTGSg).
+
 <!-- fiddle Conditional details -->
 
 ```html hide
