@@ -2352,6 +2352,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-accept.html"
   },
   {
+    "title": "Conditional Summary Conditional details",
+    "filename": "docs/recipes/conditional-summary.md",
+    "created": "2025-08-14T15:14:59.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/conditional-summary.html"
+  },
+  {
     "title": "Conditional testing Toggle first solution",
     "filename": "docs/recipes/conditional-testing.md",
     "created": "2021-01-15T17:43:22.000Z",
