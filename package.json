@@ -58,7 +58,7 @@
     "cypress": "13.17.0",
     "cypress-book": "1.5.0",
     "cypress-map": "1.49.0",
-    "cypress-markdown-preprocessor": "1.10.29",
+    "cypress-markdown-preprocessor": "1.10.30",
     "cypress-real-events": "^1.14.0",
     "cypress-recurse": "^1.31.2",
     "dependency-version-badge": "1.2.0",
