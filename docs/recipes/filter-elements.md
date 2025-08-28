@@ -20,6 +20,8 @@ We can get all `LI` elements and then pick a particular element using its index 
 cy.get('li').eq(2).should('have.text', 'Pears')
 ```
 
+## filter using :odd pseudo-selector
+
 How would you pick several `LI` elements? You can use jQuery pseudo-classes. For example, to pick items 1, 3, 5, etc from the list yielded by the `cy.get` command you should use the jQuery [:odd](https://api.jquery.com/odd-selector/) pseudo-class with [cy.filter](https://on.cypress.io/filter) command.
 
 ```js
@@ -42,6 +44,8 @@ cy.get('li')
   .should('have.text', 'Grapes')
 ```
 
+## filter using :even pseudo-selector
+
 You can select elements 0, 2, 4, etc using `:even` jQuery pseudo-class or by invoking the jQuery `even()` method
 
 ```js
@@ -59,6 +63,8 @@ cy.get('li')
   .should('have.text', 'Pears')
 ```
 
+## filter using :eq pseudo-selector
+
 What if you want to select the 2nd and the 3rd elements? You can use the jQuery [`:eq(index)`](https://api.jquery.com/eq-selector/) pseudo-class to pick individual elements and combine them using the CSS `,` operator.
 
 ```js
@@ -70,6 +76,8 @@ cy.get('li')
   .and('include.text', 'Grapes')
   .and('include.text', 'Pears')
 ```
+
+## filter using :gt and :lt pseudo-selector
 
 To select all elements after a certain index or before it, you can use jQuery `:gt()` and `:lt()` pseudo-classes with a zero-based index.
 
@@ -99,6 +107,8 @@ cy.get('li')
   .and('include.text', 'Pears')
 ```
 
+## filter using custom callback
+
 We can write custom filtering logic by passing a callback to `cy.filter(callback)` command. For example, let's only select elements with the text starting with the letter "k".
 
 ```js
@@ -109,6 +119,55 @@ cy.get('li')
     return el.innerText.toLowerCase()[0] === 'k'
   })
   .should('have.text', 'Kiwi')
+```
+
+<!-- fiddle.end -->
+
+## filter using attributes
+
+<!-- fiddle Filter elements using an attribute value -->
+
+```html
+<ul>
+  <li data-price="1">Apples</li>
+  <li data-price="3">Grapes</li>
+  <li data-price="3">Pears</li>
+  <li data-price="10">Kiwi</li>
+  <li>Potatoes</li>
+</ul>
+```
+
+Let's find all elements with price "1" using the `data-price` attribute
+
+```js
+cy.get('li')
+  .filter('[data-price=1]')
+  .should('have.length', 1)
+  .and('have.text', 'Apples')
+```
+
+Let's find all elements with price "3". I will use the "should read" assertion from [cypress-map](https://github.com/bahmutov/cypress-map) plugin.
+
+```js
+cy.get('li')
+  .filter('[data-price=3]')
+  .should('read', ['Grapes', 'Pears'])
+```
+
+Find all elements that have the `data-price` attribute
+
+```js
+cy.get('li').filter('[data-price]').should('have.length', 4)
+```
+
+Find all elements without the `data-price` attribute; there should be just potatoes.
+
+```js
+cy.get('li').not('[data-price]').should('read', ['Potatoes'])
+// same as
+cy.get('li')
+  .filter(':not([data-price])')
+  .should('read', ['Potatoes'])
 ```
 
 <!-- fiddle.end -->
