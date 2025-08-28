@@ -170,4 +170,18 @@ cy.get('li')
   .should('read', ['Potatoes'])
 ```
 
+The [cy.filter](https://on.cypress.io/filter) query command has the built-in existence assertion. If there are no elements after the `cy.filter` step, the test retries.
+
+```js skip
+// will retry and fail, since none of the elements
+// has this high of a price
+cy.get('li').filter('[data-price=99]')
+```
+
+We can confirm there are no filtered elements by adding the "should not exist" assertion.
+
+```js
+cy.get('li').filter('[data-price=99]').should('not.exist')
+```
+
 <!-- fiddle.end -->
