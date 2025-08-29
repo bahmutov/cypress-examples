@@ -118,13 +118,14 @@ cy.get('img')
 I like using [cy.each](https://on.cypress.io/each) command when checking multiple images. A single assertion against the prop `naturalWidth` can be chained with above zero assertion.
 
 ```html hide
+<p>First image below</p>
 <img
   src="https://glebbahmutov.com/images/warming-stripes.png"
   width="400"
   height="50"
   alt="Warming stripes 1"
 />
-<br />
+<p>Second image below</p>
 <img
   src="https://glebbahmutov.com/images/warming-stripes.png"
   width="400"
@@ -136,6 +137,8 @@ I like using [cy.each](https://on.cypress.io/each) command when checking multipl
 **Important:** `cy.each` does not retry. If the images take a little bit longer to load, you need to ensure using other queries or assertions.
 
 ```js
+// for now simply wait a little bit to let the image load
+cy.wait(1000)
 cy.get('img')
   .should('have.length', 2)
   // at least one image should be visible
