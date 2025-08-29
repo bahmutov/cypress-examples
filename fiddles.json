@@ -2976,6 +2976,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/filter-elements.html"
   },
   {
+    "title": "Filter elements Filter elements by elements inside",
+    "filename": "docs/recipes/filter-elements.md",
+    "created": "2022-08-10T12:56:18.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/filter-elements.html"
+  },
+  {
     "title": "Find and click the accordion with a button Find and click the accordion with a button",
     "filename": "docs/recipes/find-and-click-accordion-button.md",
     "created": "2022-06-23T13:56:07.000Z",
