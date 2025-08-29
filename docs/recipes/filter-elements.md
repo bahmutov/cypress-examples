@@ -185,3 +185,49 @@ cy.get('li').filter('[data-price=99]').should('not.exist')
 ```
 
 <!-- fiddle.end -->
+
+## filter elements with specific elements inside
+
+<!-- fiddle Filter elements by elements inside -->
+
+Imagine if some elements have "New" labels inside. Can we find all `LI` elements that have the `.new` children element present?
+
+```html
+<ul>
+  <li>Apples <span class="new">New</span></li>
+  <li>Grapes</li>
+  <li>Pears</li>
+  <li>Kiwi <span class="new">New</span></li>
+</ul>
+```
+
+```css hide
+.new {
+  background-color: blue;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: small;
+}
+```
+
+Let's confirm that there are 2 new items on sale.
+
+```js
+cy.get('li').filter(':has(.new)').should('have.length', 2)
+```
+
+How about confirming the names of the items that are not new? We can combine the `:not` and `:has` pseudo-selectors. We can also extract the element's own text value (without the children text) to compare.
+
+```js
+cy.get('li')
+  .filter(':not(:has(.new))')
+  // from each element get the element's own text node
+  .map('childNodes.0.nodeValue')
+  // remove leading and trailing spaces
+  .mapInvoke('trim')
+  .should('deep.equal', ['Grapes', 'Pears'])
+```
+
+<!-- fiddle.end -->
