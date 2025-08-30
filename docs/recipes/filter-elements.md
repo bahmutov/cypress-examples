@@ -190,6 +190,8 @@ cy.get('li').filter('[data-price=99]').should('not.exist')
 
 ## filter elements with specific elements inside
 
+📺 This example is explained in the video [Use cy.filter Command To Filter Elements By Child Element Presence](https://youtu.be/ZC6fXDkPtMI).
+
 <!-- fiddle Filter elements by elements inside -->
 
 Imagine if some elements have "New" labels inside. Can we find all `LI` elements that have the `.new` children element present?
