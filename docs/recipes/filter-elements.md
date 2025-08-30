@@ -125,6 +125,8 @@ cy.get('li')
 
 ## filter using attributes
 
+📺 Watch this example explained in the video [Cypress cy.filter Command Attribute Examples](https://youtu.be/nG-vJZkcmSw).
+
 <!-- fiddle Filter elements using an attribute value -->
 
 ```html
