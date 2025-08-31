@@ -348,6 +348,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [cy.get Vs cy.find](./recipes/get-vs-find.md)
 - checking [text variants](./recipes/text-variants.md)
 - [Conditional summary](./recipes/conditional-summary.md)
+- the difference between [cy.find and cy.filter commands](./recipes/find-vs-filter.md)
 
 ### Working with the window object
 
