@@ -2,6 +2,8 @@
 
 The [cy.find](https://on.cypress.io/find) query command finds the descendents of the current subject, while the [cy.filter](https://on.cypress.io/filter) filters the _current_ elements and returns a new list.
 
+📺 Watch this recipe explained in the video [The Difference Between Cypress Commands cy.find And cy.filter](https://youtu.be/7Ll_b4Zxd84).
+
 <!-- fiddle cy.find vs cy.filter -->
 
 ```html
