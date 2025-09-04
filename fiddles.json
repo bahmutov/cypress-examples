@@ -3612,6 +3612,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/loader-inside.html"
   },
   {
+    "title": "HTML Should Look Assertion Should look assertion",
+    "filename": "docs/recipes/look-assertion.md",
+    "created": "2025-09-04T20:55:55.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/look-assertion.html"
+  },
+  {
     "title": "Mailto HREF link Test HREF mailto link",
     "filename": "docs/recipes/mailto-link.md",
     "created": "2023-01-27T18:29:02.000Z",
