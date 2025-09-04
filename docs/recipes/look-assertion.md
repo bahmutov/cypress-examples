@@ -2,6 +2,8 @@
 
 Plugin [cypress-map](https://github.com/bahmutov/cypress-map) has "should look" assertion that performs partial HTML element match. It lets you check the _important_ elements and their attributes only. For example, let's validate the `dialog` element and its contents.
 
+📺 Watch this recipe explained in the video [Custom Cypress HTML Should Look Assertion](https://youtu.be/7j6vwy6cX_w).
+
 <!-- fiddle Should look assertion -->
 
 ```html
