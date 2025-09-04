@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5f7d1d02","path":"/recipes/look-assertion.html","title":"HTML Should Look Assertion","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1757027092000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/look-assertion.md"}');export{e as data};
