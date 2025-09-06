@@ -71,7 +71,7 @@
     "prettier": "2.8.8",
     "semantic-release": "^17.0.7",
     "shelljs": "0.8.4",
-    "start-server-and-test": "2.0.13",
+    "start-server-and-test": "2.1.0",
     "stop-only": "^3.3.1",
     "vuepress": "2.0.0-beta.61",
     "vuepress-plugin-clean-urls": "1.1.2"
