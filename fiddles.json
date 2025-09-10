@@ -2826,6 +2826,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/element-detaches.html"
   },
   {
+    "title": "Element Does Not Appear Error element does not appear",
+    "filename": "docs/recipes/element-does-not-appear.md",
+    "created": "2025-09-10T20:05:37.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/element-does-not-appear.html"
+  },
+  {
     "title": "Element Hides Button goes away after a click",
     "filename": "docs/recipes/element-hides.md",
     "created": "2022-12-15T23:46:44.000Z",
