@@ -401,6 +401,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [click in parallel](./recipes/click-in-parallel.md) to a Cypress command
 - write a custom command with [multiple DOM snapshots](./recipes/custom-command-with-snapshots.md)
 - jQuery `:contains` and [custom pseudo-selectors](./recipes/jquery-contains.md)
+- confirm that an [element does not appear](./recipes/element-does-not-appear.md)
 
 ### Working with network
 
