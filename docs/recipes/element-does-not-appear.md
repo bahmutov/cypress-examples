@@ -18,6 +18,8 @@ What we need is a custom command or assertion that keeps checking the DOM for a 
 </div>
 ```
 
+The application is loading the "data", but there might be an error. If there is an error, a message is shown on the screen, and it "retries" loading the data. So we could potentially see a flash "Error" on the page. How do we detect this?
+
 ```js app
 setTimeout(() => {
   document.getElementById('message').innerText = 'Finished'
@@ -37,7 +39,24 @@ if (Math.random() < 0) {
 }
 ```
 
-We can "ping" the DOM using a "while" loop. To terminate the loop, we can use the comment timeout and finding the DOM element "#message" with specific text.
+We can "ping" the DOM using a "while" loop. To terminate the loop, we can use the comment timeout and finding the DOM element "#message" with specific text. The simplest solution would be a simple asynchronous `while` loop
+
+```js skip
+cy.document().then(async (doc) => {
+  // try for 2 seconds
+  const started = Date.now()
+  while (Date.now() - started < 2_000) {
+    const gameHistoryTable = doc.querySelector('.error')
+    if (gameHistoryTable) {
+      throw new Error('The error element was found')
+    }
+    // sleep and try again
+    await Cypress.Promise.delay(delay)
+  }
+})
+```
+
+The above solution works. Let's extend it to make it more generic. Let's add a `cy.log` and refactor the selectors and timeouts:
 
 ```js hide
 cy.contains('#message', 'Loading...')
