@@ -92,3 +92,5 @@ cy.contains('#message', 'Finished')
 ```
 
 <!-- fiddle-end -->
+
+**Note:** my plugin [cypress-map](https://github.com/bahmutov/cypress-map) includes the command `cy.never(selector)` that implements the solution from this recipe.
