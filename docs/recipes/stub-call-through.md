@@ -263,3 +263,50 @@ expect(doubler.double(3)).to.equal(42)
 <!-- fiddle-end -->
 
 **Note:** while stubbing with the predicate match might be broken, the assertion `calledWithMatch` is working, see the recipe [Stub called with the match](./stub-called-with-match.md).
+
+## Stub with a resolved promise
+
+If the original method returns a promise (is asynchronous), you should use `stub.resolves` method
+
+<!-- fiddle stub that resolves a promise -->
+
+```js
+const doubler = {
+  async double(x) {
+    return x + x
+  },
+}
+
+cy.stub(doubler, 'double')
+  // give the stub an alias
+  .as('double')
+  // all calls should execute the original method
+  .callThrough()
+  // except the first call that should resolve with "foo"
+  .onFirstCall()
+  .resolves('foo')
+```
+
+Let's call the method and confirm the resolved value.
+
+```js
+doubler.double(42).then((value) => {
+  expect(value, 'the first result').to.equal('foo')
+})
+```
+
+Let's confirm that the second call resolves with the actual doubled argument
+
+```js
+doubler.double(8).then((value) => {
+  expect(value, 'real result').to.equal(16)
+})
+```
+
+The stub was called twice
+
+```js
+cy.get('@double').should('have.been.calledTwice')
+```
+
+<!-- fiddle-end -->
