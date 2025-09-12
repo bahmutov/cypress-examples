@@ -4590,6 +4590,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-call-through.html"
   },
   {
+    "title": "Stub calls depending on the arguments stub that resolves a promise",
+    "filename": "docs/recipes/stub-call-through.md",
+    "created": "2023-04-04T16:02:17.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-call-through.html"
+  },
+  {
     "title": "Stub called with the match dataLayer.push",
     "filename": "docs/recipes/stub-called-with-match.md",
     "created": "2023-04-25T02:31:09.000Z",
