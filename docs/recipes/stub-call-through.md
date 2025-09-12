@@ -34,6 +34,8 @@ We can confirm the number of times the stubbed method was called
 
 ```js
 expect(doubler.double).to.have.been.calledTwice
+// equivalent way of checking the number of calls
+expect(doubler.double).to.have.property('callCount', 2)
 ```
 
 And we can confirm the call arguments
@@ -111,9 +113,12 @@ const doubler = {
 }
 
 cy.stub(doubler, 'double')
+  // all calls should execute the original method
   .callThrough()
+  // except the first call that should return 1
   .onFirstCall()
   .returns(1)
+  // and the second call that should return 2
   .onSecondCall()
   .returns(2)
 ```
@@ -127,8 +132,31 @@ expect(doubler.double).to.have.been.calledTwice
 All calls after the first two execute the original `doubler.double` method
 
 ```js
+// the original method is called since the stub no longer applies
 expect(doubler.double('third')).to.equal('thirdthird')
 expect(doubler.double(4)).to.equal(8)
+```
+
+Note that the stub counter is still incremented and we can inspect the calls
+
+```js
+// the stub count is incremented, so now it should be at 4
+expect(doubler.double).to.have.property('callCount', 4)
+// let's confirm the 3rd call (index 2)
+expect(doubler.double)
+  .to.have.property('thirdCall')
+  .to.have.property('args')
+  .to.deep.equal(['third'])
+// equivalent way of getting any call
+expect(doubler.double.getCall(2))
+  .to.have.property('args')
+  .to.have.property(0)
+  .to.equal('third')
+// let's confirm the last call
+expect(doubler.double)
+  .to.have.property('lastCall')
+  .to.have.property('args')
+  .to.deep.equal([4])
 ```
 
 <!-- fiddle-end -->
