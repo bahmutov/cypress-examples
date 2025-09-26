@@ -95,7 +95,41 @@ In the example below, one of the data attributes is set after a delay.
 </script>
 ```
 
-We can keep querying the DOM and converting to a plain object until the assertion passes. Query commands `cy.toPlainObject`, `cy.map`, and `cy.print` are from [cypress-map](https://github.com/bahmutov/cypress-map) plugin.
+If we simply use `cy.then(...)` callbacks to convert data collection into a plain object, it would convert it once and then try running the assertions. But it would not retry, thus failing the test.
+
+```js skip
+// 🚨 INCORRECT
+// does not retry getting the attributes
+cy.get('article')
+  .should('have.prop', 'dataset')
+  .then(JSON.stringify)
+  .then(JSON.parse)
+  .should('deep.equal', {
+    columns: '3',
+    indexNumber: '12314',
+    parent: 'cars',
+  })
+```
+
+We can keep querying the DOM and converting to a plain object until the assertion passes. A simple built-in way to do this is to replace `cy.then(callback)` with `cy.should(callback)` and let it retry
+
+```js skip
+// ✅ retries fetching attributes
+cy.get('article')
+  .should('have.prop', 'dataset')
+  // a callback that converts dataset
+  // and checks its values
+  .should((dataset) => {
+    const data = JSON.parse(JSON.stringify(dataset))
+    expect(data, 'data-').to.deep.equal({
+      columns: '3',
+      indexNumber: '12314',
+      parent: 'cars',
+    })
+  })
+```
+
+**Alternative:** use the query commands `cy.toPlainObject`, `cy.map`, and `cy.print` from [cypress-map](https://github.com/bahmutov/cypress-map) plugin. This way we can split all steps into smaller simpler subject transformations.
 
 ```js
 cy.get('article')
