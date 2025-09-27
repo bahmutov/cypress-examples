@@ -73,6 +73,8 @@ Converting a browser object like `DOMStringMap` to a plain object using `JSON.pa
 
 <!-- fiddle Convert dataset with retries -->
 
+📺 You can watch this recipe explained in the video [Confirming Multiple Data- Values Using DOM Element DataSet Property](https://youtu.be/RZbAX2YRebM).
+
 In the example below, one of the data attributes is set after a delay.
 
 ```html
@@ -149,7 +151,7 @@ cy.get('article')
   })
 ```
 
-We can even map some property values to convert them before the assertion. For example, we can convert the number of columns from the string "3" to the number 3. Again, `cy.map` from `cypress-map` is our friend here:
+We can even map some property values to convert them before the assertion. For example, we can convert the number of columns from the string "3" to the number 3. Again, `cy.map` from `cypress-map` is our friend here!
 
 <!-- fiddle-end -->
 
