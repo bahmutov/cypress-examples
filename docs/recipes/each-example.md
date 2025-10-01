@@ -48,6 +48,52 @@ cy.wrap([4, 6, 8, 10]).each((n) =>
 
 <!-- fiddle-end -->
 
+## Assert attributes
+
+Let's confirm that every image has attribute `alt` with a non-empty value to be accessible.
+
+<!-- fiddle .each / check image alt attributes -->
+
+```html
+<img
+  id="img1"
+  src="https://glebbahmutov.com/images/warming-stripes.png"
+  width="400"
+  height="50"
+  alt="Warming stripes first image"
+/>
+
+<br /><br />
+<img
+  id="img2"
+  src="https://glebbahmutov.com/images/warming-stripes.png"
+  width="400"
+  height="50"
+  alt="Warming stripes second image"
+/>
+```
+
+```js
+cy.get('img').each(($img, k) => {
+  expect($img, `image ${k + 1}`).to.have.attr('alt').to.not.be
+    .empty
+})
+```
+
+**Note:** you could find all images without an `alt` attribute using a selector
+
+```js
+cy.get('img:not([alt])').should('not.exist')
+```
+
+You can also find all images with an empty `alt` attribute
+
+```js
+cy.get('img[alt=""]').should('not.exist')
+```
+
+<!-- fiddle-end -->
+
 ## Confirm prices
 
 <!-- fiddle .each / confirm prices -->
@@ -284,6 +330,8 @@ cy.takeRunnerPic('each-list')
 <!-- fiddle-end -->
 
 ![Each example test](./pics/each-list.png)
+
+**Note:** you can also use `cy.map` or `cy.mapChain` commands from my [cypress-map](https://github.com/bahmutov/cypress-map) plugin to implement this test and collect information from each element.
 
 ## Match regular expression with OR
 
