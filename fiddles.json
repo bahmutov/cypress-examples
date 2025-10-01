@@ -2718,6 +2718,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
   },
   {
+    "title": "`cy.each` examples .each check image alt attributes",
+    "filename": "docs/recipes/each-example.md",
+    "created": "2020-12-21T21:56:23.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/each-example.html"
+  },
+  {
     "title": "`cy.each` examples .each confirm prices",
     "filename": "docs/recipes/each-example.md",
     "created": "2020-12-21T21:56:23.000Z",
