@@ -138,7 +138,7 @@ I like using [cy.each](https://on.cypress.io/each) command when checking multipl
 
 ```js
 // for now simply wait a little bit to let the image load
-cy.wait(1000)
+cy.wait(3000)
 cy.get('img')
   .should('have.length', 2)
   // at least one image should be visible
