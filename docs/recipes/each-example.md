@@ -52,6 +52,8 @@ cy.wrap([4, 6, 8, 10]).each((n) =>
 
 Let's confirm that every image has attribute `alt` with a non-empty value to be accessible.
 
+📺 Watch this example explained in the video [Check Each Image To Have An Alt Attribute](https://youtu.be/m2D1WF1lPXk).
+
 <!-- fiddle .each / check image alt attributes -->
 
 ```html
