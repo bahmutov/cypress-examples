@@ -30,6 +30,9 @@ You can combine selectors, for example to find all elements with class "person" 
 ```
 
 ```js
+// select any elements that have class "person"
+cy.get('.person').should('have.length', 2)
+// select any elements that have class "person" AND class "student"
 cy.get('.person.student').should('have.text', 'Mary')
 ```
 
@@ -78,6 +81,70 @@ cy.get('[data-group="b2"] .student')
   // using https://on.cypress.io/filter
   .filter('[data-rank="junior"]')
   .should('have.text', 'Ann')
+```
+
+<!-- fiddle-end -->
+
+## partial attributes
+
+We might not know the precise attribute value, but we can use the selectors `name^=value` to select by the prefix, `name*=value` to select by substring, and `name$=value` to select by the suffix
+
+<!-- fiddle Partial attribute -->
+
+```html
+<div data-id="ABC-student-123">Mary</div>
+<div data-id="ABC-student-456">Ann</div>
+<div data-id="XYZ-student-789">Joe</div>
+```
+
+Let's select all `DIV` elements with the `data-id` attribute starting with the string "ABC-"
+
+```js
+cy.get('div[data-id^="ABC-"]').should('have.length', 2)
+```
+
+Let's select all `DIV` elements with the `data-id` attribute having the string "student" somewhere
+
+```js
+cy.get('div[data-id*="student"]').should('have.length', 3)
+```
+
+Let's select all `DIV` elements with the `data-id` attribute ending with `-456`
+
+```js
+cy.get('div[data-id$="-456"]').should('have.text', 'Ann')
+```
+
+<!-- fiddle-end -->
+
+## partial class name
+
+<!-- fiddle Partial class name -->
+
+```html
+<ul class="students">
+  <li class="student-1">Mary</li>
+  <li class="student-2">Ann</li>
+  <li class="student-3">Joe</li>
+</ul>
+```
+
+Inside the element with class "students", let's find all children that have classes "student-..." prefix. We can treat the class as simply another attribute and use the selector `[class=...]`.
+
+```js
+cy.get('.students [class^=student-]').should('have.length', 3)
+```
+
+If we don't know the prefix or suffix, we can simply use partial text match
+
+```js
+cy.get('.students [class*=student-]').should('have.length', 3)
+```
+
+Let's select all students that end with `-3` class name
+
+```js
+cy.get('.students [class$="-3"]').should('have.text', 'Joe')
 ```
 
 <!-- fiddle-end -->
