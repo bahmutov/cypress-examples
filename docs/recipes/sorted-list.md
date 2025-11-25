@@ -1,5 +1,7 @@
 # Confirm the sorted list
 
+The first question to ask yourself before testing if the list of elements is sorted is "can the list change?" If the list cannot change, we can grab the elements, parse the text, and use `cy.then(callback)` to check if the extracted numbers are sorted. If the list is dynamic, then we need to make sure that the entire chain of queries and transformations is retry-able or the entire logic is written inside a `should(callback)`. **Tip:** see the difference between [cy.then and cy.should](../recipes/99-cypress-tips/01-use-should-with-a-callback.md) and read the blog post [Cypress should callback](https://glebbahmutov.com/blog/cypress-should-callback/).
+
 ## Static list
 
 Let's confirm that all `<LI>` elements are sorted by the prices displayed inside. The price is a child element with its own selector, but could have additional text words there like 'On Sale'.
@@ -35,7 +37,7 @@ Let's confirm that all `<LI>` elements are sorted by the prices displayed inside
 
 First, let's confirm each item element has a price element by confirming the two numbers are equal.
 
-```js
+```js hide
 cy.get('.item')
   // use the "have.length.gt" assertion to retry
   // until there are items on the page
@@ -48,7 +50,7 @@ cy.get('.item')
 
 Now we can extract all the prices (as strings), clean them up, and convert to numbers, before confirming the list is sorted.
 
-```js
+```js hide
 cy.get('.price')
   .then(($prices) =>
     Cypress._.map($prices, (el) => el.innerText),
@@ -74,8 +76,9 @@ cy.get('.price')
 
 Of course, the above code has a lot of duplication and is hard to read. You should refactor it to make it easy to understand. For example, we could avoid using individual `.then` commands and just extract the prices in a single callback.
 
-```js
+```js hide
 // alternative: extract and convert the prices using single .then callback
+cy.log('**single .then callback**')
 cy.get('.price').then(($prices) => {
   const innerText = (el) => el.innerText
   const firstWord = (text) => text.split(' ')[0]
@@ -88,6 +91,21 @@ cy.get('.price').then(($prices) => {
   expect(sorted).to.deep.equal(prices)
   return prices
 })
+```
+
+If we are using [cypress-map](https://github.com/bahmutov/cypress-map) plugin, we can write a single retry-able chain of queries going from the elements to the parsed prices.
+
+```js hide
+cy.log('**cypress-map solution**')
+cy.get('.price')
+  .map('innerText')
+  .mapInvoke('split', ' ')
+  // get the first item in each array
+  .map(0)
+  .mapInvoke('replace', /[^0-9.]/g, '')
+  .map(parseFloat)
+  // using "be.sorted" assertion from chai-sorted plugin
+  .should('be.sorted')
 ```
 
 <!-- fiddle.end -->
@@ -212,6 +230,20 @@ cy.get('table#people tbody td +').should(($cells) => {
   const names = Cypress._.map($cells, ($cell) => $cell.innerText)
   expect(names).to.be.ascending
 })
+```
+
+Let's use [cypress-map](https://github.com/bahmutov/cypress-map) plugin to write the chain of retry-able queries
+
+```js
+cy.log('**descending dates using cypress-map**')
+// let's confirm the years
+cy.get('table#people tbody td + td')
+  .map('innerText')
+  .mapMake(Date)
+  .mapInvoke('getFullYear')
+  .print()
+  .should('be.sorted')
+  .and('deep.equal', [2022, 2023, 2024, 2027])
 ```
 
 You can take advantage of advanced Lodash methods, for example you can wrap the entire jQuery object and conveniently extract the inner text from every element, convert strings to dates, then to timestamps, and check if they are sorted.
