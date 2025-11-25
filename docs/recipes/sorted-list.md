@@ -100,7 +100,8 @@ cy.log('**cypress-map solution**')
 cy.get('.price')
   .map('innerText')
   .mapInvoke('split', ' ')
-  .map('0')
+  // get the first item in each array
+  .map(0)
   .mapInvoke('replace', /[^0-9.]/g, '')
   .map(parseFloat)
   // using "be.sorted" assertion from chai-sorted plugin
