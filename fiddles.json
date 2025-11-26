@@ -4548,6 +4548,24 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/sorted-by-discount.html"
   },
   {
+    "title": "Sorted dates Confirm the list of dates is sorted",
+    "filename": "docs/recipes/sorted-dates.md",
+    "created": "2025-11-26T15:04:57.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sorted-dates.html"
+  },
+  {
+    "title": "Sorted dates Confirm the list of dates is sorted after a delay",
+    "filename": "docs/recipes/sorted-dates.md",
+    "created": "2025-11-26T15:04:57.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sorted-dates.html"
+  },
+  {
+    "title": "Sorted dates Dynamic list is sorted (plain Cypress solution)",
+    "filename": "docs/recipes/sorted-dates.md",
+    "created": "2025-11-26T15:04:57.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/sorted-dates.html"
+  },
+  {
     "title": "Confirm the sorted list Confirm the static list is sorted",
     "filename": "docs/recipes/sorted-list.md",
     "created": "2021-08-25T16:18:28.000Z",
