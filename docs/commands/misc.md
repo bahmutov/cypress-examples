@@ -233,15 +233,17 @@ if (isShippable) {
 }
 
 cy.exec('echo Jane Lane')
+  .should('have.keys', ['stdout', 'stderr', 'exitCode'])
   .its('stdout')
   .should('contain', 'Jane Lane')
 
 if (Cypress.platform === 'win32') {
+  cy.log('Windows')
   cy.exec('print renovate.json').its('stderr').should('be.empty')
 } else {
   cy.exec('cat renovate.json').its('stderr').should('be.empty')
 
-  cy.exec('pwd').its('code').should('eq', 0)
+  cy.exec('pwd').its('exitCode').should('eq', 0)
 }
 ```
 
