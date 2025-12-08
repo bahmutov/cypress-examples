@@ -1,11 +1,6 @@
 # Popover
 
-<!--
-  enable once we bump to Cypress v15 and newer Electron browser
-  https://github.com/bahmutov/cypress-examples/issues/293
--->
-
-<!-- fiddle.skip Open and close a popover using invoker command -->
+<!-- fiddle Open and close a popover using invoker command -->
 
 Requires modern browser that understands both [Popovers](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using) and [Invoker commands](https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API)
 
@@ -22,7 +17,10 @@ cy.contains('button', 'Toggle popover')
   .should('have.attr', 'command', 'toggle-popover')
   .and('have.attr', 'commandfor', 'mycommandpopover')
   .click()
-cy.get('#mycommandpopover').should('be.visible')
+cy.get('#mycommandpopover')
+  .should('be.visible')
+  // slow down the test on purpose to see the popover element
+  .wait(500)
 
 cy.log('**close popover**')
 cy.contains('button', 'Toggle popover').click()
