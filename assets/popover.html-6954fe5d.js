@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-83ef7212","path":"/recipes/popover.html","title":"Popover","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1765234299000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/popover.md"}');export{e as data};
