@@ -351,6 +351,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Conditional summary](./recipes/conditional-summary.md)
 - the difference between [cy.find and cy.filter commands](./recipes/find-vs-filter.md)
 - HTML [should look assertion](./recipes/look-assertion.md)
+- toggle [Popovers example](./recipes/popover.md)
 
 ### Working with the window object
 
