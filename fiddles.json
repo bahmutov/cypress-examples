@@ -4056,6 +4056,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/pick-random-number.html"
   },
   {
+    "title": "Popover Open and close a popover using invoker command",
+    "filename": "docs/recipes/popover.md",
+    "created": "2025-12-08T22:27:25.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/popover.html"
+  },
+  {
     "title": "Positive number Positive number",
     "filename": "docs/recipes/positive-number.md",
     "created": "2022-11-15T13:13:17.000Z",
