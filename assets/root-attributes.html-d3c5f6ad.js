@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-3027059a","path":"/recipes/root-attributes.html","title":"Root Element Attributes","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1765309104000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/root-attributes.md"}');export{t as data};
