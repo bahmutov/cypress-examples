@@ -41,3 +41,10 @@ cy.get('#bread')
 ```
 
 <!-- fiddle-end -->
+
+You can use the `cy.root` command to check HTML language for example
+
+```js
+// confirm <html lang="en">
+cy.root().should('have.attr', 'lang', 'en')
+```
