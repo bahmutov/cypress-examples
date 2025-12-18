@@ -180,6 +180,59 @@ cy.get('.a-list')
 
 <!-- fiddle-end -->
 
+## List of elements with conversion
+
+<!-- fiddle List of elements with conversion -->
+
+```html
+<ul class="a-list" data-list-type="products">
+  <li data-product-id="001" data-type="bulk" data-price="199">
+    Product A
+  </li>
+  <li
+    data-product-id="002"
+    data-type="individual"
+    data-price="399"
+  >
+    Product B
+  </li>
+  <li data-product-id="003" data-type="bulk" data-price="099">
+    Product C
+  </li>
+</ul>
+```
+
+```js
+cy.get('.a-list')
+  .should('have.attr', 'data-list-type', 'products')
+  // find all LI children elements with "data-product-id" attribute
+  .children('li[data-product-id]')
+  // cy.map comes from cypress-map plugin
+  // and extracts all data- attributes from each element
+  .map('dataset')
+  // we have an array of DOMStringMap objects
+  // which we should convert to plain objects before using
+  // "deep.equal" assertion with our plain objects
+  .toPlainObject()
+  .should('deep.equal', [
+    { productId: '001', type: 'bulk', price: '199' },
+    { productId: '002', type: 'individual', price: '399' },
+    { productId: '003', type: 'bulk', price: '099' },
+  ])
+  // cast the field "price" in each object to an integer (cents)
+  // leaving all other fields as they were
+  .map({
+    price: parseInt,
+  })
+  .should('deep.equal', [
+    { productId: '001', type: 'bulk', price: 199 },
+    { productId: '002', type: 'individual', price: 399 },
+    { productId: '003', type: 'bulk', price: 99 },
+  ])
+```
+
+<!-- fiddle-end -->
+
 ## See also
 
 - [Using data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)
