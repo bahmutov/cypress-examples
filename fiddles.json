@@ -2616,6 +2616,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/dataset.html"
   },
   {
+    "title": "Dataset HTML attributes List of elements with conversion",
+    "filename": "docs/recipes/dataset.md",
+    "created": "2023-04-10T14:19:29.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/dataset.html"
+  },
+  {
     "title": "Debug cy.get and cy.contains commands The selector should be escaped",
     "filename": "docs/recipes/debug-cy-get-contains.md",
     "created": "2023-02-10T01:12:17.000Z",
@@ -3522,7 +3528,13 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/jquery-contains.html"
   },
   {
-    "title": "Json Data Attribute Get Json Data Attribute",
+    "title": "Json Data Attribute get json data attribute",
+    "filename": "docs/recipes/json-data-attribute.md",
+    "created": "2022-12-19T22:00:18.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/json-data-attribute.html"
+  },
+  {
+    "title": "Json Data Attribute get json data attribute using cypress-map",
     "filename": "docs/recipes/json-data-attribute.md",
     "created": "2022-12-19T22:00:18.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/json-data-attribute.html"
