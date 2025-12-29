@@ -4602,6 +4602,24 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/spy-on-constructor.html"
   },
   {
+    "title": "Check If Star Ratings Are Sorted Sorted text ratings",
+    "filename": "docs/recipes/star-rating.md",
+    "created": "2025-12-29T18:08:18.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/star-rating.html"
+  },
+  {
+    "title": "Check If Star Ratings Are Sorted Sorted data-rating attributes",
+    "filename": "docs/recipes/star-rating.md",
+    "created": "2025-12-29T18:08:18.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/star-rating.html"
+  },
+  {
+    "title": "Check If Star Ratings Are Sorted Sorted numbers of child elements",
+    "filename": "docs/recipes/star-rating.md",
+    "created": "2025-12-29T18:08:18.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/star-rating.html"
+  },
+  {
     "title": "Store Values Using Should Callback Store values using Should assertion callback",
     "filename": "docs/recipes/store-values-using-should.md",
     "created": "2023-06-12T20:06:35.000Z",
