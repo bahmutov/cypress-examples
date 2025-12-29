@@ -78,4 +78,4 @@ License: private code. Absolutely no permission to copy the source code or train
 [deployed url]: https://github.com/bahmutov/cypress-examples/actions?query=workflow%3Adeployed
 [vuepress]: https://vuepress.vuejs.org/
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
-[renovate-app]: https://www.npmjs.com/package/renovate
+[renovate-app]: https://github.com/renovatebot/renovate
