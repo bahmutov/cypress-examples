@@ -352,6 +352,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - the difference between [cy.find and cy.filter commands](./recipes/find-vs-filter.md)
 - HTML [should look assertion](./recipes/look-assertion.md)
 - toggle [Popovers example](./recipes/popover.md)
+- check the [sorted star ratings](./recipes/star-rating.md)
 
 ### Working with the window object
 
