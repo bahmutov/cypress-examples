@@ -2,6 +2,8 @@
 
 Imagine we show a list of product or reviews, and the list should be sorted. To check the sorted list I recommend using [chai-sorted](https://www.chaijs.com/plugins/chai-sorted/) assertions, but you need to extract the list of numbers first. How you get the list of numbers depends on how the ratings are shown. In this recipe, I will show 3 different possible cases: text rating, `data-` attribute, and the number of displayed star child elements. To simplify Cypress code, I will use [cypress-map](https://github.com/bahmutov/cypress-map) query commands.
 
+📺 You can watch this recipe explained in the video [Check If Star Ratings Are Sorted](https://youtu.be/3sSac7S0rdw).
+
 ## Ratings text
 
 <!-- fiddle Sorted text ratings -->
