@@ -3432,6 +3432,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/input-value.html"
   },
   {
+    "title": "Insert An Element Insert element as the last child",
+    "filename": "docs/recipes/insert-element.md",
+    "created": "2026-01-19T19:35:34.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/insert-element.html"
+  },
+  {
+    "title": "Insert An Element Insert element in the middle of the list",
+    "filename": "docs/recipes/insert-element.md",
+    "created": "2026-01-19T19:35:34.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/insert-element.html"
+  },
+  {
     "title": "Be very careful with instanceof assertion instanceof example",
     "filename": "docs/recipes/instanceof.md",
     "created": "2022-05-11T17:51:51.000Z",
@@ -4159,6 +4171,12 @@
   },
   {
     "title": "Remove Element Remove the found element",
+    "filename": "docs/recipes/remove-element.md",
+    "created": "2022-10-17T13:55:01.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/remove-element.html"
+  },
+  {
+    "title": "Remove Element Remove the middle element",
     "filename": "docs/recipes/remove-element.md",
     "created": "2022-10-17T13:55:01.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/remove-element.html"
