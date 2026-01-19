@@ -4164,6 +4164,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/remove-element.html"
   },
   {
+    "title": "Remove Element Remove the middle element",
+    "filename": "docs/recipes/remove-element.md",
+    "created": "2022-10-17T13:55:01.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/remove-element.html"
+  },
+  {
     "title": "Remove numbers Remove numbers",
     "filename": "docs/recipes/remove-numbers.md",
     "created": "2023-07-18T17:23:38.000Z",
