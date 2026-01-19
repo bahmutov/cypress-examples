@@ -2,7 +2,7 @@
 
 <!-- fiddle Remove the found element -->
 
-Watch this recipe in the video [Remove The Found Element](https://youtu.be/IhGHb7PV3XY).
+📺 Watch this recipe in the video [Remove The Found Element](https://youtu.be/IhGHb7PV3XY).
 
 ```html
 <div id="make">
@@ -31,6 +31,32 @@ cy.get('#make')
   .invoke('text')
   .invoke('trim')
   .should('equal', 'Honda Civic')
+```
+
+<!-- fiddle-end -->
+
+## Remove the middle element
+
+<!-- fiddle Remove the middle element -->
+
+```html
+<ol id="pets">
+  <li>Dog</li>
+  <li>Shark</li>
+  <li>Cat</li>
+</ol>
+```
+
+Let's remove the middle element (index 1 if using the [cy.eq](https://on.cypress.io/eq) command with 3 elements).
+
+```js
+cy.get('#pets li')
+  .should('have.length', 3)
+  .eq(1)
+  .invoke('remove')
+// confirm the right element was removed
+// using the "read" assertion from cypress-map plugin
+cy.get('#pets li').should('read', ['Dog', 'Cat'])
 ```
 
 <!-- fiddle-end -->
