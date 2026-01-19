@@ -353,6 +353,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - HTML [should look assertion](./recipes/look-assertion.md)
 - toggle [Popovers example](./recipes/popover.md)
 - check the [sorted star ratings](./recipes/star-rating.md)
+- [insert an element](./recipes/insert-element.md)
 
 ### Working with the window object
 
