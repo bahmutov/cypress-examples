@@ -37,6 +37,8 @@ cy.get('#make')
 
 ## Remove the middle element
 
+📺 Watch this example explained in the video [Remove The Middle Element](https://youtu.be/SiuEe6sbUPA).
+
 <!-- fiddle Remove the middle element -->
 
 ```html
