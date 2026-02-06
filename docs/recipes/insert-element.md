@@ -2,6 +2,8 @@
 
 <!-- fiddle Insert element as the last child -->
 
+📺 Watch this example in the video [Append An Element](https://youtu.be/ZO2qwDJWJRc).
+
 To insert an element as the last child, use the jQuery method [append](https://api.jquery.com/append/)
 
 ```html
