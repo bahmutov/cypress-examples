@@ -1,6 +1,6 @@
 # Case-insensitive attribute selectors
 
-Read [CSS case insensitive attribute selector](https://weekendprojects.dev/posts/css-case-insensitive-selector/).
+Read [CSS case insensitive attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors).
 
 📺 Watch the solution in the video [Case-Insensitive Query With Retries](https://youtu.be/XQ6GQSmF5_I).
 
