@@ -146,6 +146,64 @@ cy.get('#parent')
 
 <!-- fiddle-end -->
 
+## Double border
+
+Empty elements might show up as a weird "double" border between elements with text. For example:
+
+<!-- fiddle Double border because of empty element -->
+
+```css
+ul#items {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+ul#items li {
+  padding: 0;
+  border: 1px solid gray;
+}
+```
+
+```html
+<ul id="items">
+  <li>One</li>
+  <li></li>
+  <li>Three</li>
+</ul>
+```
+
+Since the second element is missing any text, but `LI` still renders, there is a "thick" border between the first and the last elements. We can confirm that there are empty elements using the following test:
+
+```js
+// all element queries like cy.filter
+// have a built-in existence assertion
+cy.get('#items li').filter(':empty')
+// the selectors can be merged into a single cy.get query
+cy.get('#items li:empty')
+```
+
+We can prevent any empty elements using the explicit assertion
+
+```js skip
+cy.get('#items li:empty').should('not.exist')
+```
+
+Alternatively, we can detect any elements with short height
+
+```js
+cy.get('#items li')
+  .filter((k, el) => {
+    // "height" property returns a string like "1.52px"
+    const height = parseInt(getComputedStyle(el).height)
+    return height < 5
+  })
+  // only one element with suspiciously small height
+  .should('have.length', 1)
+```
+
+<!-- fiddle-end -->
+
 ## See also
 
 - [Empty assertions](./empty-assertion.md)
+- [Empty elements](./empty-elements.md)
