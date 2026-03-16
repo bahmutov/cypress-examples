@@ -148,6 +148,8 @@ cy.get('#parent')
 
 ## Double border
 
+📺 Watch this recipe explained in the video [Empty List Items Should Not Exist](https://youtu.be/pk0C7XUJ208).
+
 Empty elements might show up as a weird "double" border between elements with text. For example:
 
 <!-- fiddle Double border because of empty element -->
