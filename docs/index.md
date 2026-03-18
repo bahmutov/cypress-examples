@@ -98,6 +98,7 @@ Commands drive your tests in the browser like a real user would. They let you pe
 
 - [log](./commands/misc.md#log)
 - [end](./commands/misc.md#end)
+- [env](./commands/misc.md#cy-env)
 - [exec](./commands/misc.md#cy-exec)
 - [focused](./commands/misc.md#cy-focused)
 - [screenshot](./commands/misc.md#cy-screenshot)
@@ -165,7 +166,8 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [arch](./cypress-api/index.md#cypress-arch)
 - [config](./cypress-api/index.md#cypress-config)
 - [dom](./cypress-api/index.md#cypress-dom-ishidden)
-- [env](./cypress-api/index.md#cypress-env)
+- [env](./cypress-api/index.md#cypress-env) **Deprecated**
+- [expose](./cypress-api/index.md#cypress-expose)
 - [platform](./cypress-api/index.md#cypress-platform)
 - [version](./cypress-api/index.md#cypress-version)
 - [spec](./cypress-api/index.md#cypress-spec)
