@@ -18,6 +18,7 @@ module.exports = defineConfig({
       imageFolder: './pics',
       tolerance: 0.02,
     },
+    apiKey: '1234secret!',
   },
   // public values
   expose: {

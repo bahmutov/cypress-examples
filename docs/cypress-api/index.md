@@ -313,6 +313,7 @@ Store public / non-secret values to be used in the browser.
 For example, if in our Cypress config file we expose the following value
 
 ```js
+// cypress.config.js
 expose: {
   numOfItems: 5,
 }
