@@ -190,6 +190,64 @@ cy.get('.misc-table').within(() => {
 
 <!-- fiddle-end -->
 
+## [cy.env()](https://docs.cypress.io/api/commands/env)
+
+Securely read environment variables set in your Cypress configuration, `cypress.env.json`, or `CYPRESS_*` environment variables from within Cypress tests. This is a **read-only** command.
+
+Our Cypress config has the following secret
+
+```js
+// cypress.config.js
+{
+  env: {
+    apiKey: '1234secret!',
+  }
+}
+```
+
+<!-- fiddle cy.env() - securely access private values -->
+
+Let's grab the api key inside a test (`cy.env` only works inside a test callback or a hook callback)
+
+```js
+cy.env(['apiKey']).then((secrets) => {
+  expect(secrets, 'secrets').to.deep.equal({
+    apiKey: '1234secret!',
+  })
+})
+```
+
+Since `cy.env` yields an object with all listed keys, we can grab just the single value
+
+```js
+cy.env(['apiKey']).its('apiKey').should('be.a', 'string')
+```
+
+We can hide the command from the UI
+
+```js
+cy.env(['apiKey'], { log: false })
+  .its('apiKey')
+  .should('match', /^\d{4}secret!$/)
+```
+
+Of course, any assertion will print the subject value, thus the above fragment reveals the api key. If you want to validate it, use your own code without global assertions
+
+```js
+cy.log('**keep the api key secret**')
+cy.env(['apiKey'], { log: false })
+  .its('apiKey')
+  .should(function apiKeyFormat(s) {
+    if (!/^\d{4}secret!$/.test(s)) {
+      throw new Error('Wrong api key format')
+    }
+  })
+```
+
+<!-- fiddle-end -->
+
+📝 Read the blog post [Migrating From Cypress.env To cy.env and Cypress.expose Methods](https://glebbahmutov.com/blog/cypress-expose/).
+
 ## [cy.exec()](https://on.cypress.io/exec)
 
 To execute a system command, use the `cy.exec()` command.

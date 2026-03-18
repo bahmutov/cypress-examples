@@ -5,6 +5,7 @@ module.exports = defineConfig({
   viewportHeight: 1000,
   viewportWidth: 600,
   defaultBrowser: 'electron',
+  // secrets
   env: {
     'cypress-fiddle': {
       stylesheets: [
@@ -17,6 +18,11 @@ module.exports = defineConfig({
       imageFolder: './pics',
       tolerance: 0.02,
     },
+    apiKey: '1234secret!',
+  },
+  // public values
+  expose: {
+    numOfItems: 5,
   },
   projectId: 'dis6wg',
   video: false,

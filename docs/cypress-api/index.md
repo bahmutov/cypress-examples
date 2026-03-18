@@ -194,7 +194,7 @@ expect(Cypress.arch).to.exist
 
 ## [Cypress.config()](https://on.cypress.io/config)
 
-To get or set configuration options, use `Cypress.config()`. Note: the config object should be reserved for Cypress settings, like `baseUrl` and `viewportWidth`. To store your custom values use the `Cypress.env()` approach.
+To get or set configuration options, use `Cypress.config()`. Note: the config object should be reserved for Cypress settings, like `baseUrl` and `viewportWidth`. To store your custom values use the `Cypress.expose()` approach.
 
 <!-- fiddle Cypress.config -->
 
@@ -269,6 +269,8 @@ cy.get('.dom-p p.visible').should('be.visible')
 
 ## [Cypress.env()](https://on.cypress.io/env)
 
+**Deprecated**, use [Cypress.expose](https://on.cypress.io/expose) instead.
+
 To get or set environment variable, use `Cypress.env()`.
 
 <!-- fiddle Cypress.env -->
@@ -301,6 +303,76 @@ expect(Cypress.env()).to.have.property(
 ```
 
 <!-- fiddle-end -->
+
+**Warning:** variables set using `Cypress.env` or `Cypress.expose` are visible to the application under test.
+
+## [Cypress.expose()](https://on.cypress.io/expose)
+
+Store public / non-secret values to be used in the browser.
+
+For example, if in our Cypress config file we expose the following value
+
+```js
+// cypress.config.js
+expose: {
+  numOfItems: 5,
+}
+```
+
+<!-- fiddle Cypress.expose -->
+
+Get just a single value
+
+```js
+expect(Cypress.expose('numOfItems'), 'number of items').to.equal(
+  5,
+)
+```
+
+Get all exposed values
+
+```js
+expect(Cypress.expose(), 'all values').to.deep.include({
+  numOfItems: 5,
+})
+```
+
+You can set and overwrite values
+
+```js
+Cypress.expose('greeting', 'Hello')
+expect(Cypress.expose(), 'new values').to.include.keys([
+  'numOfItems',
+  'greeting',
+])
+```
+
+You can overwrite / merge new values
+
+```js
+Cypress.expose({
+  age: 21,
+})
+expect(Cypress.expose(), 'includes age').to.include.keys([
+  'numOfItems',
+  'greeting',
+  'age',
+])
+```
+
+<!-- fiddle-end -->
+
+Exposed values are available everywhere, including outside test functions and hooks.
+
+```js
+console.log('Will test using %d items', Cypress.expose('numOfItems'))
+
+it(`Has ${Cypress.expose('numOfItems')} items`, () => {
+  ...
+})
+```
+
+📝 Read the blog post [Migrating From Cypress.env To cy.env and Cypress.expose Methods](https://glebbahmutov.com/blog/cypress-expose/).
 
 ## [Cypress.platform](https://on.cypress.io/platform)
 
