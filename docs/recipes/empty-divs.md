@@ -205,6 +205,88 @@ cy.get('#items li')
 
 <!-- fiddle-end -->
 
+## Empty elements inside other elements
+
+Sometimes we want to find all elements with _empty_ elements inside. For example, our list of todo items should not have empty labels - each item should have some text. We cannot simply check the emptiness of the todo item element - since there are checkboxes and some other HTML elements with contents. We are only interested in empty `<LABEL>` elements.
+
+<!-- fiddle Find todo items with empty labels -->
+
+```css
+#todos {
+  li {
+    list-style-type: none;
+    min-height: 2em;
+    line-height: 2em;
+    border: 1px solid grey;
+    padding-left: 1em;
+    input[type='checkbox'] {
+      margin-right: 1em;
+    }
+  }
+}
+```
+
+```html
+<ul id="todos">
+  <li id="1">
+    <input type="checkbox" /><label>Clean room</label>
+  </li>
+  <li id="2">
+    <input type="checkbox" /><label>Brush teeth</label>
+  </li>
+  <li id="3"><input type="checkbox" /><label></label></li>
+  <li id="4">
+    <input type="checkbox" /><label>Prepare dinner</label>
+  </li>
+</ul>
+```
+
+The app shows a list of chores, but one of the items has no text! None of `<LI>` elements is empty, as the next command proves.
+
+```js
+cy.get('#todos li:empty').should('not.exist')
+```
+
+Instead we can detect `<LI>` elements that contain children `<LABEL>` elements that are empty
+
+```js
+// a single LI element with an empty label inside
+cy.get('#todos li:has(label:empty)')
+  .should('have.length', 1)
+  // confirm we found the right LI element
+  .and('have.attr', 'id', '3')
+  // or we can check the index of the found LI element
+  // amongst all LI siblings
+  .invoke('index')
+  // indices start with 0
+  .should('equal', 2)
+```
+
+**Note:** jQuery pseudo-selector `:contains(text)` does not work well with empty strings, since `:contains` returns _partial_ matches. Thus it works the best for non-empty strings.
+
+```js
+cy.get('#todos li:has(label:contains("dinner"))').should(
+  'have.attr',
+  'id',
+  '4',
+)
+```
+
+Let's find all `<LI>` elements with non-empty `<LABEL>` elements inside
+
+```js
+cy.get('#todos li:has(label:not(:empty))')
+  .should('have.length', 3)
+  // confirm we found the right LI elements
+  // by looking at their IDs
+  .mapInvoke('getAttribute', 'id')
+  .should('deep.equal', ['1', '2', '4'])
+```
+
+**Note:** the query command `mapInvoke` comes from [cypress-map](https://github.com/bahmutov/cypress-map) plugin.
+
+<!-- fiddle-end -->
+
 ## See also
 
 - [Empty assertions](./empty-assertion.md)
