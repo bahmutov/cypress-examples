@@ -7,12 +7,13 @@ jobs:
     steps:
       # https://github.com/actions/checkout
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           # check out all commits to get accurate created date
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      # https://github.com/actions/setup-node
+      - uses: actions/setup-node@v6
         with:
           node-version: 24
 
@@ -25,7 +26,7 @@ jobs:
       #   ~/.npm
       #   ~/.cache/Cypress
       - name: Install 📦
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           runTests: false
 
@@ -55,7 +56,8 @@ jobs:
       # TIP: we want to avoid uploading node_modules since it is SLOW
       # https://glebbahmutov.com/blog/parallel-cypress-tests-gh-action/
       - name: Save built folders 🆙
-        uses: actions/upload-artifact@v4
+        # https://github.com/actions/upload-artifact
+        uses: actions/upload-artifact@v7
         with:
           name: built
           path: |
@@ -67,9 +69,9 @@ jobs:
     needs: install
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 24
 
@@ -82,7 +84,7 @@ jobs:
           name: built
 
       - name: Install 📦
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           runTests: false
 
@@ -107,9 +109,9 @@ jobs:
     steps:
       # https://github.com/actions/checkout
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 24
 
@@ -124,7 +126,7 @@ jobs:
       # download cached ~/.npm and ~/.cache/Cypress
       # and install node_modules
       - name: Cypress tests 🧪
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         # run all tests straight from Markdown files
         # using Cypress GH action
         # https://github.com/cypress-io/github-action
@@ -170,9 +172,9 @@ jobs:
     steps:
       # https://github.com/actions/checkout
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 24
 
@@ -185,7 +187,7 @@ jobs:
           name: built
 
       - name: Test built site 🧪
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           start: npm run serve
           config-file: cypress-dist.config.js
@@ -209,9 +211,9 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 24
 
@@ -224,7 +226,7 @@ jobs:
           name: built
 
       - name: Install 📦
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           runTests: false
 
