@@ -1,0 +1,19 @@
+{
+  "servers": {
+    "cypress": {
+      "type": "http",
+      "url": "https://mcp.cypress.io/mcp",
+      "headers": {
+        "Authorization": "Bearer ${input:CYPRESS_MCP_TOKEN}"
+      }
+    }
+  },
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "CYPRESS_MCP_TOKEN",
+      "description": "Enter your Cypress MCP personal access token",
+      "password": true
+    }
+  ]
+}
