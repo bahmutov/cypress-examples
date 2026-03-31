@@ -1688,7 +1688,7 @@ cy.get('#best-practices').within(() => {
   cy.get('button').click()
 
   // Bad. Coupled to styling. Highly subject to change.
-  cy.get('.btn.btn-large DOES NOT EXIST').click()
+  cy.get('.btn.btn-large').click()
 
   // Average. Coupled to the `name` attribute which has HTML semantics.
   cy.get('[name=submission]').click()
