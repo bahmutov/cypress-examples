@@ -1654,7 +1654,7 @@ cy.root().should('match', 'html')
 
 cy.get('.query-ul').within(() => {
   // In this within, the root is now the ul DOM element
-  cy.root().should('have.class', 'query-ul-wrong!!!')
+  cy.root().should('have.class', 'query-ul')
 })
 ```
 
@@ -1688,7 +1688,7 @@ cy.get('#best-practices').within(() => {
   cy.get('button').click()
 
   // Bad. Coupled to styling. Highly subject to change.
-  cy.get('.btn.btn-large').click()
+  cy.get('.btn.btn-large DOES NOT EXIST').click()
 
   // Average. Coupled to the `name` attribute which has HTML semantics.
   cy.get('[name=submission]').click()
