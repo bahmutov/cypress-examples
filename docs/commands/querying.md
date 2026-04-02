@@ -1694,7 +1694,7 @@ cy.get('#best-practices').within(() => {
   cy.get('[name=submission]').click()
 
   // Better. But still coupled to styling or JS event listeners.
-  cy.get('#main DOES NOT EXIST').click()
+  cy.get('#main').click()
 
   // Slightly better. Uses an ID but also ensures the element
   // has an ARIA role attribute
