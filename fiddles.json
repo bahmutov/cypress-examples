@@ -4248,6 +4248,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/required-attributes.html"
   },
   {
+    "title": "Resolved Value Spy on resolved value",
+    "filename": "docs/recipes/resolved-value.md",
+    "created": "2026-04-09T17:22:50.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/resolved-value.html"
+  },
+  {
     "title": "Retry-ability Retry-ability element added to the DOM",
     "filename": "docs/recipes/retry-ability.md",
     "created": "2021-03-23T12:43:42.000Z",
