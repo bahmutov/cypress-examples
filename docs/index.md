@@ -356,6 +356,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - toggle [Popovers example](./recipes/popover.md)
 - check the [sorted star ratings](./recipes/star-rating.md)
 - [insert an element](./recipes/insert-element.md)
+- [split query commands](./recipes/split-query.md)
 
 ### Working with the window object
 
