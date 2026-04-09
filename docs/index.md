@@ -427,6 +427,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Prepare to spy](./recipes/prepare-to-spy.md)
 - [Spy On Constructor Function](./recipes/spy-on-constructor.md)
 - [Stub The Constructor Function](./recipes/stub-constructor.md)
+- [Resolved value](./recipes/resolved-value.md)
 
 ### Testing tables
 
