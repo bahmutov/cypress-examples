@@ -4638,6 +4638,24 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/sorted-list.html"
   },
   {
+    "title": "Split Element Query Single query selector",
+    "filename": "docs/recipes/split-query.md",
+    "created": "2026-04-09T13:26:26.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/split-query.html"
+  },
+  {
+    "title": "Split Element Query Single query selector but there are no panels",
+    "filename": "docs/recipes/split-query.md",
+    "created": "2026-04-09T13:26:26.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/split-query.html"
+  },
+  {
+    "title": "Split Element Query Split query commands",
+    "filename": "docs/recipes/split-query.md",
+    "created": "2026-04-09T13:26:26.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/split-query.html"
+  },
+  {
     "title": "Spy On Constructor Function Spy on constructor function",
     "filename": "docs/recipes/spy-on-constructor.md",
     "created": "2025-05-06T18:05:14.000Z",
