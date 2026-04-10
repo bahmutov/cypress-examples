@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-160cdffa","path":"/recipes/resolved-value.html","title":"Resolved Value","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1775848093000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":3}]},"filePathRelative":"recipes/resolved-value.md"}');export{e as data};
