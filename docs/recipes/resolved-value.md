@@ -10,30 +10,39 @@ Let's spy on an application method which returns a Promise object. Can we get th
 ```
 
 ```js app
-window.generateRandomNumber = () => {
+window.generateRandomNumber = (x) => {
+  if (x !== 42) {
+    throw new Error('Wrong argument 1')
+  }
   return new Promise((resolve) => {
-    setTimeout(
-      () => resolve(Math.round(Math.random() * 10)),
-      1000,
-    )
+    setTimeout(() => {
+      const answer = Math.round(Math.random() * 10)
+      console.log('resolving with the answer', answer)
+      resolve(answer)
+    }, 1000)
   })
 }
 document
   .getElementById('generate')
   .addEventListener('click', () => {
-    window.generateRandomNumber().then((n) => {
+    window.generateRandomNumber(42).then((n) => {
       document.getElementById('result').innerText = n
     })
   })
 ```
 
-Let's confirm that the generated number is shown by the `#result` element after some time.
+Let's confirm that the generated number is shown by the `#result` element after some time. Prepare to spy on the method.
 
-```js
+```js hide
 cy.get('#result').should('have.text', '')
 cy.window().then((win) => {
   cy.spy(win, 'generateRandomNumber').as('generateRandomNumber')
 })
+```
+
+Click the button to make the app call the method.
+
+```js hide
 cy.get('#generate').click()
 cy.get('@generateRandomNumber')
   .should('have.been.calledOnce')
@@ -47,6 +56,43 @@ cy.get('@generateRandomNumber')
   .should('be.a', 'number')
   .then((n) => {
     // and use the number to check the page
+    cy.get('#result').should('have.text', String(n))
+  })
+```
+
+Alternatively, you can call the original method from inside `callFake` stub. This is especially useful for inspecting the input arguments and the resolved value.
+
+```js hide
+// remove the previous spy
+cy.get('@generateRandomNumber').invoke('restore')
+// and replace it with a stub that calls the original method
+// but allows us to inspect the input arguments
+// and the resolved value
+cy.window().then((win) => {
+  cy.stub(win, 'generateRandomNumber')
+    .as('inspectRandomNumber')
+    .callsFake(async function () {
+      console.log('generateRandomNumber arguments', arguments)
+      // get the real result by calling the original wrapped method
+      const result =
+        await win.generateRandomNumber.wrappedMethod.apply(
+          win,
+          arguments,
+        )
+      console.log('generateRandomNumber result', result)
+      return result
+    })
+})
+// click on the button
+cy.get('#generate').click()
+// and confirm the call was made
+cy.get('@inspectRandomNumber')
+  .should('have.been.calledOnceWith', 42)
+  // and confirm the result is shown on the page
+  .its('firstCall.returnValue')
+  .then(cy.wrap)
+  .should('be.a', 'number')
+  .then((n) => {
     cy.get('#result').should('have.text', String(n))
   })
 ```
