@@ -2,6 +2,8 @@
 
 Let's spy on an application method which returns a Promise object. Can we get the resolved value to use in our tests? We can - by using [cy.wrap](https://on.cypress.io/wrap) to wait for the promise to be resolved inside a Cypress chain step.
 
+📺 Watch this recipe explained in [Spying On App Methods And Inspecting The Resolved Values](https://youtu.be/1eccWss3Eu4).
+
 <!-- fiddle Spy on resolved value -->
 
 ```html
