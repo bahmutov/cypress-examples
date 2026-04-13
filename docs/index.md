@@ -357,6 +357,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - check the [sorted star ratings](./recipes/star-rating.md)
 - [insert an element](./recipes/insert-element.md)
 - [split query commands](./recipes/split-query.md)
+- [within context check](./recipes/within-context.md)
 
 ### Working with the window object
 
