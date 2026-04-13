@@ -43,6 +43,8 @@ Cypress.Commands.add('isTopLevel', () => {
       cy.document()
         .its('documentElement')
         .then((html) => {
+          // in the "real" document code, you would check
+          // return html === root[0]
           return html[0] === root[0]
         })
     })
