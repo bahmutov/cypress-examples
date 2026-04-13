@@ -142,6 +142,8 @@ cy.get('@id').then((id) => {
 
 <!-- fiddle-end -->
 
+**Note:** you can write a tiny utility to check if you are inside `cy.within` context accidentally, see [Within context check](./within-context.md).
+
 ## Multiple elements matching the selector
 
 ### The problem
