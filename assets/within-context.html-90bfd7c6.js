@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-b74918ae","path":"/recipes/within-context.html","title":"Within Context Check","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1776102337000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":2}]},"filePathRelative":"recipes/within-context.md"}');export{t as data};
