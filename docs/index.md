@@ -358,6 +358,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [insert an element](./recipes/insert-element.md)
 - [split query commands](./recipes/split-query.md)
 - [within context check](./recipes/within-context.md)
+- [element re-renders](./recipes/element-re-renders.md)
 
 ### Working with the window object
 
