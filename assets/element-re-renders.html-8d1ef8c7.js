@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-55739862","path":"/recipes/element-re-renders.html","title":"Element Re-renders","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1776954312000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/element-re-renders.md"}');export{e as data};
