@@ -2154,6 +2154,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/check-console-logs.html"
   },
   {
+    "title": "Check console logs Check specific string in the console.error messages",
+    "filename": "docs/recipes/check-console-logs.md",
+    "created": "2022-08-03T14:07:33.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/check-console-logs.html"
+  },
+  {
     "title": "Check enabled checkboxes Check the enabled checkboxes",
     "filename": "docs/recipes/check-enabled-checkboxes.md",
     "created": "2022-08-23T20:28:49.000Z",
