@@ -119,3 +119,42 @@ cy.wait(1000)
 ```
 
 <!-- fiddle-end -->
+
+## Check the specific string in the console.error messages
+
+<!-- fiddle Check specific string in the console.error messages -->
+
+```html
+<script>
+  setTimeout(() => {
+    // change to 1 to see the test fail
+    if (Math.random() < 0) {
+      console.error('Oops! Real error')
+    }
+  }, 100)
+  // a couple of console.error calls we want to ignore
+  setTimeout(() => {
+    console.error('Some weird 3rd party message', 'lib.js')
+    console.error('unrelated log', 42)
+  }, 50)
+</script>
+```
+
+```js
+cy.window()
+  .its('console')
+  .then((console) => {
+    cy.spy(console, 'error').as('logError')
+  })
+cy.wait(1000)
+// extract console.error arguments as strings
+cy.get('@logError')
+  .invoke('getCalls')
+  .map('args')
+  .mapInvoke('join', ' ')
+  .print()
+  .invoke('filter', (msg) => msg.includes('Oops'))
+  .should('be.empty')
+```
+
+<!-- fiddle-end -->
