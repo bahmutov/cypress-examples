@@ -122,6 +122,8 @@ cy.wait(1000)
 
 ## Check the specific string in the console.error messages
 
+📺 Watch this example explained in the video [Check Console Logs](https://youtu.be/onHsVeAqT-o).
+
 <!-- fiddle Check specific string in the console.error messages -->
 
 ```html
