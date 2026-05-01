@@ -8,6 +8,10 @@
     },
     {
       "pattern": "https://www.linkedin.com/in/dominik-kratz/"
+    },
+    {
+      "pattern": "https://youtu.be/"
     }
-  ]
+  ],
+  "retryOn429": true
 }
