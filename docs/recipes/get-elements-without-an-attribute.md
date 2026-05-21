@@ -1,5 +1,9 @@
 # Get All Elements Without An Attribute
 
+📺 Watch this recipe explained in the video [Get All Elements Without The Given HTML Attribute](https://youtu.be/Aggwo2Wr7RI).
+
+Imagine you want to find all LI elements in the list _without_ HTML attribute "data-priority" present.
+
 <!-- fiddle Get all elements without "priority" attribute -->
 
 ```html
