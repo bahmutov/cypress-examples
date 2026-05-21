@@ -29,7 +29,7 @@ Watch the explanation for this example in the video [Select DOM Elements With An
 cy.get('li[data-priority]').should('have.length', 3)
 ```
 
-**Tip:** to select the elements _without an attribute_, use [cy.not](https://on.cypress.io/not) command
+**Tip:** to select the elements _without an attribute_, use [cy.not](https://on.cypress.io/not) command. See recipe [Get All Elements Without An Attribute](./get-elements-without-an-attribute.md).
 
 ```js
 // find all LI elements that do not have
