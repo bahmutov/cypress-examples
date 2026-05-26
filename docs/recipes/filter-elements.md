@@ -153,7 +153,7 @@ Let's find all elements with price "3". I will use the "should read" assertion f
 ```js
 cy.get('li')
   .filter('[data-price=3]')
-  .should('read', ['Grapes', 'Pears'])
+  .should('read', ['Grapes', 'Pears', 'Apples'])
 ```
 
 Find all elements that have the `data-price` attribute
