@@ -191,8 +191,6 @@ cy.wrap(employee)
 
 #### `not.include.property`
 
-**Note:** the assertion `not.include.property` changes the current subject to `undefined`
-
 <!-- fiddle Not include property -->
 
 ```js
@@ -204,6 +202,36 @@ cy.wrap({
   .and('not.include.property', 'baz')
   // there is no more subject
   .should('be.undefined')
+```
+
+<!-- fiddle-end -->
+
+**Note:** the assertion `not.include.property` changes the current subject to `undefined`, thus you cannot chain multiple assertions.
+
+<!-- fiddle Not include property changes the subject to undefined -->
+
+```js skip
+// 🚨 INCORRECT, DOES NOT WORK
+cy.wrap({
+  foo: 'bar',
+})
+  .should('not.include.property', 'baz')
+  // will fail with "Target cannot be null or undefined" error
+  .and('not.include.property', 'qoo')
+```
+
+If you want to check the same subject multiple times, perhaps consider using an aliased value
+
+```js
+cy.wrap({
+  foo: 'bar',
+})
+  // since the object is not going to change, tell the alias
+  // not to evaluate / query it each time
+  .as('subject', { type: 'static' })
+// check each property separately
+cy.get('@subject').should('not.include.property', 'baz')
+cy.get('@subject').should('not.include.property', 'qoo')
 ```
 
 <!-- fiddle-end -->
