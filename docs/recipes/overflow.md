@@ -67,3 +67,88 @@ cy.get('#does-not-exist').should('not.overflow')
 ```
 
 <!-- fiddle-end -->
+
+## Overflowing dialog container
+
+In the example below the element might overflow not its immediate parent container, but a `<dialog>` element. Thus we need to check the elements' bounding rectangles.
+
+<!-- fiddle Elements overflow dialog container -->
+
+```html
+<dialog open id="terms-dialog">
+  <p>Line 1: This dialog has a constrained height.</p>
+  <p>Line 2: Additional copy creates vertical overflow.</p>
+  <p>Line 3: Users can still scroll to read all lines.</p>
+  <p>Line 4: This line intentionally pushes the content down.</p>
+  <p>Line 5: Final line in this short text block.</p>
+  <div>
+    <button>Get 10% Off</button>
+  </div>
+</dialog>
+```
+
+```css hide
+#terms-dialog {
+  width: 280px;
+  height: 110px;
+  overflow-y: auto;
+  overflow-x: visible;
+}
+#terms-dialog button {
+  position: absolute;
+  /* change these numbers to move the button around */
+  top: 10px;
+  left: 10px;
+}
+```
+
+```js hide
+const isOverflown = (rect, parentRect) => {
+  return (
+    rect.left < parentRect.left ||
+    rect.right > parentRect.right ||
+    rect.top < parentRect.top ||
+    rect.bottom > parentRect.bottom
+  )
+}
+```
+
+```js hide
+chai.use((_chai, utils) => {
+  // use "function" syntax to make sure when Chai
+  // calls it, the "this" object points at Chai
+
+  function overflowing(containerSelector = 'body') {
+    if (!Cypress.dom.isJquery(this._obj)) {
+      throw new Error('Expected a jQuery object')
+    }
+
+    // find the parent container
+    const container = this._obj.parents(containerSelector)
+    const parentContainer = container[0].getBoundingClientRect()
+    const rect = this._obj[0].getBoundingClientRect()
+
+    this.assert(
+      isOverflown(rect, parentContainer),
+      `expected element to overflow ${containerSelector}`,
+      `expected element not to overflow ${containerSelector}`,
+    )
+  }
+  _chai.Assertion.addMethod('overflow', overflowing)
+})
+```
+
+Let's confirm that every button is visible inside the dialog element.
+
+```js
+cy.get('#terms-dialog')
+  .should('be.visible')
+  .within(() => {
+    cy.get('button').each(($el) => {
+      // every button should be within the dialog container
+      cy.wrap($el).should('not.overflow', 'dialog')
+    })
+  })
+```
+
+<!-- fiddle-end -->
