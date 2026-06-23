@@ -72,17 +72,23 @@ cy.get('#does-not-exist').should('not.overflow')
 
 In the example below the element might overflow not its immediate parent container, but a `<dialog>` element. Thus we need to check the elements' bounding rectangles.
 
+📺 Watch this recipe explained in the video [Custom Assertion Catches Elements Overflowing The Container](https://youtu.be/OdUdmMmKq2Y).
+
 <!-- fiddle Elements overflow dialog container -->
 
 ```html
 <dialog open id="terms-dialog">
-  <p>Line 1: This dialog has a constrained height.</p>
-  <p>Line 2: Additional copy creates vertical overflow.</p>
-  <p>Line 3: Users can still scroll to read all lines.</p>
-  <p>Line 4: This line intentionally pushes the content down.</p>
-  <p>Line 5: Final line in this short text block.</p>
   <div>
-    <button>Get 10% Off</button>
+    <p>Line 1: This dialog has a constrained height.</p>
+    <p>Line 2: Additional copy creates vertical overflow.</p>
+    <p>Line 3: Users can still scroll to read all lines.</p>
+    <p>
+      Line 4: This line intentionally pushes the content down.
+    </p>
+    <p>Line 5: Final line in this short text block.</p>
+    <div>
+      <button>Get 10% Off</button>
+    </div>
   </div>
 </dialog>
 ```
@@ -103,6 +109,8 @@ In the example below the element might overflow not its immediate parent contain
 ```
 
 ```js hide
+// checks if the first rectangle is completely inside
+// the second bounding rectangle
 const isOverflown = (rect, parentRect) => {
   return (
     rect.left < parentRect.left ||
@@ -123,8 +131,10 @@ chai.use((_chai, utils) => {
       throw new Error('Expected a jQuery object')
     }
 
-    // find the parent container
+    // find the parent container using the given selector
+    // and jQuery method "parents"
     const container = this._obj.parents(containerSelector)
+    // get both bounding rectangles
     const parentContainer = container[0].getBoundingClientRect()
     const rect = this._obj[0].getBoundingClientRect()
 
