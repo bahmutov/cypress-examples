@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-62b00bfe","path":"/recipes/local-storage-methods.html","title":"Local Storage Methods","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1782267021000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/local-storage-methods.md"}');export{e as data};
