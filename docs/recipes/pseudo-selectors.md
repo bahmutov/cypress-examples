@@ -157,6 +157,46 @@ cy.get('[data-cy=after-example] p')
 
 <!-- fiddle-end -->
 
+## Multiple pseudo elements contents
+
+<!-- fiddle pseudo-selectors / multiple after elements -->
+
+Imagine multiple elements, each having its own `::after` contents.
+
+```html
+<style>
+  li[data-cy='one']::after {
+    content: 'Joe Smith';
+  }
+  li[data-cy='two']::after {
+    content: 'Ann Mary';
+  }
+  li[data-cy='three']::after {
+    content: 'Scott Privet';
+  }
+</style>
+<ul id="people">
+  <li data-cy="one"></li>
+  <li data-cy="two"></li>
+  <li data-cy="three"></li>
+</ul>
+```
+
+Let's confirm the contents of the list of `::after` elements. We chain the query commands `cy.map` and `cy.mapInvoke` from the [cypress-map](https://github.com/bahmutov/cypress-map) plugin to get quoted strings.
+
+```js
+cy.get('#people li')
+  .map((el) => window.getComputedStyle(el, '::after'))
+  .mapInvoke('getPropertyValue', 'content')
+  .should('deep.equal', [
+    '"Joe Smith"',
+    '"Ann Mary"',
+    '"Scott Privet"',
+  ])
+```
+
+<!-- fiddle-end -->
+
 ### Checking if `::after` exists or not
 
 <!-- fiddle pseudo-selectors / check if after pseudo element exists or not -->
