@@ -360,6 +360,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [within context check](./recipes/within-context.md)
 - [element re-renders](./recipes/element-re-renders.md)
 - [Get All Elements Without An Attribute](./recipes/get-elements-without-an-attribute.md)
+- defined and [optional object keys](./recipes/object-keys.md)
 
 ### Working with the window object
 
