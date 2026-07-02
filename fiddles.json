@@ -3966,6 +3966,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/number-of-rows.html"
   },
   {
+    "title": "Object Keys Defined object keys",
+    "filename": "docs/recipes/object-keys.md",
+    "created": "2026-07-01T22:56:16.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/object-keys.html"
+  },
+  {
+    "title": "Object Keys Optional object keys",
+    "filename": "docs/recipes/object-keys.md",
+    "created": "2026-07-01T22:56:16.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/object-keys.html"
+  },
+  {
     "title": "Offline event Offline and online window events",
     "filename": "docs/recipes/offline-event.md",
     "created": "2022-10-31T18:24:12.000Z",
