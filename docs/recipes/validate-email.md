@@ -19,4 +19,4 @@ expect(input.checkValidity(), 'second string is not an email').to
 
 <!-- fiddle-end -->
 
-**Note:** using a regular expression to validate an email is [tricky](https://emailregex.com/)
+**Note:** using a regular expression to validate an email is [tricky](https://regex101.com/library/SOgUIV)

@@ -54,4 +54,4 @@ cy.reload()
 cy.get('dialog#new-user').should('not.exist')
 ```
 
-Finally, you can use the plugin [cypress-localstorage-commands](https://www.npmjs.com/package/cypress-localstorage-commands) that has Cypress commands wrappers for `localStorage` methods plus more.
+Finally, you can use the plugin [cypress-localstorage-commands](https://github.com/javierbrea/cypress-localstorage-commands#readme) that has Cypress commands wrappers for `localStorage` methods plus more.

@@ -99,7 +99,7 @@ For matching objects in the arguments, see the recipe [Spy called with an object
 
 ### Matchers
 
-`cy.spy` and `cy.stub` match call arguments using [Sinon matchers](https://sinonjs.org/releases/latest/matchers/).
+`cy.spy` and `cy.stub` match call arguments using [Sinon matchers](https://sinonjs.org/concepts/matchers/).
 
 <!-- fiddle cy.spy and cy.stub / match call arguments using Sinon matchers -->
 
