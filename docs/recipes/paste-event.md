@@ -53,7 +53,7 @@ cy.get('#txt').paste(greeting).should('have.value', greeting)
 
 <!-- fiddle.skip paste into a text area using a real event -->
 
-**Important:** not working yet, asking in [#759](https://github.com/dmtrKovalenko/cypress-real-events/issues/759)
+**Important:** not working yet, asking in [#759](https://github.com/dmtrKovalenko/cypress-real-events/issues/759) and see [#2386](https://github.com/cypress-io/cypress/issues/2386)
 
 ```html
 <textarea id="txt"></textarea>
