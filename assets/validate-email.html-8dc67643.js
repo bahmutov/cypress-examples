@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3c7facd1","path":"/recipes/validate-email.html","title":"Validate An Email","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1784561970000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":3}]},"filePathRelative":"recipes/validate-email.md"}');export{e as data};

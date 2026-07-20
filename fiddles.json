@@ -4134,6 +4134,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/paste-event.html"
   },
   {
+    "title": "Paste event paste into a text area using a real event",
+    "filename": "docs/recipes/paste-event.md",
+    "created": "2022-12-07T01:20:03.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/paste-event.html"
+  },
+  {
     "title": "Phone number Phone number",
     "filename": "docs/recipes/phone-number.md",
     "created": "2023-02-03T22:23:16.000Z",
