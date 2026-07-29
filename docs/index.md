@@ -362,6 +362,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - [Get All Elements Without An Attribute](./recipes/get-elements-without-an-attribute.md)
 - defined and [optional object keys](./recipes/object-keys.md)
 - parse [JSON+LD](./recipes/json-ld.md) script element
+- [skip the rest of the test](./recipes/skip-the-rest-of-the-test.md)
 
 ### Working with the window object
 
