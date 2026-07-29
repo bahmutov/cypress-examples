@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-16154c1f","path":"/recipes/json-ld.html","title":"Test JSON+LD object","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1784643056000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/json-ld.md"}');export{e as data};

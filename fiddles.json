@@ -3600,6 +3600,12 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/json-data-attribute.html"
   },
   {
+    "title": "Test JSON+LD object JSON+LD parsing",
+    "filename": "docs/recipes/json-ld.md",
+    "created": "2026-07-21T14:10:56.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/json-ld.html"
+  },
+  {
     "title": "Keep it simple Keep it simple",
     "filename": "docs/recipes/keep-it-simple.md",
     "created": "2022-06-22T19:26:20.000Z",
@@ -4654,6 +4660,12 @@
     "filename": "docs/recipes/skip-child.md",
     "created": "2022-09-12T13:15:04.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/skip-child.html"
+  },
+  {
+    "title": "Skip The Rest Of The Test Skip the rest of the test",
+    "filename": "docs/recipes/skip-the-rest-of-the-test.md",
+    "created": "2026-07-29T21:24:11.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/skip-the-rest-of-the-test.html"
   },
   {
     "title": "Sorted Attributes Dynamic list with attributes",

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-14cea047","path":"/recipes/skip-the-rest-of-the-test.html","title":"Skip The Rest Of The Test","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1785360251000,"contributors":[{"name":"Gleb Bahmutov","email":"gleb.bahmutov@gmail.com","commits":1}]},"filePathRelative":"recipes/skip-the-rest-of-the-test.md"}');export{e as data};
