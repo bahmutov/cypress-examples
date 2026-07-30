@@ -20,9 +20,37 @@ cy.wrap(42)
   .wait(1000)
   .then(() => {
     cy.log('**skipping the rest of the test**')
+
     // this skips the test, but also hides all commands and assertions
     // so not the best strategy to "pass" the test
     Cypress.state('test').ctx.test.skip()
+  })
+
+// this command and assertion should fail on purpose
+cy.wrap('hello', { timeout: 0 }).should('equal', 'goodbye')
+```
+
+<!-- fiddle-end -->
+
+## Skip the remaining commands
+
+You can also "finish" the test by skipping all remaining commands. The test is marked passed.
+
+<!-- fiddle Skip the remaining commands -->
+
+```js
+cy.wrap(42)
+  .should('equal', 42)
+  .wait(1000)
+  .then(() => {
+    console.log('skipping the rest of the commands')
+
+    const current = Cypress.state('current')
+    let next = current.attributes?.next
+    while (next) {
+      next.skip()
+      next = next.attributes?.next
+    }
   })
 
 // this command and assertion should fail on purpose
