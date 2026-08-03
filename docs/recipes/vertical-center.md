@@ -235,9 +235,6 @@ Let's write a custom assertion to confirm that an element is vertically and hori
 ```
 
 ```js
-// utility function computing the vertical center of a client rectangle
-const verticalCenter = (rect) => (rect.top + rect.bottom) / 2
-
 chai.use((_chai) => {
   const win = cy.state('window')
   _chai.Assertion.addMethod(
