@@ -190,3 +190,80 @@ cy.getInOrder('#parent', '#child1') // yields 2 elements
 ```
 
 <!-- fiddle-end -->
+
+## Window center
+
+Let's confirm that a dialog is vertically centered inside the `window` object.
+
+<!-- fiddle.skip Dialog in the window center -->
+
+```html
+<dialog open data-cy="ok-example">
+  <p>Greetings, one and all!</p>
+</dialog>
+```
+
+```js
+// utility function computing the vertical center of a client rectangle
+const verticalCenter = (rect) => (rect.top + rect.bottom) / 2
+
+cy.window()
+  .its('innerHeight')
+  .should('be.a', 'number')
+  .then((w) => w / 2)
+  .then((centerY) => {
+    cy.get('dialog[data-cy=ok-example]')
+      .invokeFirst('getBoundingClientRect')
+      .apply(verticalCenter)
+      .then(Math.round)
+      .should('be.closeTo', centerY, 1)
+  })
+```
+
+<!-- fiddle-end -->
+
+## Window center assertion
+
+Let's write a custom assertion to confirm that an element is vertically and horizontally centered inside the `window`.
+
+<!-- fiddle.skip Element is centered assertion -->
+
+```html
+<dialog open data-cy="ok-example">
+  <p>I am in the center</p>
+</dialog>
+```
+
+```js
+// utility function computing the vertical center of a client rectangle
+const verticalCenter = (rect) => (rect.top + rect.bottom) / 2
+
+chai.use((_chai) => {
+  const win = cy.state('window')
+  _chai.Assertion.addMethod(
+    'centered',
+    function centered(tolerance = 1) {
+      // get the window center coordinates
+      const centerX = Math.round(win.innerWidth / 2)
+      const centerY = Math.round(win.innerHeight / 2)
+
+      // get the element's center coordinates
+      const rect = this._obj[0].getBoundingClientRect()
+      const x = Math.round((rect.left + rect.right) / 2)
+      const y = Math.round((rect.top + rect.bottom) / 2)
+
+      // compare the two coordinates, should be close
+      const deltaX = Math.abs(x - centerX)
+      const deltaY = Math.abs(y - centerY)
+      this.assert(
+        deltaX < tolerance && deltaY < tolerance,
+        `expected element to be centered (at ${centerX},${centerY} was ${x}, ${y})`,
+      )
+    },
+  )
+})
+
+cy.get('dialog[data-cy=ok-example]').should('be.centered', 1000)
+```
+
+<!-- fiddle-end -->
