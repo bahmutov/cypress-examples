@@ -45,7 +45,11 @@ cy.get('.action-email')
 
   // .type() with special character sequences
   .type('{leftarrow}{rightarrow}{uparrow}{downarrow}')
-  .type('{del}{selectall}{backspace}')
+  .type('{del}{backspace}')
+  .should('have.value', 'fake@email.co')
+  // delete the entire value
+  .type('{selectall}{backspace}')
+  .should('have.value', '')
 
   // .type() with key modifiers
   .type('{alt}{option}') //these are equivalent
@@ -72,6 +76,7 @@ cy.get('#name1')
   // use "have.value" assertion to check the input element's value
   .should('have.value', 'Joe')
   .clear()
+  .should('have.value', '')
   .type('Джо Браво')
   .should('have.value', 'Джо Браво')
 ```
