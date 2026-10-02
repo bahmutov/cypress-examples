@@ -77,17 +77,18 @@ cy.viewport('iphone-4').then(() => {
 })
 ```
 
-To know the current viewport, use `cy.viewport(w, h)` and update the `Cypress.config` too using `cy.then` callback to make sure the values are set _after_ the command has changed the viewport.
+To know the current viewport, use `cy.viewport(w, h)`.
+
+**Important:** in Cypress v16+ you can no longer use the `Cypress.config` to change the viewport.
 
 ```js
 cy.viewport(1200, 400)
-  .then(() => {
-    Cypress.config('viewportWidth', 1200)
-    Cypress.config('viewportHeight', 400)
-  })
   // some time later
   .then(() => {
-    cy.log('current width', Cypress.config('viewportWidth'))
+    expect(
+      Cypress.config('viewport'),
+      'config viewport',
+    ).to.equal(undefined)
   })
 ```
 
