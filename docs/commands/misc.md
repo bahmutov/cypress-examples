@@ -151,9 +151,11 @@ cy.log(user) // prints { user: "Mary" }
 
 ## [.end()](https://on.cypress.io/end)
 
+**Note:** removed in Cypress v16, leaving the original examples for history.
+
 To end the command chain, use the `.end()` command.
 
-<!-- fiddle .end() - end the command chain -->
+<!-- fiddle.skip .end() - end the command chain -->
 
 ```html
 <table class="table table-bordered misc-table">
@@ -250,9 +252,11 @@ cy.env(['apiKey'], { log: false })
 
 ## [cy.exec()](https://on.cypress.io/exec)
 
+**Note:** removed in Cypress v16, leaving the original examples for history.
+
 To execute a system command, use the `cy.exec()` command.
 
-<!-- fiddle cy.exec() - execute a system command -->
+<!-- fiddle.skip cy.exec() - execute a system command -->
 
 ```js
 // execute a system command.

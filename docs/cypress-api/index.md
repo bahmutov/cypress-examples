@@ -240,6 +240,12 @@ To see whether a DOM element is hidden, use `Cypress.dom.isHidden()`.
 
 <!-- fiddle Cypress.dom.isHidden -->
 
+```css
+.hidden {
+  display: none;
+}
+```
+
 ```html
 <div class="dom-p">
   <p class="hidden">I'm hiding!</p>
@@ -271,9 +277,11 @@ cy.get('.dom-p p.visible').should('be.visible')
 
 **Deprecated**, use [Cypress.expose](https://on.cypress.io/expose) instead.
 
+**Note:** removed in Cypress v16, leaving the original examples for history.
+
 To get or set environment variable, use `Cypress.env()`.
 
-<!-- fiddle Cypress.env -->
+<!-- fiddle.skip Cypress.env -->
 
 ```js
 // set multiple environment variables
