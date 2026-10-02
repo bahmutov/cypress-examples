@@ -5208,6 +5208,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/yield-value.html"
   },
   {
+    "title": "Z-index Compare explicit z-index of two elements",
+    "filename": "docs/recipes/zindex.md",
+    "created": "2026-10-02T20:26:20.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/zindex.html"
+  },
+  {
+    "title": "Z-index Compare inherited z-index of two elements",
+    "filename": "docs/recipes/zindex.md",
+    "created": "2026-10-02T20:26:20.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/zindex.html"
+  },
+  {
     "title": "Utilities lodash",
     "filename": "docs/utilities/index.md",
     "created": "2020-04-12T23:24:14.000Z",
