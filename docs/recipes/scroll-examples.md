@@ -96,7 +96,16 @@ cy.get('#scrollable-horizontal')
   .should('be.visible')
 cy.get('#scrollable-horizontal')
   .contains('li', '4')
-  .should('not.be.visible')
+  // element is visible but outside the viewport
+  .should('be.visible')
+  .then(($el) => {
+    const container = $el.closest('#scrollable-horizontal')
+    expect(
+      $el[0].getBoundingClientRect().left,
+    ).to.be.greaterThan(
+      container[0].getBoundingClientRect().right,
+    )
+  })
 ```
 
 Scroll the container by 300 pixels to the right. I like adding `duration` parameter to make the scroll visible
@@ -122,10 +131,17 @@ Confirm the first block is now hidden and the 4th block is visible.
 ```js
 cy.get('#scrollable-horizontal')
   .contains('li', '1')
-  .should('not.be.visible')
+  .should('be.visible')
+  .then(($el) => {
+    const container = $el.closest('#scrollable-horizontal')
+    expect($el[0].getBoundingClientRect().right).to.be.lessThan(
+      container[0].getBoundingClientRect().left,
+    )
+  })
 cy.get('#scrollable-horizontal')
   .contains('li', '4')
   .should('be.visible')
+// optional: check the position in the viewport
 ```
 
 <!-- fiddle-end -->

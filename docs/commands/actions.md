@@ -512,6 +512,12 @@ To double click a DOM element, use the `.dblclick()` command.
 
 <!-- fiddle dblclick -->
 
+```css
+.hidden {
+  display: none;
+}
+```
+
 ```html
 <form>
   <div class="form-group">
@@ -533,7 +539,13 @@ To double click a DOM element, use the `.dblclick()` command.
 ```
 
 ```js
-cy.get('.action-div').dblclick().should('not.be.visible')
+// the element is invisible at first
+cy.get('.action-input-hidden').should('not.be.visible')
+cy.get('.action-div')
+  .dblclick()
+  // the "toggle" element hides itself
+  .should('not.be.visible')
+// and makes the element visible
 cy.get('.action-input-hidden').should('be.visible')
 ```
 
@@ -544,6 +556,12 @@ cy.get('.action-input-hidden').should('be.visible')
 To right click a DOM element, use the `.rightclick()` command.
 
 <!-- fiddle rightclick -->
+
+```css
+.hidden {
+  display: none;
+}
+```
 
 ```html
 <form>
@@ -1001,6 +1019,7 @@ See also the recipes [Selected value](../recipes/selected-value.md) and [select 
 To scroll an element into view, use the `.scrollintoview()` command.
 
 <!-- fiddle scrollIntoView -->
+
 <!-- fiddle-markup
 <style>
 #scroll-horizontal,
@@ -1052,7 +1071,7 @@ To scroll an element into view, use the `.scrollintoview()` command.
 </style>
 -->
 
-```html
+```html hide
 <div
   id="scroll-horizontal"
   style="height: 300px; width: 300px; overflow: auto;"
@@ -1061,7 +1080,7 @@ To scroll an element into view, use the `.scrollintoview()` command.
     Horizontal Scroll
     <button
       class="btn btn-danger"
-      style="position: absolute; top: 0; left: 500px;"
+      style="position: absolute; top: 0; left: 700px;"
     >
       I'm Here
     </button>
@@ -1101,6 +1120,8 @@ To scroll an element into view, use the `.scrollintoview()` command.
 </div>
 ```
 
+**Note:** in Cypress v16 the visibility check has changed. Elements outside the overflowing box are still visible, and we need to compute the bounding box to check that.
+
 ```js
 // https://on.cypress.io/scrollintoview
 
@@ -1108,21 +1129,44 @@ To scroll an element into view, use the `.scrollintoview()` command.
 // because they're not within
 // the viewable area of their parent
 // (we need to scroll to see them)
-cy.get('#scroll-horizontal button').should('not.be.visible')
+cy.get('#scroll-horizontal button')
+  .should('be.visible')
+  .then(($el) => {
+    // check if the element is outside the viewport
+    const container = $el[0].closest('#scroll-horizontal')
+    expect(
+      $el[0].getBoundingClientRect().left,
+    ).to.be.greaterThan(container.getBoundingClientRect().right)
+  })
 
 // scroll the button into view, as if the user had scrolled
 cy.get('#scroll-horizontal button')
   .scrollIntoView()
   .should('be.visible')
 
-cy.get('#scroll-vertical button').should('not.be.visible')
+cy.get('#scroll-vertical button')
+  .should('be.visible')
+  .then(($el) => {
+    const container = $el[0].closest('#scroll-vertical')
+    expect($el[0].getBoundingClientRect().top).to.be.greaterThan(
+      container.getBoundingClientRect().bottom,
+    )
+  })
 
 // Cypress handles the scroll direction needed
 cy.get('#scroll-vertical button')
   .scrollIntoView()
   .should('be.visible')
 
-cy.get('#scroll-both button').should('not.be.visible')
+cy.get('#scroll-both button')
+  .should('be.visible')
+  .then(($el) => {
+    const container = $el[0].closest('#scroll-both')
+    const elRect = $el[0].getBoundingClientRect()
+    const containerRect = container.getBoundingClientRect()
+    expect(elRect.left).to.be.greaterThan(containerRect.right)
+    expect(elRect.top).to.be.greaterThan(containerRect.bottom)
+  })
 
 // Cypress knows to scroll to the right and down
 cy.get('#scroll-both button')

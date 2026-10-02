@@ -43,7 +43,7 @@ cy.get('@clicked').should('have.been.calledOnce')
 <!-- fiddle Hide the entered email / Intercept the network call -->
 
 ```html
-<form action="submit.php" method="post">
+<form action="/submit.php" method="post">
   <input type="text" name="email" />
   <input type="password" name="password" />
   <button type="submit">Submit</button>
