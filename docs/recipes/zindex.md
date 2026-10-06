@@ -29,6 +29,9 @@ Let's compare the `z-index` CSS property of two elements
   background-color: orange;
   color: white;
   font-size: x-large;
+  position: relative;
+  left: 50px;
+  top: -50px;
 }
 ```
 
@@ -37,14 +40,18 @@ Let's compare the `z-index` CSS property of two elements
 <div id="two" class="center">This is element two</div>
 ```
 
+Both elements are visible.
+
 ```js
 cy.get('#one')
-  .should('have.css', 'zIndex')
+  .should('be.visible')
+  .and('have.css', 'zIndex')
   .then(Number)
   .should('be.within', 10, 1000)
   .then((z1) => {
     cy.get('#two')
-      .should('have.css', 'zIndex')
+      .should('be.visible')
+      .and('have.css', 'zIndex')
       .then(Number)
       .should('be.greaterThan', z1)
   })
@@ -81,6 +88,9 @@ What happens if some parent element sets the `z-index`? We cannot use element's 
   background-color: orange;
   color: white;
   font-size: x-large;
+  position: relative;
+  left: 50px;
+  top: -50px;
 }
 ```
 
