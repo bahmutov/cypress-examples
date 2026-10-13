@@ -164,6 +164,22 @@ cy.get('li')
   .should('read', ['Grapes', 'Pears'])
 ```
 
+## filter using dynamic case-insensitive regular expression
+
+Construct the regex from text
+
+```js
+cy.log('**case-insensitive regular expression**')
+const searchText = 'pEaR'
+// construct case-insensitive regular expression
+const textRe = new RegExp(searchText, 'i')
+cy.get('li')
+  .filter((k, el) => {
+    return textRe.test(el.innerText)
+  })
+  .should('read', ['Pears'])
+```
+
 <!-- fiddle.end -->
 
 ## filter using attributes
