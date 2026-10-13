@@ -121,6 +121,49 @@ cy.get('li')
   .should('have.text', 'Kiwi')
 ```
 
+## filter using text
+
+Filter element using case-sensitive text search
+
+```js
+cy.log('**case-sensitive text**')
+cy.get('li')
+  .filter((k, el) => {
+    return el.innerText.includes('Pear')
+  })
+  .should('have.length', 1)
+  .and('have.text', 'Pears')
+```
+
+## filter using case-insensitive text
+
+Filter element using case-insensitive text search
+
+```js
+cy.log('**case-insensitive text**')
+const text = 'Pear'.toLowerCase()
+cy.get('li')
+  .filter((k, el) => {
+    return el.innerText.toLowerCase().includes(text)
+  })
+  .should('have.length', 1)
+  .and('have.text', 'Pears')
+```
+
+## filter using text regular expression
+
+Filter element using string regular expressions
+
+```js
+cy.log('**regular expression**')
+cy.get('li')
+  .filter((k, el) => {
+    // check the inner text using a regular expression
+    return /a(p|r)/.test(el.innerText)
+  })
+  .should('read', ['Grapes', 'Pears'])
+```
+
 <!-- fiddle.end -->
 
 ## filter using attributes
