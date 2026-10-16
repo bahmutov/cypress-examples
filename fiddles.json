@@ -1404,6 +1404,54 @@
     "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
   },
   {
+    "title": "Querying cy.getByRole example",
+    "filename": "docs/commands/querying.md",
+    "created": "2020-04-11T18:04:43.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.getByRole find by aria role",
+    "filename": "docs/commands/querying.md",
+    "created": "2020-04-11T18:04:43.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.getByRole get every link",
+    "filename": "docs/commands/querying.md",
+    "created": "2020-04-11T18:04:43.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.getByRole check every link",
+    "filename": "docs/commands/querying.md",
+    "created": "2020-04-11T18:04:43.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.getByRole matches by name",
+    "filename": "docs/commands/querying.md",
+    "created": "2020-04-11T18:04:43.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.getByRole ignores aria hidden elements",
+    "filename": "docs/commands/querying.md",
+    "created": "2020-04-11T18:04:43.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.getByRole searching using regular expression",
+    "filename": "docs/commands/querying.md",
+    "created": "2020-04-11T18:04:43.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
+    "title": "Querying cy.getByRole searching using custom name callback",
+    "filename": "docs/commands/querying.md",
+    "created": "2020-04-11T18:04:43.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/commands/querying.html"
+  },
+  {
     "title": "Querying Selecting Elements",
     "filename": "docs/commands/querying.md",
     "created": "2020-04-11T18:04:43.000Z",
