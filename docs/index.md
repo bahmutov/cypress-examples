@@ -364,6 +364,7 @@ The Cypress API enables you to configure the behavior of how Cypress works inter
 - parse [JSON+LD](./recipes/json-ld.md) script element
 - [skip the rest of the test](./recipes/skip-the-rest-of-the-test.md)
 - compare [z-index of elements](./recipes/zindex.md)
+- [innerText vs textContent](./recipes/inner-text-vs-text-content.md)
 
 ### Working with the window object
 
