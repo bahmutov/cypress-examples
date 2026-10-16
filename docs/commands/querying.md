@@ -1662,6 +1662,189 @@ Check the recipe [Root Element Attributes](../recipes/root-attributes.md)
 
 <!-- fiddle-end -->
 
+## [cy.getByRole](https://on.cypress.io/getbyrole)
+
+<!-- fiddle cy.getByRole example -->
+
+```html
+<main>
+  <h1>Account settings</h1>
+  <button>Save changes</button>
+</main>
+```
+
+```js
+cy.getByRole('main').should('match', 'main')
+cy.getByRole('heading')
+  .should('match', 'h1')
+  .and('have.text', 'Account settings')
+cy.getByRole('button').should('include.text', 'Save').click()
+```
+
+<!-- fiddle-end -->
+
+### Find a widget by its ARIA role attribute
+
+<!-- fiddle cy.getByRole find by aria role -->
+
+```html
+<div role="tablist">
+  <button role="tab" aria-selected="true">Profile</button>
+  <button role="tab" aria-selected="false">Billing</button>
+</div>
+```
+
+```js
+cy.getByRole('tab', { name: 'Billing' })
+  .should('have.attr', 'aria-selected', 'false')
+  .click()
+```
+
+**Note:** even as a child command, `cy.getByRole` might return multiple elements
+
+```js
+cy.getByRole('tablist').getByRole('tab').should('have.length', 2)
+```
+
+<!-- fiddle-end -->
+
+### Anchor elements might not be links
+
+Anchor elements `<a>` without a `href` attribute are not considered links
+
+<!-- fiddle cy.getByRole get every link -->
+
+```html
+<ul>
+  <li><a href="/profile">Profile</a></li>
+  <li><a href="/billing">Billing</a></li>
+  <li><a>Coming soon</a></li>
+</ul>
+```
+
+```js
+// An <a> without an href has no link role, so only two match
+cy.getByRole('link').should('have.length', 2)
+cy.getByRole('link')
+  .eq(1)
+  .should('have.attr', 'href', '/billing')
+
+// but there are three "A" elements
+cy.get('a').should('have.length', 3)
+```
+
+<!-- fiddle-end -->
+
+### Check every link
+
+<!-- fiddle cy.getByRole check every link -->
+
+```html
+<nav aria-label="Account">
+  <a href="/profile">Profile</a>
+  <a href="/billing">Billing</a>
+  <a href="/security">Security</a>
+</nav>
+```
+
+```js
+cy.getByRole('link').each(($link, k) => {
+  expect($link, `link ${k + 1}`)
+    .to.have.attr('href')
+    // yields the HREF value, should start with "/"
+    .to.match(/\//)
+})
+```
+
+<!-- fiddle-end -->
+
+### Match bby accessible name
+
+<!-- fiddle cy.getByRole matches by name -->
+
+```html
+<button>Save changes</button>
+<button aria-label="Close dialog">×</button>
+<label>Email <input type="email" /></label>
+```
+
+```js
+// button's text is its name
+cy.getByRole('button', { name: 'Save changes' }).click()
+// aria-label is button's name
+cy.getByRole('button', { name: 'Close dialog' }).click()
+// input's type becomes its name
+cy.getByRole('textbox', { name: 'Email' }).type(
+  'jane@example.com',
+)
+
+// Neither matches: a string matches the whole name, case-sensitively
+cy.getByRole('button', { name: 'Save' }).should('not.exist')
+cy.getByRole('button', { name: 'save changes' }).should(
+  'not.exist',
+)
+```
+
+<!-- fiddle-end -->
+
+### Skips aria hidden elements
+
+Elements with `aria-hidden="true"` are ignored by the role query
+
+<!-- fiddle cy.getByRole ignores aria hidden elements -->
+
+```html
+<button>Send<span aria-hidden="true"> ✉️</span></button>
+```
+
+```js
+// Yields and clicks the <button>, whose accessible name is "Send" without the ✉️
+cy.getByRole('button', { name: 'Send' }).click()
+```
+
+<!-- fiddle-end -->
+
+### Match name using a regular expression
+
+The role must be exact, the name could be a regular expression
+
+<!-- fiddle cy.getByRole searching using regular expression -->
+
+```html
+<button>Delete account</button> <button>Delete draft</button>
+```
+
+```js
+// Yields both buttons, since each name starts with "Delete"
+cy.getByRole('button', { name: /^delete/i }).should(
+  'have.length',
+  2,
+)
+
+// Yields and clicks only the "Delete draft" button
+cy.getByRole('button', { name: /draft$/ }).click()
+```
+
+<!-- fiddle-end -->
+
+### Match name using a function
+
+<!-- fiddle cy.getByRole searching using custom name callback -->
+
+```html
+<button>Pay $20.00</button> <button>Pay $120.00</button>
+```
+
+```js
+cy.getByRole('button', {
+  name: (name) => Number(name.replace(/[^\d.]/g, '')) > 100,
+}).should('have.text', 'Pay $120.00')
+```
+
+<!-- fiddle-end -->
+
+<!-- TODO add more getByRole examples -->
+
 ## [Best Practices: Selecting elements](https://on.cypress.io/best-practices#Selecting-Elements)
 
 Prefer dedicated `data-cy` or `data-test` attributes to CSS class names and element IDs. See detailed discussion at [Best Practices: Selecting elements](https://on.cypress.io/best-practices#Selecting-Elements)
@@ -1702,6 +1885,10 @@ cy.get('#best-practices').within(() => {
 
   // Much better. But still coupled to text content that may change.
   cy.contains('Submit').click()
+
+  // Much better. Checks both the role and the accessible name,
+  // so it's coupled to each.
+  cy.getByRole('button', { name: 'Submit' }).click()
 
   // Best. Insulated from all changes.
   cy.get('[data-cy=submit]').click()
