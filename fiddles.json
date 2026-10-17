@@ -3432,6 +3432,18 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/image-loaded.html"
   },
   {
+    "title": "Difference between innerText and textContent innerText vs textContent",
+    "filename": "docs/recipes/inner-text-vs-text-content.md",
+    "created": "2026-10-17T01:06:53.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/inner-text-vs-text-content.html"
+  },
+  {
+    "title": "Difference between innerText and textContent textContent includes scripts",
+    "filename": "docs/recipes/inner-text-vs-text-content.md",
+    "created": "2026-10-17T01:06:53.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/inner-text-vs-text-content.html"
+  },
+  {
     "title": "Input Element Clears NaN Value Input clears NaN value",
     "filename": "docs/recipes/input-clears-nan.md",
     "created": "2022-07-06T18:15:55.000Z",
