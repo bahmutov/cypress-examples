@@ -1758,7 +1758,7 @@ cy.getByRole('link').each(($link, k) => {
 
 <!-- fiddle-end -->
 
-### Match bby accessible name
+### Match by accessible name
 
 <!-- fiddle cy.getByRole matches by name -->
 
@@ -1844,6 +1844,93 @@ cy.getByRole('button', {
 <!-- fiddle-end -->
 
 <!-- TODO add more getByRole examples -->
+
+### native elements by default
+
+<!-- fiddle cy.getByRole Native elements by default -->
+
+```html
+<button>Save</button>
+<div role="button" tabindex="0">Cancel</div>
+```
+
+```js
+// Yields and clicks the native <button>
+cy.getByRole('button', { name: 'Save' }).click()
+
+// The <div> has the role only through its role attribute, so it's skipped
+cy.getByRole('button', { name: 'Cancel' }).should('not.exist')
+
+// Yields the <div role="button">
+cy.getByRole('button', { name: 'Cancel', native: false }).click()
+```
+
+<!-- fiddle-end -->
+
+### search inside another element
+
+<!-- fiddle cy.getByRole search inside another element -->
+
+```html
+<header>
+  <nav aria-label="Main">
+    <a href="/">Home</a>
+  </nav>
+</header>
+<footer>
+  <a href="/privacy">Privacy</a>
+</footer>
+```
+
+```js
+cy.getByRole('navigation', { name: 'Main' })
+  // search inside the "<nav>" element
+  .getByRole('link')
+  .should('read', ['Home'])
+```
+
+<!-- fiddle-end -->
+
+### Combine `cy.within` and `cy.getByRole`
+
+<!-- fiddle cy.getByRole and cy.within -->
+
+```html
+<button>Delete</button>
+<dialog open aria-label="Delete user">
+  <button>Cancel</button>
+  <button>Delete</button>
+</dialog>
+```
+
+```js
+cy.getByRole('dialog', { name: 'Delete user' }).within(() => {
+  cy.getByRole('button', { name: 'Delete' }).click()
+})
+```
+
+<!-- fiddle-end -->
+
+### Type the yielded element
+
+<!-- fiddle cy.getByRole with type parameter -->
+
+```html
+<label
+  >Email <input type="email" placeholder="Your email"
+/></label>
+```
+
+```ts skip
+cy.getByRole<HTMLInputElement>('textbox', {
+  name: 'Email',
+}).then(($input) => {
+  // $input is typed as JQuery<HTMLInputElement>
+  expect($input[0].value).to.eq('')
+})
+```
+
+<!-- fiddle-end -->
 
 ## [Best Practices: Selecting elements](https://on.cypress.io/best-practices#Selecting-Elements)
 

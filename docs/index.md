@@ -12,6 +12,7 @@ Commands drive your tests in the browser like a real user would. They let you pe
 - [contains](./commands/querying.md#cy-contains)
 - [within](./commands/querying.md#within)
 - [root](./commands/querying.md#cy-root)
+- [getByRole](./commands/querying.md#cy-getbyrole)
 - [Best Practices: Selecting elements](./commands/querying.md#best-practices-selecting-elements)
 - [Pseudo class selectors](./commands/querying.md#pseudo-class-selectors)
 
