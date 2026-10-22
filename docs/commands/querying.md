@@ -1664,6 +1664,8 @@ Check the recipe [Root Element Attributes](../recipes/root-attributes.md)
 
 ## [cy.getByRole](https://on.cypress.io/getbyrole)
 
+📺 Watch some of `cy.getByRole` examples shown in the video [New Cypress v16.20 Command: cy.getByRole](https://youtu.be/VhuXP_8S_fE).
+
 <!-- fiddle cy.getByRole example -->
 
 ```html
