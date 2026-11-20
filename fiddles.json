@@ -4902,7 +4902,19 @@
     "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-call-through.html"
   },
   {
-    "title": "Stub called with the match dataLayer.push",
+    "title": "Stub called with the match Match a string",
+    "filename": "docs/recipes/stub-called-with-match.md",
+    "created": "2023-04-25T02:31:09.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-called-with-match.html"
+  },
+  {
+    "title": "Stub called with the match Match a complex object argument",
+    "filename": "docs/recipes/stub-called-with-match.md",
+    "created": "2023-04-25T02:31:09.000Z",
+    "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-called-with-match.html"
+  },
+  {
+    "title": "Stub called with the match Nested object match",
     "filename": "docs/recipes/stub-called-with-match.md",
     "created": "2023-04-25T02:31:09.000Z",
     "url": "https://glebbahmutov.com/cypress-examples/recipes/stub-called-with-match.html"
